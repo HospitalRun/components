@@ -26,4 +26,3 @@ steps:
 
   - bash: npm run build
     displayName: Lint and Build
-a
