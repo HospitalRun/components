@@ -4,7 +4,7 @@ Contributions are always welcome. Before contributing please read the
 [code of conduct](https://js.foundation/community/code-of-conduct) &
 [search the issue tracker](https://github.com/HospitalRun/components/issues); your issue
 may have already been discussed or fixed in `master`. To contribute,
-[fork](https://help.github.com/articles/fork-a-repo/) HospitalRun, commit your changes,
+[fork](https://help.github.com/articles/fork-a-repo/) HospitalRun components, commit your changes,
 & [send a Pull Request](https://help.github.com/articles/using-pull-requests/).
 
 Please note we have a [code of conduct](https://github.com/HospitalRun/components/blob/next/.github/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
