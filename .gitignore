@@ -41,4 +41,4 @@ jspm_packages
 .env.*
 \.vscode/
 .rts2*
-.package-lock.json
+package-lock.json
