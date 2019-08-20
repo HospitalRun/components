@@ -1,0 +1,29 @@
+trigger:
+  - master
+
+pool:
+  vmImage: 'ubuntu-16.04'
+
+strategy:
+  matrix:
+    node_8_x:
+      node_version: 8.x
+    node_10_x:
+      node_version: 10.x
+    node_11_x:
+      node_version: 11.x
+    node_12_x:
+      node_version: 12.x
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: $(node_version)
+    displayName: Install Node.js
+
+  - bash: npm install
+    displayName: Install dependencies
+
+  - bash: npm run build
+    displayName: Lint and Build
+a
