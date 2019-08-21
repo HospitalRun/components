@@ -8,7 +8,7 @@ This repository will host reusable react components made for the HospitalRun fro
 
 ---
 
-## Install
+# Install
 
 Install components:
 ```
@@ -25,9 +25,21 @@ npm install react-bootstrap
 npm install -D node-sass
 ```
 
-## Docs
+# Contributing
 
-### Spinner
+1. Fork this repository to your own GitHub account and then clone it to your local device
+2. Navigate to the cloned folder: `cd components`
+3. Install the dependencies: `npm install`
+4. Run `npm link` to link the local repo to the global npm folder
+5. Run `npm run dev` to build and watch for code changes
+6. In another terminal window create a [new react project](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) with `npx create-react-app my-app`‌
+7. Navigate (`cd my-app`) to your react project and install [node-sass](https://www.npmjs.com/package/node-sass): `npm install -D node-sass`. Components styles are coded using scss and you need this dependency in order to successfully import components' `.scss` files
+8. Link the components repo inside your newly created react project with `npm link components`
+9. Start your react project with `npm start` and enjoy hot reloading when applying changes in the components repo
+
+# Docs
+
+## Spinner
 
 Spinner it's a customizable spinner component. It's a wrapper component built upon react-spinners.
 
