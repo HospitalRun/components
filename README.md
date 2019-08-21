@@ -27,7 +27,7 @@ npm install -D node-sass
 
 # Contributing
 
-Contributions are always welcome. Before contributing please read our [contributor guide)[https://github.com/HospitalRun/components/blob/WIP-updates-readme/.github/CONTRIBUTING.md]
+Contributions are always welcome. Before contributing please read our [contributor guide](https://github.com/HospitalRun/components/blob/WIP-updates-readme/.github/CONTRIBUTING.md)
 
 1. Fork this repository to your own GitHub account and then clone it to your local device
 2. Navigate to the cloned folder: `cd components`
