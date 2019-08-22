@@ -9,7 +9,7 @@ may have already been discussed or fixed in `master`. To contribute,
 
 Please note we have a [code of conduct](https://github.com/HospitalRun/components/blob/master/.github/CODE_OF_CONDUCT.md), please follow it in all your interactions with the project.
 
-# Contributing to components
+## Contributing to components
 
 1. Fork this repository to your own GitHub account and then clone it to your local device
 2. Navigate to the cloned folder: `cd components`
