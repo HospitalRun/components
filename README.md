@@ -11,8 +11,6 @@
 
 This repository will host reusable react components made for the HospitalRun frontend.
 
-## Important note: the following documentation is still in draft.
-
 ---
 
 # Install
