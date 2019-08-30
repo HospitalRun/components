@@ -19,7 +19,7 @@
     "test": "tsdx test --env=jsdom",
     "lint": "tsdx lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -c .storybook"
   },
   "peerDependencies": {
     "react": ">=16"
