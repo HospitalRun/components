@@ -11,4 +11,4 @@ Fixes #[replace brackets with the issue number that your pull request addresses]
 - [Link of the new dependency]
 - [etc]
 
-*Note: pull requests without proper descriptions may simply be closed without further discussion. We appreciate your contributions, but need to know what you are offering in clearly described format. Thanks! (you can delete this text)*
+*Note: pull requests without proper descriptions may simply be closed without further discussion. We appreciate your contributions, but need to know what you are offering in clearly described format. Provide tests for all code that you add/modify. If you add/modify any components update the storybook. Thanks! (you can delete this text)*
