@@ -54,7 +54,7 @@ Example:
 
 ```
 import React from "react";
-import { Spinner } from "@hospitalrun-org/components";
+import { Spinner } from "components";
 import "components/scss/main.scss";
 
 class App extends React.Component {
