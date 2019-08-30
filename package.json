@@ -17,7 +17,9 @@
     "prebuild": "npm run test",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "tsdx lint"
+    "lint": "tsdx lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -38,9 +40,18 @@
     "arrowParens": "avoid"
   },
   "devDependencies": {
+    "@babel/core": "~7.5.5",
+    "@storybook/addon-actions": "~5.1.11",
+    "@storybook/addon-links": "~5.1.11",
+    "@storybook/addons": "~5.1.11",
+    "@storybook/react": "^5.1.11",
+    "@storybook/theming": "~5.1.11",
     "@types/jest": "^24.0.17",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
+    "@types/storybook__react": "^4.0.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "~8.0.6",
     "husky": "^3.0.3",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
