@@ -42,3 +42,4 @@ jspm_packages
 \.vscode/
 .rts2*
 package-lock.json
+storybook-static
