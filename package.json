@@ -63,9 +63,8 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "formik": "^1.5.8",
     "react-confirm-alert": "^2.4.1",
-    "react-spinners": "^0.5.12",
+    "react-spinners": "^0.6.1",
     "react-toastify": "^5.3.2"
   }
 }
