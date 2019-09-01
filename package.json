@@ -1,7 +1,8 @@
 {
   "name": "@hospitalrun-org/components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/index.js",
+  "license": "MIT",
   "module": "dist/components.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -17,7 +18,9 @@
     "prebuild": "npm run test",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "tsdx lint"
+    "lint": "tsdx lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -c .storybook"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -38,10 +41,19 @@
     "arrowParens": "avoid"
   },
   "devDependencies": {
+    "@babel/core": "~7.5.5",
+    "@storybook/addon-actions": "~5.1.11",
+    "@storybook/addon-links": "~5.1.11",
+    "@storybook/addons": "~5.1.11",
+    "@storybook/react": "^5.1.11",
+    "@storybook/theming": "~5.1.11",
     "@types/chart.js": "^2.8.2",
     "@types/jest": "^24.0.17",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
+    "@types/storybook__react": "^4.0.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "~8.0.6",
     "husky": "^3.0.3",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
@@ -57,7 +69,7 @@
     "formik": "^1.5.8",
     "moment": "^2.24.0",
     "react-confirm-alert": "^2.4.1",
-    "react-spinners": "^0.5.12",
+    "react-spinners": "^0.6.1",
     "react-toastify": "^5.3.2"
   }
 }
