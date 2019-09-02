@@ -4,18 +4,18 @@ export interface Data {
   /** the y data point */
   y: any
   /** the background color for the piece of data. On Bar/Pie Graphs this is the bar or part of the pie. On Line Graphs this is the point */
-  backgroundColor: string
+  backgroundColor?: string
   /** the border color for the piece of data. On Bar/Pie Graphs this is the bar or part of the pie. On Line Graphs this is the point */
-  borderColor: string
+  borderColor?: string
 }
 
 export interface Dataset {
   /** the label of the dataset to show in the legend */
   label: string
   /** the default background color of the dataset for Bar/Pie Graphs or the fill color for Line Graphs */
-  backgroundColor: string
+  backgroundColor?: string
   /** the default border color of the dataset for Bar/Pie Graphs or the line color for Line Graphs */
-  borderColor: string
+  borderColor?: string
   /** the list of data for the dataset */
   data: Data[]
 }
@@ -29,17 +29,17 @@ export interface HasAxes {
 
 export interface Graph {
   /** the title of the graph for the legend */
-  title: string
+  title?: string
   /** the font size for the title */
-  titleFontSize: number
+  titleFontSize?: number
   /** the color for the title */
-  titleFontColor: string
+  titleFontColor?: string
   /** the datasets for the graph */
   datasets: Dataset[]
   /** The width of the graph */
-  width: string
+  width?: string
   /** The height of the graph */
-  height: string
+  height?: string
 }
 
 export interface Axis {
@@ -48,7 +48,7 @@ export interface Axis {
   /** the label for the axis */
   label: string
   /** The format to display the time in, if the axis type is not `time, this value will be ignored */
-  timeFormat:
+  timeFormat?:
     | 'millisecond'
     | 'second'
     | 'minute'
@@ -60,5 +60,5 @@ export interface Axis {
     | 'year'
 
   /** The number of ticks between each grid line */
-  timeStepSize: number
+  timeStepSize?: number
 }

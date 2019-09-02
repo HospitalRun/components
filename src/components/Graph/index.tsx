@@ -63,8 +63,16 @@ function getChartDataset(dataset: Dataset): ChartDataSets {
 
   dataset.data.forEach(d => {
     data.push(d.y)
-    backgroundColor.push(d.backgroundColor ? d.backgroundColor : dataset.backgroundColor)
-    borderColor.push(d.borderColor ? d.borderColor : dataset.borderColor)
+
+    const background = d.backgroundColor ? d.backgroundColor : dataset.backgroundColor;
+    const border = d.borderColor ? d.borderColor : dataset.borderColor;
+    if(background !== undefined) {
+      backgroundColor.push(background)
+    }
+
+    if(border !== undefined) {
+      borderColor.push(border)
+    }
   })
 
   let pointBackgroundColor = backgroundColor
@@ -136,9 +144,9 @@ function getCommonChartConfigurations(type: string, graph: Graph): ChartConfigur
 
 interface IBarGraph extends Graph, HasAxes {
   /** Determines if the bar graph should be displayed in a horizontal manner */
-  horizontal: boolean
+  horizontal?: boolean
   /** Determines if the bar graph should be displayed as a stacked bar graph */
-  stacked: boolean
+  stacked?: boolean
 }
 
 class BarGraph extends Component<IBarGraph, {}> {
@@ -146,7 +154,8 @@ class BarGraph extends Component<IBarGraph, {}> {
   chart: any
 
   componentDidMount() {
-    const { horizontal, stacked, xAxes, yAxes } = this.props
+    const stacked = !!this.props.stacked;
+    const { horizontal, xAxes, yAxes } = this.props
     const type = horizontal ? 'horizontalBar' : 'bar'
     const config = getCommonChartConfigurations(type, this.props)
 
@@ -177,7 +186,7 @@ class BarGraph extends Component<IBarGraph, {}> {
 
 interface IPieGraph extends Graph {
   /** Determines if the pie graph should be displayed with a doughnut */
-  doughnut: boolean
+  doughnut?: boolean
 }
 
 class PieGraph extends Component<IPieGraph, {}> {
@@ -198,9 +207,9 @@ class PieGraph extends Component<IPieGraph, {}> {
 
 interface ILineGraph extends Graph, HasAxes {
   /** Determines if the area under the line should be filled with the background color from the dataset */
-  fill: boolean
+  fill?: boolean
   /** Determines if the the Line Graphs should be displayed in a stacked manner */
-  stacked: boolean
+  stacked?: boolean
 }
 
 class LineGraph extends Component<ILineGraph, {}> {
@@ -225,9 +234,10 @@ class LineGraph extends Component<ILineGraph, {}> {
     }
 
     if (config && config.options) {
+      const stacked = !!this.props.stacked;
       let scales = {
         xAxes: getAxes(this.props.xAxes, false),
-        yAxes: getAxes(this.props.yAxes, this.props.stacked),
+        yAxes: getAxes(this.props.yAxes, stacked),
       }
 
       config.options.scales = scales
