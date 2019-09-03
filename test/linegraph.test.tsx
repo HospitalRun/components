@@ -2,8 +2,8 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { LineGraph } from '../src/components/Graph'
 
-describe('it', () => {
-  it('renders without crashing', () => {
+describe('LineGraph', () => {
+  it('LineGraph renders itself without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
       <LineGraph

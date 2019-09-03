@@ -3,8 +3,8 @@ import * as ReactDOM from 'react-dom'
 
 import { BarGraph } from '../src/components/Graph'
 
-describe('it', () => {
-  it('renders without crashing', () => {
+describe('BarGraph', () => {
+  it('BarGraph renders itself without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
       (
