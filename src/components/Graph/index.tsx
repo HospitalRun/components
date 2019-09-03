@@ -150,8 +150,14 @@ interface IBarGraph extends Graph, HasAxes {
 }
 
 class BarGraph extends Component<IBarGraph, {}> {
-  graph: any
-  chart: any
+  graph: ChartJs | null
+  chart: HTMLCanvasElement | null
+
+  constructor(props: ILineGraph) {
+    super(props);
+    this.graph = null; // initalzied in componentDidMount
+    this.chart = null; // initalzied in componentDidMount
+  }
 
   componentDidMount() {
     const stacked = !!this.props.stacked;
@@ -176,7 +182,7 @@ class BarGraph extends Component<IBarGraph, {}> {
       config.options.scales = scales
     }
 
-    this.graph = new ChartJs(this.chart, config)
+    this.graph = new ChartJs(this.chart as HTMLCanvasElement, config)
   }
 
   render() {
@@ -190,14 +196,20 @@ interface IPieGraph extends Graph {
 }
 
 class PieGraph extends Component<IPieGraph, {}> {
-  graph: any
-  chart: any
+  graph: ChartJs | null
+  chart: HTMLCanvasElement | null
+
+  constructor(props: ILineGraph) {
+    super(props);
+    this.graph = null; // initalzied in componentDidMount
+    this.chart = null; // initalzied in componentDidMount
+  }
 
   componentDidMount() {
     const { doughnut } = this.props
     const type = doughnut ? 'doughnut' : 'pie'
     const config = getCommonChartConfigurations(type, this.props)
-    this.graph = new ChartJs(this.chart, config)
+    this.graph = new ChartJs(this.chart as HTMLCanvasElement, config)
   }
 
   render() {
@@ -213,8 +225,14 @@ interface ILineGraph extends Graph, HasAxes {
 }
 
 class LineGraph extends Component<ILineGraph, {}> {
-  graph: any
-  chart: any
+  graph: ChartJs | null
+  chart: HTMLCanvasElement | null
+
+  constructor(props: ILineGraph) {
+    super(props);
+    this.graph = null; // initalzied in componentDidMount
+    this.chart = null; // initalzied in componentDidMount
+  }
 
   componentDidMount() {
     const type = 'line'
@@ -243,7 +261,7 @@ class LineGraph extends Component<ILineGraph, {}> {
       config.options.scales = scales
     }
 
-    this.graph = new ChartJs(this.chart, config)
+    this.graph = new ChartJs(this.chart as HTMLCanvasElement, config)
   }
 
   render() {
