@@ -4,7 +4,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/@hospitalrun-org/components)](https://www.npmjs.com/package/@hospitalrun-org/components) [![Build Status](https://travis-ci.com/HospitalRun/components.svg?branch=master)](https://travis-ci.com/HospitalRun/components) [![NPM Downloads](https://img.shields.io/npm/dt/@hospitalrun-org/components)](https://www.npmjs.com/package/@hospitalrun-org/components)
 [![Build Status](https://dev.azure.com/HospitalRun/components/_apis/build/status/HospitalRun.components?branchName=master)](https://dev.azure.com/HospitalRun/components/_build/latest?definitionId=1&branchName=master)
-[![Last commit](https://img.shields.io/github/last-commit/hospitalrun/components)](https://github.com/HospitalRun/components/commits/master) [![Bundlephobia](https://badgen.net/bundlephobia/min/@hospitalrun-org/components)](https://bundlephobia.com/result?p=@hospitalrun-org/components) 
+[![Last commit](https://img.shields.io/github/last-commit/hospitalrun/components)](https://github.com/HospitalRun/components/commits/master) [![Bundlephobia](https://badgen.net/bundlephobia/min/@hospitalrun-org/components)](https://bundlephobia.com/result?p=@hospitalrun-org/components)
 [![dependabot](https://badgen.net/dependabot/dependabot/dependabot-core/?icon=dependabot)](https://github.com/HospitalRun/components) [![MIT](https://badgen.net/github/license/HospitalRun/components)](https://github.com/HospitalRun/components/blob/master/LICENSE) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/hospitalrun) [![Netlify Status](https://api.netlify.com/api/v1/badges/70c843de-c1b2-4e7d-abb5-61939f21f8cb/deploy-status)](https://app.netlify.com/sites/hospitalrun/deploys)
 
 </div>
@@ -16,16 +16,19 @@ This repository will host reusable react components made for the HospitalRun fro
 # Install
 
 Install components:
+
 ```
 npm install @hospitalrun-org/components
 ```
 
 Install react-bootstrap:
+
 ```
 npm install react-bootstrap
 ```
 
 [Optional] You may need `node-sass` if you want to import components' `.scss` files:
+
 ```
 npm install -D node-sass
 ```
@@ -77,51 +80,45 @@ export default App;
 
 **MANDATORY PARAMETERS**
 
-`type: string`  
+`type: string`
 Choose the spinner type. You can choose from:
 
+- BarLoader
+- BeatLoader
+- BounceLoader
+- ClimbingBoxLoader
+- ClipLoader
+- DotLoader
+- FadeLoader
+- PulseLoader
+- RotateLoader
+- ScaleLoader
+- SyncLoader
 
-* BarLoader 
-* BeatLoader 
-* BounceLoader 
-* ClimbingBoxLoader 
-* ClipLoader 
-* DotLoader 
-* FadeLoader 
-* PulseLoader 
-* RotateLoader 
-* ScaleLoader 
-* SyncLoader 
-
-
-`loading: boolean`  
+`loading: boolean`
 This prop tells Spinner when to show itself. It should be linked to something dynamic, like a property in the parent component's state.
-
 
 **OPTIONAL PARAMETERS**
 
-`color: string`  
+`color: string`
 Choose the spinner color.
 
-
-`margin: string`  
+`margin: string`
 Adds a margin to the Spinner component.
 
-
-`size: number | [number, number]`  
+`size: number | [number, number]`
 Declares the size of the spinner. If you choose to declare it, in the following spinners it must be an array of two numbers (for width & height):
 
-* BarLoader 
-* FadeLoader 
-* ScaleLoader 
+- BarLoader
+- FadeLoader
+- ScaleLoader
 
-
-`sizeUnit: "px" | "%" | "em" | ["px" | "%" | "em", "px" | "%" | "em"]`  
+`sizeUnit: "px" | "%" | "em" | ["px" | "%" | "em", "px" | "%" | "em"]`
 Declares the unit of measure for the previous size parameter. If you choose to declare it, in the following spinners it must be an array of two strings (respectively for width & height):
 
-* BarLoader 
-* FadeLoader 
-* ScaleLoader 
+- BarLoader
+- FadeLoader
+- ScaleLoader
 
 <hr />
 
@@ -133,28 +130,29 @@ Declares the unit of measure for the previous size parameter. If you choose to d
 
 ## Sponsors
 
-[![Sponsors](https://opencollective.com/hospitalrun/sponsors.svg?width=890)](https://opencollective.com/hospitalrun/contribute/sponsors-336/checkout) 
+[![Sponsors](https://opencollective.com/hospitalrun/sponsors.svg?width=890)](https://opencollective.com/hospitalrun/contribute/sponsors-336/checkout)
 
 ## Backers
 
-[![Backers](https://opencollective.com/hospitalrun/backers.svg?width=890)](https://opencollective.com/hospitalrun/contribute/backers-335/checkout) 
+[![Backers](https://opencollective.com/hospitalrun/backers.svg?width=890)](https://opencollective.com/hospitalrun/contribute/backers-335/checkout)
 
 ## Lead Maintainer
+
 [<img src="https://avatars2.githubusercontent.com/u/1620916?s=460&v=4" width="100px;"/><br /><sub><b>Maksim Sinik</b></sub>](https://github.com/fox1t)<br />
 
 ## Core Team
 
+<!-- prettier-ignore -->
 |[<img src="https://avatars1.githubusercontent.com/u/11684?s=460&v=4" width="100px;"/><br /><sub><b>Travis Boudreaux</b></sub>](https://github.com/tjboudreaux) | [<img src="https://avatars3.githubusercontent.com/u/25089405?s=460&v=4" width="100px;"/><br /><sub><b>Stefano Casasola</b></sub>](https://github.com/irvelervel) | [<img src="https://avatars3.githubusercontent.com/u/3400442?s=460&v=4" width="100px;"/><br /><sub><b>Michael J Feher</b></sub>](https://github.com/PhearZero) | [<img src="https://avatars1.githubusercontent.com/u/25009192?s=460&v=4" width="100px;"/><br /><sub><b>Riccardo Gulin</b></sub>](https://github.com/bazuzu666) | [<img src="https://avatars0.githubusercontent.com/u/6388707?s=460&v=4" width="100px;"/><br /><sub><b>Matteo Vivona</b></sub>](https://github.com/tehKapa) |
 |---|---|---|---|---|
 
-
-## Medical Supervisor 
+## Medical Supervisor
 
 [<img src="https://avatars2.githubusercontent.com/u/24660474?s=460&v=4" width="100px;"/><br /><sub><b>M.D. Daniele Piccolo</b></sub>](https://it.linkedin.com/in/danielepiccolo)<br />
 
 ## Contributors
 
-[![Contributors](https://opencollective.com/hospitalrun/contributors.svg?width=960&button=false)](https://github.com/HospitalRun/hospitalrun-frontend/graphs/contributors) 
+[![Contributors](https://opencollective.com/hospitalrun/contributors.svg?width=960&button=false)](https://github.com/HospitalRun/hospitalrun-frontend/graphs/contributors)
 
 ## Founders
 
