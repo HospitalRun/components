@@ -64,13 +64,13 @@ function getChartDataset(dataset: Dataset): ChartDataSets {
   dataset.data.forEach(d => {
     data.push(d.y)
 
-    const background = d.backgroundColor ? d.backgroundColor : dataset.backgroundColor;
-    const border = d.borderColor ? d.borderColor : dataset.borderColor;
-    if(background !== undefined) {
+    const background = d.backgroundColor ? d.backgroundColor : dataset.backgroundColor
+    const border = d.borderColor ? d.borderColor : dataset.borderColor
+    if (background !== undefined) {
       backgroundColor.push(background)
     }
 
-    if(border !== undefined) {
+    if (border !== undefined) {
       borderColor.push(border)
     }
   })
@@ -154,13 +154,13 @@ class BarGraph extends Component<BarGraphProps, {}> {
   chart: HTMLCanvasElement | null
 
   constructor(props: BarGraphProps) {
-    super(props);
-    this.graph = null; // initalzied in componentDidMount
-    this.chart = null; // initalzied in componentDidMount
+    super(props)
+    this.graph = null // initalzied in componentDidMount
+    this.chart = null // initalzied in componentDidMount
   }
 
   componentDidMount() {
-    const stacked = !!this.props.stacked;
+    const stacked = !!this.props.stacked
     const { horizontal, xAxes, yAxes } = this.props
     const type = horizontal ? 'horizontalBar' : 'bar'
     const config = getCommonChartConfigurations(type, this.props)
@@ -200,9 +200,9 @@ class PieGraph extends Component<PieGraphProps, {}> {
   chart: HTMLCanvasElement | null
 
   constructor(props: PieGraphProps) {
-    super(props);
-    this.graph = null; // initalzied in componentDidMount
-    this.chart = null; // initalzied in componentDidMount
+    super(props)
+    this.graph = null // initalzied in componentDidMount
+    this.chart = null // initalzied in componentDidMount
   }
 
   componentDidMount() {
@@ -229,9 +229,9 @@ class LineGraph extends Component<LineGraphProps, {}> {
   chart: HTMLCanvasElement | null
 
   constructor(props: LineGraphProps) {
-    super(props);
-    this.graph = null; // initalzied in componentDidMount
-    this.chart = null; // initalzied in componentDidMount
+    super(props)
+    this.graph = null // initalzied in componentDidMount
+    this.chart = null // initalzied in componentDidMount
   }
 
   componentDidMount() {
@@ -252,7 +252,7 @@ class LineGraph extends Component<LineGraphProps, {}> {
     }
 
     if (config && config.options) {
-      const stacked = !!this.props.stacked;
+      const stacked = !!this.props.stacked
       let scales = {
         xAxes: getAxes(this.props.xAxes, false),
         yAxes: getAxes(this.props.yAxes, stacked),
