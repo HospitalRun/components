@@ -8,7 +8,6 @@ node_js:
 
 script:
   - npm run build
-  - commitlint-travis
 
 notifications:
   email:
