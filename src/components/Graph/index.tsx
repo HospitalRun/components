@@ -142,18 +142,18 @@ function getCommonChartConfigurations(type: string, graph: Graph): ChartConfigur
   }
 }
 
-interface IBarGraph extends Graph, HasAxes {
+interface BarGraphProps extends Graph, HasAxes {
   /** Determines if the bar graph should be displayed in a horizontal manner */
   horizontal?: boolean
   /** Determines if the bar graph should be displayed as a stacked bar graph */
   stacked?: boolean
 }
 
-class BarGraph extends Component<IBarGraph, {}> {
+class BarGraph extends Component<BarGraphProps, {}> {
   graph: ChartJs | null
   chart: HTMLCanvasElement | null
 
-  constructor(props: ILineGraph) {
+  constructor(props: BarGraphProps) {
     super(props);
     this.graph = null; // initalzied in componentDidMount
     this.chart = null; // initalzied in componentDidMount
@@ -190,16 +190,16 @@ class BarGraph extends Component<IBarGraph, {}> {
   }
 }
 
-interface IPieGraph extends Graph {
+interface PieGraphProps extends Graph {
   /** Determines if the pie graph should be displayed with a doughnut */
   doughnut?: boolean
 }
 
-class PieGraph extends Component<IPieGraph, {}> {
+class PieGraph extends Component<PieGraphProps, {}> {
   graph: ChartJs | null
   chart: HTMLCanvasElement | null
 
-  constructor(props: ILineGraph) {
+  constructor(props: PieGraphProps) {
     super(props);
     this.graph = null; // initalzied in componentDidMount
     this.chart = null; // initalzied in componentDidMount
@@ -217,18 +217,18 @@ class PieGraph extends Component<IPieGraph, {}> {
   }
 }
 
-interface ILineGraph extends Graph, HasAxes {
+interface LineGraphProps extends Graph, HasAxes {
   /** Determines if the area under the line should be filled with the background color from the dataset */
   fill?: boolean
   /** Determines if the the Line Graphs should be displayed in a stacked manner */
   stacked?: boolean
 }
 
-class LineGraph extends Component<ILineGraph, {}> {
+class LineGraph extends Component<LineGraphProps, {}> {
   graph: ChartJs | null
   chart: HTMLCanvasElement | null
 
-  constructor(props: ILineGraph) {
+  constructor(props: LineGraphProps) {
     super(props);
     this.graph = null; // initalzied in componentDidMount
     this.chart = null; // initalzied in componentDidMount
