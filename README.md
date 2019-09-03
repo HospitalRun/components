@@ -47,6 +47,35 @@ Contributions are always welcome. Before contributing please read our [contribut
 8. Link the components repo inside your newly created react project with `npm link components`
 9. Start your react project with `npm start` and enjoy hot reloading when applying changes in the components repo
 
+## How to commit
+
+The [Conventional Commits](https://www.conventionalcommits.org) specification is a lightweight convention on top of commit messages. It provides an easy set of rules for creating an explicit commit history; which makes it easier to write automated tools on top of. This convention dovetails with SemVer, by describing the features, fixes, and breaking changes made in commit messages.
+
+The commit message should be structured as follows:
+`<type>[optional scope]: <description>`
+
+```
+feat: allow provided config object to extend other configs
+
+fix: correct minor typos in code
+
+BREAKING CHANGE: dropping Node 6 which hits end of life in April
+
+docs: correct spelling of CHANGELOG
+```
+
+Common types can be:
+
+- build: Changes that affect the build system or external dependencies (example scopes: fastify, react, npm)
+- ci: Changes to our CI configuration files and scripts (example scopes: Travis, Azure DevOps, SauceLabs)
+- docs: Documentation only changes
+- feat: A new feature
+- fix: A bug fix
+- perf: A code change that improves performance
+- refactor: A code change that neither fixes a bug nor adds a feature
+- style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- test: Adding missing tests or correcting existing tests
+
 # Examples
 
 ## Spinner
