@@ -47,6 +47,7 @@
     "@storybook/addons": "~5.1.11",
     "@storybook/react": "^5.1.11",
     "@storybook/theming": "~5.1.11",
+    "@types/chart.js": "^2.8.2",
     "@types/jest": "^24.0.17",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
@@ -54,6 +55,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "~8.0.6",
     "husky": "^3.0.3",
+    "jest-canvas-mock": "^2.1.1",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "react": "^16.9.0",
@@ -64,8 +66,14 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "chart.js": "^2.8.0",
+    "formik": "^1.5.8",
+    "moment": "^2.24.0",
     "react-confirm-alert": "^2.4.1",
     "react-spinners": "^0.6.1",
     "react-toastify": "^5.3.2"
+  },
+  "jest": {
+    "setupFiles": ["jest-canvas-mock"]
   }
 }
