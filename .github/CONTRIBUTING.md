@@ -21,6 +21,16 @@ Please note we have a [code of conduct](https://github.com/HospitalRun/component
 8. Link the components repo inside your newly created react project with `npm link components`
 9. Start your react project with `npm start` and enjoy hot reloading when applying changes in the components repo
 
+## How to create a new component
+1. Create a new folder under `src/components` with the name of your component (i.e. Spinner, Graphs)
+2. Create an `index.tsx` file. This file will be responsible for exporting all of the components. 
+3. Create a interfaces.ts file. This will define and export all non-props interfaces needed for the component. 
+4. Create a file named `ComponentName.tsx` where `ComponentName` is the name of the component being created (i.e. `Spinner.tsx`). This file will be responsible for declaring the component logic and creating the Props interface. The Props interface should be named `Props`. All props should have a comment associated with them describing what they are used for. The component class should be documented with a description of what it is.
+5. Create a `strings.ts` file (if needed). This file should declare and export all string constants.
+6. Create a new file in `src/test` called `componentname.test.tsx` where `componentname` is the name of the component. The tests should cover all use cases of the component. 
+7. Create a new file called `componentname.stories.tsx` where `componentname` is the name of the component. The stories should cover all use cases of the component. 
+8. Generate documentation for the component by running `npm run docgen`.
+
 ## How to commit
 
 The [Conventional Commits](https://www.conventionalcommits.org) specification is a lightweight convention on top of commit messages. It provides an easy set of rules for creating an explicit commit history; which makes it easier to write automated tools on top of. This convention dovetails with SemVer, by describing the features, fixes, and breaking changes made in commit messages.
