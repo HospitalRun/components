@@ -1,4 +1,8 @@
-import { configure, addParameters } from '@storybook/react'
+import { configure, addParameters, addDecorator } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info';
+import { themes } from '@storybook/theming'
+
+addDecorator(withInfo)
 
 addParameters({
   options: {
