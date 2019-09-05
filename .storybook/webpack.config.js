@@ -4,10 +4,15 @@ const webpack = require('webpack')
 module.exports = async ({ config, mode }) => {
   config.module.rules.push({
     test: /\.tsx?$/,
-    loader: 'awesome-typescript-loader',
-    options: {
-      configFileName: 'tsconfig.storybook.json',
-    },
+    use: [
+      {
+        loader: require.resolve('awesome-typescript-loader'),
+      },
+      // Optional
+      {
+        loader: require.resolve('react-docgen-typescript-loader'),
+      },
+    ],
   })
   config.resolve.extensions = ['.ts', '.tsx', '.js', '.jsx']
   config.resolve.plugins = [new TsConfigPathsPlugin({})]
