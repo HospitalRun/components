@@ -1,10 +1,14 @@
 import React from 'react'
-
 import { storiesOf } from '@storybook/react'
 
 import { LineGraph, PieGraph, BarGraph } from '@hospitalrun-org/components'
 
 storiesOf('Graphs', module)
+  .addParameters({
+    info: {
+      inline: true,
+    },
+  })
   .add('Bar Graph', () => (
     <BarGraph
       title="Test Graph"
