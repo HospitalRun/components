@@ -5,6 +5,11 @@ import { storiesOf } from '@storybook/react'
 import { Spinner } from '@hospitalrun-org/components'
 
 storiesOf('Spinner', module)
+  .addParameters({
+    info: {
+      inline: true,
+    },
+  })
   .add('BarLoader', () => <Spinner type="BarLoader" loading={true} color={'orange'} />)
   .add('BeatLoader', () => <Spinner type="BeatLoader" loading={true} color={'orange'} />)
   .add('BounceLoader', () => <Spinner type="BounceLoader" loading={true} color={'orange'} />)
