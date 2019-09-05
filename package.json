@@ -18,10 +18,11 @@
     "prebuild": "npm run test",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "prettier --write \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" && tsdx lint --fix \"src/**/*\" \"test/**/*\"",
+    "lint": "prettier --write \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*\" \"test/**/*\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
-    "release": "standard-version"
+    "release": "standard-version",
+    "docgen": "genDocs.sh"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -60,8 +61,8 @@
     "@types/jest": "~24.0.17",
     "@types/react": "~16.9.1",
     "@types/react-dom": "~16.8.5",
-    "@types/storybook__react": "~4.0.2",
     "@types/storybook__addon-info": "^4.1.2",
+    "@types/storybook__react": "~4.0.2",
     "awesome-typescript-loader": "~5.2.1",
     "babel-loader": "~8.0.6",
     "husky": "~3.0.5",
@@ -70,12 +71,13 @@
     "prettier": "~1.18.2",
     "react": "~16.9.0",
     "react-bootstrap": "~1.0.0-beta.11",
+    "react-docgen": "^5.0.0-beta.1",
+    "react-docgen-typescript-loader": "^3.2.0",
     "react-dom": "~16.9.0",
     "standard-version": "~7.0.0",
     "tsdx": "~0.9.0",
     "tslib": "~1.10.0",
-    "typescript": "~3.5.3",
-    "react-docgen-typescript-loader": "^3.2.0"
+    "typescript": "~3.5.3"
   },
   "dependencies": {
     "chart.js": "~2.8.0",
