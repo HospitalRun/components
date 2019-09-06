@@ -11,6 +11,12 @@
 
 This repository will host reusable react components made for the HospitalRun frontend.
 
+### Big Thanks
+
+Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homepage]
+
+[homepage]: https://saucelabs.com
+
 ---
 
 # Install
