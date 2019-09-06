@@ -8,7 +8,6 @@ addParameters({
   options: {
     name: 'HospitalRun',
     url: 'https://github.com/HospitalRun/components',
-    theme: themes,
   },
 })
 

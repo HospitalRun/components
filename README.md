@@ -75,6 +75,79 @@ Common types can be:
 - style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 - test: Adding missing tests or correcting existing tests
 
+## How to release a new version
+
+We use [standard-version](https://github.com/conventional-changelog/conventional-changelog) to automate versioning and CHANGELOG generation, with semver and conventional commit messages.
+
+`standard-version` does the following:
+
+1. bumps the version in metadata files (package.json, composer.json, etc).
+2. uses [conventional-changelog](https://github.com/conventional-changelog/conventional-changelog) to update _CHANGELOG.md_
+3. commits _package.json (et al.)_ and _CHANGELOG.md_
+4. tags a new release
+
+To generate your changelog for a new release, simply do:
+
+```sh
+# npm run script
+npm run release
+```
+
+As long as your git commit messages are conventional and accurate, you no longer need to specify the semver type - and you get CHANGELOG generation for free!
+
+After you cut a release, you can push the new git tag and `npm publish` (or `npm publish --tag next`) when you're ready.
+
+#### Release as a pre-release
+
+Use the flag `--prerelease` to generate pre-releases:
+
+Suppose the last version of your code is `1.0.0`, and your code to be committed has patched changes. Run:
+
+```bash
+# npm run script
+npm run release -- --prerelease
+```
+
+you will get version `1.0.1-0`.
+
+If you want to name the pre-release, you specify the name via `--prerelease <name>`.
+
+For example, suppose your pre-release should contain the `alpha` prefix:
+
+```bash
+# npm run script
+npm run release -- --prerelease alpha
+```
+
+this will tag the version `1.0.1-alpha.0`
+
+#### Release as a target type imperatively like `npm version`
+
+To forgo the automated version bump use `--release-as` with the argument `major`, `minor` or `patch`:
+
+Suppose the last version of your code is `1.0.0`, you've only landed `fix:` commits, but
+you would like your next release to be a `minor`. Simply do:
+
+```bash
+# npm run script
+npm run release -- --release-as minor
+# Or
+npm run release -- --release-as 1.1.0
+```
+
+you will get version `1.1.0` rather than the auto generated version `1.0.1`.
+
+> **NOTE:** you can combine `--release-as` and `--prerelease` to generate a release. This is useful when publishing experimental feature(s).
+
+
+
+
+### Big Thanks
+
+Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homepage]
+
+[homepage]: https://saucelabs.com
+
 <hr />
 
 # Behind HospitalRun
@@ -98,8 +171,8 @@ Common types can be:
 ## Core Team
 
 <!-- prettier-ignore -->
-|[<img src="https://avatars1.githubusercontent.com/u/11684?s=460&v=4" width="100px;"/><br /><sub><b>Travis Boudreaux</b></sub>](https://github.com/tjboudreaux) | [<img src="https://avatars3.githubusercontent.com/u/25089405?s=460&v=4" width="100px;"/><br /><sub><b>Stefano Casasola</b></sub>](https://github.com/irvelervel) | [<img src="https://avatars3.githubusercontent.com/u/3400442?s=460&v=4" width="100px;"/><br /><sub><b>Michael J Feher</b></sub>](https://github.com/PhearZero) | [<img src="https://avatars1.githubusercontent.com/u/25009192?s=460&v=4" width="100px;"/><br /><sub><b>Riccardo Gulin</b></sub>](https://github.com/bazuzu666) | [<img src="https://avatars0.githubusercontent.com/u/6388707?s=460&v=4" width="100px;"/><br /><sub><b>Matteo Vivona</b></sub>](https://github.com/tehKapa) |
-|---|---|---|---|---|
+|[<img src="https://avatars1.githubusercontent.com/u/11684?s=460&v=4" width="100px;"/><br /><sub><b>Travis Boudreaux</b></sub>](https://github.com/tjboudreaux) | [<img src="https://avatars3.githubusercontent.com/u/25089405?s=460&v=4" width="100px;"/><br /><sub><b>Stefano Casasola</b></sub>](https://github.com/irvelervel) | [<img src="https://avatars3.githubusercontent.com/u/3400442?s=460&v=4" width="100px;"/><br /><sub><b>Michael J Feher</b></sub>](https://github.com/PhearZero) | [<img src="https://avatars1.githubusercontent.com/u/25009192?s=460&v=4" width="100px;"/><br /><sub><b>Riccardo Gulin</b></sub>](https://github.com/bazuzu666) | [<img src="https://avatars3.githubusercontent.com/u/18731800?s=460&v=4" width="100px;"/><br /><sub><b>Jack Meyer</b></sub>](https://github.com/jackcmeyer) | [<img src="https://avatars0.githubusercontent.com/u/6388707?s=460&v=4" width="100px;"/><br /><sub><b>Matteo Vivona</b></sub>](https://github.com/tehKapa) |
+|---|---|---|---|---|---|
 
 ## Medical Supervisor
 
