@@ -11,12 +11,6 @@
 
 This repository will host reusable react components made for the HospitalRun frontend.
 
-### Big Thanks
-
-Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homepage]
-
-[homepage]: https://saucelabs.com
-
 ---
 
 # Install
@@ -144,6 +138,15 @@ npm run release -- --release-as 1.1.0
 you will get version `1.1.0` rather than the auto generated version `1.0.1`.
 
 > **NOTE:** you can combine `--release-as` and `--prerelease` to generate a release. This is useful when publishing experimental feature(s).
+
+
+
+
+### Big Thanks
+
+Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homepage]
+
+[homepage]: https://saucelabs.com
 
 <hr />
 
