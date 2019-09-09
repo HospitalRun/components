@@ -44,3 +44,4 @@ jspm_packages
 package-lock.json
 storybook-static
 yarn.lock
+pnpm-lock.yaml
