@@ -21,7 +21,6 @@
     "lint": "prettier --write \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*\" \"test/**/*\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
-    "release": "standard-version",
     "docgen": "genDocs.sh"
   },
   "peerDependencies": {
