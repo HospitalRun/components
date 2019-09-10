@@ -51,5 +51,9 @@ module.exports = {
         message: ':bookmark: (release) ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
+    ["@semantic-release/npm", {
+      "npmPublish": false,
+    }
+    ],
   ],
 }
