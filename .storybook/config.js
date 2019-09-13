@@ -1,6 +1,5 @@
 import { configure, addParameters, addDecorator } from '@storybook/react'
-import { withInfo } from '@storybook/addon-info';
-import { themes } from '@storybook/theming'
+import { withInfo } from '@storybook/addon-info'
 
 addDecorator(withInfo)
 
@@ -8,6 +7,7 @@ addParameters({
   options: {
     name: 'HospitalRun',
     url: 'https://github.com/HospitalRun/components',
+    showPanel: false,
   },
 })
 
