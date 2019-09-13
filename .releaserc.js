@@ -50,7 +50,7 @@ module.exports = {
         assets: ['CHANGELOG.md', 'package.json', 'packages'],
         message: ':bookmark: (release) ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
-      '@semantic-release/npm',
     ],
+    '@semantic-release/npm',
   ],
 }

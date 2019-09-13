@@ -8,6 +8,8 @@ node_js:
 
 script:
   - npm run build
+after_script:
+  - npx semantic-release
 
 notifications:
   email:
