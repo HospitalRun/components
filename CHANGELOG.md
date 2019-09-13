@@ -1,3 +1,12 @@
+# [v0.1.5](https://github.com/HospitalRun/components/compare/v0.1.4...v0.1.5) (2019-09-13)
+
+## 🐛 Bug Fixes
+- [`dd82025`](https://github.com/HospitalRun/components/commit/dd82025)  (travis) Updates travis yaml 
+
+
+
+## [0.1.5](https://github.com/HospitalRun/components/compare/v0.1.4...v0.1.5) (2019-09-13)
+
 # [v0.1.4](https://github.com/HospitalRun/components/compare/v0.1.3...v0.1.4) (2019-09-13)
 
 ## 🐛 Bug Fixes
