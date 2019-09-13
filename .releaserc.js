@@ -44,6 +44,7 @@ module.exports = {
         changelogFile: 'CHANGELOG.md',
       },
     ],
+    '@semantic-release/npm',
     [
       '@semantic-release/git',
       {
@@ -51,6 +52,5 @@ module.exports = {
         message: ':bookmark: (release) ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
-    '@semantic-release/npm',
   ],
 }
