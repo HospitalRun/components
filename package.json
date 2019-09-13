@@ -18,7 +18,7 @@
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
     "lint": "prettier --write \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*\" \"test/**/*\"",
-    "coveralls": "tsdx test --coverage && cat ./tests/coverage/lcov.info | coveralls",
+    "coveralls": "tsdx test --coverage && cat ./coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
     "docgen": "genDocs.sh",
