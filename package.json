@@ -24,7 +24,8 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=16",
+    "bootstrap": "^4.3.1"
   },
   "husky": {
     "hooks": {
@@ -75,6 +76,7 @@
     "@types/storybook__react": "~4.0.2",
     "awesome-typescript-loader": "~5.2.1",
     "babel-loader": "~8.0.6",
+    "bootstrap": "^4.3.1",
     "commitizen": "^4.0.3",
     "commitlint-config-gitmoji": "^1.0.1",
     "cz-emoji": "^1.1.2",
