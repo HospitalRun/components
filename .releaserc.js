@@ -38,15 +38,9 @@ module.exports = {
       },
     ],
     [
-      '@semantic-release/changelog',
-      {
-        changelogFile: 'CHANGELOG.md',
-      },
-    ],
-    [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md', 'package.json', 'packages'],
+        assets: ['package.json', 'packages'],
         message: ':bookmark: (release) ${nextRelease.version} [skip ci]',
       },
     ],
