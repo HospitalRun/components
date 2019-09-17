@@ -49,7 +49,17 @@ module.exports = {
       '@semantic-release/git',
       {
         assets: ['CHANGELOG.md', 'package.json', 'packages'],
-        message: ':bookmark: (release) ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+        message: ':bookmark: (release) ${nextRelease.version} [skip ci]',
+      },
+    ],
+    [
+      '@semantic-release/github',
+      {
+        failComment: false,
+        failTitle: false,
+        labels: false,
+        releasedLabels: false,
+        successComment: false,
       },
     ],
   ],
