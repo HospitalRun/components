@@ -37,13 +37,6 @@ module.exports = {
         },
       },
     ],
-    [
-      '@semantic-release/git',
-      {
-        assets: ['package.json', 'packages'],
-        message: ':bookmark: (release) ${nextRelease.version} [skip ci]',
-      },
-    ],
     '@semantic-release/github',
     '@semantic-release/npm',
   ],
