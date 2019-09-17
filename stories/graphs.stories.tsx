@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { LineGraph, PieGraph, BarGraph } from '@hospitalrun-org/components'
+import { LineGraph, PieGraph, BarGraph } from '@hospitalrun/components'
 
 storiesOf('Graphs', module)
   .addParameters({

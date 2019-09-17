@@ -30,7 +30,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "paths": {
-      "@hospitalrun-org/components": ["src/"]
+      "@hospitalrun/components": ["src/"]
     }
   }
 }
