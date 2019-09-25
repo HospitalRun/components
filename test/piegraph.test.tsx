@@ -1,11 +1,10 @@
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import { mount } from 'enzyme'
 import { PieGraph } from '../src/components/Graph'
 
 describe('PieGraph', () => {
   it('PieGraph renders itself without crashing', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(
+    const wrapper = mount(
       <PieGraph
         title="Pie Graph"
         datasets={[
@@ -20,8 +19,8 @@ describe('PieGraph', () => {
           },
         ]}
       />,
-      div,
     )
-    ReactDOM.unmountComponentAtNode(div)
+
+    expect(wrapper.find(HTMLCanvasElement)).toHaveLength(1)
   })
 })
