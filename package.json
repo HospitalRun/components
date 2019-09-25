@@ -75,6 +75,7 @@
     "@storybook/react": "~5.1.11",
     "@storybook/theming": "~5.1.11",
     "@types/chart.js": "~2.8.2",
+    "@types/enzyme": "^3.10.3",
     "@types/jest": "~24.0.17",
     "@types/react": "~16.9.1",
     "@types/react-dom": "~16.8.5",
@@ -87,6 +88,8 @@
     "commitlint-config-cz": "^0.12.1",
     "coveralls": "^3.0.6",
     "cz-conventional-changelog": "^3.0.2",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "husky": "~3.0.5",
     "jest-canvas-mock": "~2.1.1",
     "lint-staged": "~9.2.5",
@@ -111,7 +114,8 @@
   },
   "jest": {
     "setupFiles": [
-      "jest-canvas-mock"
+      "jest-canvas-mock",
+      "<rootDir>test-setup.ts"
     ]
   }
 }
