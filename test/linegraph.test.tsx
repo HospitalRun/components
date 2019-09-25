@@ -1,11 +1,10 @@
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import { mount } from 'enzyme'
 import { LineGraph } from '../src/components/Graph'
 
 describe('LineGraph', () => {
   it('LineGraph renders itself without crashing', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(
+    const wrapper = mount(
       <LineGraph
         title="Test Graph"
         datasets={[
@@ -19,8 +18,8 @@ describe('LineGraph', () => {
         xAxes={[{ label: 'Months', type: 'category' }]}
         yAxes={[{ label: 'Numbers', type: 'linear' }]}
       />,
-      div,
     )
-    ReactDOM.unmountComponentAtNode(div)
+
+    expect(wrapper.find(HTMLCanvasElement)).toHaveLength(1)
   })
 })
