@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import { Icon } from '../src/components/Icon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-describe('Spinner', () => {
+describe('Icon', () => {
   it('Add Icon renders itself without crashing', () => {
     const addIconWrapper = shallow(<Icon icon="add" />)
     const fontAwesomeIcon = addIconWrapper.find(FontAwesomeIcon)
