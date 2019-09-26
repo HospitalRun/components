@@ -105,6 +105,10 @@
     "typescript": "~3.5.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-regular-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "chart.js": "~2.8.0",
     "formik": "~1.5.8",
     "moment": "~2.24.0",
