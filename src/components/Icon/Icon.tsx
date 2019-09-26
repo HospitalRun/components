@@ -3,10 +3,7 @@ import { IconType } from './interfaces'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
-interface Props {
-  icon: IconType
-}
-
+// maps between hospital run icon names and font awesome
 const iconMap = {
   add: 'plus',
   admin: 'user-shield',
@@ -33,6 +30,14 @@ function getFontAwesomeIcon(icon: IconType): string {
   return iconMap[icon]
 }
 
+interface Props {
+  /** The type of icon to display */
+  icon: IconType
+}
+
+/**
+ * Icons provide contextual clues to users to make it easier to recognize functionality
+ */
 class Icon extends Component<Props, {}> {
   render() {
     return <FontAwesomeIcon icon={getFontAwesomeIcon(this.props.icon) as IconProp} />
