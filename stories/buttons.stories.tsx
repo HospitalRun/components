@@ -73,3 +73,15 @@ storiesOf('Buttons', module)
       </Button>
     </div>
   ))
+  .add('Button with Icon', () => (
+    <div>
+      <Button color="primary" icon="patient">
+        Button with Icon on Left
+      </Button>
+      <br />
+      <br />
+      <Button color="primary" icon="patient" iconLocation="right">
+        Button with Icon on Right
+      </Button>
+    </div>
+  ))
