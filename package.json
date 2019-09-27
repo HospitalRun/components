@@ -16,7 +16,7 @@
     "dev": "tsdx watch",
     "prebuild": "npm run test",
     "build": "tsdx build",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "test": "tsdx test --env=jsdom",
     "lint": "prettier --write \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*\" \"test/**/*\"",
     "coveralls": "tsdx test --coverage && cat ./coverage/lcov.info | coveralls",
@@ -26,9 +26,9 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "bootstrap": "~4.3.1",
-    "react": ">=16",
-    "react-bootstrap": "~1.0.0-beta.11"
+    "bootstrap": "^4.3.1",
+    "react": "^16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12"
   },
   "husky": {
     "hooks": {
@@ -107,15 +107,15 @@
     "typescript": "~3.5.3"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "chart.js": "~2.8.0",
-    "formik": "~1.5.8",
-    "moment": "~2.24.0",
-    "react-confirm-alert": "~2.4.1",
-    "react-spinners": "~0.6.1",
-    "react-toastify": "~5.3.2"
+    "@fortawesome/fontawesome-svg-core": "~1.2.25",
+    "@fortawesome/free-solid-svg-icons": "~5.11.2",
+    "@fortawesome/react-fontawesome": "~0.1.4",
+    "chart.js": "^2.8.0",
+    "formik": "^1.5.8",
+    "moment": "^2.24.0",
+    "react-confirm-alert": "^2.4.1",
+    "react-spinners": "^0.6.1",
+    "react-toastify": "^5.3.2"
   },
   "jest": {
     "setupFiles": [
