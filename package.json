@@ -16,7 +16,7 @@
     "dev": "tsdx watch",
     "prebuild": "npm run test",
     "build": "tsdx build",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "test": "tsdx test --env=jsdom",
     "lint": "prettier --write \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*\" \"test/**/*\"",
     "coveralls": "tsdx test --coverage && cat ./coverage/lcov.info | coveralls",
