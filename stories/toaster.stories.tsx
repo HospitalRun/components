@@ -10,6 +10,8 @@ storiesOf('Toaster', module)
   .addParameters({
     info: {
       inline: true,
+      propTables: [Toast, Toaster],
+      propTablesExclude: [Button],
     },
   })
   .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
