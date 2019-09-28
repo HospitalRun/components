@@ -13,6 +13,7 @@
     "url": "https://github.com/HospitalRun/components.git"
   },
   "scripts": {
+    "commit": "npx git-cz",
     "dev": "tsdx watch",
     "prebuild": "npm run test",
     "build": "tsdx build",
