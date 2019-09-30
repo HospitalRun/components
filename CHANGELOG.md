@@ -1,3 +1,11 @@
+# [0.4.0](https://github.com/HospitalRun/components/compare/v0.3.0...v0.4.0) (2019-09-30)
+
+
+### Features
+
+* **badges:** adds badges ([9b52c43](https://github.com/HospitalRun/components/commit/9b52c43)), closes [#22](https://github.com/HospitalRun/components/issues/22)
+* **pills:** adds pills ([e6a4fd6](https://github.com/HospitalRun/components/commit/e6a4fd6)), closes [#22](https://github.com/HospitalRun/components/issues/22)
+
 # [0.3.0](https://github.com/HospitalRun/components/compare/v0.2.0...v0.3.0) (2019-09-30)
 
 
