@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/HospitalRun/components/compare/v0.2.0...v0.3.0) (2019-09-30)
+
+
+### Features
+
+* **toolchain:** adds commit script ([6639d28](https://github.com/HospitalRun/components/commit/6639d28))
+
 # [0.2.0](https://github.com/HospitalRun/components/compare/v0.1.8...v0.2.0) (2019-09-27)
 
 

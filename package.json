@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "module": "dist/components.esm.js",
   "typings": "dist/index.d.ts",
