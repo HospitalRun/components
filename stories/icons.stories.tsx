@@ -9,6 +9,7 @@ storiesOf('Icons', module)
       inline: true,
     },
   })
+  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Icon Set', () => (
     <div>
       <span>Add: </span>

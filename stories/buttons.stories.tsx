@@ -8,6 +8,7 @@ storiesOf('Buttons', module)
       inline: true,
     },
   })
+  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Button', () => (
     <div>
       <Button color="primary">Primary</Button>
