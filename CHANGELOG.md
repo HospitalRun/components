@@ -1,3 +1,10 @@
+## [0.4.3](https://github.com/HospitalRun/components/compare/v0.4.2...v0.4.3) (2019-10-01)
+
+
+### Bug Fixes
+
+* **toolchain:** removes storybook-build after tests ([0099d91](https://github.com/HospitalRun/components/commit/0099d91))
+
 ## [0.4.2](https://github.com/HospitalRun/components/compare/v0.4.1...v0.4.2) (2019-10-01)
 
 
