@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Badge as BootstrapBadge } from 'react-bootstrap'
+import BootstrapBadge from 'react-bootstrap/Badge'
 
 interface Props {
   /** Defines the color of the badge. Defaults to primary. */

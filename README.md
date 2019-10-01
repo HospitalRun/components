@@ -35,6 +35,7 @@ npm install -D node-sass
 ```
 
 # Contributing
+
 Contributions are always welcome. Before contributing please read our [contributor guide](https://github.com/HospitalRun/components/blob/master/.github/CONTRIBUTING.md).
 
 1. Fork this repository to your own GitHub account and then clone it to your local device
@@ -43,7 +44,6 @@ Contributions are always welcome. Before contributing please read our [contribut
 4. Run `npm run dev` to build and watch for code changes
 5. In another window, run storybook `npm run storybook`. Story book should open in a your default browser at localhost:6006.
 6. You will be able to test components with storybook and enjoy live reloading!
-
 
 ## How to commit
 

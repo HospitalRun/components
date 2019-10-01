@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Badge } from 'react-bootstrap'
+import Badge from 'react-bootstrap/Badge'
 
 interface Props {
   /** Defines the color of the pill. Defaults to primary. */
