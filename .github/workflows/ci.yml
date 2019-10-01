@@ -1,4 +1,4 @@
-name: GitHub Actons CI
+name: GitHub CI
 
 on: [push, pull_request]
 
