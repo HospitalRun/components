@@ -19,7 +19,7 @@
     "build": "tsdx build",
     "prepublishOnly": "npm run build",
     "pretest": "npm run lint && npm run build",
-    "test": "tsdx test --env=jsdom && npm run build-storybook -c .storybook",
+    "test": "tsdx test --env=jsdom && npm run build-storybook",
     "lint": "prettier --write --loglevel warn \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\" \"stories/**/*.{ts,tsx}\"",
     "coveralls": "tsdx test --coverage && cat ./coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 6006",
