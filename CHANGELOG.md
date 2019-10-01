@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/HospitalRun/components/compare/v0.4.0...v0.4.1) (2019-10-01)
+
+
+### Bug Fixes
+
+* **imports:** reduces bundle size using specific modules imports ([3097e19](https://github.com/HospitalRun/components/commit/3097e19))
+
 # [0.4.0](https://github.com/HospitalRun/components/compare/v0.3.0...v0.4.0) (2019-09-30)
 
 
