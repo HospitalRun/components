@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button as BootstrapButton } from 'react-bootstrap'
+import BootstrapButton from 'react-bootstrap/Button'
 import { ButtonType } from './interfaces'
 import { IconType } from '../Icon/interfaces'
 import { Icon } from '../Icon'
