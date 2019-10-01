@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { Pill } from '../src/components/Pill'
+import { Pill } from '../dist'
 import { Badge } from 'react-bootstrap'
 
 describe('Pill', () => {

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as Spinners from 'react-spinners'
 import { shallow } from 'enzyme'
-import { Spinner } from '../src/components/Spinner'
+import { Spinner } from '../dist'
 
 describe('Spinner', () => {
   it('Spinner renders itself without crashing', () => {

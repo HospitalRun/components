@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
-import { BarGraph } from '../src/components/Graph'
+import { BarGraph } from '../dist'
 
 describe('BarGraph', () => {
   it('BarGraph renders itself without crashing', () => {

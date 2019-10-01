@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { Badge } from '../src/components/Badge'
+import { Badge } from '../dist'
 import { Badge as BootstrapBadge } from 'react-bootstrap'
 
 describe('Badge', () => {

@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { Toast, Toaster } from '@hospitalrun/components'
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 storiesOf('Toaster', module)
   .addParameters({

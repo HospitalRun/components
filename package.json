@@ -2,6 +2,7 @@
   "name": "@hospitalrun/components",
   "version": "0.4.1",
   "license": "MIT",
+  "main": "dist",
   "module": "dist/components.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -15,13 +16,11 @@
   "scripts": {
     "commit": "npx git-cz",
     "dev": "tsdx watch",
-    "prebuild": "npm run test",
     "build": "tsdx build",
-    "prepublish": "npm run build",
-    "pretest": "npm run lint",
     "prepublishOnly": "npm run build",
-    "test": "tsdx test --env=jsdom",
-    "lint": "prettier --write \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*\" \"test/**/*\"",
+    "pretest": "npm run lint && npm run build",
+    "test": "tsdx test --env=jsdom && npm run build-storybook -c .storybook",
+    "lint": "prettier --write --loglevel warn \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\" \"stories/**/*.{ts,tsx}\"",
     "coveralls": "tsdx test --coverage && cat ./coverage/lcov.info | coveralls",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
@@ -128,5 +127,26 @@
       "jest-canvas-mock",
       "<rootDir>test-setup.ts"
     ]
+  },
+  "eslint": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "tsconfigRootDir": "./",
+      "createDefaultProgram": true
+    },
+    "extends": [
+      "react-app",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+      "prettier/@typescript-eslint"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "off",
+      "@typescript-eslint/no-explicit-any": "off"
+    }
   }
 }

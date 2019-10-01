@@ -2,7 +2,6 @@ import * as React from 'react'
 import { ToastContainer, toast, Slide } from 'react-toastify'
 import { ToastProps, ToasterProps } from './interfaces'
 import { titleWithMessage, titleWithoutMessage } from './components'
-import 'react-toastify/dist/ReactToastify.min.css'
 
 export const Toast: any = (
   type: ToastProps['type'],

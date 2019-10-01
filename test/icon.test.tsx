@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { Icon } from '../src/components/Icon'
+import { Icon } from '../dist'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 describe('Icon', () => {
