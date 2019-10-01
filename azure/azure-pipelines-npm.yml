@@ -7,8 +7,6 @@ jobs:
       matrix:
         node_12_x:
           node_version: 12.x
-        node_11_x:
-          node_version: 11.x
         node_10_x:
           node_version: 10.x
       maxParallel: 5
@@ -19,8 +17,8 @@ jobs:
           versionSpec: $(node_version)
         displayName: Install Node.js
 
-      - bash: yarn install
+      - bash: npm i
         displayName: Install dependencies
 
-      - bash: yarn build
+      - bash: npm run build
         displayName: Lint and Build
