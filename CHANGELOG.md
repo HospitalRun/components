@@ -1,3 +1,11 @@
+## [0.4.2](https://github.com/HospitalRun/components/compare/v0.4.1...v0.4.2) (2019-10-01)
+
+
+### Bug Fixes
+
+* **toolchain:** fixes storybook build ([d88f8c8](https://github.com/HospitalRun/components/commit/d88f8c8))
+* **toolchain:** fixes tsconfig, eslint, prettier and tsdx ([f130a9e](https://github.com/HospitalRun/components/commit/f130a9e))
+
 ## [0.4.1](https://github.com/HospitalRun/components/compare/v0.4.0...v0.4.1) (2019-10-01)
 
 
