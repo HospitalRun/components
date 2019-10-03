@@ -36,6 +36,10 @@
     "moduleResolution": "node",
     "jsx": "react",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@hospitalrun/components": ["src/"]
+    }
   }
 }
