@@ -1,3 +1,10 @@
+## [0.4.4](https://github.com/HospitalRun/components/compare/v0.4.3...v0.4.4) (2019-10-04)
+
+
+### Bug Fixes
+
+* **toolchain:** fixes storybook static build ([a72d9fb](https://github.com/HospitalRun/components/commit/a72d9fb))
+
 ## [0.4.3](https://github.com/HospitalRun/components/compare/v0.4.2...v0.4.3) (2019-10-01)
 
 
