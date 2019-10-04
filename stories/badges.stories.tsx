@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Badge } from '../src'
+import { Badge } from '@hospitalrun/components'
 
 storiesOf('Badge', module)
   .addParameters({

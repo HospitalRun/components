@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Spinner } from '../src'
+import { Spinner } from '@hospitalrun/components'
 
 storiesOf('Spinner', module)
   .addParameters({

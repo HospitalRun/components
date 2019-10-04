@@ -44,5 +44,3 @@ package-lock.json
 storybook-static
 yarn.lock
 pnpm-lock.yaml
-/stories/**/*.d.ts
-/src/**/*.d.ts
