@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Button } from '@hospitalrun/components'
+import { Button } from '../src'
 
 storiesOf('Buttons', module)
   .addParameters({

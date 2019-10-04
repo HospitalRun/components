@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Confirm } from '@hospitalrun/components'
+import { Confirm } from '../src'
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-confirm-alert/src/react-confirm-alert.css'

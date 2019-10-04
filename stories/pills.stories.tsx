@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Pill } from '@hospitalrun/components'
+import { Pill } from '../src'
 
 storiesOf('Pill', module)
   .addParameters({
