@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { Icon } from '@hospitalrun/components'
+import { Icon } from '../src'
 
 storiesOf('Icons', module)
   .addParameters({
