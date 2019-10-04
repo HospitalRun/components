@@ -1,3 +1,13 @@
+## [0.4.5](https://github.com/HospitalRun/components/compare/v0.4.4...v0.4.5) (2019-10-04)
+
+
+### Bug Fixes
+
+* **toolchain:** adds custom tsconfig for storybook build ([951c5c0](https://github.com/HospitalRun/components/commit/951c5c0)), closes [#55](https://github.com/HospitalRun/components/issues/55)
+* **toolchain:** fixes issue with storybook not properly building ([70ce357](https://github.com/HospitalRun/components/commit/70ce357)), closes [#55](https://github.com/HospitalRun/components/issues/55)
+* **toolchain:** fixes issue with storybook not properly building ([b6708ae](https://github.com/HospitalRun/components/commit/b6708ae)), closes [#55](https://github.com/HospitalRun/components/issues/55)
+* **toolchain:** reverts mapped path due to netlify crash ([4f2d1fc](https://github.com/HospitalRun/components/commit/4f2d1fc)), closes [#55](https://github.com/HospitalRun/components/issues/55)
+
 ## [0.4.4](https://github.com/HospitalRun/components/compare/v0.4.3...v0.4.4) (2019-10-04)
 
 
