@@ -1,0 +1,36 @@
+import * as React from 'react'
+import { mount, shallow } from 'enzyme'
+import FormCheck from 'react-bootstrap/FormCheck'
+import * as sinon from 'sinon'
+import { Switch } from '../dist'
+
+describe('Switch', () => {
+  it('Switch renders itself without crashing', () => {
+    const switchWrapper = mount(<Switch id="id" label="Switch" />)
+    expect(switchWrapper.text()).toEqual('Switch')
+    expect(switchWrapper.props().disabled).toBeFalsy()
+    expect(switchWrapper.props().name).toBeUndefined()
+    expect(switchWrapper.props().onChange).toBeUndefined()
+    expect(switchWrapper.find(FormCheck)).toHaveLength(1)
+  })
+
+  it('Switch should allow for the use of a name', () => {
+    const switchWrapper = shallow(<Switch id="switch" label="Switch" name="test" />)
+    const bootstrapSwitch = switchWrapper.find(FormCheck)
+    expect(bootstrapSwitch.props().name).toEqual('test')
+  })
+
+  it('Switch should render be rendered disabled when disabled prop is used', () => {
+    const wrapper = mount(<Switch id="switch" label="Switch" disabled />)
+    const input = wrapper.find(HTMLInputElement)
+    expect(input.prop('disabled')).toBe(true)
+  })
+
+  it('Switch handle the change event', () => {
+    const onChange = sinon.spy()
+    const wrapper = mount(<Switch id="switch" label="switch" onChange={onChange} />)
+    const input = wrapper.find(HTMLInputElement)
+    input.simulate('change')
+    expect(onChange).toHaveProperty('callCount', 1)
+  })
+})
