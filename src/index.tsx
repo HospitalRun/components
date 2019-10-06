@@ -11,3 +11,5 @@ export * from './components/Icon'
 export * from './components/Badge'
 export * from './components/Pill'
 export * from './components/Checkbox'
+export * from './components/TextField'
+
