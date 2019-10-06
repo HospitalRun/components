@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/HospitalRun/components/compare/v0.4.5...v0.5.0) (2019-10-06)
+
+
+### Features
+
+* **text:** adds text field component ([d4b3928](https://github.com/HospitalRun/components/commit/d4b3928))
+
 ## [0.4.5](https://github.com/HospitalRun/components/compare/v0.4.4...v0.4.5) (2019-10-04)
 
 

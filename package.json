@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "0.4.5",
+  "version": "0.5.0",
   "license": "MIT",
   "main": "dist",
   "module": "dist/components.esm.js",
