@@ -1,0 +1,29 @@
+import * as React from 'react'
+import { shallow } from 'enzyme'
+import { Alert } from '../dist'
+import BootstrapAlert from 'react-bootstrap/Alert'
+
+describe('Alert', () => {
+  it('Alert renders itself without crashing', () => {
+    const alertWrapper = shallow(<Alert title="Test Alert" />)
+    expect(alertWrapper.find(BootstrapAlert)).toHaveLength(1)
+  })
+
+  it('Alert defaults color to primary', () => {
+    const alertWrapper = shallow(<Alert />)
+    const bootstrapBadge = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapBadge.props().variant).toEqual('primary')
+  })
+
+  it('Alert defaults label to "Dismiss"', () => {
+    const alertWrapper = shallow(<Alert dismissable />)
+    const bootstrapBadge = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapBadge.props().closeLabel).toEqual('Dismiss')
+  })
+
+  it('Alert can change colors', () => {
+    const alertWrapper = shallow(<Alert color="secondary" />)
+    const bootstrapBadge = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapBadge.props().variant).toEqual('secondary')
+  })
+})
