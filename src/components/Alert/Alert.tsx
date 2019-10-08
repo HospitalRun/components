@@ -1,19 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component, ReactNode } from 'react'
 import BootstrapAlert from 'react-bootstrap/Alert'
-import Button from 'react-bootstrap/Button'
+import { Button } from '../Button'
 
 interface Props {
-  /** Defines the color of the alert. Defaults to primary.
+  /**
+   * Defines the color of the alert. Defaults to primary.
    * @default "primary"
-   **/
+   */
   color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
   /** Defines the title of the alert.*/
   title?: string
   /** Defines the message of the alert.*/
-  message?: string
-  /** Defines if the alert should be dismissable. Defaults to false.*/
-  dismissable?: boolean
-  /** Defines the label of the close button if the alert is dismissable.
+  message?: ReactNode
+  /** Defines if the alert should be dismissible. Defaults to false.*/
+  dismissible?: boolean
+  /**
+   * Defines the label of the close button if the alert is dismissible.
    * @default "Dismiss"
    **/
   closeLabel?: string
@@ -41,7 +43,7 @@ class Alert extends Component<Props, State> {
       color = 'primary',
       title,
       message,
-      dismissable = false,
+      dismissible = false,
       closeLabel = 'Dismiss',
     } = this.props
 
@@ -50,19 +52,16 @@ class Alert extends Component<Props, State> {
         <BootstrapAlert
           variant={color}
           onClose={() => this.setState({ show: false })}
-          dismissible={dismissable}
+          dismissible={dismissible}
           closeLabel={closeLabel}
         >
           {title && <BootstrapAlert.Heading>{title}</BootstrapAlert.Heading>}
           {message && <div>{message}</div>}
-          {dismissable && (
+          {dismissible && (
             <>
               <hr />
               <div className="d-flex justify-content-end">
-                <Button
-                  onClick={() => this.setState({ show: false })}
-                  variant={`outline-${color}` as Props['color']}
-                >
+                <Button outlined onClick={() => this.setState({ show: false })} color={color}>
                   {closeLabel}
                 </Button>
               </div>{' '}

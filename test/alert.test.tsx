@@ -16,13 +16,21 @@ describe('Alert', () => {
   })
 
   it('Alert defaults label to "Dismiss"', () => {
-    const alertWrapper = shallow(<Alert dismissable />)
+    const alertWrapper = shallow(<Alert dismissible />)
     const bootstrapBadge = alertWrapper.find(BootstrapAlert)
     expect(bootstrapBadge.props().closeLabel).toEqual('Dismiss')
   })
 
   it('Alert can change colors', () => {
     const alertWrapper = shallow(<Alert color="secondary" />)
+    const bootstrapBadge = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapBadge.props().variant).toEqual('secondary')
+  })
+
+  it('Alert can display TSX message', () => {
+    const alertWrapper = shallow(
+      <Alert color="secondary" message={<strong>a custom message</strong>} />,
+    )
     const bootstrapBadge = alertWrapper.find(BootstrapAlert)
     expect(bootstrapBadge.props().variant).toEqual('secondary')
   })

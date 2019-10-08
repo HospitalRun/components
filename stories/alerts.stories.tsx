@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { storiesOf } from '@storybook/react'
-
 import { Alert } from '../src'
 
 storiesOf('Alert', module)
@@ -20,15 +18,19 @@ storiesOf('Alert', module)
       ></Alert>
       <Alert color="secondary" title="This is an alert with only the title"></Alert>
       <Alert color="success" message="This is an alert with only the message"></Alert>
-      <Alert color="danger" title="This alert is dismissable" dismissable></Alert>
+      <Alert color="danger" title="This alert is dismissible" dismissible></Alert>
       <Alert
         color="warning"
-        title="This alert is dismissable with a custom label"
-        dismissable
+        title="This alert is dismissible with a custom label"
+        dismissible
         closeLabel="Close me"
       ></Alert>
       <Alert color="info" title="This is an info alert"></Alert>
       <Alert color="light" title="This is a light alert"></Alert>
-      <Alert color="dark" title="This is a dark alert"></Alert>
+      <Alert
+        color="dark"
+        title="This is a dark alert"
+        message={<strong>With a strong message</strong>}
+      ></Alert>
     </div>
   ))
