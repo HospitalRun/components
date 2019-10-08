@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Alert } from '@hospitalrun/components'
+import { Alert } from '../src'
 
 storiesOf('Alert', module)
   .addParameters({
