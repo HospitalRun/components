@@ -2,7 +2,7 @@ import * as React from 'react'
 import { mount, shallow } from 'enzyme'
 import FormCheck from 'react-bootstrap/FormCheck'
 import * as sinon from 'sinon'
-import { Switch } from '../dist'
+import { Switch } from '../src'
 
 describe('Switch', () => {
   it('Switch renders itself without crashing', () => {
