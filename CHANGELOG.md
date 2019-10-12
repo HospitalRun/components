@@ -1,3 +1,18 @@
+# [0.6.0](https://github.com/HospitalRun/components/compare/v0.5.0...v0.6.0) (2019-10-12)
+
+
+### Bug Fixes
+
+* **alerts:** adds module export ([b9f9487](https://github.com/HospitalRun/components/commit/b9f9487))
+* **alerts:** changes path to components in alert story ([9a41e56](https://github.com/HospitalRun/components/commit/9a41e56))
+* **alerts:** little fixes ([75cf927](https://github.com/HospitalRun/components/commit/75cf927))
+* **test:** replaces dist with src in tests ([dddf357](https://github.com/HospitalRun/components/commit/dddf357))
+
+
+### Features
+
+* **alerts:** adds Alert component ([135a750](https://github.com/HospitalRun/components/commit/135a750))
+
 # [0.5.0](https://github.com/HospitalRun/components/compare/v0.4.5...v0.5.0) (2019-10-06)
 
 
