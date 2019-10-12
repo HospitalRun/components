@@ -10,6 +10,6 @@ export * from './components/Button'
 export * from './components/Icon'
 export * from './components/Badge'
 export * from './components/Pill'
-export * from './components/TextField
+export * from './components/TextField'
 export * from './components/Radio'
 export * from './components/Alert'
