@@ -7,23 +7,17 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { ReplaceProps, BsPrefixProps } from 'react-bootstrap/helpers'
 
 import { Button } from '../../../src'
+import { NavLink, Brand } from './interfaces'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */
-  bg?: 'light' | 'dark'
+  bg?: string
   /** Determines the letters color. It should be combined with the background color (bg) */
   variant?: 'light' | 'dark'
-  /** Determines the links names and their path. The array is 2 dimensions.
-   * The first array (Arr[i]) must contain the links data individually by link.
-   * The first element of the second arry (Arr[i][0]) must be the link name.
-   * The second element of the second arry (Arr[i][1]) must be the link path.
-   * The third and all the even numbers of the second arry (Arr[i][2], Arr[i][4], ...) must be the sub-link name, if there is any.
-   * The forth and all the odds numbers of the second arry (Arr[i][3], Arr[i][5], ...) must be the sub-link path, if there is any. */
-  links: string[][]
+  /** Determines the links names, theirs onClick methods and paths. It has children array which contain links to be used on a dropdown. */
+  navLinks: NavLink[]
   /** Determines the hospital/clinic name to be shown at the navbar */
-  brand: string
-  /** Determines the hospital/clinic icon/image/text which will be shown at the navbar */
-  src?: string
+  brand: Brand
   /** Defines the button variant. By default is primary */
   buttonColor?:
     | 'primary'
@@ -46,24 +40,19 @@ interface Props extends React.Props<any> {
  * Used to redirect users to the main topics.
  */
 class Navbar extends Component<Props, any> {
-  createDropdwonElem = (linkEle: any, index: any) => {
-    const subLink = []
-    for (let i = 2; i < linkEle.length - 1; i += 2) {
-      subLink.push(
-        <NavDropdown.Item href={linkEle[i + 1]} key={index * index * i}>
-          {linkEle[i]}
-        </NavDropdown.Item>,
-      )
-    }
-    return subLink
-  }
-
   render() {
     const buttonColor = this.props.buttonColor ? this.props.buttonColor : 'primary'
     let img
 
-    if (this.props.src) {
-      img = <img src={this.props.src} width="28" height="28" className="d-inline-block align-top" />
+    if (this.props.brand.src) {
+      img = (
+        <img
+          src={this.props.brand.src}
+          width="28"
+          height="28"
+          className="d-inline-block align-top"
+        />
+      )
     } else {
       img = ''
     }
@@ -73,20 +62,38 @@ class Navbar extends Component<Props, any> {
         bg={this.props.bg ? this.props.bg : 'dark'}
         variant={this.props.variant ? this.props.variant : 'dark'}
       >
-        <NavbarRB.Brand href="/">
+        {/* <NavbarRB.Brand href={this.props.brand.href}>                       if this method is used, onClick: (event: React.MouseEvent<HTMLElement>) => void on the interface
+          <div onClick={this.props.brand.onClick.bind(this)} >
           {img}
-          {` ${this.props.brand}`}
+          {` ${this.props.brand.label}`}
+          </div>
+        </NavbarRB.Brand> */}
+
+        <NavbarRB.Brand href={this.props.brand.href} onClick={this.props.brand.onClick.bind(this)}>
+          {img}
+          {` ${this.props.brand.label}`}
         </NavbarRB.Brand>
+
         <NavbarRB.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            {this.props.links.map((link, index) => {
-              return link.length == 2 ? (
-                <Nav.Link href={link[1]} key={index}>
-                  {link[0]}
+            {this.props.navLinks.map((link, index) => {
+              return link.children.length == 0 ? (
+                <Nav.Link onClick={link.onClick} key={index}>
+                  {link.label}
                 </Nav.Link>
               ) : (
-                <NavDropdown title={link[0]} id="collasible-nav-dropdown" key={index}>
-                  {this.createDropdwonElem(link, index)}
+                <NavDropdown title={link.label} id="collasible-nav-dropdown" key={index}>
+                  {link.children.map((subLink, i) => {
+                    return (
+                      <NavDropdown.Item
+                        href={subLink.href ? subLink.href : ''}
+                        key={i}
+                        onClick={subLink.onClick}
+                      >
+                        {subLink.label}
+                      </NavDropdown.Item>
+                    )
+                  })}
                 </NavDropdown>
               )
             })}

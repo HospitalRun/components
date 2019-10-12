@@ -14,35 +14,42 @@ storiesOf('Navbar', module)
   .add('Navbar', () => (
     <div>
       <Navbar
-        brand="Hospital"
+        brand={{
+          label: 'Hospital',
+          onClick: () => {
+            Toast('success', 'Brand button clicked!!', 'Success')
+          },
+        }}
         buttonColor="success"
         onSeachButtonClick={() => {
-          Toast('success', 'Button Clicked!!', 'Success')
+          Toast('success', 'Button clicked!!', 'Success')
         }}
         onSearchTextBoxChange={() => {
           Toast('success', 'Search box changed!!', 'Success')
         }}
-        links={[
-          ['Elem1', '/elem1Path'],
-          ['Elem2', '/elem2Path'],
-          [
-            'Elem3',
-            '/elem3Path',
-            'Elem3Sub1',
-            '/sub1Path',
-            'Elem3Sub2',
-            '/sub2Path',
-            'Elem3Sub3',
-            'sub3Path',
-          ],
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {
+              Toast('success', 'NavLink clicked!!', 'Success')
+            },
+            children: [],
+          },
         ]}
       />
 
       <br />
 
       <Navbar
-        brand="HospitalRun"
-        src="https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png"
+        brand={{
+          label: 'HospitalRun',
+          href: '/',
+          src:
+            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          onClick: () => {
+            Toast('success', 'Brand button clicked!!', 'Success')
+          },
+        }}
         bg="light"
         variant="light"
         onSeachButtonClick={() => {
@@ -51,7 +58,36 @@ storiesOf('Navbar', module)
         onSearchTextBoxChange={() => {
           Toast('success', 'Search box changed!!', 'Success')
         }}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Dropdown',
+            onClick: () => {
+              Toast('success', 'NavLink clicked!!', 'Success')
+            },
+            children: [
+              {
+                label: 'Sublink1',
+                onClick: () => {
+                  Toast('success', 'Sublink1 clicked!!', 'Success')
+                },
+                href: '/somepath',
+              },
+              {
+                label: 'Sublink2',
+                onClick: () => {
+                  Toast('success', 'Sublink2 clicked!!', 'Success')
+                },
+              },
+            ],
+          },
+          {
+            label: 'Link',
+            onClick: () => {
+              Toast('success', 'NavLink clicked!!', 'Success')
+            },
+            children: [],
+          },
+        ]}
       />
       <br />
 

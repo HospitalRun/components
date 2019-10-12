@@ -10,10 +10,19 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
@@ -25,10 +34,19 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
@@ -40,59 +58,82 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
     expect(bootstrapNavbar.props().variant).toEqual('dark')
   })
 
-  it('Navbar links show the exactly links as when it passed on links prop', () => {
+  it('Navbar links show the exactly links as when it passed on links prop and Navbar dropdown will not be shown', () => {
     const onButtonClick = sinon.spy()
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path']]}
+        navLinks={[
+          {
+            label: 'Elem1',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const bootstrapNavbarLink = NavbarWrapper.find(Nav.Link)
     expect(bootstrapNavbarLink.text()).toEqual('Elem1')
+
+    const bootstrapNavDropdown = NavbarWrapper.find(NavDropdown)
+    expect(bootstrapNavDropdown).toHaveLength(0)
   })
+
+  //rest
 
   it('Navbar dropdown shows the exactly same links as when it passed on links prop', () => {
     const onButtonClick = sinon.spy()
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path', 'A1', '/patha1']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [
+              {
+                label: 'A1',
+                onClick: () => {},
+                href: '/somepath',
+              },
+            ],
+          },
+        ]}
       />,
     )
     const bootstrapNavDropdown = NavbarWrapper.find(NavDropdown.Item)
     expect(bootstrapNavDropdown.text()).toEqual('A1')
-  })
-
-  it('Navbar dropdown will not show when it not passed on links prop', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
-    const NavbarWrapper = shallow(
-      <Navbar
-        brand="Test"
-        onSeachButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path']]}
-      />,
-    )
-    const bootstrapNavDropdown = NavbarWrapper.find(NavDropdown)
-    expect(bootstrapNavDropdown).toHaveLength(0)
   })
 
   it('Navbar brand shows the exactly same text as when it passed on brand prop', () => {
@@ -100,10 +141,19 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const brand = NavbarWrapper.find(NavBarRB.Brand)
@@ -115,11 +165,20 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
-        src="anysource"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+          src: 'anysource',
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const img = NavbarWrapper.find('img')
@@ -131,10 +190,19 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const img = NavbarWrapper.find('img')
@@ -146,11 +214,20 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         buttonColor="secondary"
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const button = NavbarWrapper.find(Button)
@@ -162,11 +239,20 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         variant="light"
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
@@ -178,11 +264,20 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         bg="light"
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
@@ -194,10 +289,19 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     NavbarWrapper.find(Button).simulate('click')
@@ -209,10 +313,19 @@ describe('Navbar', () => {
     const onTextBoxChange = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand="Test"
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
         onSeachButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
-        links={[['Elem1', '/elem1Path'], ['Elem2', '/elem2Path']]}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
       />,
     )
     NavbarWrapper.find(FormControl).simulate('change')
