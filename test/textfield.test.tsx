@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as sinon from 'sinon'
 import { mount } from 'enzyme'
-import { TextField } from '../src/components/TextField'
+import { TextField } from '../src'
 
 describe('TextField', () => {
   it('renders a TextField without crashing', () => {
