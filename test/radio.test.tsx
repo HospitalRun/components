@@ -2,7 +2,7 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import * as sinon from 'sinon'
 import { FormCheck as BootstrapFormCheck } from 'react-bootstrap'
-import { Radio } from '../dist'
+import { Radio } from '../src'
 
 describe('Radio', () => {
   it('Radio renders itself without crashing', () => {
