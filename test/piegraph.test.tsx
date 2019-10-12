@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
-import { PieGraph } from '../dist'
+import { PieGraph } from '../src'
 
 describe('PieGraph', () => {
   it('PieGraph renders itself without crashing', () => {

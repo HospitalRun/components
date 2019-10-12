@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "0.4.5",
+  "version": "0.6.0",
   "license": "MIT",
   "main": "dist",
   "module": "dist/components.esm.js",
@@ -21,7 +21,7 @@
     "pretest": "npm run lint && npm run build",
     "test": "tsdx test --env=jsdom",
     "lint": "prettier --write --loglevel warn \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\" \"stories/**/*.{ts,tsx}\"",
-    "coveralls": "tsdx test --coverage && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "tsdx test --coverage --coverageReporters=text-lcov | coveralls",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
     "docgen": "genDocs.sh",

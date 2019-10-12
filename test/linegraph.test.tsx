@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
-import { LineGraph } from '../dist'
+import { LineGraph } from '../src'
 
 describe('LineGraph', () => {
   it('LineGraph renders itself without crashing', () => {
