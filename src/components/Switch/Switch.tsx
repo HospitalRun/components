@@ -6,8 +6,6 @@ interface Props {
   id: string
   /** The label to render next to the switch */
   label: string
-  /**Gives the switch a name */
-  name?: string
   /** Determines if the switch should be disabled or not. By default false */
   disabled?: boolean
   /** The onChange listener */
@@ -23,7 +21,6 @@ class Switch extends Component<Props, {}> {
       <div>
         <FormCheck
           type="switch"
-          name={this.props.name}
           id={this.props.id}
           label={this.props.label}
           disabled={this.props.disabled}
