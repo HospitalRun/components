@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import * as sinon from 'sinon'
-import { Navbar, Button } from '../dist'
+import { Navbar, Button } from '../src'
 import { Nav, Navbar as NavBarRB, NavDropdown, FormControl } from 'react-bootstrap'
 
 describe('Navbar', () => {
