@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/HospitalRun/components/compare/v0.6.0...v0.7.0) (2019-10-13)
+
+
+### Features
+
+* **textinput:** adds TextInput component ([b2200bb](https://github.com/HospitalRun/components/commit/b2200bb)), closes [#20](https://github.com/HospitalRun/components/issues/20)
+
 # [0.6.0](https://github.com/HospitalRun/components/compare/v0.5.0...v0.6.0) (2019-10-12)
 
 
