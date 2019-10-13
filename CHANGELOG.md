@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/HospitalRun/components/compare/v0.7.0...v0.8.0) (2019-10-13)
+
+
+### Features
+
+* **radios:** adds radio component ([2e91b6a](https://github.com/HospitalRun/components/commit/2e91b6a)), closes [#63](https://github.com/HospitalRun/components/issues/63)
+
 # [0.7.0](https://github.com/HospitalRun/components/compare/v0.6.0...v0.7.0) (2019-10-13)
 
 
