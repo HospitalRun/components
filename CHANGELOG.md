@@ -1,3 +1,17 @@
+# [0.10.0](https://github.com/HospitalRun/components/compare/v0.9.0...v0.10.0) (2019-10-14)
+
+
+### Bug Fixes
+
+* **deps:** updates react-bootstrap dependency ([1bbee34](https://github.com/HospitalRun/components/commit/1bbee34))
+* **test:** fixes other tests ([ce560b0](https://github.com/HospitalRun/components/commit/ce560b0))
+
+
+### Features
+
+* **switch:** add Switch component ([dc6667c](https://github.com/HospitalRun/components/commit/dc6667c)), closes [#69](https://github.com/HospitalRun/components/issues/69)
+* **switch:** removes name from props ([b4bc81c](https://github.com/HospitalRun/components/commit/b4bc81c)), closes [#69](https://github.com/HospitalRun/components/issues/69)
+
 # [0.9.0](https://github.com/HospitalRun/components/compare/v0.8.0...v0.9.0) (2019-10-14)
 
 
