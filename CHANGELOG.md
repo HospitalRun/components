@@ -1,3 +1,31 @@
+# [0.9.0](https://github.com/HospitalRun/components/compare/v0.8.0...v0.9.0) (2019-10-14)
+
+
+### Bug Fixes
+
+* **navbar:** changed the code to be more dynamically ([753c6c4](https://github.com/HospitalRun/components/commit/753c6c4))
+* **navbar:** code modified ([c23b339](https://github.com/HospitalRun/components/commit/c23b339))
+
+
+### Features
+
+* **navbar:** add Navbar component ([3190238](https://github.com/HospitalRun/components/commit/3190238))
+* **navbar:** adds unit test ([2e46f90](https://github.com/HospitalRun/components/commit/2e46f90))
+
+# [0.8.0](https://github.com/HospitalRun/components/compare/v0.7.0...v0.8.0) (2019-10-13)
+
+
+### Features
+
+* **radios:** adds radio component ([2e91b6a](https://github.com/HospitalRun/components/commit/2e91b6a)), closes [#63](https://github.com/HospitalRun/components/issues/63)
+
+# [0.7.0](https://github.com/HospitalRun/components/compare/v0.6.0...v0.7.0) (2019-10-13)
+
+
+### Features
+
+* **textinput:** adds TextInput component ([b2200bb](https://github.com/HospitalRun/components/commit/b2200bb)), closes [#20](https://github.com/HospitalRun/components/issues/20)
+
 # [0.6.0](https://github.com/HospitalRun/components/compare/v0.5.0...v0.6.0) (2019-10-12)
 
 
