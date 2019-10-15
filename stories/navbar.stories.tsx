@@ -70,7 +70,6 @@ storiesOf('Navbar', module)
                 onClick: () => {
                   Toast('success', 'Sublink1 clicked!!', 'Success')
                 },
-                href: '/somepath',
               },
               {
                 label: 'Sublink2',
