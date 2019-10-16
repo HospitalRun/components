@@ -1,3 +1,11 @@
+# [0.11.0](https://github.com/HospitalRun/components/compare/v0.10.0...v0.11.0) (2019-10-16)
+
+
+### Features
+
+* **checkboxes:** add ability to click on label to select ([b93a757](https://github.com/HospitalRun/components/commit/b93a757)), closes [#62](https://github.com/HospitalRun/components/issues/62)
+* **checkboxes:** adds Checkbox component ([e0f0930](https://github.com/HospitalRun/components/commit/e0f0930)), closes [#62](https://github.com/HospitalRun/components/issues/62)
+
 # [0.10.0](https://github.com/HospitalRun/components/compare/v0.9.0...v0.10.0) (2019-10-14)
 
 
