@@ -25,10 +25,6 @@ interface Props {
 }
 
 class Radio extends Component<Props, {}> {
-  constructor(props: Props) {
-    super(props)
-  }
-
   render() {
     return (
       <FormCheck
