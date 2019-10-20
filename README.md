@@ -64,6 +64,7 @@ Alternatively, if you are using NPM 5.2+ you can use [npx](https://medium.com/@m
 ## Sponsors
 
 [![Sponsors](https://opencollective.com/hospitalrun/sponsors.svg?width=890)](https://opencollective.com/hospitalrun/contribute/sponsors-336/checkout)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents?ref=badge_shield)
 
 ### Big Thanks
 
@@ -102,3 +103,6 @@ Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homep
 # License
 
 Released under the [MIT license](LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents?ref=badge_large)
