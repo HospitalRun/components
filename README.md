@@ -4,8 +4,8 @@
 
 [![NPM Version](https://badgen.net/npm/v/@hospitalrun/components)](https://www.npmjs.com/package/@hospitalrun/components) [![Build Status](https://travis-ci.com/HospitalRun/components.svg?branch=master)](https://travis-ci.com/HospitalRun/components)
 [![Build Status](https://dev.azure.com/HospitalRun/components/_apis/build/status/HospitalRun.components?branchName=master)](https://dev.azure.com/HospitalRun/components/_build?definitionId=1) [![GitHub CI](https://github.com/HospitalRun/components/workflows/GitHub%20CI/badge.svg)](https://github.com/HospitalRun/components/actions) [![Coverage Status](https://coveralls.io/repos/github/HospitalRun/components/badge.svg?branch=master)](https://coveralls.io/github/HospitalRun/components?branch=master)
-[![Bundlephobia](https://badgen.net/bundlephobia/min/@hospitalrun/components)](https://bundlephobia.com/result?p=@hospitalrun/components)
-![dependabot](https://api.dependabot.com/badges/status?host=github&repo=HospitalRun/components) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![MIT](https://badgen.net/github/license/HospitalRun/components)](https://github.com/HospitalRun/components/blob/master/LICENSE) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents?ref=badge_shield)
+[![Bundlephobia](https://badgen.net/bundlephobia/min/@hospitalrun/components)](https://bundlephobia.com/result?p=@hospitalrun/components) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents?ref=badge_shield)
+![dependabot](https://api.dependabot.com/badges/status?host=github&repo=HospitalRun/components) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Slack](https://hospitalrun-slackin.herokuapp.com/badge.svg)](https://hospitalrun-slackin.herokuapp.com) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/hospitalrun) [![Netlify Status](https://api.netlify.com/api/v1/badges/70c843de-c1b2-4e7d-abb5-61939f21f8cb/deploy-status)](https://app.netlify.com/sites/hospitalrun/deploys)
 
 </div>
@@ -64,7 +64,6 @@ Alternatively, if you are using NPM 5.2+ you can use [npx](https://medium.com/@m
 ## Sponsors
 
 [![Sponsors](https://opencollective.com/hospitalrun/sponsors.svg?width=890)](https://opencollective.com/hospitalrun/contribute/sponsors-336/checkout)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents?ref=badge_shield)
 
 ### Big Thanks
 
@@ -103,6 +102,3 @@ Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs][homep
 # License
 
 Released under the [MIT license](LICENSE).
-
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FHospitalRun%2Fcomponents?ref=badge_large)
