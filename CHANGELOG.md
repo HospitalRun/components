@@ -1,3 +1,10 @@
+# [0.12.0](https://github.com/HospitalRun/components/compare/v0.11.0...v0.12.0) (2019-10-21)
+
+
+### Features
+
+* **select:** add Select component ([dd1186f](https://github.com/HospitalRun/components/commit/dd1186f)), closes [#64](https://github.com/HospitalRun/components/issues/64)
+
 # [0.11.0](https://github.com/HospitalRun/components/compare/v0.10.0...v0.11.0) (2019-10-16)
 
 
