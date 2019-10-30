@@ -1,3 +1,10 @@
+# [0.13.0](https://github.com/HospitalRun/components/compare/v0.12.0...v0.13.0) (2019-10-30)
+
+
+### Features
+
+* **textinput:** add placeholder for text input ([f5d16b4](https://github.com/HospitalRun/components/commit/f5d16b4))
+
 # [0.12.0](https://github.com/HospitalRun/components/compare/v0.11.0...v0.12.0) (2019-10-21)
 
 
