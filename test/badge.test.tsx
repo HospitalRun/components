@@ -21,7 +21,7 @@ describe('Badge', () => {
     expect(bootstrapBadge.props().variant).toEqual('secondary')
   })
 
-  it('Badge can redner children elements', () => {
+  it('Badge can render children elements', () => {
     const badgeWrapper = shallow(<Badge>Hello World</Badge>)
     const bootstrapBadge = badgeWrapper.find(BootstrapBadge)
     expect(bootstrapBadge.text()).toEqual('Hello World')
