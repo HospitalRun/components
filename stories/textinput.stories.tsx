@@ -22,6 +22,11 @@ storiesOf('TextInput', module)
       />
     </div>
   ))
+  .add('Text Input with Placeholder', () => (
+    <div>
+      <TextInput type={'text'} name={'text-input'} id={'text-input'} placeholder={'test'} />
+    </div>
+  ))
   .add('Default number input', () => (
     <div>
       <TextInput
