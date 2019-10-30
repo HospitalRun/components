@@ -79,4 +79,12 @@ describe('TextInput', () => {
     const smallInput = smallWrapper.find(Form.Control)
     expect(smallInput.prop('size')).toBe('sm')
   })
+
+  it('renders a Text Input with a placeholder', () => {
+    const wrapper = mount(
+      <TextInput value="Testing the text input component" placeholder={'test'} />,
+    )
+    const textInput = wrapper.find(Form.Control)
+    expect(textInput.prop('placeholder')).toBe('test')
+  })
 })

@@ -14,6 +14,8 @@ interface Props {
   name?: string | ''
   /** The id value of the input */
   id?: string | ''
+  /**The placeholder inside of the text input */
+  placeholder?: string | ''
   /** Defines whether the input should be disabled or not. Defaults to false. */
   disabled?: boolean
   /** Defines whether the input should display as invalid. Defaults to false. */
@@ -33,6 +35,7 @@ const TextInput = (props: Props) => {
       type={props.type || 'text'}
       name={props.name}
       id={props.id}
+      placeholder={props.placeholder}
       onChange={props.onChange}
       disabled={props.disabled || false}
       isInvalid={props.isInvalid || false}
