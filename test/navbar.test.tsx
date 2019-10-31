@@ -29,6 +29,30 @@ describe('Navbar', () => {
     expect(bootstrapNavbar).toHaveLength(1)
   })
 
+  it('should render the search button as a primary button by default', () => {
+    const onButtonClick = sinon.spy()
+    const onTextBoxChange = sinon.spy()
+    const NavbarWrapper = shallow(
+      <Navbar
+        brand={{
+          label: 'Test',
+          onClick: () => {},
+        }}
+        onSeachButtonClick={onButtonClick}
+        onSearchTextBoxChange={onTextBoxChange}
+        navLinks={[
+          {
+            label: 'Link',
+            onClick: () => {},
+            children: [],
+          },
+        ]}
+      />,
+    )
+    const button = NavbarWrapper.find(Button)
+    expect(button.props().color).toBe('primary')
+  })
+
   it('Navbar defaults bg to dark when the prop is not used', () => {
     const onButtonClick = sinon.spy()
     const onTextBoxChange = sinon.spy()

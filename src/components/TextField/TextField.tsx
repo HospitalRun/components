@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Form from 'react-bootstrap/Form'
 import { getControlSize } from '../../helpers/ControlSize'
 
@@ -23,25 +23,21 @@ interface Props {
 /**
  * A customizable text field component. It's a wrapper component built upon react's form controls.
  */
-class TextField extends Component<Props, {}> {
-  constructor(props: Props) {
-    super(props)
-  }
+const TextField = (props: Props) => {
+  const { disabled, isInvalid, name, rows, size, value, onChange } = props
 
-  render() {
-    return (
-      <Form.Control
-        as="textarea"
-        disabled={this.props.disabled}
-        isInvalid={this.props.isInvalid}
-        name={this.props.name}
-        rows={this.props.rows}
-        size={getControlSize(this.props.size)}
-        defaultValue={this.props.value}
-        onChange={this.props.onChange}
-      />
-    )
-  }
+  return (
+    <Form.Control
+      as="textarea"
+      disabled={disabled}
+      isInvalid={isInvalid}
+      name={name}
+      rows={rows}
+      size={getControlSize(size)}
+      defaultValue={value}
+      onChange={onChange}
+    />
+  )
 }
 
 export { TextField }

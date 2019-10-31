@@ -29,21 +29,27 @@ interface Props {
  */
 
 const TextInput = (props: Props) => {
+  const { type, name, id, placeholder, onChange, disabled, isInvalid, isValid, value, size } = props
+
   return (
     <Form.Control
       as="input"
-      type={props.type || 'text'}
-      name={props.name}
-      id={props.id}
-      placeholder={props.placeholder}
-      onChange={props.onChange}
-      disabled={props.disabled || false}
-      isInvalid={props.isInvalid || false}
-      isValid={props.isValid || false}
-      defaultValue={props.value}
-      size={props.size}
+      type={type}
+      name={name}
+      id={id}
+      placeholder={placeholder}
+      onChange={onChange}
+      disabled={disabled}
+      isInvalid={isInvalid}
+      isValid={isValid}
+      defaultValue={value}
+      size={size}
     />
   )
+}
+
+TextInput.defaultProps = {
+  type: 'text',
 }
 
 export { TextInput }

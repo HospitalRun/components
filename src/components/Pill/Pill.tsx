@@ -1,24 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Badge from 'react-bootstrap/Badge'
 
 interface Props {
   /** Defines the color of the pill. Defaults to primary. */
   color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
+  /** The children to render */
+  children?: React.ReactNode
 }
 
 /**
  * Pills can provide contextual clues to the user by differentiating color and styling
  * from the surrounding content.
  */
-class Pill extends Component<Props, {}> {
-  render() {
-    const color = this.props.color ? this.props.color : 'primary'
-    return (
-      <Badge pill variant={color}>
-        {this.props.children}
-      </Badge>
-    )
-  }
+const Pill = (props: Props) => {
+  const { color, children } = props
+  return (
+    <Badge pill variant={color}>
+      {children}
+    </Badge>
+  )
+}
+
+Pill.defaultProps = {
+  color: 'primary',
 }
 
 export { Pill }

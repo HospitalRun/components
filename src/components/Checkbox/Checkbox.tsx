@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import FormCheck from 'react-bootstrap/FormCheck'
 
 interface Props {
@@ -22,27 +22,20 @@ interface Props {
  * Checkbox is used to mark if something is true or not. Often times is used in a group where
  * multiple things can be true at one time.
  */
-class Checkbox extends Component<Props, {}> {
-  render() {
-    const labelSide = this.props.labelSide ? this.props.labelSide : 'right'
+const Checkbox = (props: Props) => {
+  const { id, name, inline, labelSide, label, disabled, onChange } = props
 
-    return (
-      <FormCheck name={this.props.name} inline={this.props.inline}>
-        {labelSide === 'left' && (
-          <FormCheck.Label htmlFor={this.props.id}>{this.props.label}</FormCheck.Label>
-        )}
-        <FormCheck.Input
-          id={this.props.id}
-          type="checkbox"
-          disabled={this.props.disabled}
-          onChange={this.props.onChange}
-        />
-        {labelSide === 'right' && (
-          <FormCheck.Label htmlFor={this.props.id}>{this.props.label}</FormCheck.Label>
-        )}
-      </FormCheck>
-    )
-  }
+  return (
+    <FormCheck name={name} inline={inline}>
+      {labelSide === 'left' && <FormCheck.Label htmlFor={id}>{label}</FormCheck.Label>}
+      <FormCheck.Input id={props.id} type="checkbox" disabled={disabled} onChange={onChange} />
+      {labelSide === 'right' && <FormCheck.Label htmlFor={id}>{label}</FormCheck.Label>}
+    </FormCheck>
+  )
+}
+
+Checkbox.defaultProps = {
+  labelSide: 'right',
 }
 
 export { Checkbox }

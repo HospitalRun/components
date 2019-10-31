@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import NavbarRB from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
@@ -39,82 +39,85 @@ interface Props extends React.Props<any> {
 /**
  * Used to redirect users to the main topics.
  */
-class Navbar extends Component<Props, any> {
-  render() {
-    const buttonColor = this.props.buttonColor ? this.props.buttonColor : 'primary'
-    let img
+const Navbar = (props: Props) => {
+  const {
+    brand,
+    bg,
+    variant,
+    navLinks,
+    buttonColor,
+    onSearchTextBoxChange,
+    onSeachButtonClick,
+  } = props
 
-    if (this.props.brand.src) {
-      img = (
-        <img
-          src={this.props.brand.src}
-          width="28"
-          height="28"
-          className="d-inline-block align-top"
-        />
-      )
-    } else {
-      img = ''
-    }
-
-    return (
-      <NavbarRB
-        bg={this.props.bg ? this.props.bg : 'dark'}
-        variant={this.props.variant ? this.props.variant : 'dark'}
-      >
-        {/* <NavbarRB.Brand href={this.props.brand.href}>                       if this method is used, onClick: (event: React.MouseEvent<HTMLElement>) => void on the interface
-          <div onClick={this.props.brand.onClick.bind(this)} >
-          {img}
-          {` ${this.props.brand.label}`}
-          </div>
-        </NavbarRB.Brand> */}
-
-        <NavbarRB.Brand href={this.props.brand.href} onClick={this.props.brand.onClick.bind(this)}>
-          {img}
-          {` ${this.props.brand.label}`}
-        </NavbarRB.Brand>
-
-        <NavbarRB.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            {this.props.navLinks.map((link, index) => {
-              return link.children.length == 0 ? (
-                <Nav.Link onClick={link.onClick} key={index}>
-                  {link.label}
-                </Nav.Link>
-              ) : (
-                <NavDropdown title={link.label} id="collasible-nav-dropdown" key={index}>
-                  {link.children.map((subLink, i) => {
-                    return (
-                      <NavDropdown.Item
-                        href={subLink.href ? subLink.href : ''}
-                        key={i}
-                        onClick={subLink.onClick}
-                      >
-                        {subLink.label}
-                      </NavDropdown.Item>
-                    )
-                  })}
-                </NavDropdown>
-              )
-            })}
-          </Nav>
-          <Nav>
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-                onChange={this.props.onSearchTextBoxChange}
-              />
-              <Button color={buttonColor} onClick={this.props.onSeachButtonClick}>
-                Search
-              </Button>
-            </Form>
-          </Nav>
-        </NavbarRB.Collapse>
-      </NavbarRB>
+  let img
+  if (brand.src) {
+    img = (
+      <img
+        alt={brand.label}
+        src={brand.src}
+        width="28"
+        height="28"
+        className="d-inline-block align-top"
+      />
     )
+  } else {
+    img = ''
   }
+
+  return (
+    <NavbarRB bg={bg} variant={variant}>
+      <NavbarRB.Brand href={brand.href} onClick={brand.onClick}>
+        {img}
+        {` ${brand.label}`}
+      </NavbarRB.Brand>
+
+      <NavbarRB.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          {navLinks.map((link, index) => {
+            return link.children.length === 0 ? (
+              <Nav.Link onClick={link.onClick} key={index}>
+                {link.label}
+              </Nav.Link>
+            ) : (
+              <NavDropdown title={link.label} id="collasible-nav-dropdown" key={index}>
+                {link.children.map((subLink, i) => {
+                  return (
+                    <NavDropdown.Item
+                      href={subLink.href ? subLink.href : ''}
+                      key={i}
+                      onClick={subLink.onClick}
+                    >
+                      {subLink.label}
+                    </NavDropdown.Item>
+                  )
+                })}
+              </NavDropdown>
+            )
+          })}
+        </Nav>
+        <Nav>
+          <Form inline>
+            <FormControl
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2"
+              onChange={onSearchTextBoxChange}
+            />
+            <Button color={buttonColor} onClick={onSeachButtonClick}>
+              Search
+            </Button>
+          </Form>
+        </Nav>
+      </NavbarRB.Collapse>
+    </NavbarRB>
+  )
+}
+
+Navbar.defaultProps = {
+  buttonColor: 'primary',
+  bg: 'dark',
+  variant: 'dark',
 }
 
 export { Navbar }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import BootstrapButton from 'react-bootstrap/Button'
 import { ButtonType } from './interfaces'
 import { IconType } from '../Icon/interfaces'
@@ -21,6 +21,8 @@ interface Props {
   iconLocation?: 'left' | 'right'
   /** Handles the on click event for a button */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  /** The children to render */
+  children?: React.ReactNode
 }
 
 function getButtonSize(size: string | undefined): 'sm' | 'lg' | undefined {
@@ -36,36 +38,34 @@ function getButtonSize(size: string | undefined): 'sm' | 'lg' | undefined {
 /**
  * Buttons are used to initiate an action.
  */
-class Button extends Component<Props, {}> {
-  constructor(props: Props) {
-    super(props)
+const Button = (props: Props) => {
+  const { size, iconLocation, outlined, color, icon, block, disabled, onClick, children } = props
+
+  const displayIconLeft = icon && iconLocation === 'left'
+  const displayIconRight = icon && iconLocation === 'right'
+
+  let variant = color as string
+  if (outlined) {
+    variant = `outline-${variant}`
   }
 
-  render() {
-    const size = getButtonSize(this.props.size)
-    const iconLocation = this.props.iconLocation ? this.props.iconLocation : 'left'
+  return (
+    <BootstrapButton
+      variant={variant as ButtonType}
+      block={block}
+      disabled={disabled}
+      size={getButtonSize(size)}
+      onClick={onClick}
+    >
+      {displayIconLeft && <Icon icon={icon as IconType} />} {children}{' '}
+      {displayIconRight && <Icon icon={icon as IconType} />}
+    </BootstrapButton>
+  )
+}
 
-    const displayIconLeft = this.props.icon && iconLocation === 'left'
-    const displayIconRight = this.props.icon && iconLocation === 'right'
-
-    let variant: string = this.props.color ? this.props.color : 'primary'
-    if (this.props.outlined) {
-      variant = `outline-${variant}`
-    }
-
-    return (
-      <BootstrapButton
-        variant={variant as ButtonType}
-        block={this.props.block}
-        disabled={this.props.disabled}
-        size={size}
-        onClick={this.props.onClick}
-      >
-        {displayIconLeft && <Icon icon={this.props.icon as IconType} />} {this.props.children}{' '}
-        {displayIconRight && <Icon icon={this.props.icon as IconType} />}
-      </BootstrapButton>
-    )
-  }
+Button.defaultProps = {
+  color: 'primary',
+  iconLocation: 'left',
 }
 
 export { Button }

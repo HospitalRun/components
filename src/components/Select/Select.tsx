@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { FormControl, FormControlProps } from 'react-bootstrap'
 import { getControlSize } from '../../helpers/ControlSize'
 
@@ -16,24 +16,26 @@ interface Props {
 
   /** Handles the onChange event for the Select. */
   onChange?: (event: React.FormEvent<FormControl & FormControlProps>) => void
+  /** The children to render */
+  children?: React.ReactNode
 }
 
-class Select extends Component<Props, {}> {
-  render() {
-    return (
-      <FormControl
-        as="select"
-        value={this.props.value}
-        multiple={this.props.multiple}
-        isInvalid={this.props.isInvalid}
-        disabled={this.props.disabled}
-        size={getControlSize(this.props.size)}
-        onChange={this.props.onChange}
-      >
-        {this.props.children}
-      </FormControl>
-    )
-  }
+const Select = (props: Props) => {
+  const { value, multiple, isInvalid, disabled, size, onChange, children } = props
+
+  return (
+    <FormControl
+      as="select"
+      value={value}
+      multiple={multiple}
+      isInvalid={isInvalid}
+      disabled={disabled}
+      size={getControlSize(size)}
+      onChange={onChange}
+    >
+      {children}
+    </FormControl>
+  )
 }
 
 export { Select }

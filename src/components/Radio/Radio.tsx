@@ -1,4 +1,4 @@
-import React, { ReactNode, Component } from 'react'
+import React, { ReactNode } from 'react'
 import { FormCheck } from 'react-bootstrap'
 
 interface Props {
@@ -24,24 +24,23 @@ interface Props {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-class Radio extends Component<Props, {}> {
-  render() {
-    return (
-      <FormCheck
-        type="radio"
-        label={this.props.label}
-        name={this.props.name}
-        id={this.props.id}
-        value={this.props.value}
-        checked={this.props.checked}
-        disabled={this.props.disabled}
-        inline={this.props.inline}
-        isInvalid={this.props.isInvalid}
-        feedback={this.props.feedback}
-        onChange={this.props.onChange}
-      />
-    )
-  }
+const Radio = (props: Props) => {
+  const { label, name, id, value, checked, disabled, inline, isInvalid, feedback, onChange } = props
+  return (
+    <FormCheck
+      type="radio"
+      label={label}
+      name={name}
+      id={id}
+      value={value}
+      checked={checked}
+      disabled={disabled}
+      inline={inline}
+      isInvalid={isInvalid}
+      feedback={feedback}
+      onChange={onChange}
+    />
+  )
 }
 
 export { Radio }
