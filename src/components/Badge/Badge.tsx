@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import BootstrapBadge from 'react-bootstrap/Badge'
 
 interface Props {
@@ -10,11 +10,9 @@ interface Props {
  * Badges can provide contextual clues to the user by differentiating color and styling
  * from the surrounding content.
  */
-class Badge extends Component<Props, {}> {
-  render() {
-    const color = this.props.color ? this.props.color : 'primary'
-    return <BootstrapBadge variant={color}>{this.props.children}</BootstrapBadge>
-  }
+const Badge: React.FunctionComponent<Props> = props => {
+  const color = props.color ? props.color : 'primary'
+  return <BootstrapBadge variant={color}>{props.children}</BootstrapBadge>
 }
 
 export { Badge }
