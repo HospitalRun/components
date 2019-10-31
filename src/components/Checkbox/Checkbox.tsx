@@ -23,24 +23,19 @@ interface Props {
  * multiple things can be true at one time.
  */
 const Checkbox: React.FunctionComponent<Props> = props => {
-  const labelSide = props.labelSide ? props.labelSide : 'right'
+  const { id, name, inline, labelSide, label, disabled, onChange } = props
 
   return (
-    <FormCheck name={props.name} inline={props.inline}>
-      {labelSide === 'left' && (
-        <FormCheck.Label htmlFor={props.id}>{props.label}</FormCheck.Label>
-      )}
-      <FormCheck.Input
-        id={props.id}
-        type="checkbox"
-        disabled={props.disabled}
-        onChange={props.onChange}
-      />
-      {labelSide === 'right' && (
-        <FormCheck.Label htmlFor={props.id}>{props.label}</FormCheck.Label>
-      )}
+    <FormCheck name={name} inline={inline}>
+      {labelSide === 'left' && <FormCheck.Label htmlFor={id}>{label}</FormCheck.Label>}
+      <FormCheck.Input id={props.id} type="checkbox" disabled={disabled} onChange={onChange} />
+      {labelSide === 'right' && <FormCheck.Label htmlFor={id}>{label}</FormCheck.Label>}
     </FormCheck>
   )
+}
+
+Checkbox.defaultProps = {
+  labelSide: 'right',
 }
 
 export { Checkbox }
