@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import BootstrapButton from 'react-bootstrap/Button'
 import { ButtonType } from './interfaces'
 import { IconType } from '../Icon/interfaces'
@@ -36,36 +36,31 @@ function getButtonSize(size: string | undefined): 'sm' | 'lg' | undefined {
 /**
  * Buttons are used to initiate an action.
  */
-class Button extends Component<Props, {}> {
-  constructor(props: Props) {
-    super(props)
+const Button: React.FunctionComponent<Props> = props => {
+  const size = getButtonSize(props.size)
+  const iconLocation = props.iconLocation ? props.iconLocation : 'left'
+
+  const displayIconLeft = props.icon && iconLocation === 'left'
+  const displayIconRight = props.icon && iconLocation === 'right'
+
+  let variant: string = props.color ? props.color : 'primary'
+  if (props.outlined) {
+    variant = `outline-${variant}`
   }
 
-  render() {
-    const size = getButtonSize(this.props.size)
-    const iconLocation = this.props.iconLocation ? this.props.iconLocation : 'left'
-
-    const displayIconLeft = this.props.icon && iconLocation === 'left'
-    const displayIconRight = this.props.icon && iconLocation === 'right'
-
-    let variant: string = this.props.color ? this.props.color : 'primary'
-    if (this.props.outlined) {
-      variant = `outline-${variant}`
-    }
-
-    return (
-      <BootstrapButton
-        variant={variant as ButtonType}
-        block={this.props.block}
-        disabled={this.props.disabled}
-        size={size}
-        onClick={this.props.onClick}
-      >
-        {displayIconLeft && <Icon icon={this.props.icon as IconType} />} {this.props.children}{' '}
-        {displayIconRight && <Icon icon={this.props.icon as IconType} />}
-      </BootstrapButton>
-    )
-  }
+  return (
+    <BootstrapButton
+      variant={variant as ButtonType}
+      block={props.block}
+      disabled={props.disabled}
+      size={size}
+      onClick={props.onClick}
+    >
+      {displayIconLeft && <Icon icon={props.icon as IconType} />} {props.children}{' '}
+      {displayIconRight && <Icon icon={props.icon as IconType} />}
+    </BootstrapButton>
+  )
 }
+
 
 export { Button }
