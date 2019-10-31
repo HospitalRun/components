@@ -37,30 +37,33 @@ function getButtonSize(size: string | undefined): 'sm' | 'lg' | undefined {
  * Buttons are used to initiate an action.
  */
 const Button: React.FunctionComponent<Props> = props => {
-  const size = getButtonSize(props.size)
-  const iconLocation = props.iconLocation ? props.iconLocation : 'left'
+  const { size, iconLocation, outlined, color, icon, block, disabled, onClick, children } = props;
 
-  const displayIconLeft = props.icon && iconLocation === 'left'
-  const displayIconRight = props.icon && iconLocation === 'right'
+  const displayIconLeft = icon && iconLocation === 'left'
+  const displayIconRight = icon && iconLocation === 'right'
 
-  let variant: string = props.color ? props.color : 'primary'
-  if (props.outlined) {
+  let variant = color as string
+  if (outlined) {
     variant = `outline-${variant}`
   }
 
   return (
     <BootstrapButton
       variant={variant as ButtonType}
-      block={props.block}
-      disabled={props.disabled}
-      size={size}
-      onClick={props.onClick}
+      block={block}
+      disabled={disabled}
+      size={getButtonSize(size)}
+      onClick={onClick}
     >
-      {displayIconLeft && <Icon icon={props.icon as IconType} />} {props.children}{' '}
-      {displayIconRight && <Icon icon={props.icon as IconType} />}
+      {displayIconLeft && <Icon icon={icon as IconType} />} {children}{' '}
+      {displayIconRight && <Icon icon={icon as IconType} />}
     </BootstrapButton>
   )
 }
 
+Button.defaultProps = {
+  color: 'primary',
+  iconLocation: 'left',
+}
 
 export { Button }
