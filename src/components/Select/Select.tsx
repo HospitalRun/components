@@ -16,9 +16,11 @@ interface Props {
 
   /** Handles the onChange event for the Select. */
   onChange?: (event: React.FormEvent<FormControl & FormControlProps>) => void
+  /** The children to render */
+  children?: React.ReactNode
 }
 
-const Select: React.FunctionComponent<Props> = props => {
+const Select = (props: Props) => {
   const { value, multiple, isInvalid, disabled, size, onChange, children } = props
 
   return (

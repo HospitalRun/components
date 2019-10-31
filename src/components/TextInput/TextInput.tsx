@@ -28,7 +28,7 @@ interface Props {
  * A flexible text input as a wrapper around the React Bootstrap Form Control.
  */
 
-const TextInput: React.FunctionComponent<Props> = props => {
+const TextInput = (props: Props) => {
   const { type, name, id, placeholder, onChange, disabled, isInvalid, isValid, value, size } = props
 
   return (

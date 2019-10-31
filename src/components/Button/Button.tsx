@@ -21,6 +21,8 @@ interface Props {
   iconLocation?: 'left' | 'right'
   /** Handles the on click event for a button */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  /** The children to render */
+  children?: React.ReactNode
 }
 
 function getButtonSize(size: string | undefined): 'sm' | 'lg' | undefined {
@@ -36,7 +38,7 @@ function getButtonSize(size: string | undefined): 'sm' | 'lg' | undefined {
 /**
  * Buttons are used to initiate an action.
  */
-const Button: React.FunctionComponent<Props> = props => {
+const Button = (props: Props) => {
   const { size, iconLocation, outlined, color, icon, block, disabled, onClick, children } = props
 
   const displayIconLeft = icon && iconLocation === 'left'

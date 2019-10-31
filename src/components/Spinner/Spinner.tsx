@@ -27,7 +27,7 @@ interface Props {
 /**
  * A customizable spinner component. It's a wrapper component built upon react-spinners.
  */
-const Spinner: React.FunctionComponent<Props> = props => {
+const Spinner = (props: Props) => {
   const { loading, color, margin, size, sizeUnit, type } = props
 
   const commonStyles = {

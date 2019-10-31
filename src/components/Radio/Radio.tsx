@@ -24,7 +24,7 @@ interface Props {
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Radio: React.FunctionComponent<Props> = props => {
+const Radio = (props: Props) => {
   const { label, name, id, value, checked, disabled, inline, isInvalid, feedback, onChange } = props
   return (
     <FormCheck

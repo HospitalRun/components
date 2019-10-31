@@ -39,7 +39,7 @@ interface Props extends React.Props<any> {
 /**
  * Used to redirect users to the main topics.
  */
-const Navbar: React.FunctionComponent<Props> = props => {
+const Navbar = (props: Props) => {
   const {
     brand,
     bg,

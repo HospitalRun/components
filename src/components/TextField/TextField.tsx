@@ -23,7 +23,7 @@ interface Props {
 /**
  * A customizable text field component. It's a wrapper component built upon react's form controls.
  */
-const TextField: React.FunctionComponent<Props> = props => {
+const TextField = (props: Props) => {
   const { disabled, isInvalid, name, rows, size, value, onChange } = props
 
   return (

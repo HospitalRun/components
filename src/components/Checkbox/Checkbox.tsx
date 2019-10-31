@@ -22,7 +22,7 @@ interface Props {
  * Checkbox is used to mark if something is true or not. Often times is used in a group where
  * multiple things can be true at one time.
  */
-const Checkbox: React.FunctionComponent<Props> = props => {
+const Checkbox = (props: Props) => {
   const { id, name, inline, labelSide, label, disabled, onChange } = props
 
   return (

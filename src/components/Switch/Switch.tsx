@@ -15,7 +15,7 @@ interface Props {
 /**
  * Switches are used to choose if something is true or false
  */
-const Switch: React.FunctionComponent<Props> = props => {
+const Switch = (props: Props) => {
   const { id, label, disabled, onChange } = props
   return (
     <div>

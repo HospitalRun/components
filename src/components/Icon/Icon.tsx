@@ -38,7 +38,7 @@ interface Props {
 /**
  * Icons provide contextual clues to users to make it easier to recognize functionality
  */
-const Icon: React.FunctionComponent<Props> = props => {
+const Icon = (props: Props) => {
   const { icon } = props
   return <FontAwesomeIcon icon={getFontAwesomeIcon(icon) as IconProp} />
 }
