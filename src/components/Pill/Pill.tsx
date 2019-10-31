@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Badge from 'react-bootstrap/Badge'
 
 interface Props {
@@ -10,15 +10,17 @@ interface Props {
  * Pills can provide contextual clues to the user by differentiating color and styling
  * from the surrounding content.
  */
-class Pill extends Component<Props, {}> {
-  render() {
-    const color = this.props.color ? this.props.color : 'primary'
-    return (
-      <Badge pill variant={color}>
-        {this.props.children}
-      </Badge>
-    )
-  }
+const Pill: React.FunctionComponent<Props> = props => {
+  const { color, children } = props
+  return (
+    <Badge pill variant={color}>
+      {children}
+    </Badge>
+  )
+}
+
+Pill.defaultProps = {
+  color: 'primary',
 }
 
 export { Pill }
