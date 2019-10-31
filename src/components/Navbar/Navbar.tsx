@@ -52,20 +52,21 @@ const Navbar: React.FunctionComponent<Props> = props => {
 
   let img
   if (brand.src) {
-    img = <img src={brand.src} width="28" height="28" className="d-inline-block align-top" />
+    img = (
+      <img
+        alt={brand.label}
+        src={brand.src}
+        width="28"
+        height="28"
+        className="d-inline-block align-top"
+      />
+    )
   } else {
     img = ''
   }
 
   return (
     <NavbarRB bg={bg} variant={variant}>
-      {/* <NavbarRB.Brand href={this.props.brand.href}>                       if this method is used, onClick: (event: React.MouseEvent<HTMLElement>) => void on the interface
-          <div onClick={this.props.brand.onClick.bind(this)} >
-          {img}
-          {` ${this.props.brand.label}`}
-          </div>
-        </NavbarRB.Brand> */}
-
       <NavbarRB.Brand href={brand.href} onClick={brand.onClick}>
         {img}
         {` ${brand.label}`}
@@ -74,7 +75,7 @@ const Navbar: React.FunctionComponent<Props> = props => {
       <NavbarRB.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           {navLinks.map((link, index) => {
-            return link.children.length == 0 ? (
+            return link.children.length === 0 ? (
               <Nav.Link onClick={link.onClick} key={index}>
                 {link.label}
               </Nav.Link>
