@@ -37,7 +37,7 @@ function getButtonSize(size: string | undefined): 'sm' | 'lg' | undefined {
  * Buttons are used to initiate an action.
  */
 const Button: React.FunctionComponent<Props> = props => {
-  const { size, iconLocation, outlined, color, icon, block, disabled, onClick, children } = props;
+  const { size, iconLocation, outlined, color, icon, block, disabled, onClick, children } = props
 
   const displayIconLeft = icon && iconLocation === 'left'
   const displayIconRight = icon && iconLocation === 'right'
