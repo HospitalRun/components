@@ -40,17 +40,25 @@ interface Props extends React.Props<any> {
  * Used to redirect users to the main topics.
  */
 const Navbar: React.FunctionComponent<Props> = props => {
-  const buttonColor = props.buttonColor ? props.buttonColor : 'primary'
-  let img
+  const {
+    brand,
+    bg,
+    variant,
+    navLinks,
+    buttonColor,
+    onSearchTextBoxChange,
+    onSeachButtonClick,
+  } = props
 
-  if (props.brand.src) {
-    img = <img src={props.brand.src} width="28" height="28" className="d-inline-block align-top" />
+  let img
+  if (brand.src) {
+    img = <img src={brand.src} width="28" height="28" className="d-inline-block align-top" />
   } else {
     img = ''
   }
 
   return (
-    <NavbarRB bg={props.bg ? props.bg : 'dark'} variant={props.variant ? props.variant : 'dark'}>
+    <NavbarRB bg={bg} variant={variant}>
       {/* <NavbarRB.Brand href={this.props.brand.href}>                       if this method is used, onClick: (event: React.MouseEvent<HTMLElement>) => void on the interface
           <div onClick={this.props.brand.onClick.bind(this)} >
           {img}
@@ -58,14 +66,14 @@ const Navbar: React.FunctionComponent<Props> = props => {
           </div>
         </NavbarRB.Brand> */}
 
-      <NavbarRB.Brand href={props.brand.href} onClick={props.brand.onClick}>
+      <NavbarRB.Brand href={brand.href} onClick={brand.onClick}>
         {img}
-        {` ${props.brand.label}`}
+        {` ${brand.label}`}
       </NavbarRB.Brand>
 
       <NavbarRB.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          {props.navLinks.map((link, index) => {
+          {navLinks.map((link, index) => {
             return link.children.length == 0 ? (
               <Nav.Link onClick={link.onClick} key={index}>
                 {link.label}
@@ -93,9 +101,9 @@ const Navbar: React.FunctionComponent<Props> = props => {
               type="text"
               placeholder="Search"
               className="mr-sm-2"
-              onChange={props.onSearchTextBoxChange}
+              onChange={onSearchTextBoxChange}
             />
-            <Button color={buttonColor} onClick={props.onSeachButtonClick}>
+            <Button color={buttonColor} onClick={onSeachButtonClick}>
               Search
             </Button>
           </Form>
@@ -103,6 +111,12 @@ const Navbar: React.FunctionComponent<Props> = props => {
       </NavbarRB.Collapse>
     </NavbarRB>
   )
+}
+
+Navbar.defaultProps = {
+  buttonColor: 'primary',
+  bg: 'dark',
+  variant: 'dark',
 }
 
 export { Navbar }
