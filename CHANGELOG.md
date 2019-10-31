@@ -1,3 +1,10 @@
+## [0.13.1](https://github.com/HospitalRun/components/compare/v0.13.0...v0.13.1) (2019-10-31)
+
+
+### Bug Fixes
+
+* **storybook:** fix interfaces to allow storybook to read prop types ([48e396c](https://github.com/HospitalRun/components/commit/48e396c))
+
 # [0.13.0](https://github.com/HospitalRun/components/compare/v0.12.0...v0.13.0) (2019-10-30)
 
 
