@@ -11,8 +11,12 @@ interface Props {
  * from the surrounding content.
  */
 const Badge: React.FunctionComponent<Props> = props => {
-  const color = props.color ? props.color : 'primary'
-  return <BootstrapBadge variant={color}>{props.children}</BootstrapBadge>
+  const { color, children } = props
+  return <BootstrapBadge variant={color}>{children}</BootstrapBadge>
+}
+
+Badge.defaultProps = {
+  color: 'primary',
 }
 
 export { Badge }
