@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import FormCheck from 'react-bootstrap/FormCheck'
 
 interface Props {
@@ -15,20 +15,13 @@ interface Props {
 /**
  * Switches are used to choose if something is true or false
  */
-class Switch extends Component<Props, {}> {
-  render() {
-    return (
-      <div>
-        <FormCheck
-          type="switch"
-          id={this.props.id}
-          label={this.props.label}
-          disabled={this.props.disabled}
-          onChange={this.props.onChange}
-        />
-      </div>
-    )
-  }
+const Switch: React.FunctionComponent<Props> = props => {
+  const { id, label, disabled, onChange } = props
+  return (
+    <div>
+      <FormCheck type="switch" id={id} label={label} disabled={disabled} onChange={onChange} />
+    </div>
+  )
 }
 
 export { Switch }
