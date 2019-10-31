@@ -22,27 +22,25 @@ interface Props {
  * Checkbox is used to mark if something is true or not. Often times is used in a group where
  * multiple things can be true at one time.
  */
-class Checkbox extends Component<Props, {}> {
-  render() {
-    const labelSide = this.props.labelSide ? this.props.labelSide : 'right'
+const Checkbox: React.FunctionComponent<Props> = props => {
+  const labelSide = props.labelSide ? props.labelSide : 'right'
 
-    return (
-      <FormCheck name={this.props.name} inline={this.props.inline}>
-        {labelSide === 'left' && (
-          <FormCheck.Label htmlFor={this.props.id}>{this.props.label}</FormCheck.Label>
-        )}
-        <FormCheck.Input
-          id={this.props.id}
-          type="checkbox"
-          disabled={this.props.disabled}
-          onChange={this.props.onChange}
-        />
-        {labelSide === 'right' && (
-          <FormCheck.Label htmlFor={this.props.id}>{this.props.label}</FormCheck.Label>
-        )}
-      </FormCheck>
-    )
-  }
+  return (
+    <FormCheck name={props.name} inline={props.inline}>
+      {labelSide === 'left' && (
+        <FormCheck.Label htmlFor={props.id}>{props.label}</FormCheck.Label>
+      )}
+      <FormCheck.Input
+        id={props.id}
+        type="checkbox"
+        disabled={props.disabled}
+        onChange={props.onChange}
+      />
+      {labelSide === 'right' && (
+        <FormCheck.Label htmlFor={props.id}>{props.label}</FormCheck.Label>
+      )}
+    </FormCheck>
+  )
 }
 
 export { Checkbox }
