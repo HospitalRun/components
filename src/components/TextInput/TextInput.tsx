@@ -9,7 +9,7 @@ interface Props {
   /** The value of the input */
   value?: string | ''
   /** Handles the onChange event for the input */
-  onChange?: (e: React.FormEvent<Form>) => void
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   /** The name of the input */
   name?: string | ''
   /** The id value of the input */
