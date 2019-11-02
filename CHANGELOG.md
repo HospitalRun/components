@@ -1,3 +1,11 @@
+## [0.13.2](https://github.com/HospitalRun/components/compare/v0.13.1...v0.13.2) (2019-11-02)
+
+
+### Bug Fixes
+
+* **text:** change event type to ChangeEvent ([c079fd3](https://github.com/HospitalRun/components/commit/c079fd3))
+* **textinput:** change event type to ChangeEvent ([aea29a0](https://github.com/HospitalRun/components/commit/aea29a0))
+
 ## [0.13.1](https://github.com/HospitalRun/components/compare/v0.13.0...v0.13.1) (2019-10-31)
 
 
