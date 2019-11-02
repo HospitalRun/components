@@ -17,7 +17,7 @@ interface Props {
   value?: string | ''
 
   /** Handles the onChange event for the TextField */
-  onChange?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
 }
 
 /**
