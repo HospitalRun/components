@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import * as sinon from 'sinon'
-import { Navbar, Button } from '../src'
 import { Nav, Navbar as NavBarRB, NavDropdown, FormControl } from 'react-bootstrap'
+import { Navbar, Button } from '../src'
 
 describe('Navbar', () => {
   it('Navbar renders itself without crashing', () => {
@@ -128,7 +128,7 @@ describe('Navbar', () => {
     expect(bootstrapNavDropdown).toHaveLength(0)
   })
 
-  //rest
+  // rest
 
   it('Navbar dropdown shows the exactly same links as when it passed on links prop', () => {
     const onButtonClick = sinon.spy()

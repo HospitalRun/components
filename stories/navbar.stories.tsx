@@ -10,7 +10,7 @@ storiesOf('Navbar', module)
       inline: true,
     },
   })
-  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Navbar', () => (
     <div>
       <Navbar
@@ -90,6 +90,6 @@ storiesOf('Navbar', module)
       />
       <br />
 
-      <Toaster autoClose={800} hideProgressBar={true} draggable={true} />
+      <Toaster autoClose={800} hideProgressBar draggable />
     </div>
   ))

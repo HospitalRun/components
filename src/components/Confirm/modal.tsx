@@ -1,7 +1,7 @@
 import * as React from 'react'
+import Button from 'react-bootstrap/Button'
 import { ConfirmProps } from './interfaces'
 import * as strings from './strings'
-import Button from 'react-bootstrap/Button'
 
 const Modal = (props: ConfirmProps) => ({ onClose }: any) => (
   <>

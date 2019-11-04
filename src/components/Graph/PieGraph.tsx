@@ -26,6 +26,7 @@ interface Props {
  */
 class PieGraph extends Component<Props, {}> {
   graph: ChartJs | null
+
   chart: HTMLCanvasElement | null
 
   constructor(props: Props) {
@@ -35,20 +36,27 @@ class PieGraph extends Component<Props, {}> {
   }
 
   componentDidMount() {
-    const { doughnut } = this.props
+    const { doughnut, title, titleFontSize, titleFontColor, datasets } = this.props
     const type = doughnut ? 'doughnut' : 'pie'
     const config = util.getCommonChartConfigurations(
       type,
-      this.props.title,
-      this.props.titleFontSize,
-      this.props.titleFontColor,
-      this.props.datasets,
+      title,
+      titleFontSize,
+      titleFontColor,
+      datasets,
     )
     this.graph = new ChartJs(this.chart as HTMLCanvasElement, config)
   }
 
   render() {
-    return <canvas ref={chart => (this.chart = chart)}></canvas>
+    return (
+      <canvas
+        ref={(chart) => {
+          this.chart = chart
+          return this.chart
+        }}
+      />
+    )
   }
 }
 

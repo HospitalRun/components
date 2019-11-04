@@ -18,9 +18,10 @@
     "dev": "tsdx watch",
     "build": "tsdx build",
     "prepublishOnly": "npm run build",
-    "pretest": "npm run lint && npm run build",
     "test": "tsdx test --env=jsdom",
-    "lint": "prettier --write --loglevel warn \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\" \"stories/**/*.{ts,tsx}\"",
+    "prelint": "npm run prettier",
+    "lint": "tsdx lint \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\" \"stories/**/*.{ts,tsx}\" --fix",
+    "prettier": "prettier --loglevel warn --write \"./**/*.{ts,tsx}\"",
     "coveralls": "tsdx test --coverage --coverageReporters=text-lcov | coveralls",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
@@ -49,16 +50,6 @@
       "git add"
     ]
   },
-  "prettier": {
-    "printWidth": 100,
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "bracketSpacing": true,
-    "jsxBracketSameLine": false,
-    "arrowParens": "avoid"
-  },
   "devDependencies": {
     "@babel/core": "~7.5.5",
     "@commitlint/cli": "~8.2.0",
@@ -84,8 +75,8 @@
     "@types/sinon": "~7.0.13",
     "@types/storybook__addon-info": "~4.1.2",
     "@types/storybook__react": "~4.0.2",
-    "@typescript-eslint/eslint-plugin": "^2.3.1",
-    "@typescript-eslint/parser": "^2.3.1",
+    "@typescript-eslint/eslint-plugin": "~2.6.1",
+    "@typescript-eslint/parser": "~2.6.1",
     "awesome-typescript-loader": "~5.2.1",
     "babel-loader": "~8.0.6",
     "bootstrap": "~4.3.1",
@@ -95,7 +86,14 @@
     "cz-conventional-changelog": "~3.0.2",
     "enzyme": "~3.10.0",
     "enzyme-adapter-react-16": "~1.14.0",
+    "eslint": "~6.6.0",
+    "eslint-config-airbnb": "~18.0.1",
     "eslint-config-react-app": "~5.0.2",
+    "eslint-plugin-import": "~2.18.2",
+    "eslint-plugin-jest": "~23.0.2",
+    "eslint-plugin-jsx-a11y": "~6.2.3",
+    "eslint-plugin-react": "~7.16.0",
+    "eslint-plugin-react-hooks": "~1.7.0",
     "husky": "~3.0.5",
     "jest-canvas-mock": "~2.1.1",
     "lint-staged": "~9.2.5",
@@ -128,23 +126,64 @@
       "<rootDir>test-setup.ts"
     ]
   },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "always"
+  },
   "eslint": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest/globals": true
+    },
+    "extends": [
+      "airbnb",
+      "prettier",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module",
       "project": "./tsconfig.json",
       "tsconfigRootDir": "./",
       "createDefaultProgram": true
     },
-    "extends": [
-      "react-app",
-      "plugin:@typescript-eslint/recommended",
-      "prettier",
-      "prettier/@typescript-eslint"
-    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    },
     "plugins": [
-      "@typescript-eslint"
+      "react",
+      "@typescript-eslint",
+      "prettier",
+      "jest"
     ],
     "rules": {
+      "semi": ["error", "never"],
+      "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
+      "prettier/prettier": "error",
+      "react/jsx-one-expression-per-line": "off",
+      "react/jsx-wrap-multilines": "off",
+      "no-param-reassign": ["error", { "props": false }],
+      "import/prefer-default-export": "off",
+      "@typescript-eslint/member-delimiter-style": "off",
       "@typescript-eslint/explicit-function-return-type": "off",
       "@typescript-eslint/no-explicit-any": "off"
     }
