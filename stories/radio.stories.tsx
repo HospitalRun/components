@@ -8,7 +8,7 @@ storiesOf('Radio', module)
       inline: true,
     },
   })
-  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Radio', () => (
     <div>
       <Radio label="Marshmallow" name="sweets" id="marshmallow" value="marshmallow" />

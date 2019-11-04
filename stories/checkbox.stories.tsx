@@ -8,7 +8,7 @@ storiesOf('Checkbox', module)
       inline: true,
     },
   })
-  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Checkbox', () => (
     <div>
       <h1>Vertical</h1>

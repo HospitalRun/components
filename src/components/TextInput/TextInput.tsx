@@ -14,7 +14,7 @@ interface Props {
   name?: string | ''
   /** The id value of the input */
   id?: string | ''
-  /**The placeholder inside of the text input */
+  /** The placeholder inside of the text input */
   placeholder?: string | ''
   /** Defines whether the input should be disabled or not. Defaults to false. */
   disabled?: boolean

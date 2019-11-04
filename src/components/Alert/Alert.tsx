@@ -8,16 +8,16 @@ interface Props {
    * @default "primary"
    */
   color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
-  /** Defines the title of the alert.*/
+  /** Defines the title of the alert. */
   title?: string
-  /** Defines the message of the alert.*/
+  /** Defines the message of the alert. */
   message?: ReactNode
-  /** Defines if the alert should be dismissible. Defaults to false.*/
+  /** Defines if the alert should be dismissible. Defaults to false. */
   dismissible?: boolean
   /**
    * Defines the label of the close button if the alert is dismissible.
    * @default "Dismiss"
-   **/
+   * */
   closeLabel?: string
 }
 
@@ -47,7 +47,9 @@ class Alert extends Component<Props, State> {
       closeLabel = 'Dismiss',
     } = this.props
 
-    if (this.state.show) {
+    const { show } = this.state
+
+    if (show) {
       return (
         <BootstrapAlert
           variant={color}
@@ -69,7 +71,8 @@ class Alert extends Component<Props, State> {
           )}
         </BootstrapAlert>
       )
-    } else return <></>
+    }
+    return <></>
   }
 }
 

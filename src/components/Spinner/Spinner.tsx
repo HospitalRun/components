@@ -1,3 +1,4 @@
+/* eslint react/jsx-props-no-spreading: "off" */
 import React from 'react'
 import * as Spinners from 'react-spinners'
 import { SpinnerType, SpinnerSizeUnit } from './interfaces'
@@ -31,14 +32,14 @@ const Spinner = (props: Props) => {
   const { loading, color, margin, size, sizeUnit, type } = props
 
   const commonStyles = {
-    loading: loading,
-    color: color ? color : 'grey',
-    margin: margin ? margin : '2px',
+    loading,
+    color: color || 'grey',
+    margin: margin || '2px',
   }
 
   const loaderStyles1 = {
     ...commonStyles,
-    size: size ? (props.size as number) : 15,
+    size: size ? (size as number) : 15,
     sizeUnit: sizeUnit ? (sizeUnit as SpinnerSizeUnit) : 'px',
   }
 

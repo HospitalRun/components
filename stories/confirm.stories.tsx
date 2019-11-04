@@ -2,8 +2,8 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Confirm } from '../src'
 import Button from 'react-bootstrap/Button'
+import { Confirm } from '../src'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-confirm-alert/src/react-confirm-alert.css'
 
@@ -15,7 +15,7 @@ storiesOf('Confirm', module)
       propTablesExclude: [Button],
     },
   })
-  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Confirm', () => (
     <div>
       <Button

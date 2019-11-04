@@ -18,7 +18,7 @@ describe('TextField', () => {
 
     expect(wrapper.find(HTMLTextAreaElement)).toHaveLength(1)
     expect(
-      wrapper.find(HTMLTextAreaElement).filterWhere(item => {
+      wrapper.find(HTMLTextAreaElement).filterWhere((item) => {
         return item.prop('name') === name
       }),
     ).toHaveLength(1)
@@ -41,18 +41,18 @@ describe('TextField', () => {
   })
 
   it('renders a disabled TextField', () => {
-    const wrapper = mount(<TextField value="test value" disabled={true} />)
+    const wrapper = mount(<TextField value="test value" disabled />)
     const input = wrapper.find(HTMLTextAreaElement)
 
     expect(input.prop('disabled')).toBe(true)
   })
 
   it('renders a TextField of different sizes', () => {
-    const smallWrapper = mount(<TextField value="test value" size={'small'} />)
+    const smallWrapper = mount(<TextField value="test value" size="small" />)
     const smallInput = smallWrapper.find(HTMLTextAreaElement)
     expect(smallInput.hasClass('form-control-sm')).toBe(true)
 
-    const largeWrapper = mount(<TextField value="test value" size={'large'} />)
+    const largeWrapper = mount(<TextField value="test value" size="large" />)
     const largeInput = largeWrapper.find(HTMLTextAreaElement)
     expect(largeInput.hasClass('form-control-lg')).toBe(true)
   })

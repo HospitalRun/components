@@ -2,7 +2,7 @@ import * as React from 'react'
 import { mount, shallow } from 'enzyme'
 import FormCheck from 'react-bootstrap/FormCheck'
 import * as sinon from 'sinon'
-import { Checkbox } from '../dist'
+import { Checkbox } from '../src'
 
 describe('Checkbox', () => {
   it('Checkbox renders itself without crashing', () => {
