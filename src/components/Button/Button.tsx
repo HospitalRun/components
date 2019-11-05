@@ -1,6 +1,6 @@
 import React from 'react'
 import BootstrapButton from 'react-bootstrap/Button'
-import { ButtonType } from './interfaces'
+import { ButtonType, ButtonColor } from './interfaces'
 import { IconType } from '../Icon/interfaces'
 import { Icon } from '../Icon'
 
@@ -8,7 +8,7 @@ interface Props {
   /** Determines if the button should be outlined and not filled. By defaut is false */
   outlined?: boolean
   /** Defines the button variant. By default is primary */
-  color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
+  color?: ButtonColor
   /** Determines whether or not the button should be a block button or not. By default false */
   block?: boolean
   /** Determines whether or not the button should be disabled or not. By default is false. */

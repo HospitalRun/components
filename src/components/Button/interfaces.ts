@@ -16,3 +16,13 @@ export type ButtonType =
   | 'outline-info'
   | 'outline-dark'
   | 'outline-light'
+
+export type ButtonColor =
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'danger'
+  | 'info'
+  | 'light'
+  | 'dark'
