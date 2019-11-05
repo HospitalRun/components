@@ -18,14 +18,10 @@ describe('TextInput', () => {
 
     expect(wrapper.find(Form.Control)).toHaveLength(1)
     expect(
-      wrapper.find(Form.Control).filterWhere((item) => {
-        return item.prop('name') === name
-      }),
+      wrapper.find(Form.Control).filterWhere((item) => item.prop('name') === name),
     ).toHaveLength(1)
     expect(
-      wrapper.find(Form.Control).filterWhere((item) => {
-        return item.prop('defaultValue') === value
-      }),
+      wrapper.find(Form.Control).filterWhere((item) => item.prop('defaultValue') === value),
     ).toHaveLength(1)
   })
 

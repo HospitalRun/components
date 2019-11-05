@@ -62,17 +62,11 @@ const Navbar = (props: Props) => {
     img = ''
   }
 
-  const getNavItems = (subLink: NavLinkElement, index: number) => {
-    return (
-      <NavDropdown.Item
-        href={subLink.href ? subLink.href : ''}
-        key={index}
-        onClick={subLink.onClick}
-      >
-        {subLink.label}
-      </NavDropdown.Item>
-    )
-  }
+  const getNavItems = (subLink: NavLinkElement, index: number) => (
+    <NavDropdown.Item href={subLink.href ? subLink.href : ''} key={index} onClick={subLink.onClick}>
+      {subLink.label}
+    </NavDropdown.Item>
+  )
 
   const getNavLinks = (link: NavLink, index: number) => {
     if (link.children.length === 0) {

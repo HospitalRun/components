@@ -18,9 +18,7 @@ describe('TextField', () => {
 
     expect(wrapper.find(HTMLTextAreaElement)).toHaveLength(1)
     expect(
-      wrapper.find(HTMLTextAreaElement).filterWhere((item) => {
-        return item.prop('name') === name
-      }),
+      wrapper.find(HTMLTextAreaElement).filterWhere((item) => item.prop('name') === name),
     ).toHaveLength(1)
   })
 
