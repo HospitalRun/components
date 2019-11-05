@@ -17,11 +17,6 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    // ecmaFeatures: {
-    //   jsx: true,
-    // },
-    // ecmaVersion: 2018,
-    // sourceType: 'module',
     project: './tsconfig.json',
     tsconfigRootDir: './',
     // TODO: we need this because of an issue with @typescript-eslint/parser: https://github.com/typescript-eslint/typescript-eslint/issues/864
