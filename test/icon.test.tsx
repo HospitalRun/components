@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { Icon } from '../src'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Icon } from '../src'
 
 describe('Icon', () => {
   it('Add Icon renders itself without crashing', () => {

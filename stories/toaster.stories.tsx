@@ -2,8 +2,8 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Toast, Toaster } from '../src'
 import Button from 'react-bootstrap/Button'
+import { Toast, Toaster } from '../src'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-toastify/dist/ReactToastify.min.css'
 
@@ -15,7 +15,7 @@ storiesOf('Toaster', module)
       propTablesExclude: [Button],
     },
   })
-  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Success', () => (
     <div>
       <Button
@@ -26,7 +26,7 @@ storiesOf('Toaster', module)
       >
         Click me!
       </Button>
-      <Toaster autoClose={3000} hideProgressBar={true} draggable={true} />
+      <Toaster autoClose={3000} hideProgressBar draggable />
     </div>
   ))
   .add('Info', () => (
@@ -39,7 +39,7 @@ storiesOf('Toaster', module)
       >
         Click me!
       </Button>
-      <Toaster autoClose={3000} hideProgressBar={true} draggable={true} />
+      <Toaster autoClose={3000} hideProgressBar draggable />
     </div>
   ))
   .add('Warning', () => (
@@ -52,7 +52,7 @@ storiesOf('Toaster', module)
       >
         Click me!
       </Button>
-      <Toaster autoClose={3000} hideProgressBar={true} draggable={true} />
+      <Toaster autoClose={3000} hideProgressBar draggable />
     </div>
   ))
   .add('Error', () => (
@@ -65,6 +65,6 @@ storiesOf('Toaster', module)
       >
         Click me!
       </Button>
-      <Toaster autoClose={3000} hideProgressBar={true} draggable={true} />
+      <Toaster autoClose={3000} hideProgressBar draggable />
     </div>
   ))

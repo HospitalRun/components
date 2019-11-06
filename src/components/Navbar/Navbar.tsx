@@ -2,12 +2,11 @@ import React from 'react'
 import NavbarRB from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
-import FormControl, { FormControlProps } from 'react-bootstrap/FormControl'
+import FormControl from 'react-bootstrap/FormControl'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import { ReplaceProps, BsPrefixProps } from 'react-bootstrap/helpers'
 
-import { Button } from '../../../src'
-import { NavLink, Brand } from './interfaces'
+import { Button } from '../..'
+import { NavLink, Brand, NavLinkElement } from './interfaces'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */
@@ -31,9 +30,7 @@ interface Props extends React.Props<any> {
   /** Handles the on click search button event */
   onSeachButtonClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   /** Handles the on change search form event */
-  onSearchTextBoxChange: (
-    event: React.FormEvent<ReplaceProps<'input', BsPrefixProps<'input'> & FormControlProps>>,
-  ) => void
+  onSearchTextBoxChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 /**
@@ -65,6 +62,28 @@ const Navbar = (props: Props) => {
     img = ''
   }
 
+  const getNavItems = (subLink: NavLinkElement, index: number) => (
+    <NavDropdown.Item href={subLink.href ? subLink.href : ''} key={index} onClick={subLink.onClick}>
+      {subLink.label}
+    </NavDropdown.Item>
+  )
+
+  const getNavLinks = (link: NavLink, index: number) => {
+    if (link.children.length === 0) {
+      return (
+        <Nav.Link onClick={link.onClick} key={index}>
+          {link.label}
+        </Nav.Link>
+      )
+    }
+
+    return (
+      <NavDropdown title={link.label} id="collasible-nav-dropdown" key={index}>
+        {link.children.map((subLink, i) => getNavItems(subLink, i))}
+      </NavDropdown>
+    )
+  }
+
   return (
     <NavbarRB bg={bg} variant={variant}>
       <NavbarRB.Brand href={brand.href} onClick={brand.onClick}>
@@ -73,29 +92,7 @@ const Navbar = (props: Props) => {
       </NavbarRB.Brand>
 
       <NavbarRB.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
-          {navLinks.map((link, index) => {
-            return link.children.length === 0 ? (
-              <Nav.Link onClick={link.onClick} key={index}>
-                {link.label}
-              </Nav.Link>
-            ) : (
-              <NavDropdown title={link.label} id="collasible-nav-dropdown" key={index}>
-                {link.children.map((subLink, i) => {
-                  return (
-                    <NavDropdown.Item
-                      href={subLink.href ? subLink.href : ''}
-                      key={i}
-                      onClick={subLink.onClick}
-                    >
-                      {subLink.label}
-                    </NavDropdown.Item>
-                  )
-                })}
-              </NavDropdown>
-            )
-          })}
-        </Nav>
+        <Nav className="mr-auto">{navLinks.map((link, index) => getNavLinks(link, index))}</Nav>
         <Nav>
           <Form inline>
             <FormControl

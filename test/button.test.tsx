@@ -2,8 +2,7 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import * as sinon from 'sinon'
 import { Button as BootstrapButton } from 'react-bootstrap'
-import { Button } from '../src'
-import { Icon } from '../src'
+import { Button, Icon } from '../src'
 
 describe('Button', () => {
   it('Button renders itself without crashing', () => {

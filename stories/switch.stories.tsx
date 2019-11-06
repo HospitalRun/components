@@ -10,7 +10,7 @@ storiesOf('Switch', module)
       inline: true,
     },
   })
-  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Switch', () => (
     <div>
       <Switch label="Switch 1" id="switch1" />

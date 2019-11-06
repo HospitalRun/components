@@ -33,6 +33,7 @@ interface Props {
  */
 class LineGraph extends Component<Props, {}> {
   graph: ChartJs | null
+
   chart: HTMLCanvasElement | null
 
   constructor(props: Props) {
@@ -42,33 +43,43 @@ class LineGraph extends Component<Props, {}> {
   }
 
   componentDidMount() {
-    const type = 'line'
-    let fill = false
+    const {
+      title,
+      titleFontSize,
+      titleFontColor,
+      datasets,
+      stacked,
+      fill,
+      yAxes,
+      xAxes,
+    } = this.props
 
-    if (this.props.fill) {
-      fill = this.props.fill
+    const type = 'line'
+    let isFill = false
+    if (fill) {
+      isFill = fill
     }
 
     const config = util.getCommonChartConfigurations(
       type,
-      this.props.title,
-      this.props.titleFontSize,
-      this.props.titleFontColor,
-      this.props.datasets,
+      title,
+      titleFontSize,
+      titleFontColor,
+      datasets,
     )
     if (config && config.data && config.data.datasets) {
-      for (let i = 0; i < this.props.datasets.length; i++) {
-        config.data.datasets[i].fill = fill
-        config.data.datasets[i].backgroundColor = this.props.datasets[i].backgroundColor
-        config.data.datasets[i].borderColor = this.props.datasets[i].borderColor
+      for (let i = 0; i < datasets.length; i += 1) {
+        config.data.datasets[i].fill = isFill
+        config.data.datasets[i].backgroundColor = datasets[i].backgroundColor
+        config.data.datasets[i].borderColor = datasets[i].borderColor
       }
     }
 
     if (config && config.options) {
-      const stacked = !!this.props.stacked
-      let scales = {
-        xAxes: util.getAxes(this.props.xAxes, false),
-        yAxes: util.getAxes(this.props.yAxes, stacked),
+      const isStacked = !!stacked
+      const scales = {
+        xAxes: util.getAxes(xAxes, false),
+        yAxes: util.getAxes(yAxes, isStacked),
       }
 
       config.options.scales = scales
@@ -78,7 +89,14 @@ class LineGraph extends Component<Props, {}> {
   }
 
   render() {
-    return <canvas ref={chart => (this.chart = chart)}></canvas>
+    return (
+      <canvas
+        ref={(chart) => {
+          this.chart = chart
+          return this.chart
+        }}
+      />
+    )
   }
 }
 

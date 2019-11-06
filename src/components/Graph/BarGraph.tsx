@@ -33,6 +33,7 @@ interface Props {
  */
 class BarGraph extends Component<Props, {}> {
   graph: ChartJs | null
+
   chart: HTMLCanvasElement | null
 
   constructor(props: Props) {
@@ -42,28 +43,38 @@ class BarGraph extends Component<Props, {}> {
   }
 
   componentDidMount() {
-    const stacked = !!this.props.stacked
-    const { horizontal, xAxes, yAxes } = this.props
+    const {
+      stacked,
+      title,
+      titleFontSize,
+      titleFontColor,
+      datasets,
+      horizontal,
+      xAxes,
+      yAxes,
+    } = this.props
+
+    const isStacked = !!stacked
     const type = horizontal ? 'horizontalBar' : 'bar'
     const config = util.getCommonChartConfigurations(
       type,
-      this.props.title,
-      this.props.titleFontSize,
-      this.props.titleFontColor,
-      this.props.datasets,
+      title,
+      titleFontSize,
+      titleFontColor,
+      datasets,
     )
 
     if (config && config.options) {
-      let scales = undefined
+      let scales
       if (!horizontal) {
         scales = {
-          xAxes: util.getAxes(xAxes, stacked),
-          yAxes: util.getAxes(yAxes, stacked),
+          xAxes: util.getAxes(xAxes, isStacked),
+          yAxes: util.getAxes(yAxes, isStacked),
         }
       } else {
         scales = {
-          xAxes: util.getAxes(yAxes, stacked),
-          yAxes: util.getAxes(xAxes, stacked),
+          xAxes: util.getAxes(yAxes, isStacked),
+          yAxes: util.getAxes(xAxes, isStacked),
         }
       }
 
@@ -74,7 +85,14 @@ class BarGraph extends Component<Props, {}> {
   }
 
   render() {
-    return <canvas ref={chart => (this.chart = chart)}></canvas>
+    return (
+      <canvas
+        ref={(chart) => {
+          this.chart = chart
+          return this.chart
+        }}
+      />
+    )
   }
 }
 

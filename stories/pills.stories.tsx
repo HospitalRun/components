@@ -10,7 +10,7 @@ storiesOf('Pill', module)
       inline: true,
     },
   })
-  .addDecorator(storyFn => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Pill', () => (
     <div>
       <Pill color="primary">Primary</Pill>
