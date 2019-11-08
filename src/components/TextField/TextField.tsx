@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form'
-import { getControlSize } from '../../helpers/ControlSize'
+import { getControlSize } from '../../helpers/controlSize'
 
 interface Props {
   /** Determines whether the TextField should be disabled or not. By default, it is false. */

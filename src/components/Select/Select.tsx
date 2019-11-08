@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormControl, FormControlProps } from 'react-bootstrap'
-import { getControlSize } from '../../helpers/ControlSize'
+import { getControlSize } from '../../helpers/controlSize'
 
 interface Props {
   /** When multiple is true, the user can select multiple options. Otherwise, one option only. False by default. */
