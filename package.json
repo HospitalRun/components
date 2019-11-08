@@ -115,7 +115,6 @@
     "chart.js": "^2.8.0",
     "formik": "^1.5.8",
     "moment": "^2.24.0",
-    "react-confirm-alert": "^2.4.1",
     "react-spinners": "^0.6.1",
     "react-toastify": "^5.3.2"
   },
