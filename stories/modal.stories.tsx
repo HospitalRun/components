@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
-import { Modal } from '../src'
-import { Button } from '../src'
+import { Modal, Button } from '../src'
 
 storiesOf('Modal', module)
   .addParameters({
@@ -11,7 +10,9 @@ storiesOf('Modal', module)
       propTablesExclude: [Button],
     },
   })
-  .addDecorator(storyFn => <div style={{ marginLeft: '2em', marginRight: '2em' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => (
+    <div style={{ marginLeft: '2em', marginRight: '2em' }}>{storyFn()}</div>
+  ))
   .add('Simple modal', () => {
     const [show, setShow] = useState(false)
     return (

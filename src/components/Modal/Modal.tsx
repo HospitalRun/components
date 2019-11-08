@@ -4,40 +4,40 @@ import { Button, Props as ButtonProps } from '../Button'
 import { ButtonsAlignment } from './interfaces'
 
 interface Props {
-  /** Defines if the modal should be visible.*/
+  /** Defines if the modal should be visible. */
   show: boolean
-  /** Toggles the modal visibility.*/
+  /** Toggles the modal visibility. */
   toggle(): void
-  /** Defines the title of the modal.*/
+  /** Defines the title of the modal. */
   title?: string
-  /** Defines the body of the modal.*/
+  /** Defines the body of the modal. */
   body?: ReactNode
   /**
    * Renders a close button in modal header.
    * @default true
-   **/
+   * */
   showHeaderCloseButton?: boolean
   /**
    * Defines if the modal should be vertically centered.
    * @default false
-   **/
+   * */
   verticallyCentered?: boolean
   /**
    * Defines the buttons alignment.
    * @default "edges"
-   **/
+   * */
   buttonsAlignment?: ButtonsAlignment
   /**
    * Optional close button properties.
-   **/
+   * */
   closeButton?: ButtonProps
   /**
    * Optional middle button properties.
-   **/
+   * */
   middleButton?: ButtonProps
   /**
    * Optional success button properties.
-   **/
+   * */
   successButton?: ButtonProps
 }
 
@@ -69,7 +69,7 @@ const Modal = (props: Props) => {
       onHide={() => toggle()}
     >
       {(showHeaderCloseButton === false ? title : true) && (
-        <BootstrapModal.Header closeButton={showHeaderCloseButton === false ? false : true}>
+        <BootstrapModal.Header closeButton={showHeaderCloseButton !== false}>
           {title && <BootstrapModal.Title>{title}</BootstrapModal.Title>}
         </BootstrapModal.Header>
       )}
