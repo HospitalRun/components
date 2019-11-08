@@ -1,7 +1,6 @@
-import React, { Component, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import BootstrapModal from 'react-bootstrap/Modal'
-import { Button } from '../Button'
-import { ButtonColor } from '../Button/interfaces'
+import { Button, Props as ButtonProps } from '../Button'
 import { ButtonsAlignment } from './interfaces'
 
 interface Props {
@@ -31,153 +30,80 @@ interface Props {
   /**
    * Optional close button properties.
    **/
-  closeButton?: {
-    /**
-     * Optional label for the close button.
-     * @default "Close"
-     **/
-    label?: string
-    /**
-     * Optional color for the close button.
-     * @default "secondary"
-     **/
-    color?: ButtonColor
-    /**
-     * Optional callback for the close button.
-     **/
-    callback?(): void
-  }
+  closeButton?: ButtonProps
   /**
    * Optional middle button properties.
    **/
-  middleButton?: {
-    /**
-     * Optional label for the middle button.
-     * @default "Another action"
-     **/
-    label?: string
-    /**
-     * Optional color for the middle button.
-     * @default "warning"
-     **/
-    color?: ButtonColor
-    /**
-     * Optional callback for the middle button.
-     **/
-    callback?(): void
-  }
+  middleButton?: ButtonProps
   /**
    * Optional success button properties.
    **/
-  successButton?: {
-    /**
-     * Optional label for the success button.
-     * @default "Confirm"
-     **/
-    label?: string
-    /**
-     * Optional color for the success button.
-     * @default "primary"
-     **/
-    color?: ButtonColor
-    /**
-     * Optional callback for the success button.
-     **/
-    callback?(): void
-  }
+  successButton?: ButtonProps
 }
 
 /**
  * Add dialogs for lightboxes, user notifications, or completely custom content.
  */
 
-class Modal extends Component<Props, {}> {
-  render() {
-    const {
-      show,
-      toggle,
-      title,
-      body,
-      verticallyCentered,
-      buttonsAlignment,
-      showHeaderCloseButton,
-      closeButton,
-      middleButton,
-      successButton,
-    } = this.props
+const Modal = (props: Props) => {
+  const {
+    show,
+    toggle,
+    title,
+    body,
+    verticallyCentered,
+    buttonsAlignment,
+    showHeaderCloseButton,
+    closeButton,
+    middleButton,
+    successButton,
+  } = props
 
-    if (show) {
-      return (
-        <BootstrapModal
-          autoFocus
-          centered={verticallyCentered}
-          keyboard
-          restoreFocus
-          show={show}
-          onHide={() => toggle()}
-        >
-          {(showHeaderCloseButton === false ? title : true) && (
-            <BootstrapModal.Header closeButton={showHeaderCloseButton === false ? false : true}>
-              {title && <BootstrapModal.Title>{title}</BootstrapModal.Title>}
-            </BootstrapModal.Header>
-          )}
-          {body && <BootstrapModal.Body>{body}</BootstrapModal.Body>}
-          <BootstrapModal.Footer
-            style={{
-              justifyContent:
-                buttonsAlignment === 'left'
-                  ? 'flex-start'
-                  : buttonsAlignment === 'right'
-                  ? 'flex-end'
-                  : buttonsAlignment === 'center'
-                  ? 'center'
-                  : 'space-between',
-            }}
-          >
-            {closeButton && (
-              <Button
-                color={closeButton.color || 'secondary'}
-                onClick={() => {
-                  if (closeButton && closeButton.callback) {
-                    closeButton.callback()
-                  }
-                  toggle()
-                }}
-              >
-                {closeButton.label || 'Close'}
-              </Button>
-            )}
-            {middleButton && (
-              <Button
-                color={middleButton.color || 'primary'}
-                onClick={() => {
-                  if (middleButton && middleButton.callback) {
-                    middleButton.callback()
-                  }
-                  toggle()
-                }}
-              >
-                {middleButton.label || 'Confirm'}
-              </Button>
-            )}
-            {successButton && (
-              <Button
-                color={successButton.color || 'primary'}
-                onClick={() => {
-                  if (successButton && successButton.callback) {
-                    successButton.callback()
-                  }
-                  toggle()
-                }}
-              >
-                {successButton.label || 'Confirm'}
-              </Button>
-            )}
-          </BootstrapModal.Footer>
-        </BootstrapModal>
-      )
-    } else return <></>
-  }
+  return (
+    <BootstrapModal
+      autoFocus
+      centered={verticallyCentered}
+      keyboard
+      restoreFocus
+      show={show}
+      onHide={() => toggle()}
+    >
+      {(showHeaderCloseButton === false ? title : true) && (
+        <BootstrapModal.Header closeButton={showHeaderCloseButton === false ? false : true}>
+          {title && <BootstrapModal.Title>{title}</BootstrapModal.Title>}
+        </BootstrapModal.Header>
+      )}
+      {body && <BootstrapModal.Body>{body}</BootstrapModal.Body>}
+      <BootstrapModal.Footer
+        style={{
+          justifyContent:
+            buttonsAlignment === 'left'
+              ? 'flex-start'
+              : buttonsAlignment === 'right'
+              ? 'flex-end'
+              : buttonsAlignment === 'center'
+              ? 'center'
+              : 'space-between',
+        }}
+      >
+        {closeButton && (
+          <Button {...closeButton} color={closeButton.color || 'secondary'}>
+            {closeButton.children || 'Close'}
+          </Button>
+        )}
+        {middleButton && (
+          <Button {...middleButton} color={middleButton.color || 'info'}>
+            {middleButton.children || 'Retry'}
+          </Button>
+        )}
+        {successButton && (
+          <Button {...successButton} color={successButton.color || 'primary'}>
+            {successButton.children || 'Confirm'}
+          </Button>
+        )}
+      </BootstrapModal.Footer>
+    </BootstrapModal>
+  )
 }
 
 export { Modal }

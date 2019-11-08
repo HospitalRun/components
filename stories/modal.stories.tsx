@@ -32,8 +32,11 @@ storiesOf('Modal', module)
             </div>
           }
           closeButton={{
-            label: 'Close me',
-            callback: () => console.log('modal closed'),
+            children: 'Close me',
+            onClick: () => {
+              console.log('clicked close')
+              setShow(!show)
+            },
           }}
         />
       </div>
@@ -57,14 +60,24 @@ storiesOf('Modal', module)
             </div>
           }
           closeButton={{
-            label: 'Close me',
+            children: 'Close me',
             color: 'secondary',
-            callback: () => console.log('modal closed'),
+            icon: 'remove',
+            iconLocation: 'left',
+            onClick: () => {
+              console.log('clicked close')
+              setShow(!show)
+            },
           }}
           successButton={{
-            label: 'I agree!',
+            children: 'I agree!',
             color: 'success',
-            callback: () => console.log('clicked agree'),
+            icon: 'add',
+            iconLocation: 'left',
+            onClick: () => {
+              console.log('clicked agree')
+              setShow(!show)
+            },
           }}
         />
       </div>
@@ -88,19 +101,35 @@ storiesOf('Modal', module)
             </div>
           }
           closeButton={{
-            label: 'Close me',
+            children: 'Close me',
             color: 'secondary',
-            callback: () => console.log('modal closed'),
+            icon: 'remove',
+            iconLocation: 'left',
+            onClick: () => {
+              console.log('clicked close')
+              setShow(!show)
+            },
           }}
           middleButton={{
-            label: 'Maybe',
+            children: 'Disabled',
             color: 'info',
-            callback: () => console.log('clicked maybe'),
+            icon: 'save',
+            iconLocation: 'left',
+            disabled: true,
+            onClick: () => {
+              console.log('clicked maybe')
+              setShow(!show)
+            },
           }}
           successButton={{
-            label: 'I agree!',
+            children: 'I agree!',
             color: 'success',
-            callback: () => console.log('clicked agree'),
+            icon: 'add',
+            iconLocation: 'left',
+            onClick: () => {
+              console.log('clicked agree')
+              setShow(!show)
+            },
           }}
         />
       </div>
@@ -130,19 +159,34 @@ storiesOf('Modal', module)
           verticallyCentered
           buttonsAlignment="right"
           closeButton={{
-            label: 'Close me',
+            children: 'Close me',
             color: 'secondary',
-            callback: () => console.log('modal closed'),
+            icon: 'remove',
+            iconLocation: 'left',
+            onClick: () => {
+              console.log('clicked close')
+              setShow(!show)
+            },
           }}
           middleButton={{
-            label: 'Maybe',
+            children: 'Maybe',
             color: 'info',
-            callback: () => console.log('clicked maybe'),
+            icon: 'save',
+            iconLocation: 'left',
+            onClick: () => {
+              console.log('clicked maybe')
+              setShow(!show)
+            },
           }}
           successButton={{
-            label: 'I agree!',
+            children: 'I agree!',
             color: 'success',
-            callback: () => console.log('clicked agree'),
+            icon: 'add',
+            iconLocation: 'left',
+            onClick: () => {
+              console.log('clicked agree')
+              setShow(!show)
+            },
           }}
         />
       </div>
