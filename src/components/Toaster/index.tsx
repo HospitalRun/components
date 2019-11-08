@@ -7,33 +7,40 @@ export const Toast: any = (
   type: ToastProps['type'],
   title: ToastProps['title'],
   message?: ToastProps['message'],
-) =>
-  type === 'error'
-    ? message
-      ? toast.error(titleWithMessage(title, message))
-      : toast.error(titleWithoutMessage(title))
-    : type === 'info'
-    ? message
-      ? toast.info(titleWithMessage(title, message))
-      : toast.info(titleWithoutMessage(title))
-    : type === 'success'
-    ? message
-      ? toast.success(titleWithMessage(title, message))
-      : toast.success(titleWithoutMessage(title))
-    : type === 'warning'
-    ? message
-      ? toast.warn(titleWithMessage(title, message))
-      : toast.warn(titleWithoutMessage(title))
-    : message
-    ? toast(titleWithMessage(title, message))
-    : toast(titleWithoutMessage(title))
+) => {
+  const messageToShow = message ? titleWithMessage(title, message) : titleWithoutMessage(title)
+  let toastToShow
 
-export const Toaster = (props: ToasterProps) => (
-  <ToastContainer
-    autoClose={props.autoClose || 5000}
-    hideProgressBar={props.hideProgressBar === false ? false : true}
-    draggable={props.draggable === false ? false : true}
-    transition={Slide}
-    draggablePercent={35}
-  />
-)
+  switch (type) {
+    case 'error':
+      toast.error(messageToShow)
+      break
+    case 'info':
+      toast.info(messageToShow)
+      break
+    case 'success':
+      toast.success(messageToShow)
+      break
+    case 'warning':
+      toast.warn(messageToShow)
+      break
+    default:
+      toast.error(messageToShow)
+  }
+
+  return toastToShow
+}
+
+export const Toaster = (props: ToasterProps) => {
+  const { autoClose, hideProgressBar, draggable } = props
+
+  return (
+    <ToastContainer
+      autoClose={autoClose || 5000}
+      hideProgressBar={hideProgressBar !== false}
+      draggable={draggable !== false}
+      transition={Slide}
+      draggablePercent={35}
+    />
+  )
+}

@@ -28,7 +28,7 @@ const Checkbox = (props: Props) => {
   return (
     <FormCheck name={name} inline={inline}>
       {labelSide === 'left' && <FormCheck.Label htmlFor={id}>{label}</FormCheck.Label>}
-      <FormCheck.Input id={props.id} type="checkbox" disabled={disabled} onChange={onChange} />
+      <FormCheck.Input id={id} type="checkbox" disabled={disabled} onChange={onChange} />
       {labelSide === 'right' && <FormCheck.Label htmlFor={id}>{label}</FormCheck.Label>}
     </FormCheck>
   )

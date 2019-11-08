@@ -1,13 +1,22 @@
+import ChartJs, {
+  ChartData,
+  ChartDataSets,
+  Point,
+  CommonAxe,
+  ChartConfiguration,
+  ChartOptions,
+} from 'chart.js'
+
 import { Dataset, Axis } from './interfaces'
-import ChartJs, { ChartData, ChartDataSets, Point, CommonAxe } from 'chart.js'
-import { ChartConfiguration, ChartOptions } from 'chart.js'
 
 export function getAxisType(type: string): ChartJs.ScaleType {
   if (type === 'category') {
     return 'category'
-  } else if (type === 'linear') {
+  }
+  if (type === 'linear') {
     return 'linear'
-  } else if (type === 'time') {
+  }
+  if (type === 'time') {
     return 'time'
   }
 
@@ -22,7 +31,7 @@ export function getAxisLabel(item: Axis): ChartJs.ScaleTitleOptions {
 }
 
 export function axisMapper(item: Axis): ChartJs.CommonAxe {
-  let axis: ChartJs.CommonAxe = {
+  const axis: ChartJs.CommonAxe = {
     display: !!item.label,
     scaleLabel: getAxisLabel(item),
     type: getAxisType(item.type),
@@ -32,7 +41,7 @@ export function axisMapper(item: Axis): ChartJs.CommonAxe {
   }
 
   if (item.type === 'time') {
-    let timeScale: ChartJs.TimeScale = {
+    const timeScale: ChartJs.TimeScale = {
       unit: item.timeFormat,
       stepSize: item.timeStepSize,
     }
@@ -49,18 +58,20 @@ export function getAxes(axes: Axis[], stacked: boolean): CommonAxe[] {
     chartAxes = axes.map(axisMapper)
   }
 
-  chartAxes.forEach(axis => (axis.stacked = stacked))
+  chartAxes.forEach((axis) => {
+    axis.stacked = stacked
+  })
 
   return chartAxes
 }
 
 export function getChartDataset(dataset: Dataset): ChartDataSets {
-  const label = dataset.label
-  let data: Point[] = []
-  let backgroundColor: string[] = []
-  let borderColor: string[] = []
+  const { label } = dataset
+  const data: Point[] = []
+  const backgroundColor: string[] = []
+  const borderColor: string[] = []
 
-  dataset.data.forEach(d => {
+  dataset.data.forEach((d) => {
     data.push(d.y)
 
     const background = d.backgroundColor ? d.backgroundColor : dataset.backgroundColor
@@ -74,8 +85,8 @@ export function getChartDataset(dataset: Dataset): ChartDataSets {
     }
   })
 
-  let pointBackgroundColor = backgroundColor
-  let pointBorderColor = borderColor
+  const pointBackgroundColor = backgroundColor
+  const pointBorderColor = borderColor
 
   return {
     label,
@@ -93,9 +104,9 @@ export function getChartDatasets(datasets: Dataset[]): ChartDataSets[] {
 }
 
 export function getLabelsFromDataset(datasets: Dataset[]) {
-  let labels: string[] = []
-  datasets.forEach(dataset =>
-    dataset.data.forEach(d => {
+  const labels: string[] = []
+  datasets.forEach((dataset) =>
+    dataset.data.forEach((d) => {
       if (!labels.includes(d.x)) {
         labels.push(d.x)
       }

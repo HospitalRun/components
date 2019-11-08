@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { Alert } from '../src'
 import BootstrapAlert from 'react-bootstrap/Alert'
+import { Alert } from '../src'
 
 describe('Alert', () => {
   it('Alert renders itself without crashing', () => {

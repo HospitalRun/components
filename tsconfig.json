@@ -1,19 +1,10 @@
 {
-  "include": [
-    "./src",
-    "./types"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
+  "include": ["./src", "./types"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "importHelpers": true,
     "declaration": true,
     "sourceMap": true,

@@ -28,11 +28,11 @@ export interface Props {
 function getButtonSize(size: string | undefined): 'sm' | 'lg' | undefined {
   if (size === 'small') {
     return 'sm'
-  } else if (size === 'large') {
-    return 'lg'
-  } else {
-    return undefined
   }
+  if (size === 'large') {
+    return 'lg'
+  }
+  return undefined
 }
 
 /**

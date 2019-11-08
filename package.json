@@ -18,9 +18,8 @@
     "dev": "tsdx watch",
     "build": "tsdx build",
     "prepublishOnly": "npm run build",
-    "pretest": "npm run lint && npm run build",
     "test": "tsdx test --env=jsdom",
-    "lint": "prettier --write --loglevel warn \"src/**/*\" \"stories/**/*\" \"test/**/*\" \"README.md\" \"docs/**/*\" && tsdx lint --fix \"src/**/*.{ts,tsx}\" \"test/**/*.{ts,tsx}\" \"stories/**/*.{ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" \"test/**/*.{js,jsx,ts,tsx}\" \"stories/**/*.{js,jsx,ts,tsx}\" --fix",
     "coveralls": "tsdx test --coverage --coverageReporters=text-lcov | coveralls",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
@@ -44,20 +43,10 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "npm run lint",
       "git add"
     ]
-  },
-  "prettier": {
-    "printWidth": 100,
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "all",
-    "bracketSpacing": true,
-    "jsxBracketSameLine": false,
-    "arrowParens": "avoid"
   },
   "devDependencies": {
     "@babel/core": "~7.5.5",
@@ -84,8 +73,8 @@
     "@types/sinon": "~7.0.13",
     "@types/storybook__addon-info": "~4.1.2",
     "@types/storybook__react": "~4.0.2",
-    "@typescript-eslint/eslint-plugin": "^2.3.1",
-    "@typescript-eslint/parser": "^2.3.1",
+    "@typescript-eslint/eslint-plugin": "~2.6.1",
+    "@typescript-eslint/parser": "~2.6.1",
     "awesome-typescript-loader": "~5.2.1",
     "babel-loader": "~8.0.6",
     "bootstrap": "~4.3.1",
@@ -95,7 +84,15 @@
     "cz-conventional-changelog": "~3.0.2",
     "enzyme": "~3.10.0",
     "enzyme-adapter-react-16": "~1.14.0",
-    "eslint-config-react-app": "~5.0.2",
+    "eslint": "~6.6.0",
+    "eslint-config-airbnb": "~18.0.1",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "~2.18.2",
+    "eslint-plugin-jest": "~23.0.2",
+    "eslint-plugin-jsx-a11y": "~6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "~7.16.0",
+    "eslint-plugin-react-hooks": "~1.7.0",
     "husky": "~3.0.5",
     "jest-canvas-mock": "~2.1.1",
     "lint-staged": "~9.2.5",
@@ -127,26 +124,5 @@
       "jest-canvas-mock",
       "<rootDir>test-setup.ts"
     ]
-  },
-  "eslint": {
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": "./tsconfig.json",
-      "tsconfigRootDir": "./",
-      "createDefaultProgram": true
-    },
-    "extends": [
-      "react-app",
-      "plugin:@typescript-eslint/recommended",
-      "prettier",
-      "prettier/@typescript-eslint"
-    ],
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "rules": {
-      "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/no-explicit-any": "off"
-    }
   }
 }
