@@ -1,3 +1,10 @@
+## [0.13.3](https://github.com/HospitalRun/components/compare/v0.13.2...v0.13.3) (2019-11-11)
+
+
+### Bug Fixes
+
+* **naming:** renames ts file in camelCase and refactors imports ([f39019c](https://github.com/HospitalRun/components/commit/f39019c))
+
 ## [0.13.2](https://github.com/HospitalRun/components/compare/v0.13.1...v0.13.2) (2019-11-02)
 
 
