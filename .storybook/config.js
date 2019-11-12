@@ -1,7 +1,10 @@
+import React from 'react'
 import { configure, addParameters, addDecorator } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
 addDecorator(withInfo)
+
+addDecorator(Story => <Story />)
 
 addParameters({
   options: {
