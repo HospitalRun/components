@@ -1,3 +1,16 @@
+# [0.14.0](https://github.com/HospitalRun/components/compare/v0.13.3...v0.14.0) (2019-11-12)
+
+
+### Bug Fixes
+
+* **lint:** lints some files, adds new rules ([d46fa35](https://github.com/HospitalRun/components/commit/d46fa35))
+
+
+### Features
+
+* **modals:** adds modals ([6a0fc55](https://github.com/HospitalRun/components/commit/6a0fc55)), closes [#27](https://github.com/HospitalRun/components/issues/27)
+* **modals:** simplifies code, reuse button functionalities ([7dda857](https://github.com/HospitalRun/components/commit/7dda857))
+
 ## [0.13.3](https://github.com/HospitalRun/components/compare/v0.13.2...v0.13.3) (2019-11-11)
 
 
