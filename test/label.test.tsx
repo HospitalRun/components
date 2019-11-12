@@ -14,4 +14,10 @@ describe('Label', () => {
     const bootstrapLabel = labelWrapper.find(FormLabel)
     expect(bootstrapLabel.text()).toEqual('test')
   })
+
+  it('Label can add htmlFor prop', () => {
+    const labelWrapper = shallow(<Label htmlFor={'testHtmlFor'} text={'test'} />)
+    const bootstrapLabel = labelWrapper.find(FormLabel)
+    expect(bootstrapLabel.props().htmlFor).toEqual('testHtmlFor')
+  })
 })
