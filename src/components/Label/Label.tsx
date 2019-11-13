@@ -12,7 +12,8 @@ interface Props {
  * Labels are used to display textnpm
  */
 const Label = (props: Props) => {
-  return <FormLabel htmlFor={props.htmlFor}>{props.text}</FormLabel>
+  const { htmlFor, text } = props
+  return <FormLabel htmlFor={htmlFor}>{text}</FormLabel>
 }
 
 export { Label }
