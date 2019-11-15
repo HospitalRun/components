@@ -1,3 +1,12 @@
+# [0.15.0](https://github.com/HospitalRun/components/compare/v0.14.0...v0.15.0) (2019-11-15)
+
+
+### Features
+
+* **labels:** destructuring props assignment for labels ([c3b92f0](https://github.com/HospitalRun/components/commit/c3b92f0)), closes [#65](https://github.com/HospitalRun/components/issues/65)
+* label to functional component w/ addition htmlfor prop ([0fc6d0a](https://github.com/HospitalRun/components/commit/0fc6d0a)), closes [#65](https://github.com/HospitalRun/components/issues/65)
+* **label:** added label component to library ([6ddb776](https://github.com/HospitalRun/components/commit/6ddb776)), closes [#65](https://github.com/HospitalRun/components/issues/65)
+
 # [0.14.0](https://github.com/HospitalRun/components/compare/v0.13.3...v0.14.0) (2019-11-12)
 
 
