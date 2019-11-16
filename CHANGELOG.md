@@ -1,3 +1,10 @@
+# [0.16.0](https://github.com/HospitalRun/components/compare/v0.15.0...v0.16.0) (2019-11-16)
+
+
+### Features
+
+* **image:** add Image component ([780204e](https://github.com/HospitalRun/components/commit/780204e))
+
 # [0.15.0](https://github.com/HospitalRun/components/compare/v0.14.0...v0.15.0) (2019-11-15)
 
 
