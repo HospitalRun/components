@@ -73,8 +73,9 @@
     "@types/sinon": "~7.0.13",
     "@types/storybook__addon-info": "~4.1.2",
     "@types/storybook__react": "~4.0.2",
-    "@typescript-eslint/eslint-plugin": "~2.6.1",
-    "@typescript-eslint/parser": "~2.6.1",
+    "@types/tinymce": "~4.5.23",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
     "awesome-typescript-loader": "~5.2.1",
     "babel-loader": "~8.0.6",
     "bootstrap": "~4.3.1",
@@ -112,16 +113,21 @@
     "@fortawesome/fontawesome-svg-core": "~1.2.25",
     "@fortawesome/free-solid-svg-icons": "~5.11.2",
     "@fortawesome/react-fontawesome": "~0.1.4",
+    "@tinymce/tinymce-react": "~3.3.2",
     "chart.js": "^2.8.0",
     "formik": "^1.5.8",
     "moment": "^2.24.0",
     "react-spinners": "^0.6.1",
-    "react-toastify": "^5.3.2"
+    "react-toastify": "^5.3.2",
+    "tinymce": "~5.0.16"
   },
   "jest": {
     "setupFiles": [
       "jest-canvas-mock",
       "<rootDir>test-setup.ts"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   }
 }
