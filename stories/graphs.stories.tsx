@@ -16,7 +16,11 @@ storiesOf('Graphs', module)
         {
           backgroundColor: 'blue',
           label: 'Months',
-          data: [{ x: 'January', y: 12 }, { x: 'February', y: 11 }, { x: 'March', y: 10 }],
+          data: [
+            { x: 'January', y: 12 },
+            { x: 'February', y: 11 },
+            { x: 'March', y: 10 },
+          ],
         },
       ]}
       xAxes={[{ label: 'Months', type: 'category' }]}
@@ -31,7 +35,11 @@ storiesOf('Graphs', module)
         {
           backgroundColor: 'blue',
           label: 'Months',
-          data: [{ x: 'January', y: 12 }, { x: 'February', y: 11 }, { x: 'March', y: 10 }],
+          data: [
+            { x: 'January', y: 12 },
+            { x: 'February', y: 11 },
+            { x: 'March', y: 10 },
+          ],
         },
       ]}
       xAxes={[{ label: 'Months', type: 'category' }]}
@@ -46,7 +54,11 @@ storiesOf('Graphs', module)
           borderColor: 'red',
           backgroundColor: 'blue',
           label: 'Months',
-          data: [{ x: 'January', y: 12 }, { x: 'February', y: 11 }, { x: 'March', y: 10 }],
+          data: [
+            { x: 'January', y: 12 },
+            { x: 'February', y: 11 },
+            { x: 'March', y: 10 },
+          ],
         },
       ]}
       xAxes={[{ label: 'Months', type: 'category' }]}
