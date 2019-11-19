@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
-import { Button } from '../..'
+import { Button } from '../Button'
 import { NavLink, Brand, NavLinkElement } from './interfaces'
 
 interface Props extends React.Props<any> {
@@ -47,21 +47,6 @@ const Navbar = (props: Props) => {
     onSeachButtonClick,
   } = props
 
-  let img
-  if (brand.src) {
-    img = (
-      <img
-        alt={brand.label}
-        src={brand.src}
-        width="28"
-        height="28"
-        className="d-inline-block align-top"
-      />
-    )
-  } else {
-    img = ''
-  }
-
   const getNavItems = (subLink: NavLinkElement, index: number) => (
     <NavDropdown.Item href={subLink.href ? subLink.href : ''} key={index} onClick={subLink.onClick}>
       {subLink.label}
@@ -87,7 +72,17 @@ const Navbar = (props: Props) => {
   return (
     <NavbarRB bg={bg} variant={variant}>
       <NavbarRB.Brand href={brand.href} onClick={brand.onClick}>
-        {img}
+        {brand.src ? (
+          <img
+            alt={brand.label}
+            src={brand.src}
+            width="28"
+            height="28"
+            className="d-inline-block align-top"
+          />
+        ) : (
+          ''
+        )}
         {` ${brand.label}`}
       </NavbarRB.Brand>
 
