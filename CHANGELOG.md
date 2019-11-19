@@ -1,3 +1,10 @@
+## [0.17.1](https://github.com/HospitalRun/components/compare/v0.17.0...v0.17.1) (2019-11-19)
+
+
+### Bug Fixes
+
+* **component:** fixes circular import on Button component ([7b8cc92](https://github.com/HospitalRun/components/commit/7b8cc9251a904428718315aa7f44ee55bcda3e27))
+
 # [0.17.0](https://github.com/HospitalRun/components/compare/v0.16.0...v0.17.0) (2019-11-19)
 
 
