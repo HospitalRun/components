@@ -17,15 +17,30 @@ import 'tinymce/plugins/paste/plugin.min'
 import 'tinymce/plugins/charmap/plugin.min'
 
 interface Props {
-  // id of the rich text editor component
+  /**
+   * id of the rich text editor component
+   * @default ""
+   */
   id?: string
-  // Initial value of the rich text editor
+  /**
+   *  Initial value of the rich text editor
+   * @default ""
+   */
   value?: string
-  // Defines whether the rich text editor should be enabled/disabled (default = false)
+  /**
+   * Defines whether the rich text editor should be enabled/disabled (default = false)
+   * @default ""
+   */
   disabled?: boolean
-  // Height of the rich text editor
+  /**
+   * Height of the rich text editor
+   * @default 500
+   */
   height?: number
-  // Method run on the editors onEditorChange event. Returns editor content as HTML.
+  /**
+   * Method run on the editors onEditorChange event. Returns editor content as HTML.
+   * @default null
+   */
   onChange?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void
 }
 
