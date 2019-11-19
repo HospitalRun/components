@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormControl, FormControlProps } from 'react-bootstrap'
+import { FormControl } from 'react-bootstrap'
 import { getControlSize } from '../../helpers/controlSize'
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
   value?: string
 
   /** Handles the onChange event for the Select. */
-  onChange?: (event: React.FormEvent<FormControl & FormControlProps>) => void
+  onChange?: (event: React.FormEvent<HTMLSelectElement>) => void
   /** The children to render */
   children?: React.ReactNode
 }
