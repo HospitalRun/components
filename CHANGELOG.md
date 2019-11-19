@@ -1,3 +1,10 @@
+# [0.17.0](https://github.com/HospitalRun/components/compare/v0.16.0...v0.17.0) (2019-11-19)
+
+
+### Features
+
+* **list:** add list component ([8e9c047](https://github.com/HospitalRun/components/commit/8e9c047bb49c1934cd74d207044a41ce45600eea)), closes [#59](https://github.com/HospitalRun/components/issues/59)
+
 # [0.16.0](https://github.com/HospitalRun/components/compare/v0.15.0...v0.16.0) (2019-11-16)
 
 
