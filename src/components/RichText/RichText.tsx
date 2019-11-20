@@ -29,7 +29,7 @@ interface Props {
   value?: string
   /**
    * Defines whether the rich text editor should be enabled/disabled (default = false)
-   * @default ""
+   * @default false
    */
   disabled?: boolean
   /**
