@@ -2,6 +2,10 @@
   "name": "@hospitalrun/components",
   "version": "0.17.1",
   "license": "MIT",
+  "funding": {
+  "type": "opencollective",
+  "url": "https://opencollective.com/hospitalrun"
+  },
   "main": "dist",
   "module": "dist/components.esm.js",
   "typings": "dist/index.d.ts",
