@@ -1,3 +1,12 @@
+# [0.18.0](https://github.com/HospitalRun/components/compare/v0.17.1...v0.18.0) (2019-11-21)
+
+
+### Features
+
+* **richtext:** adds RichText component ([d541c93](https://github.com/HospitalRun/components/commit/d541c938d07e3b6857e71722dc769d3171adf3ce)), closes [#29](https://github.com/HospitalRun/components/issues/29)
+* **richtext:** fixes comments in Props to display in storybook ([fa1e526](https://github.com/HospitalRun/components/commit/fa1e5261aa1fac4731550b97efda363920259982)), closes [#93](https://github.com/HospitalRun/components/issues/93)
+* **richtext:** fixes default value for disabled prop ([587a493](https://github.com/HospitalRun/components/commit/587a4930541aee0960b0a31b75960152bae56441)), closes [#93](https://github.com/HospitalRun/components/issues/93)
+
 ## [0.17.1](https://github.com/HospitalRun/components/compare/v0.17.0...v0.17.1) (2019-11-19)
 
 
