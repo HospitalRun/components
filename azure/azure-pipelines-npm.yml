@@ -20,5 +20,11 @@ jobs:
       - bash: npm i
         displayName: Install dependencies
 
+      - bash: npm run lint
+        displayName: Lint
+
       - bash: npm run build
-        displayName: Lint and Build
+        displayName: Build
+
+      - bash: npm run test
+        displayName: Test

@@ -20,5 +20,11 @@ jobs:
       - bash: yarn install
         displayName: Install dependencies
 
+      - bash: yarn lint
+        displayName: Lint
+
       - bash: yarn build
-        displayName: Lint and Build
+        displayName: Build
+
+      - bash: yarn test
+        displayName: Test
