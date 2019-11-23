@@ -123,12 +123,13 @@
     "moment": "~2.24.0",
     "react-spinners": "~0.6.1",
     "react-toastify": "~5.4.1",
-    "tinymce": "~5.0.16"
+    "tinymce": "~5.1.2"
   },
   "jest": {
     "setupFiles": [
       "jest-canvas-mock",
-      "<rootDir>test-setup.ts"
+      "<rootDir>test-setup.ts",
+      "<rootDir>/__mocks__/matchMediaMock.js"
     ],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
