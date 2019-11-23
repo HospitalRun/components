@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "0.18.0",
+  "version": "0.18.2",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -76,7 +76,6 @@
     "@types/react-dom": "~16.9.1",
     "@types/sinon": "~7.5.0",
     "@types/storybook__addon-info": "~5.2.0",
-    "@types/storybook__react": "~4.0.2",
     "@types/tinymce": "~4.5.23",
     "@typescript-eslint/eslint-plugin": "~2.8.0",
     "@typescript-eslint/parser": "~2.8.0",
@@ -89,7 +88,7 @@
     "cz-conventional-changelog": "~3.0.2",
     "enzyme": "~3.10.0",
     "enzyme-adapter-react-16": "~1.15.1",
-    "eslint": "~6.6.0",
+    "eslint": "~6.7.0",
     "eslint-config-airbnb": "~18.0.1",
     "eslint-config-prettier": "~6.5.0",
     "eslint-plugin-import": "~2.18.2",
@@ -118,7 +117,7 @@
     "@fortawesome/free-solid-svg-icons": "~5.11.2",
     "@fortawesome/react-fontawesome": "~0.1.4",
     "@tinymce/tinymce-react": "~3.3.2",
-    "chart.js": "~2.8.0",
+    "chart.js": "~2.9.3",
     "formik": "~2.0.4",
     "moment": "~2.24.0",
     "react-spinners": "~0.6.1",
@@ -128,7 +127,8 @@
   "jest": {
     "setupFiles": [
       "jest-canvas-mock",
-      "<rootDir>test-setup.ts"
+      "<rootDir>test-setup.ts",
+      "<rootDir>/__mocks__/matchMediaMock.js"
     ],
     "moduleNameMapper": {
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
