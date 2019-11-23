@@ -1,3 +1,11 @@
+## [0.18.2](https://github.com/HospitalRun/components/compare/v0.18.1...v0.18.2) (2019-11-23)
+
+
+### Bug Fixes
+
+* **richtext.test:** fix window.matchMedia is not a function error ([210d1b7](https://github.com/HospitalRun/components/commit/210d1b74e4c8c14e1ffd527042e3378bba064ed8))
+* **select:** fix type of onChange prop ([e4d5f25](https://github.com/HospitalRun/components/commit/e4d5f251c790d736e2003cac973701941ca44061))
+
 ## [0.18.1](https://github.com/HospitalRun/components/compare/v0.18.0...v0.18.1) (2019-11-23)
 
 
