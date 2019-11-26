@@ -1,3 +1,10 @@
+## [0.18.3](https://github.com/HospitalRun/components/compare/v0.18.2...v0.18.3) (2019-11-26)
+
+
+### Bug Fixes
+
+* **navbar:** fix typo in onSearchButtonClick function name ([407ffe0](https://github.com/HospitalRun/components/commit/407ffe00a24f789c50813be2e5fa9c2a6b49bc59))
+
 ## [0.18.2](https://github.com/HospitalRun/components/compare/v0.18.1...v0.18.2) (2019-11-23)
 
 
