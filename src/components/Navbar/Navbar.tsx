@@ -28,7 +28,7 @@ interface Props extends React.Props<any> {
     | 'light'
     | 'dark'
   /** Handles the on click search button event */
-  onSeachButtonClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onSearchButtonClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   /** Handles the on change search form event */
   onSearchTextBoxChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
@@ -44,7 +44,7 @@ const Navbar = (props: Props) => {
     navLinks,
     buttonColor,
     onSearchTextBoxChange,
-    onSeachButtonClick,
+    onSearchButtonClick,
   } = props
 
   const getNavItems = (subLink: NavLinkElement, index: number) => (
@@ -96,7 +96,7 @@ const Navbar = (props: Props) => {
               className="mr-sm-2"
               onChange={onSearchTextBoxChange}
             />
-            <Button color={buttonColor} onClick={onSeachButtonClick}>
+            <Button color={buttonColor} onClick={onSearchButtonClick}>
               Search
             </Button>
           </Form>

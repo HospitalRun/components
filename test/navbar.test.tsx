@@ -14,7 +14,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -38,7 +38,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -62,7 +62,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -86,7 +86,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -110,7 +110,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -139,7 +139,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -169,7 +169,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -194,7 +194,7 @@ describe('Navbar', () => {
           onClick: () => {},
           src: 'anysource',
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -218,7 +218,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -243,7 +243,7 @@ describe('Navbar', () => {
           onClick: () => {},
         }}
         buttonColor="secondary"
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -268,7 +268,7 @@ describe('Navbar', () => {
           onClick: () => {},
         }}
         variant="light"
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -293,7 +293,7 @@ describe('Navbar', () => {
           onClick: () => {},
         }}
         bg="light"
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -317,7 +317,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
@@ -341,7 +341,7 @@ describe('Navbar', () => {
           label: 'Test',
           onClick: () => {},
         }}
-        onSeachButtonClick={onButtonClick}
+        onSearchButtonClick={onButtonClick}
         onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {

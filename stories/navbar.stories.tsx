@@ -21,7 +21,7 @@ storiesOf('Navbar', module)
           },
         }}
         buttonColor="success"
-        onSeachButtonClick={() => {
+        onSearchButtonClick={() => {
           Toast('success', 'Button clicked!!', 'Success')
         }}
         onSearchTextBoxChange={() => {
@@ -52,7 +52,7 @@ storiesOf('Navbar', module)
         }}
         bg="light"
         variant="light"
-        onSeachButtonClick={() => {
+        onSearchButtonClick={() => {
           Toast('success', 'Button Clicked!!', 'Success')
         }}
         onSearchTextBoxChange={() => {
