@@ -187,7 +187,7 @@ storiesOf('DateTimePickers', module)
     return (
       <div>
         <DateTimePicker selected={startDate} onChange={(date) => setStartDate(date)}>
-          <div style={{ color: 'red' }}>Don't forget to check the weather!</div>
+          <div style={{ color: 'red' }}>Do not forget to check the weather!</div>
         </DateTimePicker>
       </div>
     )

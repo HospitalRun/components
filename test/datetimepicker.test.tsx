@@ -19,7 +19,7 @@ it('renders children elements when passed in', () => {
   const selectedDate = new Date()
   const datePickerWrapper = shallow(
     <DateTimePicker selected={selectedDate} onChange={() => new Date()}>
-      <p>Don't forget to check the weather!</p>
+      <p>Do not forget to check the weather!</p>
     </DateTimePicker>,
   )
   const paragraph = datePickerWrapper.find('p')
@@ -30,7 +30,7 @@ it('renders children elements when passed in', () => {
 it('Checkbox handle the change event', () => {
   const selectedDate = new Date()
   const onChange = sinon.spy()
-  const wrapper = mount(<DateTimePicker selected={selectedDate} onChange={onChange} />,)
+  const wrapper = mount(<DateTimePicker selected={selectedDate} onChange={onChange} />)
   const input = wrapper.find(HTMLInputElement)
   input.simulate('change')
   expect(onChange).toHaveProperty('callCount', 1)
