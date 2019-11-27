@@ -6,8 +6,6 @@ import 'react-datepicker/dist/react-datepicker.css'
 interface Props {
   /** Yield element as children. */
   children?: ReactNode
-  /** Add extra css classes for datepicker. */
-  className?: string
   /** The format for parsed and displayed dates. */
   dateFormat?: string
   dateFormatCalendar?: string
@@ -54,8 +52,6 @@ interface Props {
   todayButton?: string
   /** The beginning date of the initially selected date range. */
   startDate?: Date
-  /** The format for parsed and displayed time. */
-  timeFormat?: string
   /** Visualize calendar as portal. */
   withPortal?: boolean
 }
@@ -63,7 +59,6 @@ interface Props {
 const DateTimePicker = (props: Props) => {
   const {
     children,
-    className,
     dateFormat,
     dateFormatCalendar,
     disabled,
@@ -93,7 +88,6 @@ const DateTimePicker = (props: Props) => {
 
   return (
     <DatePicker
-      className={className}
       dateFormat={dateFormat}
       dateFormatCalendar={dateFormatCalendar}
       disabled={disabled}
