@@ -4,17 +4,15 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
 interface Props {
-  /** ??? */
+  /** Yield element as children. */
   children?: ReactNode
   /** Add extra css classes for datepicker. */
   className?: string
   /** The format for parsed and displayed dates. */
   dateFormat?: string
-  /** ??? */
   dateFormatCalendar?: string
   /** Disable datepicker. */
   disabled?: boolean
-  /** ??? */
   dropdownMode: 'scroll' | 'select'
   /** The end date of the initially selected date range. */
   endDate?: Date
@@ -22,7 +20,7 @@ interface Props {
   excludeDates?: Date[]
   /** Include dates within the specific date range. */
   includeDates?: Date[]
-  /** ??? */
+  /** Visualize calendar as inline element. */
   inline?: boolean
   /** Set datepicker locale. */
   locale?: string
@@ -34,21 +32,21 @@ interface Props {
   minDate?: Date
   /** The minimum selectable time. */
   minTime?: Date
-  /** ??? */
+  /** Show more months. */
   monthsShown?: number
   /** Callback when date is changed. */
   onChange: (date: Date, event: React.ChangeEvent<HTMLInputElement>) => void
   /** Selected date value. */
   selected?: Date
-  /** ??? */
+  /** Selected date end. */
   selectsEnd?: boolean
-  /** ??? */
+  /** Selected date start. */
   selectsStart?: boolean
   /** Enable time selection. */
   showTimeSelect?: boolean
   /** Enable only time selection. */
   showTimeSelectOnly?: boolean
-  /** ??? */
+  /** Configure timer intervals. */
   timeIntervals?: number
   /** Header over the time selector. */
   timeCaption?: string
@@ -58,7 +56,7 @@ interface Props {
   startDate?: Date
   /** The format for parsed and displayed time. */
   timeFormat?: string
-  /** ??? */
+  /** Visualize calendar as portal. */
   withPortal?: boolean
 }
 
