@@ -44,6 +44,8 @@ interface Props {
   showTimeSelect?: boolean
   /** Enable only time selection. */
   showTimeSelectOnly?: boolean
+  /** The format for parsed and displayed time. */
+  timeFormat?: string
   /** Configure timer intervals. */
   timeIntervals?: number
   /** Header over the time selector. */
@@ -79,6 +81,7 @@ const DateTimePicker = (props: Props) => {
     selectsStart,
     showTimeSelect,
     showTimeSelectOnly,
+    timeFormat,
     timeIntervals,
     timeCaption,
     todayButton,
@@ -108,6 +111,7 @@ const DateTimePicker = (props: Props) => {
       selectsStart={selectsStart}
       showTimeSelect={showTimeSelect}
       showTimeSelectOnly={showTimeSelectOnly}
+      timeFormat={timeFormat}
       timeIntervals={timeIntervals}
       timeCaption={timeCaption}
       todayButton={todayButton}

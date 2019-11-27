@@ -60,6 +60,7 @@ it('accepts props and defaults as by DatePicker API', () => {
       selectsStart
       showTimeSelect
       showTimeSelectOnly
+      timeFormat="HH:mm"
       timeIntervals={1}
       timeCaption="Time"
       todayButton="Today"
@@ -87,6 +88,7 @@ it('accepts props and defaults as by DatePicker API', () => {
   expect(pickerProps.selectsStart).toBeTruthy()
   expect(pickerProps.showTimeSelect).toBeTruthy()
   expect(pickerProps.showTimeSelectOnly).toBeTruthy()
+  expect(pickerProps.timeFormat).toEqual('HH:mm')
   expect(pickerProps.timeIntervals).toEqual(1)
   expect(pickerProps.timeCaption).toEqual('Time')
   expect(pickerProps.todayButton).toEqual('Today')
