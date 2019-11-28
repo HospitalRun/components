@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "0.18.2",
+  "version": "0.19.0",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -31,7 +31,7 @@
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "bootstrap": "~4.3.1",
+    "bootstrap": "~4.4.0",
     "react": "~16.9.0",
     "react-bootstrap": "~1.0.0-beta.14"
   },
@@ -77,11 +77,11 @@
     "@types/sinon": "~7.5.0",
     "@types/storybook__addon-info": "~5.2.0",
     "@types/tinymce": "~4.5.23",
-    "@typescript-eslint/eslint-plugin": "~2.8.0",
-    "@typescript-eslint/parser": "~2.8.0",
+    "@typescript-eslint/eslint-plugin": "~2.9.0",
+    "@typescript-eslint/parser": "~2.9.0",
     "awesome-typescript-loader": "~5.2.1",
     "babel-loader": "~8.0.6",
-    "bootstrap": "~4.3.1",
+    "bootstrap": "~4.4.0",
     "commitizen": "~4.0.3",
     "commitlint-config-cz": "0.12.1",
     "coveralls": "~3.0.6",
@@ -90,7 +90,7 @@
     "enzyme-adapter-react-16": "~1.15.1",
     "eslint": "~6.7.0",
     "eslint-config-airbnb": "~18.0.1",
-    "eslint-config-prettier": "~6.5.0",
+    "eslint-config-prettier": "~6.7.0",
     "eslint-plugin-import": "~2.18.2",
     "eslint-plugin-jest": "~23.0.2",
     "eslint-plugin-jsx-a11y": "~6.2.3",
@@ -99,18 +99,18 @@
     "eslint-plugin-react-hooks": "~2.3.0",
     "husky": "~3.1.0",
     "jest-canvas-mock": "~2.2.0",
-    "lint-staged": "~9.4.3",
+    "lint-staged": "~9.5.0",
     "prettier": "~1.19.1",
     "react": "~16.12.0",
     "react-bootstrap": "~1.0.0-beta.14",
     "react-docgen": "~5.0.0-beta.1",
-    "react-docgen-typescript-loader": "~3.5.0",
+    "react-docgen-typescript-loader": "~3.6.0",
     "react-dom": "~16.12.0",
     "semantic-release": "~15.13.24",
     "sinon": "~7.5.0",
     "tsdx": "~0.11.0",
     "tslib": "~1.10.0",
-    "typescript": "3.6.4"
+    "typescript": "~3.7.2"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "~1.2.25",
@@ -124,7 +124,8 @@
     "react-datepicker": "^2.10.1",
     "react-spinners": "~0.6.1",
     "react-toastify": "~5.4.1",
-    "tinymce": "~5.1.2"
+    "tinymce": "~5.1.2",
+    "video-react": "~0.14.1"
   },
   "jest": {
     "setupFiles": [

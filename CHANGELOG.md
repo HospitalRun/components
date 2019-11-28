@@ -1,3 +1,21 @@
+# [0.19.0](https://github.com/HospitalRun/components/compare/v0.18.3...v0.19.0) (2019-11-27)
+
+
+### Features
+
+* **video-player:** add Storybook story for video-player ([c329f90](https://github.com/HospitalRun/components/commit/c329f90d883b0a23002ea9c98500e18d140fe1c2))
+* **video-player:** add tests ([9ce135f](https://github.com/HospitalRun/components/commit/9ce135fba050146afa5729a9ebd01facaa5d1147))
+* **video-player:** add type definition ([16b550e](https://github.com/HospitalRun/components/commit/16b550eaa40830f380a1347282fb5a7c3d2956f2))
+* **video-player:** add VideoPlayer component ([bf2f023](https://github.com/HospitalRun/components/commit/bf2f0234fc2ce712268aa4b119a127b84fed560f))
+* **video-player:** install video-react package ([17bdbea](https://github.com/HospitalRun/components/commit/17bdbead3b0c7068ed6b76e8034073b60b090977))
+
+## [0.18.3](https://github.com/HospitalRun/components/compare/v0.18.2...v0.18.3) (2019-11-26)
+
+
+### Bug Fixes
+
+* **navbar:** fix typo in onSearchButtonClick function name ([407ffe0](https://github.com/HospitalRun/components/commit/407ffe00a24f789c50813be2e5fa9c2a6b49bc59))
+
 ## [0.18.2](https://github.com/HospitalRun/components/compare/v0.18.1...v0.18.2) (2019-11-23)
 
 
