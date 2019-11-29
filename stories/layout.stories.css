@@ -1,0 +1,8 @@
+.row>[class^="col"]{
+  background-color: #bbeffd;
+  border: 1px solid #61dafb;
+  text-align: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 15px;
+}
