@@ -227,3 +227,18 @@ storiesOf('DateTimePickers', module)
       </div>
     )
   })
+  .add('Month and Year select dropdown', () => {
+    const [startDate, setStartDate] = useState(new Date())
+
+    return (
+      <div>
+        <DateTimePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          showMonthDropdown
+          showYearDropdown
+          dropdownMode="scroll"
+        />
+      </div>
+    )
+  })

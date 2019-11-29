@@ -58,7 +58,9 @@ it('accepts props and defaults as by DatePicker API', () => {
       selected={selectedDate}
       selectsEnd
       selectsStart
+      showMonthDropdown
       showTimeSelect
+      showYearDropdown
       showTimeSelectOnly
       timeFormat="HH:mm"
       timeIntervals={1}
@@ -86,7 +88,9 @@ it('accepts props and defaults as by DatePicker API', () => {
   expect(pickerProps.monthsShown).toEqual(1)
   expect(pickerProps.selectsEnd).toBeTruthy()
   expect(pickerProps.selectsStart).toBeTruthy()
+  expect(pickerProps.showMonthDropdown).toBeTruthy()
   expect(pickerProps.showTimeSelect).toBeTruthy()
+  expect(pickerProps.showYearDropdown).toBeTruthy()
   expect(pickerProps.showTimeSelectOnly).toBeTruthy()
   expect(pickerProps.timeFormat).toEqual('HH:mm')
   expect(pickerProps.timeIntervals).toEqual(1)

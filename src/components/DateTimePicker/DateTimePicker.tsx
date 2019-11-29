@@ -8,9 +8,11 @@ interface Props {
   children?: ReactNode
   /** The format for parsed and displayed dates. */
   dateFormat?: string
+  /** The format for parsed and displayed dates in internal yeardropdown. */
   dateFormatCalendar?: string
   /** Disable datepicker. */
   disabled?: boolean
+  /** Change selection for internal year/month dropdowns. */
   dropdownMode: 'scroll' | 'select'
   /** The end date of the initially selected date range. */
   endDate?: Date
@@ -40,8 +42,12 @@ interface Props {
   selectsEnd?: boolean
   /** Selected date start. */
   selectsStart?: boolean
+  /** Show dropdown list with all months. */
+  showMonthDropdown?: boolean
   /** Enable time selection. */
   showTimeSelect?: boolean
+  /** Show dropdown list with years. */
+  showYearDropdown?: boolean
   /** Enable only time selection. */
   showTimeSelectOnly?: boolean
   /** The format for parsed and displayed time. */
@@ -79,7 +85,9 @@ const DateTimePicker = (props: Props) => {
     selected,
     selectsEnd,
     selectsStart,
+    showMonthDropdown,
     showTimeSelect,
+    showYearDropdown,
     showTimeSelectOnly,
     timeFormat,
     timeIntervals,
@@ -109,7 +117,9 @@ const DateTimePicker = (props: Props) => {
       selected={selected}
       selectsEnd={selectsEnd}
       selectsStart={selectsStart}
+      showMonthDropdown={showMonthDropdown}
       showTimeSelect={showTimeSelect}
+      showYearDropdown={showYearDropdown}
       showTimeSelectOnly={showTimeSelectOnly}
       timeFormat={timeFormat}
       timeIntervals={timeIntervals}
