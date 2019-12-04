@@ -1,3 +1,10 @@
+## [0.20.1](https://github.com/HospitalRun/components/compare/v0.20.0...v0.20.1) (2019-12-04)
+
+
+### Bug Fixes
+
+* **labels:** fix missing label export ([84b0fce](https://github.com/HospitalRun/components/commit/84b0fceeeee997bfea32de7acc60ba9d4b9aea52))
+
 # [0.20.0](https://github.com/HospitalRun/components/compare/v0.19.0...v0.20.0) (2019-11-30)
 
 
