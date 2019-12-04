@@ -2,8 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import { Label } from '../src/components/Label'
-import { TextInput } from '../src/components/TextInput'
+import { Label, TextInput } from '../src'
 
 storiesOf('Label', module)
   .addParameters({

@@ -61,7 +61,14 @@ describe('Column', () => {
   })
   it('accepts props', () => {
     const columnWrapper = shallow(
-      <Column as="section" lg={true} md="auto" sm={10} xl={{ span: 20, offset: 2 }} xs={{ offset: 3, order: 1}} />,
+      <Column
+        as="section"
+        lg
+        md="auto"
+        sm={10}
+        xl={{ span: 20, offset: 2 }}
+        xs={{ offset: 3, order: 1 }}
+      />,
     )
     const columnProps = columnWrapper.props()
 
@@ -69,7 +76,7 @@ describe('Column', () => {
     expect(columnProps.lg).toBeTruthy()
     expect(columnProps.md).toEqual('auto')
     expect(columnProps.sm).toEqual(10)
-    expect(columnProps.xl).toEqual(expect.objectContaining({ span: 20, offset: 2}))
-    expect(columnProps.xs).toEqual(expect.objectContaining({ offset: 3, order: 1}))
+    expect(columnProps.xl).toEqual(expect.objectContaining({ span: 20, offset: 2 }))
+    expect(columnProps.xs).toEqual(expect.objectContaining({ offset: 3, order: 1 }))
   })
 })
