@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import { FormLabel } from 'react-bootstrap'
-import { Label } from '../src/components/Label'
+import { Label } from '../src'
 
 describe('Label', () => {
   it('Label renders itself without crashing', () => {

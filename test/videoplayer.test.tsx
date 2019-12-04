@@ -31,11 +31,11 @@ describe('VideoPlayer', () => {
         fluid={false}
         width={800}
         height={300}
-        autoPlay={true}
+        autoPlay
         startTime={20}
       />,
     )
-    const playerProps = playerWrapper.props();
+    const playerProps = playerWrapper.props()
 
     expect(playerProps.src).toEqual('source URL')
     expect(playerProps.poster).toEqual('poster URL')
