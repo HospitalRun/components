@@ -1,3 +1,10 @@
+# [0.21.0](https://github.com/HospitalRun/components/compare/v0.20.1...v0.21.0) (2019-12-07)
+
+
+### Features
+
+* add dashboard icon ([eea6a45](https://github.com/HospitalRun/components/commit/eea6a45d13e1e79978db3aef475703d06cfc03ec)), closes [#135](https://github.com/HospitalRun/components/issues/135)
+
 ## [0.20.1](https://github.com/HospitalRun/components/compare/v0.20.0...v0.20.1) (2019-12-04)
 
 
