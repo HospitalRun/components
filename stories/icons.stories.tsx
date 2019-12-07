@@ -18,7 +18,6 @@ storiesOf('Icons', module)
       <span>Admin: </span>
       <Icon icon="admin" />
       <br />
-
       <span>Apointment: </span>
       <Icon icon="appointment" />
       <br />
@@ -28,11 +27,12 @@ storiesOf('Icons', module)
       <span>Remove Apointment: </span>
       <Icon icon="appointment-remove" />
       <br />
-
       <span>Calendar: </span>
       <Icon icon="calendar" />
       <br />
-
+      <span>Dashboard: </span>
+      <Icon icon="dashboard" />
+      <br />
       <span>Image: </span>
       <Icon icon="image" />
       <br />
