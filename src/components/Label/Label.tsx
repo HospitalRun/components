@@ -15,13 +15,14 @@ interface Props {
   isRequired?: boolean | false
 }
 /**
- *  svg instead of asterisk to avoid asterisk being read by screenreaders
+ *  Svg instead of asterisk to avoid asterisk being read by screenreaders
  *  hidden text to be read explaing the input is required incase the title attribute
  *  is not supported by the screen reader
  */
 const asterisk = React.createElement('i', { style: { color: 'red' }, id: 'required-asterisk' }, [
   <FontAwesomeIcon
     icon="asterisk"
+    key="asterisk"
     style={{ height: '7px', verticalAlign: 'top', marginLeft: '2px' }}
   />,
 ])

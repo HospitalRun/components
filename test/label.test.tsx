@@ -32,12 +32,15 @@ describe('Label', () => {
 
   it('Required Input Label succesfully renders custom title', () => {
     const labelWrapper = shallow(<Label text="test" isRequired title="test is required" />)
-    expect(labelWrapper.props().title).toEqual('test is required')
+    const bootstrapLabel = labelWrapper.find(FormLabel)
+
+    expect(bootstrapLabel.props().title).toEqual('test is required')
   })
 
   it('Required Input Label disableTitle property successfully removes the title', () => {
     const labelWrapper = shallow(<Label text="test" isRequired disableTitle />)
-    expect(labelWrapper.props().title).toEqual(' ')
+    const bootstrapLabel = labelWrapper.find(FormLabel)
+    expect(bootstrapLabel.props().title).toEqual(' ')
   })
 
   it('Label can add htmlFor prop', () => {
