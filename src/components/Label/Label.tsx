@@ -6,13 +6,11 @@ interface Props {
   /** Text to display in label */
   text: string
   /** Title of the label. */
-  title?: string | '' // Use on required input labels to override default required title
+  title?: string // Use on required input labels to override default required title
   /** Give option to disable  */
   htmlFor?: string | ''
-  /** Disables title */
-  disableTitle?: boolean | false
   /** Defines whether input is required. */
-  isRequired?: boolean | false
+  isRequired?: boolean
 }
 /**
  *  Svg instead of asterisk to avoid asterisk being read by screenreaders
@@ -30,11 +28,8 @@ const asterisk = React.createElement('i', { style: { color: 'red' }, id: 'requir
  * Labels are used to display text
  */
 const Label = (props: Props) => {
-  const { text, htmlFor, isRequired, disableTitle } = props
-  let { title } = props
-  if (disableTitle) {
-    title = ' '
-  }
+  const { text, htmlFor, isRequired, title } = props
+
   /** Form label for required inputs */
   if (isRequired) {
     return (

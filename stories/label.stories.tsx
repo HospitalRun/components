@@ -36,7 +36,6 @@ storiesOf('Label', module)
         title="Custom required input title"
         text="Required input label with custom title"
       />
-      <Label isRequired disableTitle text="Required input label without title" />
       <br />
       <Label text="This label is tied to the input below" htmlFor="inputOne" />
       <TextInput id="inputOne" placeholder="This input is tied to the label above" />

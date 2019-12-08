@@ -7,7 +7,6 @@ Labels are used to display text
 | property         | propType          | required | default | description              |
 | ---------------- | ----------------- | -------- | ------- | ------------------------ |
 | text             | `string`          | yes      | -       | Text to display in label |
-| title            | `string | ''`     | -        | -       | Title of the label       |
+| title            | `string`          | -        | -       | Title of the label       |
 | htmlFor          | `string | ''`     | -        | -       | Ties labels to input     |
-| disableTitle     | `boolean`         | -        | false   | Disables title           |
 | isRequired       | `boolean`         | -        | false   | Defines whether input is required |
