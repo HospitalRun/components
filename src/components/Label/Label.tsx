@@ -8,7 +8,7 @@ interface Props {
   /** Title of the label. */
   title?: string // Use on required input labels to override default required title
   /** Give option to disable  */
-  htmlFor?: string | ''
+  htmlFor?: string
   /** Defines whether input is required. */
   isRequired?: boolean
 }
@@ -48,6 +48,7 @@ const Label = (props: Props) => {
   )
 }
 Label.defaultProps = {
-  title: '',
+  title: undefined,
+  htmlFor: undefined,
 }
 export { Label }
