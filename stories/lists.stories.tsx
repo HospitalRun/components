@@ -83,6 +83,7 @@ storiesOf('List', module)
       <ListItem
         action
         onClick={() => {
+          // eslint-disable-next-line no-alert
           alert('The first list item has been clicked!')
         }}
       >
