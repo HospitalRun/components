@@ -17,7 +17,7 @@ interface Props {
  *  hidden text to be read explaing the input is required incase the title attribute
  *  is not supported by the screen reader
  */
-const asterisk = React.createElement('i', { style: { color: 'red' }, id: 'required-asterisk' }, [
+const asterisk = React.createElement('i', { style: { color: 'red' } }, [
   <FontAwesomeIcon
     icon="asterisk"
     key="asterisk"
@@ -29,7 +29,6 @@ const asterisk = React.createElement('i', { style: { color: 'red' }, id: 'requir
  */
 const Label = (props: Props) => {
   const { text, htmlFor, isRequired, title } = props
-
   /** Form label for required inputs */
   if (isRequired) {
     return (
