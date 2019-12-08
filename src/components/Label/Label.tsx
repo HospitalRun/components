@@ -6,7 +6,7 @@ interface Props {
   /** Text to display in label */
   text: string
   /** Title of the label. */
-  title?: '' // Use on required input labels to override default required title
+  title?: string // Use on required input labels to override default required title
   /** Give option to disable  */
   htmlFor?: string | ''
   /** Defines whether input is required. */
@@ -47,5 +47,7 @@ const Label = (props: Props) => {
     </FormLabel>
   )
 }
-
+Label.defaultProps = {
+  title: '',
+}
 export { Label }
