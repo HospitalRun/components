@@ -7,7 +7,7 @@ interface Props {
   text: string
   /** Title of the label. */
   title?: string // Use on required input labels to override default required title
-  /** Give option to disable  */
+  /** Ties label to input  */
   htmlFor?: string
   /** Defines whether input is required. */
   isRequired?: boolean
