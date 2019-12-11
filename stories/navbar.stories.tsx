@@ -20,12 +20,15 @@ storiesOf('Navbar', module)
             Toast('success', 'Brand button clicked!!', 'Success')
           },
         }}
-        buttonColor="success"
-        onSearchButtonClick={() => {
-          Toast('success', 'Button clicked!!', 'Success')
-        }}
-        onSearchTextBoxChange={() => {
-          Toast('success', 'Search box changed!!', 'Success')
+        search={{
+          placeholderText: 'Test',
+          buttonText: 'Search',
+          onClickButton: () => {
+            Toast('success', 'Button clicked!!', 'Success')
+          },
+          onChangeInput: () => {
+            Toast('success', 'Search box changed!!', 'Success')
+          },
         }}
         navLinks={[
           {
@@ -50,14 +53,18 @@ storiesOf('Navbar', module)
             Toast('success', 'Brand button clicked!!', 'Success')
           },
         }}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton: () => {
+            Toast('success', 'Button clicked!!', 'Success')
+          },
+          onChangeInput: () => {
+            Toast('success', 'Search box changed!!', 'Success')
+          },
+        }}
         bg="light"
         variant="light"
-        onSearchButtonClick={() => {
-          Toast('success', 'Button Clicked!!', 'Success')
-        }}
-        onSearchTextBoxChange={() => {
-          Toast('success', 'Search box changed!!', 'Success')
-        }}
         navLinks={[
           {
             label: 'Dropdown',
