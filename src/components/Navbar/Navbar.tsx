@@ -16,7 +16,7 @@ interface Props extends React.Props<any> {
   navLinks: NavLink[]
   /** Determines the hospital/clinic name to be shown at the navbar */
   brand: Brand
-  /** Defines the button variant. By default is 'primary ' */
+  /** Defines the properties of the search element */
   search: Search
 }
 
@@ -49,7 +49,7 @@ const Navbar = (props: Props) => {
   }
   return (
     <NavbarRB bg={bg} variant={variant}>
-      <NavbarRB.Brand href={brand.href} onClick={brand.onClick} style={{ cursor: 'pointer' }}>
+      <NavbarRB.Brand onClick={brand.onClick} style={{ cursor: 'pointer' }}>
         {brand.src ? (
           <img
             alt={brand.label}
@@ -69,12 +69,12 @@ const Navbar = (props: Props) => {
           <Form inline>
             <FormControl
               type="text"
-              placeholder={search.placeholderText}
+              placeholder={search.placeholderText || 'Search'}
               className="mr-sm-2"
               onChange={search.onChangeInput}
             />
-            <Button color={search.buttonColor} onClick={search.onClickButton}>
-              {search.buttonText}
+            <Button color={search.buttonColor || 'primary'} onClick={search.onClickButton}>
+              {search.buttonText || 'Search'}
             </Button>
           </Form>
         </Nav>
