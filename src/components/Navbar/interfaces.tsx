@@ -41,5 +41,5 @@ export interface Search {
   /** Handles the on click search button event */
   onClickButton: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   /** Handles the on change search form event */
-  onChangeInput?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onChangeInput: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
