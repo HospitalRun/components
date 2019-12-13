@@ -21,8 +21,9 @@ storiesOf('Navbar', module)
           },
         }}
         search={{
-          placeholderText: 'Test',
-          buttonText: 'Search',
+          placeholderText: 'Custom',
+          buttonText: 'Text',
+          buttonColor: 'secondary',
           onClickButton: () => {
             Toast('success', 'Button clicked!!', 'Success')
           },
@@ -46,7 +47,6 @@ storiesOf('Navbar', module)
       <Navbar
         brand={{
           label: 'HospitalRun',
-          href: '/',
           src:
             'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
           onClick: () => {
@@ -54,8 +54,6 @@ storiesOf('Navbar', module)
           },
         }}
         search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
           onClickButton: () => {
             Toast('success', 'Button clicked!!', 'Success')
           },

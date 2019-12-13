@@ -3,12 +3,10 @@ export interface Brand {
   label: string
   /** Label color */
   color?: string
-  /** Determina the href */
-  href?: string
   /** A path which contain the company icon/image */
   src?: string
-  /** A click handle which will redirect the user to the respectivel webpage/path */
-  onClick?: (event: React.MouseEvent<any>) => void
+  /** A click handle which will redirect the user to the respectable webpage/path */
+  onClick: (event: React.MouseEvent<any>) => void
 }
 
 export interface NavLinkElement {
@@ -16,7 +14,7 @@ export interface NavLinkElement {
   label: string
   /** A click handle which will redirect the user to whenever it is clicked */
   onClick: (event: React.MouseEvent<any>) => void
-  /** Determina the href */
+  /** Determines the href */
   href?: string
 }
 
@@ -27,9 +25,9 @@ export interface NavLink extends NavLinkElement {
 
 export interface Search {
   /** Defines the placeholder text. */
-  placeholderText?: string | 'Search'
+  placeholderText?: string
   /** Defines the button text. */
-  buttonText?: string | 'Search'
+  buttonText?: string
   /** Defines the button variant. */
   buttonColor?:
     | 'primary'
@@ -41,7 +39,7 @@ export interface Search {
     | 'light'
     | 'dark'
   /** Handles the on click search button event */
-  onClickButton?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onClickButton: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   /** Handles the on change search form event */
   onChangeInput?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
