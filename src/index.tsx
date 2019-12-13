@@ -3,6 +3,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 
 library.add(fas)
 export * from './components/Toaster'
+export * from './components/Dropdown'
 export * from './components/Spinner'
 export * from './components/Graph'
 export * from './components/Button'
