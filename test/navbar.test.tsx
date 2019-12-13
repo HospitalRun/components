@@ -429,6 +429,8 @@ describe('Navbar', () => {
         search={{
           placeholderText: searchText,
           buttonText: searchText,
+          onClickButton: () => {},
+          onChangeInput: () => {},
         }}
       />,
     )
