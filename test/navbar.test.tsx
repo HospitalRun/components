@@ -33,35 +33,7 @@ describe('Navbar', () => {
     expect(bootstrapNavbar).toHaveLength(1)
   })
 
-  it('should render the search button as a primary button by default', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
-    const NavbarWrapper = shallow(
-      <Navbar
-        brand={{
-          label: 'Test',
-          onClick: () => {},
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
-          {
-            label: 'Link',
-            onClick: () => {},
-            children: [],
-          },
-        ]}
-      />,
-    )
-    const button = NavbarWrapper.find(Button)
-    expect(button.props().color).toBe('primary')
-  })
-
-  it('Navbar defaults bg to dark when the prop is not used', () => {
+  it('Navbar component renders default props accordingly', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -86,35 +58,13 @@ describe('Navbar', () => {
       />,
     )
     const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
-    expect(bootstrapNavbar.props().bg).toEqual('dark')
-  })
-
-  it('Navbar defaults variant to dark when the prop is not used', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
-    const NavbarWrapper = shallow(
-      <Navbar
-        brand={{
-          label: 'Test',
-          onClick: () => {},
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
-          {
-            label: 'Link',
-            onClick: () => {},
-            children: [],
-          },
-        ]}
-      />,
-    )
-    const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
-    expect(bootstrapNavbar.props().variant).toEqual('dark')
+    /** navbar container default attributes  */
+    expect(bootstrapNavbar.find('[bg="dark"]').prop('bg')).toEqual('dark')
+    expect(bootstrapNavbar.find('[variant="dark"]').prop('variant')).toEqual('dark')
+    /** navbar search component default attributes  */
+    expect(bootstrapNavbar.find('[placeholder="Search"]').prop('placeholder')).toEqual('Search')
+    expect(NavbarWrapper.find('Button').prop('color')).toEqual('primary')
+    expect(NavbarWrapper.find('Button').prop('children')).toEqual('Search')
   })
 
   it('Navbar links show the exactly links as when it passed on links prop and Navbar dropdown will not be shown', () => {
@@ -147,8 +97,6 @@ describe('Navbar', () => {
     const bootstrapNavDropdown = NavbarWrapper.find(NavDropdown)
     expect(bootstrapNavDropdown).toHaveLength(0)
   })
-
-  // rest
 
   it('Navbar dropdown shows the exactly same links as when it passed on links prop', () => {
     const onClickButton = sinon.spy()
@@ -410,31 +358,5 @@ describe('Navbar', () => {
     )
     NavbarWrapper.find(FormControl).simulate('change')
     expect(onChangeInput).toHaveProperty('callCount', 1)
-  })
-  it('Navbar search placeholder and button text render accordingly', () => {
-    const searchText = 'Search'
-    const NavbarWrapper = shallow(
-      <Navbar
-        brand={{
-          label: 'Test',
-          onClick: () => {},
-        }}
-        navLinks={[
-          {
-            label: 'Link',
-            onClick: () => {},
-            children: [],
-          },
-        ]}
-        search={{
-          placeholderText: searchText,
-          buttonText: searchText,
-          onClickButton: () => {},
-          onChangeInput: () => {},
-        }}
-      />,
-    )
-
-    expect(NavbarWrapper.find(FormControl).props().placeholder).toEqual(searchText)
   })
 })
