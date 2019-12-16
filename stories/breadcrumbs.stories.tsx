@@ -1,8 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import BreadcrumbItem from 'react-bootstrap/BreadcrumbItem'
 
-import { Breadcrumb } from '../src'
+import { Breadcrumb, BreadcrumbItem } from '../src'
 
 storiesOf('Breadcrumbs', module)
   .addParameters({
@@ -13,21 +12,25 @@ storiesOf('Breadcrumbs', module)
   .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .add('Breadcrumb', () => (
     <Breadcrumb>
-      <BreadcrumbItem href="https://example.com">Item 1</BreadcrumbItem>
-      <BreadcrumbItem active as="span">
-        <a href="https://example.com">active span</a>
-      </BreadcrumbItem>
+      <BreadcrumbItem active>Item 1</BreadcrumbItem>
+      <BreadcrumbItem>Item 2</BreadcrumbItem>
     </Breadcrumb>
   ))
-  .add('Breadcrumb Active Items', () => (
+  .add('Breadcrumb Items with active prop.', () => (
     <Breadcrumb>
-      <BreadcrumbItem active>No href</BreadcrumbItem>
+      <BreadcrumbItem active>Span Item</BreadcrumbItem>
     </Breadcrumb>
   ))
-  .add('Breadcrumb item using custom link in child', () => (
+  .add('Breadcrumb Items with href prop prop.', () => (
     <Breadcrumb>
+      <BreadcrumbItem href="#">Anchor Item</BreadcrumbItem>
+    </Breadcrumb>
+  ))
+  .add('Breadcrumb item can have custom link in child', () => (
+    <Breadcrumb>
+      <BreadcrumbItem href="#">Default anchor item</BreadcrumbItem>
       <BreadcrumbItem active>
-        <a href="https://example.com">Custom Link</a>
+        <a href="https://example.com">Custom link item</a>
       </BreadcrumbItem>
     </Breadcrumb>
   ))

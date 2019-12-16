@@ -2,6 +2,8 @@ import * as React from 'react'
 import { shallow } from 'enzyme'
 import BootstrapBreadcrumb from 'react-bootstrap/Breadcrumb'
 import BootstrapBreadcrumbItem from 'react-bootstrap/BreadcrumbItem'
+import sinon from 'sinon'
+
 import { Breadcrumb, BreadcrumbItem } from '../src'
 
 describe('Breadcrumb', () => {
@@ -10,85 +12,70 @@ describe('Breadcrumb', () => {
 
     expect(breadcrumbWrapper.find(BootstrapBreadcrumb)).toHaveLength(1)
   })
-  it('accepts props', () => {
-    const breadcrumbWrapper = shallow(
-      <Breadcrumb as="span" label="breadcrumb" listProps={{ foo: 'bar' }} />,
-    )
-    const breadcrumbProps = breadcrumbWrapper.props()
-
-    expect(breadcrumbProps.as).toEqual('span')
-    expect(breadcrumbProps.label).toEqual('breadcrumb')
-    expect(breadcrumbProps.listProps).toEqual({ foo: 'bar' })
-  })
 
   it('renders children elements when passed in', () => {
     const breadcrumbWrapper = shallow(
       <Breadcrumb>
-        <BreadcrumbItem>Item 1</BreadcrumbItem>
-        <BreadcrumbItem>Item 2</BreadcrumbItem>
+        <BreadcrumbItem />
+        <BreadcrumbItem />
       </Breadcrumb>,
     )
-    const breadcrumbItemElement = breadcrumbWrapper.find(BreadcrumbItem)
+    const children = breadcrumbWrapper.find(BreadcrumbItem)
 
-    expect(breadcrumbItemElement).toHaveLength(2)
+    expect(children).toHaveLength(2)
   })
 })
 
 describe('BreadcrumbItem', () => {
-  const itemProps = {
-    // as: 'span',
-    href: '#',
-    target: '_self',
-    title: 'breadcrumb',
-    active: false,
-  }
   it('renders itself without crashing', () => {
-    const breadcrumbItemWrapper = shallow(<BreadcrumbItem />)
+    const wrapper = shallow(<BreadcrumbItem />)
+    expect(wrapper.find(BootstrapBreadcrumbItem)).toHaveLength(1)
+  })
+  it('handles click event', () => {
+    const onClick = sinon.spy()
+    const wrapper = shallow(<BreadcrumbItem onClick={onClick} />)
 
-    expect(breadcrumbItemWrapper.find(BootstrapBreadcrumbItem)).toHaveLength(1)
+    wrapper.simulate('click')
+    expect(onClick).toHaveProperty('callCount', 1)
   })
   it('accepts props', () => {
-    const breadcrumbItemWrapper = shallow(<BreadcrumbItem itemProps={itemProps} />)
-    const breadcrumbItemProps = breadcrumbItemWrapper.props()
+    const wrapper = shallow(<BreadcrumbItem active onClick={() => undefined} />)
+    const wrapperProps = wrapper.props()
 
-    // expect(breadcrumbItemProps.as).toEqual(<span />)
-    expect(breadcrumbItemProps.active).toBeFalsy()
-    expect(breadcrumbItemProps.href).toEqual('#')
-    expect(breadcrumbItemProps.target).toEqual('_self')
-    expect(breadcrumbItemProps.title).toEqual('breadcrumb')
+    expect(wrapperProps.active).toBeTruthy()
+    expect(wrapperProps.onClick()).toBeUndefined()
   })
   it('should not have href and active props at the same time', () => {
-    const breadcrumbItemWrapper = shallow(<BreadcrumbItem itemProps={itemProps} />).find(
-      BootstrapBreadcrumbItem,
-    )
-    const breadcrumbItemProps = breadcrumbItemWrapper.props()
+    const wrapper = shallow(<BreadcrumbItem active />)
+    const wrapperProps = wrapper.props()
 
-    expect(breadcrumbItemProps.active).toBeFalsy()
-    expect(breadcrumbItemProps.href).toBeTruthy()
+    const wrapperHref = shallow(<BreadcrumbItem href="example.com" />)
+    const wrapperHrefProps = wrapperHref.props()
+
+    expect(wrapperProps.active).toBeTruthy()
+    expect(wrapperHrefProps.active).toBeFalsy()
+
+    expect(wrapperProps.active).toBeTruthy()
+    expect(wrapperHrefProps.href).toEqual('example.com')
   })
-  it('can render children elements', () => {
-    const breadcrumbItemWrapper = shallow(<BreadcrumbItem>Child element</BreadcrumbItem>)
-    const breadcrumbItem = breadcrumbItemWrapper.find(BootstrapBreadcrumbItem)
-
+  it('renders child elements', () => {
+    const wrapper = shallow(<BreadcrumbItem>Child element</BreadcrumbItem>)
+    const breadcrumbItem = wrapper.find(BootstrapBreadcrumbItem)
     expect(breadcrumbItem.text()).toEqual('Child element')
   })
-  it('navigates to link when the href prop is passed', () => {
-    const breadcrumbItemWrapper = shallow(
-      <BreadcrumbItem itemProps={itemProps}>Home</BreadcrumbItem>,
-    )
-    const bootstrapBreadcrumbItem = breadcrumbItemWrapper.find(BootstrapBreadcrumbItem)
 
-    expect(bootstrapBreadcrumbItem.props().href).toEqual('#')
+  it('navigates to link when the href prop is passed', () => {
+    const wrapper = shallow(<BreadcrumbItem href="example.com">Home</BreadcrumbItem>)
+    const bootstrapBreadcrumbItem = wrapper.find(BootstrapBreadcrumbItem)
+    expect(bootstrapBreadcrumbItem.props().href).toEqual('example.com')
   })
-  // ensure our breadcrumb supports custom router.
   it('should not have href tag when there is anchor tag in child tree', () => {
-    const breadcrumbItemWrapper = shallow(
+    const wrapper = shallow(
       <BreadcrumbItem>
         <a href="https://google.com">Custom Link</a>
       </BreadcrumbItem>,
     )
-    const breadcrumbItem = breadcrumbItemWrapper.find(BootstrapBreadcrumbItem)
-
+    const breadcrumbItem = wrapper.find(BootstrapBreadcrumbItem)
     expect(breadcrumbItem.contains(<a href="https://google.com">Custom Link</a>)).toBeTruthy()
     expect(breadcrumbItem.props().href).toBeFalsy()
   })
