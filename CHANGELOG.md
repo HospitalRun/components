@@ -1,3 +1,10 @@
+## [0.21.1](https://github.com/HospitalRun/components/compare/v0.21.0...v0.21.1) (2019-12-16)
+
+
+### Bug Fixes
+
+* **fontawesome:** adds fontawesome-common-types ([7482584](https://github.com/HospitalRun/components/commit/7482584769b9c8f19d1b196338a1951c4c6ea3b4))
+
 # [0.21.0](https://github.com/HospitalRun/components/compare/v0.20.1...v0.21.0) (2019-12-07)
 
 
