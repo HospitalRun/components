@@ -11,6 +11,7 @@ const iconMap = {
   'appointment-add': 'calendar-plus',
   'appointment-remove': 'calendar-minus',
   calendar: 'calendar-alt',
+  dashboard: 'columns',
   image: 'camera',
   incident: 'file-alt',
   lab: 'microscope',
