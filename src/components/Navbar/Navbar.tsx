@@ -4,9 +4,8 @@ import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-
 import { Button } from '../Button'
-import { NavLink, Brand, NavLinkElement } from './interfaces'
+import { NavLink, Brand, NavLinkElement, Search } from './interfaces'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */
@@ -17,35 +16,15 @@ interface Props extends React.Props<any> {
   navLinks: NavLink[]
   /** Determines the hospital/clinic name to be shown at the navbar */
   brand: Brand
-  /** Defines the button variant. By default is primary */
-  buttonColor?:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'warning'
-    | 'danger'
-    | 'info'
-    | 'light'
-    | 'dark'
-  /** Handles the on click search button event */
-  onSearchButtonClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
-  /** Handles the on change search form event */
-  onSearchTextBoxChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  /** Defines the button variant. By default is 'primary ' */
+  search: Search
 }
 
 /**
  * Used to redirect users to the main topics.
  */
 const Navbar = (props: Props) => {
-  const {
-    brand,
-    bg,
-    variant,
-    navLinks,
-    buttonColor,
-    onSearchTextBoxChange,
-    onSearchButtonClick,
-  } = props
+  const { bg, variant, navLinks, brand, search } = props
 
   const getNavItems = (subLink: NavLinkElement, index: number) => (
     <NavDropdown.Item href={subLink.href ? subLink.href : ''} key={index} onClick={subLink.onClick}>
@@ -68,36 +47,34 @@ const Navbar = (props: Props) => {
       </NavDropdown>
     )
   }
-
   return (
     <NavbarRB bg={bg} variant={variant}>
-      <NavbarRB.Brand href={brand.href} onClick={brand.onClick}>
+      <NavbarRB.Brand href={brand.href} onClick={brand.onClick} style={{ cursor: 'pointer' }}>
         {brand.src ? (
           <img
             alt={brand.label}
             src={brand.src}
             width="28"
             height="28"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top mr-3"
           />
         ) : (
           ''
         )}
-        {` ${brand.label}`}
+        <span style={{ color: brand.color }}>{`${brand.label}`}</span>
       </NavbarRB.Brand>
-
       <NavbarRB.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">{navLinks.map((link, index) => getNavLinks(link, index))}</Nav>
         <Nav>
           <Form inline>
             <FormControl
               type="text"
-              placeholder="Search"
+              placeholder={search.placeholderText}
               className="mr-sm-2"
-              onChange={onSearchTextBoxChange}
+              onChange={search.onChangeInput}
             />
-            <Button color={buttonColor} onClick={onSearchButtonClick}>
-              Search
+            <Button color={search.buttonColor} onClick={search.onClickButton}>
+              {search.buttonText}
             </Button>
           </Form>
         </Nav>
@@ -107,9 +84,7 @@ const Navbar = (props: Props) => {
 }
 
 Navbar.defaultProps = {
-  buttonColor: 'primary',
   bg: 'dark',
   variant: 'dark',
 }
-
 export { Navbar }
