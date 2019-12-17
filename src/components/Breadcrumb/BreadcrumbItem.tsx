@@ -8,12 +8,10 @@ interface Props {
   active?: boolean
   /** Adds custom event */
   onClick?: (event: React.MouseEvent) => void
-  /** Renders anchor tag and pass href. Do not use  when active="true" */
-  href?: string
 }
 
-const BreadcrumbItem = ({ children, active, onClick, href }: Props) => (
-  <BootstrapBreadcrumbItem active={active} onClick={onClick} href={href}>
+const BreadcrumbItem = ({ children, active, onClick }: Props) => (
+  <BootstrapBreadcrumbItem active={active} onClick={onClick}>
     {children}
   </BootstrapBreadcrumbItem>
 )

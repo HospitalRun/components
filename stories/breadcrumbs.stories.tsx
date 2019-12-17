@@ -21,14 +21,8 @@ storiesOf('Breadcrumbs', module)
       <BreadcrumbItem active>Span Item</BreadcrumbItem>
     </Breadcrumb>
   ))
-  .add('Breadcrumb Items with href prop prop.', () => (
-    <Breadcrumb>
-      <BreadcrumbItem href="#">Anchor Item</BreadcrumbItem>
-    </Breadcrumb>
-  ))
   .add('Breadcrumb item can have custom link in child', () => (
     <Breadcrumb>
-      <BreadcrumbItem href="#">Default anchor item</BreadcrumbItem>
       <BreadcrumbItem active>
         <a href="https://example.com">Custom link item</a>
       </BreadcrumbItem>

@@ -45,38 +45,9 @@ describe('BreadcrumbItem', () => {
     expect(wrapperProps.active).toBeTruthy()
     expect(wrapperProps.onClick()).toBeUndefined()
   })
-  it('should not have href and active props at the same time', () => {
-    const wrapper = shallow(<BreadcrumbItem active />)
-    const wrapperProps = wrapper.props()
-
-    const wrapperHref = shallow(<BreadcrumbItem href="example.com" />)
-    const wrapperHrefProps = wrapperHref.props()
-
-    expect(wrapperProps.active).toBeTruthy()
-    expect(wrapperHrefProps.active).toBeFalsy()
-
-    expect(wrapperProps.active).toBeTruthy()
-    expect(wrapperHrefProps.href).toEqual('example.com')
-  })
   it('renders child elements', () => {
     const wrapper = shallow(<BreadcrumbItem>Child element</BreadcrumbItem>)
     const breadcrumbItem = wrapper.find(BootstrapBreadcrumbItem)
     expect(breadcrumbItem.text()).toEqual('Child element')
-  })
-
-  it('navigates to link when the href prop is passed', () => {
-    const wrapper = shallow(<BreadcrumbItem href="example.com">Home</BreadcrumbItem>)
-    const bootstrapBreadcrumbItem = wrapper.find(BootstrapBreadcrumbItem)
-    expect(bootstrapBreadcrumbItem.props().href).toEqual('example.com')
-  })
-  it('should not have href tag when there is anchor tag in child tree', () => {
-    const wrapper = shallow(
-      <BreadcrumbItem>
-        <a href="https://google.com">Custom Link</a>
-      </BreadcrumbItem>,
-    )
-    const breadcrumbItem = wrapper.find(BootstrapBreadcrumbItem)
-    expect(breadcrumbItem.contains(<a href="https://google.com">Custom Link</a>)).toBeTruthy()
-    expect(breadcrumbItem.props().href).toBeFalsy()
   })
 })
