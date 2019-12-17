@@ -6,9 +6,9 @@ Usado para navegar e pesquisar recursos
 
 | property    | propType   | required | default | description                                                   |
 | ----------- | ---------- | -------- | ------- | ------------------------------------------------------------- |
-| placeholderText | `string` | no | 'Search' | Defines search placeholder text
-| buttonText | `string` | no | 'Search' | Defines search button text
-| buttonColor | `primary` | no | 'primary' | Defines the button variant. By default is primary|
+| placeholderText | `string` | no | 'Search' | Definir o texto do espaço reservado para pesquisa
+| buttonText | `string` | no | 'Search' | Definir o texto do botão de pesquisa
+| buttonColor | `primary` | no | 'primary' | Definir a variante de cor do botão. O default ou padrão é primary|
 || `secondary`
 || `success`
 || `warning`
@@ -16,5 +16,5 @@ Usado para navegar e pesquisar recursos
 || `info`
 || `light`
 || `dark`
-|onClickButton|`(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void`|yes||Handles the on click search button event|
-|onChangeInput|`(event: React.FormEvent<ReplaceProps<'input', BsPrefixProps<'input'> & FormControlProps>>,) => void`|yes||Handles the on change search form event|
+|onClickButton|`(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void`|yes||Definir o que acontecer apos o clique do botão|
+|onChangeInput|`(event: React.FormEvent<ReplaceProps<'input', BsPrefixProps<'input'> & FormControlProps>>,) => void`|yes||Definir o que acontecer quando a entrada de texto mudar |

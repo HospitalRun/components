@@ -6,8 +6,8 @@ Usado para redirecionar usuários para os principais tópicos.
 
 | property    | propType   | required | default | description                                                   |
 | ----------- | ---------- | -------- | ------- | ------------------------------------------------------------- |
-| bg          | `string`   | -        |         | Determines the navbar background color                        |
-| brand       | `Brand`    | yes      |         | Determines the hospital/clinic name to be shown at the navbar |
-| search       | `Search`  | no      |         | Determines search button/placeholder text and events |
-| navLinks | `NavLink[]` | yes| |Determines the links names, theirs onClick methods and paths. It has children array which contain links to be used on a dropdown.|
-| variant | `'light' | 'dark'`| - | | Determines the letters color. It should be combined with the background color (bg) |
+| bg          | `string`   | -        |         | Determinar a cor de fundo da barra de navegação                        |
+| brand       | `Brand`    | yes      |         | Determinar o nome do hospital / clínica a ser mostrado na barra de navegação (ver Bearch.md) |
+| search       | `Search`  | no      |         | Determinar texto e eventos da area de pesquisa (ver Search.md) |
+| navLinks | `NavLink[]` | yes| | Determinar os nomes dos links, os métodos do evento onClick e o caminho dos link. É um array de objetos contendo estas propriedades. |
+| variant | `'light' | 'dark'`| - | | Determinar a variante de cor das letras. Deve ser combinado com a cor de fundo (bg) |

@@ -7,7 +7,7 @@ Usado para exibir o nome / logotipo da marca da empresa
 | ----------- | ---------- | -------- | ------- | ------------------------------------------------------------- |
 | label| `string` | yes |
 | src | `string` | no |
-| color | `primary` | no | 'primary' | Defines the button variant. By default is primary|
+| color | `primary` | no | 'primary' | Definir a variante de cor. O default ou padrão é 'primary' |
 || `secondary`
 || `success`
 || `warning`
@@ -15,5 +15,5 @@ Usado para exibir o nome / logotipo da marca da empresa
 || `info`
 || `light`
 || `dark`
-|onClick|`(event: React.MouseEvent<any>) => void`| yes ||Handles the on click button event|
+|onClick|`(event: React.MouseEvent<any>) => void`| yes || Definir o que acontecer apos o clique na marca da empresa |
 
