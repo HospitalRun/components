@@ -1,3 +1,15 @@
+# [0.22.0](https://github.com/HospitalRun/components/compare/v0.21.1...v0.22.0) (2019-12-18)
+
+
+### Features
+
+* **breadcrumb:** add breadcrumb stories ([8f59804](https://github.com/HospitalRun/components/commit/8f5980420ef961a42cb2ce399bb0512e0323415b))
+* **breadcrumb:** make tests pass ([a61742f](https://github.com/HospitalRun/components/commit/a61742fdf4a1b36ff8355bf142b3b3d1819ecb52))
+* **breadcrumb:** remove href prop ([e95a3fa](https://github.com/HospitalRun/components/commit/e95a3fa68a4ad8c98a7bc7680a1705b232c092f7))
+* **breadcrumb:** separate breadcrumb item component ([f6e5be5](https://github.com/HospitalRun/components/commit/f6e5be5d2eb852f3bd3e9bd2064d99045feeaba8))
+* **breadcrumb:** simplify with bootstrap defaults ([a849fda](https://github.com/HospitalRun/components/commit/a849fda0b79f17c753802bf36adf010e6160f942))
+* **breadcrumb:** write tests for breadcrumb wrapper ([2ed44c4](https://github.com/HospitalRun/components/commit/2ed44c422a8064cae80d231cc1cc351f5d89d150))
+
 ## [0.21.1](https://github.com/HospitalRun/components/compare/v0.21.0...v0.21.1) (2019-12-16)
 
 
