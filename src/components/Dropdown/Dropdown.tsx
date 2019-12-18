@@ -5,37 +5,41 @@ import { Item } from './interfaces'
 import { colorVariants } from '../../helpers/colorVariants'
 
 interface Props extends React.Props<any> {
-  /** Removes outer borders and rounded corners to render list group items edge-to-edge in a parent container. */
+  /** Determines the dropdown toggle text */
   text: string
-  /* Dropdown title variant color */
-  variant: colorVariants
-  /* Align dropdown items to right  */
-  alignRight?: boolean
-  /* dropdown toggle button id */
-  id: string
-  /* Custom element type */
-  as?: ElementType
-  /* Handle toggle additional click events */
-  onClick?: (event: React.MouseEvent<any>) => void
-  /* Handle toggle additional click events */
-  size?: 'sm' | 'md' | 'lg'
-  /* Handle toggle additional click events */
+  /* Determines the dropdown's items */
   items: Item[]
-  /* Handle toggle additional click events */
+  /* Determines the dropdown toggle button id */
+  id: string
+  /* Determines the dropdown toggle variant color */
+  variant: colorVariants
+  /* Determines the horizontal alignment of the dropdown items */
+  alignRight?: boolean
+  /* Determines the dropdown's custom element type */
+  as?: ElementType
+  /* Handle the dropdown toggle additional click events */
+  onClick?: (event: React.MouseEvent<any>) => void
+  /* Determines the dropdown toggle button size */
+  size?: 'sm' | 'md' | 'lg'
+  /* Determines the dropdown's direction */
   direction?: 'down' | 'up' | 'left' | 'right'
-  /* Custom style */
+  /* Determines the dropdown's custom style */
   style?: Record<string, any>
 }
 
 /**
- * Toggle contextual overlays for displaying lists of links and more
- * with the Bootstrap dropdown plugin
+ * Customizable dropdown component based on React-Bootstrap dropdown
+ *
  */
 const Dropdown = (props: Props) => {
   const { text, size, id, items, direction, variant, style, alignRight } = props
 
   const getDropdownItem = (item: Item, i: number) => (
-    <DropdownRB.Item style={item.style} eventKey={item.eventKey || `event-${i.toString()}`}>
+    <DropdownRB.Item
+      style={item.style}
+      key={item.key || `dropdown-item-${i.toString()}`}
+      eventKey={item.eventKey || `dropdown-event-${i.toString()}`}
+    >
       {item.text}
     </DropdownRB.Item>
   )
