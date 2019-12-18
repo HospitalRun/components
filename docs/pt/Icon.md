@@ -6,4 +6,4 @@ Os ícones fornecem dicas contextuais aos usuários para facilitar o reconhecime
 
 | property | propType   | required | default | description                 |
 | -------- | ---------- | -------- | ------- | --------------------------- |
-| icon     | `IconType` | yes      |         | The type of icon to display |
+| icon     | `IconType` | yes      |         | O tipo de icone a disponibilizar |

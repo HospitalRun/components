@@ -1,18 +1,18 @@
 # `BarGraph` (component)
 
-Um componente personalizável de gráfico de barras criado no chart.js
+Um componente personalizável de gráfico de barras criado com chart.js
 
 ## Props
 
 | property       | propType    | required | default | description                                                            |
 | -------------- | ----------- | -------- | ------- | ---------------------------------------------------------------------- |
-| datasets       | `Dataset[]` | yes      |         | the datasets for the graph                                             |
-| height         | `string`    | -        |         | The height of the graph                                                |
-| horizontal     | `boolean`   | -        |         | Determines if the bar graph should be displayed in a horizontal manner |
-| stacked        | `boolean`   | -        |         | Determines if the bar graph should be displayed as a stacked bar graph |
-| title          | `string`    | -        |         | the title of the graph for the legend                                  |
-| titleFontColor | `string`    | -        |         | the color for the title                                                |
-| titleFontSize  | `number`    | -        |         | the font size for the title                                            |
-| width          | `string`    | -        |         | The width of the graph                                                 |
-| xAxes          | `Axis[]`    | yes      |         | the list of x axis information                                         |
-| yAxes          | `Axis[]`    | yes      |         | the list of y axis information                                         |
+| datasets       | `Dataset[]` | yes      |         | Definir o conjunto de dados do gráfico (ver chart.js)  |
+| height         | `string`    | -        |         | Definir a altura do gráfico                                                |
+| horizontal     | `boolean`   | -        |         | Definir se o gáfico de barras deve ser disponivel na horizontal |
+| stacked        | `boolean`   | -        |         | Definir se o gáfico de barras deve ser exibido empilhado |
+| title          | `string`    | -        |         | Definir o titulo                                 |
+| titleFontColor | `string`    | -        |         | Definir a cor da font do titulo                                 |
+| titleFontSize  | `number`    | -        |         | Definir o tamanho da font do titulo                                 |
+| width          | `string`    | -        |         | Definir a largura                                 |
+| xAxes          | `Axis[]`    | yes      |         | Definir a lista de informação do eixo x (ver chart.js) |
+| yAxes          | `Axis[]`    | yes      |         | Definir a lista de informação do eixo y (ver chart.js) |

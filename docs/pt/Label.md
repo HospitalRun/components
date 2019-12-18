@@ -6,7 +6,6 @@ Rótulos são usados para exibir texto
 
 | property         | propType          | required | default | description              |
 | ---------------- | ----------------- | -------- | ------- | ------------------------ |
-| text             | `string`          | yes      | -       | Text to display in label |
-| title            | `string`          | no       | -       | Title of the label       |
-| htmlFor          | `string`          | -        | -       | Ties labels to input     |
-| isRequired       | `boolean`         | no       | false   | Defines whether input is required |
+| text             | `string`          | yes      | -       | Definir o texto do rotulo |
+| title            | `string`          | no       | -       | Definir o titulo do rotulo |
+| htmlFor          | `string`          | -        | -       | Definir para qual input esta conectado

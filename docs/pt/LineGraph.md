@@ -6,13 +6,13 @@ Um componente personalizável do gráfico de linhas criado no chart.js
 
 | property       | propType    | required | default | description                                                                                       |
 | -------------- | ----------- | -------- | ------- | ------------------------------------------------------------------------------------------------- |
-| datasets       | `Dataset[]` | yes      |         | the datasets for the graph                                                                        |
-| fill           | `boolean`   | -        |         | Determines if the area under the line should be filled with the background color from the dataset |
-| height         | `string`    | -        |         | The height of the graph                                                                           |
-| stacked        | `boolean`   | -        |         | Determines if the the Line Graphs should be displayed in a stacked manner                         |
-| title          | `string`    | -        |         | the title of the graph for the legend                                                             |
-| titleFontColor | `string`    | -        |         | the color for the title                                                                           |
-| titleFontSize  | `number`    | -        |         | the font size for the title                                                                       |
-| width          | `string`    | -        |         | The width of the graph                                                                            |
-| xAxes          | `Axis[]`    | yes      |         | the list of x axis information                                                                    |
-| yAxes          | `Axis[]`    | yes      |         | the list of y axis information                                                                    |
+| datasets       | `Dataset[]` | yes      |         | Definir o conjunto de dados do gráfico (ver chart.js)                                                                        |
+| fill           | `boolean`   | -        |         | Determinar se a área abaixo da linha deve ser preenchida com a cor de fundo do conjunto de dados |
+| height         | `string`    | -        |         | A altura do gráfico                                                                           |
+| stacked        | `boolean`   | -        |         | Determinar se os gráficos de linha devem ser exibidos de maneira empilhada                         |
+| title          | `string`    | -        |         | Definir o titulo                                 |
+| titleFontColor | `string`    | -        |         | Definir a cor da font do titulo                                 |
+| titleFontSize  | `number`    | -        |         | Definir o tamanho da font do titulo                                 |
+| width          | `string`    | -        |         | Definir a largura                                 |
+| xAxes          | `Axis[]`    | yes      |         | Definir a lista de informação do eixo x (ver chart.js) |
+| yAxes          | `Axis[]`    | yes      |         | Definir a lista de informação do eixo y (ver chart.js) |
