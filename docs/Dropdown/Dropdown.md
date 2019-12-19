@@ -8,8 +8,8 @@ These items can be links to other parts of the website or handle events.
 | property    | propType                                                                                 | required | default | description                                                                           |
 | ----------- | ---------------------------------------------------------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------- |
   text   |    `string`    | yes | | Dermines the dropdown toggle text variant color |
-  id   |    `string`        | yes | | Determines the dropdown id |
   items   |    `Item[]`        | yes | | Determines the dropdown items (See Dropdown/Item.md) |
+  id   |    `string`        | no | | Determines the dropdown id |
   onClick   |    `(event   |    React.MouseEvent<any>) => void` | no | | Handle additional click events on dropdown toggle |
   variant   |    `ColorVariants` | no | 'primary' | Dropdown buttom color variant |
   alignRight   |    `boolean`        | no | false | Align dropdown items to right

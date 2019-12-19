@@ -6,7 +6,7 @@ import { Dropdown } from '../src'
 describe('Dropdown', () => {
   it('Dropdown renders itself without crashing', () => {
     const dropdownWrapper = shallow(
-      <Dropdown id="dropdown-example" size="sm" text="Dropdown Text" items={[{ text: 'Link' }]} />,
+      <Dropdown text="Dropdown Text" items={[{ text: 'Link', onClick: () => {} }]} />,
     )
     expect(dropdownWrapper.find(DropdownButton)).toHaveLength(1)
   })

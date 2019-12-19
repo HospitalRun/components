@@ -18,18 +18,18 @@ storiesOf('Dropdown', module)
         <Dropdown
           text="Default Dropdown"
           items={[
-            { text: 'Link', href: '#' },
-            { text: 'Link 2', href: '#' },
-            { text: 'Link 3', href: '#' },
+            { text: 'Link', onClick: () => {} },
+            { text: 'Link 2', onClick: () => {} },
+            { text: 'Link 3', onClick: () => {} },
           ]}
         />
         <Dropdown
           size="sm"
           text="Small Primary Dropdown"
           items={[
-            { text: 'Link', href: '#' },
-            { text: 'Link 2', href: '#' },
-            { text: 'Link 3', href: '#' },
+            { text: 'Link', onClick: () => {} },
+            { text: 'Link 2', onClick: () => {} },
+            { text: 'Link 3', onClick: () => {} },
           ]}
           variant="primary"
           style={{ marginLeft: '20px', marginRight: '20px' }}
@@ -39,8 +39,8 @@ storiesOf('Dropdown', module)
           text="Medium Secondary Dropdown"
           variant="secondary"
           items={[
-            { text: 'Link', href: '#' },
-            { text: 'Link 2', href: '#' },
+            { text: 'Link', onClick: () => {} },
+            { text: 'Link 2', onClick: () => {} },
           ]}
         />
         <Dropdown
@@ -48,8 +48,8 @@ storiesOf('Dropdown', module)
           text="Large Success Dropdown"
           variant="success"
           items={[
-            { text: 'alignRight', href: '#' },
-            { text: 'true', href: '#' },
+            { text: 'alignRight', onClick: () => {} },
+            { text: 'true', onClick: () => {} },
           ]}
           style={{ marginLeft: '20px' }}
         />
@@ -61,9 +61,9 @@ storiesOf('Dropdown', module)
           size="sm"
           text="Custom Styles"
           items={[
-            { text: 'Link', href: '#' },
-            { text: 'Link 2', href: '#', style: { fontSize: '20px', color: 'green' } },
-            { text: 'Link 3', href: '#', style: { fontSize: '30px' } },
+            { text: 'Link', onClick: () => {} },
+            { text: 'Link 2', onClick: () => {}, style: { fontSize: '20px', color: 'green' } },
+            { text: 'Link 3', onClick: () => {}, style: { fontSize: '30px' } },
           ]}
           variant="primary"
           style={{ marginLeft: '20px', marginRight: '20px' }}
@@ -71,8 +71,8 @@ storiesOf('Dropdown', module)
         <Dropdown
           text="Align Right"
           items={[
-            { text: 'Property alignRight', href: '#' },
-            { text: 'True', href: '#' },
+            { text: 'Property alignRight', onClick: () => {} },
+            { text: 'True', onClick: () => {} },
           ]}
           alignRight
         />
@@ -81,11 +81,11 @@ storiesOf('Dropdown', module)
           text="Change Direction"
           direction="up"
           items={[
-            { text: 'Directions', href: '#' },
-            { text: 'up', href: '#' },
-            { text: 'down', href: '#' },
-            { text: 'right', href: '#' },
-            { text: 'left', href: '#' },
+            { text: 'Directions', onClick: () => {} },
+            { text: 'up', onClick: () => {} },
+            { text: 'down', onClick: () => {} },
+            { text: 'right', onClick: () => {} },
+            { text: 'left', onClick: () => {} },
           ]}
           style={{ marginLeft: '20px' }}
         />
@@ -94,8 +94,8 @@ storiesOf('Dropdown', module)
           text="Large Success Dropdown"
           variant="success"
           items={[
-            { text: 'alignRight', href: '#' },
-            { text: 'true', href: '#' },
+            { text: 'alignRight', onClick: () => {} },
+            { text: 'true', onClick: () => {} },
           ]}
           style={{ marginLeft: '20px' }}
         />
