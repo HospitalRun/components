@@ -10,7 +10,7 @@ interface Props extends React.Props<any> {
   /* Determines the dropdown's items */
   items: Item[]
   /* Determines the dropdown toggle button id */
-  id?: string
+  id?: string | undefined
   /* Determines the dropdown toggle variant color */
   variant: ColorVariants
   /* Determines the horizontal alignment of the dropdown items */
