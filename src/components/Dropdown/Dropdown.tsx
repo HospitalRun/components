@@ -2,7 +2,7 @@ import React, { ElementType } from 'react'
 import DropdownRB from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import { Item } from './interfaces'
-import { colorVariants } from '../../helpers/colorVariants'
+import { ColorVariants } from '../../helpers/ColorVariants'
 
 interface Props extends React.Props<any> {
   /** Determines the dropdown toggle text */
@@ -12,7 +12,7 @@ interface Props extends React.Props<any> {
   /* Determines the dropdown toggle button id */
   id: string
   /* Determines the dropdown toggle variant color */
-  variant: colorVariants
+  variant: ColorVariants
   /* Determines the horizontal alignment of the dropdown items */
   alignRight?: boolean
   /* Determines the dropdown's custom element type */
@@ -62,7 +62,6 @@ Dropdown.defaultProps = {
   variant: 'light',
   size: 'sm',
   direction: 'down',
-  id: '',
 }
 
 export { Dropdown }

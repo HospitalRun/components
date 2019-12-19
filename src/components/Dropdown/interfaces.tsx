@@ -1,14 +1,12 @@
-import { colorVariants } from '../../helpers/colorVariants'
+import { ColorVariants } from '../../helpers/ColorVariants'
 
 export interface Item {
   /* Item text */
   text: string
   /* Item event key */
   eventKey?: string
-  /* Item href */
-  href?: string
   /* Item variant color */
-  variant?: colorVariants
+  variant?: ColorVariants
   /* Item id */
   id?: string
   /* Item key */

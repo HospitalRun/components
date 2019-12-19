@@ -1,4 +1,4 @@
-export type colorVariants =
+export type ColorVariants =
   | 'light'
   | 'dark'
   | 'primary'
