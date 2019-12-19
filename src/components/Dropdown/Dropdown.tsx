@@ -10,7 +10,7 @@ interface Props extends React.Props<any> {
   /* Determines the dropdown's items */
   items: Item[]
   /* Determines the dropdown toggle button id */
-  id?: string
+  id: string
   /* Determines the dropdown toggle variant color */
   variant: ColorVariants
   /* Determines the horizontal alignment of the dropdown items */
@@ -50,8 +50,8 @@ const Dropdown = (props: Props) => {
       size={size}
       variant={variant}
       title={text}
-      id={id}
       style={style}
+      id={id}
       alignRight={alignRight}
     >
       {items.map((item, i) => getDropdownItem(item, i))}
@@ -59,6 +59,7 @@ const Dropdown = (props: Props) => {
   )
 }
 Dropdown.defaultProps = {
+  id: `dropdown${Math.floor(Math.random() * 1000)}`,
   variant: 'light',
   size: 'sm',
   direction: 'down',
