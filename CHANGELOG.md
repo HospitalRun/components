@@ -1,3 +1,10 @@
+## [0.22.1](https://github.com/HospitalRun/components/compare/v0.22.0...v0.22.1) (2019-12-20)
+
+
+### Bug Fixes
+
+* **ci:** updates test script and build matrix ([3e8d005](https://github.com/HospitalRun/components/commit/3e8d005e51fb5f6c1aa0c68a34aa7e639c34f5a9))
+
 # [0.22.0](https://github.com/HospitalRun/components/compare/v0.21.1...v0.22.0) (2019-12-18)
 
 
