@@ -23,7 +23,7 @@
     "build": "tsdx build",
     "prepublishOnly": "npm run build",
     "test": "tsdx test --env=jsdom",
-    "test:ci": "CI=true tsdx test --env=jsdom",
+    "test:ci": "cross-env CI=true tsdx test --env=jsdom",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" \"test/**/*.{js,jsx,ts,tsx}\" \"stories/**/*.{js,jsx,ts,tsx}\" --fix",
     "coveralls": "CI=true tsdx test --coverage --coverageReporters=text-lcov | coveralls",
     "storybook": "start-storybook -p 6006",
@@ -86,6 +86,7 @@
     "commitizen": "~4.0.3",
     "commitlint-config-cz": "0.12.1",
     "coveralls": "~3.0.6",
+    "cross-env": "~6.0.3",
     "cz-conventional-changelog": "~3.0.2",
     "enzyme": "~3.10.0",
     "enzyme-adapter-react-16": "~1.15.1",
@@ -114,9 +115,9 @@
     "typescript": "~3.7.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-common-types": "~0.2.26",
     "@fortawesome/fontawesome-svg-core": "~1.2.25",
     "@fortawesome/free-solid-svg-icons": "~5.12.0",
-    "@fortawesome/fontawesome-common-types": "~0.2.26",
     "@fortawesome/react-fontawesome": "~0.1.4",
     "@tinymce/tinymce-react": "~3.3.2",
     "@types/react-datepicker": "~2.9.5",
