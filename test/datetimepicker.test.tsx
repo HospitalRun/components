@@ -4,6 +4,11 @@ import * as sinon from 'sinon'
 import DatePicker from 'react-datepicker'
 import { DateTimePicker } from '../src'
 
+// import { registerLocale, setDefaultLocale } from  "react-datepicker";
+// import pt from '../locales/pt';
+// setDefaultLocale('en')
+// registerLocale('pt-br', pt)
+
 describe('DateTimePicker', () => {
   it('renders itself without crashing', () => {
     const selectedDate = new Date()
@@ -39,7 +44,7 @@ it('Checkbox handle the change event', () => {
 it('accepts props and defaults as by DatePicker API', () => {
   const selectedDate = new Date()
   const date = new Date()
-  const datePickerWrapper = shallow(
+  const datePickerWrapper = mount(
     <DateTimePicker
       dateFormat="MM/dd/yyyy"
       disabled
