@@ -1,3 +1,11 @@
+## [0.22.2](https://github.com/HospitalRun/components/compare/v0.22.1...v0.22.2) (2019-12-21)
+
+
+### Bug Fixes
+
+* **datetimepicker:** fix DateTimePicker style ([e477380](https://github.com/HospitalRun/components/commit/e477380c622b47769c2c90d603f1aadc20ce9c6a)), closes [#156](https://github.com/HospitalRun/components/issues/156)
+* **datetimepicker:** remove comments ([f02a0ba](https://github.com/HospitalRun/components/commit/f02a0ba4e597b9f22d327708fe87dc8603ce8997)), closes [#159](https://github.com/HospitalRun/components/issues/159)
+
 ## [0.22.1](https://github.com/HospitalRun/components/compare/v0.22.0...v0.22.1) (2019-12-20)
 
 
