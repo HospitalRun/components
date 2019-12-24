@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import DatePicker from 'react-datepicker'
-
+import InputGroup from 'react-bootstrap/InputGroup'
+import { Icon } from '../Icon'
 import 'react-datepicker/dist/react-datepicker.css'
 
 interface Props {
@@ -34,6 +35,8 @@ interface Props {
   minTime?: Date
   /** Show more months. */
   monthsShown?: number
+  /** Input.Group class */
+  className?: string
   /** Callback when date is changed. */
   onChange: (date: Date, event: React.ChangeEvent<HTMLInputElement>) => void
   /** Selected date value. */
@@ -67,6 +70,7 @@ interface Props {
 const DateTimePicker = (props: Props) => {
   const {
     children,
+    className,
     dateFormat,
     dateFormatCalendar,
     disabled,
@@ -98,38 +102,46 @@ const DateTimePicker = (props: Props) => {
   } = props
 
   return (
-    <DatePicker
-      dateFormat={dateFormat}
-      dateFormatCalendar={dateFormatCalendar}
-      disabled={disabled}
-      dropdownMode={dropdownMode}
-      endDate={endDate}
-      excludeDates={excludeDates}
-      includeDates={includeDates}
-      inline={inline}
-      locale={locale}
-      maxDate={maxDate}
-      maxTime={maxTime}
-      minDate={minDate}
-      minTime={minTime}
-      monthsShown={monthsShown}
-      onChange={onChange}
-      selected={selected}
-      selectsEnd={selectsEnd}
-      selectsStart={selectsStart}
-      showMonthDropdown={showMonthDropdown}
-      showTimeSelect={showTimeSelect}
-      showYearDropdown={showYearDropdown}
-      showTimeSelectOnly={showTimeSelectOnly}
-      timeFormat={timeFormat}
-      timeIntervals={timeIntervals}
-      timeCaption={timeCaption}
-      todayButton={todayButton}
-      startDate={startDate}
-      withPortal={withPortal}
-    >
-      {children}
-    </DatePicker>
+    <InputGroup className={className}>
+      <InputGroup.Prepend>
+        <InputGroup.Text>
+          <Icon icon="calendar" />
+        </InputGroup.Text>
+      </InputGroup.Prepend>
+      <DatePicker
+        className="form-control"
+        dateFormat={dateFormat}
+        dateFormatCalendar={dateFormatCalendar}
+        disabled={disabled}
+        dropdownMode={dropdownMode}
+        endDate={endDate}
+        excludeDates={excludeDates}
+        includeDates={includeDates}
+        inline={inline}
+        locale={locale}
+        maxDate={maxDate}
+        maxTime={maxTime}
+        minDate={minDate}
+        minTime={minTime}
+        monthsShown={monthsShown}
+        onChange={onChange}
+        selected={selected}
+        selectsEnd={selectsEnd}
+        selectsStart={selectsStart}
+        showMonthDropdown={showMonthDropdown}
+        showTimeSelect={showTimeSelect}
+        showYearDropdown={showYearDropdown}
+        showTimeSelectOnly={showTimeSelectOnly}
+        timeFormat={timeFormat}
+        timeIntervals={timeIntervals}
+        timeCaption={timeCaption}
+        todayButton={todayButton}
+        startDate={startDate}
+        withPortal={withPortal}
+      >
+        {children}
+      </DatePicker>
+    </InputGroup>
   )
 }
 

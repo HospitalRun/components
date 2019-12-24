@@ -10,7 +10,9 @@ storiesOf('DateTimePickers', module)
       inline: true,
     },
   })
-  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => (
+    <div style={{ textAlign: 'center', marginLeft: '40px' }}>{storyFn()}</div>
+  ))
   .add('Default', () => {
     const [startDate, setStartDate] = useState(new Date())
 

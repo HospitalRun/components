@@ -39,7 +39,7 @@ it('Checkbox handle the change event', () => {
 it('accepts props and defaults as by DatePicker API', () => {
   const selectedDate = new Date()
   const date = new Date()
-  const datePickerWrapper = shallow(
+  const datePickerWrapper = mount(
     <DateTimePicker
       dateFormat="MM/dd/yyyy"
       disabled

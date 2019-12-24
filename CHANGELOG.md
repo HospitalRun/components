@@ -1,3 +1,37 @@
+## [0.22.2](https://github.com/HospitalRun/components/compare/v0.22.1...v0.22.2) (2019-12-21)
+
+
+### Bug Fixes
+
+* **datetimepicker:** fix DateTimePicker style ([e477380](https://github.com/HospitalRun/components/commit/e477380c622b47769c2c90d603f1aadc20ce9c6a)), closes [#156](https://github.com/HospitalRun/components/issues/156)
+* **datetimepicker:** remove comments ([f02a0ba](https://github.com/HospitalRun/components/commit/f02a0ba4e597b9f22d327708fe87dc8603ce8997)), closes [#159](https://github.com/HospitalRun/components/issues/159)
+
+## [0.22.1](https://github.com/HospitalRun/components/compare/v0.22.0...v0.22.1) (2019-12-20)
+
+
+### Bug Fixes
+
+* **ci:** updates test script and build matrix ([3e8d005](https://github.com/HospitalRun/components/commit/3e8d005e51fb5f6c1aa0c68a34aa7e639c34f5a9))
+
+# [0.22.0](https://github.com/HospitalRun/components/compare/v0.21.1...v0.22.0) (2019-12-18)
+
+
+### Features
+
+* **breadcrumb:** add breadcrumb stories ([8f59804](https://github.com/HospitalRun/components/commit/8f5980420ef961a42cb2ce399bb0512e0323415b))
+* **breadcrumb:** make tests pass ([a61742f](https://github.com/HospitalRun/components/commit/a61742fdf4a1b36ff8355bf142b3b3d1819ecb52))
+* **breadcrumb:** remove href prop ([e95a3fa](https://github.com/HospitalRun/components/commit/e95a3fa68a4ad8c98a7bc7680a1705b232c092f7))
+* **breadcrumb:** separate breadcrumb item component ([f6e5be5](https://github.com/HospitalRun/components/commit/f6e5be5d2eb852f3bd3e9bd2064d99045feeaba8))
+* **breadcrumb:** simplify with bootstrap defaults ([a849fda](https://github.com/HospitalRun/components/commit/a849fda0b79f17c753802bf36adf010e6160f942))
+* **breadcrumb:** write tests for breadcrumb wrapper ([2ed44c4](https://github.com/HospitalRun/components/commit/2ed44c422a8064cae80d231cc1cc351f5d89d150))
+
+## [0.21.1](https://github.com/HospitalRun/components/compare/v0.21.0...v0.21.1) (2019-12-16)
+
+
+### Bug Fixes
+
+* **fontawesome:** adds fontawesome-common-types ([7482584](https://github.com/HospitalRun/components/commit/7482584769b9c8f19d1b196338a1951c4c6ea3b4))
+
 # [0.21.0](https://github.com/HospitalRun/components/compare/v0.20.1...v0.21.0) (2019-12-07)
 
 
