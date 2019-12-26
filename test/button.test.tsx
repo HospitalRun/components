@@ -91,4 +91,28 @@ describe('Button', () => {
     expect(wrapper.find(Icon)).toHaveLength(1)
     expect(wrapper.childAt(wrapper.children().length - 1).type()).toBe(Icon)
   })
+
+  it('Button can use custom class', () => {
+    const wrapper = shallow(<Button className="customClass" />)
+    const button = wrapper.find(BootstrapButton)
+    expect(button.props().className).toEqual('customClass')
+  })
+
+  it('Button can use custom style', () => {
+    const wrapper = shallow(<Button style={{ background: 'red' }} />)
+    const button = wrapper.find(BootstrapButton)
+    expect(button.props().style).toMatchObject({ background: 'red' })
+  })
+
+  it('Button Icon can use custom class', () => {
+    const wrapper = shallow(<Button icon="patient" iconClassName="customClass" />)
+    const icon = wrapper.find(Icon)
+    expect(icon.props().className).toEqual('customClass')
+  })
+
+  it('Button Icon can use custom style', () => {
+    const wrapper = shallow(<Button icon="patient" iconStyle={{ background: 'red' }} />)
+    const icon = wrapper.find(Icon)
+    expect(icon.props().style).toMatchObject({ background: 'red' })
+  })
 })
