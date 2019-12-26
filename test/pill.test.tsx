@@ -28,4 +28,16 @@ describe('Pill', () => {
     const badge = pillWrapper.find(Badge)
     expect(badge.text()).toEqual('Hello World')
   })
+
+  it('Pill can use custom class', () => {
+    const pillWrapper = shallow(<Pill className="customClass" />)
+    const badge = pillWrapper.find(Badge)
+    expect(badge.props().className).toEqual('customClass')
+  })
+
+  it('Pill can use custom style', () => {
+    const pillWrapper = shallow(<Pill style={{ background: 'red' }} />)
+    const badge = pillWrapper.find(Badge)
+    expect(badge.props().style).toMatchObject({ background: 'red' })
+  })
 })
