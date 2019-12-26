@@ -75,4 +75,16 @@ describe('Radio', () => {
     const bootstratRadio = radioWrapper.find(BootstrapFormCheck)
     expect(bootstratRadio.props().id).toEqual(id)
   })
+
+  it('Radio can use custom class', () => {
+    const radioWrapper = shallow(<Radio className="customClass" />)
+    const bootstrapRadio = radioWrapper.find(BootstrapFormCheck)
+    expect(bootstrapRadio.props().className).toEqual('customClass')
+  })
+
+  it('Radio can use custom style', () => {
+    const radioWrapper = shallow(<Radio style={{ color: 'red' }} />)
+    const bootstrapRadio = radioWrapper.find(BootstrapFormCheck)
+    expect(bootstrapRadio.props().style).toMatchObject({ color: 'red' })
+  })
 })
