@@ -20,4 +20,16 @@ describe('List', () => {
     const bootstrapList = listWrapper.find(ListGroup)
     expect(bootstrapList.text()).toEqual('Child element')
   })
+
+  it('List can use custom class', () => {
+    const listWrapper = shallow(<List className="customClass">A list group</List>)
+    const bootstrapList = listWrapper.find(ListGroup)
+    expect(bootstrapList.props().className).toEqual('customClass')
+  })
+
+  it('List can use custom style', () => {
+    const listWrapper = shallow(<List style={{ background: 'red' }}>A list group</List>)
+    const bootstrapList = listWrapper.find(ListGroup)
+    expect(bootstrapList.props().style).toMatchObject({ background: 'red' })
+  })
 })

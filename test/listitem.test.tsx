@@ -70,4 +70,16 @@ describe('ListItem', () => {
     const bootstrapListItem = listItemWrapper.find(ListGroupItem)
     expect(bootstrapListItem.text()).toEqual('Child element')
   })
+
+  it('ListItem can use custom class', () => {
+    const listItemWrapper = shallow(<ListItem className="customClass">A list item</ListItem>)
+    const bootstrapListItem = listItemWrapper.find(ListGroupItem)
+    expect(bootstrapListItem.props().className).toEqual('customClass')
+  })
+
+  it('ListItem can use custom style', () => {
+    const listItemWrapper = shallow(<ListItem style={{ background: 'red' }}> A list item</ListItem>)
+    const bootstrapListItem = listItemWrapper.find(ListGroupItem)
+    expect(bootstrapListItem.props().style).toMatchObject({ background: 'red' })
+  })
 })
