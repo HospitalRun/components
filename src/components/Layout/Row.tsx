@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import BootstrapRow from 'react-bootstrap/Row'
 
 interface Props {
@@ -20,13 +20,17 @@ interface Props {
    * `ReactNode` elements to be wrapped in the component
    */
   children?: React.ReactNode
+  /**
+   * Defines the style of the row.
+   */
+  style?: CSSProperties
 }
 
 const Row = (props: Props) => {
-  const { as, noGutters, className, children } = props
+  const { as, noGutters, className, children, style } = props
 
   return (
-    <BootstrapRow as={as} noGutters={noGutters} className={className}>
+    <BootstrapRow as={as} noGutters={noGutters} className={className} style={style}>
       {children}
     </BootstrapRow>
   )
