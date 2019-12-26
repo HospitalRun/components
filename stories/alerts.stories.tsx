@@ -34,5 +34,19 @@ storiesOf('Alert', module)
         title="This is a dark alert"
         message={<strong>With a strong message</strong>}
       />
+      <Alert
+        title="This is an alert with a custom class"
+        className="customClass"
+        message="And it has a button with a custom class"
+        btnClassName="customClass2"
+        dismissible
+      />
+      <Alert
+        title="This is an alert with a custom style"
+        style={{ height: '50%', width: '50%', border: '2px solid red' }}
+        message="And it has a button with a custom style"
+        btnStyle={{ background: 'red', color: 'white' }}
+        dismissible
+      />
     </div>
   ))
