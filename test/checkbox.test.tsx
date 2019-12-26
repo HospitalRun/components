@@ -56,4 +56,10 @@ describe('Checkbox', () => {
     input.simulate('change')
     expect(onChange).toHaveProperty('callCount', 1)
   })
+
+  it('Checkbox can use custom class', () => {
+    const checkboxWrapper = shallow(<Checkbox label="Checkbox" className="class" />)
+    const bootstrapCheckBox = checkboxWrapper.find(FormCheck)
+    expect(bootstrapCheckBox.props().className).toEqual('class')
+  })
 })

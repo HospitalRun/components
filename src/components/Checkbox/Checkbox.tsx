@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import FormCheck from 'react-bootstrap/FormCheck'
 
 interface Props {
@@ -16,6 +16,22 @@ interface Props {
   inline?: boolean
   /** The onChange listener */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  /**
+   * Defines the class of the checkbox.
+   */
+  className?: string
+  /**
+   * Defines the style of the checkbox.
+   */
+  style?: CSSProperties
+  /**
+   * Defines the class of the checkbox.
+   */
+  labelClassName?: string
+  /**
+   * Defines the style of the checkbox.
+   */
+  labelStyle?: CSSProperties
 }
 
 /**
@@ -23,13 +39,31 @@ interface Props {
  * multiple things can be true at one time.
  */
 const Checkbox = (props: Props) => {
-  const { id, name, inline, labelSide, label, disabled, onChange } = props
+  const {
+    id,
+    label,
+    name,
+    inline,
+    labelSide,
+    disabled,
+    onChange,
+    className,
+    style,
+    labelClassName,
+    labelStyle,
+  } = props
+
+  const getLabel = () => (
+    <FormCheck.Label htmlFor={id} className={labelClassName} style={labelStyle}>
+      {label}
+    </FormCheck.Label>
+  )
 
   return (
-    <FormCheck name={name} inline={inline}>
-      {labelSide === 'left' && <FormCheck.Label htmlFor={id}>{label}</FormCheck.Label>}
+    <FormCheck name={name} inline={inline} className={className} style={style}>
+      {labelSide === 'left' && getLabel()}
       <FormCheck.Input id={id} type="checkbox" disabled={disabled} onChange={onChange} />
-      {labelSide === 'right' && <FormCheck.Label htmlFor={id}>{label}</FormCheck.Label>}
+      {labelSide === 'right' && getLabel()}
     </FormCheck>
   )
 }
