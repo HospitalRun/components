@@ -62,4 +62,22 @@ describe('Checkbox', () => {
     const bootstrapCheckBox = checkboxWrapper.find(FormCheck)
     expect(bootstrapCheckBox.props().className).toEqual('class')
   })
+
+  it('Checkbox can use custom style', () => {
+    const checkboxWrapper = shallow(<Checkbox label="Checkbox" style={{ color: 'red' }} />)
+    const bootstrapCheckBox = checkboxWrapper.find(FormCheck)
+    expect(bootstrapCheckBox.props().style).toMatchObject({ color: 'red' })
+  })
+
+  it('Checkbox label can use custom class', () => {
+    const checkboxWrapper = shallow(<Checkbox label="Checkbox" labelClassName="class" />)
+    const bootstrapLabel = checkboxWrapper.find(FormCheck.Label)
+    expect(bootstrapLabel.props().className).toEqual('class')
+  })
+
+  it('Checkbox label can use custom style', () => {
+    const checkboxWrapper = shallow(<Checkbox label="Checkbox" labelStyle={{ color: 'red' }} />)
+    const bootstrapLabel = checkboxWrapper.find(FormCheck.Label)
+    expect(bootstrapLabel.props().style).toMatchObject({ color: 'red' })
+  })
 })
