@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import FormCheck from 'react-bootstrap/FormCheck'
 
 interface Props {
@@ -10,16 +10,32 @@ interface Props {
   disabled?: boolean
   /** The onChange listener */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  /**
+   * Defines the class of the switch.
+   */
+  className?: string
+  /**
+   * Defines the style of the switch.
+   */
+  style?: CSSProperties
 }
 
 /**
  * Switches are used to choose if something is true or false
  */
 const Switch = (props: Props) => {
-  const { id, label, disabled, onChange } = props
+  const { id, label, disabled, onChange, className, style } = props
   return (
     <div>
-      <FormCheck type="switch" id={id} label={label} disabled={disabled} onChange={onChange} />
+      <FormCheck
+        type="switch"
+        id={id}
+        label={label}
+        disabled={disabled}
+        onChange={onChange}
+        className={className}
+        style={style}
+      />
     </div>
   )
 }
