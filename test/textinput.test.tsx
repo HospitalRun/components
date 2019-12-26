@@ -81,4 +81,16 @@ describe('TextInput', () => {
     const textInput = wrapper.find(Form.Control)
     expect(textInput.prop('placeholder')).toBe('test')
   })
+
+  it('renders Text Input with custom class', () => {
+    const wrapper = mount(<TextInput className="customClass" />)
+    const textInput = wrapper.find(Form.Control)
+    expect(textInput.props().className).toBe('customClass')
+  })
+
+  it('renders Text Input with custom style', () => {
+    const wrapper = mount(<TextInput style={{ background: 'red' }} />)
+    const textInput = wrapper.find(Form.Control)
+    expect(textInput.props().style).toMatchObject({ background: 'red' })
+  })
 })

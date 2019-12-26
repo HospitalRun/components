@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import Form from 'react-bootstrap/Form'
 
 interface Props {
@@ -22,6 +22,14 @@ interface Props {
   isInvalid?: boolean
   /** Defines whether the input should display as valid. Defaults to false */
   isValid?: boolean
+  /**
+   * Defines the class of the textinput.
+   */
+  className?: string
+  /**
+   * Defines the style of the textinput.
+   */
+  style?: CSSProperties
 }
 
 /**
@@ -29,7 +37,20 @@ interface Props {
  */
 
 const TextInput = (props: Props) => {
-  const { type, name, id, placeholder, onChange, disabled, isInvalid, isValid, value, size } = props
+  const {
+    type,
+    name,
+    id,
+    placeholder,
+    onChange,
+    disabled,
+    isInvalid,
+    isValid,
+    value,
+    size,
+    className,
+    style,
+  } = props
 
   return (
     <Form.Control
@@ -44,6 +65,8 @@ const TextInput = (props: Props) => {
       isValid={isValid}
       defaultValue={value}
       size={size}
+      className={className}
+      style={style}
     />
   )
 }
