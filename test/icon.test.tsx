@@ -126,4 +126,16 @@ describe('Icon', () => {
     expect(fontAwesomeIcon).toHaveLength(1)
     expect(fontAwesomeIcon.props().icon).toBe('cog')
   })
+
+  it('Icon can use custom class', () => {
+    const iconWrapper = shallow(<Icon icon="setting" className="customClass" />)
+    const fontAwesomeIcon = iconWrapper.find(FontAwesomeIcon)
+    expect(fontAwesomeIcon.props().className).toEqual('customClass')
+  })
+
+  it('Icon can use custom style', () => {
+    const iconWrapper = shallow(<Icon icon="setting" style={{ background: 'red' }} />)
+    const fontAwesomeIcon = iconWrapper.find(FontAwesomeIcon)
+    expect(fontAwesomeIcon.props().style).toMatchObject({ background: 'red' })
+  })
 })

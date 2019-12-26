@@ -1,0 +1,18 @@
+.customClass {
+  border: 5px solid green;
+  background-color: yellow;
+  font-style: italic;
+  color: red;
+}
+
+.customClass2 {
+  background-color: violet;
+  color: black;
+  border: 2px solid purple;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.customClass:hover {
+  background-color: cornflowerblue;
+}

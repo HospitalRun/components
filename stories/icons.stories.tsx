@@ -74,3 +74,12 @@ storiesOf('Icons', module)
       <br />
     </div>
   ))
+  .add('Icon with custom class & style', () => (
+    <div>
+      <span>Custom class: </span>
+      <Icon icon="setting" className="customClass2" />
+      <br />
+      <span>Custom style: </span>
+      <Icon icon="setting" style={{ color: 'red' }} />
+    </div>
+  ))
