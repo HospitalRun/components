@@ -54,4 +54,16 @@ describe('TextField', () => {
     const largeInput = largeWrapper.find(HTMLTextAreaElement)
     expect(largeInput.hasClass('form-control-lg')).toBe(true)
   })
+
+  it('can use custom class', () => {
+    const wrapper = mount(<TextField className="customClass" />)
+    const input = wrapper.find(HTMLTextAreaElement)
+    expect(input.hasClass('customClass')).toBe(true)
+  })
+
+  it('can use custom style', () => {
+    const wrapper = mount(<TextField style={{ background: 'red' }} />)
+    const input = wrapper.find(HTMLTextAreaElement)
+    expect(input.prop('style')).toMatchObject({ background: 'red' })
+  })
 })
