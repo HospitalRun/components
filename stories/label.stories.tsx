@@ -22,5 +22,8 @@ storiesOf('Label', module)
       <Label text="You can type whatever you want in a label!" />
       <Label text="This label is tied to the input below" htmlFor="inputOne" />
       <TextInput id="inputOne" placeholder="This input is tied to the label above" />
+      <br />
+      <Label text="This label has a custom class" className="customClass" />
+      <Label text="This label has a custom style" style={{ color: 'blue' }} />
     </>
   ))
