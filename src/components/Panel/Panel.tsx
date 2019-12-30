@@ -3,12 +3,8 @@ import { Card, Collapse } from 'react-bootstrap'
 import { Icon } from '../Icon'
 
 interface Props {
-  /**
-   * Defines the color of the panel. Defaults to primary.
-   * @default "primary"
-   */
+  /** Defines the color of the panel */
   color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
-
   /** The body for the panel */
   children?: React.ReactNode // can this be empty? will it be missing if it's empty?
   /** The title for the Panel */
