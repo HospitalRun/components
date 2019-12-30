@@ -6,15 +6,15 @@ interface Props {
   /** Defines the color of the panel */
   color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
   /** The body for the panel */
-  children?: React.ReactNode // can this be empty? will it be missing if it's empty?
+  children?: React.ReactNode
   /** The title for the Panel */
   title?: string
   /** The footer for the panel */
   footer?: string
-  /** Determines if the panel can be collapsible. By default false */
-  collapsible?: boolean | false
-  /** Determines if the panel should be collapsed. By default false */
-  collapsed?: boolean | false
+  /** Determines if the panel can be collapsible */
+  collapsible?: boolean
+  /** Determines if the panel should be collapsed */
+  collapsed?: boolean
 }
 
 const Panel = (props: Props) => {
