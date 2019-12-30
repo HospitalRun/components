@@ -1,3 +1,25 @@
+# [0.23.0](https://github.com/HospitalRun/components/compare/v0.22.2...v0.23.0) (2019-12-30)
+
+
+### Bug Fixes
+
+* **navbar:** fix-missing-required-test-search-properties ([be406a0](https://github.com/HospitalRun/components/commit/be406a08aaf7dcdd26da31315a78ba6d2209a17e)), closes [#148](https://github.com/HospitalRun/components/issues/148)
+* **navbar:** fix-navbar-mistakes ([a962b51](https://github.com/HospitalRun/components/commit/a962b511bedb9f1c17bfbc9860e1b1fdaf524f48)), closes [#148](https://github.com/HospitalRun/components/issues/148)
+* **navbar:** fix-navbar-mistakes ([e7abf72](https://github.com/HospitalRun/components/commit/e7abf724dffdeae20657cc6eae3e6c835eecabdc)), closes [#148](https://github.com/HospitalRun/components/issues/148)
+* **navbar:** fix-tests ([5e3bb16](https://github.com/HospitalRun/components/commit/5e3bb16f3b3a929749723799eaaccc320419e9cd)), closes [#148](https://github.com/HospitalRun/components/issues/148)
+* **navbar:** fix-tests-attempt ([0628329](https://github.com/HospitalRun/components/commit/0628329b44a8781419dcd7882a760e696dd1e60f)), closes [#148](https://github.com/HospitalRun/components/issues/148)
+* **navbar:** make-onchange-required ([de0ebdd](https://github.com/HospitalRun/components/commit/de0ebddeee7403e2ee47259561a08090fd99e006)), closes [#148](https://github.com/HospitalRun/components/issues/148)
+* **navbar:** remove unrelated commits ([7d6a473](https://github.com/HospitalRun/components/commit/7d6a47303a5dab80844637d2361e189c63322480)), closes [#148](https://github.com/HospitalRun/components/issues/148)
+
+
+### Features
+
+* **calendar:** add ability to choose available views ([0875a5b](https://github.com/HospitalRun/components/commit/0875a5b62eb1ce8094b5c0bdfcf32b94d719366d))
+* **calendar:** add calendar component ([820a3a0](https://github.com/HospitalRun/components/commit/820a3a04dfd929999727efc119120b2940ca4519))
+* **checkbox:** add className and style props ([689805e](https://github.com/HospitalRun/components/commit/689805e431e1df1fcc581a81d742392d3dab1f4a))
+* **navbar:** add customizable search placeholder/button text ([106c530](https://github.com/HospitalRun/components/commit/106c5307643014e3051273528bbf598ebcd9d423))
+* **navbar:** add test for default props ([8c238c1](https://github.com/HospitalRun/components/commit/8c238c13931460291005562c8dc0d3f908ff17b8)), closes [#148](https://github.com/HospitalRun/components/issues/148)
+
 ## [0.22.2](https://github.com/HospitalRun/components/compare/v0.22.1...v0.22.2) (2019-12-21)
 
 
