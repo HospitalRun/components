@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Card, Collapse } from 'react-bootstrap'
 import { Icon } from '../Icon'
+import { ColorVariant } from '../../interfaces'
 
 interface Props {
   /** Defines the color of the panel */
-  color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
+  color?: ColorVariant
   /** The body for the panel */
   children?: React.ReactNode
   /** The title for the Panel */
@@ -21,24 +22,27 @@ const Panel = (props: Props) => {
   const { color, children, footer, title, collapsible, collapsed } = props
   const [open, setOpen] = useState(!collapsed)
 
+  const collapseIcon = (
+    <span style={{ float: 'right' }}>
+      <Icon
+        icon={open ? 'up-arrow' : 'down-arrow'}
+        onClick={() => setOpen(!open)}
+        aria-controls="collapse-body"
+        aria-expanded={open}
+      />
+    </span>
+  )
+
   return (
     <Card border={color}>
       {title && (
         <Card.Header style={{ textAlign: 'left' }}>
           {title}
-          {collapsible && (
-            <span style={{ float: 'right' }}>
-              <Icon
-                icon={open ? 'up-arrow' : 'down-arrow'}
-                onClick={() => setOpen(!open)}
-                aria-controls="collapse-body"
-                aria-expanded={open}
-              />
-            </span>
-          )}
+          {collapsible && collapseIcon}
         </Card.Header>
       )}
       <Card.Body style={{ textAlign: 'left' }}>
+        {collapsible && !title && collapseIcon}
         <Collapse in={open}>
           <div id="collapse-body">{children}</div>
         </Collapse>

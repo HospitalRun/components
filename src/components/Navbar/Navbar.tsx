@@ -7,6 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 import { Button } from '../Button'
 import { NavLink, Brand, NavLinkElement } from './interfaces'
+import { ColorVariant } from '../../interfaces'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */
@@ -18,15 +19,7 @@ interface Props extends React.Props<any> {
   /** Determines the hospital/clinic name to be shown at the navbar */
   brand: Brand
   /** Defines the button variant. By default is primary */
-  buttonColor?:
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'warning'
-    | 'danger'
-    | 'info'
-    | 'light'
-    | 'dark'
+  buttonColor?: ColorVariant
   /** Handles the on click search button event */
   onSearchButtonClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   /** Handles the on change search form event */

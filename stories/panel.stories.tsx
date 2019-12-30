@@ -18,19 +18,14 @@ storiesOf('Panel', module)
       </Panel>
     </div>
   ))
-  .add('Empty Panel', () => (
-    <div>
-      <Panel />
-    </div>
-  ))
-  .add('Header Panel', () => (
+  .add('Title Panel', () => (
     <div>
       <Panel title="Panel Title">
         <p>You can add stuff here!</p>
       </Panel>
     </div>
   ))
-  .add('Header and Footer Panel', () => (
+  .add('Title and Footer Panel', () => (
     <div>
       <Panel title="Panel Title" footer="Panel Footer">
         <p>You can add stuff here!</p>
@@ -68,6 +63,14 @@ storiesOf('Panel', module)
   .add('Collapsible Panel', () => (
     <div>
       <Panel collapsible title="Panel Title">
+        <p>You can add stuff here!</p>
+        <p>You can open and close me!</p>
+      </Panel>
+    </div>
+  ))
+  .add('Collapsible Panel Without Title', () => (
+    <div>
+      <Panel collapsible>
         <p>You can add stuff here!</p>
         <p>You can open and close me!</p>
       </Panel>
