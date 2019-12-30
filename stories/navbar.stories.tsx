@@ -20,12 +20,16 @@ storiesOf('Navbar', module)
             Toast('success', 'Brand button clicked!!', 'Success')
           },
         }}
-        buttonColor="success"
-        onSearchButtonClick={() => {
-          Toast('success', 'Button clicked!!', 'Success')
-        }}
-        onSearchTextBoxChange={() => {
-          Toast('success', 'Search box changed!!', 'Success')
+        search={{
+          placeholderText: 'Custom',
+          buttonText: 'Text',
+          buttonColor: 'secondary',
+          onClickButton: () => {
+            Toast('success', 'Button clicked!!', 'Success')
+          },
+          onChangeInput: () => {
+            Toast('success', 'Search box changed!!', 'Success')
+          },
         }}
         navLinks={[
           {
@@ -43,21 +47,22 @@ storiesOf('Navbar', module)
       <Navbar
         brand={{
           label: 'HospitalRun',
-          href: '/',
           src:
             'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
           onClick: () => {
             Toast('success', 'Brand button clicked!!', 'Success')
           },
         }}
+        search={{
+          onClickButton: () => {
+            Toast('success', 'Button clicked!!', 'Success')
+          },
+          onChangeInput: () => {
+            Toast('success', 'Search box changed!!', 'Success')
+          },
+        }}
         bg="light"
         variant="light"
-        onSearchButtonClick={() => {
-          Toast('success', 'Button Clicked!!', 'Success')
-        }}
-        onSearchTextBoxChange={() => {
-          Toast('success', 'Search box changed!!', 'Success')
-        }}
         navLinks={[
           {
             label: 'Dropdown',
