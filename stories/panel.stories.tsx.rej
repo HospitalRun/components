@@ -1,0 +1,15 @@
+diff a/stories/panel.stories.tsx b/stories/panel.stories.tsx	(rejected hunks)
+@@ -27 +26,0 @@ storiesOf('Panel', module)
+-    
+@@ -29 +28 @@ storiesOf('Panel', module)
+-      <Panel title='Panel Title'>
++      <Panel title="Panel Title">
+@@ -36 +35 @@ storiesOf('Panel', module)
+-      <Panel shadow title='Panel Title'>
++      <Panel shadow title="Panel Title">
+@@ -43 +42 @@ storiesOf('Panel', module)
+-      <Panel shadow title='Panel Title'>
++      <Panel shadow title="Panel Title">
+@@ -50 +49 @@ storiesOf('Panel', module)
+-      <Panel border collapse title='Panel Title' expand>
++      <Panel border collapse title="Panel Title" expand>
