@@ -1,36 +1,56 @@
-import React from 'react'
-import RPanel from 'rsuite/lib/Panel'
+import React, { useState } from 'react'
+import { Card, Collapse } from 'react-bootstrap'
+import { Icon } from '../Icon'
 
 interface Props {
-  /** The header for the Panel. It can be passed an html element as a header */
-  title?: React.ReactNode
-  /** Determines if the border should be disabled or not. By default false */
-  border?: boolean
-  /** Determines if a shadow should be disabled or not. By default false */
-  shadow?: boolean
-  /** Determines if the Panel can be collapsible. By default false */
-  collapse?: boolean | true
-  /** The value if the Panel should be expanded. By default false */
-  expand?: boolean | true
-  /** The children to render */
-  children?: React.ReactNode
-  /** Function to be run when the Panel is selected. */
-  onSelect?: (event: React.SyntheticEvent<any>) => void
+  /**
+   * Defines the color of the panel. Defaults to primary.
+   * @default "primary"
+   */
+  color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
+
+  /** The body for the panel */
+  children?: React.ReactNode // can this be empty? will it be missing if it's empty?
+  /** The title for the Panel */
+  title?: string
+  /** The footer for the panel */
+  footer?: string
+  /** Determines if the panel can be collapsible. By default false */
+  collapsible?: boolean | false
+  /** Determines if the panel should be collapsed. By default false */
+  collapsed?: boolean | false
 }
 
 const Panel = (props: Props) => {
-  const { title, border, shadow, collapse, children, expand } = props
+  const { color, children, footer, title, collapsible, collapsed } = props
+  const [open, setOpen] = useState(!collapsed)
 
   return (
-    <RPanel
-      header={title}
-      bordered={border}
-      shaded={shadow}
-      collapsible={collapse}
-      defaultExpanded={expand}
-    >
-      {children}
-    </RPanel>
+    <Card border={color}>
+      {title && (
+        <Card.Header style={{ textAlign: 'left' }}>
+          {title}
+          {collapsible && (
+            <span style={{ float: 'right' }}>
+              <Icon
+                icon={open ? 'up-arrow' : 'down-arrow'}
+                onClick={() => setOpen(!open)}
+                aria-controls="collapse-body"
+                aria-expanded={open}
+              />
+            </span>
+          )}
+        </Card.Header>
+      )}
+      <Card.Body style={{ textAlign: 'left' }}>
+        <Collapse in={open}>
+          <div id="collapse-body">{children}</div>
+        </Collapse>
+      </Card.Body>
+      {footer && (
+        <Card.Footer style={{ textAlign: 'left', fontSize: 'smaller' }}>{footer}</Card.Footer>
+      )}
+    </Card>
   )
 }
 

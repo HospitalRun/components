@@ -1,10 +1,6 @@
 import React from 'react'
-
 import { storiesOf } from '@storybook/react'
-
 import { Panel } from '../src/components/Panel'
-import './panel.stories.css'
-// import 'bootstrap/dist/css/bootstrap.min.css'
 
 storiesOf('Panel', module)
   .addParameters({
@@ -12,7 +8,6 @@ storiesOf('Panel', module)
       inline: true,
     },
   })
-  // .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
   .addDecorator((storyFn) => (
     <div style={{ marginLeft: '2em', marginRight: '2em', textAlign: 'center' }}>{storyFn()}</div>
   ))
@@ -23,6 +18,11 @@ storiesOf('Panel', module)
       </Panel>
     </div>
   ))
+  .add('Empty Panel', () => (
+    <div>
+      <Panel />
+    </div>
+  ))
   .add('Header Panel', () => (
     <div>
       <Panel title="Panel Title">
@@ -30,23 +30,52 @@ storiesOf('Panel', module)
       </Panel>
     </div>
   ))
-  .add('Shadow Panel', () => (
+  .add('Header and Footer Panel', () => (
     <div>
-      <Panel shadow title="Panel Title">
+      <Panel title="Panel Title" footer="Panel Footer">
         <p>You can add stuff here!</p>
       </Panel>
     </div>
   ))
-  .add('Border Panel', () => (
+  .add('Panel Color Variants', () => (
     <div>
-      <Panel shadow title="Panel Title">
+      <Panel title="Panel Title" color="primary">
+        <p>You can add stuff here!</p>
+      </Panel>
+      <Panel title="Panel Title" color="secondary">
+        <p>You can add stuff here!</p>
+      </Panel>
+      <Panel title="Panel Title" color="success">
+        <p>You can add stuff here!</p>
+      </Panel>
+      <Panel title="Panel Title" color="warning">
+        <p>You can add stuff here!</p>
+      </Panel>
+      <Panel title="Panel Title" color="danger">
+        <p>You can add stuff here!</p>
+      </Panel>
+      <Panel title="Panel Title" color="info">
+        <p>You can add stuff here!</p>
+      </Panel>
+      <Panel title="Panel Title" color="light">
+        <p>You can add stuff here!</p>
+      </Panel>
+      <Panel title="Panel Title" color="dark">
         <p>You can add stuff here!</p>
       </Panel>
     </div>
   ))
-  .add('Collapsable Panel', () => (
+  .add('Collapsible Panel', () => (
     <div>
-      <Panel border collapse title="Panel Title" expand>
+      <Panel collapsible title="Panel Title">
+        <p>You can add stuff here!</p>
+        <p>You can open and close me!</p>
+      </Panel>
+    </div>
+  ))
+  .add('Collapsed Collapsible Panel', () => (
+    <div>
+      <Panel collapsible title="Panel Title" collapsed>
         <p>You can add stuff here!</p>
         <p>You can open and close me!</p>
       </Panel>
