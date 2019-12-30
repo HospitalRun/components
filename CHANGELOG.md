@@ -1,3 +1,18 @@
+# [0.24.0](https://github.com/HospitalRun/components/compare/v0.23.0...v0.24.0) (2019-12-30)
+
+
+### Bug Fixes
+
+* **label:** fix-label-component-comment ([e3f3268](https://github.com/HospitalRun/components/commit/e3f3268f1bcc669804656106802a5cabc0df6e14)), closes [#141](https://github.com/HospitalRun/components/issues/141)
+* **label:** remove unrelated commits ([0e251a2](https://github.com/HospitalRun/components/commit/0e251a2c2077ec82bd8193810e4edb85cbf2b5ff)), closes [#141](https://github.com/HospitalRun/components/issues/141)
+* fix-label-default-props ([b991f56](https://github.com/HospitalRun/components/commit/b991f56d8311f22e8c6f22f57e9d6faeb73212df)), closes [#141](https://github.com/HospitalRun/components/issues/141)
+* fix-label-doc ([cffdf9f](https://github.com/HospitalRun/components/commit/cffdf9f70f90b9ccd21e0ad4854085cda64a6fb4)), closes [#141](https://github.com/HospitalRun/components/issues/141)
+
+
+### Features
+
+* feat(components): add Label isRequired property and other options ([dc201c3](https://github.com/HospitalRun/components/commit/dc201c3f3921bbdb838f060757511390f28bbde3)), closes [#137](https://github.com/HospitalRun/components/issues/137)
+
 # [0.23.0](https://github.com/HospitalRun/components/compare/v0.22.2...v0.23.0) (2019-12-30)
 
 
