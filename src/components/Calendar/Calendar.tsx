@@ -10,8 +10,11 @@ import '@fullcalendar/core/main.css'
 import '@fullcalendar/daygrid/main.css'
 import '@fullcalendar/timegrid/main.css'
 
+type View = 'day' | 'month' | 'week'
+
 interface Props {
-  view: string
+  view: View
+  views: View[]
   events: Event[]
   disabled?: boolean
   onDateClick?: (date: Date, allDay: boolean) => void
@@ -33,10 +36,19 @@ const getEventFromFullCalendarEventApi = (e: EventApi): Event => ({
   allDay: e.allDay,
 })
 
-const getCalendarViewFromViewProp = (view: string) => (viewToCalendarViewMap as any)[view]
+const getCalendarViewFromViewProp = (view: View) => (viewToCalendarViewMap as any)[view]
+
+const getViewsFromViewsProp = (views: View[]) => {
+  let viewsString = ''
+  views.forEach((view) => {
+    viewsString += `${getCalendarViewFromViewProp(view)},`
+  })
+
+  return viewsString.slice(0, viewsString.length - 1)
+}
 
 const Calendar = (props: Props) => {
-  const { view, events, disabled, onDateClick, onDateRangeSelected, onEventClick } = props
+  const { view, views, events, disabled, onDateClick, onDateRangeSelected, onEventClick } = props
   const fullCalendarRef = React.createRef<FullCalendar>()
   return (
     <FullCalendar
@@ -46,7 +58,7 @@ const Calendar = (props: Props) => {
       header={{
         left: 'prev,next today',
         center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay',
+        right: getViewsFromViewsProp(views),
       }}
       defaultView={getCalendarViewFromViewProp(view)}
       plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
@@ -74,6 +86,7 @@ const Calendar = (props: Props) => {
 Calendar.defaultProps = {
   view: 'week',
   events: [],
+  views: ['day', 'week', 'month'],
 }
 
 export { Calendar }

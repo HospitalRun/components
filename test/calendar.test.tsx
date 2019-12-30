@@ -13,6 +13,9 @@ describe('Calendar', () => {
     const fullCalendar = wrapper.find(FullCalendar)
     expect(fullCalendar).toHaveLength(1)
     expect(fullCalendar.prop('defaultView')).toEqual('timeGridWeek')
+    expect((fullCalendar.prop('header') as any).right).toEqual(
+      'timeGridDay,timeGridWeek,dayGridMonth',
+    )
     expect(fullCalendar.prop('selectable')).toBeTruthy()
   })
 
@@ -21,6 +24,20 @@ describe('Calendar', () => {
 
     const fullCalendar = wrapper.find(FullCalendar)
     expect(fullCalendar.prop('selectable')).toBeFalsy()
+  })
+
+  it('should render the correct default view', () => {
+    const wrapper = shallow(<Calendar view="day" />)
+
+    const fullCalendar = wrapper.find(FullCalendar)
+    expect(fullCalendar.prop('defaultView')).toEqual('timeGridDay')
+  })
+
+  it('should render the correct correct available views', () => {
+    const wrapper = shallow(<Calendar views={['day']} />)
+
+    const fullCalendar = wrapper.find(FullCalendar)
+    expect((fullCalendar.prop('header') as any).right).toEqual('timeGridDay')
   })
 
   it('should pass events to full calendar', () => {
