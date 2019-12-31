@@ -9,7 +9,9 @@ describe('Modal', () => {
     const modalWrapper = shallow(
       <Modal
         show
-        toggle={() => {}}
+        toggle={() => {
+          console.log('toggle')
+        }}
         title="This is a modal title!"
         body={
           <div>
@@ -28,7 +30,9 @@ describe('Modal', () => {
     const modalWrapper = shallow(
       <Modal
         show
-        toggle={() => {}}
+        toggle={() => {
+          console.log('toggle')
+        }}
         title="This is a modal title!"
         body={
           <div>
@@ -47,7 +51,9 @@ describe('Modal', () => {
     const modalWrapper = shallow(
       <Modal
         show
-        toggle={() => {}}
+        toggle={() => {
+          console.log('toggle')
+        }}
         title="This is a modal title!"
         body={
           <div>
@@ -66,7 +72,9 @@ describe('Modal', () => {
     const modalWrapper = shallow(
       <Modal
         show
-        toggle={() => {}}
+        toggle={() => {
+          console.log('toggle')
+        }}
         title="This is a modal title!"
         body={
           <div>
