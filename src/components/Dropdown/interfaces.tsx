@@ -10,7 +10,7 @@ export interface Item {
   /* Item variant color */
   variant?: ColorVariants
   /* Item id */
-  id?: string | undefined
+  id?: string
   /* Item key */
   key?: string
   /* Custom style */

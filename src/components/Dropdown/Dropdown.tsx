@@ -4,26 +4,26 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import { Item } from './interfaces'
 import { ColorVariants } from '../../helpers/ColorVariants'
 
-interface Props extends React.Props<any> {
+interface Props {
   /** Determines the dropdown toggle text */
   text: string
-  /* Determines the dropdown's items */
+  /** Determines the dropdown's items */
   items: Item[]
-  /* Determines the dropdown toggle button id */
-  id?: string | undefined
-  /* Determines the dropdown toggle variant color */
+  /** Determines the dropdown toggle button id */
+  id: string
+  /** Determines the dropdown toggle variant color */
   variant: ColorVariants
-  /* Determines the horizontal alignment of the dropdown items */
+  /** Determines the horizontal alignment of the dropdown items */
   alignRight?: boolean
-  /* Determines the dropdown's custom element type */
+  /** Determines the dropdown's custom element type */
   as?: ElementType
-  /* Handle the dropdown toggle additional click events */
+  /** Handle the dropdown toggle additional click events */
   onClick?: (event: React.MouseEvent<any>) => void
-  /* Determines the dropdown toggle button size */
+  /** Determines the dropdown toggle button size */
   size?: 'sm' | 'md' | 'lg'
-  /* Determines the dropdown's direction */
+  /** Determines the dropdown's direction */
   direction?: 'down' | 'up' | 'left' | 'right'
-  /* Determines the dropdown's custom style */
+  /** Determines the dropdown's custom style */
   style?: Record<string, any>
 }
 
@@ -59,6 +59,7 @@ const Dropdown = (props: Props) => {
   )
 }
 Dropdown.defaultProps = {
+  id: `dropdown${Math.floor(Math.random() * 10000)}`,
   variant: 'light',
   size: 'sm',
   direction: 'down',
