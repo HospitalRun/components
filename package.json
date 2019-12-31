@@ -127,7 +127,7 @@
     "@tinymce/tinymce-react": "~3.3.2",
     "@types/react-datepicker": "~2.10.0",
     "chart.js": "~2.9.3",
-    "formik": "~2.0.4",
+    "formik": "~2.1.0",
     "moment": "~2.24.0",
     "react-datepicker": "~2.10.1",
     "react-spinners": "~0.7.0",
