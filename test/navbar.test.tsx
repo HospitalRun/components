@@ -6,16 +6,20 @@ import { Navbar, Button } from '../src'
 
 describe('Navbar', () => {
   it('Navbar renders itself without crashing', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
           label: 'Test',
           onClick: () => {},
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Test',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -29,41 +33,21 @@ describe('Navbar', () => {
     expect(bootstrapNavbar).toHaveLength(1)
   })
 
-  it('should render the search button as a primary button by default', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+  it('Navbar component renders default props accordingly', () => {
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
           label: 'Test',
           onClick: () => {},
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
-        navLinks={[
-          {
-            label: 'Link',
-            onClick: () => {},
-            children: [],
-          },
-        ]}
-      />,
-    )
-    const button = NavbarWrapper.find(Button)
-    expect(button.props().color).toBe('primary')
-  })
-
-  it('Navbar defaults bg to dark when the prop is not used', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
-    const NavbarWrapper = shallow(
-      <Navbar
-        brand={{
-          label: 'Test',
-          onClick: () => {},
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
         navLinks={[
           {
             label: 'Link',
@@ -74,44 +58,30 @@ describe('Navbar', () => {
       />,
     )
     const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
-    expect(bootstrapNavbar.props().bg).toEqual('dark')
-  })
-
-  it('Navbar defaults variant to dark when the prop is not used', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
-    const NavbarWrapper = shallow(
-      <Navbar
-        brand={{
-          label: 'Test',
-          onClick: () => {},
-        }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
-        navLinks={[
-          {
-            label: 'Link',
-            onClick: () => {},
-            children: [],
-          },
-        ]}
-      />,
-    )
-    const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
-    expect(bootstrapNavbar.props().variant).toEqual('dark')
+    /** navbar container default attributes  */
+    expect(bootstrapNavbar.find('[bg="dark"]').prop('bg')).toEqual('dark')
+    expect(bootstrapNavbar.find('[variant="dark"]').prop('variant')).toEqual('dark')
+    /** navbar search component default attributes  */
+    expect(bootstrapNavbar.find('[placeholder="Search"]').prop('placeholder')).toEqual('Search')
+    expect(NavbarWrapper.find('Button').prop('color')).toEqual('primary')
+    expect(NavbarWrapper.find('Button').prop('children')).toEqual('Search')
   })
 
   it('Navbar links show the exactly links as when it passed on links prop and Navbar dropdown will not be shown', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
           label: 'Test',
           onClick: () => {},
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Elem1',
@@ -128,19 +98,21 @@ describe('Navbar', () => {
     expect(bootstrapNavDropdown).toHaveLength(0)
   })
 
-  // rest
-
   it('Navbar dropdown shows the exactly same links as when it passed on links prop', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
           label: 'Test',
           onClick: () => {},
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -161,16 +133,20 @@ describe('Navbar', () => {
   })
 
   it('Navbar brand shows the exactly same text as when it passed on brand prop', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
           label: 'Test',
           onClick: () => {},
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -185,8 +161,8 @@ describe('Navbar', () => {
   })
 
   it('Navbar img shows when it passed on src prop', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
@@ -194,8 +170,12 @@ describe('Navbar', () => {
           onClick: () => {},
           src: 'anysource',
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -210,16 +190,20 @@ describe('Navbar', () => {
   })
 
   it('Navbar img will not show when it not passed on src prop', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
           label: 'Test',
           onClick: () => {},
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -234,17 +218,21 @@ describe('Navbar', () => {
   })
 
   it('Navbar buttonColor prop set to secondary', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
           label: 'Test',
           onClick: () => {},
         }}
-        buttonColor="secondary"
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          buttonColor: 'secondary',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -259,8 +247,8 @@ describe('Navbar', () => {
   })
 
   it('Navbar variant set to light', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
@@ -268,8 +256,12 @@ describe('Navbar', () => {
           onClick: () => {},
         }}
         variant="light"
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -284,8 +276,8 @@ describe('Navbar', () => {
   })
 
   it('Navbar bg set to light', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
@@ -293,8 +285,12 @@ describe('Navbar', () => {
           onClick: () => {},
         }}
         bg="light"
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -309,16 +305,20 @@ describe('Navbar', () => {
   })
 
   it('Navbar search button handles on click event', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
           label: 'Test',
           onClick: () => {},
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -329,20 +329,24 @@ describe('Navbar', () => {
       />,
     )
     NavbarWrapper.find(Button).simulate('click')
-    expect(onButtonClick).toHaveProperty('callCount', 1)
+    expect(onClickButton).toHaveProperty('callCount', 1)
   })
 
   it('Navbar search form handles on change event', () => {
-    const onButtonClick = sinon.spy()
-    const onTextBoxChange = sinon.spy()
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         brand={{
           label: 'Test',
           onClick: () => {},
         }}
-        onSearchButtonClick={onButtonClick}
-        onSearchTextBoxChange={onTextBoxChange}
+        search={{
+          placeholderText: 'Search',
+          buttonText: 'Search',
+          onClickButton,
+          onChangeInput,
+        }}
         navLinks={[
           {
             label: 'Link',
@@ -353,6 +357,6 @@ describe('Navbar', () => {
       />,
     )
     NavbarWrapper.find(FormControl).simulate('change')
-    expect(onTextBoxChange).toHaveProperty('callCount', 1)
+    expect(onChangeInput).toHaveProperty('callCount', 1)
   })
 })

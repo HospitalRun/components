@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "0.22.2",
+  "version": "0.24.0",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -94,7 +94,7 @@
     "eslint-config-airbnb": "~18.0.1",
     "eslint-config-prettier": "~6.9.0",
     "eslint-plugin-import": "~2.18.2",
-    "eslint-plugin-jest": "~23.1.0",
+    "eslint-plugin-jest": "~23.2.0",
     "eslint-plugin-jsx-a11y": "~6.2.3",
     "eslint-plugin-prettier": "~3.1.1",
     "eslint-plugin-react": "~7.17.0",
@@ -119,6 +119,11 @@
     "@fortawesome/fontawesome-svg-core": "~1.2.25",
     "@fortawesome/free-solid-svg-icons": "~5.12.0",
     "@fortawesome/react-fontawesome": "~0.1.4",
+    "@fullcalendar/core": "^4.3.1",
+    "@fullcalendar/daygrid": "^4.3.0",
+    "@fullcalendar/interaction": "~4.3.0",
+    "@fullcalendar/react": "^4.3.0",
+    "@fullcalendar/timegrid": "^4.3.0",
     "@tinymce/tinymce-react": "~3.3.2",
     "@types/react-datepicker": "~2.10.0",
     "chart.js": "~2.9.3",
