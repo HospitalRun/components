@@ -1,3 +1,11 @@
+## [0.24.1](https://github.com/HospitalRun/components/compare/v0.24.0...v0.24.1) (2019-12-31)
+
+
+### Bug Fixes
+
+* **navbar:** make Brand onClick optional ([609559b](https://github.com/HospitalRun/components/commit/609559bb0bed074d25aabfff5b956b266059c732))
+* **navbar:** make NavLink onClick optional ([fdd1ee5](https://github.com/HospitalRun/components/commit/fdd1ee57bc3f8f888ef5bf7c7b522ff4ab4456e7))
+
 # [0.24.0](https://github.com/HospitalRun/components/compare/v0.23.0...v0.24.0) (2019-12-30)
 
 
