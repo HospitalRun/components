@@ -6,7 +6,7 @@ export interface Brand {
   /** A path which contain the company icon/image */
   src?: string
   /** A click handle which will redirect the user to the respectable webpage/path */
-  onClick: (event: React.MouseEvent<any>) => void
+  onClick?: (event: React.MouseEvent<any>) => void
 }
 
 export interface NavLinkElement {
