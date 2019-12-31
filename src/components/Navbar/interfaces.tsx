@@ -13,7 +13,7 @@ export interface NavLinkElement {
   /** The link name */
   label: string
   /** A click handle which will redirect the user to whenever it is clicked */
-  onClick: (event: React.MouseEvent<any>) => void
+  onClick?: (event: React.MouseEvent<any>) => void
   /** Determines the href */
   href?: string
 }
