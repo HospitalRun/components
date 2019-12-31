@@ -20,7 +20,7 @@ interface Props {
 
 const Panel = (props: Props) => {
   const { color, children, footer, title, collapsible, collapsed } = props
-  const [open, setOpen] = useState(!collapsed)
+  const [open, setOpen] = useState(!collapsed || !collapsible)
 
   const collapseIcon = (
     <span style={{ float: 'right' }}>

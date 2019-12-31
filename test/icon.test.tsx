@@ -1,9 +1,20 @@
 import * as React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import sinon from 'sinon'
 import { Icon } from '../src'
 
 describe('Icon', () => {
+  it('onClick event prop is activated when clicked', () => {
+    const spy = sinon.spy()
+    const wrapper = mount(<Icon icon="appointment" onClick={spy} />)
+    wrapper
+      .find(FontAwesomeIcon)
+      .first()
+      .simulate('click')
+    expect(spy.calledOnce).toBe(true)
+  })
+
   it('Add Icon renders itself without crashing', () => {
     const addIconWrapper = shallow(<Icon icon="add" />)
     const fontAwesomeIcon = addIconWrapper.find(FontAwesomeIcon)
