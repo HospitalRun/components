@@ -14,10 +14,12 @@ interface Props {
   name?: string | ''
   /** The id value of the input */
   id?: string | ''
-  /** The placeholder inside of the text input */
+  /** The placeholder inside of the input */
   placeholder?: string | ''
   /** Defines whether the input should be disabled or not. Defaults to false. */
   disabled?: boolean
+  /** Defines the custom error message of the input. */
+  errorMessage?: string
   /** Defines whether the input should display as invalid. Defaults to false. */
   isInvalid?: boolean
   /** Defines whether the input should display as valid. Defaults to false */
@@ -29,22 +31,39 @@ interface Props {
  */
 
 const TextInput = (props: Props) => {
-  const { type, name, id, placeholder, onChange, disabled, isInvalid, isValid, value, size } = props
+  const {
+    type,
+    name,
+    id,
+    placeholder,
+    onChange,
+    disabled,
+    isInvalid,
+    isValid,
+    errorMessage,
+    value,
+    size,
+  } = props
 
   return (
-    <Form.Control
-      as="input"
-      type={type}
-      name={name}
-      id={id}
-      placeholder={placeholder}
-      onChange={onChange}
-      disabled={disabled}
-      isInvalid={isInvalid}
-      isValid={isValid}
-      defaultValue={value}
-      size={size}
-    />
+    <div>
+      <Form.Control
+        as="input"
+        type={type}
+        name={name}
+        id={id}
+        placeholder={placeholder}
+        onChange={onChange}
+        disabled={disabled}
+        isInvalid={isInvalid}
+        isValid={isValid}
+        defaultValue={value}
+        size={size}
+      />
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
+        {errorMessage}
+      </Form.Control.Feedback>
+    </div>
   )
 }
 
