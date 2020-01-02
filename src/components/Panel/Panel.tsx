@@ -23,7 +23,7 @@ const Panel = (props: Props) => {
   const [open, setOpen] = useState(!collapsed || !collapsible)
 
   const collapseIcon = (
-    <span style={{ float: 'right' }}>
+    <span style={{ float: 'right', cursor: 'pointer' }}>
       <Icon
         icon={open ? 'up-arrow' : 'down-arrow'}
         onClick={() => setOpen(!open)}
