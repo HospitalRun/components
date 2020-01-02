@@ -1,3 +1,11 @@
+# [0.25.0](https://github.com/HospitalRun/components/compare/v0.24.1...v0.25.0) (2020-01-02)
+
+
+### Features
+
+* **panel:** support collapsible panel without header/title ([c04c9d8](https://github.com/HospitalRun/components/commit/c04c9d81c6dc061b5f5e9f5fa8a5314c1667b927))
+* **panels:** adds panel component ([d742ebd](https://github.com/HospitalRun/components/commit/d742ebd047f35b3ed60c3a0b5efc86ac0a67007e))
+
 ## [0.24.1](https://github.com/HospitalRun/components/compare/v0.24.0...v0.24.1) (2019-12-31)
 
 
