@@ -1,3 +1,10 @@
+## [0.26.1](https://github.com/HospitalRun/components/compare/v0.26.0...v0.26.1) (2020-01-02)
+
+
+### Bug Fixes
+
+* **eslint:** ignore eslint import extentsion check ([6d9d390](https://github.com/HospitalRun/components/commit/6d9d390381a49edf848b36d4e9d63e98e9746e51))
+
 # [0.26.0](https://github.com/HospitalRun/components/compare/v0.25.0...v0.26.0) (2020-01-02)
 
 
