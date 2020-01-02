@@ -24,6 +24,18 @@ describe('Breadcrumb', () => {
 
     expect(children).toHaveLength(2)
   })
+
+  it('can use custom class', () => {
+    const breadcrumbWrapper = shallow(<Breadcrumb className="customClass" />)
+    const bootstrapBreadCrumb = breadcrumbWrapper.find(BootstrapBreadcrumb)
+    expect(bootstrapBreadCrumb.props().className).toEqual('customClass')
+  })
+
+  it('can use custom style', () => {
+    const breadcrumbWrapper = shallow(<Breadcrumb style={{ background: 'red' }} />)
+    const bootstrapBreadCrumb = breadcrumbWrapper.find(BootstrapBreadcrumb)
+    expect(bootstrapBreadCrumb.props().style).toMatchObject({ background: 'red' })
+  })
 })
 
 describe('BreadcrumbItem', () => {
@@ -49,5 +61,15 @@ describe('BreadcrumbItem', () => {
     const wrapper = shallow(<BreadcrumbItem>Child element</BreadcrumbItem>)
     const breadcrumbItem = wrapper.find(BootstrapBreadcrumbItem)
     expect(breadcrumbItem.text()).toEqual('Child element')
+  })
+  it('can use custom class', () => {
+    const wrapper = shallow(<BreadcrumbItem className="customClass" />)
+    const breadcrumbItem = wrapper.find(BootstrapBreadcrumbItem)
+    expect(breadcrumbItem.props().className).toEqual('customClass')
+  })
+  it('can use custom style', () => {
+    const wrapper = shallow(<BreadcrumbItem style={{ background: 'red' }} />)
+    const breadcrumbItem = wrapper.find(BootstrapBreadcrumbItem)
+    expect(breadcrumbItem.props().style).toMatchObject({ background: 'red' })
   })
 })

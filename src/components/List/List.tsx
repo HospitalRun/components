@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 interface Props {
@@ -6,6 +6,14 @@ interface Props {
   layout?: 'flush'
   /** The children to render */
   children?: React.ReactNode
+  /**
+   * Defines the class of the list.
+   */
+  className?: string
+  /**
+   * Defines the style of the list.
+   */
+  style?: CSSProperties
 }
 
 /**
@@ -14,9 +22,13 @@ interface Props {
  * content within.
  */
 const List = (props: Props) => {
-  const { layout, children } = props
+  const { layout, children, className, style } = props
 
-  return <ListGroup variant={layout}>{children}</ListGroup>
+  return (
+    <ListGroup variant={layout} className={className} style={style}>
+      {children}
+    </ListGroup>
+  )
 }
 
 export { List }

@@ -26,4 +26,14 @@ describe('Switch', () => {
     input.simulate('change')
     expect(onChange).toHaveProperty('callCount', 1)
   })
+
+  it('Switch can use custom class', () => {
+    const switchWrapper = mount(<Switch id="switch" label="Switch" className="customClass" />)
+    expect(switchWrapper.props().className).toEqual('customClass')
+  })
+
+  it('Switch can use custom style', () => {
+    const switchWrapper = mount(<Switch id="switch" label="Switch" style={{ color: 'red' }} />)
+    expect(switchWrapper.props().style).toMatchObject({ color: 'red' })
+  })
 })

@@ -125,3 +125,19 @@ storiesOf('Layout', module)
       </Row>
     </Container>
   ))
+  .add('using a custom style', () => (
+    <Container style={{ border: '2px solid red' }}>
+      <Row style={{ background: 'blue' }}>
+        <Column style={{ background: 'cyan' }}>1 of 2</Column>
+        <Column style={{ border: '1px solid green' }}>2 of 2</Column>
+      </Row>
+    </Container>
+  ))
+  .add('using a custom class', () => (
+    <Container className="customClass">
+      <Row className="customClass2">
+        <Column className="customClass">1 of 2</Column>
+        <Column>2 of 2</Column>
+      </Row>
+    </Container>
+  ))

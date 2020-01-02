@@ -21,5 +21,7 @@ storiesOf('Pill', module)
       <Pill color="info">Info</Pill>
       <Pill color="light">Light</Pill>
       <Pill color="dark">Dark</Pill>
+      <Pill className="customClass">Custom Class</Pill>
+      <Pill style={{ color: 'red', boxShadow: '5px 5px 3px grey' }}>Custom style</Pill>
     </div>
   ))

@@ -37,3 +37,18 @@ storiesOf('TextField', module)
       <TextField name="test_field" size="large" value="this is the value" rows={5} />
     </div>
   ))
+  .add('Custom class text field', () => (
+    <div>
+      <TextField name="test_field" value="this is the value" rows={5} className="customClass" />
+    </div>
+  ))
+  .add('Custom style text field', () => (
+    <div>
+      <TextField
+        name="test_field"
+        value="this is the value"
+        rows={5}
+        style={{ background: 'red', color: 'white' }}
+      />
+    </div>
+  ))

@@ -79,3 +79,27 @@ storiesOf('TextInput', module)
       />
     </div>
   ))
+  .add('Custom class text input', () => (
+    <div>
+      <TextInput
+        type="text"
+        name="text-input"
+        id="text-input"
+        size="lg"
+        value="This is a text input!"
+        className="customClass"
+      />
+    </div>
+  ))
+  .add('Custom style text input', () => (
+    <div>
+      <TextInput
+        type="text"
+        name="text-input"
+        id="text-input"
+        size="lg"
+        value="This is a text input!"
+        style={{ background: 'red', color: 'white' }}
+      />
+    </div>
+  ))

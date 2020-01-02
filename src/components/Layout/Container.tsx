@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import BootstrapContainer from 'react-bootstrap/Container'
 
 interface Props {
@@ -20,13 +20,17 @@ interface Props {
    * `ReactNode` elements to be wrapped in the component
    */
   children?: React.ReactNode
+  /**
+   * Defines the style of the container.
+   */
+  style?: CSSProperties
 }
 
 const Container = (props: Props) => {
-  const { as, fluid, className, children } = props
+  const { as, fluid, className, children, style } = props
 
   return (
-    <BootstrapContainer as={as} fluid={fluid} className={className}>
+    <BootstrapContainer as={as} fluid={fluid} className={className} style={style}>
       {children}
     </BootstrapContainer>
   )

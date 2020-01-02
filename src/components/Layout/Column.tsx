@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import BoostrapColumn from 'react-bootstrap/Col'
 
 interface Props {
@@ -31,13 +31,30 @@ interface Props {
    * `ReactNode` elements to be wrapped in the component
    */
   children?: React.ReactNode
+  /**
+   * Defines the class of the column.
+   */
+  className?: string
+  /**
+   * Defines the style of the column.
+   */
+  style?: CSSProperties
 }
 
 const Column = (props: Props) => {
-  const { as, lg, md, sm, xl, xs, children } = props
+  const { as, lg, md, sm, xl, xs, children, className, style } = props
 
   return (
-    <BoostrapColumn as={as} lg={lg} md={md} sm={sm} xl={xl} xs={xs}>
+    <BoostrapColumn
+      as={as}
+      lg={lg}
+      md={md}
+      sm={sm}
+      xl={xl}
+      xs={xs}
+      className={className}
+      style={style}
+    >
       {children}
     </BoostrapColumn>
   )

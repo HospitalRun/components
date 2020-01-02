@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import Form from 'react-bootstrap/Form'
 import { getControlSize } from '../../helpers/controlSize'
 
@@ -18,13 +18,21 @@ interface Props {
 
   /** Handles the onChange event for the TextField */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
+  /**
+   * Defines the class of the textfield.
+   */
+  className?: string
+  /**
+   * Defines the style of the textfield.
+   */
+  style?: CSSProperties
 }
 
 /**
  * A customizable text field component. It's a wrapper component built upon react's form controls.
  */
 const TextField = (props: Props) => {
-  const { disabled, isInvalid, name, rows, size, value, onChange } = props
+  const { disabled, isInvalid, name, rows, size, value, onChange, className, style } = props
 
   return (
     <Form.Control
@@ -36,6 +44,8 @@ const TextField = (props: Props) => {
       size={getControlSize(size)}
       defaultValue={value}
       onChange={onChange}
+      className={className}
+      style={style}
     />
   )
 }

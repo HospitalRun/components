@@ -28,12 +28,15 @@ describe('Container', () => {
     expect(rowElement.find(Column)).toHaveLength(2)
   })
   it('accepts props', () => {
-    const containerWrapper = shallow(<Container as="section" fluid={false} className="class" />)
+    const containerWrapper = shallow(
+      <Container as="section" fluid={false} className="class" style={{ background: 'red' }} />,
+    )
     const containerProps = containerWrapper.props()
 
     expect(containerProps.as).toEqual('section')
     expect(containerProps.fluid).toBeFalsy()
     expect(containerProps.className).toEqual('class')
+    expect(containerProps.style).toMatchObject({ background: 'red' })
   })
 })
 
@@ -44,12 +47,15 @@ describe('Row', () => {
     expect(rowWrapper.find(bootstrapRow)).toHaveLength(1)
   })
   it('accepts props', () => {
-    const rowWrapper = shallow(<Row as="section" noGutters={false} className="class" />)
+    const rowWrapper = shallow(
+      <Row as="section" noGutters={false} className="class" style={{ color: 'red' }} />,
+    )
     const rowProps = rowWrapper.props()
 
     expect(rowProps.as).toEqual('section')
     expect(rowProps.noGutters).toBeFalsy()
     expect(rowProps.className).toEqual('class')
+    expect(rowProps.style).toMatchObject({ color: 'red' })
   })
 })
 
@@ -68,6 +74,8 @@ describe('Column', () => {
         sm={10}
         xl={{ span: 20, offset: 2 }}
         xs={{ offset: 3, order: 1 }}
+        className="customClass"
+        style={{ color: 'red' }}
       />,
     )
     const columnProps = columnWrapper.props()
@@ -78,5 +86,7 @@ describe('Column', () => {
     expect(columnProps.sm).toEqual(10)
     expect(columnProps.xl).toEqual(expect.objectContaining({ span: 20, offset: 2 }))
     expect(columnProps.xs).toEqual(expect.objectContaining({ offset: 3, order: 1 }))
+    expect(columnProps.className).toEqual('customClass')
+    expect(columnProps.style).toEqual(expect.objectContaining({ color: 'red' }))
   })
 })

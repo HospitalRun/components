@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { IconType } from './interfaces'
@@ -36,6 +36,14 @@ function getFontAwesomeIcon(icon: IconType): string {
 interface Props {
   /** The type of icon to display */
   icon: IconType
+  /**
+   * Defines the class of the icon.
+   */
+  className?: string
+  /**
+   * Defines the style of the icon.
+   */
+  style?: CSSProperties
   /** Function to execute when user clicks on icon */
   onClick?: (event: React.MouseEvent<any>) => void
 }
@@ -44,8 +52,15 @@ interface Props {
  * Icons provide contextual clues to users to make it easier to recognize functionality
  */
 const Icon = (props: Props) => {
-  const { icon, onClick } = props
-  return <FontAwesomeIcon onClick={onClick} icon={getFontAwesomeIcon(icon) as IconProp} />
+  const { icon, className, style, onClick } = props
+  return (
+    <FontAwesomeIcon
+      onClick={onClick}
+      icon={getFontAwesomeIcon(icon) as IconProp}
+      className={className}
+      style={style}
+    />
+  )
 }
 
 export { Icon }

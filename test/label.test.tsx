@@ -42,4 +42,16 @@ describe('Label', () => {
 
     expect(bootstrapLabel.props().htmlFor).toEqual('testHtmlFor')
   })
+
+  it('Label can use custom class', () => {
+    const labelWrapper = shallow(<Label text="test" className="customClass" />)
+    const bootstrapLabel = labelWrapper.find(FormLabel)
+    expect(bootstrapLabel.props().className).toEqual('customClass')
+  })
+
+  it('Label can use custom style', () => {
+    const labelWrapper = shallow(<Label text="test" style={{ color: 'red' }} />)
+    const bootstrapLabel = labelWrapper.find(FormLabel)
+    expect(bootstrapLabel.props().style).toMatchObject({ color: 'red' })
+  })
 })

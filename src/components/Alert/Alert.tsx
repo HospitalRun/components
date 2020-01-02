@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from 'react'
+import React, { Component, ReactNode, CSSProperties } from 'react'
 import BootstrapAlert from 'react-bootstrap/Alert'
 import { ColorVariant } from '../../interfaces'
 import { Button } from '../Button'
@@ -20,6 +20,22 @@ interface Props {
    * @default "Dismiss"
    * */
   closeLabel?: string
+  /**
+   * Defines the class of the alert
+   */
+  className?: string
+  /**
+   * Defines the style of the alert
+   */
+  style?: CSSProperties
+  /**
+   * Defines the class of the close button
+   */
+  btnClassName?: string
+  /**
+   * Defines the style of the close button
+   */
+  btnStyle?: CSSProperties
 }
 
 interface State {
@@ -46,6 +62,10 @@ class Alert extends Component<Props, State> {
       message,
       dismissible = false,
       closeLabel = 'Dismiss',
+      className,
+      style,
+      btnClassName,
+      btnStyle,
     } = this.props
 
     const { show } = this.state
@@ -57,6 +77,8 @@ class Alert extends Component<Props, State> {
           onClose={() => this.setState({ show: false })}
           dismissible={dismissible}
           closeLabel={closeLabel}
+          className={className}
+          style={style}
         >
           {title && <BootstrapAlert.Heading>{title}</BootstrapAlert.Heading>}
           {message && <div>{message}</div>}
@@ -64,7 +86,13 @@ class Alert extends Component<Props, State> {
             <>
               <hr />
               <div className="d-flex justify-content-end">
-                <Button outlined onClick={() => this.setState({ show: false })} color={color}>
+                <Button
+                  outlined
+                  onClick={() => this.setState({ show: false })}
+                  color={color}
+                  className={btnClassName}
+                  style={btnStyle}
+                >
                   {closeLabel}
                 </Button>
               </div>{' '}

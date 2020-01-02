@@ -86,3 +86,23 @@ storiesOf('Buttons', module)
       </Button>
     </div>
   ))
+  .add('Button with custom class and style', () => (
+    <div>
+      <Button className="customClass">Button with custom class</Button>
+      <br />
+      <br />
+      <Button style={{ background: 'red', border: '2px solid black' }}>
+        Buttton with custom style
+      </Button>
+      <br />
+      <br />
+      <Button icon="patient" iconClassName="customClass2">
+        Button Icon with custom class
+      </Button>
+      <br />
+      <br />
+      <Button icon="patient" iconStyle={{ color: 'red' }}>
+        Button Icon with custom style
+      </Button>
+    </div>
+  ))

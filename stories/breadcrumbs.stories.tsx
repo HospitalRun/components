@@ -28,3 +28,18 @@ storiesOf('Breadcrumbs', module)
       </BreadcrumbItem>
     </Breadcrumb>
   ))
+  .add('Breadcrumb can use custom style', () => (
+    <Breadcrumb style={{ padding: 10, background: 'cyan' }}>
+      <BreadcrumbItem active style={{ color: 'blue', fontStyle: 'italic' }}>
+        Item 1
+      </BreadcrumbItem>
+      <BreadcrumbItem style={{ background: 'yellow' }}>Item 2</BreadcrumbItem>
+    </Breadcrumb>
+  ))
+  .add('Breadcrumb can use custom class', () => (
+    <Breadcrumb className="customClass">
+      <BreadcrumbItem active className="customClass2">
+        Custom Class
+      </BreadcrumbItem>
+    </Breadcrumb>
+  ))

@@ -88,3 +88,29 @@ storiesOf('Select', module)
       </Select>
     </div>
   ))
+  .add('Custom class', () => (
+    <div>
+      <Select className="customClass">
+        <option selected disabled>
+          Choose your sweet
+        </option>
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
+      </Select>
+    </div>
+  ))
+  .add('Custom style', () => (
+    <div>
+      <Select style={{ background: 'red' }}>
+        <option selected disabled>
+          Choose your sweet
+        </option>
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
+      </Select>
+    </div>
+  ))

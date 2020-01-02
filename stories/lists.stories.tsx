@@ -95,3 +95,17 @@ storiesOf('List', module)
       <ListItem eventKey="#uniqueKey">eventKey example item</ListItem>
     </List>
   ))
+  .add('List with custom class', () => (
+    <List className="customClass">
+      <ListItem>Regular item in a list with custom class</ListItem>
+      <ListItem className="customClass2">List item with custom class</ListItem>
+    </List>
+  ))
+  .add('List with custom style', () => (
+    <List style={{ color: 'red', border: '2px solid red' }}>
+      <ListItem>Regular item in a list with custom style</ListItem>
+      <ListItem style={{ background: 'blue', color: 'white' }}>
+        List item with a custom style
+      </ListItem>
+    </List>
+  ))

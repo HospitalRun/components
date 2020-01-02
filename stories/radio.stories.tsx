@@ -73,3 +73,13 @@ storiesOf('Radio', module)
       />
     </div>
   ))
+  .add('Radio with custom class', () => (
+    <div>
+      <Radio className="customClass" label="Custom Class radio" />
+    </div>
+  ))
+  .add('Radio with custom style', () => (
+    <div>
+      <Radio style={{ color: 'red', textTransform: 'uppercase' }} label="Custom style radio" />
+    </div>
+  ))

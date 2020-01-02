@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import BootstrapAlert from 'react-bootstrap/Alert'
-import { Alert } from '../src'
+import { Alert, Button } from '../src'
 
 describe('Alert', () => {
   it('Alert renders itself without crashing', () => {
@@ -11,27 +11,51 @@ describe('Alert', () => {
 
   it('Alert defaults color to primary', () => {
     const alertWrapper = shallow(<Alert />)
-    const bootstrapBadge = alertWrapper.find(BootstrapAlert)
-    expect(bootstrapBadge.props().variant).toEqual('primary')
+    const bootstrapAlert = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapAlert.props().variant).toEqual('primary')
   })
 
   it('Alert defaults label to "Dismiss"', () => {
     const alertWrapper = shallow(<Alert dismissible />)
-    const bootstrapBadge = alertWrapper.find(BootstrapAlert)
-    expect(bootstrapBadge.props().closeLabel).toEqual('Dismiss')
+    const bootstrapAlert = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapAlert.props().closeLabel).toEqual('Dismiss')
   })
 
   it('Alert can change colors', () => {
     const alertWrapper = shallow(<Alert color="secondary" />)
-    const bootstrapBadge = alertWrapper.find(BootstrapAlert)
-    expect(bootstrapBadge.props().variant).toEqual('secondary')
+    const bootstrapAlert = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapAlert.props().variant).toEqual('secondary')
   })
 
   it('Alert can display TSX message', () => {
     const alertWrapper = shallow(
       <Alert color="secondary" message={<strong>a custom message</strong>} />,
     )
-    const bootstrapBadge = alertWrapper.find(BootstrapAlert)
-    expect(bootstrapBadge.props().variant).toEqual('secondary')
+    const bootstrapAlert = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapAlert.props().variant).toEqual('secondary')
+  })
+
+  it('Alert can use custom class', () => {
+    const alertWrapper = shallow(<Alert className="customClass" />)
+    const bootstrapAlert = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapAlert.props().className).toEqual('customClass')
+  })
+
+  it('Alert can use custom style', () => {
+    const alertWrapper = shallow(<Alert style={{ background: 'red' }} />)
+    const bootstrapAlert = alertWrapper.find(BootstrapAlert)
+    expect(bootstrapAlert.props().style).toMatchObject({ background: 'red' })
+  })
+
+  it('Alert Button can use custom class', () => {
+    const alertWrapper = shallow(<Alert btnClassName="customClass" dismissible />)
+    const button = alertWrapper.find(Button)
+    expect(button.props().className).toEqual('customClass')
+  })
+
+  it('Alert Button can use custom style', () => {
+    const alertWrapper = shallow(<Alert btnStyle={{ background: 'red' }} dismissible />)
+    const button = alertWrapper.find(Button)
+    expect(button.props().style).toMatchObject({ background: 'red' })
   })
 })

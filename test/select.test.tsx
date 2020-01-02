@@ -86,4 +86,16 @@ describe('Select', () => {
     const bootstratSelect = selectWrapper.find(BootstrapFormControl)
     expect(bootstratSelect.props().size).toEqual('sm')
   })
+
+  it('Select can use custom class', () => {
+    const selectWrapper = shallow(<Select className="customClass" />)
+    const bootstrapSelect = selectWrapper.find(BootstrapFormControl)
+    expect(bootstrapSelect.props().className).toEqual('customClass')
+  })
+
+  it('Select can use custom style', () => {
+    const selectWrapper = shallow(<Select style={{ background: 'red' }} />)
+    const bootstrapSelect = selectWrapper.find(BootstrapFormControl)
+    expect(bootstrapSelect.props().style).toMatchObject({ background: 'red' })
+  })
 })

@@ -26,4 +26,16 @@ describe('Badge', () => {
     const bootstrapBadge = badgeWrapper.find(BootstrapBadge)
     expect(bootstrapBadge.text()).toEqual('Hello World')
   })
+
+  it('Badge can use custom class', () => {
+    const badgeWrapper = shallow(<Badge className="customClass" />)
+    const bootstrapBadge = badgeWrapper.find(BootstrapBadge)
+    expect(bootstrapBadge.props().className).toEqual('customClass')
+  })
+
+  it('Badge can use custom style', () => {
+    const badgeWrapper = shallow(<Badge style={{ background: 'red' }} />)
+    const bootstrapBadge = badgeWrapper.find(BootstrapBadge)
+    expect(bootstrapBadge.props().style).toMatchObject({ background: 'red' })
+  })
 })
