@@ -38,6 +38,7 @@ module.exports = {
     '@typescript-eslint/unified-signatures': 'error',
     '@typescript-eslint/no-inferrable-types': ['error', { ignoreParameters: true }],
     '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
+    'import/extensions': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-wrap-multilines': 'off',
