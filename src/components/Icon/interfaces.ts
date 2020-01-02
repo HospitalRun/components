@@ -6,6 +6,7 @@ export type IconType =
   | 'appointment-remove'
   | 'calendar'
   | 'dashboard'
+  | 'down-arrow'
   | 'image'
   | 'incident'
   | 'lab'
@@ -19,3 +20,4 @@ export type IconType =
   | 'right-arrow'
   | 'save'
   | 'setting'
+  | 'up-arrow'

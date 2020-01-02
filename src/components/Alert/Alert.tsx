@@ -1,5 +1,6 @@
 import React, { Component, ReactNode } from 'react'
 import BootstrapAlert from 'react-bootstrap/Alert'
+import { ColorVariant } from '../../interfaces'
 import { Button } from '../Button'
 
 interface Props {
@@ -7,7 +8,7 @@ interface Props {
    * Defines the color of the alert. Defaults to primary.
    * @default "primary"
    */
-  color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
+  color?: ColorVariant
   /** Defines the title of the alert. */
   title?: string
   /** Defines the message of the alert. */
