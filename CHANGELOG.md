@@ -1,3 +1,19 @@
+# [0.26.0](https://github.com/HospitalRun/components/compare/v0.25.0...v0.26.0) (2020-01-02)
+
+
+### Bug Fixes
+
+* **dropdown:** fix dropdown bugs ([3290a6a](https://github.com/HospitalRun/components/commit/3290a6a95287a9e92f94b306dc6d89bbac504c7b)), closes [#154](https://github.com/HospitalRun/components/issues/154)
+* **dropdown:** fix missing necessary undefined type in id property ([35c04e4](https://github.com/HospitalRun/components/commit/35c04e4dd549f39196b0a7cbade97142e1032ad3)), closes [#154](https://github.com/HospitalRun/components/issues/154)
+* **dropdown:** make id optional on dropdown toggle and items ([787beb7](https://github.com/HospitalRun/components/commit/787beb784ab4f3001944a8c7fbb1aaafc95187e7)), closes [#154](https://github.com/HospitalRun/components/issues/154)
+* **eslint:** fix eslint rules for newer versions ([ddfb996](https://github.com/HospitalRun/components/commit/ddfb9966fad76ae419391aa4a21850f12427c887))
+
+
+### Features
+
+* **dropdown:** add dropdown component ([304666f](https://github.com/HospitalRun/components/commit/304666f62191358ff946782e4c74e42a4b59e666)), closes [#58](https://github.com/HospitalRun/components/issues/58)
+* **dropdown:** randomly generate id if one is not given ([b5fb940](https://github.com/HospitalRun/components/commit/b5fb940341282c86ada06b976de55b3747eb1d2e))
+
 # [0.25.0](https://github.com/HospitalRun/components/compare/v0.24.1...v0.25.0) (2020-01-02)
 
 
