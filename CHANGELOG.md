@@ -1,3 +1,22 @@
+# [0.27.0](https://github.com/HospitalRun/components/compare/v0.26.1...v0.27.0) (2020-01-02)
+
+
+### Features
+
+* **alert:** add className and style props ([76002ec](https://github.com/HospitalRun/components/commit/76002ec1d4eeec26eff52ec75733b75ac7571dd0))
+* **breadcrumb:** add className and style props ([d2bdd88](https://github.com/HospitalRun/components/commit/d2bdd881336a29ac34ca7cc4d28c72a838485c89))
+* **button:** add className and style props ([c2206da](https://github.com/HospitalRun/components/commit/c2206dac8d2a9e549ddefda26bd35cd06b099701))
+* **icon:** add className and style props ([79a8b44](https://github.com/HospitalRun/components/commit/79a8b44648b85bc19e78dbdeaddfb4dbd28ca57f))
+* **label:** add className and style props ([5291f0e](https://github.com/HospitalRun/components/commit/5291f0e52b63c7fdce60eb7c1fd094dd5a3f82fc))
+* **layout:** add className and style props ([adc8c0f](https://github.com/HospitalRun/components/commit/adc8c0f0735f2cffb7fb18fb82d38d0b6bfd0546))
+* **list:** add className and style props ([c46ebcd](https://github.com/HospitalRun/components/commit/c46ebcd980265e5d3452196bafbd081bf2fa3947))
+* **pill:** add className and style props ([0f6144a](https://github.com/HospitalRun/components/commit/0f6144a4eacf9fb6c100609b2ecf49f13e1f0abc))
+* **radio:** add className and style props ([4c886ad](https://github.com/HospitalRun/components/commit/4c886ad8b92e069ade01cbd253ac4d6187d4fee7))
+* **select:** add className and style props ([933878e](https://github.com/HospitalRun/components/commit/933878edac57c88c68aad4f78e949979a41f4e58))
+* **switch:** add className and style props ([4687354](https://github.com/HospitalRun/components/commit/46873542f893d0a7a9ca223a446a3f62faae5559))
+* **textfield:** add className and style props ([368a656](https://github.com/HospitalRun/components/commit/368a6565841064e44355008499110cd0f72766d2))
+* **textinput:** add className and style props ([2c9b4f2](https://github.com/HospitalRun/components/commit/2c9b4f24a8646c4b57fbfe02d743b049303d63a9))
+
 ## [0.26.1](https://github.com/HospitalRun/components/compare/v0.26.0...v0.26.1) (2020-01-02)
 
 
