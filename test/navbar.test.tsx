@@ -12,7 +12,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         search={{
           placeholderText: 'Test',
@@ -23,7 +22,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -40,7 +38,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         search={{
           placeholderText: 'Search',
@@ -51,7 +48,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -74,7 +70,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         search={{
           placeholderText: 'Search',
@@ -85,7 +80,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Elem1',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -105,7 +99,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         search={{
           placeholderText: 'Search',
@@ -116,11 +109,9 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [
               {
                 label: 'A1',
-                onClick: () => {},
                 href: '/somepath',
               },
             ],
@@ -139,7 +130,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         search={{
           placeholderText: 'Search',
@@ -150,7 +140,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -167,7 +156,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
           src: 'anysource',
         }}
         search={{
@@ -179,7 +167,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -196,7 +183,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         search={{
           placeholderText: 'Search',
@@ -207,7 +193,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -224,7 +209,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         search={{
           placeholderText: 'Search',
@@ -236,7 +220,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -253,7 +236,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         variant="light"
         search={{
@@ -265,7 +247,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -282,7 +263,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         bg="light"
         search={{
@@ -294,7 +274,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -311,7 +290,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         search={{
           placeholderText: 'Search',
@@ -322,7 +300,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}
@@ -339,7 +316,6 @@ describe('Navbar', () => {
       <Navbar
         brand={{
           label: 'Test',
-          onClick: () => {},
         }}
         search={{
           placeholderText: 'Search',
@@ -350,7 +326,6 @@ describe('Navbar', () => {
         navLinks={[
           {
             label: 'Link',
-            onClick: () => {},
             children: [],
           },
         ]}

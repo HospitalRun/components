@@ -1,3 +1,42 @@
+## [0.26.1](https://github.com/HospitalRun/components/compare/v0.26.0...v0.26.1) (2020-01-02)
+
+
+### Bug Fixes
+
+* **eslint:** ignore eslint import extentsion check ([6d9d390](https://github.com/HospitalRun/components/commit/6d9d390381a49edf848b36d4e9d63e98e9746e51))
+
+# [0.26.0](https://github.com/HospitalRun/components/compare/v0.25.0...v0.26.0) (2020-01-02)
+
+
+### Bug Fixes
+
+* **dropdown:** fix dropdown bugs ([3290a6a](https://github.com/HospitalRun/components/commit/3290a6a95287a9e92f94b306dc6d89bbac504c7b)), closes [#154](https://github.com/HospitalRun/components/issues/154)
+* **dropdown:** fix missing necessary undefined type in id property ([35c04e4](https://github.com/HospitalRun/components/commit/35c04e4dd549f39196b0a7cbade97142e1032ad3)), closes [#154](https://github.com/HospitalRun/components/issues/154)
+* **dropdown:** make id optional on dropdown toggle and items ([787beb7](https://github.com/HospitalRun/components/commit/787beb784ab4f3001944a8c7fbb1aaafc95187e7)), closes [#154](https://github.com/HospitalRun/components/issues/154)
+* **eslint:** fix eslint rules for newer versions ([ddfb996](https://github.com/HospitalRun/components/commit/ddfb9966fad76ae419391aa4a21850f12427c887))
+
+
+### Features
+
+* **dropdown:** add dropdown component ([304666f](https://github.com/HospitalRun/components/commit/304666f62191358ff946782e4c74e42a4b59e666)), closes [#58](https://github.com/HospitalRun/components/issues/58)
+* **dropdown:** randomly generate id if one is not given ([b5fb940](https://github.com/HospitalRun/components/commit/b5fb940341282c86ada06b976de55b3747eb1d2e))
+
+# [0.25.0](https://github.com/HospitalRun/components/compare/v0.24.1...v0.25.0) (2020-01-02)
+
+
+### Features
+
+* **panel:** support collapsible panel without header/title ([c04c9d8](https://github.com/HospitalRun/components/commit/c04c9d81c6dc061b5f5e9f5fa8a5314c1667b927))
+* **panels:** adds panel component ([d742ebd](https://github.com/HospitalRun/components/commit/d742ebd047f35b3ed60c3a0b5efc86ac0a67007e))
+
+## [0.24.1](https://github.com/HospitalRun/components/compare/v0.24.0...v0.24.1) (2019-12-31)
+
+
+### Bug Fixes
+
+* **navbar:** make Brand onClick optional ([609559b](https://github.com/HospitalRun/components/commit/609559bb0bed074d25aabfff5b956b266059c732))
+* **navbar:** make NavLink onClick optional ([fdd1ee5](https://github.com/HospitalRun/components/commit/fdd1ee57bc3f8f888ef5bf7c7b522ff4ab4456e7))
+
 # [0.24.0](https://github.com/HospitalRun/components/compare/v0.23.0...v0.24.0) (2019-12-30)
 
 

@@ -1,9 +1,10 @@
 import React, { CSSProperties } from 'react'
 import Badge from 'react-bootstrap/Badge'
+import { ColorVariant } from '../../interfaces'
 
 interface Props {
   /** Defines the color of the pill. Defaults to primary. */
-  color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
+  color?: ColorVariant
   /** The children to render */
   children?: React.ReactNode
   /**

@@ -1,9 +1,10 @@
 import React, { CSSProperties } from 'react'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
+import { ColorVariant } from '../../interfaces'
 
 interface Props {
   /** Defines the color of the list item. */
-  color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
+  color?: ColorVariant
   /** Applies additional hover, active and disabled styles to the list item. */
   action?: boolean
   /** Indicates the list group's current active selection. */

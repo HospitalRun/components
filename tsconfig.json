@@ -21,6 +21,7 @@
     "strict": true,
     "pretty": true,
     "removeComments": true,
+    "newLine": "lf",
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -43,9 +44,5 @@
         "src/"
       ]
     }
-  },
-  "formatCodeOptions": {
-    "identSize": 2,
-    "tabSize": 2
-  },
+  }
 }

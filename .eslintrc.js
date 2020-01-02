@@ -37,6 +37,8 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     '@typescript-eslint/unified-signatures': 'error',
     '@typescript-eslint/no-inferrable-types': ['error', { ignoreParameters: true }],
+    '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions'] }],
+    'import/extensions': 'off',
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-wrap-multilines': 'off',
@@ -48,6 +50,8 @@ module.exports = {
     'eol-last': ['error', 'always'],
     'no-debugger': 'error',
     'no-nested-ternary': 'off',
+    'import/no-unresolved': 'off',
+    'import/extensions': ['error', 'never'],
     curly: ['error', 'all'],
   },
 }

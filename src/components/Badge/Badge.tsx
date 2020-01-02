@@ -1,9 +1,10 @@
 import React, { CSSProperties } from 'react'
 import BootstrapBadge from 'react-bootstrap/Badge'
+import { ColorVariant } from '../../interfaces'
 
 interface Props {
   /** Defines the color of the badge. Defaults to primary. */
-  color?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark'
+  color?: ColorVariant
   /** The children to render */
   children?: React.ReactNode
   /** Defines the class of the badge */

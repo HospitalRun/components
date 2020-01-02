@@ -12,6 +12,7 @@ const iconMap = {
   'appointment-remove': 'calendar-minus',
   calendar: 'calendar-alt',
   dashboard: 'columns',
+  'down-arrow': 'chevron-down',
   image: 'camera',
   incident: 'file-alt',
   lab: 'microscope',
@@ -25,6 +26,7 @@ const iconMap = {
   'right-arrow': 'chevron-right',
   save: 'save',
   setting: 'cog',
+  'up-arrow': 'chevron-up',
 }
 
 function getFontAwesomeIcon(icon: IconType): string {
@@ -42,15 +44,18 @@ interface Props {
    * Defines the style of the icon.
    */
   style?: CSSProperties
+  /** Function to execute when user clicks on icon */
+  onClick?: (event: React.MouseEvent<any>) => void
 }
 
 /**
  * Icons provide contextual clues to users to make it easier to recognize functionality
  */
 const Icon = (props: Props) => {
-  const { icon, className, style } = props
+  const { icon, className, style, onClick } = props
   return (
     <FontAwesomeIcon
+      onClick={onClick}
       icon={getFontAwesomeIcon(icon) as IconProp}
       className={className}
       style={style}
