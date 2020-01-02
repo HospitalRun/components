@@ -54,7 +54,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "~7.7.2",
+    "@babel/core": "~7.7.7",
     "@commitlint/cli": "~8.2.0",
     "@commitlint/config-conventional": "~8.2.0",
     "@commitlint/prompt": "~8.2.0",
@@ -62,7 +62,7 @@
     "@semantic-release/commit-analyzer": "~6.3.0",
     "@semantic-release/git": "~7.0.16",
     "@semantic-release/github": "~5.5.3",
-    "@semantic-release/npm": "~5.3.4",
+    "@semantic-release/npm": "~5.3.5",
     "@semantic-release/release-notes-generator": "~7.3.0",
     "@storybook/addon-actions": "~5.2.6",
     "@storybook/addon-info": "~5.2.6",
@@ -70,10 +70,10 @@
     "@storybook/addons": "~5.2.6",
     "@storybook/react": "~5.2.6",
     "@storybook/theming": "~5.2.6",
-    "@types/chart.js": "~2.9.1",
+    "@types/chart.js": "~2.9.7",
     "@types/enzyme": "~3.10.3",
-    "@types/jest": "~24.0.17",
-    "@types/react": "~16.9.5",
+    "@types/jest": "~24.0.25",
+    "@types/react": "~16.9.17",
     "@types/react-dom": "~16.9.1",
     "@types/sinon": "~7.5.0",
     "@types/storybook__addon-info": "~5.2.0",
@@ -89,7 +89,7 @@
     "cross-env": "~6.0.3",
     "cz-conventional-changelog": "~3.0.2",
     "enzyme": "~3.11.0",
-    "enzyme-adapter-react-16": "~1.15.1",
+    "enzyme-adapter-react-16": "~1.15.2",
     "eslint": "~6.8.0",
     "eslint-config-airbnb": "~18.0.1",
     "eslint-config-prettier": "~6.9.0",
@@ -112,7 +112,7 @@
     "sinon": "~8.0.1",
     "tsdx": "~0.12.0",
     "tslib": "~1.10.0",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.4"
   },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "~0.2.26",
@@ -127,12 +127,12 @@
     "@tinymce/tinymce-react": "~3.3.2",
     "@types/react-datepicker": "~2.10.0",
     "chart.js": "~2.9.3",
-    "formik": "~2.0.4",
+    "formik": "~2.1.0",
     "moment": "~2.24.0",
     "react-datepicker": "~2.10.1",
     "react-spinners": "~0.7.0",
     "react-toastify": "~5.5.0",
-    "tinymce": "~5.1.2",
+    "tinymce": "~5.1.5",
     "video-react": "~0.14.1"
   },
   "jest": {
