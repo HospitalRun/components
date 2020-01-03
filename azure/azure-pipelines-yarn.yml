@@ -24,5 +24,8 @@ jobs:
       - bash: yarn build
         displayName: Build
 
+      - bash: yarn build-storybook
+        displayName: Storybook build
+
       - bash: yarn test:ci
         displayName: Test

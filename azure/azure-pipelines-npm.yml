@@ -24,5 +24,8 @@ jobs:
       - bash: npm run build
         displayName: Build
 
+      - bash: npm run build-storybook
+        displayName: Storybook build
+
       - bash: npm run test:ci
         displayName: Test
