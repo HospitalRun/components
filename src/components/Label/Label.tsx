@@ -41,10 +41,12 @@ const Label = (props: Props) => {
   if (isRequired) {
     return (
       <div>
-        <FormLabel htmlFor={htmlFor} 
-          title={title || 'This is a required input'} 
-          className={className} 
-          style={style}>
+        <FormLabel
+          htmlFor={htmlFor}
+          title={title || 'This is a required input'}
+          className={className}
+          style={style}
+        >
           {text}
           {asterisk}
         </FormLabel>
