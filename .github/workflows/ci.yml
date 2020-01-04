@@ -28,6 +28,9 @@ jobs:
       - name: Build
         run: |
           npm run build
+      - name: Storybook build
+        run: |
+          npm run build-storybook
       - name: Run tests
         run: |
           npm run test:ci
@@ -57,6 +60,9 @@ jobs:
       - name: Build
         run: |
           yarn build
+      - name: Storybook build
+        run: |
+          yarn build-storybook
       - name: Run tests
         run: |
           yarn test:ci

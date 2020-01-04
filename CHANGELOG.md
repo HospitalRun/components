@@ -1,3 +1,17 @@
+## [0.27.2](https://github.com/HospitalRun/components/compare/v0.27.1...v0.27.2) (2020-01-03)
+
+
+### Bug Fixes
+
+* **collapsable panel:** adds pointer when cursor is hovered over icon ([67ef9b8](https://github.com/HospitalRun/components/commit/67ef9b8b4c39eb666c247e20830945188c9fc574)), closes [#182](https://github.com/HospitalRun/components/issues/182)
+
+## [0.27.1](https://github.com/HospitalRun/components/compare/v0.27.0...v0.27.1) (2020-01-03)
+
+
+### Bug Fixes
+
+* **typings:** adds @types/node package set to version 12 of node ([420f1eb](https://github.com/HospitalRun/components/commit/420f1eb30a9cc88dab8b26c810b3a3a4b07b61ed)), closes [#189](https://github.com/HospitalRun/components/issues/189)
+
 # [0.27.0](https://github.com/HospitalRun/components/compare/v0.26.1...v0.27.0) (2020-01-02)
 
 

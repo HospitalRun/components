@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "0.27.0",
+  "version": "0.27.2",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -55,9 +55,9 @@
   },
   "devDependencies": {
     "@babel/core": "~7.7.7",
-    "@commitlint/cli": "~8.2.0",
-    "@commitlint/config-conventional": "~8.2.0",
-    "@commitlint/prompt": "~8.2.0",
+    "@commitlint/cli": "~8.3.3",
+    "@commitlint/config-conventional": "~8.3.3",
+    "@commitlint/prompt": "~8.3.3",
     "@semantic-release/changelog": "~3.0.4",
     "@semantic-release/commit-analyzer": "~6.3.0",
     "@semantic-release/git": "~7.0.16",
@@ -73,6 +73,7 @@
     "@types/chart.js": "~2.9.7",
     "@types/enzyme": "~3.10.3",
     "@types/jest": "~24.0.25",
+    "@types/node": "~12.12.23",
     "@types/react": "~16.9.17",
     "@types/react-dom": "~16.9.1",
     "@types/sinon": "~7.5.0",
@@ -130,7 +131,7 @@
     "formik": "~2.1.0",
     "moment": "~2.24.0",
     "react-datepicker": "~2.10.1",
-    "react-spinners": "~0.7.0",
+    "react-spinners": "~0.8.0",
     "react-toastify": "~5.5.0",
     "tinymce": "~5.1.5",
     "video-react": "~0.14.1"
