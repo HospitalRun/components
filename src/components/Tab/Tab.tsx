@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconType } from '../Icon/interfaces'
-import { Icon } from '../Icon'
+import { Button } from '../Button'
 
 interface Props {
   /** Tab label */
@@ -19,23 +19,21 @@ interface Props {
 }
 
 const Tab = (props: Props) => {
-  const { label, onClick, active, disabled, icon, iconLocation } = props
-
-  const displayIconLeft = icon && iconLocation === 'left'
-  const displayIconRight = icon && iconLocation === 'right'
+  const { label, onClick, active, icon, disabled, iconLocation } = props
   const className = `nav-link btn-link ${active ? ' active' : ''} ${disabled ? ' disabled' : ''}`
 
   return (
     <li className="nav-item" role="tab">
-      <button
-        type="button"
-        style={{ background: 'none' }}
+      <Button
+        style={{ borderBottomLeftRadius: 0, borderBottomRightRadius: 0 }}
+        color="link"
         className={className}
         onClick={disabled ? undefined : onClick}
+        icon={icon}
+        iconLocation={iconLocation}
       >
-        {displayIconLeft && <Icon icon={icon as IconType} />} {label}{' '}
-        {displayIconRight && <Icon icon={icon as IconType} />}
-      </button>
+        {label}
+      </Button>
     </li>
   )
 }
