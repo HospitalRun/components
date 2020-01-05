@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 
 import Button from 'react-bootstrap/Button'
 import { Toast, Toaster } from '../src'
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 import 'react-toastify/dist/ReactToastify.min.css'
 
 storiesOf('Toaster', module)

@@ -1,6 +1,8 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 library.add(fas)
 export * from './components/Toaster'
 export * from './components/Spinner'
@@ -28,3 +30,4 @@ export * from './components/VideoPlayer'
 export * from './components/Layout'
 export * from './components/Label'
 export * from './components/Breadcrumb'
+export * from './components/Tab'
