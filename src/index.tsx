@@ -1,6 +1,8 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
+import 'react-toastify/dist/ReactToastify.min.css'
+
 library.add(fas)
 export * from './components/Toaster'
 export * from './components/Spinner'
