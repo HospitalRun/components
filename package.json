@@ -148,7 +148,7 @@
       "<rootDir>/__mocks__/matchMediaMock.js"
     ],
     "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(css|scss|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
   }
 }
