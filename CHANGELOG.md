@@ -1,3 +1,12 @@
+# [0.28.0](https://github.com/HospitalRun/components/compare/v0.27.2...v0.28.0) (2020-01-10)
+
+
+### Features
+
+* **css:** add tsdx config for PostCSS, organize CSS and SASS imports ([add82bf](https://github.com/HospitalRun/components/commit/add82bf51b9dd89e7299783148f2b815951d7a5e))
+* **css:** create a Theme to override Bootstrap colors ([4094600](https://github.com/HospitalRun/components/commit/4094600934834fd05b321b80842749cee6ec3bb7)), closes [#35](https://github.com/HospitalRun/components/issues/35)
+* **css:** update jest config to mock .scss imports to fix test failures ([5206931](https://github.com/HospitalRun/components/commit/5206931ec744795ce3a07eedd3084b280b4f7a69))
+
 ## [0.27.2](https://github.com/HospitalRun/components/compare/v0.27.1...v0.27.2) (2020-01-03)
 
 
