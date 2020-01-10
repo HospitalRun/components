@@ -1,0 +1,11 @@
+/* Bootstrap overrides */
+
+@import "./_variables";
+
+/* Import bootstrap */
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+/* Other CSS Imports */
+
+@import '../node_modules/react-toastify/dist/ReactToastify.min.css';
