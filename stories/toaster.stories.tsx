@@ -5,8 +5,6 @@ import { storiesOf } from '@storybook/react'
 import Button from 'react-bootstrap/Button'
 import { Toast, Toaster } from '../src'
 
-import 'react-toastify/dist/ReactToastify.min.css'
-
 storiesOf('Toaster', module)
   .addParameters({
     info: {
