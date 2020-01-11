@@ -100,7 +100,7 @@ storiesOf('TextInput', module)
         id="text-input"
         size="lg"
         value="This is a text input!"
-        isValid
+        isInvalid={false}
         validInputMessage="This is a custom valid input message"
       />
     </div>

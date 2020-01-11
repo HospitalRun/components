@@ -1,5 +1,5 @@
 import React, { ReactNode, CSSProperties } from 'react'
-import { FormCheck } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
 
 interface Props {
   /** Label to display next to the Radio. */
@@ -18,6 +18,8 @@ interface Props {
   checked?: boolean
   /** Determines whether the Radio should be rendered as invalid or not. Default is false. */
   isInvalid?: boolean
+  /** Determines whether the Radio should be rendered as valid or not. Default is false. */
+  isValid?: boolean
   /** Message to display when the Radio is invalid. */
   feedback?: string | ReactNode
   /** Listener will be called when the Radio is checked. */
@@ -42,13 +44,14 @@ const Radio = (props: Props) => {
     disabled,
     inline,
     isInvalid,
+    isValid,
     feedback,
     onChange,
     className,
     style,
   } = props
   return (
-    <FormCheck
+    <Form.Check
       type="radio"
       label={label}
       name={name}
@@ -58,6 +61,7 @@ const Radio = (props: Props) => {
       disabled={disabled}
       inline={inline}
       isInvalid={isInvalid}
+      isValid={isValid}
       feedback={feedback}
       onChange={onChange}
       className={className}

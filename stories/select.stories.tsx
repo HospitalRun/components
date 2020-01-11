@@ -8,7 +8,9 @@ storiesOf('Select', module)
       inline: true,
     },
   })
-  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => (
+    <div style={{ textAlign: 'center', paddingLeft: 40, paddingRight: 40 }}>{storyFn()}</div>
+  ))
   .add('Select', () => (
     <div>
       <Select>

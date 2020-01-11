@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react'
-import { FormControl } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
 import { getControlSize } from '../../helpers/controlSize'
 
 interface Props {
@@ -9,6 +9,8 @@ interface Props {
   disabled?: boolean
   /** Determines whether the Select should be invalid. False by default. */
   isInvalid?: boolean
+  /** Determines whether the Select should be rendered as valid or not. Default is false. */
+  isValid?: boolean
   /** Determines whether to render a small or large TextField. By default, it is undefined. */
   size?: 'small' | 'large'
   /** Selected value in the  */
@@ -26,13 +28,29 @@ interface Props {
    * Defines the style of the select.
    */
   style?: CSSProperties
+  /** Defines the custom error message of the input. */
+  errorMessage?: string
+  /** Defines the meesage for valid input. */
+  validInputMessage?: string
 }
 
 const Select = (props: Props) => {
-  const { value, multiple, isInvalid, disabled, size, onChange, children, className, style } = props
+  const {
+    value,
+    multiple,
+    isInvalid,
+    errorMessage,
+    validInputMessage,
+    disabled,
+    size,
+    onChange,
+    children,
+    className,
+    style,
+  } = props
 
   return (
-    <FormControl
+    <Form.Control
       as="select"
       value={value}
       multiple={multiple}
@@ -44,7 +62,13 @@ const Select = (props: Props) => {
       style={style}
     >
       {children}
-    </FormControl>
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
+        {validInputMessage}
+      </Form.Control.Feedback>
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
+        {errorMessage}
+      </Form.Control.Feedback>
+    </Form.Control>
   )
 }
 
