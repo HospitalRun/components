@@ -1,3 +1,10 @@
+# [0.29.0](https://github.com/HospitalRun/components/compare/v0.28.0...v0.29.0) (2020-01-11)
+
+
+### Features
+
+* **typeahead:** add typeahead component ([0b0f1a8](https://github.com/HospitalRun/components/commit/0b0f1a8603cadf0016dfcb1bf6bc00e70bb77bc2))
+
 # [0.28.0](https://github.com/HospitalRun/components/compare/v0.27.2...v0.28.0) (2020-01-10)
 
 
