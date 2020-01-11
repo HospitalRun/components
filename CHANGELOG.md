@@ -1,3 +1,11 @@
+# [0.30.0](https://github.com/HospitalRun/components/compare/v0.29.0...v0.30.0) (2020-01-11)
+
+
+### Features
+
+* **tab:** add Tab and TabsHeader components ([431d08a](https://github.com/HospitalRun/components/commit/431d08a15acf1594779a4867ee79f014ae7395f2)), closes [#24](https://github.com/HospitalRun/components/issues/24)
+* **tab:** use project's existing Button component ([24d617f](https://github.com/HospitalRun/components/commit/24d617fa6e04107f79e59308d52755a920ee368f)), closes [#24](https://github.com/HospitalRun/components/issues/24)
+
 # [0.29.0](https://github.com/HospitalRun/components/compare/v0.28.0...v0.29.0) (2020-01-11)
 
 
