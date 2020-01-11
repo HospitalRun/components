@@ -1,3 +1,10 @@
+## [0.30.1](https://github.com/HospitalRun/components/compare/v0.30.0...v0.30.1) (2020-01-11)
+
+
+### Bug Fixes
+
+* **scss:** fix imports to external dependencies ([080b73e](https://github.com/HospitalRun/components/commit/080b73e9fbe640af4487ba609ad0037e49e89eef))
+
 # [0.30.0](https://github.com/HospitalRun/components/compare/v0.29.0...v0.30.0) (2020-01-11)
 
 
