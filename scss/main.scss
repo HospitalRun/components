@@ -4,8 +4,8 @@
 
 /* Import bootstrap */
 
-@import "node_modules/bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
 
 /* Other CSS Imports */
 
-@import '../node_modules/react-toastify/dist/ReactToastify.min.css';
+@import '~react-toastify/dist/ReactToastify.min.css';
