@@ -24,6 +24,8 @@ interface Props {
   isInvalid?: boolean
   /** Defines whether the input should display as valid. Defaults to false */
   isValid?: boolean | true
+  /** Defines the meesage for valid input. */
+  validInputMessage?: string
 }
 
 /**
@@ -40,6 +42,7 @@ const TextInput = (props: Props) => {
     disabled,
     isInvalid,
     isValid,
+    validInputMessage,
     errorMessage,
     value,
     size,
@@ -57,9 +60,13 @@ const TextInput = (props: Props) => {
         disabled={disabled}
         isInvalid={isInvalid}
         isValid={isValid}
+        validInputMessage={validInputMessage}
         defaultValue={value}
         size={size}
       />
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
+        {validInputMessage}
+      </Form.Control.Feedback>
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
         {errorMessage}
       </Form.Control.Feedback>
