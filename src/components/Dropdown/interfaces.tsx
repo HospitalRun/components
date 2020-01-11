@@ -1,4 +1,4 @@
-import { ColorVariants } from '../../helpers/ColorVariants'
+import { ButtonVariant } from '../../interfaces'
 
 export interface Item {
   /* Item text */
@@ -8,7 +8,7 @@ export interface Item {
   /* Item event key */
   eventKey?: string
   /* Item variant color */
-  variant?: ColorVariants
+  variant?: ButtonVariant
   /* Item id */
   id?: string
   /* Item key */
