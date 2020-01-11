@@ -77,7 +77,11 @@ describe('Button', () => {
   })
 
   it('Button renders icon and is on left side when iconLocation is used and set to left', () => {
-    const wrapper = shallow(<Button icon="patient">Button</Button>)
+    const wrapper = shallow(
+      <Button icon="patient" iconLocation="left">
+        Button
+      </Button>,
+    )
     expect(wrapper.find(Icon)).toHaveLength(1)
     expect(wrapper.childAt(0).type()).toBe(Icon)
   })
