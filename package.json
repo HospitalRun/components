@@ -68,7 +68,7 @@
     "@storybook/addon-info": "~5.2.6",
     "@storybook/addon-links": "~5.2.6",
     "@storybook/addons": "~5.2.6",
-    "@storybook/react": "~5.2.6",
+    "@storybook/react": "~5.3.0",
     "@storybook/theming": "~5.3.0",
     "@types/chart.js": "~2.9.7",
     "@types/enzyme": "~3.10.3",
