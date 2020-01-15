@@ -28,18 +28,24 @@ interface Props {
    * Defines the style of the select.
    */
   style?: CSSProperties
+
   /** Defines the custom error message of the input. */
-  errorMessage?: string
-  /** Defines the meesage for valid input. */
+  invalidInputMessage?: string
+  /** Defines the message for valid input. */
   validInputMessage?: string
 }
+/**
+ * Defines the default style of the select.
+ */
+const defaultStyles = { backgroundPosition: 'right calc(.375em + .55rem) center' }
 
 const Select = (props: Props) => {
   const {
     value,
     multiple,
+    isValid,
     isInvalid,
-    errorMessage,
+    invalidInputMessage,
     validInputMessage,
     disabled,
     size,
@@ -50,25 +56,28 @@ const Select = (props: Props) => {
   } = props
 
   return (
-    <Form.Control
-      as="select"
-      value={value}
-      multiple={multiple}
-      isInvalid={isInvalid}
-      disabled={disabled}
-      size={getControlSize(size)}
-      onChange={onChange}
-      className={className}
-      style={style}
-    >
-      {children}
+    <div>
+      <Form.Control
+        as="select"
+        value={value}
+        multiple={multiple}
+        isInvalid={isInvalid}
+        isValid={isValid}
+        disabled={disabled}
+        size={getControlSize(size)}
+        onChange={onChange}
+        className={className}
+        style={Object.assign(style || {}, defaultStyles)}
+      >
+        {children}
+      </Form.Control>
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
         {validInputMessage}
       </Form.Control.Feedback>
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
-        {errorMessage}
+        {invalidInputMessage}
       </Form.Control.Feedback>
-    </Form.Control>
+    </div>
   )
 }
 

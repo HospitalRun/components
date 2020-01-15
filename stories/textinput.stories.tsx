@@ -88,7 +88,7 @@ storiesOf('TextInput', module)
         size="lg"
         value="Custom error message"
         isInvalid
-        errorMessage="Please insert a 3 letter word"
+        invalidInputMessage="Please insert a 3 letter word"
       />
     </div>
   ))

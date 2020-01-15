@@ -9,4 +9,8 @@
 | multiple  | `boolean`                                                          | -        |         | When multiple is true, the user can select multiple options. Otherwise, one option only. False by default. |
 | onChange  | `(event: React.FormEvent<FormControl & FormControlProps>) => void` | -        |         | Handles the onChange event for the Select.                                                                 |
 | size      | `'small' | 'large'`                                                | -        |         | Determines whether to render a small or large TextField. By default, it is undefined.                      |
-| value     | `string`                                                           | -        |         | Selected value in the                                                                                      |
+| value     | `string`                                                           | -        |         | Selected value in the
+| invalidInputMessage | `string`                                                 | -         |
+| Determines the feedback message for invalid select inputs.|
+| validInputMessage | `string`                                                 | -         |
+| Determines the feedback message for valid select inputs.|

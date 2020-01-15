@@ -11,6 +11,6 @@ Dropdown items can be used to handle events such as redirects, popups, authentic
   id   |    `string`        | no | | Determines the item's id |
   key   |    `string`        | no | `dropdown-item-{0++}` | Determines the item's key |
   eventKey   |    `string`        | no |`dropdown-event-{0++}` | Determines the item's event key |
-  variant   |    `ColorVariants` | no | 'primary' | Determines the item's color variant |
+  variant   |    `ColorVariant` | no | 'primary' | Determines the item's color variant |
   style  |    `string` | no | undefined | Determines the item's custom style |
 

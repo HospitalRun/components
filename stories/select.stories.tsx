@@ -14,9 +14,7 @@ storiesOf('Select', module)
   .add('Select', () => (
     <div>
       <Select>
-        <option selected disabled>
-          Choose your sweet
-        </option>
+        <option selected>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
@@ -47,6 +45,32 @@ storiesOf('Select', module)
       </Select>
     </div>
   ))
+  .add('Valid select', () => (
+    <div>
+      <Select isValid>
+        <option selected disabled>
+          Choose your sweet
+        </option>
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
+      </Select>
+    </div>
+  ))
+  .add('Valid select with custom message', () => (
+    <div>
+      <Select isValid validInputMessage="This is a valid select input message">
+        <option selected disabled>
+          Choose your sweet
+        </option>
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
+      </Select>
+    </div>
+  ))
   .add('Invalid select', () => (
     <div>
       <Select isInvalid>
@@ -60,6 +84,20 @@ storiesOf('Select', module)
       </Select>
     </div>
   ))
+  .add('Invalid select with custom message', () => (
+    <div>
+      <Select isInvalid invalidInputMessage="This is an invalid select input error message">
+        <option selected disabled>
+          Choose your sweet
+        </option>
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
+      </Select>
+    </div>
+  ))
+
   .add('Working with value', () => (
     <div>
       <Select value="nougat">

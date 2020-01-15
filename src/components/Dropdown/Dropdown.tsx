@@ -1,8 +1,8 @@
 import React, { ElementType } from 'react'
 import DropdownRB from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
+import { ColorVariant } from '../../interfaces'
 import { Item } from './interfaces'
-import { ColorVariants } from '../../helpers/ColorVariants'
 
 interface Props {
   /** Determines the dropdown toggle text */
@@ -12,7 +12,7 @@ interface Props {
   /** Determines the dropdown toggle button id */
   id: string
   /** Determines the dropdown toggle variant color */
-  variant: ColorVariants
+  variant: ColorVariant
   /** Determines the horizontal alignment of the dropdown items */
   alignRight?: boolean
   /** Determines the dropdown's custom element type */

@@ -19,7 +19,7 @@ interface Props {
   /** Defines whether the input should be disabled or not. Defaults to false. */
   disabled?: boolean
   /** Defines the custom error message of the input. */
-  errorMessage?: string
+  invalidInputMessage?: string
   /** Defines whether the input should display as invalid. Defaults to false. */
   isInvalid?: boolean
   /** Defines whether the input should display as valid. Defaults to false */
@@ -43,7 +43,7 @@ const TextInput = (props: Props) => {
     isInvalid,
     isValid,
     validInputMessage,
-    errorMessage,
+    invalidInputMessage,
     value,
     size,
   } = props
@@ -67,7 +67,7 @@ const TextInput = (props: Props) => {
         {validInputMessage}
       </Form.Control.Feedback>
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
-        {errorMessage}
+        {invalidInputMessage}
       </Form.Control.Feedback>
     </div>
   )
