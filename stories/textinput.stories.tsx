@@ -35,7 +35,7 @@ storiesOf('TextInput', module)
         id="text-input"
         name="text-input"
         type="text"
-        placeholder="This is a text input with placeholder!"
+        placeholder="Text input placeholder"
       />
     </div>
   ))
@@ -62,7 +62,7 @@ storiesOf('TextInput', module)
         name="text-input"
         type="text"
         size="lg"
-        value="This is a text input!"
+        value="Disabled"
         disabled
       />
     </div>
@@ -74,7 +74,7 @@ storiesOf('TextInput', module)
         name="text-input"
         type="text"
         size="lg"
-        value="This is a text input!"
+        value="Invalid"
         isInvalid
       />
     </div>
@@ -92,7 +92,7 @@ storiesOf('TextInput', module)
       />
     </div>
   ))
-  .add('Valid text input', () => (
+  .add('Valid text input with custom validation message', () => (
     <div>
       <TextInput
         type="text"
@@ -100,7 +100,7 @@ storiesOf('TextInput', module)
         id="text-input"
         size="lg"
         value="This is a text input!"
-        isInvalid={false}
+        isValid
         validInputMessage="This is a custom valid input message"
       />
     </div>
