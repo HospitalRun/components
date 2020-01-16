@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme'
 import { act } from 'react-dom/test-utils'
 import { TimeGridView } from '@fullcalendar/timegrid'
 import moment from 'moment'
-import { Calendar } from '../src/components/Calendar'
+import { Calendar } from '../src'
 
 describe('Calendar', () => {
   it('should render a full calendar component with the proper default props', () => {
