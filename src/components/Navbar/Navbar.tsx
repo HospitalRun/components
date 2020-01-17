@@ -35,20 +35,25 @@ const Navbar = (props: Props) => {
   const getNavLinks = (link: NavLink, index: number) => {
     if (link.children.length === 0) {
       return (
-        <Nav.Link onClick={link.onClick} key={index}>
+        <Nav.Link style={{ textAlign: 'left' }} onClick={link.onClick} key={index}>
           {link.label}
         </Nav.Link>
       )
     }
 
     return (
-      <NavDropdown title={link.label} id="collasible-nav-dropdown" key={index}>
+      <NavDropdown
+        style={{ textAlign: 'left' }}
+        title={link.label}
+        id="collasible-nav-dropdown"
+        key={index}
+      >
         {link.children.map((subLink, i) => getNavItems(subLink, i))}
       </NavDropdown>
     )
   }
   return (
-    <NavbarRB bg={bg} variant={variant}>
+    <NavbarRB expand="lg" bg={bg} variant={variant}>
       <NavbarRB.Brand onClick={brand.onClick} style={{ cursor: 'pointer' }}>
         {brand.src ? (
           <img
@@ -63,14 +68,15 @@ const Navbar = (props: Props) => {
         )}
         <span style={{ color: brand.color }}>{`${brand.label}`}</span>
       </NavbarRB.Brand>
+      <NavbarRB.Toggle aria-controls="basic-navbar-nav" />
       <NavbarRB.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">{navLinks.map((link, index) => getNavLinks(link, index))}</Nav>
-        <Nav>
+        <Nav className="mr-auto">
+          {navLinks.map((link, index) => getNavLinks(link, index))}
           <Form inline>
             <FormControl
               type="text"
               placeholder={search.placeholderText || 'Search'}
-              className="mr-sm-2"
+              className="mr-sm-2 mb-3"
               onChange={search.onChangeInput}
             />
             <Button color={search.buttonColor || 'primary'} onClick={search.onClickButton}>
