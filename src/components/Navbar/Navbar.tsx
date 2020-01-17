@@ -76,7 +76,7 @@ const Navbar = (props: Props) => {
             <FormControl
               type="text"
               placeholder={search.placeholderText || 'Search'}
-              className="mr-sm-2 mb-3"
+              className="mr-sm-2 mb-3 mb-md-0"
               onChange={search.onChangeInput}
             />
             <Button color={search.buttonColor || 'primary'} onClick={search.onClickButton}>
