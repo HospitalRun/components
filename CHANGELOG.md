@@ -1,3 +1,10 @@
+## [0.30.2](https://github.com/HospitalRun/components/compare/v0.30.1...v0.30.2) (2020-01-17)
+
+
+### Bug Fixes
+
+* **calendar:** fix export for calendar ([be8c98b](https://github.com/HospitalRun/components/commit/be8c98bb09364167a984ab3fa157b69d383f2ad4))
+
 ## [0.30.1](https://github.com/HospitalRun/components/compare/v0.30.0...v0.30.1) (2020-01-11)
 
 
