@@ -1,4 +1,4 @@
-export interface Brand {
+export interface NavBrand extends NavItem {
   /** Clinic/Hospital name */
   label: string
   /** Label color */
@@ -9,7 +9,11 @@ export interface Brand {
   onClick?: (event: React.MouseEvent<any>) => void
 }
 
-export interface NavLinkElement {
+export interface NavItem {
+  type: string
+}
+
+export interface NavLink extends NavItem {
   /** The link name */
   label: string
   /** A click handle which will redirect the user to whenever it is clicked */
@@ -18,12 +22,12 @@ export interface NavLinkElement {
   href?: string
 }
 
-export interface NavLink extends NavLinkElement {
+export interface NavLinkList extends NavLink {
   /** An array to hold a dropdown Links */
-  children: NavLinkElement[]
+  children: Array<NavLink>
 }
 
-export interface Search {
+export interface NavSearch extends NavItem {
   /** Defines the placeholder text. */
   placeholderText?: string
   /** Defines the button text. */

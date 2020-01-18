@@ -14,69 +14,37 @@ storiesOf('Navbar', module)
   .add('Navbar', () => (
     <div>
       <Navbar
-        brand={{
-          label: 'Hospital',
-          onClick: () => {
-            Toast('success', 'Brand button clicked!!', 'Success')
-          },
-        }}
-        search={{
-          placeholderText: 'Custom',
-          buttonText: 'Text',
-          buttonColor: 'secondary',
-          onClickButton: () => {
-            Toast('success', 'Button clicked!!', 'Success')
-          },
-          onChangeInput: () => {
-            Toast('success', 'Search box changed!!', 'Success')
-          },
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'Hospital',
+            onClick: () => {
+              Toast('success', 'Brand button clicked!!', 'Success')
+            },
+          },
+          {
+            type: 'link',
             label: 'Link',
             onClick: () => {
               Toast('success', 'NavLink clicked!!', 'Success')
             },
-            children: [],
           },
-        ]}
-      />
-
-      <br />
-
-      <Navbar
-        brand={{
-          label: 'HospitalRun',
-          src:
-            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
-          onClick: () => {
-            Toast('success', 'Brand button clicked!!', 'Success')
-          },
-        }}
-        search={{
-          onClickButton: () => {
-            Toast('success', 'Button clicked!!', 'Success')
-          },
-          onChangeInput: () => {
-            Toast('success', 'Search box changed!!', 'Success')
-          },
-        }}
-        bg="light"
-        variant="light"
-        navLinks={[
           {
-            label: 'Dropdown',
+            type: 'link-list',
+            label: 'Link',
             onClick: () => {
               Toast('success', 'NavLink clicked!!', 'Success')
             },
             children: [
               {
+                type: 'link',
                 label: 'Sublink1',
                 onClick: () => {
                   Toast('success', 'Sublink1 clicked!!', 'Success')
                 },
               },
               {
+                type: 'link',
                 label: 'Sublink2',
                 onClick: () => {
                   Toast('success', 'Sublink2 clicked!!', 'Success')
@@ -85,11 +53,50 @@ storiesOf('Navbar', module)
             ],
           },
           {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton: () => {
+              Toast('success', 'Button clicked!!', 'Success')
+            },
+            onChangeInput: () => {
+              Toast('success', 'Search box changed!!', 'Success')
+            },
+          },
+        ]}
+      />
+
+      <br />
+
+      <Navbar
+        bg="light"
+        variant="light"
+        navItems={[
+          {
+            type: 'brand',
+            label: 'HospitalRun',
+            src:
+              'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+            onClick: () => {
+              Toast('success', 'Brand button clicked!!', 'Success')
+            },
+          },
+          {
+            type: 'link',
             label: 'Link',
             onClick: () => {
               Toast('success', 'NavLink clicked!!', 'Success')
             },
-            children: [],
+          },
+          {
+            type: 'search',
+            onClickButton: () => {
+              Toast('success', 'Button clicked!!', 'Success')
+            },
+            onChangeInput: () => {
+              Toast('success', 'Search box changed!!', 'Success')
+            },
           },
         ]}
       />
