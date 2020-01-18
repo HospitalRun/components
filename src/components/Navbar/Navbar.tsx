@@ -43,9 +43,11 @@ const Navbar = (props: Props) => {
     </Nav>
   )
   const getNavList = (list: NavLinkList, index: number) => (
-    <NavDropdown title={list.label} id="collasible-nav-dropdown" key={index}>
-      {list.children.map((subLink, i) => getNavListLinks(subLink, i))}
-    </NavDropdown>
+    <span>
+      <NavDropdown title={list.label} id="collasible-nav-dropdown" key={index}>
+        {list.children.map((subLink, i) => getNavListLinks(subLink, i))}
+      </NavDropdown>
+    </span>
   )
   const getNavBrand = (brand: NavBrand) => (
     <NavbarRB.Brand onClick={brand.onClick} style={{ cursor: 'pointer' }}>

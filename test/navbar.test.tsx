@@ -10,17 +10,21 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
-        search={{
-          placeholderText: 'Test',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
@@ -36,17 +40,21 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Search',
+            buttonText: 'Search',
+            buttonColor: 'primary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
@@ -68,17 +76,21 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Elem1',
             children: [],
           },
@@ -97,20 +109,25 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link-list',
             label: 'Link',
             children: [
               {
+                type: 'link',
                 label: 'A1',
                 href: '/somepath',
               },
@@ -128,17 +145,21 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'Test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
@@ -154,18 +175,22 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-          src: 'anysource',
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+            src: 'anysource',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
@@ -181,17 +206,21 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
@@ -207,18 +236,21 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          buttonColor: 'secondary',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
@@ -234,18 +266,22 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
         variant="light"
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
@@ -261,18 +297,22 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
         bg="light"
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
@@ -288,17 +328,21 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
@@ -314,17 +358,21 @@ describe('Navbar', () => {
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
-        brand={{
-          label: 'Test',
-        }}
-        search={{
-          placeholderText: 'Search',
-          buttonText: 'Search',
-          onClickButton,
-          onChangeInput,
-        }}
-        navLinks={[
+        navItems={[
           {
+            type: 'brand',
+            label: 'test',
+          },
+          {
+            type: 'search',
+            placeholderText: 'Custom',
+            buttonText: 'Text',
+            buttonColor: 'secondary',
+            onClickButton,
+            onChangeInput,
+          },
+          {
+            type: 'link',
             label: 'Link',
             children: [],
           },
