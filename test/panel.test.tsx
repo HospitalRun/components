@@ -55,7 +55,33 @@ describe('Panel', () => {
     expect(panelWrapper.find(Icon)).toHaveLength(1)
     expect(bodyWrapper.find(Icon)).toHaveLength(1)
   })
+  it('Panel collapse on header click', () => {
+    const panelWrapper = mount(
+      <Panel title="Test Title" collapsible>
+        <p>You can add stuff here!</p>
+        <p>You can open and close me!</p>
+      </Panel>,
+    )
 
+    const cardHeaderWrapper = panelWrapper.find(Card.Header).first()
+    expect(panelWrapper.find('.collapse.show')).toHaveLength(1)
+    cardHeaderWrapper.simulate('click')
+    expect(panelWrapper.find('.collapsing')).toHaveLength(1)
+  })
+  it('Panel open on header click', () => {
+    const panelWrapper = mount(
+      <Panel title="Test Title" collapsible collapsed>
+        <p>You can add stuff here!</p>
+        <p>You can open and close me!</p>
+      </Panel>,
+    )
+
+    const cardHeaderWrapper = panelWrapper.find(Card.Header).first()
+    expect(panelWrapper.find('.collapse.show')).toHaveLength(0)
+    expect(panelWrapper.find('.collapse')).toHaveLength(1)
+    cardHeaderWrapper.simulate('click')
+    expect(panelWrapper.find('.collapsing')).toHaveLength(1)
+  })
   it('Is initially collapsed if collapsed prop is passed', () => {
     const panelWrapper = mount(<Panel collapsible collapsed />)
     expect(panelWrapper.find('.collapse.show')).toHaveLength(0)
