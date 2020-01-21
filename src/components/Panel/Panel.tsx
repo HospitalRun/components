@@ -36,7 +36,7 @@ const Panel = (props: Props) => {
   return (
     <Card border={color}>
       {title && (
-        <Card.Header style={{ textAlign: 'left' }}>
+        <Card.Header onClick={() => setOpen(!open)} style={{ textAlign: 'left' }}>
           {title}
           {collapsible && collapseIcon}
         </Card.Header>
