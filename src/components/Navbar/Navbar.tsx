@@ -94,7 +94,7 @@ const Navbar = (props: Props) => {
 }
 
 Navbar.defaultProps = {
-  bg: 'dark',
-  variant: 'dark',
+  bg: 'light',
+  variant: 'light',
 }
 export { Navbar }
