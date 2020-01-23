@@ -6,7 +6,8 @@ interface Props {
   id: string
   searchAccessor: string
   renderMenuItemChildren: (option: any) => React.ReactNode
-  onSearch: (query: string) => any[]
+  onChange: (selected: any) => void
+  onSearch: (query: string) => Promise<any[]>
   minLength?: number
   placeholder?: string
 }
@@ -14,7 +15,15 @@ interface Props {
 const Typeahead = (props: Props) => {
   const [options, setOptions] = useState<any[]>([])
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const { id, searchAccessor, placeholder, onSearch, renderMenuItemChildren, minLength } = props
+  const {
+    id,
+    searchAccessor,
+    placeholder,
+    onSearch,
+    onChange,
+    renderMenuItemChildren,
+    minLength,
+  } = props
 
   const search = async (query: string) => {
     setIsLoading(true)
@@ -32,6 +41,7 @@ const Typeahead = (props: Props) => {
       isLoading={isLoading}
       minLength={minLength}
       onSearch={search}
+      onChange={onChange}
       renderMenuItemChildren={renderMenuItemChildren}
     />
   )
