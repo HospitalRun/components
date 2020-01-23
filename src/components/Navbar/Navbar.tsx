@@ -27,8 +27,8 @@ const Navbar = (props: Props) => {
       {link.label}
     </NavDropdown.Item>
   )
-  const getNavSearch = (search: NavSearch) => (
-    <Nav>
+  const getNavSearch = (search: NavSearch, index: number) => (
+    <Nav key={index}>
       <Form inline>
         <FormControl
           type="text"
@@ -42,15 +42,13 @@ const Navbar = (props: Props) => {
       </Form>
     </Nav>
   )
-  const getNavList = (list: NavLinkList, index: number) => (
-    <span>
-      <NavDropdown title={list.label} id="collasible-nav-dropdown" key={index}>
-        {list.children.map((subLink, i) => getNavListLinks(subLink, i))}
-      </NavDropdown>
-    </span>
+  const getNavLinkList = (list: NavLinkList, index: number) => (
+    <NavDropdown title={list.label} id="collasible-nav-dropdown" key={index}>
+      {list.children.map((subLink, i) => getNavListLinks(subLink, i))}
+    </NavDropdown>
   )
-  const getNavBrand = (brand: NavBrand) => (
-    <NavbarRB.Brand onClick={brand.onClick} style={{ cursor: 'pointer' }}>
+  const getNavBrand = (brand: NavBrand, index: number) => (
+    <NavbarRB.Brand onClick={brand.onClick} style={{ cursor: 'pointer' }} key={index}>
       {brand.src ? (
         <img
           alt={brand.label}
@@ -73,19 +71,19 @@ const Navbar = (props: Props) => {
   return (
     <NavbarRB bg={bg} variant={variant}>
       <NavbarRB.Collapse id="responsive-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav>
           {navItems.map((item, index) => {
             if ((item as NavBrand).type === 'brand') {
-              return getNavBrand(item as NavBrand)
+              return getNavBrand(item as NavBrand, index)
             }
             if ((item as NavLink).type === 'link') {
               return getNavLink(item as NavLink, index)
             }
             if ((item as NavSearch).type === 'search') {
-              return getNavSearch(item as NavSearch)
+              return getNavSearch(item as NavSearch, index)
             }
             if ((item as NavLinkList).type === 'link-list') {
-              return getNavList(item as NavLinkList, index)
+              return getNavLinkList(item as NavLinkList, index)
             }
             return null
           })}
