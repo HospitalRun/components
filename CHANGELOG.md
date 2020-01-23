@@ -1,3 +1,10 @@
+## [0.30.3](https://github.com/HospitalRun/components/compare/v0.30.2...v0.30.3) (2020-01-23)
+
+
+### Bug Fixes
+
+* **typeahead:** add some missing props to typeahead component ([1d1024e](https://github.com/HospitalRun/components/commit/1d1024ea2760a76bf8e6d2fd322bb3f3be3869aa))
+
 ## [0.30.2](https://github.com/HospitalRun/components/compare/v0.30.1...v0.30.2) (2020-01-17)
 
 
