@@ -36,7 +36,10 @@ const Panel = (props: Props) => {
   return (
     <Card border={color}>
       {title && (
-        <Card.Header onClick={() => collapsible && setOpen(!open)} style={{ textAlign: 'left' }}>
+        <Card.Header
+          style={collapsible ? { cursor: 'pointer', textAlign: 'left' } : { textAlign: 'left' }}
+          onClick={() => collapsible && setOpen(!open)}
+        >
           {title}
           {collapsible && collapseIcon}
         </Card.Header>
