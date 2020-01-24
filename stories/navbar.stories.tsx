@@ -170,6 +170,7 @@ storiesOf('Navbar', module)
           onChangeInput: () => {
             Toast('success', 'Search box changed!!', 'Success')
           },
+          className: 'ml-auto',
         },
         {
           type: 'icon',
@@ -186,7 +187,7 @@ storiesOf('Navbar', module)
           onClick: () => {
             Toast('success', 'Profile icon clicked!!', 'Success')
           },
-          className: 'ml-2',
+          className: 'ml-3',
         },
       ]}
     />

@@ -14,13 +14,15 @@ interface Props extends React.Props<any> {
   variant?: 'light' | 'dark'
   /** Determines the links names, theirs onClick methods and paths. It has children array which contain links to be used on a dropdown. */
   navItems: (NavIcon | NavHeader | NavLink | NavLinkList | NavSearch)[]
+  /** Defines the class of the list. */
+  className?: string
 }
 
 /**
  * Used to redirect users to the main topics.
  */
 const Navbar = (props: Props) => {
-  const { bg, variant, navItems } = props
+  const { bg, variant, navItems, className } = props
 
   const getNavListLink = (link: NavLink, index: number) => (
     <NavDropdown.Item
@@ -94,7 +96,7 @@ const Navbar = (props: Props) => {
   return (
     <NavbarRB bg={bg} variant={variant}>
       <NavbarRB.Collapse id="responsive-navbar-nav">
-        <Nav>
+        <Nav className={className} style={{ width: '100%' }}>
           {navItems.map((item, index) => {
             if ((item as NavHeader).type === 'header') {
               return getNavHeader(item as NavHeader, index)

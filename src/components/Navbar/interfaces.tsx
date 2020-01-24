@@ -1,8 +1,6 @@
 export interface NavItem {
   type: string
-  /**
-   * Defines the class of the list.
-   */
+  /** Defines the class of the list. */
   className?: string
 }
 
