@@ -1,5 +1,9 @@
 export interface NavItem {
   type: string
+  /**
+   * Defines the class of the list.
+   */
+  className?: string
 }
 
 export interface NavIcon extends NavItem {

@@ -22,13 +22,18 @@ interface Props extends React.Props<any> {
 const Navbar = (props: Props) => {
   const { bg, variant, navItems } = props
 
-  const getNavListLinks = (link: NavLink, index: number) => (
-    <NavDropdown.Item href={link.href ? link.href : ''} key={index} onClick={link.onClick}>
+  const getNavListLink = (link: NavLink, index: number) => (
+    <NavDropdown.Item
+      className={link.className ? link.className.concat(' ', '') : ''}
+      href={link.href ? link.href : ''}
+      key={index}
+      onClick={link.onClick}
+    >
       {link.label}
     </NavDropdown.Item>
   )
   const getNavSearch = (search: NavSearch, index: number) => (
-    <Nav key={index}>
+    <Nav className={search.className ? search.className.concat(' ', '') : ''} key={index}>
       <Form inline>
         <FormControl
           type="text"
@@ -43,29 +48,46 @@ const Navbar = (props: Props) => {
     </Nav>
   )
   const getNavLinkList = (list: NavLinkList, index: number) => (
-    <NavDropdown title={list.label} id="collasible-nav-dropdown" key={index}>
-      {list.children.map((subLink, i) => getNavListLinks(subLink, i))}
+    <NavDropdown
+      className={list.className ? list.className.concat(' ', '') : ''}
+      title={list.label}
+      id="collasible-nav-dropdown"
+      key={index}
+    >
+      {list.children.map((listLink, i) => getNavListLink(listLink, i))}
     </NavDropdown>
   )
   const getNavHeader = (header: NavHeader, index: number) => (
-    <NavbarRB.Brand onClick={header.onClick} style={{ cursor: 'pointer' }} key={index}>
+    <NavbarRB.Brand
+      className={header.className ? header.className.concat(' ', '') : ''}
+      onClick={header.onClick}
+      style={{ cursor: 'pointer' }}
+      key={index}
+    >
       <span style={{ color: header.color }}>{`${header.label}`}</span>
     </NavbarRB.Brand>
   )
   const getNavIcon = (icon: NavIcon, index: number) => (
-    <NavbarRB.Brand onClick={icon.onClick} style={{ cursor: 'pointer' }} key={index}>
-      <img
-        alt={icon.alt}
-        src={icon.src}
-        width="28"
-        height="28"
-        className="d-inline-block align-top mr-3"
-      />
+    <NavbarRB.Brand
+      className={
+        icon.className
+          ? icon.className.concat(' ', 'd-inline-block align-top')
+          : 'd-inline-block align-top'
+      }
+      onClick={icon.onClick}
+      style={{ cursor: 'pointer' }}
+      key={index}
+    >
+      <img alt={icon.alt} src={icon.src} width="28" height="28" />
     </NavbarRB.Brand>
   )
 
   const getNavLink = (link: NavLink, index: number) => (
-    <Nav.Link onClick={link.onClick} key={index}>
+    <Nav.Link
+      className={link.className ? link.className.concat(' ', '') : ''}
+      onClick={link.onClick}
+      key={index}
+    >
       {link.label}
     </Nav.Link>
   )
