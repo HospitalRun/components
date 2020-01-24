@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { Button } from '../Button'
-import { NavLink, NavBrand, NavLinkList, NavSearch } from './interfaces'
+import { NavLink, NavIcon, NavHeader, NavLinkList, NavSearch } from './interfaces'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */
@@ -13,7 +13,7 @@ interface Props extends React.Props<any> {
   /** Determines the letters color. It should be combined with the background color (bg) */
   variant?: 'light' | 'dark'
   /** Determines the links names, theirs onClick methods and paths. It has children array which contain links to be used on a dropdown. */
-  navItems: (NavBrand | NavLink | NavLinkList | NavSearch)[]
+  navItems: (NavIcon | NavHeader | NavLink | NavLinkList | NavSearch)[]
 }
 
 /**
@@ -47,22 +47,23 @@ const Navbar = (props: Props) => {
       {list.children.map((subLink, i) => getNavListLinks(subLink, i))}
     </NavDropdown>
   )
-  const getNavBrand = (brand: NavBrand, index: number) => (
-    <NavbarRB.Brand onClick={brand.onClick} style={{ cursor: 'pointer' }} key={index}>
-      {brand.src ? (
-        <img
-          alt={brand.label}
-          src={brand.src}
-          width="28"
-          height="28"
-          className="d-inline-block align-top mr-3"
-        />
-      ) : (
-        ''
-      )}
-      <span style={{ color: brand.color }}>{`${brand.label}`}</span>
+  const getNavHeader = (header: NavHeader, index: number) => (
+    <NavbarRB.Brand onClick={header.onClick} style={{ cursor: 'pointer' }} key={index}>
+      <span style={{ color: header.color }}>{`${header.label}`}</span>
     </NavbarRB.Brand>
   )
+  const getNavIcon = (icon: NavIcon, index: number) => (
+    <NavbarRB.Brand onClick={icon.onClick} style={{ cursor: 'pointer' }} key={index}>
+      <img
+        alt={icon.alt}
+        src={icon.src}
+        width="28"
+        height="28"
+        className="d-inline-block align-top mr-3"
+      />
+    </NavbarRB.Brand>
+  )
+
   const getNavLink = (link: NavLink, index: number) => (
     <Nav.Link onClick={link.onClick} key={index}>
       {link.label}
@@ -73,8 +74,11 @@ const Navbar = (props: Props) => {
       <NavbarRB.Collapse id="responsive-navbar-nav">
         <Nav>
           {navItems.map((item, index) => {
-            if ((item as NavBrand).type === 'brand') {
-              return getNavBrand(item as NavBrand, index)
+            if ((item as NavHeader).type === 'header') {
+              return getNavHeader(item as NavHeader, index)
+            }
+            if ((item as NavIcon).type === 'icon') {
+              return getNavIcon(item as NavIcon, index)
             }
             if ((item as NavLink).type === 'link') {
               return getNavLink(item as NavLink, index)

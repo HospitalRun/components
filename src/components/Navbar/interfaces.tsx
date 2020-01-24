@@ -1,16 +1,25 @@
-export interface NavBrand extends NavItem {
+export interface NavItem {
+  type: string
+}
+
+export interface NavIcon extends NavItem {
+  /** Label color */
+  color?: string
+  /** A path which contains the company icon/image */
+  src: string
+  /** A click handle which will redirect the user to the respectable webpage/path */
+  onClick?: (event: React.MouseEvent<any>) => void
+  /** Alternative text attribute */
+  alt?: string
+}
+
+export interface NavHeader extends NavItem {
   /** Clinic/Hospital name */
   label: string
   /** Label color */
   color?: string
-  /** A path which contain the company icon/image */
-  src?: string
   /** A click handle which will redirect the user to the respectable webpage/path */
   onClick?: (event: React.MouseEvent<any>) => void
-}
-
-export interface NavItem {
-  type: string
 }
 
 export interface NavLink extends NavItem {

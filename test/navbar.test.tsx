@@ -6,21 +6,28 @@ import { Navbar, Button } from '../src'
 
 describe('Navbar', () => {
   it('Navbar renders itself without crashing', () => {
-    const onClickButton = sinon.spy()
+    const onClick = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
           {
-            type: 'brand',
-            label: 'test',
+            type: 'icon',
+            src:
+              'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+            onClick,
+          },
+          {
+            type: 'header',
+            label: 'HospitalRun',
+            onClick,
           },
           {
             type: 'search',
             placeholderText: 'Custom',
             buttonText: 'Text',
             buttonColor: 'secondary',
-            onClickButton,
+            onClickButton: onClick,
             onChangeInput,
           },
           {
@@ -42,7 +49,7 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'test',
           },
           {
@@ -63,8 +70,8 @@ describe('Navbar', () => {
     )
     const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
     /** navbar container default attributes  */
-    expect(bootstrapNavbar.find('[bg="dark"]').prop('bg')).toEqual('dark')
-    expect(bootstrapNavbar.find('[variant="dark"]').prop('variant')).toEqual('dark')
+    expect(bootstrapNavbar.find('[bg="light"]').prop('bg')).toEqual('light')
+    expect(bootstrapNavbar.find('[variant="light"]').prop('variant')).toEqual('light')
     /** navbar search component default attributes  */
     expect(bootstrapNavbar.find('[placeholder="Search"]').prop('placeholder')).toEqual('Search')
     expect(NavbarWrapper.find('Button').prop('color')).toEqual('primary')
@@ -78,7 +85,7 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'test',
           },
           {
@@ -111,7 +118,7 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'test',
           },
           {
@@ -140,14 +147,14 @@ describe('Navbar', () => {
     expect(bootstrapNavDropdown.text()).toEqual('A1')
   })
 
-  it('Navbar brand shows the exactly same text as when it passed on brand prop', () => {
+  it('Navbar header shows the exactly same text as when it passed on header object label property', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'Test',
           },
           {
@@ -166,18 +173,18 @@ describe('Navbar', () => {
         ]}
       />,
     )
-    const brand = NavbarWrapper.find(NavBarRB.Brand)
-    expect(brand.text().trim()).toEqual('Test')
+    const header = NavbarWrapper.find(NavBarRB.Brand)
+    expect(header.text().trim()).toEqual('Test')
   })
 
-  it('Navbar img shows when it passed on src prop', () => {
+  it('Navbar icon shows when it passed on src prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
           {
-            type: 'brand',
+            type: 'icon',
             label: 'test',
             src: 'anysource',
           },
@@ -197,18 +204,18 @@ describe('Navbar', () => {
         ]}
       />,
     )
-    const img = NavbarWrapper.find('img')
-    expect(img).toHaveLength(1)
+    const iconImg = NavbarWrapper.find('img')
+    expect(iconImg).toHaveLength(1)
   })
 
-  it('Navbar img will not show when it not passed on src prop', () => {
+  it('Navbar icon will not show when it not passed on src prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'test',
           },
           {
@@ -227,8 +234,8 @@ describe('Navbar', () => {
         ]}
       />,
     )
-    const img = NavbarWrapper.find('img')
-    expect(img).toHaveLength(0)
+    const iconImg = NavbarWrapper.find('img')
+    expect(iconImg).toHaveLength(0)
   })
 
   it('Navbar buttonColor prop set to secondary', () => {
@@ -238,7 +245,7 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'test',
           },
           {
@@ -269,7 +276,7 @@ describe('Navbar', () => {
         variant="light"
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'test',
           },
           {
@@ -300,7 +307,7 @@ describe('Navbar', () => {
         bg="light"
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'test',
           },
           {
@@ -330,7 +337,7 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'test',
           },
           {
@@ -360,7 +367,7 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'brand',
+            type: 'header',
             label: 'test',
           },
           {
