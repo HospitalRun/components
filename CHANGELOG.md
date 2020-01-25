@@ -1,3 +1,11 @@
+## [0.30.4](https://github.com/HospitalRun/components/compare/v0.30.3...v0.30.4) (2020-01-25)
+
+
+### Bug Fixes
+
+* **textinput:** add password, search, tel, url input types ([71a344d](https://github.com/HospitalRun/components/commit/71a344d53fb14def375f6e8a507746ee2e61a98a)), closes [#226](https://github.com/HospitalRun/components/issues/226)
+* **textinput:** removed the unnecessary union string types from Props ([0084b07](https://github.com/HospitalRun/components/commit/0084b0773bb98412cc49c33bb992e05cf0ba13a2))
+
 ## [0.30.3](https://github.com/HospitalRun/components/compare/v0.30.2...v0.30.3) (2020-01-23)
 
 

@@ -43,6 +43,38 @@ storiesOf('TextInput', module)
       />
     </div>
   ))
+  .add('Default password input', () => (
+    <div>
+      <TextInput type="password" name="text-input" id="text-input" size="lg" value="12345678" />
+    </div>
+  ))
+  .add('Default search input', () => (
+    <div>
+      <TextInput
+        type="search"
+        name="text-input"
+        id="text-input"
+        size="lg"
+        value="testsearchstring"
+      />
+    </div>
+  ))
+  .add('Default tel input', () => (
+    <div>
+      <TextInput type="tel" name="text-input" id="text-input" size="lg" value="123-456-7890" />
+    </div>
+  ))
+  .add('Default url input', () => (
+    <div>
+      <TextInput
+        type="url"
+        name="text-input"
+        id="text-input"
+        size="lg"
+        value="https://www.google.com"
+      />
+    </div>
+  ))
   .add('Disabled text input', () => (
     <div>
       <TextInput
