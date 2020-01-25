@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 
 interface Props {
   /** Defines the type of the input. Defaults to 'text' if not specified. */
-  type?: 'text' | 'number' | 'email'
+  type?: 'text' | 'number' | 'email' | 'password' | 'search' | 'tel' | 'url'
   /** Defines the size of the input. Defaults to 'lg' */
   size?: 'sm' | 'lg'
   /** The value of the input */
