@@ -34,28 +34,28 @@ storiesOf('Panel', module)
   ))
   .add('Panel Color Variants', () => (
     <div>
-      <Panel title="Panel Title" color="primary">
+      <Panel className="my-2" title="Panel Title" color="primary">
         <p>You can add stuff here!</p>
       </Panel>
-      <Panel title="Panel Title" color="secondary">
+      <Panel className="my-2" title="Panel Title" color="secondary">
         <p>You can add stuff here!</p>
       </Panel>
-      <Panel title="Panel Title" color="success">
+      <Panel className="my-2" title="Panel Title" color="success">
         <p>You can add stuff here!</p>
       </Panel>
-      <Panel title="Panel Title" color="warning">
+      <Panel className="my-2" title="Panel Title" color="warning">
         <p>You can add stuff here!</p>
       </Panel>
-      <Panel title="Panel Title" color="danger">
+      <Panel className="my-2" title="Panel Title" color="danger">
         <p>You can add stuff here!</p>
       </Panel>
-      <Panel title="Panel Title" color="info">
+      <Panel className="my-2" title="Panel Title" color="info">
         <p>You can add stuff here!</p>
       </Panel>
-      <Panel title="Panel Title" color="light">
+      <Panel className="my-2" title="Panel Title" color="light">
         <p>You can add stuff here!</p>
       </Panel>
-      <Panel title="Panel Title" color="dark">
+      <Panel className="my-2" title="Panel Title" color="dark">
         <p>You can add stuff here!</p>
       </Panel>
     </div>

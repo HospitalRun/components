@@ -4,7 +4,7 @@ import { Card, Collapse } from 'react-bootstrap'
 import { Panel, Icon } from '../src'
 
 describe('Panel', () => {
-  it('should render empty panel without crashing', () => {
+  it('should render itself without props and without crashing', () => {
     const panelWrapper = shallow(<Panel />)
     expect(panelWrapper.find(Card)).toHaveLength(1)
     expect(panelWrapper.find(Card.Header)).toHaveLength(0)

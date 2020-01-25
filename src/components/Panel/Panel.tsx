@@ -8,7 +8,7 @@ interface Props {
   color?: ColorVariant
   /** The body for the panel */
   children?: React.ReactNode
-  /** The title for the Panel */
+  /** The title for the panel */
   title?: string
   /** The footer for the panel */
   footer?: string
@@ -16,10 +16,12 @@ interface Props {
   collapsible?: boolean
   /** Determines if the panel should be collapsed */
   collapsed?: boolean
+  /** The className for the panel card parent element */
+  className?: string
 }
 
 const Panel = (props: Props) => {
-  const { color, children, footer, title, collapsible, collapsed } = props
+  const { color, children, footer, title, collapsible, collapsed, className } = props
   const [open, setOpen] = useState(!collapsed || !collapsible)
 
   const collapseIcon = (
@@ -34,7 +36,7 @@ const Panel = (props: Props) => {
   )
 
   return (
-    <Card border={color}>
+    <Card className={className ? className.concat('', '') : className} border={color}>
       {title && (
         <Card.Header
           style={collapsible ? { cursor: 'pointer', textAlign: 'left' } : { textAlign: 'left' }}
