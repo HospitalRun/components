@@ -5,7 +5,7 @@ import { Nav, Navbar as NavBarRB, NavDropdown, FormControl } from 'react-bootstr
 import { Navbar, Button } from '../src'
 
 describe('Navbar', () => {
-  it('Navbar renders itself without crashing', () => {
+  it('should render itself without crashing', () => {
     const onClick = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -42,7 +42,7 @@ describe('Navbar', () => {
     expect(bootstrapNavbar).toHaveLength(1)
   })
 
-  it('Navbar component renders default props accordingly', () => {
+  it('should render default props accordingly', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -78,7 +78,7 @@ describe('Navbar', () => {
     expect(NavbarWrapper.find('Button').prop('children')).toEqual('Search')
   })
 
-  it('Navbar links show the exactly links as when it passed on links prop and Navbar dropdown will not be shown', () => {
+  it('should render link label as passed in the label prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -99,19 +99,15 @@ describe('Navbar', () => {
           {
             type: 'link',
             label: 'Elem1',
-            children: [],
           },
         ]}
       />,
     )
     const bootstrapNavbarLink = NavbarWrapper.find(Nav.Link)
     expect(bootstrapNavbarLink.text()).toEqual('Elem1')
-
-    const bootstrapNavDropdown = NavbarWrapper.find(NavDropdown)
-    expect(bootstrapNavDropdown).toHaveLength(0)
   })
 
-  it('Navbar dropdown shows the exactly same links as when it passed on links prop', () => {
+  it('should render link list item label as passed in the label prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -147,7 +143,7 @@ describe('Navbar', () => {
     expect(bootstrapNavDropdown.text()).toEqual('A1')
   })
 
-  it('Navbar header shows the exactly same text as when it passed on header object label property', () => {
+  it('should render header label as passed in label prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -176,8 +172,7 @@ describe('Navbar', () => {
     const header = NavbarWrapper.find(NavBarRB.Brand)
     expect(header.text().trim()).toEqual('Test')
   })
-
-  it('Navbar icon shows when it passed on src prop', () => {
+  it('should render icon src as passed in src prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -208,37 +203,7 @@ describe('Navbar', () => {
     expect(iconImg).toHaveLength(1)
   })
 
-  it('Navbar icon will not show when it not passed on src prop', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
-    const NavbarWrapper = shallow(
-      <Navbar
-        navItems={[
-          {
-            type: 'header',
-            label: 'test',
-          },
-          {
-            type: 'search',
-            placeholderText: 'Custom',
-            buttonText: 'Text',
-            buttonColor: 'secondary',
-            onClickButton,
-            onChangeInput,
-          },
-          {
-            type: 'link',
-            label: 'Link',
-            children: [],
-          },
-        ]}
-      />,
-    )
-    const iconImg = NavbarWrapper.find('img')
-    expect(iconImg).toHaveLength(0)
-  })
-
-  it('Navbar buttonColor prop set to secondary', () => {
+  it('should render button color as passed in buttonColor prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -268,7 +233,7 @@ describe('Navbar', () => {
     expect(button.props().color).toEqual('secondary')
   })
 
-  it('Navbar variant set to light', () => {
+  it('should render variant to light as passed in variant prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -299,7 +264,7 @@ describe('Navbar', () => {
     expect(bootstrapNavbar.props().variant).toEqual('light')
   })
 
-  it('Navbar bg set to light', () => {
+  it('should render bg to light as passed in bg prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -330,7 +295,7 @@ describe('Navbar', () => {
     expect(bootstrapNavbar.props().bg).toEqual('light')
   })
 
-  it('Navbar search button handles on click event', () => {
+  it('should handle click event on search button click', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
@@ -360,7 +325,7 @@ describe('Navbar', () => {
     expect(onClickButton).toHaveProperty('callCount', 1)
   })
 
-  it('Navbar search form handles on change event', () => {
+  it('should handle onchange event on search form change', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
