@@ -7,15 +7,15 @@ interface Props {
   /** Defines the size of the input. Defaults to 'lg' */
   size?: 'sm' | 'lg'
   /** The value of the input */
-  value?: string | ''
+  value?: string
   /** Handles the onChange event for the input */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   /** The name of the input */
-  name?: string | ''
+  name?: string
   /** The id value of the input */
-  id?: string | ''
+  id?: string
   /** The placeholder inside of the text input */
-  placeholder?: string | ''
+  placeholder?: string
   /** Defines whether the input should be disabled or not. Defaults to false. */
   disabled?: boolean
   /** Defines whether the input should display as invalid. Defaults to false. */
