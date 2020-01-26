@@ -36,7 +36,7 @@ const Panel = (props: Props) => {
   )
 
   return (
-    <Card className={className ? className.concat('', '') : className} border={color}>
+    <Card className={className} border={color}>
       {title && (
         <Card.Header
           style={collapsible ? { cursor: 'pointer', textAlign: 'left' } : { textAlign: 'left' }}
