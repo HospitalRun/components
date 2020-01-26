@@ -26,7 +26,7 @@ const Navbar = (props: Props) => {
 
   const getNavListLink = (link: NavLink, index: number) => (
     <NavDropdown.Item
-      className={link.className ? link.className.concat(' ', '') : ''}
+      className={link.className}
       href={link.href ? link.href : ''}
       key={index}
       onClick={link.onClick}
@@ -35,7 +35,7 @@ const Navbar = (props: Props) => {
     </NavDropdown.Item>
   )
   const getNavSearch = (search: NavSearch, index: number) => (
-    <Nav className={search.className ? search.className.concat(' ', '') : ''} key={index}>
+    <Nav className={search.className} key={index}>
       <Form inline>
         <FormControl
           type="text"
@@ -51,7 +51,7 @@ const Navbar = (props: Props) => {
   )
   const getNavLinkList = (list: NavLinkList, index: number) => (
     <NavDropdown
-      className={list.className ? list.className.concat(' ', '') : ''}
+      className={list.className}
       title={list.label}
       id="collasible-nav-dropdown"
       key={index}
@@ -61,7 +61,7 @@ const Navbar = (props: Props) => {
   )
   const getNavHeader = (header: NavHeader, index: number) => (
     <NavbarRB.Brand
-      className={header.className ? header.className.concat(' ', '') : ''}
+      className={header.className}
       onClick={header.onClick}
       style={{ cursor: 'pointer' }}
       key={index}
@@ -85,11 +85,7 @@ const Navbar = (props: Props) => {
   )
 
   const getNavLink = (link: NavLink, index: number) => (
-    <Nav.Link
-      className={link.className ? link.className.concat(' ', '') : ''}
-      onClick={link.onClick}
-      key={index}
-    >
+    <Nav.Link className={link.className} onClick={link.onClick} key={index}>
       {link.label}
     </Nav.Link>
   )
