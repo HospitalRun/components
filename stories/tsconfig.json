@@ -4,6 +4,7 @@
   "compilerOptions": {
     "declaration": false,
     "baseUrl": "../",
+    "sourceMap": true,
     "paths": {
       "@hospitalrun/components": ["../src"]
     }
