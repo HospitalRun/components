@@ -1,3 +1,56 @@
+## [0.30.4](https://github.com/HospitalRun/components/compare/v0.30.3...v0.30.4) (2020-01-25)
+
+
+### Bug Fixes
+
+* **textinput:** add password, search, tel, url input types ([71a344d](https://github.com/HospitalRun/components/commit/71a344d53fb14def375f6e8a507746ee2e61a98a)), closes [#226](https://github.com/HospitalRun/components/issues/226)
+* **textinput:** removed the unnecessary union string types from Props ([0084b07](https://github.com/HospitalRun/components/commit/0084b0773bb98412cc49c33bb992e05cf0ba13a2))
+
+## [0.30.3](https://github.com/HospitalRun/components/compare/v0.30.2...v0.30.3) (2020-01-23)
+
+
+### Bug Fixes
+
+* **typeahead:** add some missing props to typeahead component ([1d1024e](https://github.com/HospitalRun/components/commit/1d1024ea2760a76bf8e6d2fd322bb3f3be3869aa))
+
+## [0.30.2](https://github.com/HospitalRun/components/compare/v0.30.1...v0.30.2) (2020-01-17)
+
+
+### Bug Fixes
+
+* **calendar:** fix export for calendar ([be8c98b](https://github.com/HospitalRun/components/commit/be8c98bb09364167a984ab3fa157b69d383f2ad4))
+
+## [0.30.1](https://github.com/HospitalRun/components/compare/v0.30.0...v0.30.1) (2020-01-11)
+
+
+### Bug Fixes
+
+* **scss:** fix imports to external dependencies ([080b73e](https://github.com/HospitalRun/components/commit/080b73e9fbe640af4487ba609ad0037e49e89eef))
+
+# [0.30.0](https://github.com/HospitalRun/components/compare/v0.29.0...v0.30.0) (2020-01-11)
+
+
+### Features
+
+* **tab:** add Tab and TabsHeader components ([431d08a](https://github.com/HospitalRun/components/commit/431d08a15acf1594779a4867ee79f014ae7395f2)), closes [#24](https://github.com/HospitalRun/components/issues/24)
+* **tab:** use project's existing Button component ([24d617f](https://github.com/HospitalRun/components/commit/24d617fa6e04107f79e59308d52755a920ee368f)), closes [#24](https://github.com/HospitalRun/components/issues/24)
+
+# [0.29.0](https://github.com/HospitalRun/components/compare/v0.28.0...v0.29.0) (2020-01-11)
+
+
+### Features
+
+* **typeahead:** add typeahead component ([0b0f1a8](https://github.com/HospitalRun/components/commit/0b0f1a8603cadf0016dfcb1bf6bc00e70bb77bc2))
+
+# [0.28.0](https://github.com/HospitalRun/components/compare/v0.27.2...v0.28.0) (2020-01-10)
+
+
+### Features
+
+* **css:** add tsdx config for PostCSS, organize CSS and SASS imports ([add82bf](https://github.com/HospitalRun/components/commit/add82bf51b9dd89e7299783148f2b815951d7a5e))
+* **css:** create a Theme to override Bootstrap colors ([4094600](https://github.com/HospitalRun/components/commit/4094600934834fd05b321b80842749cee6ec3bb7)), closes [#35](https://github.com/HospitalRun/components/issues/35)
+* **css:** update jest config to mock .scss imports to fix test failures ([5206931](https://github.com/HospitalRun/components/commit/5206931ec744795ce3a07eedd3084b280b4f7a69))
+
 ## [0.27.2](https://github.com/HospitalRun/components/compare/v0.27.1...v0.27.2) (2020-01-03)
 
 

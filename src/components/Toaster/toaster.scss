@@ -1,0 +1,17 @@
+@import "../../../scss/_variables";
+
+div.Toastify__toast.Toastify__toast--error {
+  background: map-get($theme-colors, error);
+}
+
+div.Toastify__toast.Toastify__toast--info {
+  background: map-get($theme-colors, info);
+}
+
+div.Toastify__toast.Toastify__toast--success {
+  background: map-get($theme-colors, success);
+}
+
+div.Toastify__toast.Toastify__toast--warning {
+  background: map-get($theme-colors, warning);
+}
