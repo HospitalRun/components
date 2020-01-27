@@ -23,7 +23,6 @@ module.exports = async ({ config, mode }) => {
     exclude: [/node_modules/],
     enforce: 'pre',
   });
-
   config.module.rules.push({
     test: /\.s[ac]ss$/i,
     use: [
