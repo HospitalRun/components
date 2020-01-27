@@ -3,7 +3,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import { TextField } from '../src'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 storiesOf('TextField', module)
   .addParameters({

@@ -23,6 +23,17 @@ module.exports = async ({ config, mode }) => {
     exclude: [/node_modules/],
     enforce: 'pre',
   });
+  config.module.rules.push({
+    test: /\.s[ac]ss$/i,
+    use: [
+      // Creates `style` nodes from JS strings
+      'style-loader',
+      // Translates CSS into CommonJS
+      'css-loader',
+      // Compiles Sass to CSS
+      'sass-loader',
+    ],
+  })
   config.resolve.extensions = ['.ts', '.tsx', '.js', '.jsx']
   config.plugins.push(
     new webpack.DefinePlugin({
