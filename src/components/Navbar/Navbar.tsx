@@ -36,14 +36,18 @@ const Navbar = (props: Props) => {
   )
   const getNavSearch = (search: NavSearch, index: number) => (
     <Nav className={search.className} key={index}>
-      <Form inline>
+      <Form inline style={{ flexFlow: 'row' }}>
         <FormControl
           type="text"
+          className="w-auto d-inline-block"
           placeholder={search.placeholderText || 'Search'}
-          className="mr-sm-2"
           onChange={search.onChangeInput}
         />
-        <Button color={search.buttonColor || 'primary'} onClick={search.onClickButton}>
+        <Button
+          className="w-auto d-inline-block"
+          color={search.buttonColor || 'primary'}
+          onClick={search.onClickButton}
+        >
           {search.buttonText || 'Search'}
         </Button>
       </Form>
@@ -61,21 +65,20 @@ const Navbar = (props: Props) => {
   )
   const getNavHeader = (header: NavHeader, index: number) => (
     <NavbarRB.Brand
-      className={header.className}
+      className={header.className ? header.className.concat(' ', 'align-top') : 'align-top'}
       onClick={header.onClick}
       style={{ cursor: 'pointer' }}
       key={index}
     >
+      <span className="d-md-none">{header.iconImg}</span>
       <span style={{ color: header.color }}>{`${header.label}`}</span>
     </NavbarRB.Brand>
   )
   const getNavIcon = (icon: NavIcon, index: number) => (
     <NavbarRB.Brand
-      className={
-        icon.className
-          ? icon.className.concat(' ', 'd-inline-block align-top')
-          : 'd-inline-block align-top'
-      }
+      className={`${icon.className ? icon.className : ''} align-top${
+        icon.mobileOptions && icon.mobileOptions.hide ? ' d-none d-md-inline-block' : ''
+      }`}
       onClick={icon.onClick}
       style={{ cursor: 'pointer' }}
       key={index}
@@ -90,9 +93,10 @@ const Navbar = (props: Props) => {
     </Nav.Link>
   )
   return (
-    <NavbarRB bg={bg} variant={variant}>
+    <NavbarRB expand="lg" bg={bg} variant={variant} className={className}>
+      <NavbarRB.Toggle aria-controls="responsive-navbar-nav" />
       <NavbarRB.Collapse id="responsive-navbar-nav">
-        <Nav className={className} style={{ width: '100%' }}>
+        <Nav className={`${className} text-left`} style={{ width: '100%' }}>
           {navItems.map((item, index) => {
             if ((item as NavHeader).type === 'header') {
               return getNavHeader(item as NavHeader, index)

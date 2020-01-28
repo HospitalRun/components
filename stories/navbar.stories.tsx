@@ -27,6 +27,9 @@ storiesOf('Navbar', module)
           onClick: () => {
             Toast('success', 'Icon clicked!!', 'Success')
           },
+          mobileOptions: {
+            hide: true,
+          },
         },
         {
           type: 'header',
@@ -34,6 +37,15 @@ storiesOf('Navbar', module)
           onClick: () => {
             Toast('success', 'Header clicked!!', 'Success')
           },
+          iconImg: (
+            <img
+              className="mr-2"
+              alt="Hospital Run"
+              src="https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png"
+              width="28"
+              height="28"
+            />
+          ),
         },
         {
           type: 'link',
@@ -51,7 +63,7 @@ storiesOf('Navbar', module)
         },
         {
           type: 'search',
-          className: 'ml-auto mr-3',
+          className: 'ml-lg-auto mr-3',
           onClickButton: () => {
             Toast('success', 'Button clicked!!', 'Success')
           },
@@ -115,7 +127,7 @@ storiesOf('Navbar', module)
         {
           type: 'search',
           placeholderText: 'Custom',
-          className: 'ml-auto',
+          className: 'ml-lg-auto',
           buttonText: 'Text',
           buttonColor: 'secondary',
           onClickButton: () => {
@@ -164,7 +176,7 @@ storiesOf('Navbar', module)
         {
           type: 'search',
           placeholderText: 'Custom',
-          className: 'ml-auto',
+          className: 'ml-lg-auto',
           buttonText: 'Text',
           buttonColor: 'secondary',
           onClickButton: () => {
@@ -218,7 +230,7 @@ storiesOf('Navbar', module)
         {
           type: 'search',
           placeholderText: 'Custom',
-          className: 'ml-auto mr-3',
+          className: 'ml-lg-auto mr-3',
           buttonText: 'Text',
           buttonColor: 'secondary',
           onClickButton: () => {

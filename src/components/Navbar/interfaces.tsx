@@ -2,8 +2,12 @@ export interface NavItem {
   type: string
   /** Defines the class of the list. */
   className?: string
+  mobileOptions?: MobileOptions
 }
-
+export interface MobileOptions {
+  hide?: boolean
+  inline?: boolean
+}
 export interface NavIcon extends NavItem {
   /** Label color */
   color?: string
@@ -22,6 +26,8 @@ export interface NavHeader extends NavItem {
   color?: string
   /** A click handle which will redirect the user to the respectable webpage/path */
   onClick?: (event: React.MouseEvent<any>) => void
+  /** Optional icon for mobile view */
+  iconImg: JSX.Element
 }
 
 export interface NavLink extends NavItem {
