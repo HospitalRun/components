@@ -48,7 +48,7 @@ it('accepts props and defaults as by DatePicker API', () => {
       excludeDates={[date]}
       includeDates={[date]}
       inline
-      locale="pt-BR"
+      locale="ptBR"
       maxDate={date}
       maxTime={date}
       minDate={date}
@@ -80,7 +80,7 @@ it('accepts props and defaults as by DatePicker API', () => {
   expect(pickerProps.excludeDates).toEqual([date])
   expect(pickerProps.includeDates).toEqual([date])
   expect(pickerProps.inline).toBeTruthy()
-  expect(pickerProps.locale).toEqual('pt-BR')
+  expect(pickerProps.locale).toEqual('ptBR')
   expect(pickerProps.maxDate).toEqual(date)
   expect(pickerProps.maxTime).toEqual(date)
   expect(pickerProps.minDate).toEqual(date)

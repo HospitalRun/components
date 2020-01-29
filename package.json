@@ -134,6 +134,7 @@
     "@types/react-bootstrap-typeahead": "^3.4.5",
     "@types/react-datepicker": "~2.10.0",
     "chart.js": "~2.9.3",
+    "date-fns": "^2.9.0",
     "formik": "~2.1.0",
     "moment": "~2.24.0",
     "react-bootstrap-typeahead": "^3.4.7",
