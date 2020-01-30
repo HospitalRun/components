@@ -1,15 +1,30 @@
-export interface Brand {
+export interface NavItem {
+  type: string
+  /** Defines the class of the list. */
+  className?: string
+}
+
+export interface NavIcon extends NavItem {
+  /** Label color */
+  color?: string
+  /** A path which contains the company icon/image */
+  src: string
+  /** A click handle which will redirect the user to the respectable webpage/path */
+  onClick?: (event: React.MouseEvent<any>) => void
+  /** Alternative text attribute */
+  alt?: string
+}
+
+export interface NavHeader extends NavItem {
   /** Clinic/Hospital name */
   label: string
   /** Label color */
   color?: string
-  /** A path which contain the company icon/image */
-  src?: string
   /** A click handle which will redirect the user to the respectable webpage/path */
   onClick?: (event: React.MouseEvent<any>) => void
 }
 
-export interface NavLinkElement {
+export interface NavLink extends NavItem {
   /** The link name */
   label: string
   /** A click handle which will redirect the user to whenever it is clicked */
@@ -18,12 +33,12 @@ export interface NavLinkElement {
   href?: string
 }
 
-export interface NavLink extends NavLinkElement {
+export interface NavLinkList extends NavLink {
   /** An array to hold a dropdown Links */
-  children: NavLinkElement[]
+  children: Array<NavLink>
 }
 
-export interface Search {
+export interface NavSearch extends NavItem {
   /** Defines the placeholder text. */
   placeholderText?: string
   /** Defines the button text. */
