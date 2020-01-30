@@ -1,3 +1,18 @@
+# [0.31.0](https://github.com/HospitalRun/components/compare/v0.30.4...v0.31.0) (2020-01-29)
+
+
+### Bug Fixes
+
+* **panel:** add missing test for header onclick panel toggle ([5274a20](https://github.com/HospitalRun/components/commit/5274a205045b013e42da9944f01a88be1f6b6bd9)), closes [#233](https://github.com/HospitalRun/components/issues/233)
+* **panel:** fix panel opening on non collapsible panel ([b2ecdf4](https://github.com/HospitalRun/components/commit/b2ecdf44a5f68cba49ade940d9a707232c65d33a)), closes [#233](https://github.com/HospitalRun/components/issues/233)
+* **panel:** make panel collapse on header click ([2ab4878](https://github.com/HospitalRun/components/commit/2ab487838ce22b281a39bcf34602ecefc38f8e1c)), closes [#229](https://github.com/HospitalRun/components/issues/229)
+* **panel:** remove classname boilerplatee ([f8ea36f](https://github.com/HospitalRun/components/commit/f8ea36f1e22cda015703b0763da2f1804d58b39d)), closes [#233](https://github.com/HospitalRun/components/issues/233)
+
+
+### Features
+
+* **panel:** add classname to panel prop and modify stories ([7e72639](https://github.com/HospitalRun/components/commit/7e726396582da9c799af0dc500134c3c3fea81a7)), closes [#233](https://github.com/HospitalRun/components/issues/233)
+
 ## [0.30.4](https://github.com/HospitalRun/components/compare/v0.30.3...v0.30.4) (2020-01-25)
 
 
