@@ -64,7 +64,6 @@ const Calendar = (props: Props) => {
       plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
       themeSystem="bootstrap"
       dateClick={(arg) => {
-        console.log('date click')
         if (onDateClick) {
           onDateClick(arg.date, arg.allDay)
         }
