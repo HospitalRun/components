@@ -1,3 +1,22 @@
+# [0.32.0](https://github.com/HospitalRun/components/compare/v0.31.0...v0.32.0) (2020-01-30)
+
+
+### Bug Fixes
+
+* **navbar:** fix tests, refactor brand component to icon and header, ([91ce73e](https://github.com/HospitalRun/components/commit/91ce73e724294906d9aba2ccc9ef49f05acf45ac)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** remove className boilerplates ([1042a66](https://github.com/HospitalRun/components/commit/1042a662ad5694f26a6a01d7a1735da3480bee52)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** remove test story ([c569ce6](https://github.com/HospitalRun/components/commit/c569ce669983fc062deebd79509c84d4944d0811)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** repeated key warning in navbar items ([a52cff7](https://github.com/HospitalRun/components/commit/a52cff7a112de53d7b9ffe62b83c1e9b4499f5d0)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** suggest new default and dark theme color, improve examples ([8ebbcf0](https://github.com/HospitalRun/components/commit/8ebbcf08b0ca1660b7e9ff13d1690c236f00569f)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+
+
+### Features
+
+* **navbar:** add example with icons and support className prop ([4784520](https://github.com/HospitalRun/components/commit/4784520cd8c696fd86a15132d0d299e94833a97a)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** refactor navbar tests ([717a9fc](https://github.com/HospitalRun/components/commit/717a9fced986f70a94592d824be0426a6eccb18e)), closes [#225](https://github.com/HospitalRun/components/issues/225)
+* **navbar:** support classname for all components and justify example ([45faf19](https://github.com/HospitalRun/components/commit/45faf193b1f87d6697c19fbdbe59e03e58f49e49)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** support navbar items horizontal position w array order ([f80382f](https://github.com/HospitalRun/components/commit/f80382f9f1d7eee61e04dfa01b09aaef38487590)), closes [#225](https://github.com/HospitalRun/components/issues/225)
+
 # [0.31.0](https://github.com/HospitalRun/components/compare/v0.30.4...v0.31.0) (2020-01-29)
 
 
