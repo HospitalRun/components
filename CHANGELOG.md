@@ -1,3 +1,10 @@
+## [0.32.1](https://github.com/HospitalRun/components/compare/v0.32.0...v0.32.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* **calendar:** remove extraneous log ([1f1037a](https://github.com/HospitalRun/components/commit/1f1037a583361faa67f6fdf49d5223891921a583)), closes [#252](https://github.com/HospitalRun/components/issues/252)
+
 # [0.32.0](https://github.com/HospitalRun/components/compare/v0.31.0...v0.32.0) (2020-01-30)
 
 
