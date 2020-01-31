@@ -6,7 +6,7 @@ module.exports = async ({ config, mode }) => {
     test: /\.tsx?$/,
     use: [
       {
-        loader: require.resolve('ts-loader'),
+        loader: require.resolve('awesome-typescript-loader'),
         options: {
           configFile: path.resolve(__dirname, '../stories/tsconfig.json'),
         }
