@@ -63,7 +63,7 @@ const TextInput = (props: Props) => {
       disabled={disabled}
       isInvalid={isInvalid}
       isValid={isValid}
-      defaultValue={value}
+      value={value}
       size={size}
       className={className}
       style={style}
