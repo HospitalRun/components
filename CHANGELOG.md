@@ -1,3 +1,11 @@
+## [0.32.2](https://github.com/HospitalRun/components/compare/v0.32.1...v0.32.2) (2020-02-02)
+
+
+### Bug Fixes
+
+* **textfield:** fixes prop issue in textfield ([81ee377](https://github.com/HospitalRun/components/commit/81ee377616a360c73ed997ed4c2a30ceceac6173))
+* **textinput:** fixes prop issue in textinput ([1aef1d5](https://github.com/HospitalRun/components/commit/1aef1d5669c42a8c501468c711e37d3071a82f1e))
+
 ## [0.32.1](https://github.com/HospitalRun/components/compare/v0.32.0...v0.32.1) (2020-01-31)
 
 
