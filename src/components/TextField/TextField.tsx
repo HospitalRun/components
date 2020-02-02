@@ -42,7 +42,7 @@ const TextField = (props: Props) => {
       name={name}
       rows={rows}
       size={getControlSize(size)}
-      defaultValue={value}
+      value={value}
       onChange={onChange}
       className={className}
       style={style}
