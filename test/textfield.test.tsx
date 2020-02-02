@@ -20,6 +20,9 @@ describe('TextField', () => {
     expect(
       wrapper.find(HTMLTextAreaElement).filterWhere((item) => item.prop('name') === name),
     ).toHaveLength(1)
+    expect(
+      wrapper.find(HTMLTextAreaElement).filterWhere((item) => item.prop('value') === value),
+    ).toHaveLength(1)
   })
 
   it('handles the onchange event for the TextField', () => {
