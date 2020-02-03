@@ -31,7 +31,32 @@ describe('Typeahead', () => {
     expect(reactBootstrapTypeahead.prop('placeholder')).toEqual(placeholder)
     expect(reactBootstrapTypeahead.prop('minLength')).toEqual(minLength)
     expect(reactBootstrapTypeahead.prop('id')).toEqual(id)
+    expect(reactBootstrapTypeahead.prop('defaultSelected')).toEqual([])
     expect(wrapper.prop('labelKey')).toEqual(searchAccessor)
+  })
+
+  it('should properly set the default value when value prop is given', () => {
+    const search = jest.fn()
+    const render = jest.fn()
+    const change = jest.fn()
+    const id = 'id'
+    const searchAccessor = 'search'
+    const placeholder = 'placeholder'
+    const expectedData = { id: '123' }
+
+    const wrapper = shallow(
+      <Typeahead
+        placeholder={placeholder}
+        onSearch={search}
+        onChange={change}
+        renderMenuItemChildren={render}
+        id={id}
+        value={expectedData}
+        searchAccessor={searchAccessor}
+      />,
+    )
+
+    expect(wrapper.find(AsyncTypeahead).prop('defaultSelected')).toEqual([expectedData])
   })
 
   it('should default min length to 3', () => {

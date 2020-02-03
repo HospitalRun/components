@@ -48,4 +48,26 @@ storiesOf('Typeahead', module)
         )}
       />
     </div>
+  )).add('Typeahead with default value', () => (
+    <div>
+      <Typeahead
+        id="typeahead"
+        searchAccessor="fullName"
+        placeholder="placeholder"
+        onSearch={() => getOptions()}
+        onChange={(selected) => alert(JSON.stringify(selected))}
+        value={{
+          id: '3',
+          firstName: 'first3',
+          lastName: 'last3',
+          fullName: 'first3 last3',
+        }}
+        renderMenuItemChildren={(option) => (
+          // eslint-disable-next-line
+            <div>
+              {`${option.fullName}`}
+            </div>
+        )}
+      />
+    </div>
   ))

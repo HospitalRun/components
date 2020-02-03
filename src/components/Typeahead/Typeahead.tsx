@@ -10,6 +10,7 @@ interface Props {
   onSearch: (query: string) => Promise<any[]>
   minLength?: number
   placeholder?: string
+  value?: any
 }
 
 const Typeahead = (props: Props) => {
@@ -23,6 +24,7 @@ const Typeahead = (props: Props) => {
     onChange,
     renderMenuItemChildren,
     minLength,
+    value,
   } = props
 
   const search = async (query: string) => {
@@ -30,6 +32,11 @@ const Typeahead = (props: Props) => {
     const results = await onSearch(query)
     setOptions(results)
     setIsLoading(false)
+  }
+
+  const selectedValues = []
+  if (value) {
+    selectedValues.push(value)
   }
 
   return (
@@ -43,6 +50,7 @@ const Typeahead = (props: Props) => {
       onSearch={search}
       onChange={onChange}
       renderMenuItemChildren={renderMenuItemChildren}
+      defaultSelected={selectedValues}
     />
   )
 }
