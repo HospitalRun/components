@@ -1,3 +1,10 @@
+## [0.32.3](https://github.com/HospitalRun/components/compare/v0.32.2...v0.32.3) (2020-02-03)
+
+
+### Bug Fixes
+
+* **typeahead:** add ability to set default value ([ed9cad6](https://github.com/HospitalRun/components/commit/ed9cad65a783c6e9e240607a1bb243fdbd1657e9))
+
 ## [0.32.2](https://github.com/HospitalRun/components/compare/v0.32.1...v0.32.2) (2020-02-02)
 
 
