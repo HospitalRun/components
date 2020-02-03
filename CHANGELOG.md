@@ -1,3 +1,11 @@
+## [0.32.4](https://github.com/HospitalRun/components/compare/v0.32.3...v0.32.4) (2020-02-03)
+
+
+### Bug Fixes
+
+* **i18n:** register locales to remove extraneous logs ([095bd72](https://github.com/HospitalRun/components/commit/095bd72b99f099bf15c27e2c4df416a0593fffc2)), closes [#251](https://github.com/HospitalRun/components/issues/251)
+* **testing:** remove datetimepicker extraneous logs ([80a5f5b](https://github.com/HospitalRun/components/commit/80a5f5b6e5c7bff0be8f1258797dd73018e070d2)), closes [#146](https://github.com/HospitalRun/components/issues/146)
+
 ## [0.32.3](https://github.com/HospitalRun/components/compare/v0.32.2...v0.32.3) (2020-02-03)
 
 
