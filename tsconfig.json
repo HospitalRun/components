@@ -1,43 +1,34 @@
 {
   "include": [
-    "./src",
-    "./types"
+    "src",
+    "types"
   ],
   "exclude": [
     "node_modules",
     "dist"
   ],
   "compilerOptions": {
+    "moduleResolution": "node",
     "target": "es5",
     "module": "esnext",
+    "outDir": "dist",
     "lib": [
       "dom",
       "esnext"
     ],
-    "importHelpers": true,
+    "strict": true,
+    "esModuleInterop": true,
     "declaration": true,
     "sourceMap": true,
-    "rootDir": "./",
-    "strict": true,
-    "pretty": true,
     "removeComments": true,
     "newLine": "lf",
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "emitDecoratorMetadata": false,
-    "experimentalDecorators": false,
-    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
     "jsx": "react",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "paths": {
       "@hospitalrun/components": [
