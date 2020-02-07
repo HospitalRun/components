@@ -24,12 +24,15 @@
     "prepublishOnly": "npm run build",
     "test": "tsdx test --env=jsdom",
     "test:ci": "cross-env CI=true tsdx test --env=jsdom",
-    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" \"test/**/*.{js,jsx,ts,tsx}\" \"stories/**/*.{js,jsx,ts,tsx}\" --fix",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" \"test/**/*.{js,jsx,ts,tsx}\" \"stories/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" \"test/**/*.{js,jsx,ts,tsx}\" \"stories/**/*.{js,jsx,ts,tsx}\" --fix",
     "coveralls": "CI=true tsdx test --coverage --coverageReporters=text-lcov | coveralls",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
     "docgen": "genDocs.sh",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint"
   },
   "peerDependencies": {
     "bootstrap": "~4.4.0",
@@ -38,8 +41,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
+      "commit-msg": "npm run commitlint -- -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run lint-staged"
     }
   },
   "config": {
@@ -49,7 +52,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npm run lint",
+      "npm run lint:fix",
       "git add ."
     ]
   },
