@@ -1,3 +1,10 @@
+## [0.32.5](https://github.com/HospitalRun/components/compare/v0.32.4...v0.32.5) (2020-02-08)
+
+
+### Bug Fixes
+
+* fix precommit hooks ([ddaeca9](https://github.com/HospitalRun/components/commit/ddaeca93b9327230be3a432bfd5f2b288ff0b01a))
+
 ## [0.32.4](https://github.com/HospitalRun/components/compare/v0.32.3...v0.32.4) (2020-02-03)
 
 
