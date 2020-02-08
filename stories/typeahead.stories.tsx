@@ -48,7 +48,8 @@ storiesOf('Typeahead', module)
         )}
       />
     </div>
-  )).add('Typeahead with default value', () => (
+  ))
+  .add('Typeahead with default value', () => (
     <div>
       <Typeahead
         id="typeahead"
