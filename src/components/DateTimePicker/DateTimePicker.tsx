@@ -1,8 +1,14 @@
 import React, { ReactNode } from 'react'
-import DatePicker from 'react-datepicker'
+import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker'
 import InputGroup from 'react-bootstrap/InputGroup'
+import { enUS, ptBR } from 'date-fns/locale'
 import { Icon } from '../Icon'
 import 'react-datepicker/dist/react-datepicker.css'
+
+registerLocale('enUS', enUS)
+registerLocale('ptBR', ptBR)
+
+setDefaultLocale('enUS')
 
 interface Props {
   /** Yield element as children. */
@@ -147,6 +153,7 @@ const DateTimePicker = (props: Props) => {
 
 DateTimePicker.defaultProps = {
   dateFormat: 'MM/dd/yyyy',
+  locale: 'enUS',
   dateFormatCalendar: 'LLLL yyyy',
   dropdownMode: 'scroll',
   timeIntervals: 30,

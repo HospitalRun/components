@@ -8,13 +8,13 @@ interface Props {
   /** Determines whether the TextField should be rendered as invalid or not. By default, it is false. */
   isInvalid?: boolean
   /** The name of the text field */
-  name?: string | ''
+  name?: string
   /** The number of rows to render */
   rows?: number
   /** Determines whether to render a small or large TextField. By default, it is undefined. */
   size?: 'small' | 'large'
   /** The value of the text field */
-  value?: string | ''
+  value?: string
 
   /** Handles the onChange event for the TextField */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
@@ -42,7 +42,7 @@ const TextField = (props: Props) => {
       name={name}
       rows={rows}
       size={getControlSize(size)}
-      defaultValue={value}
+      value={value}
       onChange={onChange}
       className={className}
       style={style}

@@ -3,19 +3,19 @@ import Form from 'react-bootstrap/Form'
 
 interface Props {
   /** Defines the type of the input. Defaults to 'text' if not specified. */
-  type?: 'text' | 'number' | 'email'
+  type?: 'text' | 'number' | 'email' | 'password' | 'search' | 'tel' | 'url'
   /** Defines the size of the input. Defaults to 'lg' */
   size?: 'sm' | 'lg'
   /** The value of the input */
-  value?: string | ''
+  value?: string
   /** Handles the onChange event for the input */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   /** The name of the input */
-  name?: string | ''
+  name?: string
   /** The id value of the input */
-  id?: string | ''
-  /** The placeholder inside of the input */
-  placeholder?: string | ''
+  id?: string
+  /** The placeholder inside of the text input */
+  placeholder?: string
   /** Defines whether the input should be disabled or not. Defaults to false. */
   disabled?: boolean
   /** Defines the custom error message of the input. */

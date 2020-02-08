@@ -1,3 +1,120 @@
+## [0.32.4](https://github.com/HospitalRun/components/compare/v0.32.3...v0.32.4) (2020-02-03)
+
+
+### Bug Fixes
+
+* **i18n:** register locales to remove extraneous logs ([095bd72](https://github.com/HospitalRun/components/commit/095bd72b99f099bf15c27e2c4df416a0593fffc2)), closes [#251](https://github.com/HospitalRun/components/issues/251)
+* **testing:** remove datetimepicker extraneous logs ([80a5f5b](https://github.com/HospitalRun/components/commit/80a5f5b6e5c7bff0be8f1258797dd73018e070d2)), closes [#146](https://github.com/HospitalRun/components/issues/146)
+
+## [0.32.3](https://github.com/HospitalRun/components/compare/v0.32.2...v0.32.3) (2020-02-03)
+
+
+### Bug Fixes
+
+* **typeahead:** add ability to set default value ([ed9cad6](https://github.com/HospitalRun/components/commit/ed9cad65a783c6e9e240607a1bb243fdbd1657e9))
+
+## [0.32.2](https://github.com/HospitalRun/components/compare/v0.32.1...v0.32.2) (2020-02-02)
+
+
+### Bug Fixes
+
+* **textfield:** fixes prop issue in textfield ([81ee377](https://github.com/HospitalRun/components/commit/81ee377616a360c73ed997ed4c2a30ceceac6173))
+* **textinput:** fixes prop issue in textinput ([1aef1d5](https://github.com/HospitalRun/components/commit/1aef1d5669c42a8c501468c711e37d3071a82f1e))
+
+## [0.32.1](https://github.com/HospitalRun/components/compare/v0.32.0...v0.32.1) (2020-01-31)
+
+
+### Bug Fixes
+
+* **calendar:** remove extraneous log ([1f1037a](https://github.com/HospitalRun/components/commit/1f1037a583361faa67f6fdf49d5223891921a583)), closes [#252](https://github.com/HospitalRun/components/issues/252)
+
+# [0.32.0](https://github.com/HospitalRun/components/compare/v0.31.0...v0.32.0) (2020-01-30)
+
+
+### Bug Fixes
+
+* **navbar:** fix tests, refactor brand component to icon and header, ([91ce73e](https://github.com/HospitalRun/components/commit/91ce73e724294906d9aba2ccc9ef49f05acf45ac)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** remove className boilerplates ([1042a66](https://github.com/HospitalRun/components/commit/1042a662ad5694f26a6a01d7a1735da3480bee52)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** remove test story ([c569ce6](https://github.com/HospitalRun/components/commit/c569ce669983fc062deebd79509c84d4944d0811)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** repeated key warning in navbar items ([a52cff7](https://github.com/HospitalRun/components/commit/a52cff7a112de53d7b9ffe62b83c1e9b4499f5d0)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** suggest new default and dark theme color, improve examples ([8ebbcf0](https://github.com/HospitalRun/components/commit/8ebbcf08b0ca1660b7e9ff13d1690c236f00569f)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+
+
+### Features
+
+* **navbar:** add example with icons and support className prop ([4784520](https://github.com/HospitalRun/components/commit/4784520cd8c696fd86a15132d0d299e94833a97a)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** refactor navbar tests ([717a9fc](https://github.com/HospitalRun/components/commit/717a9fced986f70a94592d824be0426a6eccb18e)), closes [#225](https://github.com/HospitalRun/components/issues/225)
+* **navbar:** support classname for all components and justify example ([45faf19](https://github.com/HospitalRun/components/commit/45faf193b1f87d6697c19fbdbe59e03e58f49e49)), closes [#228](https://github.com/HospitalRun/components/issues/228)
+* **navbar:** support navbar items horizontal position w array order ([f80382f](https://github.com/HospitalRun/components/commit/f80382f9f1d7eee61e04dfa01b09aaef38487590)), closes [#225](https://github.com/HospitalRun/components/issues/225)
+
+# [0.31.0](https://github.com/HospitalRun/components/compare/v0.30.4...v0.31.0) (2020-01-29)
+
+
+### Bug Fixes
+
+* **panel:** add missing test for header onclick panel toggle ([5274a20](https://github.com/HospitalRun/components/commit/5274a205045b013e42da9944f01a88be1f6b6bd9)), closes [#233](https://github.com/HospitalRun/components/issues/233)
+* **panel:** fix panel opening on non collapsible panel ([b2ecdf4](https://github.com/HospitalRun/components/commit/b2ecdf44a5f68cba49ade940d9a707232c65d33a)), closes [#233](https://github.com/HospitalRun/components/issues/233)
+* **panel:** make panel collapse on header click ([2ab4878](https://github.com/HospitalRun/components/commit/2ab487838ce22b281a39bcf34602ecefc38f8e1c)), closes [#229](https://github.com/HospitalRun/components/issues/229)
+* **panel:** remove classname boilerplatee ([f8ea36f](https://github.com/HospitalRun/components/commit/f8ea36f1e22cda015703b0763da2f1804d58b39d)), closes [#233](https://github.com/HospitalRun/components/issues/233)
+
+
+### Features
+
+* **panel:** add classname to panel prop and modify stories ([7e72639](https://github.com/HospitalRun/components/commit/7e726396582da9c799af0dc500134c3c3fea81a7)), closes [#233](https://github.com/HospitalRun/components/issues/233)
+
+## [0.30.4](https://github.com/HospitalRun/components/compare/v0.30.3...v0.30.4) (2020-01-25)
+
+
+### Bug Fixes
+
+* **textinput:** add password, search, tel, url input types ([71a344d](https://github.com/HospitalRun/components/commit/71a344d53fb14def375f6e8a507746ee2e61a98a)), closes [#226](https://github.com/HospitalRun/components/issues/226)
+* **textinput:** removed the unnecessary union string types from Props ([0084b07](https://github.com/HospitalRun/components/commit/0084b0773bb98412cc49c33bb992e05cf0ba13a2))
+
+## [0.30.3](https://github.com/HospitalRun/components/compare/v0.30.2...v0.30.3) (2020-01-23)
+
+
+### Bug Fixes
+
+* **typeahead:** add some missing props to typeahead component ([1d1024e](https://github.com/HospitalRun/components/commit/1d1024ea2760a76bf8e6d2fd322bb3f3be3869aa))
+
+## [0.30.2](https://github.com/HospitalRun/components/compare/v0.30.1...v0.30.2) (2020-01-17)
+
+
+### Bug Fixes
+
+* **calendar:** fix export for calendar ([be8c98b](https://github.com/HospitalRun/components/commit/be8c98bb09364167a984ab3fa157b69d383f2ad4))
+
+## [0.30.1](https://github.com/HospitalRun/components/compare/v0.30.0...v0.30.1) (2020-01-11)
+
+
+### Bug Fixes
+
+* **scss:** fix imports to external dependencies ([080b73e](https://github.com/HospitalRun/components/commit/080b73e9fbe640af4487ba609ad0037e49e89eef))
+
+# [0.30.0](https://github.com/HospitalRun/components/compare/v0.29.0...v0.30.0) (2020-01-11)
+
+
+### Features
+
+* **tab:** add Tab and TabsHeader components ([431d08a](https://github.com/HospitalRun/components/commit/431d08a15acf1594779a4867ee79f014ae7395f2)), closes [#24](https://github.com/HospitalRun/components/issues/24)
+* **tab:** use project's existing Button component ([24d617f](https://github.com/HospitalRun/components/commit/24d617fa6e04107f79e59308d52755a920ee368f)), closes [#24](https://github.com/HospitalRun/components/issues/24)
+
+# [0.29.0](https://github.com/HospitalRun/components/compare/v0.28.0...v0.29.0) (2020-01-11)
+
+
+### Features
+
+* **typeahead:** add typeahead component ([0b0f1a8](https://github.com/HospitalRun/components/commit/0b0f1a8603cadf0016dfcb1bf6bc00e70bb77bc2))
+
+# [0.28.0](https://github.com/HospitalRun/components/compare/v0.27.2...v0.28.0) (2020-01-10)
+
+
+### Features
+
+* **css:** add tsdx config for PostCSS, organize CSS and SASS imports ([add82bf](https://github.com/HospitalRun/components/commit/add82bf51b9dd89e7299783148f2b815951d7a5e))
+* **css:** create a Theme to override Bootstrap colors ([4094600](https://github.com/HospitalRun/components/commit/4094600934834fd05b321b80842749cee6ec3bb7)), closes [#35](https://github.com/HospitalRun/components/issues/35)
+* **css:** update jest config to mock .scss imports to fix test failures ([5206931](https://github.com/HospitalRun/components/commit/5206931ec744795ce3a07eedd3084b280b4f7a69))
+
 ## [0.27.2](https://github.com/HospitalRun/components/compare/v0.27.1...v0.27.2) (2020-01-03)
 
 

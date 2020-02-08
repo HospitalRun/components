@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://hospitalrun-components.netlify.com/* https://components.hospitalrun.io/:splat 301!
