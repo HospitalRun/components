@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react'
-import { FormControl } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
 import { getControlSize } from '../../helpers/controlSize'
 
 interface Props {
@@ -9,6 +9,8 @@ interface Props {
   disabled?: boolean
   /** Determines whether the Select should be invalid. False by default. */
   isInvalid?: boolean
+  /** Determines whether the Select should be rendered as valid or not. Default is false. */
+  isValid?: boolean
   /** Determines whether to render a small or large TextField. By default, it is undefined. */
   size?: 'small' | 'large'
   /** Selected value in the  */
@@ -26,25 +28,56 @@ interface Props {
    * Defines the style of the select.
    */
   style?: CSSProperties
+
+  /** Defines the custom error message of the input. */
+  invalidInputMessage?: string
+  /** Defines the message for valid input. */
+  validInputMessage?: string
 }
+/**
+ * Defines the default style of the select.
+ */
+const defaultStyles = { backgroundPosition: 'right calc(.375em + .55rem) center' }
 
 const Select = (props: Props) => {
-  const { value, multiple, isInvalid, disabled, size, onChange, children, className, style } = props
+  const {
+    value,
+    multiple,
+    isValid,
+    isInvalid,
+    invalidInputMessage,
+    validInputMessage,
+    disabled,
+    size,
+    onChange,
+    children,
+    className,
+    style,
+  } = props
 
   return (
-    <FormControl
-      as="select"
-      value={value}
-      multiple={multiple}
-      isInvalid={isInvalid}
-      disabled={disabled}
-      size={getControlSize(size)}
-      onChange={onChange}
-      className={className}
-      style={style}
-    >
-      {children}
-    </FormControl>
+    <div>
+      <Form.Control
+        as="select"
+        value={value}
+        multiple={multiple}
+        isInvalid={isInvalid}
+        isValid={isValid}
+        disabled={disabled}
+        size={getControlSize(size)}
+        onChange={onChange}
+        className={className}
+        style={Object.assign(style || {}, defaultStyles)}
+      >
+        {children}
+      </Form.Control>
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
+        {validInputMessage}
+      </Form.Control.Feedback>
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
+        {invalidInputMessage}
+      </Form.Control.Feedback>
+    </div>
   )
 }
 

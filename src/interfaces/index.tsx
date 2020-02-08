@@ -1,12 +1,4 @@
-export type ColorVariant =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'danger'
-  | 'info'
-  | 'light'
-  | 'dark'
+export type ColorVariant = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'dark'
 
 export type ButtonVariant =
   | 'light'

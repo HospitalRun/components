@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React from 'react'
 import Form from 'react-bootstrap/Form'
 
 interface Props {
@@ -18,18 +18,14 @@ interface Props {
   placeholder?: string
   /** Defines whether the input should be disabled or not. Defaults to false. */
   disabled?: boolean
+  /** Defines the custom error message of the input. */
+  invalidInputMessage?: string
   /** Defines whether the input should display as invalid. Defaults to false. */
   isInvalid?: boolean
   /** Defines whether the input should display as valid. Defaults to false */
-  isValid?: boolean
-  /**
-   * Defines the class of the textinput.
-   */
-  className?: string
-  /**
-   * Defines the style of the textinput.
-   */
-  style?: CSSProperties
+  isValid?: boolean | true
+  /** Defines the message for valid input. */
+  validInputMessage?: string
 }
 
 /**
@@ -46,28 +42,34 @@ const TextInput = (props: Props) => {
     disabled,
     isInvalid,
     isValid,
+    validInputMessage,
+    invalidInputMessage,
     value,
     size,
-    className,
-    style,
   } = props
 
   return (
-    <Form.Control
-      as="input"
-      type={type}
-      name={name}
-      id={id}
-      placeholder={placeholder}
-      onChange={onChange}
-      disabled={disabled}
-      isInvalid={isInvalid}
-      isValid={isValid}
-      value={value}
-      size={size}
-      className={className}
-      style={style}
-    />
+    <div>
+      <Form.Control
+        as="input"
+        type={type}
+        name={name}
+        id={id}
+        placeholder={placeholder}
+        onChange={onChange}
+        disabled={disabled}
+        isInvalid={isInvalid}
+        isValid={isValid}
+        defaultValue={value}
+        size={size}
+      />
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
+        {validInputMessage}
+      </Form.Control.Feedback>
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
+        {invalidInputMessage}
+      </Form.Control.Feedback>
+    </div>
   )
 }
 

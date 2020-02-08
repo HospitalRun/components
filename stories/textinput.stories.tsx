@@ -10,34 +10,46 @@ storiesOf('TextInput', module)
       inline: true,
     },
   })
-  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => (
+    <div style={{ textAlign: 'center', paddingLeft: 40, paddingRight: 40 }}>{storyFn()}</div>
+  ))
   .add('Default text input', () => (
     <div>
+      <TextInput id="text-input" name="text-input" type="text" size="lg" />
+    </div>
+  ))
+  .add('Default text input with value', () => (
+    <div>
       <TextInput
-        type="text"
-        name="text-input"
         id="text-input"
+        name="text-input"
+        type="text"
         size="lg"
-        value="This is a text input!"
+        value="This is a text input with a value!"
       />
     </div>
   ))
-  .add('Text Input with Placeholder', () => (
+  .add('Text input with a placeholder', () => (
     <div>
-      <TextInput type="text" name="text-input" id="text-input" placeholder="test" />
+      <TextInput
+        id="text-input"
+        name="text-input"
+        type="text"
+        placeholder="Text input placeholder"
+      />
     </div>
   ))
   .add('Default number input', () => (
     <div>
-      <TextInput type="number" name="text-input" id="text-input" size="lg" value="1234567890" />
+      <TextInput id="text-input" name="text-input" type="number" size="lg" value="1234567890" />
     </div>
   ))
   .add('Default email input', () => (
     <div>
       <TextInput
-        type="email"
-        name="text-input"
         id="text-input"
+        name="text-input"
+        type="email"
         size="lg"
         value="patient@testhospital.com"
       />
@@ -78,11 +90,11 @@ storiesOf('TextInput', module)
   .add('Disabled text input', () => (
     <div>
       <TextInput
-        type="text"
-        name="text-input"
         id="text-input"
+        name="text-input"
+        type="text"
         size="lg"
-        value="This is a text input!"
+        value="Disabled"
         disabled
       />
     </div>
@@ -90,16 +102,29 @@ storiesOf('TextInput', module)
   .add('Invalid text input', () => (
     <div>
       <TextInput
-        type="text"
-        name="text-input"
         id="text-input"
+        name="text-input"
+        type="text"
         size="lg"
-        value="This is a text input!"
+        value="Invalid"
         isInvalid
       />
     </div>
   ))
-  .add('Valid text input', () => (
+  .add('Invalid text field with error message', () => (
+    <div>
+      <TextInput
+        id="text-input"
+        name="text-input"
+        type="text"
+        size="lg"
+        value="Custom error message"
+        isInvalid
+        invalidInputMessage="Please insert a 3 letter word"
+      />
+    </div>
+  ))
+  .add('Valid text input with custom validation message', () => (
     <div>
       <TextInput
         type="text"
@@ -108,30 +133,7 @@ storiesOf('TextInput', module)
         size="lg"
         value="This is a text input!"
         isValid
-      />
-    </div>
-  ))
-  .add('Custom class text input', () => (
-    <div>
-      <TextInput
-        type="text"
-        name="text-input"
-        id="text-input"
-        size="lg"
-        value="This is a text input!"
-        className="customClass"
-      />
-    </div>
-  ))
-  .add('Custom style text input', () => (
-    <div>
-      <TextInput
-        type="text"
-        name="text-input"
-        id="text-input"
-        size="lg"
-        value="This is a text input!"
-        style={{ background: 'red', color: 'white' }}
+        validInputMessage="This is a custom valid input message"
       />
     </div>
   ))
