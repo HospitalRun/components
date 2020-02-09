@@ -11,7 +11,7 @@ These items can be links to other parts of the website or handle events.
   items   |    `Item[]`        | yes | | Determines the dropdown items (See Dropdown/Item.md) |
   id   |    `string`        | no | | Determines the dropdown id |
   onClick   |    `(event   |    React.MouseEvent<any>) => void` | no | | Handle additional click events on dropdown toggle |
-  variant   |    `ColorVariant` | no | 'primary' | Dropdown buttom color variant |
+  variant   |    `ButtonVariant` | no | 'primary' | Dropdown buttom color variant |
   alignRight   |    `boolean`        | no | false | Align dropdown items to right
   as   |    `ElementType`      | no | | Custom element type | |
   size   |    `'sm' | 'md' | 'lg' | 'sm'` | no | `sm` | Determines dropdown toggle button size
