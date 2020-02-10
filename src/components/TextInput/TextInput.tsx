@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import Form from 'react-bootstrap/Form'
 
 interface Props {
@@ -26,6 +26,10 @@ interface Props {
   isValid?: boolean | true
   /** Defines the message for valid input. */
   validInputMessage?: string
+  /** Defines the class of the input. */
+  className?: string
+  /** Defines the style of the input. */
+  style?: CSSProperties
 }
 
 /**
@@ -46,6 +50,7 @@ const TextInput = (props: Props) => {
     invalidInputMessage,
     value,
     size,
+    className,
   } = props
 
   return (
@@ -62,6 +67,7 @@ const TextInput = (props: Props) => {
         isValid={isValid}
         defaultValue={value}
         size={size}
+        className={className}
       />
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
         {validInputMessage}

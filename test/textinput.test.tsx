@@ -13,15 +13,16 @@ describe('TextInput', () => {
 
   it('renders a TextInput with attributes', () => {
     const name = 'test_input'
-    const value = 'Testing the text input component'
-    const wrapper = mount(<TextInput name={name} value={value} />)
+    const defaultValue = 'Testing the text input component defaultValue'
+    const wrapper = mount(<TextInput name={name} value={defaultValue} />)
 
     expect(wrapper.find(Form.Control)).toHaveLength(1)
+
     expect(
       wrapper.find(Form.Control).filterWhere((item) => item.prop('name') === name),
     ).toHaveLength(1)
     expect(
-      wrapper.find(Form.Control).filterWhere((item) => item.prop('value') === value),
+      wrapper.find(Form.Control).filterWhere((item) => item.prop('defaultValue') === defaultValue),
     ).toHaveLength(1)
   })
 
