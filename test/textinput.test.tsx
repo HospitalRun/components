@@ -91,7 +91,6 @@ describe('TextInput', () => {
 
   it('renders Text Input with custom style', () => {
     const wrapper = mount(<TextInput style={{ background: 'red' }} />)
-    const textInput = wrapper.find(Form.Control)
-    expect(textInput.props().style).toMatchObject({ background: 'red' })
+    expect(wrapper.props().style).toMatchObject({ background: 'red' })
   })
 })

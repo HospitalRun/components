@@ -51,6 +51,7 @@ const TextInput = (props: Props) => {
     value,
     size,
     className,
+    style,
   } = props
 
   return (
@@ -68,6 +69,7 @@ const TextInput = (props: Props) => {
         defaultValue={value}
         size={size}
         className={className}
+        style={style}
       />
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
         {validInputMessage}
