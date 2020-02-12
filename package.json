@@ -131,7 +131,7 @@
     "@fortawesome/react-fontawesome": "~0.1.4",
     "@fullcalendar/core": "^4.3.1",
     "@fullcalendar/daygrid": "^4.3.0",
-    "@fullcalendar/interaction": "~4.3.0",
+    "@fullcalendar/interaction": "~4.4.0",
     "@fullcalendar/react": "^4.3.0",
     "@fullcalendar/timegrid": "^4.3.0",
     "@tinymce/tinymce-react": "~3.4.0",
