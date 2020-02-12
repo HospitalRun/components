@@ -1,3 +1,10 @@
+# [0.33.0](https://github.com/HospitalRun/components/compare/v0.32.5...v0.33.0) (2020-02-12)
+
+
+### Features
+
+* **icons:** add Edit icon with pencil ([13a32ec](https://github.com/HospitalRun/components/commit/13a32ecd7ee3f34eee8ce2b94bc4e21646035d2a))
+
 ## [0.32.5](https://github.com/HospitalRun/components/compare/v0.32.4...v0.32.5) (2020-02-08)
 
 
