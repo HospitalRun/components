@@ -7,6 +7,7 @@ export type IconType =
   | 'calendar'
   | 'dashboard'
   | 'down-arrow'
+  | 'edit'
   | 'image'
   | 'incident'
   | 'lab'

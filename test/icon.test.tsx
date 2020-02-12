@@ -53,6 +53,13 @@ describe('Icon', () => {
     expect(fontAwesomeIcon.props().icon).toBe('columns')
   })
 
+  it('Edit Icon renders itself without crashing', () => {
+    const dashboardIconWrapper = shallow(<Icon icon="edit" />)
+    const fontAwesomeIcon = dashboardIconWrapper.find(FontAwesomeIcon)
+    expect(fontAwesomeIcon).toHaveLength(1)
+    expect(fontAwesomeIcon.props().icon).toBe('edit')
+  })
+
   it('Image Icon renders itself without crashing', () => {
     const imageIconWrapper = shallow(<Icon icon="image" />)
     const fontAwesomeIcon = imageIconWrapper.find(FontAwesomeIcon)
