@@ -33,6 +33,9 @@ storiesOf('Icons', module)
       <span>Dashboard: </span>
       <Icon icon="dashboard" />
       <br />
+      <span>Edit: </span>
+      <Icon icon="edit" />
+      <br />
       <span>Image: </span>
       <Icon icon="image" />
       <br />
