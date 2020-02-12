@@ -13,6 +13,7 @@ const iconMap = {
   calendar: 'calendar-alt',
   dashboard: 'columns',
   'down-arrow': 'chevron-down',
+  edit: 'edit',
   image: 'camera',
   incident: 'file-alt',
   lab: 'microscope',
