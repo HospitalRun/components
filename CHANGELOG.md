@@ -1,3 +1,10 @@
+## [0.33.1](https://github.com/HospitalRun/components/compare/v0.33.0...v0.33.1) (2020-02-13)
+
+
+### Bug Fixes
+
+* **fullcalendar:** downgrade FullCalendar to fix frontend test failures ([a690edd](https://github.com/HospitalRun/components/commit/a690edd3b223de29a4c750da54b0762273a78e31))
+
 # [0.33.0](https://github.com/HospitalRun/components/compare/v0.32.5...v0.33.0) (2020-02-12)
 
 
