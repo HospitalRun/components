@@ -1,20 +1,25 @@
 import React from 'react'
 // import styled from 'styled-components'
-import { useTable, Column, Row } from 'react-table'
+import { useTable, Row } from 'react-table'
+import { generateColumns } from './helper'
+// import { TableProperties } from './interfaces'
 
 interface MyProps {
-  columns: Column[]
+  tableProperties: any
   data: any
+  // columns: any
 }
 
-function ReactTable({ columns, data }: MyProps) {
-  // Use the state and functions returned from useTable to build your UI
+function Table({ data, tableProperties }: MyProps) {
+  console.log(tableProperties)
+  // convertire con generateColumns
+  const columns = generateColumns(tableProperties.columns)
+  console.log('COLUMNS', columns)
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
     columns,
     data,
   })
 
-  // Render the UI for your table
   return (
     <table {...getTableProps()}>
       <thead>
@@ -28,6 +33,7 @@ function ReactTable({ columns, data }: MyProps) {
       </thead>
       <tbody {...getTableBodyProps()}>
         {rows.map((row: Row) => {
+          console.log(row)
           prepareRow(row)
           return (
             <tr {...row.getRowProps()}>
@@ -40,42 +46,6 @@ function ReactTable({ columns, data }: MyProps) {
       </tbody>
     </table>
   )
-}
-
-function Table({ data }: any) {
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Name',
-        columns: [
-          {
-            Header: 'First Name',
-            accessor: 'firstName',
-          },
-          {
-            Header: 'Last Name',
-            accessor: 'lastName',
-          },
-        ],
-      },
-      {
-        Header: 'Info',
-        columns: [
-          {
-            Header: 'Age',
-            accessor: 'age',
-          },
-          {
-            Header: 'Status',
-            accessor: 'status',
-          },
-        ],
-      },
-    ],
-    [],
-  )
-
-  return <ReactTable columns={columns} data={data} />
 }
 
 export { Table }
