@@ -1,3 +1,10 @@
+## [0.33.2](https://github.com/HospitalRun/components/compare/v0.33.1...v0.33.2) (2020-02-15)
+
+
+### Bug Fixes
+
+* **prettier:** changes endofline parameter ([b6e2d0a](https://github.com/HospitalRun/components/commit/b6e2d0a5d54fc19e2eadadaf614bbb996b767bc6))
+
 ## [0.33.1](https://github.com/HospitalRun/components/compare/v0.33.0...v0.33.1) (2020-02-13)
 
 
