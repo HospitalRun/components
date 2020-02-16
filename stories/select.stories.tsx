@@ -98,7 +98,7 @@ storiesOf('Select', module)
 
   .add('Working with value', () => (
     <div>
-      <Select value="nougat">
+      <Select defaultValue="nougat">
         <option value="marshmallow">Marshmallow</option>
         <option value="nougat">Nougat</option>
         <option value="icecream">Ice cream</option>
@@ -108,30 +108,28 @@ storiesOf('Select', module)
   ))
   .add('Small select', () => (
     <div>
-      <Select value="nougat" size="small">
-        <option value="marshmallow">Marshmallow</option>
-        <option value="nougat">Nougat</option>
-        <option value="icecream">Ice cream</option>
-        <option value="gingerbread">Gingerbread</option>
+      <Select defaultValue="nougat" size="small">
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
       </Select>
     </div>
   ))
   .add('Large select', () => (
     <div>
-      <Select value="nougat" size="large">
-        <option value="marshmallow">Marshmallow</option>
-        <option value="nougat">Nougat</option>
-        <option value="icecream">Ice cream</option>
-        <option value="gingerbread">Gingerbread</option>
+      <Select defaultValue="Choose your sweet" size="large">
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
       </Select>
     </div>
   ))
   .add('Custom class', () => (
     <div>
-      <Select className="customClass">
-        <option selected disabled>
-          Choose your sweet
-        </option>
+      <Select defaultValue="Choose your sweet" className="customClass">
+        <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
