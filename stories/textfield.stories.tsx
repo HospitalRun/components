@@ -23,25 +23,9 @@ storiesOf('TextField', module)
       <TextField name="test_field" disabled defaultValue="this is the value" rows={5} />
     </div>
   ))
-  .add('Invalid text field', () => (
-    <div>
-      <TextField name="test_field" isInvalid defaultValue="this is the value" rows={5} />
-    </div>
-  ))
   .add('Valid text field', () => (
     <div>
       <TextField name="test_field" isValid defaultValue="this is the value" rows={5} />
-    </div>
-  ))
-  .add('Invalid text field with feedback', () => (
-    <div>
-      <TextField
-        name="test_field"
-        isInvalidFeedback="missing extra value"
-        isInvalid
-        defaultValue="this is the value"
-        rows={5}
-      />
     </div>
   ))
   .add('Valid text field with feedback', () => (
@@ -50,6 +34,22 @@ storiesOf('TextField', module)
         name="test_field"
         isValidFeedback="Everything ok!"
         isValid
+        defaultValue="this is the value"
+        rows={5}
+      />
+    </div>
+  ))
+  .add('Invalid text field', () => (
+    <div>
+      <TextField name="test_field" isInvalid defaultValue="this is the value" rows={5} />
+    </div>
+  ))
+  .add('Invalid text field with feedback', () => (
+    <div>
+      <TextField
+        name="test_field"
+        isInvalidFeedback="missing extra value"
+        isInvalid
         defaultValue="this is the value"
         rows={5}
       />

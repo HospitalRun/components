@@ -44,7 +44,7 @@ storiesOf('Radio', module)
   ))
   .add('Checked radio', () => (
     <div>
-      <Radio checked label="Checked radio" id="checked" />
+      <Radio defaultChecked label="Checked radio" id="checked" />
     </div>
   ))
   .add('No label radio', () => (
@@ -52,9 +52,42 @@ storiesOf('Radio', module)
       <Radio />
     </div>
   ))
-  .add('Invalid radio with feedback', () => (
+  .add('Valid radio', () => (
+    <div>
+      <Radio isValid label="Valid radio" id="radio-1" />
+      <Radio label="Neutral radio" id="radio-2" />
+      <Radio label="Neutral radio" id="radio-3" />
+    </div>
+  ))
+  .add('Valid radio with feedback', () => (
+    <div>
+      <Radio
+        isValid
+        label="Valid with feedback"
+        id="valid-feedback"
+        feedback="Everything looks good!"
+      />
+      <Radio
+        isValid
+        label="Custom feedback with HTML"
+        id="invalid-custom-feedback"
+        feedback={
+          <span>
+            Everything looks ok! <a href="https://www.example.com">More</a>
+          </span>
+        }
+      />
+    </div>
+  ))
+  .add('Invalid radio', () => (
     <div>
       <Radio isInvalid label="Invalid radio" id="invalid" />
+      <Radio label="Neutral radio" id="radio-2" />
+      <Radio label="Neutral radio" id="radio-3" />
+    </div>
+  ))
+  .add('Invalid radio with feedback', () => (
+    <div>
       <Radio
         isInvalid
         label="Invalid with feedback"
@@ -63,7 +96,7 @@ storiesOf('Radio', module)
       />
       <Radio
         isInvalid
-        label="Feedback with HTML"
+        label="Custom feedback with HTML"
         id="invalid-custom-feedback"
         feedback={
           <span>

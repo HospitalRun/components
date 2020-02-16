@@ -56,7 +56,7 @@ const TextField = (props: Props) => {
   } = props
 
   const validFeedbackDefaultStyle = {
-    color: 'green',
+    color: '#59b571',
   }
 
   return (

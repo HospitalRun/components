@@ -54,10 +54,10 @@ const TextInput = (props: Props) => {
     style,
   } = props
   const inputDefaultStyles = {
-    borderColor: isValid ? 'green' : isInvalid ? 'red' : 'black',
+    borderColor: isValid ? '#59b571' : isInvalid ? 'red' : 'black',
   }
   const validFeedbackDefaultStyle = {
-    color: 'green',
+    color: '#59b571',
   }
 
   return (

@@ -58,10 +58,10 @@ const Select = (props: Props) => {
    */
   const selectDefaultStyles = {
     backgroundPosition: 'right calc(.375em + .55rem) center',
-    borderColor: isValid ? 'green' : isInvalid ? 'red' : 'black',
+    borderColor: isValid ? '#59b571' : isInvalid ? 'red' : 'black',
   }
-  const validFeedbackDefaultStyle = {
-    color: 'green',
+  const feedbackDefaultStyle = {
+    color: isValid ? '#59b571' : isInvalid ? '#dc3545' : 'black',
   }
   return (
     <Form.Group>
@@ -81,13 +81,17 @@ const Select = (props: Props) => {
         {children}
       </Form.Control>
       <Form.Control.Feedback
-        style={validFeedbackDefaultStyle}
+        style={feedbackDefaultStyle}
         className="text-left ml-3 mt-1"
         type="valid"
       >
         {isValidFeedback}
       </Form.Control.Feedback>
-      <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
+      <Form.Control.Feedback
+        style={feedbackDefaultStyle}
+        className="text-left ml-3 mt-1"
+        type="invalid"
+      >
         {isInvalidFeedback}
       </Form.Control.Feedback>
     </Form.Group>

@@ -99,6 +99,24 @@ storiesOf('TextInput', module)
       />
     </div>
   ))
+  .add('Valid text input', () => (
+    <div>
+      <TextInput id="text-input" name="text-input" type="text" size="lg" value="Valid" isValid />
+    </div>
+  ))
+  .add('Valid text input with custom validation message', () => (
+    <div>
+      <TextInput
+        type="text"
+        name="text-input"
+        id="text-input"
+        size="lg"
+        value="This is a text input!"
+        isValid
+        isValidFeedback="This is a custom valid input message"
+      />
+    </div>
+  ))
   .add('Invalid text input', () => (
     <div>
       <TextInput
@@ -121,24 +139,6 @@ storiesOf('TextInput', module)
         value="Custom error message"
         isInvalid
         isInvalidFeedback="Please insert a 3 letter word"
-      />
-    </div>
-  ))
-  .add('Valid text input', () => (
-    <div>
-      <TextInput id="text-input" name="text-input" type="text" size="lg" value="Valid" isValid />
-    </div>
-  ))
-  .add('Valid text input with custom validation message', () => (
-    <div>
-      <TextInput
-        type="text"
-        name="text-input"
-        id="text-input"
-        size="lg"
-        value="This is a text input!"
-        isValid
-        isValidFeedback="This is a custom valid input message"
       />
     </div>
   ))

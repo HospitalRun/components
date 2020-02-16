@@ -15,7 +15,7 @@ interface Props {
   /** When disabled, the Radio cannot be clicked or changed by the user. Default is false. */
   disabled?: boolean
   /** When checked is true, the Radio button is selected. */
-  checked?: boolean
+  defaultChecked?: boolean
   /** Determines whether the Radio should be rendered as invalid or not. Default is false. */
   isInvalid?: boolean
   /** Determines whether the Radio should be rendered as valid or not. Default is false. */
@@ -40,7 +40,7 @@ const Radio = (props: Props) => {
     name,
     id,
     value,
-    checked,
+    defaultChecked,
     disabled,
     inline,
     isInvalid,
@@ -50,14 +50,20 @@ const Radio = (props: Props) => {
     className,
     style,
   } = props
+
+  const labelDefaultStyle = {
+    color: isValid ? '#59b571' : isInvalid ? '#dc3545' : 'black',
+  }
+  const feedbackDefaultStyle = {
+    color: isValid ? '#59b571' : isInvalid ? '#dc3545' : 'black',
+  }
+
   return (
     <Form.Check
-      type="radio"
-      label={label}
       name={name}
+      type="radio"
       id={id}
       value={value}
-      checked={checked}
       disabled={disabled}
       inline={inline}
       isInvalid={isInvalid}
@@ -66,7 +72,18 @@ const Radio = (props: Props) => {
       onChange={onChange}
       className={className}
       style={style}
-    />
+    >
+      <Form.Check.Input
+        defaultChecked={defaultChecked}
+        type="radio"
+        isValid={isValid}
+        isInvalid={isInvalid}
+      />
+      <Form.Check.Label style={labelDefaultStyle}>{label}</Form.Check.Label>
+      <Form.Control.Feedback style={feedbackDefaultStyle} type={isValid ? 'valid' : 'invalid'}>
+        {feedback}
+      </Form.Control.Feedback>
+    </Form.Check>
   )
 }
 
