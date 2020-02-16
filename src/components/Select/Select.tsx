@@ -33,14 +33,13 @@ interface Props {
   invalidInputMessage?: string
   /** Defines the message for valid input. */
   validInputMessage?: string
+  /** Defines the default value */
+  defaultValue?: string | Array<string>
 }
-/**
- * Defines the default style of the select.
- */
-const defaultStyles = { backgroundPosition: 'right calc(.375em + .55rem) center' }
 
 const Select = (props: Props) => {
   const {
+    defaultValue,
     value,
     multiple,
     isValid,
@@ -54,12 +53,22 @@ const Select = (props: Props) => {
     className,
     style,
   } = props
-
+  /**
+   * Defines the default style of the select.
+   */
+  const selectDefaultStyles = {
+    backgroundPosition: 'right calc(.375em + .55rem) center',
+    borderColor: isValid ? 'green' : isInvalid ? 'red' : 'black',
+  }
+  const validInputTextDefaultStyles = {
+    color: 'green',
+  }
   return (
-    <div>
+    <Form.Group>
       <Form.Control
         as="select"
         value={value}
+        defaultValue={defaultValue}
         multiple={multiple}
         isInvalid={isInvalid}
         isValid={isValid}
@@ -67,17 +76,21 @@ const Select = (props: Props) => {
         size={getControlSize(size)}
         onChange={onChange}
         className={className}
-        style={Object.assign(style || {}, defaultStyles)}
+        style={Object.assign({}, style, ...[selectDefaultStyles])}
       >
         {children}
       </Form.Control>
-      <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
+      <Form.Control.Feedback
+        style={validInputTextDefaultStyles}
+        className="text-left ml-3 mt-1"
+        type="valid"
+      >
         {validInputMessage}
       </Form.Control.Feedback>
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
         {invalidInputMessage}
       </Form.Control.Feedback>
-    </div>
+    </Form.Group>
   )
 }
 

@@ -13,8 +13,8 @@ storiesOf('Select', module)
   ))
   .add('Select', () => (
     <div>
-      <Select>
-        <option selected>Choose your sweet</option>
+      <Select defaultValue="Marshmallow">
+        <option>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
@@ -24,20 +24,18 @@ storiesOf('Select', module)
   ))
   .add('Select multiple', () => (
     <div>
-      <Select multiple>
+      <Select defaultValue={['Nougat', 'Ice cream']} multiple>
         <option>Marshmallow</option>
-        <option selected>Nougat</option>
+        <option>Nougat</option>
         <option>Ice cream</option>
-        <option selected>Gingerbread</option>
+        <option>Gingerbread</option>
       </Select>
     </div>
   ))
   .add('Disabled select', () => (
     <div>
       <Select disabled>
-        <option selected disabled>
-          Choose your sweet
-        </option>
+        <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
@@ -47,10 +45,8 @@ storiesOf('Select', module)
   ))
   .add('Valid select', () => (
     <div>
-      <Select isValid>
-        <option selected disabled>
-          Choose your sweet
-        </option>
+      <Select defaultValue="Choose your sweet" isValid>
+        <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
@@ -60,10 +56,12 @@ storiesOf('Select', module)
   ))
   .add('Valid select with custom message', () => (
     <div>
-      <Select isValid validInputMessage="This is a valid select input message">
-        <option selected disabled>
-          Choose your sweet
-        </option>
+      <Select
+        defaultValue="Choose your sweet"
+        isValid
+        validInputMessage="This is a valid select input message"
+      >
+        <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
@@ -73,10 +71,8 @@ storiesOf('Select', module)
   ))
   .add('Invalid select', () => (
     <div>
-      <Select isInvalid>
-        <option selected disabled>
-          Choose your sweet
-        </option>
+      <Select defaultValue="Choose your sweet" isInvalid>
+        <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
@@ -86,10 +82,12 @@ storiesOf('Select', module)
   ))
   .add('Invalid select with custom message', () => (
     <div>
-      <Select isInvalid invalidInputMessage="This is an invalid select input error message">
-        <option selected disabled>
-          Choose your sweet
-        </option>
+      <Select
+        defaultValue="Choose your sweet"
+        isInvalid
+        invalidInputMessage="This is an invalid select input error message"
+      >
+        <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
