@@ -19,13 +19,13 @@ interface Props {
   /** Defines whether the input should be disabled or not. Defaults to false. */
   disabled?: boolean
   /** Defines the custom error message of the input. */
-  invalidInputMessage?: string
+  isInvalidFeedback?: string
   /** Defines whether the input should display as invalid. Defaults to false. */
   isInvalid?: boolean
   /** Defines whether the input should display as valid. Defaults to false */
   isValid?: boolean | true
   /** Defines the message for valid input. */
-  validInputMessage?: string
+  isValidFeedback?: string
   /** Defines the class of the input. */
   className?: string
   /** Defines the style of the input. */
@@ -46,16 +46,22 @@ const TextInput = (props: Props) => {
     disabled,
     isInvalid,
     isValid,
-    validInputMessage,
-    invalidInputMessage,
+    isValidFeedback,
+    isInvalidFeedback,
     value,
     size,
     className,
     style,
   } = props
+  const inputDefaultStyles = {
+    borderColor: isValid ? 'green' : isInvalid ? 'red' : 'black',
+  }
+  const validFeedbackDefaultStyle = {
+    color: 'green',
+  }
 
   return (
-    <div>
+    <Form.Group>
       <Form.Control
         as="input"
         type={type}
@@ -69,15 +75,19 @@ const TextInput = (props: Props) => {
         defaultValue={value}
         size={size}
         className={className}
-        style={style}
+        style={Object.assign({}, style, ...[inputDefaultStyles])}
       />
-      <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
-        {validInputMessage}
+      <Form.Control.Feedback
+        style={validFeedbackDefaultStyle}
+        className="text-left ml-3 mt-1"
+        type="valid"
+      >
+        {isValidFeedback}
       </Form.Control.Feedback>
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
-        {invalidInputMessage}
+        {isInvalidFeedback}
       </Form.Control.Feedback>
-    </div>
+    </Form.Group>
   )
 }
 

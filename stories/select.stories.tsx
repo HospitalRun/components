@@ -59,7 +59,7 @@ storiesOf('Select', module)
       <Select
         defaultValue="Choose your sweet"
         isValid
-        validInputMessage="This is a valid select input message"
+        isValidFeedback="This is a valid select input message"
       >
         <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
@@ -85,7 +85,7 @@ storiesOf('Select', module)
       <Select
         defaultValue="Choose your sweet"
         isInvalid
-        invalidInputMessage="This is an invalid select input error message"
+        isInvalidFeedback="This is an invalid select input error message"
       >
         <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
