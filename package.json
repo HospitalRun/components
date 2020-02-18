@@ -64,7 +64,7 @@
     "@semantic-release/changelog": "~5.0.0",
     "@semantic-release/commit-analyzer": "~6.3.0",
     "@semantic-release/git": "~7.0.16",
-    "@semantic-release/github": "~5.5.3",
+    "@semantic-release/github": "~7.0.3",
     "@semantic-release/npm": "~7.0.3",
     "@semantic-release/release-notes-generator": "~9.0.0",
     "@storybook/addon-actions": "~5.3.0",
