@@ -118,7 +118,7 @@
     "rollup-plugin-postcss": "~2.0.3",
     "sass-loader": "~8.0.0",
     "semantic-release": "~17.0.3",
-    "sinon": "~8.1.0",
+    "sinon": "~9.0.0",
     "tsdx": "~0.12.0",
     "tslib": "~1.10.0",
     "typescript": "~3.7.4"
