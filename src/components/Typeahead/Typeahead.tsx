@@ -11,6 +11,7 @@ interface Props {
   minLength?: number
   placeholder?: string
   value?: any
+  disabled?: boolean
 }
 
 const Typeahead = (props: Props) => {
@@ -25,6 +26,7 @@ const Typeahead = (props: Props) => {
     renderMenuItemChildren,
     minLength,
     value,
+    disabled,
   } = props
 
   const search = async (query: string) => {
@@ -51,6 +53,7 @@ const Typeahead = (props: Props) => {
       onChange={onChange}
       renderMenuItemChildren={renderMenuItemChildren}
       defaultSelected={selectedValues}
+      disabled={disabled}
     />
   )
 }
