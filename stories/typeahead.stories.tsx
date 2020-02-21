@@ -72,3 +72,27 @@ storiesOf('Typeahead', module)
       />
     </div>
   ))
+  .add('Disabled Typeahead', () => (
+    <div>
+      <Typeahead
+        id="typeahead"
+        searchAccessor="fullName"
+        placeholder="placeholder"
+        onSearch={() => getOptions()}
+        onChange={(selected) => alert(JSON.stringify(selected))}
+        disabled
+        value={{
+          id: '3',
+          firstName: 'first3',
+          lastName: 'last3',
+          fullName: 'first3 last3',
+        }}
+        renderMenuItemChildren={(option) => (
+          // eslint-disable-next-line
+            <div>
+              {`${option.fullName}`}
+            </div>
+        )}
+      />
+    </div>
+  ))
