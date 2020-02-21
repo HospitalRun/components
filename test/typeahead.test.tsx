@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import { AsyncTypeahead } from 'react-bootstrap-typeahead'
 import { act } from 'react-dom/test-utils'
 import { Typeahead } from '../src/components/Typeahead'
@@ -110,5 +110,56 @@ describe('Typeahead', () => {
 
     expect(change).toHaveBeenCalledTimes(1)
     expect(change).toHaveBeenLastCalledWith(expectedData)
+  })
+
+  it('renders a non-disabled Typeahead', () => {
+    const search = jest.fn()
+    const render = jest.fn()
+    const change = jest.fn()
+    const id = 'id'
+    const searchAccessor = 'search'
+    const placeholder = 'placeholder'
+    const minLength = 5
+
+    const wrapper = mount(
+      <Typeahead
+        placeholder={placeholder}
+        minLength={minLength}
+        onSearch={search}
+        onChange={change}
+        renderMenuItemChildren={render}
+        id={id}
+        searchAccessor={searchAccessor}
+      />,
+    )
+
+    const input = wrapper.find(AsyncTypeahead)
+    expect(input.prop('disabled')).not.toBe(true)
+  })
+
+  it('renders a disabled Typeahead', () => {
+    const search = jest.fn()
+    const render = jest.fn()
+    const change = jest.fn()
+    const id = 'id'
+    const searchAccessor = 'search'
+    const placeholder = 'placeholder'
+    const minLength = 5
+
+    const wrapper = mount(
+      <Typeahead
+        placeholder={placeholder}
+        minLength={minLength}
+        onSearch={search}
+        onChange={change}
+        disabled
+        renderMenuItemChildren={render}
+        id={id}
+        searchAccessor={searchAccessor}
+      />,
+    )
+
+    const input = wrapper.find(AsyncTypeahead)
+    expect(input.prop('disabled')).toBe(true)
   })
 })
