@@ -1,3 +1,10 @@
+## [0.33.3](https://github.com/HospitalRun/components/compare/v0.33.2...v0.33.3) (2020-02-21)
+
+
+### Bug Fixes
+
+* **typeahead:** add disabled prop to Typeahead ([cf590b6](https://github.com/HospitalRun/components/commit/cf590b63c5079bc18821eeabad3a93ff243b15b2)), closes [#287](https://github.com/HospitalRun/components/issues/287)
+
 ## [0.33.2](https://github.com/HospitalRun/components/compare/v0.33.1...v0.33.2) (2020-02-15)
 
 
