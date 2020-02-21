@@ -20,6 +20,12 @@ storiesOf('Table', module)
         age: 20,
         status: 'married',
       },
+      {
+        firstName: 'Jack',
+        lastName: 'Doe',
+        age: 20,
+        status: 'single',
+      },
     ]
 
     const tableProperties: any = {
@@ -36,15 +42,15 @@ storiesOf('Table', module)
           headerTitle: 'Nome',
           headerClassName: 'table-header-bold',
           className: 'pl-3 fixoverflow',
-          // styleWithCondition: {
-          //   condition: {
-          //     property: 'title',
-          //     value: 'Metastasi',
-          //   },
-          //   style: {
-          //     fontWeight: '600',
-          //   },
-          // },
+          styleWithCondition: {
+            condition: {
+              property: 'firstName',
+              value: 'John',
+            },
+            style: {
+              fontWeight: '600',
+            },
+          },
         },
         {
           accessor: 'lastName',

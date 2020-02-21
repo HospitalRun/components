@@ -6,7 +6,9 @@ import React from 'react'
 // import ExternalLink from './components/externalLink'
 import { get } from 'lodash'
 // import { format } from 'date-fns'
+// import { Cell } from 'react-table'
 import { Field, Filter, SortType } from './interfaces'
+// import {  } from 'react-bootstrap'
 
 // const checkUserPermissions = (userRole: string, elevatedRoles: string[]) => {
 //   if (elevatedRoles.find((role) => role === userRole)) {
@@ -322,24 +324,33 @@ export const generateColumns = (
       default:
         el = {
           Header: element.headerTitle || element.accessor || '',
-          Cell: ({ cell }: any) =>
-            // console.log('ROW', props)
-            element.styleWithCondition ? (
-              cell.original[element.styleWithCondition.condition.property] ===
+          Cell: ({ row }: any) => {
+            console.log('row', row)
+            console.log('element', element)
+            console.log(
+              '!',
+              element.styleWithCondition
+                ? row.original[element.styleWithCondition.condition.property]
+                : '',
+            )
+            return element.styleWithCondition ? (
+              row.original[element.styleWithCondition.condition.property] ===
               element.styleWithCondition.condition.value ? (
-                <div style={element.styleWithCondition.style}>{cell.value}</div>
+                <div style={element.styleWithCondition.style}>{row.values[element.accessor]}</div>
               ) : (
-                <>{cell.value}</>
+                <>{row.values[element.accessor]}</>
               )
             ) : (
-              <>{cell.value}</>
-            ),
+              <>{row.values[element.accessor]}</>
+            )
+          },
           accessor: element.accessor || '',
           className: element.className || '',
-          style: element.style || {},
-          headerStyle: element.style || {},
+          // style: element.style || {},
+          // headerStyle: element.style || {},
           headerClassName: element.headerClassName || '',
-          sortable: !element.disableSorting,
+          styleWithCondition: element.styleWithCondition || null,
+          // sortable: !element.disableSorting,
           // Filter: ({ filter, onChange }: FilterType) => (
           // <TextFilter
           //   filter={filter}

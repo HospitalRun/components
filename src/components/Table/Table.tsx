@@ -25,8 +25,14 @@ function Table({ data, tableProperties }: MyProps) {
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+            {headerGroup.headers.map((column: any) => (
+              // console.log('column.getHeaderProps()', column)
+              <th
+                {...column.getHeaderProps()}
+                className={column.headerClassName ? column.headerClassName : ''}
+              >
+                {column.render('Header')}
+              </th>
             ))}
           </tr>
         ))}
@@ -37,9 +43,17 @@ function Table({ data, tableProperties }: MyProps) {
           prepareRow(row)
           return (
             <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => (
-                <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-              ))}
+              {row.cells.map((cell: any) => {
+                console.log('cell.getCellProps()', cell)
+                return (
+                  <td
+                    {...cell.getCellProps()}
+                    className={cell.column.className ? cell.column.className : ''}
+                  >
+                    {cell.render('Cell')}
+                  </td>
+                )
+              })}
             </tr>
           )
         })}
