@@ -15,19 +15,19 @@ export const Toast: any = (
 
   switch (type) {
     case 'error':
-      toast.error(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
+      toast.error(messageToShow, { position: position || toast.POSITION.TOP_RIGHT })
       break
     case 'info':
-      toast.info(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
+      toast.info(messageToShow, { position: position || toast.POSITION.TOP_RIGHT })
       break
     case 'success':
-      toast.success(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
+      toast.success(messageToShow, { position: position || toast.POSITION.TOP_RIGHT })
       break
     case 'warning':
-      toast.warn(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
+      toast.warn(messageToShow, { position: position || toast.POSITION.TOP_RIGHT })
       break
     default:
-      toast.error(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
+      toast.error(messageToShow, { position: position || toast.POSITION.TOP_RIGHT })
   }
 
   return toastToShow
