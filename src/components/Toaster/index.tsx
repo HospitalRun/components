@@ -8,25 +8,26 @@ export const Toast: any = (
   type: ToastProps['type'],
   title: ToastProps['title'],
   message?: ToastProps['message'],
+  position?: ToastProps['position'],
 ) => {
   const messageToShow = message ? titleWithMessage(title, message) : titleWithoutMessage(title)
   let toastToShow
 
   switch (type) {
     case 'error':
-      toast.error(messageToShow)
+      toast.error(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
       break
     case 'info':
-      toast.info(messageToShow)
+      toast.info(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
       break
     case 'success':
-      toast.success(messageToShow)
+      toast.success(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
       break
     case 'warning':
-      toast.warn(messageToShow)
+      toast.warn(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
       break
     default:
-      toast.error(messageToShow)
+      toast.error(messageToShow, { position: !position ? position : toast.POSITION.TOP_RIGHT })
   }
 
   return toastToShow
