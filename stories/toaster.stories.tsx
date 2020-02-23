@@ -19,7 +19,7 @@ storiesOf('Toaster', module)
       <Button
         color="primary"
         onClick={() => {
-          Toast('success', 'This is a toaster!', 'Success')
+          Toast('success', 'This is a toaster!', 'top-right', 'Success and position is top-right')
         }}
       >
         Click me!
@@ -32,7 +32,7 @@ storiesOf('Toaster', module)
       <Button
         color="primary"
         onClick={() => {
-          Toast('info', 'This is a toaster!', 'Info')
+          Toast('info', 'This is a toaster!', 'top-left', 'Info and position is top-left')
         }}
       >
         Click me!
@@ -45,7 +45,7 @@ storiesOf('Toaster', module)
       <Button
         color="primary"
         onClick={() => {
-          Toast('warning', 'This is a toaster!', 'Warning')
+          Toast('warning', 'This is a toaster!', 'top-center', 'Warning and position is top-center')
         }}
       >
         Click me!
@@ -58,7 +58,43 @@ storiesOf('Toaster', module)
       <Button
         color="primary"
         onClick={() => {
-          Toast('error', 'This is a toaster!', 'Error')
+          Toast('error', 'This is a toaster!', 'bottom-right', 'Error and position is bottom-right')
+        }}
+      >
+        Click me!
+      </Button>
+      <Toaster autoClose={3000} hideProgressBar draggable />
+    </div>
+  ))
+  .add('Default', () => (
+    <div>
+      <Button
+        color="defult"
+        onClick={() => {
+          Toast(
+            'default',
+            'This is a toaster!',
+            'bottom-left',
+            'Default and position is bottom-left',
+          )
+        }}
+      >
+        Click me!
+      </Button>
+      <Toaster autoClose={3000} hideProgressBar draggable />
+    </div>
+  ))
+  .add('Default', () => (
+    <div>
+      <Button
+        color="defult"
+        onClick={() => {
+          Toast(
+            'default',
+            'This is a toaster!',
+            'bottom-center',
+            'Default and position is bottom-center',
+          )
         }}
       >
         Click me!
