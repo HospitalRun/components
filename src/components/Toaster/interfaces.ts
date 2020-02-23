@@ -9,6 +9,6 @@ export interface ToasterProps {
 export interface ToastProps {
   type: 'success' | 'info' | 'warning' | 'error'
   title: string
+  position: PositionOptions
   message?: string
-  position?: PositionOptions
 }
