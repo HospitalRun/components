@@ -14,12 +14,25 @@ storiesOf('Toaster', module)
     },
   })
   .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .add('Default', () => (
+    <div>
+      <Button
+        color="defult"
+        onClick={() => {
+          Toast('default', 'This is a toaster!', 'Default and position is top-right')
+        }}
+      >
+        Click me!
+      </Button>
+      <Toaster autoClose={3000} hideProgressBar draggable />
+    </div>
+  ))
   .add('Success', () => (
     <div>
       <Button
         color="primary"
         onClick={() => {
-          Toast('success', 'This is a toaster!', 'Success')
+          Toast('success', 'This is a toaster!', 'Success and position is top-left', 'top-left')
         }}
       >
         Click me!
@@ -32,7 +45,7 @@ storiesOf('Toaster', module)
       <Button
         color="primary"
         onClick={() => {
-          Toast('info', 'This is a toaster!', 'Info')
+          Toast('info', 'This is a toaster!', 'Info and position is top-center', 'top-center')
         }}
       >
         Click me!
@@ -45,7 +58,12 @@ storiesOf('Toaster', module)
       <Button
         color="primary"
         onClick={() => {
-          Toast('warning', 'This is a toaster!', 'Warning')
+          Toast(
+            'warning',
+            'This is a toaster!',
+            'Warning and position is bottom-right',
+            'bottom-right',
+          )
         }}
       >
         Click me!
@@ -58,7 +76,25 @@ storiesOf('Toaster', module)
       <Button
         color="primary"
         onClick={() => {
-          Toast('error', 'This is a toaster!', 'Error')
+          Toast('error', 'This is a toaster!', 'Error and position is bottom-left', 'bottom-left')
+        }}
+      >
+        Click me!
+      </Button>
+      <Toaster autoClose={3000} hideProgressBar draggable />
+    </div>
+  ))
+  .add('Default2', () => (
+    <div>
+      <Button
+        color="defult"
+        onClick={() => {
+          Toast(
+            'default',
+            'This is a toaster!',
+            'Default and position is bottom-center',
+            'bottom-center',
+          )
         }}
       >
         Click me!
