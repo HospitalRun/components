@@ -1,3 +1,18 @@
+# [0.34.0](https://github.com/HospitalRun/components/compare/v0.33.3...v0.34.0) (2020-02-25)
+
+
+### Bug Fixes
+
+* **toast:** position prop logic ([e4e46b2](https://github.com/HospitalRun/components/commit/e4e46b233248e8c1b028bb5a3342d610dba9f08c))
+* **toast:** remove unnecessary lines ([9941714](https://github.com/HospitalRun/components/commit/99417144c7504d0a7fe586c5cc0e8e4873d37d71))
+* **toast:** story props order and story name ([7f019a0](https://github.com/HospitalRun/components/commit/7f019a09427527bea6f700bbc56a4df1727c6480))
+
+
+### Features
+
+* **toast:** add prop to control position ([20c3417](https://github.com/HospitalRun/components/commit/20c3417de1e257abd9c8bd36302e04d846fc16d0))
+* **toaster:** add new toast props to stories ([7cf30d8](https://github.com/HospitalRun/components/commit/7cf30d869f7e5f4a66f94ea7602b7360cd0530a5))
+
 ## [0.33.3](https://github.com/HospitalRun/components/compare/v0.33.2...v0.33.3) (2020-02-21)
 
 
