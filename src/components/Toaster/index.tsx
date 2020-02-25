@@ -34,10 +34,6 @@ export const Toast: any = (
   return toastToShow
 }
 
-Toast.defaultProps = {
-  position: toast.POSITION.TOP_RIGHT,
-}
-
 export const Toaster = (props: ToasterProps) => {
   const { autoClose, hideProgressBar, draggable } = props
 
