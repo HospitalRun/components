@@ -71,10 +71,10 @@ const Select = (props: Props) => {
       >
         {children}
       </Form.Control>
-      <Form.Control.Feedback style={style} className="text-left ml-3 mt-1" type="valid">
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
         {validFeedback}
       </Form.Control.Feedback>
-      <Form.Control.Feedback style={style} className="text-left ml-3 mt-1" type="invalid">
+      <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
         {invalidFeedback}
       </Form.Control.Feedback>
     </Form.Group>

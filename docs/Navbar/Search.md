@@ -8,7 +8,7 @@ Used to navigate and search resources
 | ----------- | ---------- | -------- | ------- | ------------------------------------------------------------- |
 | placeholderText | `string` | no | 'Search' | Defines search placeholder text
 | buttonText | `string` | no | 'Search' | Defines search button text
-| buttonColor | `primary` | no | 'primary' | Defines the button variant. By default is primary|
+| buttonColor | `primary` | no | `primary` | Defines the button variant.|
 || `secondary`
 || `success`
 || `warning`
@@ -16,5 +16,5 @@ Used to navigate and search resources
 || `info`
 || `light`
 || `dark`
-|onClickButton|`(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void`|yes||Handles the on click search button event| 
-|onChangeInput|`(event: React.FormEvent<ReplaceProps<'input', BsPrefixProps<'input'> & FormControlProps>>,) => void`|yes||Handles the on change search form event| 
+|onClickButton|`(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void`|yes||Handles the on click search button event|
+|onChangeInput|`(event: React.FormEvent<ReplaceProps<'input', BsPrefixProps<'input'> & FormControlProps>>,) => void`|yes||Handles the on change search form event|

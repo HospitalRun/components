@@ -7,7 +7,7 @@ Used to display company brand name/logo
 | ----------- | ---------- | -------- | ------- | ------------------------------------------------------------- |
 | label| `string` | yes |
 | src | `string` | no |
-| color | `primary` | no | 'primary' | Defines the button variant. By default is primary|
+| color | `primary` | no | `primary` | Defines the button variant.|
 || `secondary`
 || `success`
 || `warning`

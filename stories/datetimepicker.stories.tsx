@@ -31,6 +31,52 @@ storiesOf('DateTimePickers', module)
       </div>
     )
   })
+  .add('Valid', () => {
+    const [startDate, setStartDate] = useState(new Date())
+
+    return (
+      <div>
+        <DateTimePicker isValid selected={startDate} onChange={(date) => setStartDate(date)} />
+      </div>
+    )
+  })
+  .add('Valid with feedback', () => {
+    const [startDate, setStartDate] = useState(new Date())
+
+    return (
+      <div>
+        <DateTimePicker
+          isValid
+          validFeedback="Date is valid"
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
+      </div>
+    )
+  })
+  .add('Invalid', () => {
+    const [startDate, setStartDate] = useState(new Date())
+
+    return (
+      <div>
+        <DateTimePicker isInvalid selected={startDate} onChange={(date) => setStartDate(date)} />
+      </div>
+    )
+  })
+  .add('Invalid with feedback', () => {
+    const [startDate, setStartDate] = useState(new Date())
+
+    return (
+      <div>
+        <DateTimePicker
+          isInvalid
+          invalidFeedback="Date is invalid"
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
+      </div>
+    )
+  })
   .add('Custom date format', () => {
     const [startDate, setStartDate] = useState(new Date())
 

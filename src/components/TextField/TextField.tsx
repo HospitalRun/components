@@ -55,10 +55,6 @@ const TextField = (props: Props) => {
     defaultValue,
   } = props
 
-  const validFeedbackDefaultStyle = {
-    color: '#59b571',
-  }
-
   return (
     <Form.Group>
       <Form.Control
@@ -75,11 +71,7 @@ const TextField = (props: Props) => {
         className={className}
         style={style}
       />
-      <Form.Control.Feedback
-        style={validFeedbackDefaultStyle}
-        className="text-left ml-3 mt-1"
-        type="valid"
-      >
+      <Form.Control.Feedback className="text-left ml-3 mt-1 text-success" type="valid">
         {validFeedback}
       </Form.Control.Feedback>
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
