@@ -32,7 +32,7 @@ storiesOf('TextField', module)
     <div>
       <TextField
         name="test_field"
-        isValidFeedback="Everything ok!"
+        validFeedback="Everything ok!"
         isValid
         defaultValue="this is the value"
         rows={5}
@@ -48,7 +48,7 @@ storiesOf('TextField', module)
     <div>
       <TextField
         name="test_field"
-        isInvalidFeedback="missing extra value"
+        invalidFeedback="missing extra value"
         isInvalid
         defaultValue="this is the value"
         rows={5}

@@ -10,7 +10,7 @@
 | onChange  | `(event: React.FormEvent<FormControl & FormControlProps>) => void` | -        |         | Handles the onChange event for the Select.                                                                 |
 | size      | `'small' | 'large'`                                                | -        |         | Determines whether to render a small or large TextField. By default, it is undefined.                      |
 | value     | `string`                                                           | -        |         | Selected value in the
-| isInvalidFeedback | `string`                                                 | -         |
+| invalidFeedback | `string`                                                 | -         |
 | Determines the feedback message for invalid select inputs.|
-| isValidFeedback | `string`                                                 | -         |
+| validFeedback | `string`                                                 | -         |
 | Determines the feedback message for valid select inputs.|

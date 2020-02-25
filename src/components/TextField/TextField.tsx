@@ -30,9 +30,9 @@ interface Props {
    */
   style?: CSSProperties
   /** Defines the custom error message of the input. */
-  isInvalidFeedback?: string
+  invalidFeedback?: string
   /** Defines the message for valid input. */
-  isValidFeedback?: string
+  validFeedback?: string
 }
 
 /**
@@ -43,8 +43,8 @@ const TextField = (props: Props) => {
     disabled,
     isInvalid,
     isValid,
-    isInvalidFeedback,
-    isValidFeedback,
+    invalidFeedback,
+    validFeedback,
     name,
     rows,
     size,
@@ -80,10 +80,10 @@ const TextField = (props: Props) => {
         className="text-left ml-3 mt-1"
         type="valid"
       >
-        {isValidFeedback}
+        {validFeedback}
       </Form.Control.Feedback>
       <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
-        {isInvalidFeedback}
+        {invalidFeedback}
       </Form.Control.Feedback>
     </Form.Group>
   )

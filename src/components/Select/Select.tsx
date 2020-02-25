@@ -30,9 +30,9 @@ interface Props {
   style?: CSSProperties
 
   /** Defines the custom error message of the input. */
-  isInvalidFeedback?: string
+  invalidFeedback?: string
   /** Defines the message for valid input. */
-  isValidFeedback?: string
+  validFeedback?: string
   /** Defines the default value */
   defaultValue?: string | Array<string>
 }
@@ -44,8 +44,8 @@ const Select = (props: Props) => {
     multiple,
     isValid,
     isInvalid,
-    isInvalidFeedback,
-    isValidFeedback,
+    invalidFeedback,
+    validFeedback,
     disabled,
     size,
     onChange,
@@ -53,16 +53,7 @@ const Select = (props: Props) => {
     className,
     style,
   } = props
-  /**
-   * Defines the default style of the select.
-   */
-  const selectDefaultStyles = {
-    backgroundPosition: 'right calc(.375em + .55rem) center',
-    borderColor: isValid ? '#59b571' : isInvalid ? 'red' : 'black',
-  }
-  const feedbackDefaultStyle = {
-    color: isValid ? '#59b571' : isInvalid ? '#dc3545' : 'black',
-  }
+
   return (
     <Form.Group>
       <Form.Control
@@ -76,23 +67,15 @@ const Select = (props: Props) => {
         size={getControlSize(size)}
         onChange={onChange}
         className={className}
-        style={Object.assign({}, style, ...[selectDefaultStyles])}
+        style={style}
       >
         {children}
       </Form.Control>
-      <Form.Control.Feedback
-        style={feedbackDefaultStyle}
-        className="text-left ml-3 mt-1"
-        type="valid"
-      >
-        {isValidFeedback}
+      <Form.Control.Feedback style={style} className="text-left ml-3 mt-1" type="valid">
+        {validFeedback}
       </Form.Control.Feedback>
-      <Form.Control.Feedback
-        style={feedbackDefaultStyle}
-        className="text-left ml-3 mt-1"
-        type="invalid"
-      >
-        {isInvalidFeedback}
+      <Form.Control.Feedback style={style} className="text-left ml-3 mt-1" type="invalid">
+        {invalidFeedback}
       </Form.Control.Feedback>
     </Form.Group>
   )
