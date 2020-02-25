@@ -84,7 +84,7 @@ storiesOf('Toaster', module)
       <Toaster autoClose={3000} hideProgressBar draggable />
     </div>
   ))
-  .add('Default', () => (
+  .add('Default2', () => (
     <div>
       <Button
         color="defult"
@@ -92,8 +92,8 @@ storiesOf('Toaster', module)
           Toast(
             'default',
             'This is a toaster!',
-            'bottom-center',
             'Default and position is bottom-center',
+            'bottom-center',
           )
         }}
       >
