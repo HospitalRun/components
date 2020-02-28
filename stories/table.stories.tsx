@@ -1,7 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { Table } from '../src'
-// import { TableProperties } from './src'
+import { Table, Icon } from '../src'
 
 storiesOf('Table', module)
   .addParameters({
@@ -12,87 +11,138 @@ storiesOf('Table', module)
   .addDecorator((storyFn) => (
     <div style={{ marginLeft: '2em', marginRight: '2em', textAlign: 'center' }}>{storyFn()}</div>
   ))
-  .add('Stupid Table', () => {
+  .add('Demo Table', () => {
     const data = [
       {
         firstName: 'John',
         lastName: 'Smith',
         age: 20,
         status: 'married',
+        admin: true,
+        date: new Date().toString(),
       },
       {
         firstName: 'Jack',
         lastName: 'Doe',
-        age: 20,
+        age: 21,
         status: 'single',
+        admin: false,
+        date: new Date().toString(),
+      },
+      {
+        firstName: 'Jason',
+        lastName: 'Gutemberg',
+        age: 22,
+        status: 'married',
+        admin: false,
+        date: new Date().toString(),
       },
     ]
 
     const tableProperties: any = {
-      // headerTitle: Object.getPrototypeOf(this).constructor.resourceTitle,
-      // newElementButtonLabel: Object.getPrototypeOf(this).constructor.newElementButtonLabel,
-      // newElementButtonRoute: `/${Object.getPrototypeOf(this).constructor.resource}/details`,
-
-      // elevatedRoles: ['admin', 'superadmin'],
       tableClassNames: '',
       columns: [
         {
           accessor: 'firstName',
           type: 'string',
-          headerTitle: 'Nome',
-          headerClassName: 'table-header-bold',
+          title: 'Nome',
+          headerClassName: 'text-info',
           className: 'pl-3 fixoverflow',
-          styleWithCondition: {
-            condition: {
-              property: 'firstName',
-              value: 'John',
+          disableFiltering: false,
+          disableSorting: false,
+          filterPlaceholder: 'Search in names!',
+          styles: [
+            {
+              conditions: [
+                {
+                  or: [
+                    {
+                      and: [
+                        {
+                          or: [
+                            {
+                              property: 'firstName',
+                              value: 'John',
+                            },
+                            {
+                              property: 'firstName',
+                              value: 'Cuzzo',
+                            },
+                          ],
+                        },
+                        {
+                          property: 'firstName',
+                          value: 'Lol',
+                        },
+                      ],
+                    },
+                    {
+                      and: [
+                        {
+                          property: 'firstName',
+                          value: 'Fog',
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+              style: {
+                fontWeight: '600',
+              },
             },
-            style: {
-              fontWeight: '600',
-            },
-          },
+          ],
         },
         {
           accessor: 'lastName',
           type: 'string',
-          headerTitle: 'Cognome',
-          headerClassName: 'table-header-bold',
-          className: 'pl-3',
+          title: 'Cognome',
+          headerClassName: 'text-info',
+          className: 'pl-3 fixoverflow',
+          disableFiltering: false,
+          disableSorting: true,
+        },
+        {
+          accessor: 'age',
+          type: 'string',
+          title: 'Age',
+          headerClassName: '',
+          className: 'pl-3 fixoverflow',
+          disableFiltering: false,
+          disableSorting: false,
+          filterPlaceholder: 'Search in ages',
+        },
+        {
+          accessor: 'admin',
+          type: 'boolean',
+          title: 'Admin',
+          headerClassName: 'text-info',
+          className: 'pl-3 fixoverflow',
+          disableFiltering: false,
+          disableSorting: false,
+          customTrueIcon: (
+            <div style={{ color: 'green' }}>
+              <Icon icon="appointment" />
+            </div>
+          ),
+          customFalseIcon: (
+            <div style={{ color: 'red' }}>
+              <Icon icon="calendar" />
+            </div>
+          ),
+        },
+        {
+          accessor: 'date',
+          type: 'date',
+          title: 'Date',
+          headerClassName: '',
+          className: 'pl-3 fixoverflow',
+          disableFiltering: false,
+          disableSorting: false,
+          filterPlaceholder: 'Search in dates',
         },
       ],
     }
-
-    // const columns = [
-    //   {
-    //     accessor: 'firstName',
-    //     // type: 'string',
-    //     // headerTitle: 'Nome pagina',
-    //     // headerClassName: 'table-header-bold',
-    //     // className: 'pl-3 fixoverflow',
-    //     // styleWithCondition: {
-    //     //   condition: {
-    //     //     property: 'title',
-    //     //     value: 'Metastasi',
-    //     //   },
-    //     //   style: {
-    //     //     fontWeight: '600',
-    //     //   },
-    //     // },
-    //   },
-    //   {
-    //     accessor: 'lastName',
-    //     // type: 'date',
-    //     // headerTitle: 'Ultima modifica',
-    //     // headerClassName: 'table-header-bold',
-    //     // className: 'pl-3',
-    //   },
-    // ]
-
-    // const tableProperties: TableProperties = {
-    //   columns = [
-
-    //   ]
-    // }
 
     return (
       <div>

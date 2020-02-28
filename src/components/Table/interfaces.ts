@@ -1,5 +1,3 @@
-// import { RowInfo } from 'react-table'
-
 export interface Filter {
   id: string
   value: Value
@@ -35,22 +33,20 @@ export interface TableProperties {
   defaultPageSize?: number
   pageSizeOptions?: number[]
   prefixUrl?: string
-  // rowClickCallback?(rowInfo: RowInfo): void
-  // rowStyling?(state: any, rowInfo: RowInfo, column: any): any
   fields: Field[]
 }
 
 export interface Field {
   accessor: string
   type: 'string' | 'boolean' | 'date' | 'array' | 'externalLink' | 'actionButtons'
-  headerTitle: string
+  title: string
   label?: string
   filterPlaceholder?: string
   headerClassName?: string
   className?: string
   disableFiltering?: boolean
   disableSorting?: boolean
-  style?: Record<string, any>
+  styles?: any // TODO
   pathPrefix?: string
   path?: Record<string, any>
   openInNewTab?: boolean
