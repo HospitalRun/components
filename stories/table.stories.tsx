@@ -45,7 +45,7 @@ storiesOf('Table', module)
         {
           accessor: 'firstName',
           type: 'string',
-          title: 'Nome',
+          title: 'Name',
           headerClassName: 'text-info',
           className: 'pl-3 fixoverflow',
           disableFiltering: false,
@@ -66,13 +66,13 @@ storiesOf('Table', module)
                             },
                             {
                               property: 'firstName',
-                              value: 'Cuzzo',
+                              value: 'Jack',
                             },
                           ],
                         },
                         {
                           property: 'firstName',
-                          value: 'Lol',
+                          value: 'Mob',
                         },
                       ],
                     },
@@ -96,7 +96,7 @@ storiesOf('Table', module)
         {
           accessor: 'lastName',
           type: 'string',
-          title: 'Cognome',
+          title: 'Surname',
           headerClassName: 'text-info',
           className: 'pl-3 fixoverflow',
           disableFiltering: false,
