@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toaster correctly renders a info notification 1`] = `ReactWrapper {}`;
