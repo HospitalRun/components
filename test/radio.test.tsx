@@ -42,11 +42,12 @@ describe('Radio', () => {
     expect(bootstrapRadio.text()).toEqual(label)
   })
 
-  it('Radio renders as invalid with default styles when isInvalid prop is used', () => {
+  it('Radio renders as invalid with default styles when isInvalid prop is present', () => {
     const radioWrapper = shallow(<Radio isInvalid />)
     const bootstrapRadio = radioWrapper.find(FormCheck)
     expect(bootstrapRadio.find(FormCheck.Label).props().style).toEqual({ color: '#dc3545' })
     expect(bootstrapRadio.find(FormControl.Feedback).props().style).toEqual({ color: '#dc3545' })
+    expect(bootstrapRadio.props().isValid).toEqual(false)
     expect(bootstrapRadio.props().isInvalid).toEqual(true)
   })
 

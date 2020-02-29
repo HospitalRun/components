@@ -51,13 +51,6 @@ const Radio = (props: Props) => {
     style,
   } = props
 
-  const labelDefaultStyle = {
-    color: isValid ? '#59b571' : isInvalid ? '#dc3545' : 'black',
-  }
-  const feedbackDefaultStyle = {
-    color: isValid ? '#59b571' : isInvalid ? '#dc3545' : 'black',
-  }
-
   return (
     <Form.Check
       name={name}
@@ -79,8 +72,15 @@ const Radio = (props: Props) => {
         isValid={isValid}
         isInvalid={isInvalid}
       />
-      <Form.Check.Label style={labelDefaultStyle}>{label}</Form.Check.Label>
-      <Form.Control.Feedback style={feedbackDefaultStyle} type={isValid ? 'valid' : 'invalid'}>
+      <Form.Check.Label
+        className={isValid ? 'text-success' : isInvalid ? 'text-danger' : undefined}
+      >
+        {label}
+      </Form.Check.Label>
+      <Form.Control.Feedback
+        className={isValid ? 'text-success' : isInvalid ? 'text-danger' : undefined}
+        type={isValid ? 'valid' : 'invalid'}
+      >
         {feedback}
       </Form.Control.Feedback>
     </Form.Check>

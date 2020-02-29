@@ -47,7 +47,7 @@ storiesOf('DateTimePickers', module)
       <div>
         <DateTimePicker
           isValid
-          validFeedback="Date is valid"
+          feedback="Date is valid"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
         />
@@ -70,7 +70,7 @@ storiesOf('DateTimePickers', module)
       <div>
         <DateTimePicker
           isInvalid
-          invalidFeedback="Date is invalid"
+          feedback="Date is invalid"
           selected={startDate}
           onChange={(date) => setStartDate(date)}
         />

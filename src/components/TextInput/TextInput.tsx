@@ -19,17 +19,17 @@ interface Props {
   /** Defines whether the input should be disabled or not. Defaults to false. */
   disabled?: boolean
   /** Defines the custom error message of the input. */
-  invalidFeedback?: string
+  feedback?: string
   /** Defines whether the input should display as invalid. Defaults to false. */
   isInvalid?: boolean
   /** Defines whether the input should display as valid. Defaults to false */
   isValid?: boolean
-  /** Defines the message for valid input. */
-  validFeedback?: string
   /** Defines the class of the input. */
   className?: string
   /** Defines the style of the input. */
   style?: CSSProperties
+  /** Defines the custom style of the input. */
+  inputDefaultStyle?: Record<string, any>
 }
 
 /**
@@ -44,21 +44,15 @@ const TextInput = (props: Props) => {
     placeholder,
     onChange,
     disabled,
-    isInvalid,
+    feedback,
     isValid,
-    validFeedback,
-    invalidFeedback,
+    isInvalid,
     value,
     size,
     className,
     style,
+    inputDefaultStyle,
   } = props
-  const inputDefaultStyles = {
-    borderColor: isValid ? '#59b571' : isInvalid ? 'red' : 'black',
-  }
-  const validFeedbackDefaultStyle = {
-    color: '#59b571',
-  }
 
   return (
     <Form.Group>
@@ -75,17 +69,15 @@ const TextInput = (props: Props) => {
         defaultValue={value}
         size={size}
         className={className}
-        style={Object.assign({}, style, ...[inputDefaultStyles])}
+        style={Object.assign({}, style, ...[inputDefaultStyle])}
       />
       <Form.Control.Feedback
-        style={validFeedbackDefaultStyle}
-        className="text-left ml-3 mt-1"
-        type="valid"
+        className={`text-left ml-3 mt-1 text-small ${
+          isValid ? 'text-success' : isInvalid ? 'text-danger' : undefined
+        }`}
+        type={isValid ? 'valid' : 'invalid'}
       >
-        {validFeedback}
-      </Form.Control.Feedback>
-      <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
-        {invalidFeedback}
+        {feedback}
       </Form.Control.Feedback>
     </Form.Group>
   )

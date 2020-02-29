@@ -27,7 +27,7 @@ describe('Select', () => {
     expect(bootstratSelect.props().disabled).toEqual(true)
   })
 
-  it('Select renders as invalid when the isInvalid prop is used', () => {
+  it('Select renders as invalid when the isValid prop is false', () => {
     const selectWrapper = shallow(
       <Select isInvalid>
         <option value="a">Option A</option>
@@ -36,7 +36,7 @@ describe('Select', () => {
       </Select>,
     )
     const bootstratSelect = selectWrapper.find(BootstrapFormControl)
-    expect(bootstratSelect.props().isInvalid).toEqual(true)
+    expect(bootstratSelect.props().isValid).toEqual(false)
   })
 
   it('Select uses the multiple prop', () => {

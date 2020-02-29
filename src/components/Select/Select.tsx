@@ -30,9 +30,8 @@ interface Props {
   style?: CSSProperties
 
   /** Defines the custom error message of the input. */
-  invalidFeedback?: string
-  /** Defines the message for valid input. */
-  validFeedback?: string
+  feedback?: string
+
   /** Defines the default value */
   defaultValue?: string | Array<string>
 }
@@ -44,8 +43,7 @@ const Select = (props: Props) => {
     multiple,
     isValid,
     isInvalid,
-    invalidFeedback,
-    validFeedback,
+    feedback,
     disabled,
     size,
     onChange,
@@ -71,11 +69,11 @@ const Select = (props: Props) => {
       >
         {children}
       </Form.Control>
-      <Form.Control.Feedback className="text-left ml-3 mt-1" type="valid">
-        {validFeedback}
-      </Form.Control.Feedback>
-      <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
-        {invalidFeedback}
+      <Form.Control.Feedback
+        className={isValid ? 'text-success' : isInvalid ? 'text-danger' : undefined}
+        type={isValid ? 'valid' : 'invalid'}
+      >
+        {feedback}
       </Form.Control.Feedback>
     </Form.Group>
   )

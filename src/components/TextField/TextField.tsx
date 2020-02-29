@@ -29,10 +29,8 @@ interface Props {
    * Defines the style of the textfield.
    */
   style?: CSSProperties
-  /** Defines the custom error message of the input. */
-  invalidFeedback?: string
-  /** Defines the message for valid input. */
-  validFeedback?: string
+  /** Defines the custom feedback of the input. */
+  feedback?: string
 }
 
 /**
@@ -41,10 +39,9 @@ interface Props {
 const TextField = (props: Props) => {
   const {
     disabled,
-    isInvalid,
     isValid,
-    invalidFeedback,
-    validFeedback,
+    isInvalid,
+    feedback,
     name,
     rows,
     size,
@@ -71,11 +68,11 @@ const TextField = (props: Props) => {
         className={className}
         style={style}
       />
-      <Form.Control.Feedback className="text-left ml-3 mt-1 text-success" type="valid">
-        {validFeedback}
-      </Form.Control.Feedback>
-      <Form.Control.Feedback className="text-left ml-3 mt-1" type="invalid">
-        {invalidFeedback}
+      <Form.Control.Feedback
+        className={isValid ? 'text-success' : isInvalid ? 'text-danger' : undefined}
+        type={isValid ? 'valid' : 'invalid'}
+      >
+        {feedback}
       </Form.Control.Feedback>
     </Form.Group>
   )

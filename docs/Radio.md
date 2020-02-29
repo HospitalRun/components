@@ -9,7 +9,8 @@
 | feedback  | `string | ReactNode`                                   | -        |         | Message to display when the Radio is invalid.                                                   |
 | id        | `string`                                               | -        |         | Necessary to link the label with the input.                                                     |
 | inline    | `boolean`                                              | -        |    `false`     | When inline, Radio elements are stacked horizontally instead of vertically.    |
-| isInvalid | `boolean`                                              | -        |    `false`     | Determines whether the Radio should be rendered as invalid or not. D          |
+| isValid | `boolean`                                              | -        |    `false`     | Determines whether the Radio should be rendered as valid or not.           |
+| isInvalid | `boolean`                                              | -        |    `false`     | Determines whether the Radio should be rendered as invalid or not.           |
 | label     | `string | ReactNode`                                   | -        |         | Label to display next to the Radio.                                                             |
 | name      | `string`                                               | -        |         | Name to group Radios together. Two Radios with the same name can't be checked at the same time. |
 | onChange  | `(event: React.ChangeEvent<HTMLInputElement>) => void` | -        |         | Listener will be called when the Radio is checked.                                              |

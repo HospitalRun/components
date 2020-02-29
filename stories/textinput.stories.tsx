@@ -113,7 +113,7 @@ storiesOf('TextInput', module)
         size="lg"
         value="This is a text input!"
         isValid
-        validFeedback="This is a custom valid input message"
+        feedback="This is a custom valid input message"
       />
     </div>
   ))
@@ -138,7 +138,7 @@ storiesOf('TextInput', module)
         size="lg"
         value="Custom error message"
         isInvalid
-        invalidFeedback="Please insert a 3 letter word"
+        feedback="Please insert a 3 letter word"
       />
     </div>
   ))

@@ -33,8 +33,7 @@
 | timeIntervals | `number`                                                 | -         | |Header over the time selector.|
 | timeCaption | `string`                                                 | -         | |Enable and set text for today button.|
 | todayButton | `string`                                                 | -         | |The beginning date of the initially selected date range.|
-| withPortal | `boolean`                                                 | -         | |Visualize calendar as portal.|
+| withPortal | `boolean`                                                `boolean`                                                 | -         | `false` | Determines whether the Select should be invalid. |
 | isInvalid | `boolean`                                                 | -         | `false` | Determines whether the Select should be invalid. |
 | isValid | `boolean`                                                 | -         | `false` | Determines whether the Select should be rendered as valid or not. |
-| invalidFeedback | `string`                                                 | -         | ||Defines the custom error message of the input.|
-| validFeedback | `string`                                                 | -         | ||Defines the message for valid input.|
+| feedback | `string`                                                 | -         | ||Defines the custom feedback of the input.|
