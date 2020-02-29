@@ -17,9 +17,9 @@ storiesOf('Toaster', module)
   .add('Default', () => (
     <div>
       <Button
-        color="defult"
+        color="default"
         onClick={() => {
-          Toast('default', 'This is a toaster!', 'Default and position is top-right')
+          Toast('info', 'message')
         }}
       >
         Click me!
