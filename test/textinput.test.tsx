@@ -55,7 +55,7 @@ describe('TextInput', () => {
     const wrapper = mount(<TextInput value="Testing the text input component" isInvalid />)
     const input = wrapper.find(Form.Control)
 
-    expect(input.prop('isValid')).toBe(false)
+    expect(input.prop('isInvalid')).toBe(true)
   })
 
   it('renders a valid TextInput', () => {

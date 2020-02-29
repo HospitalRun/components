@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
 import * as sinon from 'sinon'
-import { FormCheck, FormControl } from 'react-bootstrap'
+import { FormCheck } from 'react-bootstrap'
 import { Radio } from '../src'
 
 describe('Radio', () => {
@@ -42,20 +42,15 @@ describe('Radio', () => {
     expect(bootstrapRadio.text()).toEqual(label)
   })
 
-  it('Radio renders as invalid with default styles when isInvalid prop is present', () => {
+  it('Radio renders as invalid with default properties when isInvalid prop is present', () => {
     const radioWrapper = shallow(<Radio isInvalid />)
     const bootstrapRadio = radioWrapper.find(FormCheck)
-    expect(bootstrapRadio.find(FormCheck.Label).props().style).toEqual({ color: '#dc3545' })
-    expect(bootstrapRadio.find(FormControl.Feedback).props().style).toEqual({ color: '#dc3545' })
-    expect(bootstrapRadio.props().isValid).toEqual(false)
     expect(bootstrapRadio.props().isInvalid).toEqual(true)
   })
 
-  it('Radio renders as valid with default styles when isValid prop is used', () => {
+  it('Radio renders as valid with default properties when isValid prop is used', () => {
     const radioWrapper = shallow(<Radio isValid />)
     const bootstrapRadio = radioWrapper.find(FormCheck)
-    expect(bootstrapRadio.find(FormCheck.Label).props().style).toEqual({ color: '#59b571' })
-    expect(bootstrapRadio.find(FormControl.Feedback).props().style).toEqual({ color: '#59b571' })
     expect(bootstrapRadio.props().isValid).toEqual(true)
   })
 

@@ -36,7 +36,7 @@ describe('Select', () => {
       </Select>,
     )
     const bootstratSelect = selectWrapper.find(BootstrapFormControl)
-    expect(bootstratSelect.props().isValid).toEqual(false)
+    expect(bootstratSelect.props().isInvalid).toEqual(true)
   })
 
   it('Select uses the multiple prop', () => {
