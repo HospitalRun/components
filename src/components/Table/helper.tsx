@@ -164,7 +164,6 @@ export const generateColumns = (fields: Field[]) => {
                   </>
                 ),
           className: element.className || '',
-          // width: element.width || 100,
           headerClassName: element.headerClassName || '',
           disableSorting: element.disableSorting,
           disableFiltering: element.disableFiltering,
@@ -177,7 +176,6 @@ export const generateColumns = (fields: Field[]) => {
           Header: element.title || element.accessor || '',
           accessor: element.accessor || '',
           className: element.className ? `${element.className} text-center` : 'text-center',
-          // width: element.width || 320,
           headerClassName: element.headerClassName || '',
           disableSorting: element.disableSorting,
           disableFiltering: element.disableFiltering,
@@ -186,81 +184,22 @@ export const generateColumns = (fields: Field[]) => {
         }
         columns.push(el)
         return columns
-      // case 'externalLink':
-      //   el = {
-      //     Header: element.title || '',
-      //     accessor: '',
-      //     Cell: (row: any) => <ExternalLink {...row} {...element} />,
-      //     className:
-      //       `${element.className} external-link custom-width` || 'external-link custom-width',
-      //     headerStyle: element.styles || {},
-      //     style: element.styles || '',
-      //     headerClassName: element.headerClassName
-      //       ? `${element.headerClassName} external-link custom-width`
-      //       : 'external-link custom-width',
-      //     filterable: false,
-      //     sortable: false,
-      //     width: element.width || 170,
-      //   }
-      //   if (element.elevatedRolesOnly) {
-      //     if (element.overridedElevatedRolesForThisField) {
-      //       if (checkUserPermissions(user.role, element.overridedElevatedRolesForThisField)) {
-      //         columns.push(el)
-      //       }
-      //     } else {
-      //       if (checkUserPermissions(user.role, elevatedRoles)) {
-      //         columns.push(el)
-      //       }
-      //     }
-      //   } else {
-      //     columns.push(el)
-      //   }
-      //   return columns
-      // case 'actionButtons':
-      //   el = {
-      //     Header: element.title || 'Azioni',
-      //     accessor: '',
-      //     className: element.className
-      //       ? `${element.className} action-buttons text-center`
-      //       : `action-buttons text-center`,
-      //     style: element.styles || {},
-      //     headerClassName: element.headerClassName
-      //       ? `${element.headerClassName} action-buttons text-center`
-      //       : 'action-buttons text-center',
-      //     Cell: (row: any) => (
-      //       <>
-      //         {element.buttons
-      //           ? element.buttons.map((butt, i) => <ActionButton key={i} {...row} {...butt} />)
-      //           : ''}
-      //       </>
-      //     ),
-      //     filterable: false,
-      //     sortable: false,
-      //     width: element.width || 100,
-      //   }
-      //   if (element.elevatedRolesOnly) {
-      //     if (element.overridedElevatedRolesForThisField) {
-      //       if (checkUserPermissions(user.role, element.overridedElevatedRolesForThisField)) {
-      //         columns.push(el)
-      //       }
-      //     } else {
-      //       if (checkUserPermissions(user.role, elevatedRoles)) {
-      //         columns.push(el)
-      //       }
-      //     }
-      //   } else {
-      //     columns.push(el)
-      //   }
-      //   return columns
       default:
         el = {
           Header: element.title || element.accessor || '',
           accessor: element.accessor || '',
           Cell: ({ row }: any) => {
             let resultingStyle = {}
+            let applyStyle = true
             if (element.styles && element.styles.length) {
               element.styles.forEach((style: any) => {
-                resultingStyle = { ...resultingStyle, ...style.style }
+                if (style.conditions) {
+                  // TODO check conditions and eventually toggle applyStyle
+                  applyStyle = true
+                }
+                if (applyStyle) {
+                  resultingStyle = { ...resultingStyle, ...style.style }
+                }
               })
             }
             return resultingStyle ? (

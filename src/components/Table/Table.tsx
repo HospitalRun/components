@@ -8,9 +8,7 @@ interface MyProps {
 }
 
 function Table({ data, tableProperties }: MyProps) {
-  console.log(tableProperties)
   const columns = generateColumns(tableProperties.columns)
-  console.log('COLUMNS', columns)
 
   const {
     getTableProps,
@@ -50,7 +48,6 @@ function Table({ data, tableProperties }: MyProps) {
                   className={column.headerClassName ? column.headerClassName : ''}
                 >
                   <div {...(column.disableSorting ? null : column.getSortByToggleProps())}>
-                    {/* {console.log('column', column)} */}
                     {column.render('Header')}
                     <span>{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}</span>
                   </div>
@@ -63,12 +60,10 @@ function Table({ data, tableProperties }: MyProps) {
         </thead>
         <tbody {...getTableBodyProps()}>
           {page.map((row: Row) => {
-            // console.log(row)
             prepareRow(row)
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell: any) => (
-                  // console.log('cell.getCellProps()', cell)
                   <td
                     {...cell.getCellProps()}
                     className={cell.column.className ? cell.column.className : ''}
