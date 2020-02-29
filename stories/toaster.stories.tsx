@@ -19,7 +19,7 @@ storiesOf('Toaster', module)
       <Button
         color="default"
         onClick={() => {
-          Toast('info', 'message')
+          Toast('default', 'This is a toaster!', 'Default and position is top-right')
         }}
       >
         Click me!
