@@ -7,6 +7,7 @@ describe('LineGraph', () => {
     const wrapper = mount(
       <LineGraph
         title="Test Graph"
+        fill
         datasets={[
           {
             borderColor: 'red',

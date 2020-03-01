@@ -26,10 +26,11 @@ describe('BarGraph', () => {
     expect(wrapper.find(HTMLCanvasElement)).toHaveLength(1)
   })
 
-  it('BarGraph renders itself without crashing with time axis type', () => {
+  it('BarGraph renders itself without crashing with horizontal prop and time axis type', () => {
     const wrapper = mount(
       <BarGraph
         title="Test Graph"
+        horizontal
         datasets={[
           {
             backgroundColor: 'blue',
