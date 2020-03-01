@@ -71,4 +71,14 @@ describe('Alert', () => {
     button.simulate('click')
     expect(alertWrapper.containsMatchingElement(<></>)).toBeTruthy()
   })
+
+  it('Alert disappears on invoking onClose function', () => {
+    const alertWrapper = shallow(<Alert dismissible />)
+    const bootstrapAlert = alertWrapper.find(BootstrapAlert)
+    const onCloseFunction = bootstrapAlert.props() && bootstrapAlert.props().onClose
+    if (onCloseFunction) {
+      onCloseFunction()
+    }
+    expect(alertWrapper.containsMatchingElement(<></>)).toBeTruthy()
+  })
 })
