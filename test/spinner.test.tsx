@@ -11,6 +11,9 @@ describe('Spinner', () => {
     const beatLoaderWrapper = shallow(<Spinner type="BeatLoader" loading color="orange" />)
     expect(beatLoaderWrapper.find(Spinners.BeatLoader)).toHaveLength(1)
 
+    const bounceLoaderWrapper = shallow(<Spinner type="BounceLoader" loading color="orange" />)
+    expect(bounceLoaderWrapper.find(Spinners.BounceLoader)).toHaveLength(1)
+
     const climbingBoxLoaderWrapper = shallow(
       <Spinner type="ClimbingBoxLoader" loading color="orange" />,
     )
@@ -21,6 +24,12 @@ describe('Spinner', () => {
 
     const dotLoaderWrapper = shallow(<Spinner type="DotLoader" loading color="orange" />)
     expect(dotLoaderWrapper.find(Spinners.DotLoader)).toHaveLength(1)
+
+    const fadeLoaderWrapper = shallow(<Spinner type="FadeLoader" loading color="orange" />)
+    expect(fadeLoaderWrapper.find(Spinners.FadeLoader)).toHaveLength(1)
+
+    const pulseLoaderWrapper = shallow(<Spinner type="PulseLoader" loading color="orange" />)
+    expect(pulseLoaderWrapper.find(Spinners.PulseLoader)).toHaveLength(1)
 
     const rotateLoaderWrapper = shallow(<Spinner type="RotateLoader" loading color="orange" />)
     expect(rotateLoaderWrapper.find(Spinners.RotateLoader)).toHaveLength(1)
