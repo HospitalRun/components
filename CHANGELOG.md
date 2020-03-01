@@ -1,3 +1,10 @@
+## [0.34.1](https://github.com/HospitalRun/components/compare/v0.34.0...v0.34.1) (2020-03-01)
+
+
+### Bug Fixes
+
+* **spinner:** quick import fix ([676fe36](https://github.com/HospitalRun/components/commit/676fe367213a46dffe8d07c64d7b98022206a69b))
+
 # [0.34.0](https://github.com/HospitalRun/components/compare/v0.33.3...v0.34.0) (2020-02-25)
 
 
