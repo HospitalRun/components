@@ -19,7 +19,10 @@ describe('Toaster', () => {
     )
 
     const wrapper = mount(<App />)
+    Toast('success', 'message')
     Toast('info', 'message')
+    Toast('warning', 'message')
+    Toast('error', 'message')
     jest.runAllTimers()
     expect(wrapper).toMatchSnapshot()
   })
