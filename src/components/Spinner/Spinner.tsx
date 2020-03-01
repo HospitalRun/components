@@ -75,7 +75,7 @@ const Spinner = (props: Props) => {
     case 'SyncLoader':
       return <Spinners.SyncLoader {...loaderStyles1} />
     default:
-      return <div>{strings.invalidSpinner}</div>
+      return <Spinners.BarLoader {...loaderStyles2} />
   }
 }
 
