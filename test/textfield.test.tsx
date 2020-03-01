@@ -3,6 +3,8 @@ import * as sinon from 'sinon'
 import { mount } from 'enzyme'
 import { TextField } from '../src'
 
+const onChange = jest.fn()
+
 describe('TextField', () => {
   it('renders a TextField without crashing', () => {
     const wrapper = mount(<TextField />)
@@ -14,7 +16,7 @@ describe('TextField', () => {
     const name = 'example_field'
     const value = 'this is teh text field text'
     const rows = 5
-    const wrapper = mount(<TextField name={name} value={value} rows={rows} />)
+    const wrapper = mount(<TextField name={name} value={value} onChange={onChange} rows={rows} />)
 
     expect(wrapper.find(HTMLTextAreaElement)).toHaveLength(1)
     expect(
@@ -35,25 +37,25 @@ describe('TextField', () => {
   })
 
   it('renders a non-disabled TextField', () => {
-    const wrapper = mount(<TextField value="test value" />)
+    const wrapper = mount(<TextField value="test value" onChange={onChange} />)
     const input = wrapper.find(HTMLTextAreaElement)
 
     expect(input.prop('disabled')).not.toBe(true)
   })
 
   it('renders a disabled TextField', () => {
-    const wrapper = mount(<TextField value="test value" disabled />)
+    const wrapper = mount(<TextField value="test value" onChange={onChange} disabled />)
     const input = wrapper.find(HTMLTextAreaElement)
 
     expect(input.prop('disabled')).toBe(true)
   })
 
   it('renders a TextField of different sizes', () => {
-    const smallWrapper = mount(<TextField value="test value" size="small" />)
+    const smallWrapper = mount(<TextField value="test value" onChange={onChange} size="small" />)
     const smallInput = smallWrapper.find(HTMLTextAreaElement)
     expect(smallInput.hasClass('form-control-sm')).toBe(true)
 
-    const largeWrapper = mount(<TextField value="test value" size="large" />)
+    const largeWrapper = mount(<TextField value="test value" onChange={onChange} size="large" />)
     const largeInput = largeWrapper.find(HTMLTextAreaElement)
     expect(largeInput.hasClass('form-control-lg')).toBe(true)
   })

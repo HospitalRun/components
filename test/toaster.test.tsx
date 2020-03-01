@@ -19,7 +19,11 @@ describe('Toaster', () => {
     )
 
     const wrapper = mount(<App />)
+    Toast('success', 'message')
     Toast('info', 'message')
+    Toast('warning', 'message')
+    Toast('error', 'message')
+    Toast('default', 'message') // tests the default case
     jest.runAllTimers()
     expect(wrapper).toMatchSnapshot()
   })

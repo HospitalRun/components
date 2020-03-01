@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
+import { act } from 'react-dom/test-utils'
 import { Editor } from '@tinymce/tinymce-react'
 import { RichText } from '../src'
 
@@ -30,5 +31,18 @@ describe('TextField', () => {
     const input = wrapper.find(Editor)
 
     expect(input.prop('disabled')).toBe(true)
+  })
+
+  it('renders a RichText with custom onChange', () => {
+    const change = jest.fn()
+    const wrapper = shallow(<RichText onChange={change} />)
+    const expectedData = { id: '123' }
+
+    act(() => {
+      wrapper.prop('onEditorChange')(expectedData)
+    })
+    wrapper.update()
+
+    expect(change).toHaveBeenCalledTimes(1)
   })
 })

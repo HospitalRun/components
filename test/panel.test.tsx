@@ -69,6 +69,7 @@ describe('Panel', () => {
     expect(panelWrapper.find(Icon)).toHaveLength(1)
     expect(bodyWrapper.find(Icon)).toHaveLength(1)
   })
+
   it('should collapse the panel on header click', () => {
     const panelWrapper = mount(
       <Panel title="Test Title" collapsible>
@@ -76,12 +77,12 @@ describe('Panel', () => {
         <p>You can open and close me!</p>
       </Panel>,
     )
-
     const cardHeaderWrapper = panelWrapper.find(Card.Header).first()
     expect(panelWrapper.find('.collapse.show')).toHaveLength(1)
     cardHeaderWrapper.simulate('click')
     expect(panelWrapper.find('.collapsing')).toHaveLength(1)
   })
+
   it('should open panel on header click', () => {
     const panelWrapper = mount(
       <Panel title="Test Title" collapsible collapsed>
@@ -89,13 +90,25 @@ describe('Panel', () => {
         <p>You can open and close me!</p>
       </Panel>,
     )
-
     const cardHeaderWrapper = panelWrapper.find(Card.Header).first()
     expect(panelWrapper.find('.collapse.show')).toHaveLength(0)
     expect(panelWrapper.find('.collapse')).toHaveLength(1)
     cardHeaderWrapper.simulate('click')
     expect(panelWrapper.find('.collapsing')).toHaveLength(1)
   })
+
+  it('should toggle panel on icon click', () => {
+    const panelWrapper = mount(
+      <Panel title="Test Title" collapsible>
+        <p>You can add stuff here!</p>
+        <p>You can open and close me!</p>
+      </Panel>,
+    )
+    const icon = panelWrapper.find(Icon)
+    icon.simulate('click')
+    expect(panelWrapper.find('.collapsing')).toHaveLength(1)
+  })
+
   it('should be initially collapsed if collapsed prop is passed', () => {
     const panelWrapper = mount(<Panel collapsible collapsed />)
     expect(panelWrapper.find('.collapse.show')).toHaveLength(0)
