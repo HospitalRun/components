@@ -2,6 +2,7 @@
 import React from 'react'
 import * as Spinners from 'react-spinners'
 import { SpinnerType, SpinnerSizeUnit } from './interfaces'
+import * as strings from './strings'
 
 interface Props {
   /** The type of spinner to render */
@@ -74,7 +75,7 @@ const Spinner = (props: Props) => {
     case 'SyncLoader':
       return <Spinners.SyncLoader {...loaderStyles1} />
     default:
-      return <Spinners.BarLoader {...loaderStyles2} />
+      return <div>{strings.invalidSpinner}</div>
   }
 }
 

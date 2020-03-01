@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as Spinners from 'react-spinners'
 import { shallow } from 'enzyme'
 import { Spinner } from '../src'
+import * as strings from '../src/components/Spinner/strings'
 
 describe('Spinner', () => {
   it('Spinner renders itself without crashing', () => {
@@ -39,5 +40,8 @@ describe('Spinner', () => {
 
     const syncLoaderWrapper = shallow(<Spinner type="SyncLoader" loading color="orange" />)
     expect(syncLoaderWrapper.find(Spinners.SyncLoader)).toHaveLength(1)
+
+    const defaultLoaderWrapper = shallow(<Spinner type={'default' as any} loading color="orange" />)
+    expect(defaultLoaderWrapper.find(<div>{strings.invalidSpinner}</div>)).toBeTruthy()
   })
 })
