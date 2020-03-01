@@ -64,4 +64,11 @@ describe('Alert', () => {
     alertWrapper.setState({ show: false })
     expect(alertWrapper.containsMatchingElement(<></>)).toBeTruthy()
   })
+
+  it('Alert disappears on clicking close button', () => {
+    const alertWrapper = shallow(<Alert dismissible />)
+    const button = alertWrapper.find(Button)
+    button.simulate('click')
+    expect(alertWrapper.containsMatchingElement(<></>)).toBeTruthy()
+  })
 })
