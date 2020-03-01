@@ -31,4 +31,11 @@ describe('TextField', () => {
 
     expect(input.prop('disabled')).toBe(true)
   })
+
+  it('renders a RichText with onChange handler', () => {
+    const onChange = jest.fn()
+    const wrapper = shallow(<RichText onChange={onChange} />)
+
+    expect(wrapper.find(Editor)).toHaveLength(1)
+  })
 })
