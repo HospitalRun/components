@@ -58,4 +58,10 @@ describe('Alert', () => {
     const button = alertWrapper.find(Button)
     expect(button.props().style).toMatchObject({ background: 'red' })
   })
+
+  it('Alert does not render with state.show set to false', () => {
+    const alertWrapper = shallow(<Alert />)
+    alertWrapper.setState({ show: false })
+    expect(alertWrapper.containsMatchingElement(<></>)).toBeTruthy()
+  })
 })
