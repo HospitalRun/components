@@ -45,6 +45,7 @@ Contributions are always welcome. Before contributing please read our [contribut
 6. You will be able to test components with storybook and enjoy live reloading!
 
 ## Working on an Issue
+
 In order to optimize the workflow and to prevent multiple contributors working on the same issue without interactions, a contributor must ask to be assigned to an issue by one of the core team members: it's enough to ask it inside the specific issue.
 
 ## How to commit
