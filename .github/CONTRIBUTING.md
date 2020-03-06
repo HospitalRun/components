@@ -32,7 +32,6 @@ In order to optimize the workflow and to prevent multiple contributors working o
 5. Create a `strings.ts` file (if needed). This file should declare and export all string constants.
 6. Create a new file in `src/test` called `componentname.test.tsx` where `componentname` is the name of the component. The tests should cover all use cases of the component.
 7. Create a new file called `componentname.stories.tsx` where `componentname` is the name of the component. The stories should cover all use cases of the component.
-8. Generate documentation for the component by running `npm run docgen`.
 
 ## How to commit
 

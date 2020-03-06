@@ -29,7 +29,6 @@
     "coveralls": "CI=true tsdx test --coverage --coverageReporters=text-lcov | coveralls",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
-    "docgen": "genDocs.sh",
     "semantic-release": "semantic-release",
     "lint-staged": "lint-staged",
     "commitlint": "commitlint"
