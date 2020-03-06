@@ -77,16 +77,36 @@ function Table({ data, tableProperties }: MyProps) {
         </tbody>
       </table>
       <div className="pagination">
-        <button type="button" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+        <button
+          type="button"
+          id="firstPageButton"
+          onClick={() => gotoPage(0)}
+          disabled={!canPreviousPage}
+        >
           {'<<'}
         </button>{' '}
-        <button type="button" onClick={() => previousPage()} disabled={!canPreviousPage}>
+        <button
+          type="button"
+          id="previousPageButton"
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+        >
           {'<'}
         </button>{' '}
-        <button type="button" onClick={() => nextPage()} disabled={!canNextPage}>
+        <button
+          type="button"
+          id="nextPageButton"
+          onClick={() => nextPage()}
+          disabled={!canNextPage}
+        >
           {'>'}
         </button>{' '}
-        <button type="button" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+        <button
+          type="button"
+          id="lastPageButton"
+          onClick={() => gotoPage(pageCount - 1)}
+          disabled={!canNextPage}
+        >
           {'>>'}
         </button>{' '}
         <span>

@@ -39,6 +39,97 @@ storiesOf('Table', module)
       },
     ]
 
+    // const longData = [
+    //   {
+    //     firstName: 'John',
+    //     lastName: 'Smith',
+    //     age: 20,
+    //     status: 'married',
+    //     admin: true,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Jack',
+    //     lastName: 'Doe',
+    //     age: 21,
+    //     status: 'single',
+    //     admin: false,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Jason',
+    //     lastName: 'Gutemberg',
+    //     age: 22,
+    //     status: 'married',
+    //     admin: true,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Michael',
+    //     lastName: 'Scott',
+    //     age: 40,
+    //     status: 'single',
+    //     admin: true,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Johnny',
+    //     lastName: 'Carpenter',
+    //     age: 21,
+    //     status: 'single',
+    //     admin: false,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Mariah',
+    //     lastName: 'Carey',
+    //     age: 22,
+    //     status: 'married',
+    //     admin: true,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Steven',
+    //     lastName: 'Spielberg',
+    //     age: 40,
+    //     status: 'married',
+    //     admin: true,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Marlon',
+    //     lastName: 'Brando',
+    //     age: 25,
+    //     status: 'single',
+    //     admin: false,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Andreas',
+    //     lastName: 'Jungdal',
+    //     age: 22,
+    //     status: 'single',
+    //     admin: true,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Leonardo',
+    //     lastName: 'Di Caprio',
+    //     age: 40,
+    //     status: 'married',
+    //     admin: false,
+    //     date: new Date().toString(),
+    //   },
+    //   {
+    //     firstName: 'Brad',
+    //     lastName: 'Pitt',
+    //     age: 42,
+    //     status: 'single',
+    //     admin: true,
+    //     date: new Date().toString(),
+    //   },
+    // ]
+
     const tableProperties: any = {
       tableClassNames: '',
       columns: [
