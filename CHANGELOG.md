@@ -1,3 +1,10 @@
+## [0.35.1](https://github.com/HospitalRun/components/compare/v0.35.0...v0.35.1) (2020-03-06)
+
+
+### Bug Fixes
+
+* **eslintrc:** removes createDefaultProgram ([3b2e1a0](https://github.com/HospitalRun/components/commit/3b2e1a03abaca256fab2e597775fb447222f3acd))
+
 # [0.35.0](https://github.com/HospitalRun/components/compare/v0.34.1...v0.35.0) (2020-03-06)
 
 
