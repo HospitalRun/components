@@ -1,3 +1,10 @@
+# [0.35.0](https://github.com/HospitalRun/components/compare/v0.34.1...v0.35.0) (2020-03-06)
+
+
+### Features
+
+* update vscode settings ([ae83acb](https://github.com/HospitalRun/components/commit/ae83acb1b3ad0b5aa8cb259864c57d7709fbe972))
+
 ## [0.34.1](https://github.com/HospitalRun/components/compare/v0.34.0...v0.34.1) (2020-03-01)
 
 
