@@ -1,10 +1,11 @@
 import React from 'react'
-import { useTable, useFilters, useSortBy, Row, usePagination } from 'react-table'
+import { useTable, useFilters, useSortBy, usePagination, TableInstance } from 'react-table'
 import { generateColumns } from './helper'
+import { Data, TableProperties, GeneratedColumn } from './interfaces'
 
 interface MyProps {
-  tableProperties: any
-  data: any
+  tableProperties: TableProperties
+  data: Data[]
 }
 
 function Table({ data, tableProperties }: MyProps) {
@@ -25,7 +26,7 @@ function Table({ data, tableProperties }: MyProps) {
     previousPage,
     setPageSize,
     state: { pageIndex, pageSize },
-  } = useTable(
+  } = useTable<Data>(
     {
       columns,
       data,
@@ -34,15 +35,15 @@ function Table({ data, tableProperties }: MyProps) {
     useFilters,
     useSortBy,
     usePagination,
-  )
+  ) as TableInstance<object>
 
   return (
     <>
-      <table {...getTableProps()}>
+      <table {...getTableProps()} className={tableProperties.tableClassname}>
         <thead>
-          {headerGroups.map((headerGroup: any) => (
+          {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column: any) => (
+              {headerGroup.headers.map((column: GeneratedColumn) => (
                 <th
                   {...column.getHeaderProps()}
                   className={column.headerClassName ? column.headerClassName : ''}
@@ -59,7 +60,7 @@ function Table({ data, tableProperties }: MyProps) {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {page.map((row: Row) => {
+          {page.map((row) => {
             prepareRow(row)
             return (
               <tr {...row.getRowProps()}>

@@ -1,17 +1,9 @@
 import React from 'react'
 import { get } from 'lodash'
-import { Field, SortType } from './interfaces'
+import { CellProps } from 'react-table'
+import { CustomColumn, ColumnStyle, DefaultColumnFilterOptions, Element } from './interfaces'
 import { DateTimePicker } from '../DateTimePicker'
 
-interface DefaultColumnFilterOptions {
-  column: {
-    filterValue: string
-    setFilter: (filter?: string) => void
-    filterPlaceholder: string
-    id?: string
-    preFilteredRows?: any
-  }
-}
 const DefaultColumnFilter = ({
   column: { filterValue = '', setFilter, filterPlaceholder = '' },
 }: DefaultColumnFilterOptions) => (
@@ -28,8 +20,8 @@ const SelectColumnFilter = ({
   column: { filterValue, setFilter, preFilteredRows, id = '0' },
 }: DefaultColumnFilterOptions) => {
   const options = React.useMemo(() => {
-    const opt: any = []
-    preFilteredRows.forEach((row: any) => {
+    const opt: string[] = []
+    preFilteredRows.forEach((row) => {
       if (opt.indexOf(row.values[id]) === -1) {
         opt.push(row.values[id])
       }
@@ -63,8 +55,8 @@ const DateColumnFilter = ({
       dateFormatCalendar="LLLL yyyy"
       dropdownMode="scroll"
       locale="enUS"
-      onChange={(e: any) => {
-        setFilter(e)
+      onChange={(date: Date) => {
+        setFilter(date.toString())
       }}
       selected={filterValue ? new Date(filterValue) : new Date()}
       timeIntervals={30}
@@ -73,11 +65,11 @@ const DateColumnFilter = ({
   </div>
 )
 
-export const generateColumns = (fields: Field[]) => {
-  const columns: any = []
-  let el: any
+export const generateColumns = (columns: CustomColumn[]) => {
+  const generatedColumns: Element[] = []
+  let el: Element
 
-  fields.map((element) => {
+  columns.map((element) => {
     switch (get(element, 'type', '')) {
       case 'boolean':
         el = {
@@ -87,7 +79,7 @@ export const generateColumns = (fields: Field[]) => {
             element.undefinedMeansFalse === false
               ? element.customTrueIcon
                 ? element.customFalseIcon
-                  ? ({ row }: any) => (
+                  ? ({ row }: CellProps<object>) => (
                       <>
                         {row.values[element.accessor] === true && element.customTrueIcon}
                         {row.values[element.accessor] === false && element.customFalseIcon}
@@ -95,7 +87,7 @@ export const generateColumns = (fields: Field[]) => {
                           row.values[element.accessor] !== false && <div />}
                       </>
                     )
-                  : ({ row }: any) => (
+                  : ({ row }: CellProps<object>) => (
                       <>
                         {row.values[element.accessor] === true && element.customTrueIcon}
                         {row.values[element.accessor] === false && (
@@ -106,7 +98,7 @@ export const generateColumns = (fields: Field[]) => {
                       </>
                     )
                 : element.customFalseIcon
-                ? ({ row }: any) => (
+                ? ({ row }: CellProps<object>) => (
                     <>
                       {row.values[element.accessor] === true && (
                         <div style={{ color: 'green' }}>true</div>
@@ -116,7 +108,7 @@ export const generateColumns = (fields: Field[]) => {
                         row.values[element.accessor] !== false && <div />}
                     </>
                   )
-                : ({ row }: any) => (
+                : ({ row }: CellProps<object>) => (
                     <>
                       {row.values[element.accessor] === true && (
                         <div style={{ color: 'green' }}>true</div>
@@ -130,13 +122,13 @@ export const generateColumns = (fields: Field[]) => {
                   )
               : element.customTrueIcon
               ? element.customFalseIcon
-                ? ({ row }: any) => (
+                ? ({ row }: CellProps<object>) => (
                     <>
                       {row.values[element.accessor] === true && element.customTrueIcon}
                       {row.values[element.accessor] !== true && element.customFalseIcon}
                     </>
                   )
-                : ({ row }: any) => (
+                : ({ row }: CellProps<object>) => (
                     <>
                       {row.values[element.accessor] === true && element.customTrueIcon}
                       {row.values[element.accessor] !== true && (
@@ -145,7 +137,7 @@ export const generateColumns = (fields: Field[]) => {
                     </>
                   )
               : element.customFalseIcon
-              ? ({ row }: any) => (
+              ? ({ row }: CellProps<object>) => (
                   <>
                     {row.values[element.accessor] === true && (
                       <div style={{ color: 'green' }}>true</div>
@@ -153,7 +145,7 @@ export const generateColumns = (fields: Field[]) => {
                     {row.values[element.accessor] !== true && element.customFalseIcon}
                   </>
                 )
-              : ({ row }: any) => (
+              : ({ row }: CellProps<object>) => (
                   <>
                     {row.values[element.accessor] === true && (
                       <div style={{ color: 'green' }}>true</div>
@@ -169,8 +161,8 @@ export const generateColumns = (fields: Field[]) => {
           disableFiltering: element.disableFiltering,
           Filter: SelectColumnFilter,
         }
-        columns.push(el)
-        return columns
+        generatedColumns.push(el)
+        return generatedColumns
       case 'date':
         el = {
           Header: element.title || element.accessor || '',
@@ -182,23 +174,23 @@ export const generateColumns = (fields: Field[]) => {
           filterPlaceholder: element.filterPlaceholder || '',
           Filter: DateColumnFilter,
         }
-        columns.push(el)
-        return columns
+        generatedColumns.push(el)
+        return generatedColumns
       default:
         el = {
           Header: element.title || element.accessor || '',
           accessor: element.accessor || '',
-          Cell: ({ row }: any) => {
+          Cell: ({ row }: CellProps<object>) => {
             let resultingStyle = {}
             let applyStyle = true
             if (element.styles && element.styles.length) {
-              element.styles.forEach((style: any) => {
-                if (style.conditions) {
+              element.styles.forEach((columnsStyle: ColumnStyle) => {
+                if (columnsStyle.conditions) {
                   // TODO check conditions and eventually toggle applyStyle
                   applyStyle = true
                 }
                 if (applyStyle) {
-                  resultingStyle = { ...resultingStyle, ...style.style }
+                  resultingStyle = { ...resultingStyle, ...columnsStyle.style }
                 }
               })
             }
@@ -215,30 +207,9 @@ export const generateColumns = (fields: Field[]) => {
           disableFiltering: element.disableFiltering,
           filterPlaceholder: element.filterPlaceholder || '',
         }
-        columns.push(el)
-        return columns
+        generatedColumns.push(el)
+        return generatedColumns
     }
   })
-  return columns
+  return generatedColumns
 }
-
-export const addPagination = (page: number, sizerPerPage: number) => {
-  const skip = page * sizerPerPage
-  return `offset=${skip}`
-}
-
-export const addLimit = (limit: number) => (limit ? `&limit=${limit}` : '')
-
-export const addSorting = (sorting: SortType[], clearSort: boolean, resetSort: Function) => {
-  if (clearSort) {
-    resetSort()
-    return ''
-  }
-  let partialUrl = sorting.length !== 0 ? '&sort=' : ''
-  sorting.forEach((sort) => {
-    partialUrl += `${(sort.desc ? '-' : '') + sort.id},`
-  })
-  return partialUrl.slice(0, -1)
-}
-
-export const addOmniQuery = (query: string) => (query ? `&q=${query}` : '')

@@ -1,42 +1,11 @@
-export interface Filter {
-  id: string
-  value: Value
-}
-
-export interface FilterType {
-  filter: Filter
-  onChange(): (value: Value) => void
-}
-
-interface Value {
-  type: string
-  data: any
-}
-
-export interface SortType {
-  id: string
-  desc: boolean
-}
+import { ColumnInstance, UseSortByColumnProps, UseFiltersColumnProps } from 'react-table'
 
 export interface TableProperties {
-  headerTitle?: string
-  newElementButtonLabel?: string
-  newElementButtonRoute: string
-  elevatedRoles?: string[]
-  tableClassNames?: string
-  hideHeader?: boolean
-  hidePagination?: boolean
-  showOmniSearchBox?: boolean
-  showClearAllFilters?: boolean
-  showWithoutRecords?: boolean
-  customNoResultsText?: string
-  defaultPageSize?: number
-  pageSizeOptions?: number[]
-  prefixUrl?: string
-  fields: Field[]
+  tableClassname: string
+  columns: CustomColumn[]
 }
 
-export interface Field {
+export interface CustomColumn {
   accessor: string
   type: 'string' | 'boolean' | 'date' | 'array' | 'externalLink' | 'actionButtons'
   title: string
@@ -46,48 +15,41 @@ export interface Field {
   className?: string
   disableFiltering?: boolean
   disableSorting?: boolean
-  styles?: any // TODO
-  pathPrefix?: string
-  path?: Record<string, any>
-  openInNewTab?: boolean
-  buttons?: GenericButton[]
-  elevatedRolesOnly?: boolean
-  overridedElevatedRolesForThisField?: string[]
-  hideHMS?: boolean
-  width?: number
-  property?: string
-  styleWithCondition?: StyleWithCondition
+  styles?: ColumnStyle[]
   customTrueIcon?: JSX.Element
   customFalseIcon?: JSX.Element
   undefinedMeansFalse?: boolean
 }
 
-interface StyleWithCondition {
-  condition: {
-    property: string
-    value: string
-  }
-  style: any
+export interface ColumnStyle {
+  conditions?: any
+  style: StyleObject
 }
 
-interface GenericButton {
-  type?: string
-  label?: string
-  color?: string
-  icon?: string
-  className?: string
-  path?: Record<string, any>
-  LinkElement?: any
-  parameterForAction?: string
-  action?(_id: string): void
+type StyleObject = Record<string, any>
+
+export interface DefaultColumnFilterOptions {
+  column: TableColumn<object>
 }
 
-export interface GetResourcesRemotelyOptions {
-  url?: string
-  externals?: {
-    localField: string
-    externalCollection: string
-    externalField: string
-    transformFunction?(externalData: any): string
-  }[]
+interface CustomFilters {
+  filterPlaceholder?: string
 }
+
+interface TableColumn<D extends object = {}>
+  extends ColumnInstance<D>,
+    UseSortByColumnProps<D>,
+    UseFiltersColumnProps<D>,
+    CustomFilters {}
+
+export type Element = any
+
+export type Data = object
+
+interface CustomSubColumn {
+  headerClassName?: string
+  disableFiltering?: boolean
+  disableSorting?: boolean
+}
+
+export interface GeneratedColumn extends CustomSubColumn, Omit<ColumnInstance, 'accessor'> {}
