@@ -235,11 +235,6 @@ const customTablePropertiesV2: any = {
       headerClassName: 'text-info',
       styles: [
         {
-          conditions: [
-            {
-              or: [],
-            },
-          ],
           style: {
             fontWeight: '600',
           },
@@ -251,15 +246,9 @@ const customTablePropertiesV2: any = {
       type: 'boolean',
       title: 'Admin',
       className: 'pl-3 fixoverflow',
-      undefinedMeansFalse: false,
       customTrueIcon: (
         <div style={{ color: 'green' }}>
           <Icon icon="appointment" />
-        </div>
-      ),
-      customFalseIcon: (
-        <div style={{ color: 'red' }}>
-          <Icon icon="calendar" />
         </div>
       ),
     },
@@ -282,11 +271,6 @@ const customTablePropertiesV3: any = {
       headerClassName: 'text-info',
       styles: [
         {
-          conditions: [
-            {
-              or: [],
-            },
-          ],
           style: {
             fontWeight: '600',
           },
@@ -298,10 +282,9 @@ const customTablePropertiesV3: any = {
       type: 'boolean',
       title: 'Admin',
       className: 'pl-3 fixoverflow',
-      undefinedMeansFalse: false,
-      customTrueIcon: (
-        <div style={{ color: 'green' }}>
-          <Icon icon="appointment" />
+      customFalseIcon: (
+        <div style={{ color: 'red' }}>
+          <Icon icon="calendar" />
         </div>
       ),
     },
@@ -341,6 +324,11 @@ const customTablePropertiesV4: any = {
       title: 'Admin',
       className: 'pl-3 fixoverflow',
       undefinedMeansFalse: false,
+      customTrueIcon: (
+        <div style={{ color: 'green' }}>
+          <Icon icon="appointment" />
+        </div>
+      ),
       customFalseIcon: (
         <div style={{ color: 'red' }}>
           <Icon icon="calendar" />
@@ -356,6 +344,90 @@ const customTablePropertiesV4: any = {
 }
 
 const customTablePropertiesV5: any = {
+  tableClassNames: '',
+  columns: [
+    {
+      accessor: 'firstName',
+      type: 'string',
+      title: 'Nome',
+      className: 'pl-3 fixoverflow',
+      headerClassName: 'text-info',
+      styles: [
+        {
+          conditions: [
+            {
+              or: [],
+            },
+          ],
+          style: {
+            fontWeight: '600',
+          },
+        },
+      ],
+    },
+    {
+      accessor: 'admin',
+      type: 'boolean',
+      title: 'Admin',
+      className: 'pl-3 fixoverflow',
+      undefinedMeansFalse: false,
+      customTrueIcon: (
+        <div style={{ color: 'green' }}>
+          <Icon icon="appointment" />
+        </div>
+      ),
+    },
+    {
+      accessor: 'date',
+      type: 'date',
+      title: 'Date',
+    },
+  ],
+}
+
+const customTablePropertiesV6: any = {
+  tableClassNames: '',
+  columns: [
+    {
+      accessor: 'firstName',
+      type: 'string',
+      title: 'Nome',
+      className: 'pl-3 fixoverflow',
+      headerClassName: 'text-info',
+      styles: [
+        {
+          conditions: [
+            {
+              or: [],
+            },
+          ],
+          style: {
+            fontWeight: '600',
+          },
+        },
+      ],
+    },
+    {
+      accessor: 'admin',
+      type: 'boolean',
+      title: 'Admin',
+      className: 'pl-3 fixoverflow',
+      undefinedMeansFalse: false,
+      customFalseIcon: (
+        <div style={{ color: 'red' }}>
+          <Icon icon="calendar" />
+        </div>
+      ),
+    },
+    {
+      accessor: 'date',
+      type: 'date',
+      title: 'Date',
+    },
+  ],
+}
+
+const customTablePropertiesV7: any = {
   tableClassNames: '',
   columns: [
     {
@@ -523,6 +595,14 @@ describe('Table', () => {
     let bodyWrapper = null
     let rows = null
     const tableWrapper = mount(<Table data={longData} tableProperties={customTableProperties} />)
+    const tableWrapperV3 = mount(
+      <Table data={longData} tableProperties={customTablePropertiesV3} />,
+    )
+    expect(tableWrapperV3).toBeTruthy()
+    const tableWrapperV4 = mount(
+      <Table data={longData} tableProperties={customTablePropertiesV4} />,
+    )
+    expect(tableWrapperV4).toBeTruthy()
     const tableHeaderWrapper = tableWrapper.find('thead')
     const nameColumnWrapper = tableHeaderWrapper.find('th').first()
     const inputFilter = nameColumnWrapper.find('input')
@@ -551,18 +631,18 @@ describe('Table', () => {
     const tableWrapperV2 = mount(
       <Table data={longData} tableProperties={customTablePropertiesV2} />,
     )
-    const tableWrapperV3 = mount(
-      <Table data={longData} tableProperties={customTablePropertiesV3} />,
-    )
-    expect(tableWrapperV3).toBeTruthy()
-    const tableWrapperV4 = mount(
-      <Table data={longData} tableProperties={customTablePropertiesV4} />,
-    )
-    expect(tableWrapperV4).toBeTruthy()
     const tableWrapperV5 = mount(
       <Table data={longData} tableProperties={customTablePropertiesV5} />,
     )
     expect(tableWrapperV5).toBeTruthy()
+    const tableWrapperV6 = mount(
+      <Table data={longData} tableProperties={customTablePropertiesV6} />,
+    )
+    expect(tableWrapperV6).toBeTruthy()
+    const tableWrapperV7 = mount(
+      <Table data={longData} tableProperties={customTablePropertiesV7} />,
+    )
+    expect(tableWrapperV7).toBeTruthy()
     const tableHeaderWrapper = tableWrapperV2.find('thead')
     const nameColumnWrapper = tableHeaderWrapper.find('th').first()
     const inputFilter = nameColumnWrapper.find('input')
