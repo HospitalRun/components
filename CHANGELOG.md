@@ -1,3 +1,18 @@
+# [0.36.0](https://github.com/HospitalRun/components/compare/v0.35.1...v0.36.0) (2020-03-08)
+
+
+### Features
+
+* add first table implementation ([2914cbb](https://github.com/HospitalRun/components/commit/2914cbb016bcf3740cf31df604a828bc799ec34c))
+* add further implementations ([ba84e56](https://github.com/HospitalRun/components/commit/ba84e5688a4bb395c78a020531a73601cdbe29d1))
+* adds basic table test ([4f34038](https://github.com/HospitalRun/components/commit/4f34038a887087df6ea4de20a1c06868c38e476d))
+* adds even more tests ([d28314b](https://github.com/HospitalRun/components/commit/d28314b7806d22e2492ab176a0fd26f8e8f1e611))
+* adds filtering, sorting and several columns types ([b99883b](https://github.com/HospitalRun/components/commit/b99883b9dc52d1c3a04fc63a415dfa05d3184944))
+* adds more testing ([dada45c](https://github.com/HospitalRun/components/commit/dada45c796808f7f613c2c7841c10ae7572b18c0))
+* adds pagination ([aebda85](https://github.com/HospitalRun/components/commit/aebda85fd6dbc5000b6649396d1256f95546bf64))
+* code cleaning ([c2565c4](https://github.com/HospitalRun/components/commit/c2565c4c31c6813e35f88c855144b7f59e295d6e))
+* improve tables ([b89c94a](https://github.com/HospitalRun/components/commit/b89c94aa29a09d93b5220752f4d022b6b3d0310a))
+
 ## [0.35.1](https://github.com/HospitalRun/components/compare/v0.35.0...v0.35.1) (2020-03-06)
 
 
