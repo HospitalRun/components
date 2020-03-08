@@ -235,6 +235,11 @@ const customTablePropertiesV2: any = {
       headerClassName: 'text-info',
       styles: [
         {
+          conditions: [
+            {
+              or: [],
+            },
+          ],
           style: {
             fontWeight: '600',
           },
@@ -257,6 +262,127 @@ const customTablePropertiesV2: any = {
           <Icon icon="calendar" />
         </div>
       ),
+    },
+    {
+      accessor: 'date',
+      type: 'date',
+      title: 'Date',
+    },
+  ],
+}
+
+const customTablePropertiesV3: any = {
+  tableClassNames: '',
+  columns: [
+    {
+      accessor: 'firstName',
+      type: 'string',
+      title: 'Nome',
+      className: 'pl-3 fixoverflow',
+      headerClassName: 'text-info',
+      styles: [
+        {
+          conditions: [
+            {
+              or: [],
+            },
+          ],
+          style: {
+            fontWeight: '600',
+          },
+        },
+      ],
+    },
+    {
+      accessor: 'admin',
+      type: 'boolean',
+      title: 'Admin',
+      className: 'pl-3 fixoverflow',
+      undefinedMeansFalse: false,
+      customTrueIcon: (
+        <div style={{ color: 'green' }}>
+          <Icon icon="appointment" />
+        </div>
+      ),
+    },
+    {
+      accessor: 'date',
+      type: 'date',
+      title: 'Date',
+    },
+  ],
+}
+
+const customTablePropertiesV4: any = {
+  tableClassNames: '',
+  columns: [
+    {
+      accessor: 'firstName',
+      type: 'string',
+      title: 'Nome',
+      className: 'pl-3 fixoverflow',
+      headerClassName: 'text-info',
+      styles: [
+        {
+          conditions: [
+            {
+              or: [],
+            },
+          ],
+          style: {
+            fontWeight: '600',
+          },
+        },
+      ],
+    },
+    {
+      accessor: 'admin',
+      type: 'boolean',
+      title: 'Admin',
+      className: 'pl-3 fixoverflow',
+      undefinedMeansFalse: false,
+      customFalseIcon: (
+        <div style={{ color: 'red' }}>
+          <Icon icon="calendar" />
+        </div>
+      ),
+    },
+    {
+      accessor: 'date',
+      type: 'date',
+      title: 'Date',
+    },
+  ],
+}
+
+const customTablePropertiesV5: any = {
+  tableClassNames: '',
+  columns: [
+    {
+      accessor: 'firstName',
+      type: 'string',
+      title: 'Nome',
+      className: 'pl-3 fixoverflow',
+      headerClassName: 'text-info',
+      styles: [
+        {
+          conditions: [
+            {
+              or: [],
+            },
+          ],
+          style: {
+            fontWeight: '600',
+          },
+        },
+      ],
+    },
+    {
+      accessor: 'admin',
+      type: 'boolean',
+      title: 'Admin',
+      className: 'pl-3 fixoverflow',
+      undefinedMeansFalse: false,
     },
     {
       accessor: 'date',
@@ -422,25 +548,39 @@ describe('Table', () => {
   it('Filtering changes results, testing with undefinedMeansFalse', () => {
     let bodyWrapper = null
     let rows = null
-    const tableWrapper = mount(<Table data={longData} tableProperties={customTablePropertiesV2} />)
-    const tableHeaderWrapper = tableWrapper.find('thead')
+    const tableWrapperV2 = mount(
+      <Table data={longData} tableProperties={customTablePropertiesV2} />,
+    )
+    const tableWrapperV3 = mount(
+      <Table data={longData} tableProperties={customTablePropertiesV3} />,
+    )
+    expect(tableWrapperV3).toBeTruthy()
+    const tableWrapperV4 = mount(
+      <Table data={longData} tableProperties={customTablePropertiesV4} />,
+    )
+    expect(tableWrapperV4).toBeTruthy()
+    const tableWrapperV5 = mount(
+      <Table data={longData} tableProperties={customTablePropertiesV5} />,
+    )
+    expect(tableWrapperV5).toBeTruthy()
+    const tableHeaderWrapper = tableWrapperV2.find('thead')
     const nameColumnWrapper = tableHeaderWrapper.find('th').first()
     const inputFilter = nameColumnWrapper.find('input')
     inputFilter.simulate('change', { target: { value: 'mariah' } })
-    bodyWrapper = tableWrapper.find('tbody')
+    bodyWrapper = tableWrapperV2.find('tbody')
     rows = bodyWrapper.find('tr')
     expect(rows).toHaveLength(1)
     inputFilter.simulate('change', { target: { value: null } })
     const selectFilter = tableHeaderWrapper.find('select')
     selectFilter.simulate('change', { target: { value: true } })
-    bodyWrapper = tableWrapper.find('tbody')
+    bodyWrapper = tableWrapperV2.find('tbody')
     rows = bodyWrapper.find('tr')
     expect(rows).toHaveLength(9)
     selectFilter.simulate('change', { target: { value: 'All' } })
     const dateFilterWrapper = tableHeaderWrapper.find('.react-datepicker-wrapper')
     const dateFilter = dateFilterWrapper.find('input')
     dateFilter.simulate('change', { target: { value: '01/01/2020' } })
-    bodyWrapper = tableWrapper.find('tbody')
+    bodyWrapper = tableWrapperV2.find('tbody')
     rows = bodyWrapper.find('tr')
     expect(rows).toHaveLength(0)
   })
