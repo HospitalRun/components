@@ -224,6 +224,48 @@ const customTableProperties: any = {
   ],
 }
 
+const customTablePropertiesV2: any = {
+  tableClassNames: '',
+  columns: [
+    {
+      accessor: 'firstName',
+      type: 'string',
+      title: 'Nome',
+      className: 'pl-3 fixoverflow',
+      headerClassName: 'text-info',
+      styles: [
+        {
+          style: {
+            fontWeight: '600',
+          },
+        },
+      ],
+    },
+    {
+      accessor: 'admin',
+      type: 'boolean',
+      title: 'Admin',
+      className: 'pl-3 fixoverflow',
+      undefinedMeansFalse: false,
+      customTrueIcon: (
+        <div style={{ color: 'green' }}>
+          <Icon icon="appointment" />
+        </div>
+      ),
+      customFalseIcon: (
+        <div style={{ color: 'red' }}>
+          <Icon icon="calendar" />
+        </div>
+      ),
+    },
+    {
+      accessor: 'date',
+      type: 'date',
+      title: 'Date',
+    },
+  ],
+}
+
 describe('Table', () => {
   it('Table renders itself without crashing', () => {
     const tableWrapper = mount(<Table data={shortData} tableProperties={tableProperties} />)
@@ -355,6 +397,32 @@ describe('Table', () => {
     let bodyWrapper = null
     let rows = null
     const tableWrapper = mount(<Table data={longData} tableProperties={customTableProperties} />)
+    const tableHeaderWrapper = tableWrapper.find('thead')
+    const nameColumnWrapper = tableHeaderWrapper.find('th').first()
+    const inputFilter = nameColumnWrapper.find('input')
+    inputFilter.simulate('change', { target: { value: 'mariah' } })
+    bodyWrapper = tableWrapper.find('tbody')
+    rows = bodyWrapper.find('tr')
+    expect(rows).toHaveLength(1)
+    inputFilter.simulate('change', { target: { value: null } })
+    const selectFilter = tableHeaderWrapper.find('select')
+    selectFilter.simulate('change', { target: { value: true } })
+    bodyWrapper = tableWrapper.find('tbody')
+    rows = bodyWrapper.find('tr')
+    expect(rows).toHaveLength(9)
+    selectFilter.simulate('change', { target: { value: 'All' } })
+    const dateFilterWrapper = tableHeaderWrapper.find('.react-datepicker-wrapper')
+    const dateFilter = dateFilterWrapper.find('input')
+    dateFilter.simulate('change', { target: { value: '01/01/2020' } })
+    bodyWrapper = tableWrapper.find('tbody')
+    rows = bodyWrapper.find('tr')
+    expect(rows).toHaveLength(0)
+  })
+
+  it('Filtering changes results, testing with undefinedMeansFalse', () => {
+    let bodyWrapper = null
+    let rows = null
+    const tableWrapper = mount(<Table data={longData} tableProperties={customTablePropertiesV2} />)
     const tableHeaderWrapper = tableWrapper.find('thead')
     const nameColumnWrapper = tableHeaderWrapper.find('th').first()
     const inputFilter = nameColumnWrapper.find('input')
