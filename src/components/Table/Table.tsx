@@ -3,12 +3,14 @@ import { useTable, useFilters, useSortBy, usePagination, TableInstance } from 'r
 import { generateColumns } from './helper'
 import { Data, TableProperties, GeneratedColumn } from './interfaces'
 
-interface MyProps {
+interface Props {
+  /** TableProperties are composed by a tableClassname string property and the columns array */
   tableProperties: TableProperties
-  data: Data[]
+  /** Provides records for the table */
+  data?: Data[]
 }
 
-function Table({ data, tableProperties }: MyProps) {
+function Table({ data, tableProperties }: Props) {
   const columns = generateColumns(tableProperties.columns)
 
   const {
@@ -29,7 +31,7 @@ function Table({ data, tableProperties }: MyProps) {
   } = useTable<Data>(
     {
       columns,
-      data,
+      data: data || [],
       initialState: { pageIndex: 0 },
     },
     useFilters,
@@ -113,7 +115,7 @@ function Table({ data, tableProperties }: MyProps) {
         <span>
           Page{' '}
           <strong>
-            {pageIndex + 1} of {pageOptions.length}
+            {data && data.length ? pageIndex + 1 : pageIndex} of {pageOptions.length}
           </strong>{' '}
         </span>
         <span>
