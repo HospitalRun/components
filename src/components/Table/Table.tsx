@@ -6,7 +6,7 @@ import { Data, TableProperties, GeneratedColumn } from './interfaces'
 interface Props {
   /** TableProperties are composed by a tableClassname string property and the columns array */
   tableProperties: TableProperties
-  /** Provides records for the table */
+  /** Provides data for the table */
   data?: Data[]
 }
 
