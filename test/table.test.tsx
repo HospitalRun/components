@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { mount } from 'enzyme'
 import { Table, Icon } from '../src'
+import { TableProperties } from '../src/components/Table/interfaces'
 
 const shortData = [
   {
@@ -152,8 +153,8 @@ const longData = [
   },
 ]
 
-const tableProperties: any = {
-  tableClassNames: '',
+const tableProperties: TableProperties = {
+  tableClassname: '',
   columns: [
     {
       accessor: 'firstName',
@@ -183,8 +184,8 @@ const tableProperties: any = {
   ],
 }
 
-const customTableProperties: any = {
-  tableClassNames: '',
+const customTableProperties: TableProperties = {
+  tableClassname: '',
   columns: [
     {
       accessor: 'firstName',
@@ -224,8 +225,8 @@ const customTableProperties: any = {
   ],
 }
 
-const customTablePropertiesV2: any = {
-  tableClassNames: '',
+const customTablePropertiesV2: TableProperties = {
+  tableClassname: '',
   columns: [
     {
       accessor: 'firstName',
@@ -260,8 +261,8 @@ const customTablePropertiesV2: any = {
   ],
 }
 
-const customTablePropertiesV3: any = {
-  tableClassNames: '',
+const customTablePropertiesV3: TableProperties = {
+  tableClassname: '',
   columns: [
     {
       accessor: 'firstName',
@@ -296,8 +297,8 @@ const customTablePropertiesV3: any = {
   ],
 }
 
-const customTablePropertiesV4: any = {
-  tableClassNames: '',
+const customTablePropertiesV4: TableProperties = {
+  tableClassname: '',
   columns: [
     {
       accessor: 'firstName',
@@ -343,8 +344,8 @@ const customTablePropertiesV4: any = {
   ],
 }
 
-const customTablePropertiesV5: any = {
-  tableClassNames: '',
+const customTablePropertiesV5: TableProperties = {
+  tableClassname: '',
   columns: [
     {
       accessor: 'firstName',
@@ -385,8 +386,8 @@ const customTablePropertiesV5: any = {
   ],
 }
 
-const customTablePropertiesV6: any = {
-  tableClassNames: '',
+const customTablePropertiesV6: TableProperties = {
+  tableClassname: '',
   columns: [
     {
       accessor: 'firstName',
@@ -427,8 +428,8 @@ const customTablePropertiesV6: any = {
   ],
 }
 
-const customTablePropertiesV7: any = {
-  tableClassNames: '',
+const customTablePropertiesV7: TableProperties = {
+  tableClassname: '',
   columns: [
     {
       accessor: 'firstName',
