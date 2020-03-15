@@ -1,10 +1,17 @@
 .customClass {
   border: 5px solid green;
-  background-color: yellow;
+  background-color: rgb(46, 52, 70);
   font-style: italic;
-  color: red;
+  border-radius: 20px;
+  padding: 5px;
+  color: rgb(207, 207, 207);
 }
-
+.customClass input {
+  margin-left: -0.8rem;
+}
+.customClass label {
+  margin-left: 10px;
+}
 .customClass2 {
   background-color: violet;
   color: black;

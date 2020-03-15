@@ -10,7 +10,9 @@ storiesOf('List', module)
       inline: true,
     },
   })
-  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => (
+    <div style={{ textAlign: 'center', marginLeft: 40, marginRight: 40 }}>{storyFn()}</div>
+  ))
   .add('List', () => (
     <List>
       <ListItem>Cras justo odio</ListItem>
