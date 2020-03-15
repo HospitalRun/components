@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ['commitlint.config.js'],
   env: {
     browser: true,
     es6: true,
@@ -8,6 +9,7 @@ module.exports = {
     'airbnb',
     'plugin:@typescript-eslint/recommended',
     'prettier',
+    'prettier/react',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
   ],
@@ -17,10 +19,8 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.json',
+    project: ['./tsconfig.json', './stories/tsconfig.json', './test/tsconfig.json'],
     tsconfigRootDir: './',
-    // TODO: we need this because of an issue with @typescript-eslint/parser: https://github.com/typescript-eslint/typescript-eslint/issues/864
-    createDefaultProgram: true,
   },
   settings: {
     'import/resolver': {

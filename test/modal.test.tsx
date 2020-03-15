@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import BootstrapModal from 'react-bootstrap/Modal'
 import BootstrapModalHeader from 'react-bootstrap/ModalHeader'
 import { Modal } from '../src'
@@ -89,5 +89,31 @@ describe('Modal', () => {
     expect(modalWrapper.find(BootstrapModal).props().closeButton).toBeUndefined()
     expect(modalWrapper.find(BootstrapModal).props().middleButton).toBeUndefined()
     expect(modalWrapper.find(BootstrapModal).props().successButton).toBeUndefined()
+  })
+
+  it('Modal hides itself invoking onHide method', () => {
+    let show = true
+
+    const modalWrapper = mount(
+      <Modal
+        show={show}
+        toggle={() => {
+          show = !show
+        }}
+        title="This is a modal title!"
+        body={
+          <div>
+            <p>And this is a modal body.</p>
+            <div>
+              Simple example with no buttons. <br /> The modal body can be any JSX.
+            </div>
+          </div>
+        }
+      />,
+    )
+    const bootstrapModal = modalWrapper.find(BootstrapModal)
+    const button = bootstrapModal.find('button')
+    button.simulate('click')
+    expect(show).toEqual(false)
   })
 })
