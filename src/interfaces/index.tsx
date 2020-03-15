@@ -2,11 +2,11 @@ export type ColorVariant =
   | 'primary'
   | 'secondary'
   | 'success'
-  | 'warning'
   | 'danger'
-  | 'info'
-  | 'light'
+  | 'warning'
   | 'dark'
+  | 'light'
+  | 'info'
 
 export type ButtonVariant =
   | 'light'

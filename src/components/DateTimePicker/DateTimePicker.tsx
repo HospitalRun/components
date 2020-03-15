@@ -4,6 +4,7 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import { enUS, ptBR } from 'date-fns/locale'
 import { Icon } from '../Icon'
 import 'react-datepicker/dist/react-datepicker.css'
+import './DateTimePicker.css'
 
 registerLocale('enUS', enUS)
 registerLocale('ptBR', ptBR)
@@ -59,6 +60,8 @@ interface Props {
   showYearDropdown?: boolean
   /** Enable only time selection. */
   showTimeSelectOnly?: boolean
+  /** The beginning date of the initially selected date range. */
+  startDate?: Date
   /** The format for parsed and displayed time. */
   timeFormat?: string
   /** Configure timer intervals. */
@@ -67,10 +70,14 @@ interface Props {
   timeCaption?: string
   /** Enable and set text for today button. */
   todayButton?: string
-  /** The beginning date of the initially selected date range. */
-  startDate?: Date
   /** Visualize calendar as portal. */
   withPortal?: boolean
+  /** Determines whether the Select should be rendered as valid or not. Default is false. */
+  isValid?: boolean
+  /** Determines whether the Select should be rendered as invalid or not. Default is false. */
+  isInvalid?: boolean
+  /** Defines the custom feedback of the input. */
+  feedback?: string
 }
 
 const DateTimePicker = (props: Props) => {
@@ -105,52 +112,67 @@ const DateTimePicker = (props: Props) => {
     todayButton,
     startDate,
     withPortal,
+    isValid,
+    isInvalid,
+    feedback,
   } = props
 
   return (
-    <InputGroup className={className}>
-      <InputGroup.Prepend>
-        <InputGroup.Text>
-          <Icon icon="calendar" />
-        </InputGroup.Text>
-      </InputGroup.Prepend>
-      <DatePicker
-        className="form-control"
-        dateFormat={dateFormat}
-        dateFormatCalendar={dateFormatCalendar}
-        disabled={disabled}
-        dropdownMode={dropdownMode}
-        endDate={endDate}
-        excludeDates={excludeDates}
-        includeDates={includeDates}
-        inline={inline}
-        locale={locale}
-        maxDate={maxDate}
-        maxTime={maxTime}
-        minDate={minDate}
-        minTime={minTime}
-        monthsShown={monthsShown}
-        onChange={onChange}
-        selected={selected}
-        selectsEnd={selectsEnd}
-        selectsStart={selectsStart}
-        showMonthDropdown={showMonthDropdown}
-        showTimeSelect={showTimeSelect}
-        showYearDropdown={showYearDropdown}
-        showTimeSelectOnly={showTimeSelectOnly}
-        timeFormat={timeFormat}
-        timeIntervals={timeIntervals}
-        timeCaption={timeCaption}
-        todayButton={todayButton}
-        startDate={startDate}
-        withPortal={withPortal}
-      >
-        {children}
-      </DatePicker>
-    </InputGroup>
+    <>
+      <InputGroup className={className}>
+        <InputGroup.Prepend>
+          <InputGroup.Text>
+            <Icon icon="calendar" />
+          </InputGroup.Text>
+        </InputGroup.Prepend>
+        <DatePicker
+          className={`form-control ${
+            isValid ? 'valid-date-picker' : isInvalid ? 'invalid-date-picker' : ''
+          }`}
+          dateFormat={dateFormat}
+          dateFormatCalendar={dateFormatCalendar}
+          disabled={disabled}
+          dropdownMode={dropdownMode}
+          endDate={endDate}
+          excludeDates={excludeDates}
+          includeDates={includeDates}
+          inline={inline}
+          locale={locale}
+          maxDate={maxDate}
+          maxTime={maxTime}
+          minDate={minDate}
+          minTime={minTime}
+          monthsShown={monthsShown}
+          onChange={onChange}
+          selected={selected}
+          selectsEnd={selectsEnd}
+          selectsStart={selectsStart}
+          showMonthDropdown={showMonthDropdown}
+          showTimeSelect={showTimeSelect}
+          showYearDropdown={showYearDropdown}
+          showTimeSelectOnly={showTimeSelectOnly}
+          timeFormat={timeFormat}
+          timeIntervals={timeIntervals}
+          timeCaption={timeCaption}
+          todayButton={todayButton}
+          startDate={startDate}
+          withPortal={withPortal}
+        >
+          {children}
+        </DatePicker>
+      </InputGroup>
+      {feedback !== undefined && (
+        <div
+          className={`text-left ml-5 mt-1 text-small ${
+            isValid ? 'text-success' : isInvalid ? 'text-danger' : undefined
+          }`}
+        >
+          {feedback}
+        </div>
+      )}
+    </>
   )
 }
-
 DateTimePicker.defaultProps = {
   dateFormat: 'MM/dd/yyyy',
   locale: 'enUS',
