@@ -7,6 +7,8 @@ interface Props {
   disabled?: boolean
   /** Determines whether the TextField should be rendered as invalid or not. By default, it is false. */
   isInvalid?: boolean
+  /** Determines whether the Select should be rendered as valid or not. Default is false. */
+  isValid?: boolean
   /** The name of the text field */
   name?: string
   /** The number of rows to render */
@@ -15,7 +17,8 @@ interface Props {
   size?: 'small' | 'large'
   /** The value of the text field */
   value?: string
-
+  /** Defines the default value */
+  defaultValue?: string | Array<string>
   /** Handles the onChange event for the TextField */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void
   /**
@@ -26,27 +29,52 @@ interface Props {
    * Defines the style of the textfield.
    */
   style?: CSSProperties
+  /** Defines the custom feedback of the input. */
+  feedback?: string
 }
 
 /**
  * A customizable text field component. It's a wrapper component built upon react's form controls.
  */
 const TextField = (props: Props) => {
-  const { disabled, isInvalid, name, rows, size, value, onChange, className, style } = props
+  const {
+    disabled,
+    isValid,
+    isInvalid,
+    feedback,
+    name,
+    rows,
+    size,
+    value,
+    onChange,
+    className,
+    style,
+    defaultValue,
+  } = props
 
   return (
-    <Form.Control
-      as="textarea"
-      disabled={disabled}
-      isInvalid={isInvalid}
-      name={name}
-      rows={rows}
-      size={getControlSize(size)}
-      value={value}
-      onChange={onChange}
-      className={className}
-      style={style}
-    />
+    <Form.Group>
+      <Form.Control
+        as="textarea"
+        disabled={disabled}
+        isInvalid={isInvalid}
+        isValid={isValid}
+        name={name}
+        rows={rows}
+        size={getControlSize(size)}
+        value={value}
+        defaultValue={defaultValue}
+        onChange={onChange}
+        className={className}
+        style={style}
+      />
+      <Form.Control.Feedback
+        className={isValid ? 'text-success' : isInvalid ? 'text-danger' : undefined}
+        type={isValid ? 'valid' : 'invalid'}
+      >
+        {feedback}
+      </Form.Control.Feedback>
+    </Form.Group>
   )
 }
 

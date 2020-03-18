@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react'
-import { FormControl } from 'react-bootstrap'
+import Form from 'react-bootstrap/Form'
 import { getControlSize } from '../../helpers/controlSize'
 
 interface Props {
@@ -9,6 +9,8 @@ interface Props {
   disabled?: boolean
   /** Determines whether the Select should be invalid. False by default. */
   isInvalid?: boolean
+  /** Determines whether the Select should be rendered as valid or not. Default is false. */
+  isValid?: boolean
   /** Determines whether to render a small or large TextField. By default, it is undefined. */
   size?: 'small' | 'large'
   /** Selected value in the  */
@@ -26,25 +28,54 @@ interface Props {
    * Defines the style of the select.
    */
   style?: CSSProperties
+
+  /** Defines the custom error message of the input. */
+  feedback?: string
+
+  /** Defines the default value */
+  defaultValue?: string | Array<string>
 }
 
 const Select = (props: Props) => {
-  const { value, multiple, isInvalid, disabled, size, onChange, children, className, style } = props
+  const {
+    defaultValue,
+    value,
+    multiple,
+    isValid,
+    isInvalid,
+    feedback,
+    disabled,
+    size,
+    onChange,
+    children,
+    className,
+    style,
+  } = props
 
   return (
-    <FormControl
-      as="select"
-      value={value}
-      multiple={multiple}
-      isInvalid={isInvalid}
-      disabled={disabled}
-      size={getControlSize(size)}
-      onChange={onChange}
-      className={className}
-      style={style}
-    >
-      {children}
-    </FormControl>
+    <Form.Group>
+      <Form.Control
+        as="select"
+        value={value}
+        defaultValue={defaultValue}
+        multiple={multiple}
+        isInvalid={isInvalid}
+        isValid={isValid}
+        disabled={disabled}
+        size={getControlSize(size)}
+        onChange={onChange}
+        className={className}
+        style={style}
+      >
+        {children}
+      </Form.Control>
+      <Form.Control.Feedback
+        className={isValid ? 'text-success' : isInvalid ? 'text-danger' : undefined}
+        type={isValid ? 'valid' : 'invalid'}
+      >
+        {feedback}
+      </Form.Control.Feedback>
+    </Form.Group>
   )
 }
 
