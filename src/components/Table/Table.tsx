@@ -11,7 +11,7 @@ interface Props {
 }
 
 function Table({ data, tableProperties }: Props) {
-  const columns = generateColumns(tableProperties.columns)
+  const columns = React.useMemo(() => generateColumns(tableProperties.columns), [])
 
   const {
     getTableProps,
