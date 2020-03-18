@@ -26,7 +26,7 @@
     "test:ci": "cross-env CI=true tsdx test --env=jsdom",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" \"test/**/*.{js,jsx,ts,tsx}\" \"stories/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" \"test/**/*.{js,jsx,ts,tsx}\" \"stories/**/*.{js,jsx,ts,tsx}\" --fix",
-    "coveralls": "CI=true tsdx test --coverage --coverageReporters=text-lcov > lcov.info",
+    "coveralls": "cross-env CI=true tsdx test --coverage --coverageReporters=text-lcov > lcov.info",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook",
     "semantic-release": "semantic-release",
