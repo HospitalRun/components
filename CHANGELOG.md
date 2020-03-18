@@ -1,3 +1,37 @@
+# [1.0.0](https://github.com/HospitalRun/components/compare/v0.36.0...v1.0.0) (2020-03-18)
+
+
+### Bug Fixes
+
+* **coveralls:** fix typo ([9180d2f](https://github.com/HospitalRun/components/commit/9180d2f6c3b8f41327cd6e1a52c22e1dca97336d))
+* **input:** add missing className and style properties ([3713d16](https://github.com/HospitalRun/components/commit/3713d160a0dda14308438d4b15106739b8027513)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **input:** add style to text input property and fix test ([595b709](https://github.com/HospitalRun/components/commit/595b70963641f6952baa376fd1f08077d5d06136)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **input:** add validation styling to text input and field ([ee3cd14](https://github.com/HospitalRun/components/commit/ee3cd1413bcaf0099252cc4d4bd21a002bc6858b)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **input:** fix validation tests ([67bab76](https://github.com/HospitalRun/components/commit/67bab761c5e325b7a8a87d112ab3cf6d3549d45a)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **input:** replace selected with defaultValue in select ([c9656cd](https://github.com/HospitalRun/components/commit/c9656cdc2d7b20dffcd8e79a8cba3411ce751d27)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **input:** resolve requested and other necessary changes and refactor ([c0ec7ab](https://github.com/HospitalRun/components/commit/c0ec7abf2bd8607639a5998bd3ec6942fc7ec21c)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **inputs:** apply requested changes ([45bcf23](https://github.com/HospitalRun/components/commit/45bcf2347a92237f4c9c7ae1d5c01b1e503ff7a5)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **table:** fixes table tests ([beba7f1](https://github.com/HospitalRun/components/commit/beba7f1149db43ca2ca11bdce7fdcd9f0110cfab))
+* **types:** add ColorVariant light and info colors ([6664de4](https://github.com/HospitalRun/components/commit/6664de4a9d7f8f38ec0dc6a34c36ce491d5920ba)), closes [#66](https://github.com/HospitalRun/components/issues/66)
+* insert missing property to TextInput ([fcbadca](https://github.com/HospitalRun/components/commit/fcbadca34bbf780e335608bfe956980f666689e1)), closes [#66](https://github.com/HospitalRun/components/issues/66)
+
+
+### Features
+
+* **actions:** improves github action cicd and removes travis ([44cf335](https://github.com/HospitalRun/components/commit/44cf3357f09f020c28e16edea0c8095e021bf4f1))
+* **docs:** removes unnecessary docs ([98110ce](https://github.com/HospitalRun/components/commit/98110cecbbc705b5f0635d4e601f1a9aa224018c))
+* **input:** add input validation styles and tests, update react-bs ([262d87e](https://github.com/HospitalRun/components/commit/262d87e77e684834d1e6304c3b23fdbe607967af)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **input:** add validation styling to select ([a791422](https://github.com/HospitalRun/components/commit/a791422baeb1c560025a1b1d743ee87c31da8b17)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **inputs:** add datetimepicker input validation and create docs ([515db71](https://github.com/HospitalRun/components/commit/515db719499d39f8a392f365a9c1550eb72ee582)), closes [#271](https://github.com/HospitalRun/components/issues/271)
+* **inputs:** form validation progress ([d24435e](https://github.com/HospitalRun/components/commit/d24435e251212d7ef28191fec070ef1e6dfd3fce)), closes [#66](https://github.com/HospitalRun/components/issues/66)
+* **textinput:** add errorMessage property ([3648fba](https://github.com/HospitalRun/components/commit/3648fba1f2724435dffdfe65a7f9504446ed4199)), closes [#66](https://github.com/HospitalRun/components/issues/66)
+* **textinput:** add valid input message, fix typos and others ([4c90b45](https://github.com/HospitalRun/components/commit/4c90b456cb28b330e319a0ee3f4c3b1541d06dbc)), closes [#66](https://github.com/HospitalRun/components/issues/66)
+
+
+### BREAKING CHANGES
+
+* **input:** update react bootstrap
+
 # [0.36.0](https://github.com/HospitalRun/components/compare/v0.35.1...v0.36.0) (2020-03-08)
 
 
