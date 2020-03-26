@@ -12,6 +12,7 @@ interface Props {
   placeholder?: string
   value?: any
   disabled?: boolean
+  isInvalid?: boolean
 }
 
 const Typeahead = (props: Props) => {
@@ -27,6 +28,7 @@ const Typeahead = (props: Props) => {
     minLength,
     value,
     disabled,
+    isInvalid,
   } = props
 
   const search = async (query: string) => {
@@ -54,6 +56,7 @@ const Typeahead = (props: Props) => {
       renderMenuItemChildren={renderMenuItemChildren}
       defaultSelected={selectedValues}
       disabled={disabled}
+      isInvalid={isInvalid}
     />
   )
 }
