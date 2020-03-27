@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/HospitalRun/components/compare/v1.0.0...v1.1.0) (2020-03-27)
+
+
+### Features
+
+* **typeahead:** added isinvalid prop to typeahead ([#341](https://github.com/HospitalRun/components/issues/341)) ([b0639de](https://github.com/HospitalRun/components/commit/b0639de14613372559850cbb14e8a058936c606a))
+
 # [1.0.0](https://github.com/HospitalRun/components/compare/v0.36.0...v1.0.0) (2020-03-18)
 
 
