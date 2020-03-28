@@ -1,0 +1,18 @@
+.invalid-date-picker {
+border: 1px #ff9f9f solid !important;
+}
+.valid-date-picker {
+  border: 1px #49b961 solid !important;
+}
+.invalid-date-picker:focus {
+box-shadow: 0 0 0 0.2rem rgba(220,53,69,.5);
+}
+.valid-date-picker:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40,167,69,.5);
+}
+.success-filter {
+  filter: invert(42%) sepia(83%) saturate(415%) hue-rotate(94deg) brightness(99%) contrast(92%);
+}
+.danger-filter {
+  filter: invert(32%) sepia(89%) saturate(5547%) hue-rotate(342deg) brightness(96%) contrast(79%);
+}

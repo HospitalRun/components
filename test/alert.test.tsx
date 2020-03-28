@@ -58,4 +58,27 @@ describe('Alert', () => {
     const button = alertWrapper.find(Button)
     expect(button.props().style).toMatchObject({ background: 'red' })
   })
+
+  it('Alert does not render with state.show set to false', () => {
+    const alertWrapper = shallow(<Alert />)
+    alertWrapper.setState({ show: false })
+    expect(alertWrapper.containsMatchingElement(<></>)).toBeTruthy()
+  })
+
+  it('Alert disappears on clicking close button', () => {
+    const alertWrapper = shallow(<Alert dismissible />)
+    const button = alertWrapper.find(Button)
+    button.simulate('click')
+    expect(alertWrapper.containsMatchingElement(<></>)).toBeTruthy()
+  })
+
+  it('Alert disappears on invoking onClose function', () => {
+    const alertWrapper = shallow(<Alert dismissible />)
+    const bootstrapAlert = alertWrapper.find(BootstrapAlert)
+    const onCloseFunction = bootstrapAlert.props() && bootstrapAlert.props().onClose
+    if (onCloseFunction) {
+      onCloseFunction()
+    }
+    expect(alertWrapper.containsMatchingElement(<></>)).toBeTruthy()
+  })
 })

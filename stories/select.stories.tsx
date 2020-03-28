@@ -8,13 +8,13 @@ storiesOf('Select', module)
       inline: true,
     },
   })
-  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => (
+    <div style={{ textAlign: 'center', paddingLeft: 40, paddingRight: 40 }}>{storyFn()}</div>
+  ))
   .add('Select', () => (
     <div>
-      <Select>
-        <option selected disabled>
-          Choose your sweet
-        </option>
+      <Select defaultValue="Marshmallow">
+        <option>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
@@ -24,20 +24,44 @@ storiesOf('Select', module)
   ))
   .add('Select multiple', () => (
     <div>
-      <Select multiple>
+      <Select defaultValue={['Nougat', 'Ice cream']} multiple>
         <option>Marshmallow</option>
-        <option selected>Nougat</option>
+        <option>Nougat</option>
         <option>Ice cream</option>
-        <option selected>Gingerbread</option>
+        <option>Gingerbread</option>
       </Select>
     </div>
   ))
   .add('Disabled select', () => (
     <div>
       <Select disabled>
-        <option selected disabled>
-          Choose your sweet
-        </option>
+        <option disabled>Choose your sweet</option>
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
+      </Select>
+    </div>
+  ))
+  .add('Valid select', () => (
+    <div>
+      <Select defaultValue="Choose your sweet" isValid>
+        <option disabled>Choose your sweet</option>
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
+      </Select>
+    </div>
+  ))
+  .add('Valid select with custom message', () => (
+    <div>
+      <Select
+        defaultValue="Choose your sweet"
+        isValid
+        feedback="This is a valid select input message"
+      >
+        <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
@@ -47,10 +71,8 @@ storiesOf('Select', module)
   ))
   .add('Invalid select', () => (
     <div>
-      <Select isInvalid>
-        <option selected disabled>
-          Choose your sweet
-        </option>
+      <Select defaultValue="Choose your sweet" isInvalid>
+        <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>
@@ -58,9 +80,25 @@ storiesOf('Select', module)
       </Select>
     </div>
   ))
+  .add('Invalid select with custom message', () => (
+    <div>
+      <Select
+        defaultValue="Choose your sweet"
+        isInvalid
+        feedback="This is an invalid select input error message"
+      >
+        <option disabled>Choose your sweet</option>
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
+      </Select>
+    </div>
+  ))
+
   .add('Working with value', () => (
     <div>
-      <Select value="nougat">
+      <Select defaultValue="nougat">
         <option value="marshmallow">Marshmallow</option>
         <option value="nougat">Nougat</option>
         <option value="icecream">Ice cream</option>
@@ -70,30 +108,28 @@ storiesOf('Select', module)
   ))
   .add('Small select', () => (
     <div>
-      <Select value="nougat" size="small">
-        <option value="marshmallow">Marshmallow</option>
-        <option value="nougat">Nougat</option>
-        <option value="icecream">Ice cream</option>
-        <option value="gingerbread">Gingerbread</option>
+      <Select defaultValue="nougat" size="small">
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
       </Select>
     </div>
   ))
   .add('Large select', () => (
     <div>
-      <Select value="nougat" size="large">
-        <option value="marshmallow">Marshmallow</option>
-        <option value="nougat">Nougat</option>
-        <option value="icecream">Ice cream</option>
-        <option value="gingerbread">Gingerbread</option>
+      <Select defaultValue="Choose your sweet" size="large">
+        <option>Marshmallow</option>
+        <option>Nougat</option>
+        <option>Ice cream</option>
+        <option>Gingerbread</option>
       </Select>
     </div>
   ))
   .add('Custom class', () => (
     <div>
-      <Select className="customClass">
-        <option selected disabled>
-          Choose your sweet
-        </option>
+      <Select defaultValue="Choose your sweet" className="customClass">
+        <option disabled>Choose your sweet</option>
         <option>Marshmallow</option>
         <option>Nougat</option>
         <option>Ice cream</option>

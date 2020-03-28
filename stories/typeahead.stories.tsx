@@ -31,7 +31,9 @@ storiesOf('Typeahead', module)
       inline: true,
     },
   })
-  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
+  .addDecorator((storyFn) => (
+    <div style={{ textAlign: 'center', paddingLeft: 40, paddingRight: 40 }}>{storyFn()}</div>
+  ))
   .add('Typeahead', () => (
     <div>
       <Typeahead
@@ -81,6 +83,30 @@ storiesOf('Typeahead', module)
         onSearch={() => getOptions()}
         onChange={(selected) => alert(JSON.stringify(selected))}
         disabled
+        value={{
+          id: '3',
+          firstName: 'first3',
+          lastName: 'last3',
+          fullName: 'first3 last3',
+        }}
+        renderMenuItemChildren={(option) => (
+          // eslint-disable-next-line
+            <div>
+              {`${option.fullName}`}
+            </div>
+        )}
+      />
+    </div>
+  ))
+  .add('Typeahead with Invalid value', () => (
+    <div>
+      <Typeahead
+        id="typeahead"
+        searchAccessor="fullName"
+        placeholder="placeholder"
+        onSearch={() => getOptions()}
+        onChange={(selected) => alert(JSON.stringify(selected))}
+        isInvalid
         value={{
           id: '3',
           firstName: 'first3',

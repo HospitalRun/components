@@ -354,4 +354,33 @@ describe('Navbar', () => {
     NavbarWrapper.find(FormControl).simulate('change')
     expect(onChangeInput).toHaveProperty('callCount', 1)
   })
+
+  it('should handle navItems with no type', () => {
+    const onClickButton = sinon.spy()
+    const onChangeInput = sinon.spy()
+    const NavbarWrapper = shallow(
+      <Navbar
+        navItems={
+          [
+            {
+              label: 'test',
+            },
+            {
+              placeholderText: 'Custom',
+              buttonText: 'Text',
+              buttonColor: 'secondary',
+              onClickButton,
+              onChangeInput,
+            },
+            {
+              label: 'Link',
+              children: [],
+            },
+          ] as any
+        }
+      />,
+    )
+    const bootstrapNavbar = NavbarWrapper.find(NavBarRB)
+    expect(bootstrapNavbar).toHaveLength(1)
+  })
 })

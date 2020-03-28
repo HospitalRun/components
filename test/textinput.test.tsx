@@ -4,6 +4,8 @@ import { mount } from 'enzyme'
 import Form from 'react-bootstrap/Form'
 import { TextInput } from '../src/components/TextInput'
 
+const onChange = jest.fn()
+
 describe('TextInput', () => {
   it('renders a TextInput without crashing', () => {
     const wrapper = mount(<TextInput />)
@@ -13,15 +15,16 @@ describe('TextInput', () => {
 
   it('renders a TextInput with attributes', () => {
     const name = 'test_input'
-    const value = 'Testing the text input component'
-    const wrapper = mount(<TextInput name={name} value={value} />)
+    const defaultValue = 'Testing the text input component defaultValue'
+    const wrapper = mount(<TextInput name={name} value={defaultValue} />)
 
     expect(wrapper.find(Form.Control)).toHaveLength(1)
+
     expect(
       wrapper.find(Form.Control).filterWhere((item) => item.prop('name') === name),
     ).toHaveLength(1)
     expect(
-      wrapper.find(Form.Control).filterWhere((item) => item.prop('value') === value),
+      wrapper.find(Form.Control).filterWhere((item) => item.prop('defaultValue') === defaultValue),
     ).toHaveLength(1)
   })
 
@@ -37,47 +40,61 @@ describe('TextInput', () => {
   })
 
   it('renders a non-disabled TextInput', () => {
-    const wrapper = mount(<TextInput value="Testing the text input component" />)
+    const wrapper = mount(
+      <TextInput value="Testing the text input component" onChange={onChange} />,
+    )
     const input = wrapper.find(TextInput)
 
     expect(input.prop('disabled')).not.toBe(true)
   })
 
   it('renders a disabled TextInput', () => {
-    const wrapper = mount(<TextInput value="Testing the text input component" disabled />)
+    const wrapper = mount(
+      <TextInput value="Testing the text input component" onChange={onChange} disabled />,
+    )
     const input = wrapper.find(Form.Control)
 
     expect(input.prop('disabled')).toBe(true)
   })
 
   it('renders an invalid TextInput', () => {
-    const wrapper = mount(<TextInput value="Testing the text input component" isInvalid />)
+    const wrapper = mount(
+      <TextInput value="Testing the text input component" onChange={onChange} isInvalid />,
+    )
     const input = wrapper.find(Form.Control)
 
     expect(input.prop('isInvalid')).toBe(true)
   })
 
   it('renders a valid TextInput', () => {
-    const wrapper = mount(<TextInput value="Testing the text input component" isValid />)
+    const wrapper = mount(
+      <TextInput value="Testing the text input component" onChange={onChange} isValid />,
+    )
     const input = wrapper.find(Form.Control)
 
     expect(input.prop('isValid')).toBe(true)
   })
 
   it('renders a large TextInput', () => {
-    const largeWrapper = mount(<TextInput value="Testing the text input component" size="lg" />)
+    const largeWrapper = mount(
+      <TextInput value="Testing the text input component" onChange={onChange} size="lg" />,
+    )
     const largeInput = largeWrapper.find(Form.Control)
     expect(largeInput.prop('size')).toBe('lg')
   })
 
   it('renders a small TextInput', () => {
-    const smallWrapper = mount(<TextInput value="Testing the text input component" size="sm" />)
+    const smallWrapper = mount(
+      <TextInput value="Testing the text input component" onChange={onChange} size="sm" />,
+    )
     const smallInput = smallWrapper.find(Form.Control)
     expect(smallInput.prop('size')).toBe('sm')
   })
 
   it('renders a Text Input with a placeholder', () => {
-    const wrapper = mount(<TextInput value="Testing the text input component" placeholder="test" />)
+    const wrapper = mount(
+      <TextInput value="Testing the text input component" onChange={onChange} placeholder="test" />,
+    )
     const textInput = wrapper.find(Form.Control)
     expect(textInput.prop('placeholder')).toBe('test')
   })
@@ -90,7 +107,6 @@ describe('TextInput', () => {
 
   it('renders Text Input with custom style', () => {
     const wrapper = mount(<TextInput style={{ background: 'red' }} />)
-    const textInput = wrapper.find(Form.Control)
-    expect(textInput.props().style).toMatchObject({ background: 'red' })
+    expect(wrapper.props().style).toMatchObject({ background: 'red' })
   })
 })

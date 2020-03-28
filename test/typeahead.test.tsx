@@ -162,4 +162,59 @@ describe('Typeahead', () => {
     const input = wrapper.find(AsyncTypeahead)
     expect(input.prop('disabled')).toBe(true)
   })
+
+  it('should call the onSearch function with the right data', () => {
+    const search = jest.fn()
+    const render = jest.fn()
+    const change = jest.fn()
+    const id = 'id'
+    const searchAccessor = 'search'
+    const placeholder = 'placeholder'
+
+    const wrapper = shallow(
+      <Typeahead
+        placeholder={placeholder}
+        onSearch={search}
+        onChange={change}
+        renderMenuItemChildren={render}
+        id={id}
+        searchAccessor={searchAccessor}
+      />,
+    )
+
+    const expectedData = { id: '123' }
+    act(() => {
+      wrapper.prop('onSearch')(expectedData)
+    })
+    wrapper.update()
+
+    expect(search).toHaveBeenCalledTimes(1)
+    expect(search).toHaveBeenLastCalledWith(expectedData)
+  })
+
+  it('renders an invalid TextInput', () => {
+    const search = jest.fn()
+    const render = jest.fn()
+    const change = jest.fn()
+    const id = 'id'
+    const searchAccessor = 'search'
+    const placeholder = 'placeholder'
+    const isInvalid = true
+
+    const wrapper = shallow(
+      <Typeahead
+        placeholder={placeholder}
+        onSearch={search}
+        onChange={change}
+        renderMenuItemChildren={render}
+        id={id}
+        searchAccessor={searchAccessor}
+        isInvalid={isInvalid}
+      />,
+    )
+
+    const reactBootstrapTypeahead = wrapper.find(AsyncTypeahead)
+
+    expect(reactBootstrapTypeahead.prop('isInvalid')).toBe(true)
+  })
 })
