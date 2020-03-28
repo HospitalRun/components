@@ -87,7 +87,7 @@
     "@typescript-eslint/eslint-plugin": "~2.24.0",
     "autoprefixer": "~9.7.3",
     "awesome-typescript-loader": "~5.2.1",
-    "babel-loader": "~8.0.6",
+    "babel-loader": "~8.1.0",
     "bootstrap": "~4.4.0",
     "commitizen": "~4.0.3",
     "commitlint-config-cz": "0.13.1",
