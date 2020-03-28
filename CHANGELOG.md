@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/HospitalRun/components/compare/v1.1.0...v1.2.0) (2020-03-28)
+
+
+### Features
+
+* **checkbox:** add checked prop ([#344](https://github.com/HospitalRun/components/issues/344)) ([bb90297](https://github.com/HospitalRun/components/commit/bb9029769ed88c01a112b1eb755ed73c7447fc74))
+
 # [1.1.0](https://github.com/HospitalRun/components/compare/v1.0.0...v1.1.0) (2020-03-27)
 
 
