@@ -32,6 +32,8 @@ interface Props {
    * Defines the style of the checkbox.
    */
   labelStyle?: CSSProperties
+  /** Determines if the checkbox is checked or not. By default false */
+  checked?: boolean
 }
 
 /**
@@ -51,6 +53,7 @@ const Checkbox = (props: Props) => {
     style,
     labelClassName,
     labelStyle,
+    checked,
   } = props
 
   const getLabel = () => (
@@ -62,7 +65,13 @@ const Checkbox = (props: Props) => {
   return (
     <FormCheck name={name} inline={inline} className={className} style={style}>
       {labelSide === 'left' && getLabel()}
-      <FormCheck.Input id={id} type="checkbox" disabled={disabled} onChange={onChange} />
+      <FormCheck.Input
+        id={id}
+        type="checkbox"
+        disabled={disabled}
+        onChange={onChange}
+        checked={checked}
+      />
       {labelSide === 'right' && getLabel()}
     </FormCheck>
   )
