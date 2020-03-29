@@ -36,6 +36,15 @@ export interface NavLink extends NavItem {
 export interface NavLinkList extends NavLink {
   /** An array to hold a dropdown Links */
   children: Array<NavLink>
+  /** Align menu to the right of the nav */
+  alignRight?: boolean
+}
+
+export interface NavLinkListIcon extends NavLinkList {
+  /** A path which contains the company icon/image */
+  src: string
+  /** Alternative text attribute */
+  alt?: string
 }
 
 export interface NavSearch extends NavItem {

@@ -175,6 +175,33 @@ storiesOf('Navbar', module)
           },
         },
         {
+          type: 'link-list-icon',
+          alignRight: true,
+          label: 'User',
+          src:
+            'https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/7104608081548233620-128.png',
+          onClick: () => {
+            Toast('success', 'Settings icon clicked!!', 'Success')
+          },
+          className: 'ml-3',
+          children: [
+            {
+              type: 'link',
+              label: 'Sublink1',
+              onClick: () => {
+                Toast('success', 'Sublink1 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink2',
+              onClick: () => {
+                Toast('success', 'Sublink2 clicked!!', 'Success')
+              },
+            },
+          ],
+        },
+        {
           type: 'icon',
           src: 'https://image.flaticon.com/icons/svg/126/126472.svg',
           onClick: () => {
