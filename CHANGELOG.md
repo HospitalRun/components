@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/HospitalRun/components/compare/v1.2.0...v1.3.0) (2020-04-08)
+
+
+### Features
+
+* **component:** icon based navbar dropdown ([#345](https://github.com/HospitalRun/components/issues/345)) ([8f07823](https://github.com/HospitalRun/components/commit/8f078231db9a4a7b760669a10eb5f778d2e31012)), closes [/github.com/HospitalRun/hospitalrun-frontend/issues/1948#issue-589477927](https://github.com//github.com/HospitalRun/hospitalrun-frontend/issues/1948/issues/issue-589477927)
+
 # [1.2.0](https://github.com/HospitalRun/components/compare/v1.1.0...v1.2.0) (2020-03-28)
 
 
