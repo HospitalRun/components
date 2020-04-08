@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { Button } from '../Button'
-import { NavLink, NavIcon, NavHeader, NavLinkList, NavSearch } from './interfaces'
+import { NavLink, NavIcon, NavHeader, NavLinkList, NavLinkListIcon, NavSearch } from './interfaces'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */
@@ -13,7 +13,7 @@ interface Props extends React.Props<any> {
   /** Determines the letters color. It should be combined with the background color (bg) */
   variant?: 'light' | 'dark'
   /** Determines the links names, theirs onClick methods and paths. It has children array which contain links to be used on a dropdown. */
-  navItems: (NavIcon | NavHeader | NavLink | NavLinkList | NavSearch)[]
+  navItems: (NavIcon | NavHeader | NavLink | NavLinkList | NavLinkListIcon | NavSearch)[]
   /** Defines the class of the list. */
   className?: string
 }
@@ -51,8 +51,20 @@ const Navbar = (props: Props) => {
   )
   const getNavLinkList = (list: NavLinkList, index: number) => (
     <NavDropdown
+      alignRight={list.alignRight}
       className={list.className}
       title={list.label}
+      id="collasible-nav-dropdown"
+      key={index}
+    >
+      {list.children.map((listLink, i) => getNavListLink(listLink, i))}
+    </NavDropdown>
+  )
+  const getNavLinkListIcon = (list: NavLinkListIcon, index: number) => (
+    <NavDropdown
+      alignRight={list.alignRight}
+      className={list.className}
+      title={<img alt={list.alt} src={list.src} width="28" height="28" />}
       id="collasible-nav-dropdown"
       key={index}
     >
@@ -108,6 +120,9 @@ const Navbar = (props: Props) => {
             }
             if ((item as NavLinkList).type === 'link-list') {
               return getNavLinkList(item as NavLinkList, index)
+            }
+            if ((item as NavLinkListIcon).type === 'link-list-icon') {
+              return getNavLinkListIcon(item as NavLinkListIcon, index)
             }
             return null
           })}
