@@ -7,7 +7,7 @@ export interface TableProperties {
 
 export interface CustomColumn {
   accessor: string
-  type: 'string' | 'boolean' | 'date'
+  type: 'string' | 'boolean' | 'date' | 'actions'
   title: string
   label?: string
   filterPlaceholder?: string

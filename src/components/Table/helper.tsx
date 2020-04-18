@@ -3,6 +3,7 @@ import { get } from 'lodash'
 import { CellProps } from 'react-table'
 import { CustomColumn, ColumnStyle, DefaultColumnFilterOptions, Element } from './interfaces'
 import { DateTimePicker } from '../DateTimePicker'
+import { Button } from '../Button'
 
 const DefaultColumnFilter = ({
   column: { filterValue = '', setFilter, filterPlaceholder = '' },
@@ -173,6 +174,26 @@ export const generateColumns = (columns: CustomColumn[]) => {
           disableFiltering: element.disableFiltering,
           filterPlaceholder: element.filterPlaceholder || '',
           Filter: DateColumnFilter,
+        }
+        generatedColumns.push(el)
+        return generatedColumns
+      case 'actions':
+        el = {
+          Header: element.title || element.accessor || '',
+          accessor: element.accessor || '',
+          className: element.className ? `${element.className} text-center` : 'text-center',
+          headerClassName: element.headerClassName || '',
+          disableSorting: element.disableSorting,
+          disableFiltering: element.disableFiltering,
+          filterPlaceholder: element.filterPlaceholder || '',
+          Filter: DefaultColumnFilter,
+          Cell: ({ row }: CellProps<object>) => (
+            <>
+              {row.values[element.accessor] && (
+                <Button onClick={row.values[element.accessor]}>{element.title}</Button>
+              )}
+            </>
+          ),
         }
         generatedColumns.push(el)
         return generatedColumns
