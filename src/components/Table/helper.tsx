@@ -179,7 +179,7 @@ export const generateColumns = (columns: CustomColumn[]) => {
         return generatedColumns
       case 'actions':
         el = {
-          Header: element.title || element.accessor || '',
+          Header: '',
           accessor: element.accessor || '',
           className: element.className ? `${element.className} text-center` : 'text-center',
           headerClassName: element.headerClassName || '',
