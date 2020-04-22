@@ -7,7 +7,8 @@ export interface TableProperties {
 
 export interface CustomColumn {
   accessor: string
-  type: 'string' | 'boolean' | 'date' | 'actions'
+  id?: string
+  type: 'string' | 'boolean' | 'date' | 'action'
   title: string
   label?: string
   filterPlaceholder?: string
@@ -19,6 +20,7 @@ export interface CustomColumn {
   customTrueIcon?: JSX.Element
   customFalseIcon?: JSX.Element
   undefinedMeansFalse?: boolean
+  onClick?: any
 }
 
 export interface ColumnStyle {

@@ -23,12 +23,7 @@ storiesOf('Table', module)
         status: 'married',
         admin: true,
         date: new Date().toString(),
-        editOnClick: () => {
-          Toast('success', 'Edit button clicked!!', 'Success')
-        },
-        deleteOnClick: () => {
-          Toast('success', 'Delete button clicked!!', 'Success')
-        },
+        id: 123,
       },
       {
         firstName: 'Jack',
@@ -37,12 +32,7 @@ storiesOf('Table', module)
         status: 'single',
         admin: false,
         date: new Date().toString(),
-        editOnClick: () => {
-          Toast('success', 'Edit button clicked!!', 'Success')
-        },
-        deleteOnClick: () => {
-          Toast('success', 'Delete button clicked!!', 'Success')
-        },
+        id: 456,
       },
       {
         firstName: 'Jason',
@@ -51,12 +41,7 @@ storiesOf('Table', module)
         status: 'married',
         admin: false,
         date: new Date().toString(),
-        editOnClick: () => {
-          Toast('success', 'Edit button clicked!!', 'Success')
-        },
-        deleteOnClick: () => {
-          Toast('success', 'Delete button clicked!!', 'Success')
-        },
+        id: 789,
       },
     ]
 
@@ -163,22 +148,26 @@ storiesOf('Table', module)
           filterPlaceholder: 'Search in dates',
         },
         {
-          accessor: 'editOnClick',
-          type: 'actions',
+          accessor: '',
+          id: 'edit',
+          type: 'action',
           title: 'Edit',
           headerClassName: '',
           className: 'pl-3 fixoverflow',
-          disableFiltering: true,
-          disableSorting: true,
+          onClick: (patientid: string) => {
+            Toast('success', `${patientid}Edit button clicked!!`, 'Success')
+          },
         },
         {
-          accessor: 'deleteOnClick',
-          type: 'actions',
+          accessor: '',
+          id: 'delete',
+          type: 'action',
           title: 'Delete',
           headerClassName: '',
           className: 'pl-3 fixoverflow',
-          disableFiltering: true,
-          disableSorting: true,
+          onClick: (patientid: string) => {
+            Toast('success', `${patientid}Delete button clicked!!`, 'Success')
+          },
         },
       ],
     }

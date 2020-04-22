@@ -177,20 +177,21 @@ export const generateColumns = (columns: CustomColumn[]) => {
         }
         generatedColumns.push(el)
         return generatedColumns
-      case 'actions':
+      case 'action':
         el = {
           Header: '',
           accessor: element.accessor || '',
+          id: element.id,
           className: element.className ? `${element.className} text-center` : 'text-center',
           headerClassName: element.headerClassName || '',
-          disableSorting: element.disableSorting,
-          disableFiltering: element.disableFiltering,
-          filterPlaceholder: element.filterPlaceholder || '',
-          Filter: DefaultColumnFilter,
+          disableSorting: true,
+          disableFiltering: true,
           Cell: ({ row }: CellProps<object>) => (
             <>
-              {row.values[element.accessor] && (
-                <Button onClick={row.values[element.accessor]}>{element.title}</Button>
+              {element.id && (
+                <Button onClick={() => element.onClick(get(row.original, 'id', ''))}>
+                  {element.title}
+                </Button>
               )}
             </>
           ),
