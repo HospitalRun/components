@@ -1,11 +1,11 @@
 .invalid-date-picker {
-border: 1px #ff9f9f solid !important;
+  border: 1px #ff9f9f solid !important;
 }
 .valid-date-picker {
   border: 1px #49b961 solid !important;
 }
 .invalid-date-picker:focus {
-box-shadow: 0 0 0 0.2rem rgba(220,53,69,.5);
+  box-shadow: 0 0 0 0.2rem rgba(220,53,69,.5);
 }
 .valid-date-picker:focus {
   box-shadow: 0 0 0 0.2rem rgba(40,167,69,.5);

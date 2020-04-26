@@ -1,0 +1,13 @@
+.rbt-input-main.is-valid {
+  border: 1px #49b961 solid !important;
+}
+.rbt-input-main.is-invalid {
+  border: 1px #ff9f9f solid !important;
+}
+.rbt-input-main.is-valid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(40,167,69,.5);
+}
+.rbt-input-main.is-invalid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(220,53,69,.5);
+}
+
