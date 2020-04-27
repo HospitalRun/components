@@ -1,6 +1,6 @@
 name: GitHub CI
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   npm:
@@ -9,7 +9,7 @@ jobs:
       matrix:
        # node-version: [12.x, 14.x]
         node-version: [12.x]
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
     steps:
       - run: git config --global core.autocrlf false # this is needed to prevent git changing EOL after cloning on Windows OS
       - uses: actions/checkout@v2
@@ -37,10 +37,69 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ./lcov.info
-     
+         
+  npm-node14:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [14.x]
+        os: [ubuntu-latest]
+    steps:
+      - run: git config --global core.autocrlf false # this is needed to prevent git changing EOL after cloning on Windows OS
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install with npm
+        run: |
+          npm install
+      - name: Lint code
+        run: |
+          npm run lint
+      - name: Build
+        run: |
+          npm run build
+      - name: Storybook build
+        run: |
+          npm run build-storybook
+      - name: Run tests
+        run: |
+          npm run test:ci
+  yarn:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version: [12.x]
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+      - run: git config --global core.autocrlf false # this is needed to prevent git changing EOL after cloning on Windows OS
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Init yarn
+        run: |
+          npm install -g yarn
+      - name: Install with yarn
+        run: |
+          yarn install
+      - name: Lint code
+        run: |
+          yarn lint
+      - name: Build
+        run: |
+          yarn build
+      - name: Storybook build
+        run: |
+          yarn build-storybook
+      - name: Run tests
+        run: |
+          yarn test:ci
   release:
     name: Release
-    needs: [npm]
+    needs: [npm, yarn]
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
