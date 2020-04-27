@@ -37,42 +37,10 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: ./lcov.info
-         
-  yarn:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [12.x]
-        os: [ubuntu-latest]
-    steps:
-      - run: git config --global core.autocrlf false # this is needed to prevent git changing EOL after cloning on Windows OS
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Init yarn
-        run: |
-          npm install -g yarn
-      - name: Install with yarn
-        run: |
-          yarn install
-      - name: Lint code
-        run: |
-          yarn lint
-      - name: Build
-        run: |
-          yarn build
-      - name: Storybook build
-        run: |
-          yarn build-storybook
-      - name: Run tests
-        run: |
-          yarn test:ci
-
+     
   release:
     name: Release
-    needs: [npm, yarn]
+    needs: [npm]
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
