@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { AsyncTypeahead } from 'react-bootstrap-typeahead'
-import './Typeahead.css'
 
 interface Props {
   /** The id value of the input */
