@@ -26,13 +26,13 @@ describe('Typeahead', () => {
       />,
     )
 
-    const reactBootstrapTypeahead = wrapper.find(AsyncTypeahead)
+    const asyncTypeahead = wrapper.find(AsyncTypeahead)
 
-    expect(reactBootstrapTypeahead.prop('placeholder')).toEqual(placeholder)
-    expect(reactBootstrapTypeahead.prop('minLength')).toEqual(minLength)
-    expect(reactBootstrapTypeahead.prop('id')).toEqual(id)
-    expect(reactBootstrapTypeahead.prop('defaultSelected')).toEqual([])
-    expect(wrapper.prop('labelKey')).toEqual(searchAccessor)
+    expect(asyncTypeahead.prop('placeholder')).toEqual(placeholder)
+    expect(asyncTypeahead.prop('minLength')).toEqual(minLength)
+    expect(asyncTypeahead.prop('id')).toEqual(id)
+    expect(asyncTypeahead.prop('defaultSelected')).toEqual([])
+    expect(asyncTypeahead.prop('labelKey')).toEqual(searchAccessor)
   })
 
   it('should properly set the default value when value prop is given', () => {
@@ -78,9 +78,8 @@ describe('Typeahead', () => {
       />,
     )
 
-    const reactBootstrapTypeahead = wrapper.find(AsyncTypeahead)
-
-    expect(reactBootstrapTypeahead.prop('minLength')).toEqual(3)
+    const asyncTypeahead = wrapper.find(AsyncTypeahead)
+    expect(asyncTypeahead.prop('minLength')).toEqual(3)
   })
 
   it('should call the onChange function with the right data', () => {
@@ -102,9 +101,11 @@ describe('Typeahead', () => {
       />,
     )
 
+    const asyncTypeahead = wrapper.find(AsyncTypeahead)
     const expectedData = { id: '123' }
+
     act(() => {
-      wrapper.prop('onChange')(expectedData)
+      asyncTypeahead.prop('onChange')(expectedData)
     })
     wrapper.update()
 
@@ -133,8 +134,8 @@ describe('Typeahead', () => {
       />,
     )
 
-    const input = wrapper.find(AsyncTypeahead)
-    expect(input.prop('disabled')).not.toBe(true)
+    const asyncTypeahead = wrapper.find(AsyncTypeahead)
+    expect(asyncTypeahead.prop('disabled')).not.toBe(true)
   })
 
   it('renders a disabled Typeahead', () => {
@@ -159,8 +160,8 @@ describe('Typeahead', () => {
       />,
     )
 
-    const input = wrapper.find(AsyncTypeahead)
-    expect(input.prop('disabled')).toBe(true)
+    const asyncTypeahead = wrapper.find(AsyncTypeahead)
+    expect(asyncTypeahead.prop('disabled')).toBe(true)
   })
 
   it('should call the onSearch function with the right data', () => {
@@ -182,9 +183,10 @@ describe('Typeahead', () => {
       />,
     )
 
+    const asyncTypeahead = wrapper.find(AsyncTypeahead)
     const expectedData = { id: '123' }
     act(() => {
-      wrapper.prop('onSearch')(expectedData)
+      asyncTypeahead.prop('onSearch')(expectedData)
     })
     wrapper.update()
 
@@ -192,7 +194,34 @@ describe('Typeahead', () => {
     expect(search).toHaveBeenLastCalledWith(expectedData)
   })
 
-  it('renders an invalid TextInput', () => {
+  it('renders a Typeahead with feedback', () => {
+    const search = jest.fn()
+    const render = jest.fn()
+    const change = jest.fn()
+    const id = 'id'
+    const searchAccessor = 'search'
+    const placeholder = 'placeholder'
+    const isInvalid = true
+    const feedback = 'This is invalid'
+
+    const wrapper = shallow(
+      <Typeahead
+        placeholder={placeholder}
+        onSearch={search}
+        onChange={change}
+        renderMenuItemChildren={render}
+        id={id}
+        searchAccessor={searchAccessor}
+        isInvalid={isInvalid}
+        feedback={feedback}
+      />,
+    )
+
+    const feedbackDiv = wrapper.find('div.text-danger')
+    expect(feedbackDiv.text()).toEqual('This is invalid')
+  })
+
+  it('renders an invalid Typeahead when isInvalid is true', () => {
     const search = jest.fn()
     const render = jest.fn()
     const change = jest.fn()
@@ -213,8 +242,32 @@ describe('Typeahead', () => {
       />,
     )
 
-    const reactBootstrapTypeahead = wrapper.find(AsyncTypeahead)
+    const asyncTypeahead = wrapper.find(AsyncTypeahead)
+    expect(asyncTypeahead.prop('isInvalid')).toBe(true)
+  })
 
-    expect(reactBootstrapTypeahead.prop('isInvalid')).toBe(true)
+  it('renders a valid Typeahead when isValid is true', () => {
+    const search = jest.fn()
+    const render = jest.fn()
+    const change = jest.fn()
+    const id = 'id'
+    const searchAccessor = 'search'
+    const placeholder = 'placeholder'
+    const isValid = true
+
+    const wrapper = shallow(
+      <Typeahead
+        placeholder={placeholder}
+        onSearch={search}
+        onChange={change}
+        renderMenuItemChildren={render}
+        id={id}
+        searchAccessor={searchAccessor}
+        isValid={isValid}
+      />,
+    )
+
+    const asyncTypeahead = wrapper.find(AsyncTypeahead)
+    expect(asyncTypeahead.prop('isValid')).toBe(true)
   })
 })
