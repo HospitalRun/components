@@ -4,7 +4,6 @@ import InputGroup from 'react-bootstrap/InputGroup'
 import { enUS, ptBR } from 'date-fns/locale'
 import { Icon } from '../Icon'
 import 'react-datepicker/dist/react-datepicker.css'
-import './DateTimePicker.css'
 
 registerLocale('enUS', enUS)
 registerLocale('ptBR', ptBR)
@@ -126,9 +125,7 @@ const DateTimePicker = (props: Props) => {
           </InputGroup.Text>
         </InputGroup.Prepend>
         <DatePicker
-          className={`form-control ${
-            isValid ? 'valid-date-picker' : isInvalid ? 'invalid-date-picker' : ''
-          }`}
+          className={`form-control ${isValid ? 'is-valid' : isInvalid ? 'is-invalid' : ''}`}
           dateFormat={dateFormat}
           dateFormatCalendar={dateFormatCalendar}
           disabled={disabled}
