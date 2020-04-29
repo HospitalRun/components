@@ -27,7 +27,7 @@ describe('Select', () => {
     expect(bootstratSelect.props().disabled).toEqual(true)
   })
 
-  it('Select renders as invalid when the isValid prop is false', () => {
+  it('Select renders as invalid when the isInvalid prop is true', () => {
     const selectWrapper = shallow(
       <Select isInvalid>
         <option value="a">Option A</option>
