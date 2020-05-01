@@ -1,3 +1,16 @@
+# [1.4.0](https://github.com/HospitalRun/components/compare/v1.3.0...v1.4.0) (2020-05-01)
+
+
+### Bug Fixes
+
+* **ci:** fix automatic release job ([#388](https://github.com/HospitalRun/components/issues/388)) ([ff0b284](https://github.com/HospitalRun/components/commit/ff0b28425f8f35b54eb986f5661bf60793bde82a))
+* **ci:** fix release workflow ([a5ff997](https://github.com/HospitalRun/components/commit/a5ff997a73117bae2e483df2f79319da731e6eb1))
+
+
+### Features
+
+* **typeahead:** Added feedback prop to Typeahead ([#381](https://github.com/HospitalRun/components/issues/381)) ([812aca2](https://github.com/HospitalRun/components/commit/812aca25d08f3880e25a5fae1e6b00ed3b2c71b2))
+
 # [1.3.0](https://github.com/HospitalRun/components/compare/v1.2.0...v1.3.0) (2020-04-08)
 
 
