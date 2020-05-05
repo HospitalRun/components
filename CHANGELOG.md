@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/HospitalRun/components/compare/v1.4.0...v1.5.0) (2020-05-05)
+
+
+### Features
+
+* **navbar:** implement autocomplete support for Navbar search ([#392](https://github.com/HospitalRun/components/issues/392)) ([cccb599](https://github.com/HospitalRun/components/commit/cccb599dfef5567cf938d5ad1c7056af9def1d7e))
+
 # [1.4.0](https://github.com/HospitalRun/components/compare/v1.3.0...v1.4.0) (2020-05-01)
 
 
