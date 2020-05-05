@@ -273,3 +273,52 @@ storiesOf('Navbar', module)
       ]}
     />
   ))
+  .add('Search autocomplete', () => (
+    <Navbar
+      navItems={[
+        {
+          type: 'icon',
+          src:
+            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          onClick: () => {
+            Toast('success', 'Icon clicked!!', 'Success')
+          },
+        },
+        {
+          type: 'header',
+          label: 'HospitalRun',
+          onClick: () => {
+            Toast('success', 'Header clicked!!', 'Success')
+          },
+        },
+        {
+          type: 'link',
+          label: 'Link',
+          onClick: () => {
+            Toast('success', 'Link clicked!!', 'Success')
+          },
+        },
+        {
+          type: 'link',
+          label: 'Link 2',
+          onClick: () => {
+            Toast('success', 'Link clicked!!', 'Success')
+          },
+        },
+        {
+          type: 'search',
+          className: 'ml-auto mr-3',
+          onClickButton: () => {
+            Toast('success', 'Button clicked!!', 'Success')
+          },
+          onChangeInput: () => {
+            Toast('success', 'Search box changed!!', 'Success')
+          },
+          onSearch: async (query: string) => {
+            Toast('success', `onSearch with query ${query}`)
+            return []
+          },
+        },
+      ]}
+    />
+  ))
