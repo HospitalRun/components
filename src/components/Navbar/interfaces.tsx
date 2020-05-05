@@ -66,4 +66,6 @@ export interface NavSearch extends NavItem {
   onClickButton: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
   /** Handles the on change search form event */
   onChangeInput: (event: React.ChangeEvent<HTMLInputElement>) => void
+  /** Invoked as the user types to get the search suggestions */
+  onSearch?: (query: string) => Promise<any[]>
 }

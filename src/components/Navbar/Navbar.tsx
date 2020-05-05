@@ -6,6 +6,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import { Button } from '../Button'
 import { NavLink, NavIcon, NavHeader, NavLinkList, NavLinkListIcon, NavSearch } from './interfaces'
+import { Typeahead } from '../Typeahead'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */
@@ -34,21 +35,40 @@ const Navbar = (props: Props) => {
       {link.label}
     </NavDropdown.Item>
   )
+
+  const getSearchBox = (search: NavSearch) => {
+    const placeholderText = search.placeholderText || 'Search'
+
+    return typeof search.onSearch === 'function' ? (
+      <Typeahead
+        id="nav-search"
+        searchAccessor="nav-search"
+        placeholder={placeholderText}
+        onSearch={search.onSearch}
+        onChange={search.onChangeInput}
+        renderMenuItemChildren={(option) => <div>{option}</div>}
+      />
+    ) : (
+      <FormControl
+        type="text"
+        placeholder={placeholderText}
+        className="mr-sm-2"
+        onChange={search.onChangeInput}
+      />
+    )
+  }
+
   const getNavSearch = (search: NavSearch, index: number) => (
     <Nav className={search.className} key={index}>
       <Form inline>
-        <FormControl
-          type="text"
-          placeholder={search.placeholderText || 'Search'}
-          className="mr-sm-2"
-          onChange={search.onChangeInput}
-        />
+        {getSearchBox(search)}
         <Button color={search.buttonColor || 'primary'} onClick={search.onClickButton}>
           {search.buttonText || 'Search'}
         </Button>
       </Form>
     </Nav>
   )
+
   const getNavLinkList = (list: NavLinkList, index: number) => (
     <NavDropdown
       alignRight={list.alignRight}
