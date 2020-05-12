@@ -34,7 +34,7 @@
     "commitlint": "commitlint"
   },
   "peerDependencies": {
-    "bootstrap": "~4.4.0",
+    "bootstrap": "~4.5.0",
     "react": "~16.9.0",
     "react-bootstrap": "~1.0.0-beta.14"
   },
@@ -88,7 +88,7 @@
     "autoprefixer": "~9.7.3",
     "awesome-typescript-loader": "~5.2.1",
     "babel-loader": "~8.1.0",
-    "bootstrap": "~4.4.0",
+    "bootstrap": "~4.5.0",
     "commitizen": "~4.1.1",
     "commitlint-config-cz": "0.13.1",
     "cross-env": "~7.0.0",
