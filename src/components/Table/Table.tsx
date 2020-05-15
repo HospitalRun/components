@@ -18,7 +18,7 @@ interface Props<T> {
   onRowClick?: (row: T) => void
 }
 
-function Table<T>({ data, tableProperties }: Props<T>) {
+function Table<T>({ data, tableProperties, tableClassName }: Props<T>) {
   const columns = React.useMemo(() => generateColumns(tableProperties.columns), [])
 
   const {
@@ -49,7 +49,7 @@ function Table<T>({ data, tableProperties }: Props<T>) {
 
   return (
     <>
-      <table {...getTableProps()} className={tableProperties.tableClassname}>
+      <table {...getTableProps()} className={tableClassName}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
