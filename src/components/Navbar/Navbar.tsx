@@ -1,12 +1,13 @@
 import React from 'react'
-import NavbarRB from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
+import Nav from 'react-bootstrap/Nav'
+import NavbarRB from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+
 import { Button } from '../Button'
-import { NavLink, NavIcon, NavHeader, NavLinkList, NavLinkListIcon, NavSearch } from './interfaces'
 import { Typeahead } from '../Typeahead'
+import { NavLink, NavIcon, NavHeader, NavLinkList, NavLinkListIcon, NavSearch } from './interfaces'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */

@@ -1,8 +1,9 @@
-import * as React from 'react'
 import { shallow, mount } from 'enzyme'
+import * as React from 'react'
 import * as sinon from 'sinon'
-import { Button } from '../src/components/Button'
+
 import { Tab, TabsHeader, Icon } from '../src'
+import { Button } from '../src/components/Button'
 
 describe('Tabs', () => {
   it('Empty tab header renders without crashing', () => {

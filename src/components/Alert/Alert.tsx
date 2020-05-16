@@ -1,5 +1,6 @@
 import React, { Component, ReactNode, CSSProperties } from 'react'
 import BootstrapAlert from 'react-bootstrap/Alert'
+
 import { ColorVariant } from '../../interfaces'
 import { Button } from '../Button'
 
