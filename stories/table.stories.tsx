@@ -12,7 +12,15 @@ storiesOf('Table', module)
     <div style={{ marginLeft: '2em', marginRight: '2em', textAlign: 'center' }}>{storyFn()}</div>
   ))
   .add('Demo Table', () => {
-    const data = [
+    type Data = {
+      firstName: string
+      lastName: string
+      age: number
+      status: 'married' | 'single'
+      admin: boolean
+      date: string
+    }
+    const data: Data[] = [
       {
         firstName: 'John',
         lastName: 'Smith',
@@ -144,9 +152,19 @@ storiesOf('Table', module)
       ],
     }
 
+    const columns = [
+      { label: 'firstname', accessor: (column: Data) => <div>{column.firstName}</div> },
+      { label: 'lastname', accessor: (column: Data) => <div>{column.lastName}</div> },
+    ]
+
     return (
       <div>
-        <Table data={data} tableProperties={tableProperties} />
+        <Table<Data>
+          data={data}
+          tableProperties={tableProperties}
+          tableClassName=""
+          columns={columns}
+        />
       </div>
     )
   })

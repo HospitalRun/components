@@ -3,13 +3,13 @@ import { useTable, useFilters, useSortBy, usePagination, TableInstance } from 'r
 import { generateColumns } from './helper'
 import { Data, TableProperties, GeneratedColumn } from './interfaces'
 
-interface Props<T> {
+interface Props<T extends object = {}> {
   /** TableProperties are composed by a tableClassname string property and the columns array */
   tableProperties: TableProperties
   /** Provides data for the table */
-  data: object[]
+  data: T[]
   /** the class name for the table */
-  tableClassName: string
+  tableClassName?: string
   /** the label is the name of the column, the accessor is a function that will get the value to render and return a react node to render in the column. */
   columns: { label: string; accessor: (row: T) => React.ReactNode }[]
   /** actions will render buttons with the label, and action is what will happen when that button is clicked. */
@@ -18,7 +18,11 @@ interface Props<T> {
   onRowClick?: (row: T) => void
 }
 
-function Table<T>({ data, tableProperties, tableClassName }: Props<T>) {
+function Table<T extends object>({
+  data,
+  tableProperties,
+  tableClassName,
+}: Props<T>): React.ReactElement<Props<T>> {
   const columns = React.useMemo(() => generateColumns(tableProperties.columns), [])
 
   const {
