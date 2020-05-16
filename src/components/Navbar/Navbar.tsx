@@ -91,17 +91,26 @@ const Navbar = (props: Props) => {
       {list.children.map((listLink, i) => getNavListLink(listLink, i))}
     </NavDropdown>
   )
+
   const getNavLinkListIcon = (list: NavLinkListIcon, index: number) => (
     <NavDropdown
       alignRight={list.alignRight}
       className={list.className}
-      title={<img alt={list.alt} src={list.src} width="28" height="28" />}
+      title={
+        <Icon
+          icon={list.name as IconType}
+          size={list.size as SizeProp}
+          className={list.iconClassName}
+          outline={list.outline ? list.outline : false}
+        />
+      }
       id="collasible-nav-dropdown"
       key={index}
     >
       {list.children.map((listLink, i) => getNavListLink(listLink, i))}
     </NavDropdown>
   )
+
   const getNavHeader = (header: NavHeader, index: number) => (
     <NavbarRB.Brand
       className={header.className}
@@ -112,8 +121,15 @@ const Navbar = (props: Props) => {
       <span style={{ color: header.color }}>{`${header.label}`}</span>
     </NavbarRB.Brand>
   )
+
+  const getNavLink = (link: NavLink, index: number) => (
+    <Nav.Link className={link.className} onClick={link.onClick} key={index}>
+      {link.label}
+    </Nav.Link>
+  )
+
   const getNavIcon = (icon: NavIcon, index: number) => (
-    <NavbarRB.Brand
+    <Nav.Link
       className={icon.className ? icon.className.concat(' ', 'd-inline-block') : 'd-inline-block'}
       onClick={icon.onClick}
       style={{ cursor: 'pointer' }}
@@ -123,9 +139,11 @@ const Navbar = (props: Props) => {
         icon={icon.name as IconType}
         size={icon.size as SizeProp}
         className={icon.iconClassName}
+        outline={icon.outline ? icon.outline : false}
       />
-    </NavbarRB.Brand>
+    </Nav.Link>
   )
+
   const getNavImage = (image: NavImage, index: number) => (
     <NavbarRB.Brand
       className={
@@ -141,11 +159,6 @@ const Navbar = (props: Props) => {
     </NavbarRB.Brand>
   )
 
-  const getNavLink = (link: NavLink, index: number) => (
-    <Nav.Link className={link.className} onClick={link.onClick} key={index}>
-      {link.label}
-    </Nav.Link>
-  )
   return (
     <NavbarRB bg={bg} variant={variant}>
       <NavbarRB.Collapse id="responsive-navbar-nav">

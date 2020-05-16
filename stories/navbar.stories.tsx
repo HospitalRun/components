@@ -177,13 +177,10 @@ storiesOf('Navbar', module)
         {
           type: 'link-list-icon',
           alignRight: true,
-          label: 'User',
-          src:
-            'https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/7104608081548233620-128.png',
-          onClick: () => {
-            Toast('success', 'Settings icon clicked!!', 'Success')
-          },
-          className: 'ml-3',
+          label: 'Patient',
+          name: 'patient',
+          size: 'lg',
+          iconClassName: 'align-bottom',
           children: [
             {
               type: 'link',
@@ -203,15 +200,18 @@ storiesOf('Navbar', module)
         },
         {
           type: 'icon',
+          label: 'Patient',
           name: 'patient',
           onClick: () => {
             Toast('success', 'Settings icon clicked!!', 'Success')
           },
           size: 'lg',
+          outline: true,
           iconClassName: 'align-bottom',
         },
         {
           type: 'icon',
+          label: 'Patient',
           name: 'patient',
           onClick: () => {
             Toast('success', 'Settings icon clicked!!', 'Success')
