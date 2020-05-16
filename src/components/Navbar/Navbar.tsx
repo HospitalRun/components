@@ -4,8 +4,19 @@ import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import { SizeProp } from '@fortawesome/fontawesome-svg-core'
 import { Button } from '../Button'
-import { NavLink, NavIcon, NavHeader, NavLinkList, NavLinkListIcon, NavSearch } from './interfaces'
+import { Icon } from '../Icon'
+import { IconType } from '../Icon/interfaces'
+import {
+  NavLink,
+  NavIcon,
+  NavImage,
+  NavHeader,
+  NavLinkList,
+  NavLinkListIcon,
+  NavSearch,
+} from './interfaces'
 import { Typeahead } from '../Typeahead'
 
 interface Props extends React.Props<any> {
@@ -14,7 +25,7 @@ interface Props extends React.Props<any> {
   /** Determines the letters color. It should be combined with the background color (bg) */
   variant?: 'light' | 'dark'
   /** Determines the links names, theirs onClick methods and paths. It has children array which contain links to be used on a dropdown. */
-  navItems: (NavIcon | NavHeader | NavLink | NavLinkList | NavLinkListIcon | NavSearch)[]
+  navItems: (NavIcon | NavImage | NavHeader | NavLink | NavLinkList | NavLinkListIcon | NavSearch)[]
   /** Defines the class of the list. */
   className?: string
 }
@@ -103,16 +114,30 @@ const Navbar = (props: Props) => {
   )
   const getNavIcon = (icon: NavIcon, index: number) => (
     <NavbarRB.Brand
-      className={
-        icon.className
-          ? icon.className.concat(' ', 'd-inline-block align-top')
-          : 'd-inline-block align-top'
-      }
+      className={icon.className ? icon.className.concat(' ', 'd-inline-block') : 'd-inline-block'}
       onClick={icon.onClick}
       style={{ cursor: 'pointer' }}
       key={index}
     >
-      <img alt={icon.alt} src={icon.src} width="28" height="28" />
+      <Icon
+        icon={icon.name as IconType}
+        size={icon.size as SizeProp}
+        className={icon.iconClassName}
+      />
+    </NavbarRB.Brand>
+  )
+  const getNavImage = (image: NavImage, index: number) => (
+    <NavbarRB.Brand
+      className={
+        image.className
+          ? image.className.concat(' ', 'd-inline-block align-top')
+          : 'd-inline-block align-top'
+      }
+      onClick={image.onClick}
+      style={{ cursor: 'pointer' }}
+      key={index}
+    >
+      <img alt={image.alt} src={image.src} width="28" height="28" />
     </NavbarRB.Brand>
   )
 
@@ -143,6 +168,9 @@ const Navbar = (props: Props) => {
             }
             if ((item as NavLinkListIcon).type === 'link-list-icon') {
               return getNavLinkListIcon(item as NavLinkListIcon, index)
+            }
+            if ((item as NavImage).type === 'image') {
+              return getNavImage(item as NavImage, index)
             }
             return null
           })}

@@ -7,6 +7,17 @@ export interface NavItem {
 export interface NavIcon extends NavItem {
   /** Label color */
   color?: string
+  /** An icon name */
+  name: string
+  /** A click handle which will redirect the user to the respectable webpage/path */
+  onClick?: (event: React.MouseEvent<any>) => void
+  /** Size of icon */
+  size?: string
+  /** CSS class(es) for icon */
+  iconClassName?: string
+}
+
+export interface NavImage extends NavItem {
   /** A path which contains the company icon/image */
   src: string
   /** A click handle which will redirect the user to the respectable webpage/path */

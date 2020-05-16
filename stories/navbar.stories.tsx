@@ -21,7 +21,7 @@ storiesOf('Navbar', module)
     <Navbar
       navItems={[
         {
-          type: 'icon',
+          type: 'image',
           src:
             'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
           onClick: () => {
@@ -68,7 +68,7 @@ storiesOf('Navbar', module)
       variant="dark"
       navItems={[
         {
-          type: 'icon',
+          type: 'image',
           src:
             'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
           onClick: () => {
@@ -132,7 +132,7 @@ storiesOf('Navbar', module)
     <Navbar
       navItems={[
         {
-          type: 'icon',
+          type: 'image',
           src:
             'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
           onClick: () => {
@@ -203,20 +203,21 @@ storiesOf('Navbar', module)
         },
         {
           type: 'icon',
-          src: 'https://image.flaticon.com/icons/svg/126/126472.svg',
+          name: 'patient',
           onClick: () => {
             Toast('success', 'Settings icon clicked!!', 'Success')
           },
-          className: 'ml-4',
+          size: 'lg',
+          iconClassName: 'align-bottom',
         },
         {
           type: 'icon',
-          src:
-            'https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/7104608081548233620-128.png',
+          name: 'patient',
           onClick: () => {
-            Toast('success', 'Profile icon clicked!!', 'Success')
+            Toast('success', 'Settings icon clicked!!', 'Success')
           },
-          className: 'ml-3',
+          size: 'lg',
+          iconClassName: 'align-bottom',
         },
       ]}
     />
@@ -235,7 +236,7 @@ storiesOf('Navbar', module)
           className: 'ml-4',
         },
         {
-          type: 'icon',
+          type: 'image',
           src:
             'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
           onClick: () => {
@@ -277,7 +278,7 @@ storiesOf('Navbar', module)
     <Navbar
       navItems={[
         {
-          type: 'icon',
+          type: 'image',
           src:
             'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
           onClick: () => {
