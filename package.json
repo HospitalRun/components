@@ -85,7 +85,7 @@
     "@types/tinymce": "~4.5.23",
     "@typescript-eslint/parser": "~2.32.0",
     "@typescript-eslint/eslint-plugin": "~2.32.0",
-    "autoprefixer": "~9.7.3",
+    "autoprefixer": "~9.8.0",
     "awesome-typescript-loader": "~5.2.1",
     "babel-loader": "~8.1.0",
     "bootstrap": "~4.5.0",
