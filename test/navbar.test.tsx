@@ -172,14 +172,14 @@ describe('Navbar', () => {
     const header = NavbarWrapper.find(NavBarRB.Brand)
     expect(header.text().trim()).toEqual('Test')
   })
-  it('should render icon src as passed in src prop', () => {
+  it('should render image src as passed in src prop', () => {
     const onClickButton = sinon.spy()
     const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
           {
-            type: 'icon',
+            type: 'image',
             label: 'test',
             src: 'anysource',
           },
@@ -199,8 +199,8 @@ describe('Navbar', () => {
         ]}
       />,
     )
-    const iconImg = NavbarWrapper.find('img')
-    expect(iconImg).toHaveLength(1)
+    const image = NavbarWrapper.find('img')
+    expect(image).toHaveLength(1)
   })
 
   it('should render button color as passed in buttonColor prop', () => {
