@@ -43,9 +43,7 @@ storiesOf('Typeahead', module)
         onChange={(selected) => alert(JSON.stringify(selected))}
         renderMenuItemChildren={(option) => (
           // eslint-disable-next-line
-            <div>
-              {`${option.fullName}`}
-            </div>
+          <div>{`${option.fullName}`}</div>
         )}
       />
     </div>
@@ -66,9 +64,7 @@ storiesOf('Typeahead', module)
         }}
         renderMenuItemChildren={(option) => (
           // eslint-disable-next-line
-            <div>
-              {`${option.fullName}`}
-            </div>
+          <div>{`${option.fullName}`}</div>
         )}
       />
     </div>
@@ -90,9 +86,7 @@ storiesOf('Typeahead', module)
         }}
         renderMenuItemChildren={(option) => (
           // eslint-disable-next-line
-            <div>
-              {`${option.fullName}`}
-            </div>
+          <div>{`${option.fullName}`}</div>
         )}
       />
     </div>
@@ -114,9 +108,7 @@ storiesOf('Typeahead', module)
         }}
         renderMenuItemChildren={(option) => (
           // eslint-disable-next-line
-            <div>
-              {`${option.fullName}`}
-            </div>
+          <div>{`${option.fullName}`}</div>
         )}
       />
     </div>
@@ -139,9 +131,7 @@ storiesOf('Typeahead', module)
         }}
         renderMenuItemChildren={(option) => (
           // eslint-disable-next-line
-            <div>
-              {`${option.fullName}`}
-            </div>
+          <div>{`${option.fullName}`}</div>
         )}
       />
     </div>
@@ -163,9 +153,7 @@ storiesOf('Typeahead', module)
         }}
         renderMenuItemChildren={(option) => (
           // eslint-disable-next-line
-            <div>
-              {`${option.fullName}`}
-            </div>
+          <div>{`${option.fullName}`}</div>
         )}
       />
     </div>
@@ -188,9 +176,7 @@ storiesOf('Typeahead', module)
         }}
         renderMenuItemChildren={(option) => (
           // eslint-disable-next-line
-            <div>
-              {`${option.fullName}`}
-            </div>
+          <div>{`${option.fullName}`}</div>
         )}
       />
     </div>
