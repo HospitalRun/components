@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -124,10 +124,11 @@
     "typescript": "~3.8.2"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-common-types": "~0.2.26",
+    "@fortawesome/fontawesome-common-types": "~0.2.28",
     "@fortawesome/fontawesome-svg-core": "~1.2.25",
     "@fortawesome/free-solid-svg-icons": "~5.12.0",
-    "@fortawesome/react-fontawesome": "~0.1.4",
+    "@fortawesome/free-regular-svg-icons": "~5.13.0",
+    "@fortawesome/react-fontawesome": "~0.1.9",
     "@fullcalendar/core": "~4.3.1",
     "@fullcalendar/daygrid": "~4.3.0",
     "@fullcalendar/interaction": "~4.4.0",

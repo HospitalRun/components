@@ -1,7 +1,6 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { CSSProperties } from 'react'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconPrefix, IconName, SizeProp, IconProp } from '@fortawesome/fontawesome-svg-core'
 import { IconType } from './interfaces'
 
 // maps between hospital run icon names and font awesome
@@ -38,6 +37,9 @@ function getFontAwesomeIcon(icon: IconType): string {
 interface Props {
   /** The type of icon to display */
   icon: IconType
+  size?: SizeProp
+  /** Outline version or filled-in version. Note some icons may be missing outline version. */
+  outline?: boolean
   /**
    * Defines the class of the icon.
    */
@@ -54,15 +56,24 @@ interface Props {
  * Icons provide contextual clues to users to make it easier to recognize functionality
  */
 const Icon = (props: Props) => {
-  const { icon, className, style, onClick } = props
+  const { icon, outline, className, style, onClick, size } = props
+  const iconPrefix = (outline ? 'far' : 'fas') as IconPrefix
+  const faIconName = getFontAwesomeIcon(icon) as IconName
+
   return (
     <FontAwesomeIcon
       onClick={onClick}
-      icon={getFontAwesomeIcon(icon) as IconProp}
+      icon={[iconPrefix, faIconName]}
+      size={size}
       className={className}
       style={style}
     />
   )
+}
+
+Icon.defaultProps = {
+  outline: false,
+  size: '1x',
 }
 
 export { Icon }

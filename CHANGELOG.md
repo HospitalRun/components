@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/HospitalRun/components/compare/v1.5.0...v1.6.0) (2020-05-18)
+
+
+### Features
+
+* **icon:** add outline prop to Icon component ([e461188](https://github.com/HospitalRun/components/commit/e461188c185002005b0712f04a3b6c179a936551))
+* **navbar:** icon can be added as navbar item with its name, size, etc ([d83321c](https://github.com/HospitalRun/components/commit/d83321c584487a05c73314017a8a360af5cdb113))
+* **navbar:** nav item of icon type can be inserted with Icon component ([316909f](https://github.com/HospitalRun/components/commit/316909f9d387c9fa540bd5d3b6c67d0eea491c50))
+
 # [1.5.0](https://github.com/HospitalRun/components/compare/v1.4.0...v1.5.0) (2020-05-05)
 
 

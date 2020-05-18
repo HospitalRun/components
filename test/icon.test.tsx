@@ -20,130 +20,135 @@ describe('Icon', () => {
     const addIconWrapper = shallow(<Icon icon="add" />)
     const fontAwesomeIcon = addIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('plus')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'plus'])
   })
 
   it('Appointment Icons renders themselves without crashing', () => {
     const apointmentWrapper = shallow(<Icon icon="appointment" />)
     const appointmentFontAwesomeIcon = apointmentWrapper.find(FontAwesomeIcon)
     expect(appointmentFontAwesomeIcon).toHaveLength(1)
-    expect(appointmentFontAwesomeIcon.props().icon).toBe('calendar')
+    expect(appointmentFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'calendar'])
 
     const addApointmentWrapper = shallow(<Icon icon="appointment-add" />)
     const addAppointmentFontAwesomeIcon = addApointmentWrapper.find(FontAwesomeIcon)
     expect(addAppointmentFontAwesomeIcon).toHaveLength(1)
-    expect(addAppointmentFontAwesomeIcon.props().icon).toBe('calendar-plus')
+    expect(addAppointmentFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'calendar-plus'])
 
     const removeApointmentWrapper = shallow(<Icon icon="appointment-remove" />)
     const removeAppointmentFontAwesomeIcon = removeApointmentWrapper.find(FontAwesomeIcon)
     expect(removeAppointmentFontAwesomeIcon).toHaveLength(1)
-    expect(removeAppointmentFontAwesomeIcon.props().icon).toBe('calendar-minus')
+    expect(removeAppointmentFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'calendar-minus'])
   })
 
   it('Calendar Icon renders itself without crashing', () => {
     const calendarIconWrapper = shallow(<Icon icon="calendar" />)
     const fontAwesomeIcon = calendarIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('calendar-alt')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'calendar-alt'])
   })
 
   it('Dashboard Icon renders itself without crashing', () => {
     const dashboardIconWrapper = shallow(<Icon icon="dashboard" />)
     const fontAwesomeIcon = dashboardIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('columns')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'columns'])
   })
 
   it('Edit Icon renders itself without crashing', () => {
     const dashboardIconWrapper = shallow(<Icon icon="edit" />)
     const fontAwesomeIcon = dashboardIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('edit')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'edit'])
   })
 
   it('Image Icon renders itself without crashing', () => {
     const imageIconWrapper = shallow(<Icon icon="image" />)
     const fontAwesomeIcon = imageIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('camera')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'camera'])
   })
 
   it('Incident Icon renders itself without crashing', () => {
     const incidentIconWrapper = shallow(<Icon icon="incident" />)
     const fontAwesomeIcon = incidentIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('file-alt')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'file-alt'])
   })
 
   it('Lab Icon renders itself without crashing', () => {
     const labIconWrapper = shallow(<Icon icon="lab" />)
     const fontAwesomeIcon = labIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('microscope')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'microscope'])
   })
 
   it('Arrow Icons renders themselves without crashing', () => {
     const leftArrowIconWrapper = shallow(<Icon icon="left-arrow" />)
     const leftArrowFontAwesomeIcon = leftArrowIconWrapper.find(FontAwesomeIcon)
     expect(leftArrowFontAwesomeIcon).toHaveLength(1)
-    expect(leftArrowFontAwesomeIcon.props().icon).toBe('chevron-left')
+    expect(leftArrowFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'chevron-left'])
 
     const rightArrowIconWrapper = shallow(<Icon icon="right-arrow" />)
     const rightArrowFontAwesomeIcon = rightArrowIconWrapper.find(FontAwesomeIcon)
     expect(rightArrowFontAwesomeIcon).toHaveLength(1)
-    expect(rightArrowFontAwesomeIcon.props().icon).toBe('chevron-right')
+    expect(rightArrowFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'chevron-right'])
   })
 
   it('Medication Icon renders itself without crashing', () => {
     const medicationIconWrapper = shallow(<Icon icon="medication" />)
     const fontAwesomeIcon = medicationIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('pills')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'pills'])
   })
 
   it('Patient Icons renders themselves without crashing', () => {
     const patientWrapperWrapper = shallow(<Icon icon="patient" />)
     const patientFontAwesomeIcon = patientWrapperWrapper.find(FontAwesomeIcon)
     expect(patientFontAwesomeIcon).toHaveLength(1)
-    expect(patientFontAwesomeIcon.props().icon).toBe('user')
+    expect(patientFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'user'])
 
     const patientAddWrapper = shallow(<Icon icon="patient-add" />)
     const patientAddFontAwesomeIcon = patientAddWrapper.find(FontAwesomeIcon)
     expect(patientAddFontAwesomeIcon).toHaveLength(1)
-    expect(patientAddFontAwesomeIcon.props().icon).toBe('user-plus')
+    expect(patientAddFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'user-plus'])
 
     const patientRemoveWrapper = shallow(<Icon icon="patient-remove" />)
     const patientRemoveFontAwesomeIcon = patientRemoveWrapper.find(FontAwesomeIcon)
     expect(patientRemoveFontAwesomeIcon).toHaveLength(1)
-    expect(patientRemoveFontAwesomeIcon.props().icon).toBe('user-minus')
+    expect(patientRemoveFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'user-minus'])
+
+    const addIconWrapper = shallow(<Icon icon="patient" outline />)
+    const fontAwesomeIcon = addIconWrapper.find(FontAwesomeIcon)
+    expect(fontAwesomeIcon).toHaveLength(1)
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['far', 'user'])
   })
 
   it('Patients Icon renders itself without crashing', () => {
     const patientsIconWrapper = shallow(<Icon icon="patients" />)
     const fontAwesomeIcon = patientsIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('users')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'users'])
   })
 
   it('Remove Icon renders itself without crashing', () => {
     const removeIconWrapper = shallow(<Icon icon="remove" />)
     const fontAwesomeIcon = removeIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('minus')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'minus'])
   })
 
   it('Save Icon renders itself without crashing', () => {
     const saveIconWrapper = shallow(<Icon icon="save" />)
     const fontAwesomeIcon = saveIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('save')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'save'])
   })
 
   it('Setting Icon renders itself without crashing', () => {
     const settingIconWrapper = shallow(<Icon icon="setting" />)
     const fontAwesomeIcon = settingIconWrapper.find(FontAwesomeIcon)
     expect(fontAwesomeIcon).toHaveLength(1)
-    expect(fontAwesomeIcon.props().icon).toBe('cog')
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'cog'])
   })
 
   it('Icon can use custom class', () => {

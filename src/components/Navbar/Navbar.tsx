@@ -4,10 +4,20 @@ import FormControl from 'react-bootstrap/FormControl'
 import Nav from 'react-bootstrap/Nav'
 import NavbarRB from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-
+import { SizeProp } from '@fortawesome/fontawesome-svg-core'
 import { Button } from '../Button'
+import { Icon } from '../Icon'
+import { IconType } from '../Icon/interfaces'
+import {
+  NavLink,
+  NavIcon,
+  NavImage,
+  NavHeader,
+  NavLinkList,
+  NavLinkListIcon,
+  NavSearch,
+} from './interfaces'
 import { Typeahead } from '../Typeahead'
-import { NavLink, NavIcon, NavHeader, NavLinkList, NavLinkListIcon, NavSearch } from './interfaces'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */
@@ -15,7 +25,7 @@ interface Props extends React.Props<any> {
   /** Determines the letters color. It should be combined with the background color (bg) */
   variant?: 'light' | 'dark'
   /** Determines the links names, theirs onClick methods and paths. It has children array which contain links to be used on a dropdown. */
-  navItems: (NavIcon | NavHeader | NavLink | NavLinkList | NavLinkListIcon | NavSearch)[]
+  navItems: (NavIcon | NavImage | NavHeader | NavLink | NavLinkList | NavLinkListIcon | NavSearch)[]
   /** Defines the class of the list. */
   className?: string
 }
@@ -81,17 +91,26 @@ const Navbar = (props: Props) => {
       {list.children.map((listLink, i) => getNavListLink(listLink, i))}
     </NavDropdown>
   )
+
   const getNavLinkListIcon = (list: NavLinkListIcon, index: number) => (
     <NavDropdown
       alignRight={list.alignRight}
       className={list.className}
-      title={<img alt={list.alt} src={list.src} width="28" height="28" />}
+      title={
+        <Icon
+          icon={list.name as IconType}
+          size={list.size as SizeProp}
+          className={list.iconClassName}
+          outline={list.outline ? list.outline : false}
+        />
+      }
       id="collasible-nav-dropdown"
       key={index}
     >
       {list.children.map((listLink, i) => getNavListLink(listLink, i))}
     </NavDropdown>
   )
+
   const getNavHeader = (header: NavHeader, index: number) => (
     <NavbarRB.Brand
       className={header.className}
@@ -102,26 +121,44 @@ const Navbar = (props: Props) => {
       <span style={{ color: header.color }}>{`${header.label}`}</span>
     </NavbarRB.Brand>
   )
-  const getNavIcon = (icon: NavIcon, index: number) => (
-    <NavbarRB.Brand
-      className={
-        icon.className
-          ? icon.className.concat(' ', 'd-inline-block align-top')
-          : 'd-inline-block align-top'
-      }
-      onClick={icon.onClick}
-      style={{ cursor: 'pointer' }}
-      key={index}
-    >
-      <img alt={icon.alt} src={icon.src} width="28" height="28" />
-    </NavbarRB.Brand>
-  )
 
   const getNavLink = (link: NavLink, index: number) => (
     <Nav.Link className={link.className} onClick={link.onClick} key={index}>
       {link.label}
     </Nav.Link>
   )
+
+  const getNavIcon = (icon: NavIcon, index: number) => (
+    <Nav.Link
+      className={icon.className ? icon.className.concat(' ', 'd-inline-block') : 'd-inline-block'}
+      onClick={icon.onClick}
+      style={{ cursor: 'pointer' }}
+      key={index}
+    >
+      <Icon
+        icon={icon.name as IconType}
+        size={icon.size as SizeProp}
+        className={icon.iconClassName}
+        outline={icon.outline ? icon.outline : false}
+      />
+    </Nav.Link>
+  )
+
+  const getNavImage = (image: NavImage, index: number) => (
+    <NavbarRB.Brand
+      className={
+        image.className
+          ? image.className.concat(' ', 'd-inline-block align-top')
+          : 'd-inline-block align-top'
+      }
+      onClick={image.onClick}
+      style={{ cursor: 'pointer' }}
+      key={index}
+    >
+      <img alt={image.alt} src={image.src} width="28" height="28" />
+    </NavbarRB.Brand>
+  )
+
   return (
     <NavbarRB bg={bg} variant={variant}>
       <NavbarRB.Collapse id="responsive-navbar-nav">
@@ -144,6 +181,9 @@ const Navbar = (props: Props) => {
             }
             if ((item as NavLinkListIcon).type === 'link-list-icon') {
               return getNavLinkListIcon(item as NavLinkListIcon, index)
+            }
+            if ((item as NavImage).type === 'image') {
+              return getNavImage(item as NavImage, index)
             }
             return null
           })}
