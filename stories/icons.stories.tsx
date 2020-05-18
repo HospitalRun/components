@@ -54,6 +54,9 @@ storiesOf('Icons', module)
       <span>Patient: </span>
       <Icon icon="patient" />
       <br />
+      <span>Patient (Outline version): </span>
+      <Icon icon="patient" outline />
+      <br />
       <span>Add Patient: </span>
       <Icon icon="patient-add" />
       <br />
