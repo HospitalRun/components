@@ -1,6 +1,7 @@
-import React, { CSSProperties } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconPrefix, IconName, SizeProp, IconProp } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { CSSProperties } from 'react'
+
 import { IconType } from './interfaces'
 
 // maps between hospital run icon names and font awesome

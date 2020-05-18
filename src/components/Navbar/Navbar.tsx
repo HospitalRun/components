@@ -1,13 +1,15 @@
+import { SizeProp } from '@fortawesome/fontawesome-svg-core'
 import React from 'react'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Nav from 'react-bootstrap/Nav'
 import NavbarRB from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import { SizeProp } from '@fortawesome/fontawesome-svg-core'
+
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { IconType } from '../Icon/interfaces'
+import { Typeahead } from '../Typeahead'
 import {
   NavLink,
   NavIcon,
@@ -17,7 +19,6 @@ import {
   NavLinkListIcon,
   NavSearch,
 } from './interfaces'
-import { Typeahead } from '../Typeahead'
 
 interface Props extends React.Props<any> {
   /** Determines the navbar background color */
