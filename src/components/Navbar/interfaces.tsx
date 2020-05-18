@@ -4,9 +4,7 @@ export interface NavItem {
   className?: string
 }
 
-export interface NavIcon extends NavItem {
-  /** Label color */
-  color?: string
+export interface NavImage extends NavItem {
   /** A path which contains the company icon/image */
   src: string
   /** A click handle which will redirect the user to the respectable webpage/path */
@@ -33,6 +31,19 @@ export interface NavLink extends NavItem {
   href?: string
 }
 
+export interface NavIcon extends NavLink {
+  /** Label color */
+  color?: string
+  /** An icon name */
+  name: string
+  /** Size of icon */
+  size?: string
+  /** CSS class(es) for icon */
+  iconClassName?: string
+  /** Outline or filled version */
+  outline?: boolean
+}
+
 export interface NavLinkList extends NavLink {
   /** An array to hold a dropdown Links */
   children: Array<NavLink>
@@ -40,12 +51,7 @@ export interface NavLinkList extends NavLink {
   alignRight?: boolean
 }
 
-export interface NavLinkListIcon extends NavLinkList {
-  /** A path which contains the company icon/image */
-  src: string
-  /** Alternative text attribute */
-  alt?: string
-}
+export interface NavLinkListIcon extends NavIcon, NavLinkList {}
 
 export interface NavSearch extends NavItem {
   /** Defines the placeholder text. */
