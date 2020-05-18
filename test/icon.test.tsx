@@ -8,10 +8,7 @@ describe('Icon', () => {
   it('onClick event prop is activated when clicked', () => {
     const spy = sinon.spy()
     const wrapper = mount(<Icon icon="appointment" onClick={spy} />)
-    wrapper
-      .find(FontAwesomeIcon)
-      .first()
-      .simulate('click')
+    wrapper.find(FontAwesomeIcon).first().simulate('click')
     expect(spy.calledOnce).toBe(true)
   })
 
