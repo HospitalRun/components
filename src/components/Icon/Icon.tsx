@@ -1,4 +1,4 @@
-import { IconPrefix, IconName, SizeProp, IconProp } from '@fortawesome/fontawesome-svg-core'
+import { IconPrefix, IconName, SizeProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { CSSProperties } from 'react'
 
