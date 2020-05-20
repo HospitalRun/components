@@ -31,8 +31,9 @@ const Select = (props: Props) => {
       options={options as any}
       selected={defaultSelected as any}
       onChange={(selected: string[]) => {
-        // eslint-disable-next-line no-unused-expressions
-        onChange !== undefined ? onChange(selected) : null
+        if (onChange !== undefined) {
+          onChange(selected)
+        }
       }}
       placeholder={placeholder}
       multiple={multiple}
