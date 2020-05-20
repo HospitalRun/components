@@ -10,10 +10,20 @@ interface Props {
   placeholder?: string
   multiple?: boolean
   disabled?: boolean
+  isInvalid?: boolean
 }
 
 const Select = (props: Props) => {
-  const { id, options, defaultSelected, onChange, placeholder, multiple, disabled } = props
+  const {
+    id,
+    options,
+    defaultSelected,
+    onChange,
+    placeholder,
+    multiple,
+    disabled,
+    isInvalid,
+  } = props
 
   return (
     <Typeahead
@@ -27,6 +37,7 @@ const Select = (props: Props) => {
       placeholder={placeholder}
       multiple={multiple}
       disabled={disabled}
+      isInvalid={isInvalid}
     />
   )
 }
@@ -37,6 +48,7 @@ Select.defaultProps = {
   placeholder: '-- Choose --',
   multiple: false,
   disabled: false,
+  isInvalid: false,
 }
 
 export { Select }
