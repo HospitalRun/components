@@ -146,7 +146,7 @@
     "react-datepicker": "~2.15.0",
     "react-spinners": "~0.8.0",
     "react-table": "^7.0.0",
-    "react-toastify": "~5.5.0",
+    "react-toastify": "~6.0.5",
     "tinymce": "~5.2.0",
     "video-react": "~0.14.1"
   },
