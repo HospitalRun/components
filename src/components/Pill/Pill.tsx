@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react'
 import Badge from 'react-bootstrap/Badge'
+
 import { ColorVariant } from '../../interfaces'
 
 interface Props {

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTable, useFilters, useSortBy, usePagination, TableInstance } from 'react-table'
+
 import { generateColumns } from './helper'
 import { Data, TableProperties, GeneratedColumn } from './interfaces'
 

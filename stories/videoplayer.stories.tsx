@@ -1,5 +1,5 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
+import React from 'react'
 import {
   BigPlayButton,
   Shortcut,
@@ -11,6 +11,7 @@ import {
   PlaybackRateMenuButton,
   ClosedCaptionButton,
 } from 'video-react'
+
 import { VideoPlayer } from '../src'
 
 storiesOf('VideoPlayer', module)

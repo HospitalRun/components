@@ -1,7 +1,8 @@
-import React from 'react'
 import { shallow, mount } from 'enzyme'
-import * as sinon from 'sinon'
+import React from 'react'
 import DatePicker from 'react-datepicker'
+import * as sinon from 'sinon'
+
 import { DateTimePicker } from '../src'
 
 describe('DateTimePicker', () => {

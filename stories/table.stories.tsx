@@ -1,5 +1,6 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
+import React from 'react'
+
 import { Table, Icon, TableProperties } from '../src'
 
 storiesOf('Table', module)

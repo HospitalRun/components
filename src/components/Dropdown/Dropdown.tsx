@@ -1,8 +1,9 @@
 import React, { ElementType } from 'react'
 import DropdownRB from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
-import { Item } from './interfaces'
+
 import { ButtonVariant } from '../../interfaces'
+import { Item } from './interfaces'
 
 interface Props {
   /** Determines the dropdown toggle text */
