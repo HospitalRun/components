@@ -3,7 +3,9 @@ name: Lint Fix
 on:
   issue_comment:
     types: [created]
-
+    branches:
+      - '*'
+        
 jobs:
   run-lint:
     if: contains(github.event.comment.body, 'GitHub please lint and fix this PR')
