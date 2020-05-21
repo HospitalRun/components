@@ -1,6 +1,7 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
 import moment from 'moment'
+import React from 'react'
+
 import { Calendar, Toast, Toaster } from '../src'
 
 storiesOf('Calendar', module)

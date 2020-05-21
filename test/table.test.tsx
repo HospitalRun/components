@@ -1,5 +1,6 @@
-import * as React from 'react'
 import { mount } from 'enzyme'
+import * as React from 'react'
+
 import { Table, Icon } from '../src'
 import { TableProperties } from '../src/components/Table/interfaces'
 
