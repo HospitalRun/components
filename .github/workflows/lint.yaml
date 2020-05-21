@@ -1,0 +1,22 @@
+name: Lint Fix
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  run-lint:
+    if: contains(github.event.comment.body, 'lint and fix')
+    runs-on: ubuntu-latest
+    name: Run linters
+    steps:
+      - run: git config --global core.autocrlf false # this is needed to prevent git changing EOL after cloning on Windows OS
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Install with npm
+        run: npm install
+      - name: Lint code
+        run: npm run lint --fix
