@@ -1,6 +1,7 @@
+import { shallow } from 'enzyme'
 import * as React from 'react'
 import * as Spinners from 'react-spinners'
-import { shallow } from 'enzyme'
+
 import { Spinner } from '../src'
 import * as strings from '../src/components/Spinner/strings'
 

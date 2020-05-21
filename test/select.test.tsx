@@ -1,6 +1,7 @@
-import * as React from 'react'
 import { shallow, mount } from 'enzyme'
+import * as React from 'react'
 import { FormControl as BootstrapFormControl } from 'react-bootstrap'
+
 import { Select } from '../src'
 
 describe('Select', () => {

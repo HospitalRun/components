@@ -1,6 +1,7 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
+import React from 'react'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
+
 import { Dropdown } from '../src'
 
 storiesOf('Dropdown', module)

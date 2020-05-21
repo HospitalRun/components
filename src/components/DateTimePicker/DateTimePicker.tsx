@@ -1,7 +1,8 @@
-import React, { ReactNode } from 'react'
-import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker'
-import InputGroup from 'react-bootstrap/InputGroup'
 import { enUS, ptBR } from 'date-fns/locale'
+import React, { ReactNode } from 'react'
+import InputGroup from 'react-bootstrap/InputGroup'
+import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker'
+
 import { Icon } from '../Icon'
 import 'react-datepicker/dist/react-datepicker.css'
 

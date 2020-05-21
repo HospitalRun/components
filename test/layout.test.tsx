@@ -1,8 +1,9 @@
-import React from 'react'
 import { shallow } from 'enzyme'
+import React from 'react'
+import bootstrapColumn from 'react-bootstrap/Col'
 import bootstrapContainer from 'react-bootstrap/Container'
 import bootstrapRow from 'react-bootstrap/Row'
-import bootstrapColumn from 'react-bootstrap/Col'
+
 import { Container, Row, Column } from '../src'
 
 describe('Container', () => {

@@ -1,6 +1,7 @@
-import * as React from 'react'
 import { shallow, mount } from 'enzyme'
+import * as React from 'react'
 import { Card, Collapse } from 'react-bootstrap'
+
 import { Panel, Icon } from '../src'
 
 describe('Panel', () => {
@@ -14,17 +15,32 @@ describe('Panel', () => {
 
   it('should have children nodes rendered in the card body', () => {
     const panelWrapper = shallow(<Panel>Here is the text</Panel>)
-    expect(panelWrapper.find(Collapse).render().text()).toEqual('Here is the text')
+    expect(
+      panelWrapper
+        .find(Collapse)
+        .render()
+        .text(),
+    ).toEqual('Here is the text')
   })
 
   it('should include header with title if title prop is passed', () => {
     const panelWrapper = shallow(<Panel title="Test Title" />)
-    expect(panelWrapper.find(Card.Header).first().text()).toBe('Test Title')
+    expect(
+      panelWrapper
+        .find(Card.Header)
+        .first()
+        .text(),
+    ).toBe('Test Title')
   })
 
   it('should include footer with text if footer prop is passed', () => {
     const panelWrapper = shallow(<Panel footer="Test Footer Text" />)
-    expect(panelWrapper.find(Card.Footer).first().text()).toBe('Test Footer Text')
+    expect(
+      panelWrapper
+        .find(Card.Footer)
+        .first()
+        .text(),
+    ).toBe('Test Footer Text')
   })
 
   it('should do nothing to panel on header click if collapsible prop false or missing', () => {
