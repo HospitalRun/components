@@ -1,8 +1,9 @@
-import * as React from 'react'
 import { shallow, mount } from 'enzyme'
+import * as React from 'react'
 import * as sinon from 'sinon'
-import { Button } from '../src/components/Button'
+
 import { Tab, TabsHeader, Icon } from '../src'
+import { Button } from '../src/components/Button'
 
 describe('Tabs', () => {
   it('Empty tab header renders without crashing', () => {
@@ -35,14 +36,20 @@ describe('Tabs', () => {
   it('OnClick event gets activated when button is clicked on', () => {
     const spy = sinon.spy()
     const tabWrapper = shallow(<Tab label="TestLabel" onClick={spy} />)
-    tabWrapper.find(Button).first().simulate('click')
+    tabWrapper
+      .find(Button)
+      .first()
+      .simulate('click')
     expect(spy.calledOnce).toBe(true)
   })
 
   it('OnClick event does not get activated by click, when disabled is passed', () => {
     const spy = sinon.spy()
     const tabWrapper = shallow(<Tab label="TestLabel" onClick={spy} disabled />)
-    tabWrapper.find(Button).first().simulate('click')
+    tabWrapper
+      .find(Button)
+      .first()
+      .simulate('click')
     expect(spy.calledOnce).toBe(false)
   })
 

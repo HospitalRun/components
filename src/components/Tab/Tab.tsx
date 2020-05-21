@@ -1,6 +1,7 @@
 import React from 'react'
-import { IconType } from '../Icon/interfaces'
+
 import { Button } from '../Button'
+import { IconType } from '../Icon/interfaces'
 
 interface Props {
   /** Tab label */

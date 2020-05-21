@@ -1,6 +1,7 @@
-import * as React from 'react'
 import { shallow } from 'enzyme'
+import * as React from 'react'
 import BootstrapAlert from 'react-bootstrap/Alert'
+
 import { Alert, Button } from '../src'
 
 describe('Alert', () => {
