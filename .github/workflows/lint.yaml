@@ -6,7 +6,7 @@ on:
 
 jobs:
   run-lint:
-    if: contains(github.event.comment.body, 'lint and fix')
+    if: contains(github.event.comment.body, 'GitHub please lint and fix this PR')
     runs-on: ubuntu-latest
     name: Run linters
     steps:
