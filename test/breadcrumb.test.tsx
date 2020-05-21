@@ -1,5 +1,5 @@
-import * as React from 'react'
 import { shallow } from 'enzyme'
+import * as React from 'react'
 import BootstrapBreadcrumb from 'react-bootstrap/Breadcrumb'
 import BootstrapBreadcrumbItem from 'react-bootstrap/BreadcrumbItem'
 import sinon from 'sinon'

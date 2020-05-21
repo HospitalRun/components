@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
+
 import { ColorVariant } from '../../interfaces'
 
 interface Props {

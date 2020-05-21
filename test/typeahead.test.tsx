@@ -1,7 +1,8 @@
-import React from 'react'
 import { shallow, mount } from 'enzyme'
+import React from 'react'
 import { AsyncTypeahead } from 'react-bootstrap-typeahead'
 import { act } from 'react-dom/test-utils'
+
 import { Typeahead } from '../src/components/Typeahead'
 
 describe('Typeahead', () => {
