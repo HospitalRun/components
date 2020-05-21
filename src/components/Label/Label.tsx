@@ -1,6 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { CSSProperties } from 'react'
 import FormLabel from 'react-bootstrap/FormLabel'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface Props {
   /** Text to display in label */

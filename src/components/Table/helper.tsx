@@ -1,8 +1,9 @@
-import React from 'react'
 import { get } from 'lodash'
+import React from 'react'
 import { CellProps } from 'react-table'
-import { CustomColumn, ColumnStyle, DefaultColumnFilterOptions, Element } from './interfaces'
+
 import { DateTimePicker } from '../DateTimePicker'
+import { CustomColumn, ColumnStyle, DefaultColumnFilterOptions, Element } from './interfaces'
 
 const DefaultColumnFilter = ({
   column: { filterValue = '', setFilter, filterPlaceholder = '' },

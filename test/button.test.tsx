@@ -1,7 +1,8 @@
-import * as React from 'react'
 import { shallow } from 'enzyme'
-import * as sinon from 'sinon'
+import * as React from 'react'
 import { Button as BootstrapButton } from 'react-bootstrap'
+import * as sinon from 'sinon'
+
 import { Button, Icon } from '../src'
 
 describe('Button', () => {
