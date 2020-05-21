@@ -1,7 +1,8 @@
-import * as React from 'react'
 import { shallow } from 'enzyme'
-import * as sinon from 'sinon'
+import * as React from 'react'
 import { FormCheck } from 'react-bootstrap'
+import * as sinon from 'sinon'
+
 import { Radio } from '../src'
 
 describe('Radio', () => {

@@ -1,7 +1,6 @@
-import BootstrapImage from 'react-bootstrap/Image'
-import * as React from 'react'
-
 import { shallow } from 'enzyme'
+import * as React from 'react'
+import BootstrapImage from 'react-bootstrap/Image'
 
 import { Image } from '../src'
 

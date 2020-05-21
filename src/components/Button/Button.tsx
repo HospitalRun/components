@@ -1,9 +1,10 @@
 import React, { CSSProperties } from 'react'
 import BootstrapButton from 'react-bootstrap/Button'
-import { ButtonType } from './interfaces'
+
 import { ButtonVariant } from '../../interfaces'
-import { IconType } from '../Icon/interfaces'
 import { Icon } from '../Icon'
+import { IconType } from '../Icon/interfaces'
+import { ButtonType } from './interfaces'
 
 export interface Props {
   /** Determines if the button should be outlined and not filled. By defaut is false */

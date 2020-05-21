@@ -1,9 +1,10 @@
-import React from 'react'
 import FullCalendar from '@fullcalendar/react'
-import { mount, shallow } from 'enzyme'
-import { act } from 'react-dom/test-utils'
 import { TimeGridView } from '@fullcalendar/timegrid'
+import { mount, shallow } from 'enzyme'
 import moment from 'moment'
+import React from 'react'
+import { act } from 'react-dom/test-utils'
+
 import { Calendar } from '../src'
 
 describe('Calendar', () => {

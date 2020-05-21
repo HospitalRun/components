@@ -1,7 +1,8 @@
-import * as React from 'react'
-import * as sinon from 'sinon'
 import { mount } from 'enzyme'
+import * as React from 'react'
 import Form from 'react-bootstrap/Form'
+import * as sinon from 'sinon'
+
 import { TextInput } from '../src/components/TextInput'
 
 const onChange = jest.fn()
