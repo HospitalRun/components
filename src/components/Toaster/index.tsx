@@ -1,7 +1,8 @@
 import * as React from 'react'
 import { ToastContainer, toast, Slide } from 'react-toastify'
-import { ToastProps, ToasterProps } from './interfaces'
+
 import { titleWithMessage, titleWithoutMessage } from './components'
+import { ToastProps, ToasterProps } from './interfaces'
 import './toaster.scss'
 
 export const Toast: any = (

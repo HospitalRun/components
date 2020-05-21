@@ -1,9 +1,10 @@
-import React from 'react'
-import FullCalendar from '@fullcalendar/react'
+import { EventApi } from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
+import FullCalendar from '@fullcalendar/react'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import { EventApi } from '@fullcalendar/core'
+import React from 'react'
+
 import Event from './interfaces'
 
 import '@fullcalendar/core/main.css'

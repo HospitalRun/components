@@ -1,5 +1,5 @@
-import React from 'react'
 import { Editor } from '@tinymce/tinymce-react'
+import React from 'react'
 
 import 'tinymce/tinymce'
 

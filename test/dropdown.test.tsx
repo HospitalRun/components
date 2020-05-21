@@ -1,6 +1,7 @@
-import * as React from 'react'
 import { shallow } from 'enzyme'
+import * as React from 'react'
 import DropdownButton from 'react-bootstrap/DropdownButton'
+
 import { Dropdown } from '../src'
 
 describe('Dropdown', () => {
