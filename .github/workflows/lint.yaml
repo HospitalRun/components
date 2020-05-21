@@ -3,7 +3,9 @@ name: Lint Fix
 on:
   issue_comment:
     types: [created]
-
+    branches:
+      - '*'
+        
 jobs:
   run-lint:
     if: contains(github.event.comment.body, 'GitHub please lint and fix this PR')
@@ -20,3 +22,9 @@ jobs:
         run: npm install
       - name: Lint code
         run: npm run lint --fix
+      - name: Run linters
+        uses: samuelmeuli/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          eslint: true
+          prettier: true 
