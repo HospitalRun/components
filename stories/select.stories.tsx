@@ -1,6 +1,6 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Select, Toast, Toaster } from '../src'
+import React from 'react'
 
 storiesOf('Select', module)
   .addParameters({

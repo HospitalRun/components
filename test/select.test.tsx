@@ -1,6 +1,7 @@
-import * as React from 'react'
 import { shallow, mount } from 'enzyme'
 import { Typeahead as BootstrapTypeahead } from 'react-bootstrap-typeahead'
+import { FormControl as BootstrapFormControl } from 'react-bootstrap'
+import * as React from 'react'
 import { Select } from '../src'
 
 describe('Select', () => {

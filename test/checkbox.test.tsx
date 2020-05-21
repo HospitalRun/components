@@ -1,7 +1,8 @@
-import * as React from 'react'
 import { mount, shallow } from 'enzyme'
+import * as React from 'react'
 import FormCheck from 'react-bootstrap/FormCheck'
 import * as sinon from 'sinon'
+
 import { Checkbox } from '../src'
 
 describe('Checkbox', () => {

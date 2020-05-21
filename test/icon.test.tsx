@@ -1,7 +1,8 @@
-import * as React from 'react'
-import { shallow, mount } from 'enzyme'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { shallow, mount } from 'enzyme'
+import * as React from 'react'
 import sinon from 'sinon'
+
 import { Icon } from '../src'
 
 describe('Icon', () => {
