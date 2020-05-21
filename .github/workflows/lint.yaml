@@ -20,3 +20,9 @@ jobs:
         run: npm install
       - name: Lint code
         run: npm run lint --fix
+      - name: Run linters
+        uses: samuelmeuli/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          eslint: true
+          prettier: true 
