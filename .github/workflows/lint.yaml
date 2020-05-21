@@ -1,10 +1,10 @@
 name: Lint Fix
 
 on:
+  pull_request:
+    types: [edited]
   issue_comment:
     types: [created]
-    branches:
-      - '*'
         
 jobs:
   run-lint:
