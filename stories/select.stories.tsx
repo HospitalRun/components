@@ -3,6 +3,14 @@ import React from 'react'
 
 import { Select, Toast, Toaster } from '../src'
 
+const options = [
+  { label: 'Apple', value: 'apple' },
+  { label: 'Pineapple', value: 'pineapple' },
+  { label: 'Maple', value: 'maple' },
+  { label: 'April', value: 'april' },
+  { label: 'Kiwi', value: 'kiwi' },
+]
+
 storiesOf('Select', module)
   .addParameters({
     info: {
@@ -19,7 +27,7 @@ storiesOf('Select', module)
     <div>
       <Select
         id="select-one"
-        options={['Apple', 'Pineapple', 'Maple', 'April', 'Kiwi']}
+        options={options}
         onChange={(selected) => {
           Toast('success', 'Selection changed', selected.join(' | '))
         }}
@@ -30,7 +38,7 @@ storiesOf('Select', module)
     <div>
       <Select
         id="select-multiple"
-        options={['Apple', 'Pineapple', 'Maple', 'April', 'Kiwi']}
+        options={options}
         onChange={(selected) => {
           Toast('success', 'Selection changed', selected.join(' | '))
         }}
@@ -38,12 +46,26 @@ storiesOf('Select', module)
       />
     </div>
   ))
+  .add('Same labels, different values', () => (
+    <div>
+      <Select
+        id="same-labels"
+        options={[
+          { label: 'Sunflower', value: 'sunflower 1' },
+          { label: 'Sunflower', value: 'sunflower 2' },
+        ]}
+        onChange={(selected) => {
+          Toast('success', 'Selection changed', selected.join(' | '))
+        }}
+      />
+    </div>
+  ))
   .add('Disabled select', () => (
     <div>
       <Select
         id="select-multiple"
-        options={['Apple', 'Pineapple', 'Maple', 'April', 'Kiwi']}
-        defaultSelected={['Kiwi']}
+        options={options}
+        defaultSelected={[{ label: 'Kiwi', value: 'kiwi' }]}
         onChange={(selected) => {
           Toast('success', 'Selection changed', selected.join(' | '))
         }}

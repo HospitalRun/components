@@ -2,11 +2,13 @@ import React from 'react'
 import { Typeahead } from 'react-bootstrap-typeahead'
 import 'react-bootstrap-typeahead/css/Typeahead.css'
 
+type SelectOption = { label: string; value: any }
+
 interface Props {
   id: string
-  options: string[]
-  defaultSelected?: string[]
-  onChange?: (selected: string[]) => void
+  options: SelectOption[]
+  defaultSelected?: SelectOption[]
+  onChange?: (selected: SelectOption[]) => void
   placeholder?: string
   multiple?: boolean
   disabled?: boolean
@@ -26,13 +28,13 @@ const Select = (props: Props) => {
   } = props
 
   return (
-    <Typeahead
+    <Typeahead<SelectOption>
       id={id}
       options={options as any}
-      selected={defaultSelected as any}
-      onChange={(selected: string[]) => {
+      selected={defaultSelected}
+      onChange={(selected: SelectOption[]) => {
         if (onChange !== undefined) {
-          onChange(selected)
+          onChange(selected.map((option) => option.value))
         }
       }}
       placeholder={placeholder}
