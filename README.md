@@ -18,19 +18,19 @@ This repository will host reusable react components made for the HospitalRun fro
 Install components:
 
 ```
-yarn add @hospitalrun/components
+npm install @hospitalrun/components
 ```
 
 Install react-bootstrap:
 
 ```
-yarn add react-bootstrap
+npm install react-bootstrap
 ```
 
 [Optional] You may need `node-sass` if you want to import components' `.scss` files:
 
 ```
-yarn add -D node-sass
+npm install node-sass --save-dev
 ```
 
 # Contributing
@@ -39,9 +39,9 @@ Contributions are always welcome. Before contributing please read our [contribut
 
 1. Fork this repository to your own GitHub account and then clone it to your local device
 2. Navigate to the cloned folder: `cd components`
-3. Install the dependencies: `yarn`
-4. Run `yarn dev` to build and watch for code changes
-5. In another window, run storybook `yarn storybook`. Story book should open in a your default browser at localhost:6006.
+3. Install the dependencies: `npm install`
+4. Run `npm run dev` to build and watch for code changes
+5. In another window, run storybook `npm run storybook`. Story book should open in a your default browser at localhost:6006.
 6. You will be able to test components with storybook and enjoy live reloading!
 
 ## Online one-click setup for contributing
