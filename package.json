@@ -121,7 +121,7 @@
     "sinon": "~9.0.0",
     "tsdx": "~0.13.0",
     "tslib": "~1.12.0",
-    "typescript": "~3.8.2"
+    "typescript": "~3.9.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-common-types": "~0.2.28",
