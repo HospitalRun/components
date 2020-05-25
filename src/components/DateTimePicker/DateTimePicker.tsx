@@ -1,4 +1,4 @@
-import { enUS, ptBR } from 'date-fns/locale'
+import { enUS, ptBR, arDZ, de, es, fr, it, ja, ru, zhCN } from 'date-fns/locale'
 import React, { ReactNode } from 'react'
 import InputGroup from 'react-bootstrap/InputGroup'
 import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker'
@@ -8,6 +8,14 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 registerLocale('enUS', enUS)
 registerLocale('ptBR', ptBR)
+registerLocale('ar', arDZ)
+registerLocale('de', de)
+registerLocale('es', es)
+registerLocale('fr', fr)
+registerLocale('it', it)
+registerLocale('ja', ja)
+registerLocale('ru', ru)
+registerLocale('zr', zhCN)
 
 setDefaultLocale('enUS')
 

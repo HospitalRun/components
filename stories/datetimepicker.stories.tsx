@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 import React, { useState } from 'react'
 
-import { DateTimePicker } from '../src'
+import { DateTimePicker, Dropdown } from '../src'
 
 storiesOf('DateTimePickers', module)
   .addParameters({
@@ -285,6 +285,85 @@ storiesOf('DateTimePickers', module)
           showMonthDropdown
           showYearDropdown
           dropdownMode="scroll"
+        />
+      </div>
+    )
+  })
+  .add('Supported languages', () => {
+    const [startDate, setStartDate] = useState(new Date())
+    const [language, setLanguage] = useState('enUS')
+
+    return (
+      <div>
+        <Dropdown
+          text={language}
+          items={[
+            {
+              text: 'enUS',
+              onClick: () => {
+                setLanguage('enUS')
+              },
+            },
+            {
+              text: 'ptBR',
+              onClick: () => {
+                setLanguage('ptBR')
+              },
+            },
+            {
+              text: 'de',
+              onClick: () => {
+                setLanguage('de')
+              },
+            },
+            {
+              text: 'ar',
+              onClick: () => {
+                setLanguage('ar')
+              },
+            },
+            {
+              text: 'es',
+              onClick: () => {
+                setLanguage('es')
+              },
+            },
+            {
+              text: 'fr',
+              onClick: () => {
+                setLanguage('fr')
+              },
+            },
+            {
+              text: 'it',
+              onClick: () => {
+                setLanguage('it')
+              },
+            },
+            {
+              text: 'ja',
+              onClick: () => {
+                setLanguage('ja')
+              },
+            },
+            {
+              text: 'ru',
+              onClick: () => {
+                setLanguage('ru')
+              },
+            },
+            {
+              text: 'zr',
+              onClick: () => {
+                setLanguage('zr')
+              },
+            },
+          ]}
+        />
+        <DateTimePicker
+          locale={language}
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
         />
       </div>
     )
