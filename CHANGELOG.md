@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/HospitalRun/components/compare/v1.6.0...v1.7.0) (2020-05-27)
+
+
+### Features
+
+* **select:** Filterable select component ([#434](https://github.com/HospitalRun/components/issues/434)) ([064674c](https://github.com/HospitalRun/components/commit/064674cea088a901689b83a5f6626949fa8b2688))
+
 # [1.6.0](https://github.com/HospitalRun/components/compare/v1.5.0...v1.6.0) (2020-05-18)
 
 
