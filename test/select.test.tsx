@@ -1,102 +1,46 @@
 import { shallow, mount } from 'enzyme'
 import * as React from 'react'
-import { FormControl as BootstrapFormControl } from 'react-bootstrap'
+import { Typeahead as BootstrapTypeahead } from 'react-bootstrap-typeahead'
 
 import { Select } from '../src'
 
+const options = [
+  { label: 'Option A', value: 'option-a' },
+  { label: 'Option B', value: 'option-b' },
+  { label: 'Option C', value: 'option-c' },
+]
+
 describe('Select', () => {
   it('Select renders itself without crashing', () => {
-    const selectWrapper = shallow(
-      <Select>
-        <option value="a">Option A</option>
-        <option value="b">Option B</option>
-        <option value="b">Option C</option>
-      </Select>,
-    )
-    expect(selectWrapper.find(BootstrapFormControl)).toHaveLength(1)
+    const selectWrapper = shallow(<Select id="id" options={options} />)
+    expect(selectWrapper.find(BootstrapTypeahead)).toHaveLength(1)
   })
 
   it('Select renders as disabled when the disabled prop is used', () => {
-    const selectWrapper = shallow(
-      <Select disabled>
-        <option value="a">Option A</option>
-        <option value="b">Option B</option>
-        <option value="b">Option C</option>
-      </Select>,
-    )
-    const bootstratSelect = selectWrapper.find(BootstrapFormControl)
+    const selectWrapper = shallow(<Select id="id" options={options} disabled />)
+    const bootstratSelect = selectWrapper.find(BootstrapTypeahead)
     expect(bootstratSelect.props().disabled).toEqual(true)
   })
 
   it('Select renders as invalid when the isInvalid prop is true', () => {
-    const selectWrapper = shallow(
-      <Select isInvalid>
-        <option value="a">Option A</option>
-        <option value="b">Option B</option>
-        <option value="b">Option C</option>
-      </Select>,
-    )
-    const bootstratSelect = selectWrapper.find(BootstrapFormControl)
+    const selectWrapper = shallow(<Select id="id" options={options} isInvalid />)
+    const bootstratSelect = selectWrapper.find(BootstrapTypeahead)
     expect(bootstratSelect.props().isInvalid).toEqual(true)
   })
 
   it('Select uses the multiple prop', () => {
-    const selectWrapper = shallow(
-      <Select multiple>
-        <option value="a">Option A</option>
-        <option value="b">Option B</option>
-        <option value="b">Option C</option>
-      </Select>,
-    )
-    const bootstratSelect = selectWrapper.find(BootstrapFormControl)
+    const selectWrapper = shallow(<Select id="id" options={options} multiple />)
+    const bootstratSelect = selectWrapper.find(BootstrapTypeahead)
     expect(bootstratSelect.props().multiple).toEqual(true)
   })
 
   it('Select displays provided options', () => {
-    const selectWrapper = mount(
-      <Select>
-        <option value="a">Option A</option>
-        <option value="b">Option B</option>
-        <option value="b">Option C</option>
-      </Select>,
-    )
-    const htmlSelect = selectWrapper.find(HTMLSelectElement)
-    expect(htmlSelect.children().length).toBe(3)
-  })
+    const selectWrapper = mount(<Select id="id" options={options} />)
+    const inputWrapper = selectWrapper.find('input').at(0)
+    inputWrapper.simulate('click')
 
-  it('Select renders in large size', () => {
-    const selectWrapper = shallow(
-      <Select size="large">
-        <option value="a">Option A</option>
-        <option value="b">Option B</option>
-        <option value="b">Option C</option>
-      </Select>,
-    )
-    const bootstratSelect = selectWrapper.find(BootstrapFormControl)
-    expect(bootstratSelect.props().size).toEqual('lg')
-  })
-
-  it('Select renders in small size', () => {
-    const selectWrapper = shallow(
-      <Select size="small">
-        <option value="a">Option A</option>
-        <option value="b">Option B</option>
-        <option value="b">Option C</option>
-      </Select>,
-    )
-    const bootstratSelect = selectWrapper.find(BootstrapFormControl)
-    expect(bootstratSelect.props().size).toEqual('sm')
-  })
-
-  it('Select can use custom class', () => {
-    const selectWrapper = shallow(<Select className="customClass" />)
-    const bootstrapSelect = selectWrapper.find(BootstrapFormControl)
-    expect(bootstrapSelect.props().className).toEqual('customClass')
-  })
-
-  it('Select can use custom style', () => {
-    const selectWrapper = shallow(<Select style={{ background: 'red' }} />)
-    const bootstrapSelect = selectWrapper.find(BootstrapFormControl)
-    expect(bootstrapSelect.props().style).toMatchObject({ background: 'red' })
+    const ulWrapper = selectWrapper.find('ul')
+    const lis = ulWrapper.find('li')
+    expect(lis).toHaveLength(3)
   })
 })
