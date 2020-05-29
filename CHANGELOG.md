@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/HospitalRun/components/compare/v1.7.0...v1.8.0) (2020-05-29)
+
+
+### Features
+
+* **modal:** styling with props ([6d499c8](https://github.com/HospitalRun/components/commit/6d499c82e74217ab62985caf7f2ad1a8ffc39e23))
+
 # [1.7.0](https://github.com/HospitalRun/components/compare/v1.6.0...v1.7.0) (2020-05-27)
 
 
