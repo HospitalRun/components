@@ -1,5 +1,5 @@
 import { enUS, ptBR } from 'date-fns/locale'
-import React, { ReactNode } from 'react'
+import React, { ReactNode, CSSProperties } from 'react'
 import InputGroup from 'react-bootstrap/InputGroup'
 import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker'
 
@@ -44,6 +44,8 @@ interface Props {
   monthsShown?: number
   /** Input.Group class */
   className?: string
+  /** DatePicker calendar class */
+  calendarClassName?: string
   /** Callback when date is changed. */
   onChange: (date: Date, event: React.ChangeEvent<HTMLInputElement>) => void
   /** Selected date value. */
@@ -62,6 +64,8 @@ interface Props {
   showTimeSelectOnly?: boolean
   /** The beginning date of the initially selected date range. */
   startDate?: Date
+  /** Inline Style props */
+  style?: CSSProperties
   /** The format for parsed and displayed time. */
   timeFormat?: string
   /** Configure timer intervals. */
@@ -84,6 +88,7 @@ const DateTimePicker = (props: Props) => {
   const {
     children,
     className,
+    calendarClassName,
     dateFormat,
     dateFormatCalendar,
     disabled,
@@ -106,6 +111,7 @@ const DateTimePicker = (props: Props) => {
     showTimeSelect,
     showYearDropdown,
     showTimeSelectOnly,
+    style,
     timeFormat,
     timeIntervals,
     timeCaption,
@@ -119,7 +125,7 @@ const DateTimePicker = (props: Props) => {
 
   return (
     <>
-      <InputGroup className={className}>
+      <InputGroup className={className} style={style}>
         <InputGroup.Prepend>
           <InputGroup.Text>
             <Icon icon="calendar" />
@@ -127,6 +133,7 @@ const DateTimePicker = (props: Props) => {
         </InputGroup.Prepend>
         <DatePicker
           className={`form-control ${isValid ? 'is-valid' : isInvalid ? 'is-invalid' : ''}`}
+          calendarClassName={calendarClassName}
           dateFormat={dateFormat}
           dateFormatCalendar={dateFormatCalendar}
           disabled={disabled}

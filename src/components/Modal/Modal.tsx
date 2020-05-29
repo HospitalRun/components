@@ -1,4 +1,4 @@
-import React, { ReactNode, CSSProperties } from 'react'
+import React, { ReactNode } from 'react'
 import BootstrapModal from 'react-bootstrap/Modal'
 
 import { Button, Props as ButtonProps } from '../Button'
@@ -40,14 +40,6 @@ interface Props {
    * Optional success button properties.
    * */
   successButton?: ButtonProps
-  /**
-   * Custom class-based styling.
-   * */
-  className?: string
-  /**
-   * Custom Inline styling.
-   * */
-  style?: CSSProperties
 }
 
 /**
@@ -66,14 +58,10 @@ const Modal = (props: Props) => {
     closeButton,
     middleButton,
     successButton,
-    className,
-    style,
   } = props
 
   return (
     <BootstrapModal
-      dialogClassName={className}
-      style={style}
       autoFocus
       centered={verticallyCentered}
       keyboard
