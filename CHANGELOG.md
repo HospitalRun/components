@@ -1,3 +1,17 @@
+## [1.8.1](https://github.com/HospitalRun/components/compare/v1.8.0...v1.8.1) (2020-05-29)
+
+
+### Bug Fixes
+
+* **datetimepicker:** errors with styling ([#447](https://github.com/HospitalRun/components/issues/447)) ([266acc9](https://github.com/HospitalRun/components/commit/266acc920b2cffffc0ff9c0c43ea9cf9244cd5cd))
+
+# [1.8.0](https://github.com/HospitalRun/components/compare/v1.7.0...v1.8.0) (2020-05-29)
+
+
+### Features
+
+* **modal:** styling with props ([6d499c8](https://github.com/HospitalRun/components/commit/6d499c82e74217ab62985caf7f2ad1a8ffc39e23))
+
 # [1.7.0](https://github.com/HospitalRun/components/compare/v1.6.0...v1.7.0) (2020-05-27)
 
 
