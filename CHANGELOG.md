@@ -1,3 +1,15 @@
+# [1.9.0](https://github.com/HospitalRun/components/compare/v1.8.1...v1.9.0) (2020-05-31)
+
+
+### Features
+
+* **modal:** styling through props ([7f2cf11](https://github.com/HospitalRun/components/commit/7f2cf11fac2fb11aa0ee62878dd0949e18c19ce8))
+
+
+### Reverts
+
+* **modal:** reverted for master branch ([b4da3e3](https://github.com/HospitalRun/components/commit/b4da3e35da22207aa276950a74e5daecc6642c6a))
+
 ## [1.8.1](https://github.com/HospitalRun/components/compare/v1.8.0...v1.8.1) (2020-05-29)
 
 
