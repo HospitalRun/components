@@ -83,17 +83,15 @@ const Calendar = (props: Props) => {
 
   useEffect(() => {
     customCallbacks.forEach(({ className, callback }) => {
-      if (callback !== undefined) {
-        const button = document.getElementsByClassName(className)[0]
-        button.addEventListener('click', callback)
+      if (callback !== undefined && document.getElementsByClassName(className)) {
+        document.getElementsByClassName(className)[0].addEventListener('click', callback)
       }
     })
 
     return () => {
       customCallbacks.forEach(({ className, callback }) => {
-        if (callback !== undefined) {
-          const button = document.getElementsByClassName(className)[0]
-          button.removeEventListener('click', callback)
+        if (callback !== undefined && document.getElementsByClassName(className)) {
+          document.getElementsByClassName(className)[0].removeEventListener('click', callback)
         }
       })
     }
