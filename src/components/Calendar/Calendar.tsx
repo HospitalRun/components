@@ -3,7 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import FullCalendar from '@fullcalendar/react'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import Event from './interfaces'
 
@@ -21,6 +21,9 @@ interface Props {
   onDateClick?: (date: Date, allDay: boolean) => void
   onDateRangeSelected?: (startDate: Date, endDate: Date, allDay: boolean) => void
   onEventClick?: (event: Event) => void
+  onNavPrevClick?: () => void
+  onNavNextClick?: () => void
+  onNavTodayClick?: () => void
 }
 
 const viewToCalendarViewMap = {
@@ -49,8 +52,53 @@ const getViewsFromViewsProp = (views: View[]) => {
 }
 
 const Calendar = (props: Props) => {
-  const { view, views, events, disabled, onDateClick, onDateRangeSelected, onEventClick } = props
+  const {
+    view,
+    views,
+    events,
+    disabled,
+    onDateClick,
+    onDateRangeSelected,
+    onEventClick,
+    onNavPrevClick,
+    onNavNextClick,
+    onNavTodayClick,
+  } = props
   const fullCalendarRef = React.createRef<FullCalendar>()
+
+  const customCallbacks: { className: string; callback?: () => void }[] = [
+    {
+      className: 'fc-prev-button',
+      callback: onNavPrevClick,
+    },
+    {
+      className: 'fc-next-button',
+      callback: onNavNextClick,
+    },
+    {
+      className: 'fc-today-button',
+      callback: onNavTodayClick,
+    },
+  ]
+
+  useEffect(() => {
+    customCallbacks.forEach(({ className, callback }) => {
+      if (callback !== undefined) {
+        const button = document.getElementsByClassName(className)[0]
+        button.addEventListener('click', callback)
+      }
+    })
+
+    return () => {
+      customCallbacks.forEach(({ className, callback }) => {
+        if (callback !== undefined) {
+          const button = document.getElementsByClassName(className)[0]
+          button.removeEventListener('click', callback)
+        }
+      })
+    }
+  }, [])
+
   return (
     <FullCalendar
       events={events}
@@ -87,6 +135,9 @@ Calendar.defaultProps = {
   view: 'week',
   events: [],
   views: ['day', 'week', 'month'],
+  onNavPrevClick: () => undefined,
+  onNavNextClick: () => undefined,
+  onNavTodayClick: () => undefined,
 }
 
 export { Calendar }
