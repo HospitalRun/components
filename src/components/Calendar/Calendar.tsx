@@ -82,17 +82,22 @@ const Calendar = (props: Props) => {
   ]
 
   useEffect(() => {
+    const buttons: { button: any; callback: () => void }[] = []
+
     customCallbacks.forEach(({ className, callback }) => {
-      if (callback !== undefined && document.getElementsByClassName(className)) {
-        document.getElementsByClassName(className)[0].addEventListener('click', callback)
+      if (callback !== undefined) {
+        const el = document.getElementsByClassName(className)
+        if (el && el.length > 0) {
+          const button = el[0]
+          button.addEventListener('click', callback)
+          buttons.push({ button, callback })
+        }
       }
     })
 
     return () => {
-      customCallbacks.forEach(({ className, callback }) => {
-        if (callback !== undefined && document.getElementsByClassName(className)) {
-          document.getElementsByClassName(className)[0].removeEventListener('click', callback)
-        }
+      buttons.forEach(({ button, callback }) => {
+        button.removeEventListener('click', callback)
       })
     }
   }, [])
