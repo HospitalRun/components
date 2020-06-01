@@ -1,18 +1,26 @@
 import React from 'react'
 
-type Variants = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
-
 interface Props {
   /**
    * Defines the HTML variant of typography
    * @default 'p'
    */
-  variant?: Variants
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
   /**
    * Defines the CSS styling of typography
    * @default 'p'
    */
-  styleAs?: Variants
+  styleAs?:
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'display-1'
+    | 'display-2'
+    | 'display-3'
+    | 'display-4'
   /**
    * Children to be rendered between Typography tags.
    */
