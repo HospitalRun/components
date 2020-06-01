@@ -134,14 +134,4 @@ describe('Calendar', () => {
     expect(onEventClickSpy).toHaveBeenCalledTimes(1)
     expect(onEventClickSpy).toHaveBeenCalledWith(event)
   })
-
-  // WIP
-  // it('should call the onNavPrevClick callback when the Prev button is clicked', () => {
-  //   const onNavPrevClickSpy = jest.fn()
-  //   const wrapper = mount(<Calendar onNavPrevClick={onNavPrevClickSpy} />)
-  //   const tempDivWrapper = wrapper.find('div').find('div')
-  //   button.simulate('click')
-
-  //   expect(onNavPrevClickSpy).toHaveBeenCalledTimes(1)
-  // })
 })
