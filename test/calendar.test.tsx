@@ -134,4 +134,62 @@ describe('Calendar', () => {
     expect(onEventClickSpy).toHaveBeenCalledTimes(1)
     expect(onEventClickSpy).toHaveBeenCalledWith(event)
   })
+
+  it('should render the custom Prev, Next, and today buttons', () => {
+    const wrapper = shallow(<Calendar />)
+    const fullCalendar = wrapper.find(FullCalendar)
+    const customButtons = fullCalendar.prop('customButtons') as any
+
+    expect(customButtons.customPrev.text).toEqual('Prev')
+    expect(customButtons.customNext.text).toEqual('Next')
+    expect(customButtons.customToday.text).toEqual('today')
+  })
+
+  it('should call the onPrevClick callback when the custom Prev button is clicked', () => {
+    const onPrevClickSpy = jest.fn()
+    const wrapper = mount(<Calendar onPrevClick={onPrevClickSpy} />)
+    const fullCalendar = wrapper.find(FullCalendar)
+    const customButtons = fullCalendar.prop('customButtons') as any
+    const prevButton = customButtons.customPrev
+
+    act(() => {
+      ;(prevButton.click as any)({
+        el: expect.any(HTMLElement),
+      })
+    })
+
+    expect(onPrevClickSpy).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call the onNextClick callback when the custom Next button is clicked', () => {
+    const onNextClickSpy = jest.fn()
+    const wrapper = mount(<Calendar onNextClick={onNextClickSpy} />)
+    const fullCalendar = wrapper.find(FullCalendar)
+    const customButtons = fullCalendar.prop('customButtons') as any
+    const nextButton = customButtons.customNext
+
+    act(() => {
+      ;(nextButton.click as any)({
+        el: expect.any(HTMLElement),
+      })
+    })
+
+    expect(onNextClickSpy).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call the onTodayClick callback when the custom Today button is clicked', () => {
+    const onTodayClickSpy = jest.fn()
+    const wrapper = mount(<Calendar onTodayClick={onTodayClickSpy} />)
+    const fullCalendar = wrapper.find(FullCalendar)
+    const customButtons = fullCalendar.prop('customButtons') as any
+    const todayButton = customButtons.customToday
+
+    act(() => {
+      ;(todayButton.click as any)({
+        el: expect.any(HTMLElement),
+      })
+    })
+
+    expect(onTodayClickSpy).toHaveBeenCalledTimes(1)
+  })
 })
