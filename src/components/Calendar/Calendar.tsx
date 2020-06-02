@@ -3,7 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import FullCalendar from '@fullcalendar/react'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import Event from './interfaces'
 
@@ -21,9 +21,9 @@ interface Props {
   onDateClick?: (date: Date, allDay: boolean) => void
   onDateRangeSelected?: (startDate: Date, endDate: Date, allDay: boolean) => void
   onEventClick?: (event: Event) => void
-  onNavPrevClick?: () => void
-  onNavNextClick?: () => void
-  onNavTodayClick?: () => void
+  onPrevClick?: () => void
+  onNextClick?: () => void
+  onTodayClick?: () => void
 }
 
 const viewToCalendarViewMap = {
@@ -60,55 +60,63 @@ const Calendar = (props: Props) => {
     onDateClick,
     onDateRangeSelected,
     onEventClick,
-    onNavPrevClick,
-    onNavNextClick,
-    onNavTodayClick,
+    onPrevClick,
+    onNextClick,
+    onTodayClick,
   } = props
   const fullCalendarRef = React.createRef<FullCalendar>()
 
-  const customCallbacks: { className: string; callback?: () => void }[] = [
-    {
-      className: 'fc-prev-button',
-      callback: onNavPrevClick,
-    },
-    {
-      className: 'fc-next-button',
-      callback: onNavNextClick,
-    },
-    {
-      className: 'fc-today-button',
-      callback: onNavTodayClick,
-    },
-  ]
-
-  useEffect(() => {
-    const buttons: { button: any; callback: () => void }[] = []
-
-    customCallbacks.forEach(({ className, callback }) => {
-      if (callback !== undefined) {
-        const el = document.getElementsByClassName(className)
-        if (el && el.length > 0) {
-          const button = el[0]
-          button.addEventListener('click', callback)
-          buttons.push({ button, callback })
-        }
-      }
-    })
-
-    return () => {
-      buttons.forEach(({ button, callback }) => {
-        button.removeEventListener('click', callback)
-      })
+  const onNavClick = (to: 'prev' | 'next' | 'today') => {
+    const calendar = fullCalendarRef?.current?.getApi()
+    if (!calendar) {
+      return
     }
-  }, [])
+
+    const toCalls = {
+      prev: {
+        nav: () => calendar.prev(),
+        callback: onPrevClick,
+      },
+      next: {
+        nav: () => calendar.next(),
+        callback: onNextClick,
+      },
+      today: {
+        nav: () => calendar.today(),
+        callback: onTodayClick,
+      },
+    }
+
+    const { nav, callback } = toCalls[to]
+    nav()
+    if (callback !== undefined) {
+      callback()
+    }
+  }
 
   return (
     <FullCalendar
       events={events}
       ref={fullCalendarRef}
       selectable={!disabled}
+      customButtons={{
+        customPrev: {
+          text: 'Prev',
+          icon: 'chevron-left',
+          click: () => onNavClick('prev'),
+        },
+        customNext: {
+          text: 'Next',
+          icon: 'chevron-right',
+          click: () => onNavClick('next'),
+        },
+        customToday: {
+          text: 'today',
+          click: () => onNavClick('today'),
+        },
+      }}
       header={{
-        left: 'prev,next today',
+        left: 'customPrev,customNext customToday',
         center: 'title',
         right: getViewsFromViewsProp(views),
       }}
@@ -138,9 +146,9 @@ Calendar.defaultProps = {
   view: 'week',
   events: [],
   views: ['day', 'week', 'month'],
-  onNavPrevClick: () => undefined,
-  onNavNextClick: () => undefined,
-  onNavTodayClick: () => undefined,
+  onPrevClick: () => undefined,
+  onNextClick: () => undefined,
+  onTodayClick: () => undefined,
 }
 
 export { Calendar }

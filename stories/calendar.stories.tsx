@@ -31,13 +31,13 @@ storiesOf('Calendar', module)
               `${startDate.toISOString()} to ${endDate.toISOString()}`,
             )
           }}
-          onNavPrevClick={() => {
+          onPrevClick={() => {
             Toast('success', 'Prev clicked')
           }}
-          onNavNextClick={() => {
+          onNextClick={() => {
             Toast('success', 'Next clicked')
           }}
-          onNavTodayClick={() => {
+          onTodayClick={() => {
             Toast('success', 'Today clicked')
           }}
           events={[
