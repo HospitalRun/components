@@ -21,6 +21,9 @@ interface Props {
   onDateClick?: (date: Date, allDay: boolean) => void
   onDateRangeSelected?: (startDate: Date, endDate: Date, allDay: boolean) => void
   onEventClick?: (event: Event) => void
+  onPrevClick?: () => void
+  onNextClick?: () => void
+  onTodayClick?: () => void
 }
 
 const viewToCalendarViewMap = {
@@ -49,15 +52,71 @@ const getViewsFromViewsProp = (views: View[]) => {
 }
 
 const Calendar = (props: Props) => {
-  const { view, views, events, disabled, onDateClick, onDateRangeSelected, onEventClick } = props
+  const {
+    view,
+    views,
+    events,
+    disabled,
+    onDateClick,
+    onDateRangeSelected,
+    onEventClick,
+    onPrevClick,
+    onNextClick,
+    onTodayClick,
+  } = props
   const fullCalendarRef = React.createRef<FullCalendar>()
+
+  const onNavClick = (to: 'prev' | 'next' | 'today') => {
+    const calendar = fullCalendarRef?.current?.getApi()
+    if (!calendar) {
+      return
+    }
+
+    const toCalls = {
+      prev: {
+        nav: () => calendar.prev(),
+        callback: onPrevClick,
+      },
+      next: {
+        nav: () => calendar.next(),
+        callback: onNextClick,
+      },
+      today: {
+        nav: () => calendar.today(),
+        callback: onTodayClick,
+      },
+    }
+
+    const { nav, callback } = toCalls[to]
+    nav()
+    if (callback) {
+      callback()
+    }
+  }
+
   return (
     <FullCalendar
       events={events}
       ref={fullCalendarRef}
       selectable={!disabled}
+      customButtons={{
+        customPrev: {
+          text: 'previous',
+          icon: 'chevron-left',
+          click: () => onNavClick('prev'),
+        },
+        customNext: {
+          text: 'next',
+          icon: 'chevron-right',
+          click: () => onNavClick('next'),
+        },
+        customToday: {
+          text: 'today',
+          click: () => onNavClick('today'),
+        },
+      }}
       header={{
-        left: 'prev,next today',
+        left: 'customPrev,customNext customToday',
         center: 'title',
         right: getViewsFromViewsProp(views),
       }}
@@ -87,6 +146,9 @@ Calendar.defaultProps = {
   view: 'week',
   events: [],
   views: ['day', 'week', 'month'],
+  onPrevClick: () => undefined,
+  onNextClick: () => undefined,
+  onTodayClick: () => undefined,
 }
 
 export { Calendar }
