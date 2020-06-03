@@ -138,17 +138,17 @@ describe('Calendar', () => {
     expect(onEventClickSpy).toHaveBeenCalledWith(event)
   })
 
-  it('should render the custom Prev, Next, and today buttons', () => {
+  it('should render the custom previous, next, and today buttons', () => {
     const wrapper = shallow(<Calendar />)
     const fullCalendar = wrapper.find(FullCalendar)
     const customButtons = fullCalendar.prop('customButtons') as any
 
-    expect(customButtons.customPrev.text).toEqual('Prev')
-    expect(customButtons.customNext.text).toEqual('Next')
+    expect(customButtons.customPrev.text).toEqual('previous')
+    expect(customButtons.customNext.text).toEqual('next')
     expect(customButtons.customToday.text).toEqual('today')
   })
 
-  it('should call the onPrevClick callback when the custom Prev button is clicked', () => {
+  it('should call the onPrevClick callback when the custom previous button is clicked', () => {
     const onPrevClickSpy = jest.fn()
     const wrapper = mount(<Calendar onPrevClick={onPrevClickSpy} />)
     const fullCalendar = wrapper.find(FullCalendar)
@@ -163,7 +163,7 @@ describe('Calendar', () => {
     expect(onPrevClickSpy).toHaveBeenCalledTimes(1)
   })
 
-  it('should call the onNextClick callback when the custom Next button is clicked', () => {
+  it('should call the onNextClick callback when the custom next button is clicked', () => {
     const onNextClickSpy = jest.fn()
     const wrapper = mount(<Calendar onNextClick={onNextClickSpy} />)
     const fullCalendar = wrapper.find(FullCalendar)
@@ -178,7 +178,7 @@ describe('Calendar', () => {
     expect(onNextClickSpy).toHaveBeenCalledTimes(1)
   })
 
-  it('should call the onTodayClick callback when the custom Today button is clicked', () => {
+  it('should call the onTodayClick callback when the custom today button is clicked', () => {
     const onTodayClickSpy = jest.fn()
     const wrapper = mount(<Calendar onTodayClick={onTodayClickSpy} />)
     const fullCalendar = wrapper.find(FullCalendar)

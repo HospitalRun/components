@@ -32,13 +32,13 @@ storiesOf('Calendar', module)
             )
           }}
           onPrevClick={() => {
-            Toast('success', 'Prev clicked')
+            Toast('success', 'previous clicked')
           }}
           onNextClick={() => {
-            Toast('success', 'Next clicked')
+            Toast('success', 'next clicked')
           }}
           onTodayClick={() => {
-            Toast('success', 'Today clicked')
+            Toast('success', 'today clicked')
           }}
           events={[
             {
