@@ -31,6 +31,15 @@ storiesOf('Calendar', module)
               `${startDate.toISOString()} to ${endDate.toISOString()}`,
             )
           }}
+          onPrevClick={() => {
+            Toast('success', 'previous clicked')
+          }}
+          onNextClick={() => {
+            Toast('success', 'next clicked')
+          }}
+          onTodayClick={() => {
+            Toast('success', 'today clicked')
+          }}
           events={[
             {
               start: start.toDate(),
