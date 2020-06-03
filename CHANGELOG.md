@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/HospitalRun/components/compare/v1.9.0...v1.10.0) (2020-06-03)
+
+
+### Features
+
+* **calendar:** add callbacks to navigation buttons ([093cc94](https://github.com/HospitalRun/components/commit/093cc94795e23402d0cb122863c593fe1b017718))
+
 # [1.9.0](https://github.com/HospitalRun/components/compare/v1.8.1...v1.9.0) (2020-05-31)
 
 
