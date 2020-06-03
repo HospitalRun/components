@@ -89,7 +89,7 @@ const Calendar = (props: Props) => {
 
     const { nav, callback } = toCalls[to]
     nav()
-    if (callback !== undefined) {
+    if (callback) {
       callback()
     }
   }
@@ -101,12 +101,12 @@ const Calendar = (props: Props) => {
       selectable={!disabled}
       customButtons={{
         customPrev: {
-          text: 'Prev',
+          text: 'previous',
           icon: 'chevron-left',
           click: () => onNavClick('prev'),
         },
         customNext: {
-          text: 'Next',
+          text: 'next',
           icon: 'chevron-right',
           click: () => onNavClick('next'),
         },

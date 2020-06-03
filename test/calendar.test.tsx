@@ -69,7 +69,8 @@ describe('Calendar', () => {
     const allDay = true
 
     act(() => {
-      ;(fullCalendar.prop('dateClick') as any)({
+      const onClick = fullCalendar.prop('dateClick') as any
+      onClick({
         date,
         allDay,
         dateStr: new Date().toISOString(),
@@ -94,7 +95,8 @@ describe('Calendar', () => {
     const end = new Date()
     const allDay = true
     act(() => {
-      ;(fullCalendar.prop('select') as any)({
+      const onSelect = fullCalendar.prop('select') as any
+      onSelect({
         start,
         end,
         allDay,
@@ -123,7 +125,8 @@ describe('Calendar', () => {
       id: 'someid',
     }
     act(() => {
-      ;(fullCalendar.prop('eventClick') as any)({
+      const onClick = fullCalendar.prop('eventClick') as any
+      onClick({
         event,
         el: expect.any(HTMLElement),
         jsEvent: expect.any(MouseEvent),
@@ -153,9 +156,8 @@ describe('Calendar', () => {
     const prevButton = customButtons.customPrev
 
     act(() => {
-      ;(prevButton.click as any)({
-        el: expect.any(HTMLElement),
-      })
+      const onClick = prevButton.click as any
+      onClick({ el: expect.any(HTMLElement) })
     })
 
     expect(onPrevClickSpy).toHaveBeenCalledTimes(1)
@@ -169,9 +171,8 @@ describe('Calendar', () => {
     const nextButton = customButtons.customNext
 
     act(() => {
-      ;(nextButton.click as any)({
-        el: expect.any(HTMLElement),
-      })
+      const onClick = nextButton.click as any
+      onClick({ el: expect.any(HTMLElement) })
     })
 
     expect(onNextClickSpy).toHaveBeenCalledTimes(1)
@@ -185,9 +186,8 @@ describe('Calendar', () => {
     const todayButton = customButtons.customToday
 
     act(() => {
-      ;(todayButton.click as any)({
-        el: expect.any(HTMLElement),
-      })
+      const onClick = todayButton.click as any
+      onClick({ el: expect.any(HTMLElement) })
     })
 
     expect(onTodayClickSpy).toHaveBeenCalledTimes(1)
