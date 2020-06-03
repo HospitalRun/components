@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/HospitalRun/components/compare/v1.10.0...v1.11.0) (2020-06-03)
+
+
+### Features
+
+* **Typography:** Introduction of the Typography component ([#451](https://github.com/HospitalRun/components/issues/451)) ([a124bc2](https://github.com/HospitalRun/components/commit/a124bc2ab36ac8f3596d3961c0f8e7d3f7708fed))
+
 # [1.10.0](https://github.com/HospitalRun/components/compare/v1.9.0...v1.10.0) (2020-06-03)
 
 
