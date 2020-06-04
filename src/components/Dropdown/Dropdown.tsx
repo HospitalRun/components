@@ -35,14 +35,12 @@ interface Props {
 const Dropdown = (props: Props) => {
   const { text, size, id, items, direction, variant, style, alignRight } = props
 
-  const noop = () => {}
-
   const getDropdownItem = (item: Item, i: number) => (
     <DropdownRB.Item
       style={item.style}
       key={item.key || `dropdown-item-${i.toString()}`}
       eventKey={item.eventKey || `dropdown-event-${i.toString()}`}
-      onClick={item.onClick || noop}
+      onClick={item.onClick}
     >
       {item.text}
     </DropdownRB.Item>

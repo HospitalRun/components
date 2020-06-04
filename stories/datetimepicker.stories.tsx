@@ -1,4 +1,5 @@
 import { storiesOf } from '@storybook/react'
+import * as locales from 'date-fns/locale'
 import React, { useState } from 'react'
 
 import { DateTimePicker, Dropdown } from '../src'
@@ -292,74 +293,30 @@ storiesOf('DateTimePickers', module)
   .add('Supported languages', () => {
     const [startDate, setStartDate] = useState(new Date())
     const [language, setLanguage] = useState('enUS')
+    const items = Object.keys(locales).map((locale) => ({
+      text: locale,
+      onClick: () => {
+        setLanguage(locale)
+      },
+    }))
+    const ar = {
+      text: 'ar',
+      onClick: () => {
+        setLanguage('ar')
+      },
+    }
+    const zr = {
+      text: 'zr',
+      onClick: () => {
+        setLanguage('zr')
+      },
+    }
+    items.push(ar)
+    items.push(zr)
 
     return (
       <div>
-        <Dropdown
-          text={language}
-          items={[
-            {
-              text: 'enUS',
-              onClick: () => {
-                setLanguage('enUS')
-              },
-            },
-            {
-              text: 'ptBR',
-              onClick: () => {
-                setLanguage('ptBR')
-              },
-            },
-            {
-              text: 'de',
-              onClick: () => {
-                setLanguage('de')
-              },
-            },
-            {
-              text: 'ar',
-              onClick: () => {
-                setLanguage('ar')
-              },
-            },
-            {
-              text: 'es',
-              onClick: () => {
-                setLanguage('es')
-              },
-            },
-            {
-              text: 'fr',
-              onClick: () => {
-                setLanguage('fr')
-              },
-            },
-            {
-              text: 'it',
-              onClick: () => {
-                setLanguage('it')
-              },
-            },
-            {
-              text: 'ja',
-              onClick: () => {
-                setLanguage('ja')
-              },
-            },
-            {
-              text: 'ru',
-              onClick: () => {
-                setLanguage('ru')
-              },
-            },
-            {
-              text: 'zr',
-              onClick: () => {
-                setLanguage('zr')
-              },
-            },
-          ]}
-        />
+        <Dropdown text={language} items={items} />
         <DateTimePicker
           locale={language}
           selected={startDate}
