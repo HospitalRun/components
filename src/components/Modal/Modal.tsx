@@ -41,12 +41,12 @@ interface Props {
    * */
   successButton?: ButtonProps
   /**
-   * Custom class-based styling.
-   * */
+   * Styling through CSS classes
+   */
   className?: string
   /**
-   * Custom Inline styling.
-   * */
+   * Styilng through inline CSSProperties
+   */
   style?: CSSProperties
 }
 

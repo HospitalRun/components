@@ -69,7 +69,8 @@ describe('Calendar', () => {
     const allDay = true
 
     act(() => {
-      ;(fullCalendar.prop('dateClick') as any)({
+      const onClick = fullCalendar.prop('dateClick') as any
+      onClick({
         date,
         allDay,
         dateStr: new Date().toISOString(),
@@ -94,7 +95,8 @@ describe('Calendar', () => {
     const end = new Date()
     const allDay = true
     act(() => {
-      ;(fullCalendar.prop('select') as any)({
+      const onSelect = fullCalendar.prop('select') as any
+      onSelect({
         start,
         end,
         allDay,
@@ -123,7 +125,8 @@ describe('Calendar', () => {
       id: 'someid',
     }
     act(() => {
-      ;(fullCalendar.prop('eventClick') as any)({
+      const onClick = fullCalendar.prop('eventClick') as any
+      onClick({
         event,
         el: expect.any(HTMLElement),
         jsEvent: expect.any(MouseEvent),
@@ -133,5 +136,60 @@ describe('Calendar', () => {
 
     expect(onEventClickSpy).toHaveBeenCalledTimes(1)
     expect(onEventClickSpy).toHaveBeenCalledWith(event)
+  })
+
+  it('should render the custom previous, next, and today buttons', () => {
+    const wrapper = shallow(<Calendar />)
+    const fullCalendar = wrapper.find(FullCalendar)
+    const customButtons = fullCalendar.prop('customButtons') as any
+
+    expect(customButtons.customPrev.text).toEqual('previous')
+    expect(customButtons.customNext.text).toEqual('next')
+    expect(customButtons.customToday.text).toEqual('today')
+  })
+
+  it('should call the onPrevClick callback when the custom previous button is clicked', () => {
+    const onPrevClickSpy = jest.fn()
+    const wrapper = mount(<Calendar onPrevClick={onPrevClickSpy} />)
+    const fullCalendar = wrapper.find(FullCalendar)
+    const customButtons = fullCalendar.prop('customButtons') as any
+    const prevButton = customButtons.customPrev
+
+    act(() => {
+      const onClick = prevButton.click as any
+      onClick({ el: expect.any(HTMLElement) })
+    })
+
+    expect(onPrevClickSpy).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call the onNextClick callback when the custom next button is clicked', () => {
+    const onNextClickSpy = jest.fn()
+    const wrapper = mount(<Calendar onNextClick={onNextClickSpy} />)
+    const fullCalendar = wrapper.find(FullCalendar)
+    const customButtons = fullCalendar.prop('customButtons') as any
+    const nextButton = customButtons.customNext
+
+    act(() => {
+      const onClick = nextButton.click as any
+      onClick({ el: expect.any(HTMLElement) })
+    })
+
+    expect(onNextClickSpy).toHaveBeenCalledTimes(1)
+  })
+
+  it('should call the onTodayClick callback when the custom today button is clicked', () => {
+    const onTodayClickSpy = jest.fn()
+    const wrapper = mount(<Calendar onTodayClick={onTodayClickSpy} />)
+    const fullCalendar = wrapper.find(FullCalendar)
+    const customButtons = fullCalendar.prop('customButtons') as any
+    const todayButton = customButtons.customToday
+
+    act(() => {
+      const onClick = todayButton.click as any
+      onClick({ el: expect.any(HTMLElement) })
+    })
+
+    expect(onTodayClickSpy).toHaveBeenCalledTimes(1)
   })
 })

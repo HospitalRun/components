@@ -1,3 +1,36 @@
+# [1.11.0](https://github.com/HospitalRun/components/compare/v1.10.0...v1.11.0) (2020-06-03)
+
+
+### Features
+
+* **Typography:** Introduction of the Typography component ([#451](https://github.com/HospitalRun/components/issues/451)) ([a124bc2](https://github.com/HospitalRun/components/commit/a124bc2ab36ac8f3596d3961c0f8e7d3f7708fed))
+
+# [1.10.0](https://github.com/HospitalRun/components/compare/v1.9.0...v1.10.0) (2020-06-03)
+
+
+### Features
+
+* **calendar:** add callbacks to navigation buttons ([093cc94](https://github.com/HospitalRun/components/commit/093cc94795e23402d0cb122863c593fe1b017718))
+
+# [1.9.0](https://github.com/HospitalRun/components/compare/v1.8.1...v1.9.0) (2020-05-31)
+
+
+### Features
+
+* **modal:** styling through props ([7f2cf11](https://github.com/HospitalRun/components/commit/7f2cf11fac2fb11aa0ee62878dd0949e18c19ce8))
+
+
+### Reverts
+
+* **modal:** reverted for master branch ([b4da3e3](https://github.com/HospitalRun/components/commit/b4da3e35da22207aa276950a74e5daecc6642c6a))
+
+## [1.8.1](https://github.com/HospitalRun/components/compare/v1.8.0...v1.8.1) (2020-05-29)
+
+
+### Bug Fixes
+
+* **datetimepicker:** errors with styling ([#447](https://github.com/HospitalRun/components/issues/447)) ([266acc9](https://github.com/HospitalRun/components/commit/266acc920b2cffffc0ff9c0c43ea9cf9244cd5cd))
+
 # [1.8.0](https://github.com/HospitalRun/components/compare/v1.7.0...v1.8.0) (2020-05-29)
 
 
