@@ -1,4 +1,4 @@
-import { enUS, ptBR } from 'date-fns/locale'
+import * as locales from 'date-fns/locale'
 import React, { ReactNode, CSSProperties } from 'react'
 import InputGroup from 'react-bootstrap/InputGroup'
 import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker'
@@ -6,8 +6,14 @@ import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker'
 import { Icon } from '../Icon'
 import 'react-datepicker/dist/react-datepicker.css'
 
-registerLocale('enUS', enUS)
-registerLocale('ptBR', ptBR)
+// Generic way to register all available locales
+Object.entries(locales).forEach(([key, locale]) => {
+  registerLocale(key, locale)
+})
+
+// Additional locales required for the frontend
+registerLocale('ar', locales.arDZ)
+registerLocale('zr', locales.zhCN)
 
 setDefaultLocale('enUS')
 

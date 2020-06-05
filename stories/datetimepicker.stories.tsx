@@ -1,7 +1,8 @@
 import { storiesOf } from '@storybook/react'
+import * as locales from 'date-fns/locale'
 import React, { useState } from 'react'
 
-import { DateTimePicker } from '../src'
+import { DateTimePicker, Dropdown } from '../src'
 
 storiesOf('DateTimePickers', module)
   .addParameters({
@@ -285,6 +286,41 @@ storiesOf('DateTimePickers', module)
           showMonthDropdown
           showYearDropdown
           dropdownMode="scroll"
+        />
+      </div>
+    )
+  })
+  .add('Supported languages', () => {
+    const [startDate, setStartDate] = useState(new Date())
+    const [language, setLanguage] = useState('enUS')
+    const items = Object.keys(locales).map((locale) => ({
+      text: locale,
+      onClick: () => {
+        setLanguage(locale)
+      },
+    }))
+    const ar = {
+      text: 'ar',
+      onClick: () => {
+        setLanguage('ar')
+      },
+    }
+    const zr = {
+      text: 'zr',
+      onClick: () => {
+        setLanguage('zr')
+      },
+    }
+    items.push(ar)
+    items.push(zr)
+
+    return (
+      <div>
+        <Dropdown text={language} items={items} />
+        <DateTimePicker
+          locale={language}
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
         />
       </div>
     )

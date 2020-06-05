@@ -40,6 +40,7 @@ const Dropdown = (props: Props) => {
       style={item.style}
       key={item.key || `dropdown-item-${i.toString()}`}
       eventKey={item.eventKey || `dropdown-event-${i.toString()}`}
+      onClick={item.onClick}
     >
       {item.text}
     </DropdownRB.Item>
