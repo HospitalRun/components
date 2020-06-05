@@ -1,3 +1,11 @@
+# [1.12.0](https://github.com/HospitalRun/components/compare/v1.11.0...v1.12.0) (2020-06-05)
+
+
+### Features
+
+* **datetimepicker, dropdown:** support all languages ([8e42796](https://github.com/HospitalRun/components/commit/8e42796fce9978d7c32374e927279b333aa8515d)), closes [#438](https://github.com/HospitalRun/components/issues/438)
+* **datetimepicker.tsx and dropdown.tsx:** multiple languages, onClick ([ab390db](https://github.com/HospitalRun/components/commit/ab390dbcef6873594c0435fd1b3bf422bc5a52df)), closes [#324](https://github.com/HospitalRun/components/issues/324)
+
 # [1.11.0](https://github.com/HospitalRun/components/compare/v1.10.0...v1.11.0) (2020-06-03)
 
 
