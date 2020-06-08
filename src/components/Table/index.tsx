@@ -12,7 +12,7 @@ interface Props {
   onRowClick?: (row: T) => void
 }
 
-// todo: Actions header int'lize
+// todo: actions header int'lize
 
 const Table = (props: Props) => {
   const { tableClassName, headerClassName, columns, data, actions, getID, onRowClick } = props

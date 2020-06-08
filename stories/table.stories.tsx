@@ -38,13 +38,13 @@ storiesOf('Table', module)
         [ID]: 333,
         [NAME]: 'Mickey',
         [PHONE]: '789-777',
-        [DRINKS]: ['milk', 'tea', 'wine'],
+        [DRINKS]: ['milk', 'tea'],
       },
       {
         [ID]: 777,
         [NAME]: 'Minnie',
         [PHONE]: '333-123',
-        [DRINKS]: ['water', 'coffee', 'margarita'],
+        [DRINKS]: ['water', 'coffee'],
       },
     ]
 
