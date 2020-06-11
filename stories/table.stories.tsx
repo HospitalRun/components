@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Table, Toast, Toaster } from '../src'
+import { ButtonVariant } from '../src/interfaces'
 
 storiesOf('Table', module)
   .addParameters({
@@ -30,7 +31,7 @@ storiesOf('Table', module)
       { key: ID, label: 'ID' },
       { key: NAME, label: 'Name' },
       { key: PHONE, label: 'Phone #' },
-      { key: DRINKS, label: 'Drinks?', accessor: getDrinksList },
+      { key: DRINKS, label: 'Drinks?', formatter: getDrinksList },
     ]
 
     const data = [
@@ -50,10 +51,18 @@ storiesOf('Table', module)
 
     const actions = [
       {
+        label: 'Edit',
+        action: (row: any) => {
+          Toast('info', 'an edit clicked', `will edit ID=${row[ID]}`)
+        },
+        buttonColor: 'info' as ButtonVariant,
+      },
+      {
         label: 'Delete',
         action: (row: any) => {
           Toast('error', 'a delete clicked', `will delete ID=${row[ID]}`)
         },
+        buttonColor: 'danger' as ButtonVariant,
       },
     ]
 

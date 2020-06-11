@@ -1,30 +1,41 @@
 import React from 'react'
+import { ButtonVariant } from 'src/interfaces'
+
+import { Button } from '../Button'
 
 type T = { [key: string]: any }
 
 interface Props {
-  tableClassName?: string
-  headerClassName?: string
-  columns: { key: string; label: string; accessor?: (row: T) => React.ReactNode }[]
+  tableClassName: string
+  headerClassName: string
+  columns: { key: string; label: string; formatter?: (row: T) => React.ReactNode }[]
   data: T[]
-  actions?: { label: string; action: (row: T) => void }[]
+  actionsHeaderText: string
+  actions?: { label: string; action: (row: T) => void; buttonColor?: ButtonVariant }[]
   getID: (row: T) => string
   onRowClick?: (row: T) => void
 }
 
-// todo: actions header int'lize
-
 const Table = (props: Props) => {
-  const { tableClassName, headerClassName, columns, data, actions, getID, onRowClick } = props
+  const {
+    tableClassName,
+    headerClassName,
+    columns,
+    data,
+    actionsHeaderText,
+    actions,
+    getID,
+    onRowClick,
+  } = props
 
   const table = (
-    <table className={tableClassName || 'table table-hover'}>
-      <thead className={headerClassName || 'thead-light'}>
+    <table className={tableClassName}>
+      <thead className={headerClassName}>
         <tr>
           {columns.map((column) => (
-            <th>{column.label}</th>
+            <th key={column.key}>{column.label}</th>
           ))}
-          {actions ? <th>Actions</th> : null}
+          {actions ? <th>{actionsHeaderText}</th> : null}
         </tr>
       </thead>
 
@@ -39,22 +50,23 @@ const Table = (props: Props) => {
             }}
           >
             {columns.map((column) => {
-              const content = !column.accessor ? row[column.key] : column.accessor(row)
-              return <td role="presentation">{content}</td>
+              const content = !column.formatter ? row[column.key] : column.formatter(row)
+              return <td key={`${column.key}-${getID(row)}`}>{content}</td>
             })}
 
             {actions ? (
               <td>
-                {actions.map(({ label, action }) => (
-                  <span
-                    role="presentation"
+                {actions.map(({ label, action, buttonColor }, i) => (
+                  <Button
+                    color={buttonColor || 'primary'}
                     onClick={(e) => {
                       e.stopPropagation()
                       action(row)
                     }}
+                    className={i > 0 ? 'ml-1' : ''}
                   >
                     {label}
-                  </span>
+                  </Button>
                 ))}
               </td>
             ) : null}
@@ -68,13 +80,9 @@ const Table = (props: Props) => {
 }
 
 Table.defaultProps = {
-  tableClassName: null,
-  headerClassName: null,
-  columns: {
-    accessor: null,
-  },
-  actions: null,
-  onRowClick: null,
+  tableClassName: 'table table-hover',
+  headerClassName: 'thead-light',
+  actionsHeaderText: 'Actions',
 }
 
 export { Table }
