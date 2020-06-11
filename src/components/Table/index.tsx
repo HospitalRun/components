@@ -58,6 +58,7 @@ const Table = (props: Props) => {
               <td>
                 {actions.map(({ label, action, buttonColor }, i) => (
                   <Button
+                    key={label}
                     color={buttonColor || 'primary'}
                     onClick={(e) => {
                       e.stopPropagation()
