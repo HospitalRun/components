@@ -58,7 +58,6 @@ const RichText = (props: Props) => {
         // skin & content_css are set to 'false' to avoid tinyMCE looking to fetch files when they are already imported above.
         skin: false,
         // eslint disabled on next line due to TinyMCE option attribute naming.
-        // eslint-disable-next-line @typescript-eslint/camelcase
         content_css: false,
         plugins: [`autolink lists link table paste charmap`],
         toolbar: [

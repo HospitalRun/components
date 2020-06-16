@@ -38,7 +38,7 @@ function Table({ data, tableProperties }: Props) {
     useFilters,
     useSortBy,
     usePagination,
-  ) as TableInstance<object>
+  ) as TableInstance<Record<string, unknown>>
 
   return (
     <>

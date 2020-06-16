@@ -1,5 +1,5 @@
 module.exports = {
-  ignorePatterns: ['commitlint.config.js'],
+  ignorePatterns: ['commitlint.config.js', 'stories/.eslintrc.js', '.eslintrc.js'],
   env: {
     browser: true,
     es6: true,
@@ -52,19 +52,17 @@ module.exports = {
     'no-nested-ternary': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': ['error', 'never'],
-    'import/order': ["error", {
-      "groups": [
-        "external",
-        ["sibling","parent","internal"],
-        "builtin",
-        "unknown",
-      ],
-      "newlines-between": "always",
-      "alphabetize": {
-        "order": 'asc',
-        "caseInsensitive": true,
+    'import/order': [
+      'error',
+      {
+        groups: ['external', ['sibling', 'parent', 'internal'], 'builtin', 'unknown'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
       },
-    }],
+    ],
     curly: ['error', 'all'],
   },
 }

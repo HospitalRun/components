@@ -25,7 +25,7 @@ interface Props {
 /**
  * A customizable Pie Graph component built on chart.js
  */
-class PieGraph extends Component<Props, {}> {
+class PieGraph extends Component<Props, Record<string, unknown>> {
   graph: ChartJs | null
 
   chart: HTMLCanvasElement | null

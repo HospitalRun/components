@@ -1,11 +1,17 @@
 {
   "extends": "../tsconfig.json",
-  "include": [".", "../types"],
+  "include": [
+    ".",
+    "../types"
+  ],
   "compilerOptions": {
     "declaration": false,
+    "skipLibCheck": true,
     "baseUrl": "../",
     "paths": {
-      "@hospitalrun/components": ["../src"]
+      "@hospitalrun/components": [
+        "../src"
+      ]
     }
   }
 }
