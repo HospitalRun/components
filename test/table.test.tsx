@@ -82,11 +82,7 @@ describe('Table', () => {
   it('should render a text cell with a provided text', () => {
     const tableWrapper = mount(<Table columns={columns} data={data} getID={getID} />)
     const bodyWrapper = tableWrapper.find('tbody')
-    const firstRowSecondColWrapper = bodyWrapper
-      .find('tr')
-      .at(0)
-      .find('td')
-      .at(1)
+    const firstRowSecondColWrapper = bodyWrapper.find('tr').at(0).find('td').at(1)
 
     expect(firstRowSecondColWrapper.text()).toEqual('Mickey')
   })
@@ -94,11 +90,7 @@ describe('Table', () => {
   it('should format cell content when a formatter is provided', () => {
     const tableWrapper = mount(<Table columns={columns} data={data} getID={getID} />)
     const bodyWrapper = tableWrapper.find('tbody')
-    const firstRowFourthColWrapper = bodyWrapper
-      .find('tr')
-      .at(0)
-      .find('td')
-      .at(3)
+    const firstRowFourthColWrapper = bodyWrapper.find('tr').at(0).find('td').at(3)
 
     expect(
       firstRowFourthColWrapper.containsMatchingElement(
