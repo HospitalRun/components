@@ -26,6 +26,7 @@ export interface NavLink extends NavItem {
   /** The link name */
   label: string
   dividerAbove?: boolean
+  icon?: any
   /** A click handle which will redirect the user to whenever it is clicked */
   onClick?: (event: React.MouseEvent<any>) => void
   /** Determines the href */
