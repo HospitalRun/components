@@ -32,7 +32,7 @@ interface Props {
 /**
  * A customizable Line Graph component built on chart.js
  */
-class LineGraph extends Component<Props, {}> {
+class LineGraph extends Component<Props, Record<string, unknown>> {
   graph: ChartJs | null
 
   chart: HTMLCanvasElement | null

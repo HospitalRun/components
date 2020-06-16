@@ -29,14 +29,14 @@ export interface ColumnStyle {
 type StyleObject = Record<string, any>
 
 export interface DefaultColumnFilterOptions {
-  column: TableColumn<object>
+  column: TableColumn<Record<string, unknown>>
 }
 
 interface CustomFilters {
   filterPlaceholder?: string
 }
 
-interface TableColumn<D extends object = {}>
+interface TableColumn<D extends Record<string, unknown> = Record<string, unknown>>
   extends ColumnInstance<D>,
     UseSortByColumnProps<D>,
     UseFiltersColumnProps<D>,
@@ -44,7 +44,7 @@ interface TableColumn<D extends object = {}>
 
 export type Element = any
 
-export type Data = object
+export type Data = Record<string, unknown>
 
 interface CustomSubColumn {
   headerClassName?: string
