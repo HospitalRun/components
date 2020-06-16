@@ -80,7 +80,7 @@ export const generateColumns = (columns: CustomColumn[]) => {
             element.undefinedMeansFalse === false
               ? element.customTrueIcon
                 ? element.customFalseIcon
-                  ? ({ row }: CellProps<object>) => (
+                  ? ({ row }: CellProps<Record<string, unknown>>) => (
                       <>
                         {row.values[element.accessor] === true && element.customTrueIcon}
                         {row.values[element.accessor] === false && element.customFalseIcon}
@@ -88,7 +88,7 @@ export const generateColumns = (columns: CustomColumn[]) => {
                           row.values[element.accessor] !== false && <div />}
                       </>
                     )
-                  : ({ row }: CellProps<object>) => (
+                  : ({ row }: CellProps<Record<string, unknown>>) => (
                       <>
                         {row.values[element.accessor] === true && element.customTrueIcon}
                         {row.values[element.accessor] === false && (
@@ -99,7 +99,7 @@ export const generateColumns = (columns: CustomColumn[]) => {
                       </>
                     )
                 : element.customFalseIcon
-                ? ({ row }: CellProps<object>) => (
+                ? ({ row }: CellProps<Record<string, unknown>>) => (
                     <>
                       {row.values[element.accessor] === true && (
                         <div style={{ color: 'green' }}>true</div>
@@ -109,7 +109,7 @@ export const generateColumns = (columns: CustomColumn[]) => {
                         row.values[element.accessor] !== false && <div />}
                     </>
                   )
-                : ({ row }: CellProps<object>) => (
+                : ({ row }: CellProps<Record<string, unknown>>) => (
                     <>
                       {row.values[element.accessor] === true && (
                         <div style={{ color: 'green' }}>true</div>
@@ -123,13 +123,13 @@ export const generateColumns = (columns: CustomColumn[]) => {
                   )
               : element.customTrueIcon
               ? element.customFalseIcon
-                ? ({ row }: CellProps<object>) => (
+                ? ({ row }: CellProps<Record<string, unknown>>) => (
                     <>
                       {row.values[element.accessor] === true && element.customTrueIcon}
                       {row.values[element.accessor] !== true && element.customFalseIcon}
                     </>
                   )
-                : ({ row }: CellProps<object>) => (
+                : ({ row }: CellProps<Record<string, unknown>>) => (
                     <>
                       {row.values[element.accessor] === true && element.customTrueIcon}
                       {row.values[element.accessor] !== true && (
@@ -138,7 +138,7 @@ export const generateColumns = (columns: CustomColumn[]) => {
                     </>
                   )
               : element.customFalseIcon
-              ? ({ row }: CellProps<object>) => (
+              ? ({ row }: CellProps<Record<string, unknown>>) => (
                   <>
                     {row.values[element.accessor] === true && (
                       <div style={{ color: 'green' }}>true</div>
@@ -146,7 +146,7 @@ export const generateColumns = (columns: CustomColumn[]) => {
                     {row.values[element.accessor] !== true && element.customFalseIcon}
                   </>
                 )
-              : ({ row }: CellProps<object>) => (
+              : ({ row }: CellProps<Record<string, unknown>>) => (
                   <>
                     {row.values[element.accessor] === true && (
                       <div style={{ color: 'green' }}>true</div>
@@ -181,7 +181,7 @@ export const generateColumns = (columns: CustomColumn[]) => {
         el = {
           Header: element.title || element.accessor || '',
           accessor: element.accessor || '',
-          Cell: ({ row }: CellProps<object>) => {
+          Cell: ({ row }: CellProps<Record<string, unknown>>) => {
             let resultingStyle = {}
             let applyStyle = true
             if (element.styles && element.styles.length) {

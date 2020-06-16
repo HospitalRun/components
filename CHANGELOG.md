@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/HospitalRun/components/compare/v1.12.0...v1.12.1) (2020-06-16)
+
+
+### Bug Fixes
+
+* fix broken deps and updates scripts ([c8c0eba](https://github.com/HospitalRun/components/commit/c8c0eba7b02792ae37a8c43b09575fc4b52ed8f5))
+
 # [1.12.0](https://github.com/HospitalRun/components/compare/v1.11.0...v1.12.0) (2020-06-05)
 
 

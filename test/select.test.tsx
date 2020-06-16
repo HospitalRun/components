@@ -4,6 +4,18 @@ import { Typeahead as BootstrapTypeahead } from 'react-bootstrap-typeahead'
 
 import { Select } from '../src'
 
+// we need this because of https://github.com/mui-org/material-ui/issues/15726#issuecomment-493124813
+// remove when tsdx gets >= v26.0.0 of Jest
+global.document.createRange = () =>
+  ({
+    setStart: () => {},
+    setEnd: () => {},
+    commonAncestorContainer: {
+      nodeName: 'BODY',
+      ownerDocument: document,
+    },
+  } as any)
+// remove when tsdx gets >= v26.0.0 of Jest
 const options = [
   { label: 'Option A', value: 'option-a' },
   { label: 'Option B', value: 'option-b' },

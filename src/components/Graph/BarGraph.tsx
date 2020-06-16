@@ -32,7 +32,7 @@ interface Props {
 /**
  * A customizable Bar Graph component built on chart.js
  */
-class BarGraph extends Component<Props, {}> {
+class BarGraph extends Component<Props, Record<string, unknown>> {
   graph: ChartJs | null
 
   chart: HTMLCanvasElement | null
