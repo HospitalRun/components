@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/HospitalRun/components/compare/v1.12.1...v1.12.2) (2020-06-16)
+
+
+### Bug Fixes
+
+* **storybook:** fix storybook build adding "skipLibCheck": true ([683c2b8](https://github.com/HospitalRun/components/commit/683c2b82fea6ce0b14c299a502eaac324e8515e7))
+
 ## [1.12.1](https://github.com/HospitalRun/components/compare/v1.12.0...v1.12.1) (2020-06-16)
 
 
