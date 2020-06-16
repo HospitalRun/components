@@ -16,6 +16,7 @@
       "dom",
       "esnext"
     ],
+    "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
     "declaration": true,

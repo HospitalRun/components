@@ -221,6 +221,111 @@ storiesOf('Navbar', module)
       ]}
     />
   ))
+  .add('Mobile Navbar w/LinkList (dividers & icons)', () => (
+    <Navbar
+      bg="dark"
+      variant="dark"
+      navItems={[
+        {
+          type: 'link-list',
+          label: '',
+          onClick: () => {
+            Toast('success', 'Link list clicked!!', 'Success')
+          },
+          children: [
+            {
+              type: 'link',
+              label: 'Sublink1',
+              onClick: () => {
+                Toast('success', 'Sublink1 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink2',
+              dividerAbove: true,
+              onClick: () => {
+                Toast('success', 'Sublink2 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink3',
+              onClick: () => {
+                Toast('success', 'Sublink2 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink4',
+              dividerAbove: true,
+              onClick: () => {
+                Toast('success', 'Sublink2 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink5',
+              onClick: () => {
+                Toast('success', 'Sublink1 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink6',
+              onClick: () => {
+                Toast('success', 'Sublink2 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink7',
+              dividerAbove: true,
+              onClick: () => {
+                Toast('success', 'Sublink2 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink8',
+              onClick: () => {
+                Toast('success', 'Sublink2 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink9',
+              onClick: () => {
+                Toast('success', 'Sublink2 clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Sublink10',
+              onClick: () => {
+                Toast('success', 'Sublink2 clicked!!', 'Success')
+              },
+            },
+          ],
+        },
+        {
+          type: 'image',
+          src:
+            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          onClick: () => {
+            Toast('success', 'Icon clicked!!', 'Success')
+          },
+        },
+        {
+          type: 'header',
+          label: 'HospitalRun',
+          onClick: () => {
+            Toast('success', 'Header clicked!!', 'Success')
+          },
+        },
+      ]}
+    />
+  ))
   .add('Custom navbar', () => (
     <Navbar
       bg="light"
