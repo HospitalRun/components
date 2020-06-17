@@ -4,6 +4,7 @@ export type IconType =
   | 'appointment'
   | 'appointment-add'
   | 'appointment-remove'
+  | 'menu'
   | 'calendar'
   | 'dashboard'
   | 'down-arrow'

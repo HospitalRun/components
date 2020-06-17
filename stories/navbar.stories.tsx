@@ -221,7 +221,7 @@ storiesOf('Navbar', module)
       ]}
     />
   ))
-  .add('Mobile Navbar w/LinkList (dividers & icons)', () => (
+  .add('Mobile Navbar w/ link list dividers & icons)', () => (
     <Navbar
       bg="dark"
       variant="dark"
@@ -238,7 +238,7 @@ storiesOf('Navbar', module)
               label: 'Dashboard',
               icon: 'dashboard',
               onClick: () => {
-                Toast('success', 'Sublink1 clicked!!', 'Success')
+                Toast('success', 'Dashboard clicked!!', 'Success')
               },
             },
             {
@@ -247,7 +247,7 @@ storiesOf('Navbar', module)
               icon: 'patient-add',
               dividerAbove: true,
               onClick: () => {
-                Toast('success', 'Sublink2 clicked!!', 'Success')
+                Toast('success', 'New Patient clicked!!', 'Success')
               },
             },
             {
@@ -255,7 +255,7 @@ storiesOf('Navbar', module)
               label: 'Patients List',
               icon: 'patients',
               onClick: () => {
-                Toast('success', 'Sublink2 clicked!!', 'Success')
+                Toast('success', 'Patients List clicked!!', 'Success')
               },
             },
             {
@@ -264,7 +264,7 @@ storiesOf('Navbar', module)
               icon: 'appointment-add',
               dividerAbove: true,
               onClick: () => {
-                Toast('success', 'Sublink2 clicked!!', 'Success')
+                Toast('success', 'New Appointment clicked!!', 'Success')
               },
             },
             {
@@ -272,7 +272,7 @@ storiesOf('Navbar', module)
               label: 'Appointment Schedule',
               icon: 'appointment',
               onClick: () => {
-                Toast('success', 'Sublink1 clicked!!', 'Success')
+                Toast('success', 'Appointment Schedule clicked!!', 'Success')
               },
             },
             {
@@ -281,7 +281,7 @@ storiesOf('Navbar', module)
               icon: 'add',
               dividerAbove: true,
               onClick: () => {
-                Toast('success', 'Sublink2 clicked!!', 'Success')
+                Toast('success', 'New Lab Request clicked!!', 'Success')
               },
             },
             {
@@ -289,7 +289,7 @@ storiesOf('Navbar', module)
               label: 'Lab Requests',
               icon: 'lab',
               onClick: () => {
-                Toast('success', 'Sublink2 clicked!!', 'Success')
+                Toast('success', 'Lab Requests clicked!!', 'Success')
               },
             },
             {
@@ -298,7 +298,7 @@ storiesOf('Navbar', module)
               icon: 'add',
               dividerAbove: true,
               onClick: () => {
-                Toast('success', 'Sublink2 clicked!!', 'Success')
+                Toast('success', 'Report Incident clicked!!', 'Success')
               },
             },
             {
@@ -306,7 +306,7 @@ storiesOf('Navbar', module)
               label: 'Reported Incidents',
               icon: 'incident',
               onClick: () => {
-                Toast('success', 'Sublink2 clicked!!', 'Success')
+                Toast('success', 'Reported Incidents clicked!!', 'Success')
               },
             },
             {
@@ -315,7 +315,7 @@ storiesOf('Navbar', module)
               icon: 'setting',
               dividerAbove: true,
               onClick: () => {
-                Toast('success', 'Sublink2 clicked!!', 'Success')
+                Toast('success', 'Settings clicked!!', 'Success')
               },
             },
           ],

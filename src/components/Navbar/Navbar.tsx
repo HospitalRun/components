@@ -44,7 +44,7 @@ const Navbar = (props: Props) => {
       key={index}
       onClick={link.onClick}
     >
-      {link.icon && <Icon icon={link.icon} className="fa-fw mr-2" />}
+      {link.icon && <Icon icon={link.icon} className="fa-fw mr-3" />}
       {link.label}
     </NavDropdown.Item>
   )
