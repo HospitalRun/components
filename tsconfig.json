@@ -19,6 +19,7 @@
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "declaration": true,
     "sourceMap": true,
     "removeComments": true,
