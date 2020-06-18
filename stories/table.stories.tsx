@@ -1,7 +1,8 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { Table, Icon, TableProperties } from '../src'
+import { Table, Toast, Toaster } from '../src'
+import { ButtonVariant } from '../src/interfaces'
 
 storiesOf('Table', module)
   .addParameters({
@@ -10,144 +11,78 @@ storiesOf('Table', module)
     },
   })
   .addDecorator((storyFn) => (
-    <div style={{ marginLeft: '2em', marginRight: '2em', textAlign: 'center' }}>{storyFn()}</div>
+    <div style={{ marginLeft: '2em', marginRight: '2em' }}>{storyFn()}</div>
   ))
   .add('Demo Table', () => {
+    const ID = 'id'
+    const NAME = 'name'
+    const PHONE = 'phone'
+    const DRINKS = 'drinks'
+
+    const getDrinksList = (row: any) => (
+      <ul>
+        {row[DRINKS].map((d: string) => (
+          <li>{d}</li>
+        ))}
+      </ul>
+    )
+
+    const columns = [
+      { key: ID, label: 'ID' },
+      { key: NAME, label: 'Name' },
+      { key: PHONE, label: 'Phone #' },
+      { key: DRINKS, label: 'Drinks?', formatter: getDrinksList },
+    ]
+
     const data = [
       {
-        firstName: 'John',
-        lastName: 'Smith',
-        age: 20,
-        status: 'married',
-        admin: true,
-        date: new Date().toString(),
+        [ID]: 333,
+        [NAME]: 'Mickey',
+        [PHONE]: '789-777',
+        [DRINKS]: ['milk', 'tea'],
       },
       {
-        firstName: 'Jack',
-        lastName: 'Doe',
-        age: 21,
-        status: 'single',
-        admin: false,
-        date: new Date().toString(),
-      },
-      {
-        firstName: 'Jason',
-        lastName: 'Gutemberg',
-        age: 22,
-        status: 'married',
-        admin: false,
-        date: new Date().toString(),
+        [ID]: 777,
+        [NAME]: 'Minnie',
+        [PHONE]: '333-123',
+        [DRINKS]: ['water', 'coffee'],
       },
     ]
 
-    const tableProperties: TableProperties = {
-      tableClassname: '',
-      columns: [
-        {
-          accessor: 'firstName',
-          type: 'string',
-          title: 'Name',
-          headerClassName: 'text-info',
-          className: 'pl-3 fixoverflow',
-          disableFiltering: false,
-          disableSorting: false,
-          filterPlaceholder: 'Search in names!',
-          styles: [
-            {
-              conditions: [
-                {
-                  or: [
-                    {
-                      and: [
-                        {
-                          or: [
-                            {
-                              property: 'firstName',
-                              value: 'John',
-                            },
-                            {
-                              property: 'firstName',
-                              value: 'Jack',
-                            },
-                          ],
-                        },
-                        {
-                          property: 'firstName',
-                          value: 'Mob',
-                        },
-                      ],
-                    },
-                    {
-                      and: [
-                        {
-                          property: 'firstName',
-                          value: 'Fog',
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-              style: {
-                fontWeight: '600',
-              },
-            },
-          ],
+    const actions = [
+      {
+        label: 'Edit',
+        action: (row: any) => {
+          Toast('info', 'an edit clicked', `will edit ID=${row[ID]}`)
         },
-        {
-          accessor: 'lastName',
-          type: 'string',
-          title: 'Surname',
-          headerClassName: 'text-info',
-          className: 'pl-3 fixoverflow',
-          disableFiltering: false,
-          disableSorting: true,
+        buttonColor: 'info' as ButtonVariant,
+      },
+      {
+        label: 'Delete',
+        action: (row: any) => {
+          Toast('error', 'a delete clicked', `will delete ID=${row[ID]}`)
         },
-        {
-          accessor: 'age',
-          type: 'string',
-          title: 'Age',
-          headerClassName: '',
-          className: 'pl-3 fixoverflow',
-          disableFiltering: false,
-          disableSorting: false,
-          filterPlaceholder: 'Search in ages',
-        },
-        {
-          accessor: 'admin',
-          type: 'boolean',
-          title: 'Admin',
-          headerClassName: 'text-info',
-          className: 'pl-3 fixoverflow',
-          disableFiltering: false,
-          disableSorting: false,
-          customTrueIcon: (
-            <div style={{ color: 'green' }}>
-              <Icon icon="appointment" />
-            </div>
-          ),
-          customFalseIcon: (
-            <div style={{ color: 'red' }}>
-              <Icon icon="calendar" />
-            </div>
-          ),
-        },
-        {
-          accessor: 'date',
-          type: 'date',
-          title: 'Date',
-          headerClassName: '',
-          className: 'pl-3 fixoverflow',
-          disableFiltering: false,
-          disableSorting: false,
-          filterPlaceholder: 'Search in dates',
-        },
-      ],
+        buttonColor: 'danger' as ButtonVariant,
+      },
+    ]
+
+    const getID = (row: any) => row[ID]
+
+    const onRowClick = (row: any) => {
+      Toast('success', 'a row clicked', `${row[NAME]} @ ${row[PHONE]}`)
     }
 
     return (
       <div>
-        <Table data={data} tableProperties={tableProperties} />
+        <Table
+          columns={columns}
+          data={data}
+          actions={actions}
+          getID={getID}
+          onRowClick={onRowClick}
+        />
+
+        <Toaster autoClose={1400} hideProgressBar draggable />
       </div>
     )
   })

@@ -1,151 +1,89 @@
 import React from 'react'
-import { useTable, useFilters, useSortBy, usePagination, TableInstance } from 'react-table'
+import { ButtonVariant } from 'src/interfaces'
 
-import { generateColumns } from './helper'
-import { Data, TableProperties, GeneratedColumn } from './interfaces'
+import { Button } from '../Button'
+
+type T = { [key: string]: any }
 
 interface Props {
-  /** TableProperties are composed by a tableClassname string property and the columns array */
-  tableProperties: TableProperties
-  /** Provides data for the table */
-  data?: Data[]
+  tableClassName: string
+  headerClassName: string
+  columns: { key: string; label: string; formatter?: (row: T) => React.ReactNode }[]
+  data: T[]
+  actionsHeaderText: string
+  actions?: { label: string; action: (row: T) => void; buttonColor?: ButtonVariant }[]
+  getID: (row: T) => string
+  onRowClick?: (row: T) => void
 }
 
-function Table({ data, tableProperties }: Props) {
-  const columns = React.useMemo(() => generateColumns(tableProperties.columns), [])
-
+const Table = (props: Props) => {
   const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    page,
-    prepareRow,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    pageCount,
-    gotoPage,
-    nextPage,
-    previousPage,
-    setPageSize,
-    state: { pageIndex, pageSize },
-  } = useTable<Data>(
-    {
-      columns,
-      data: data || [],
-      initialState: { pageIndex: 0 },
-    },
-    useFilters,
-    useSortBy,
-    usePagination,
-  ) as TableInstance<Record<string, unknown>>
+    tableClassName,
+    headerClassName,
+    columns,
+    data,
+    actionsHeaderText,
+    actions,
+    getID,
+    onRowClick,
+  } = props
 
-  return (
-    <>
-      <table {...getTableProps()} className={tableProperties.tableClassname}>
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column: GeneratedColumn) => (
-                <th
-                  {...column.getHeaderProps()}
-                  className={column.headerClassName ? column.headerClassName : ''}
-                >
-                  <div {...(column.disableSorting ? null : column.getSortByToggleProps())}>
-                    {column.render('Header')}
-                    <span>{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}</span>
-                  </div>
-
-                  <div>{!column.disableFiltering && column.render('Filter')}</div>
-                </th>
-              ))}
-            </tr>
+  const table = (
+    <table className={tableClassName}>
+      <thead className={headerClassName}>
+        <tr>
+          {columns.map((column) => (
+            <th key={column.key}>{column.label}</th>
           ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {page.map((row) => {
-            prepareRow(row)
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell: any) => (
-                  <td
-                    {...cell.getCellProps()}
-                    className={cell.column.className ? cell.column.className : ''}
-                  >
-                    {cell.render('Cell')}
-                  </td>
-                ))}
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-      <div className="pagination">
-        <button
-          type="button"
-          id="firstPageButton"
-          onClick={() => gotoPage(0)}
-          disabled={!canPreviousPage}
-        >
-          {'<<'}
-        </button>{' '}
-        <button
-          type="button"
-          id="previousPageButton"
-          onClick={() => previousPage()}
-          disabled={!canPreviousPage}
-        >
-          {'<'}
-        </button>{' '}
-        <button
-          type="button"
-          id="nextPageButton"
-          onClick={() => nextPage()}
-          disabled={!canNextPage}
-        >
-          {'>'}
-        </button>{' '}
-        <button
-          type="button"
-          id="lastPageButton"
-          onClick={() => gotoPage(pageCount - 1)}
-          disabled={!canNextPage}
-        >
-          {'>>'}
-        </button>{' '}
-        <span>
-          Page{' '}
-          <strong>
-            {data && data.length ? pageIndex + 1 : pageIndex} of {pageOptions.length}
-          </strong>{' '}
-        </span>
-        <span>
-          | Go to page:{' '}
-          <input
-            type="number"
-            defaultValue={pageIndex + 1}
-            onChange={(e) => {
-              const p = e.target.value ? Number(e.target.value) - 1 : 0
-              gotoPage(p)
+          {actions ? <th>{actionsHeaderText}</th> : null}
+        </tr>
+      </thead>
+
+      <tbody>
+        {data.map((row: T) => (
+          <tr
+            key={getID(row)}
+            onClick={() => {
+              if (onRowClick) {
+                onRowClick(row)
+              }
             }}
-            style={{ width: '100px' }}
-          />
-        </span>{' '}
-        <select
-          value={pageSize}
-          onChange={(e) => {
-            setPageSize(Number(e.target.value))
-          }}
-        >
-          {[10, 20, 30, 40, 50].map((pageS) => (
-            <option key={pageS} value={pageS}>
-              Show {pageS}
-            </option>
-          ))}
-        </select>
-      </div>
-    </>
+          >
+            {columns.map((column) => {
+              const content = !column.formatter ? row[column.key] : column.formatter(row)
+              return <td key={`${column.key}-${getID(row)}`}>{content}</td>
+            })}
+
+            {actions ? (
+              <td>
+                {actions.map(({ label, action, buttonColor }, i) => (
+                  <Button
+                    key={label}
+                    color={buttonColor || 'primary'}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      action(row)
+                    }}
+                    className={i > 0 ? 'ml-1' : ''}
+                  >
+                    {label}
+                  </Button>
+                ))}
+              </td>
+            ) : null}
+          </tr>
+        ))}
+      </tbody>
+    </table>
   )
+
+  return table
+}
+
+Table.defaultProps = {
+  tableClassName: 'table table-hover',
+  headerClassName: 'thead-light',
+  actionsHeaderText: 'Actions',
 }
 
 export { Table }
