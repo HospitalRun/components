@@ -227,11 +227,11 @@ storiesOf('Navbar', module)
       variant="dark"
       navItems={[
         {
-          type: 'link-list',
+          type: 'link-list-icon',
           label: '',
-          onClick: () => {
-            Toast('success', 'Link list clicked!!', 'Success')
-          },
+          name: 'menu',
+          size: 'lg',
+          iconClassName: 'align-bottom',
           children: [
             {
               type: 'link',
