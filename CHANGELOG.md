@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/HospitalRun/components/compare/v1.12.2...v1.13.0) (2020-06-18)
+
+
+### Features
+
+* **table:** update table ([#455](https://github.com/HospitalRun/components/issues/455)) ([7ff5648](https://github.com/HospitalRun/components/commit/7ff56485ed7a67af9e7c1808c49a28cc0e02a21e))
+
 ## [1.12.2](https://github.com/HospitalRun/components/compare/v1.12.1...v1.12.2) (2020-06-16)
 
 
