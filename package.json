@@ -143,7 +143,7 @@
     "date-fns": "~2.14.0",
     "formik": "~2.1.0",
     "lodash": "~4.17.15",
-    "moment": "~2.26.0",
+    "moment": "~2.27.0",
     "react-bootstrap-typeahead": "^4.2.3",
     "react-datepicker": "~3.0.0",
     "react-spinners": "~0.8.3",
