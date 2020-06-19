@@ -144,7 +144,7 @@ storiesOf('Table', module)
       let startIndex = 0
       if (currentKey) {
         for (let i = 0; i < d.length; i += 1) {
-          if (data[i].id === currentKey) {
+          if (d[i].id === currentKey) {
             startIndex = i
           }
         }
