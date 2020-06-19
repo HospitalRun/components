@@ -2,8 +2,8 @@ import { storiesOf } from '@storybook/react'
 import { sortBy as sortArrayBy } from 'lodash'
 import React from 'react'
 
-import { Table, Toast, Toaster, withDataOps } from '../src'
 import { ButtonVariant } from '../src/interfaces'
+import { Table, Toast, Toaster, withDataOps } from '../sxrc'
 
 // set up
 const ID = 'id'

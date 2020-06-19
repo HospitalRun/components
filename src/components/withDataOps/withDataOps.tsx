@@ -1,5 +1,6 @@
 import React, { useState, useEffect, ReactElement } from 'react'
-import { Button } from 'src'
+
+import { Button } from '../Button'
 
 const withDataOps = (
   WrappedComponent: any,

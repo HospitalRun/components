@@ -74,7 +74,7 @@ describe('Table', () => {
       if (i === headerCellWrappers.length - 1) {
         expect(cell.text()).toEqual('Actions')
       } else {
-        expect(cell.text()).toEqual(columns[i].label)
+        expect(cell.text().trim()).toEqual(columns[i].label)
       }
     })
   })
