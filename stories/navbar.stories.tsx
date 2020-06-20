@@ -221,7 +221,7 @@ storiesOf('Navbar', module)
       ]}
     />
   ))
-  .add('Mobile Navbar w/ link list dividers & icons)', () => (
+  .add('Mobile Navbar w/ link list dividers & icons', () => (
     <Navbar
       bg="dark"
       variant="dark"
