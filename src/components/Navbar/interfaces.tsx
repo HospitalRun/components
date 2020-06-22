@@ -25,8 +25,10 @@ export interface NavHeader extends NavItem {
 export interface NavLink extends NavItem {
   /** The link name */
   label: string
+  /** Adds a top border to the link as a list divider */
   dividerAbove?: boolean
-  icon?: any
+  /** Inserts an icon to the left of the link when a valid icon name is passed */
+  icon?: string
   /** A click handle which will redirect the user to whenever it is clicked */
   onClick?: (event: React.MouseEvent<any>) => void
   /** Determines the href */

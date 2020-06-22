@@ -50,21 +50,12 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'header',
-            label: 'test',
-          },
-          {
             type: 'search',
             placeholderText: 'Search',
             buttonText: 'Search',
             buttonColor: 'primary',
             onClickButton,
             onChangeInput,
-          },
-          {
-            type: 'link',
-            label: 'Link',
-            children: [],
           },
         ]}
       />,
@@ -80,23 +71,9 @@ describe('Navbar', () => {
   })
 
   it('should render link label as passed in the label prop', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
-          {
-            type: 'header',
-            label: 'test',
-          },
-          {
-            type: 'search',
-            placeholderText: 'Custom',
-            buttonText: 'Text',
-            buttonColor: 'secondary',
-            onClickButton,
-            onChangeInput,
-          },
           {
             type: 'link',
             label: 'Elem1',
@@ -109,23 +86,9 @@ describe('Navbar', () => {
   })
 
   it('should render link list item label as passed in the label prop', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
-          {
-            type: 'header',
-            label: 'test',
-          },
-          {
-            type: 'search',
-            placeholderText: 'Custom',
-            buttonText: 'Text',
-            buttonColor: 'secondary',
-            onClickButton,
-            onChangeInput,
-          },
           {
             type: 'link-list',
             label: 'Link',
@@ -145,23 +108,9 @@ describe('Navbar', () => {
   })
 
   it('should render link list item with divider when dividerAbove prop is passed as true', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
-          {
-            type: 'header',
-            label: 'test',
-          },
-          {
-            type: 'search',
-            placeholderText: 'Custom',
-            buttonText: 'Text',
-            buttonColor: 'secondary',
-            onClickButton,
-            onChangeInput,
-          },
           {
             type: 'link-list',
             label: 'Link',
@@ -186,23 +135,9 @@ describe('Navbar', () => {
   })
 
   it('should render link list item with an icon only when the icon prop is passed', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
-          {
-            type: 'header',
-            label: 'test',
-          },
-          {
-            type: 'search',
-            placeholderText: 'Custom',
-            buttonText: 'Text',
-            buttonColor: 'secondary',
-            onClickButton,
-            onChangeInput,
-          },
           {
             type: 'link-list',
             label: 'Link',
@@ -228,27 +163,12 @@ describe('Navbar', () => {
   })
 
   it('should render header label as passed in label prop', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
           {
             type: 'header',
             label: 'Test',
-          },
-          {
-            type: 'search',
-            placeholderText: 'Custom',
-            buttonText: 'Text',
-            buttonColor: 'secondary',
-            onClickButton,
-            onChangeInput,
-          },
-          {
-            type: 'link',
-            label: 'Link',
-            children: [],
           },
         ]}
       />,
@@ -257,8 +177,6 @@ describe('Navbar', () => {
     expect(header.text().trim()).toEqual('Test')
   })
   it('should render image src as passed in src prop', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         navItems={[
@@ -266,19 +184,6 @@ describe('Navbar', () => {
             type: 'image',
             label: 'test',
             src: 'anysource',
-          },
-          {
-            type: 'search',
-            placeholderText: 'Custom',
-            buttonText: 'Text',
-            buttonColor: 'secondary',
-            onClickButton,
-            onChangeInput,
-          },
-          {
-            type: 'link',
-            label: 'Link',
-            children: [],
           },
         ]}
       />,
@@ -294,21 +199,12 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'header',
-            label: 'test',
-          },
-          {
             type: 'search',
             placeholderText: 'Custom',
             buttonText: 'Text',
             buttonColor: 'secondary',
             onClickButton,
             onChangeInput,
-          },
-          {
-            type: 'link',
-            label: 'Link',
-            children: [],
           },
         ]}
       />,
@@ -318,8 +214,6 @@ describe('Navbar', () => {
   })
 
   it('should render variant to light as passed in variant prop', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         variant="light"
@@ -327,19 +221,6 @@ describe('Navbar', () => {
           {
             type: 'header',
             label: 'test',
-          },
-          {
-            type: 'search',
-            placeholderText: 'Custom',
-            buttonText: 'Text',
-            buttonColor: 'secondary',
-            onClickButton,
-            onChangeInput,
-          },
-          {
-            type: 'link',
-            label: 'Link',
-            children: [],
           },
         ]}
       />,
@@ -349,8 +230,6 @@ describe('Navbar', () => {
   })
 
   it('should render bg to light as passed in bg prop', () => {
-    const onClickButton = sinon.spy()
-    const onChangeInput = sinon.spy()
     const NavbarWrapper = shallow(
       <Navbar
         bg="light"
@@ -358,19 +237,6 @@ describe('Navbar', () => {
           {
             type: 'header',
             label: 'test',
-          },
-          {
-            type: 'search',
-            placeholderText: 'Custom',
-            buttonText: 'Text',
-            buttonColor: 'secondary',
-            onClickButton,
-            onChangeInput,
-          },
-          {
-            type: 'link',
-            label: 'Link',
-            children: [],
           },
         ]}
       />,
@@ -386,21 +252,12 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'header',
-            label: 'test',
-          },
-          {
             type: 'search',
             placeholderText: 'Custom',
             buttonText: 'Text',
             buttonColor: 'secondary',
             onClickButton,
             onChangeInput,
-          },
-          {
-            type: 'link',
-            label: 'Link',
-            children: [],
           },
         ]}
       />,
@@ -416,21 +273,12 @@ describe('Navbar', () => {
       <Navbar
         navItems={[
           {
-            type: 'header',
-            label: 'test',
-          },
-          {
             type: 'search',
             placeholderText: 'Custom',
             buttonText: 'Text',
             buttonColor: 'secondary',
             onClickButton,
             onChangeInput,
-          },
-          {
-            type: 'link',
-            label: 'Link',
-            children: [],
           },
         ]}
       />,

@@ -39,12 +39,14 @@ const Navbar = (props: Props) => {
 
   const getNavListLink = (link: NavLink, index: number) => (
     <NavDropdown.Item
-      className={link.dividerAbove ? 'border-top mt-1 pt-2' : ''}
+      className={
+        (link.dividerAbove ? 'border-top mt-1 pt-2' : '') + (link.className ? link.className : '')
+      }
       href={link.href ? link.href : ''}
       key={index}
       onClick={link.onClick}
     >
-      {link.icon && <Icon icon={link.icon} className="fa-fw mr-3" />}
+      {link.icon && <Icon icon={link.icon as IconType} className="fa-fw mr-3" />}
       {link.label}
     </NavDropdown.Item>
   )
