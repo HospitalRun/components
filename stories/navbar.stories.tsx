@@ -221,6 +221,123 @@ storiesOf('Navbar', module)
       ]}
     />
   ))
+  .add('Mobile Navbar w/ link list dividers & icons', () => (
+    <Navbar
+      bg="dark"
+      variant="dark"
+      navItems={[
+        {
+          type: 'link-list-icon',
+          label: '',
+          name: 'menu',
+          size: 'lg',
+          iconClassName: 'align-bottom',
+          children: [
+            {
+              type: 'link',
+              label: 'Dashboard',
+              icon: 'dashboard',
+              onClick: () => {
+                Toast('success', 'Dashboard clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'New Patient',
+              icon: 'patient-add',
+              dividerAbove: true,
+              onClick: () => {
+                Toast('success', 'New Patient clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Patients List',
+              icon: 'patients',
+              onClick: () => {
+                Toast('success', 'Patients List clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'New Appointment',
+              icon: 'appointment-add',
+              dividerAbove: true,
+              onClick: () => {
+                Toast('success', 'New Appointment clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Appointment Schedule',
+              icon: 'appointment',
+              onClick: () => {
+                Toast('success', 'Appointment Schedule clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'New Lab Request',
+              icon: 'add',
+              dividerAbove: true,
+              onClick: () => {
+                Toast('success', 'New Lab Request clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Lab Requests',
+              icon: 'lab',
+              onClick: () => {
+                Toast('success', 'Lab Requests clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Report Incident',
+              icon: 'add',
+              dividerAbove: true,
+              onClick: () => {
+                Toast('success', 'Report Incident clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Reported Incidents',
+              icon: 'incident',
+              onClick: () => {
+                Toast('success', 'Reported Incidents clicked!!', 'Success')
+              },
+            },
+            {
+              type: 'link',
+              label: 'Settings',
+              icon: 'setting',
+              dividerAbove: true,
+              onClick: () => {
+                Toast('success', 'Settings clicked!!', 'Success')
+              },
+            },
+          ],
+        },
+        {
+          type: 'image',
+          src:
+            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          onClick: () => {
+            Toast('success', 'Icon clicked!!', 'Success')
+          },
+        },
+        {
+          type: 'header',
+          label: 'HospitalRun',
+          onClick: () => {
+            Toast('success', 'Header clicked!!', 'Success')
+          },
+        },
+      ]}
+    />
+  ))
   .add('Custom navbar', () => (
     <Navbar
       bg="light"
