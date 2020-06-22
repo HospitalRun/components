@@ -13,6 +13,7 @@ export type IconType =
   | 'lab'
   | 'left-arrow'
   | 'medication'
+  | 'menu'
   | 'patient'
   | 'patient-add'
   | 'patient-remove'

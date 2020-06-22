@@ -20,6 +20,7 @@ const iconMap = {
   lab: 'microscope',
   'left-arrow': 'chevron-left',
   medication: 'pills',
+  menu: 'bars',
   patient: 'user',
   'patient-add': 'user-plus',
   'patient-remove': 'user-minus',
