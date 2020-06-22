@@ -1,3 +1,18 @@
+# [1.14.0](https://github.com/HospitalRun/components/compare/v1.13.0...v1.14.0) (2020-06-22)
+
+
+### Features
+
+* **components/navbar:** amends to PR [#463](https://github.com/HospitalRun/components/issues/463) ([db1a9dc](https://github.com/HospitalRun/components/commit/db1a9dcaafa5257e86f441d17531ae9fc0dad0df)), closes [#456](https://github.com/HospitalRun/components/issues/456)
+* **icons:** make bars icon available to components ([2021ec0](https://github.com/HospitalRun/components/commit/2021ec0fa1a43da0059fd7e000da16f169dd0a93)), closes [#456](https://github.com/HospitalRun/components/issues/456)
+* **navbar.stories.tsx:** add hamburger menu icon to mobile navbar story ([75465d4](https://github.com/HospitalRun/components/commit/75465d407f830a763385a98e52fa2c2146aca565)), closes [#456](https://github.com/HospitalRun/components/issues/456)
+* **navbar.test.tsx:** add tests for navLinkList dividers and icons ([7bae6c4](https://github.com/HospitalRun/components/commit/7bae6c485fad4c806f3fc03c4dcea564cce78f5f)), closes [#456](https://github.com/HospitalRun/components/issues/456)
+* **navbar.tsx:** add divider between dropdown list link groups ([d8275ce](https://github.com/HospitalRun/components/commit/d8275ced4edab54839c5638cbf7f35094ce6e278))
+* **navbar.tsx:** added icons to NavLinkList items ([270cc71](https://github.com/HospitalRun/components/commit/270cc71c1fb7e8cadb790f5585457b34486ceb6e)), closes [#456](https://github.com/HospitalRun/components/issues/456)
+* **navbar.tsx:** amend getNavLinkList className ([86e8676](https://github.com/HospitalRun/components/commit/86e8676bfa67097865c11ceb96974eca30ab0586)), closes [#456](https://github.com/HospitalRun/components/issues/456)
+* **navbar.tsx:** minor syntax change ([77fb968](https://github.com/HospitalRun/components/commit/77fb968b498148e9ef4920caa088c5d5dfd366f1)), closes [#456](https://github.com/HospitalRun/components/issues/456)
+* **tsconfig.json:** undo of redundant addition of skipLibCheck ([075fe98](https://github.com/HospitalRun/components/commit/075fe9858828550638421bd6fe890716827537cb)), closes [#456](https://github.com/HospitalRun/components/issues/456)
+
 # [1.13.0](https://github.com/HospitalRun/components/compare/v1.12.2...v1.13.0) (2020-06-18)
 
 
