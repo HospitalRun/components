@@ -39,9 +39,12 @@ const Navbar = (props: Props) => {
 
   const getNavListLink = (link: NavLink, index: number) => (
     <NavDropdown.Item
-      className={
-        (link.dividerAbove ? 'border-top mt-1 pt-2' : '') + (link.className ? link.className : '')
-      }
+      className={[
+        link.dividerAbove ? 'border-top mt-1 pt-2' : '',
+        link.className ? link.className : '',
+      ]
+        .join(' ')
+        .trim()}
       href={link.href ? link.href : ''}
       key={index}
       onClick={link.onClick}
