@@ -60,7 +60,7 @@
     "@babel/core": "~7.10.0",
     "@commitlint/cli": "~8.3.3",
     "@commitlint/config-conventional": "~8.3.3",
-    "@commitlint/prompt": "~8.3.3",
+    "@commitlint/prompt": "~9.0.1",
     "@semantic-release/changelog": "~5.0.0",
     "@semantic-release/commit-analyzer": "~8.0.1",
     "@semantic-release/git": "~9.0.0",
