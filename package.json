@@ -144,7 +144,7 @@
     "formik": "~2.1.0",
     "lodash": "~4.17.15",
     "moment": "~2.27.0",
-    "react-bootstrap-typeahead": "^4.2.3",
+    "react-bootstrap-typeahead": "^5.0.0",
     "react-datepicker": "~3.0.0",
     "react-spinners": "~0.9.0",
     "react-table": "~7.2.0",
