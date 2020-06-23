@@ -8,7 +8,7 @@ interface Props {
   id: string
   options: SelectOption[]
   defaultSelected?: SelectOption[]
-  onChange?: (selected: SelectOption[]) => void
+  onChange?: (values: string[]) => void
   placeholder?: string
   multiple?: boolean
   disabled?: boolean
