@@ -118,7 +118,7 @@
     "react-dom": "~16.13.0",
     "rollup-plugin-postcss": "~3.1.1",
     "sass-loader": "~8.0.0",
-    "semantic-release": "~17.0.3",
+    "semantic-release": "~17.1.0",
     "sinon": "~9.0.0",
     "tsdx": "~0.13.2",
     "tslib": "~2.0.0",
