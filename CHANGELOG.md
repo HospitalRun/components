@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/HospitalRun/components/compare/v1.14.0...v1.14.1) (2020-06-23)
+
+
+### Bug Fixes
+
+* **select:** fix type of onchange ([bce1bac](https://github.com/HospitalRun/components/commit/bce1bacd52dd3a99f669a15ce44f022683c726b9))
+
 # [1.14.0](https://github.com/HospitalRun/components/compare/v1.13.0...v1.14.0) (2020-06-22)
 
 
