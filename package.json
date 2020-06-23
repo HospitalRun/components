@@ -138,7 +138,7 @@
     "@tinymce/tinymce-react": "~3.6.0",
     "@types/react-bootstrap-typeahead": "^3.4.6",
     "@types/react-datepicker": "~3.0.0",
-    "babel-jest": "~26.0.1",
+    "babel-jest": "~26.1.0",
     "chart.js": "~2.9.3",
     "date-fns": "~2.14.0",
     "formik": "~2.1.0",
