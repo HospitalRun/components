@@ -56,6 +56,11 @@
       "git add ."
     ]
   },
+  "comments": {
+    "devDependencies": {
+      "babel-jest": "We've to use the same version used by tsdx"
+    }
+  },
   "devDependencies": {
     "@babel/core": "~7.10.0",
     "@commitlint/cli": "~8.3.3",
