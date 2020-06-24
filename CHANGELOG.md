@@ -1,3 +1,15 @@
+## [1.14.2](https://github.com/HospitalRun/components/compare/v1.14.1...v1.14.2) (2020-06-24)
+
+
+### Bug Fixes
+
+* **babel-jest:** install the same version of tsdx ([ffd5a59](https://github.com/HospitalRun/components/commit/ffd5a59d054e8c7240219b39e562b79c5dd4eccf))
+
+
+### Reverts
+
+* **deps:** revert update of babel-jest from v26 to v24 ([c1a25b7](https://github.com/HospitalRun/components/commit/c1a25b768245431b9e6f5e5c9716b8fe6beff656))
+
 ## [1.14.1](https://github.com/HospitalRun/components/compare/v1.14.0...v1.14.1) (2020-06-23)
 
 
