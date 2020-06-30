@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "1.14.1",
+  "version": "1.14.2",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -56,6 +56,11 @@
       "git add ."
     ]
   },
+  "comments": {
+    "devDependencies": {
+      "babel-jest": "We've to use the same version used by tsdx"
+    }
+  },
   "devDependencies": {
     "@babel/core": "~7.10.0",
     "@commitlint/cli": "~8.3.3",
@@ -88,6 +93,7 @@
     "@typescript-eslint/parser": "~3.4.0",
     "autoprefixer": "~9.8.0",
     "awesome-typescript-loader": "~5.2.1",
+    "babel-jest": "~24.9.0",
     "babel-loader": "~8.1.0",
     "bootstrap": "~4.5.0",
     "commitizen": "~4.1.1",
@@ -100,7 +106,7 @@
     "eslint": "~7.3.0",
     "eslint-config-airbnb": "~18.2.0",
     "eslint-config-prettier": "~6.11.0",
-    "eslint-plugin-import": "~2.21.1",
+    "eslint-plugin-import": "~2.22.0",
     "eslint-plugin-jest": "~23.17.1",
     "eslint-plugin-jsx-a11y": "~6.3.0",
     "eslint-plugin-prettier": "~3.1.1",
@@ -138,7 +144,6 @@
     "@tinymce/tinymce-react": "~3.6.0",
     "@types/react-bootstrap-typeahead": "^3.4.6",
     "@types/react-datepicker": "~3.0.0",
-    "babel-jest": "~26.1.0",
     "chart.js": "~2.9.3",
     "date-fns": "~2.14.0",
     "formik": "~2.1.0",
