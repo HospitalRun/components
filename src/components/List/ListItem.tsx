@@ -14,8 +14,6 @@ interface Props {
   disabled?: boolean
   /** The link value for a list item. */
   href?: string
-  /** The link value for a list item. */
-  eventKey?: string
   /** Handles the on click event for a list item. */
   onClick?: (event: React.MouseEvent) => void
   /** The children to render. */
