@@ -9,8 +9,8 @@ interface SelectOption<T> {
 
 interface Props<T> {
   id: string
-  options: SelectOption<any>[]
-  defaultSelected?: SelectOption<any>[]
+  options: SelectOption<T>[]
+  defaultSelected?: SelectOption<T>[]
   onChange?: (values: T[]) => void
   placeholder?: string
   multiple?: boolean
