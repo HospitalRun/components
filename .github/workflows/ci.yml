@@ -8,7 +8,8 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x, 14.x]
-        os: [ubuntu-latest, macOS-latest, windows-latest]
+        # os: [macOS-latest, windows-latest, ubuntu-latest]
+        os: [macOS-latest]
     steps:
       - run: git config --global core.autocrlf false # this is needed to prevent git changing EOL after cloning on Windows OS
       - uses: actions/checkout@v2
