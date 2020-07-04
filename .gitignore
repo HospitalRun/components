@@ -46,3 +46,4 @@ storybook-static
 yarn.lock
 pnpm-lock.yaml
 yarn-error.log
+.idea/

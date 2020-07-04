@@ -1,4 +1,4 @@
-import React, { ElementType } from 'react'
+import React from 'react'
 import DropdownRB from 'react-bootstrap/Dropdown'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 
@@ -16,10 +16,6 @@ interface Props {
   variant: ButtonVariant
   /** Determines the horizontal alignment of the dropdown items */
   alignRight?: boolean
-  /** Determines the dropdown's custom element type */
-  as?: ElementType
-  /** Handle the dropdown toggle additional click events */
-  onClick?: (event: React.MouseEvent<any>) => void
   /** Determines the dropdown toggle button size */
   size?: 'sm' | 'md' | 'lg'
   /** Determines the dropdown's direction */
