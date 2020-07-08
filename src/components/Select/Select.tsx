@@ -3,8 +3,8 @@ import { Typeahead } from 'react-bootstrap-typeahead'
 import 'react-bootstrap-typeahead/css/Typeahead.css'
 
 interface SelectOption<T> {
-  label : string
-  value : T
+  label: string
+  value: T
 }
 
 interface Props<T> {
@@ -18,7 +18,7 @@ interface Props<T> {
   isInvalid?: boolean
 }
 
-const Select = <T extends {}>(props: Props<T>) => {
+function Select<T>(props: Props<T>) {
   const {
     id,
     options,
