@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/HospitalRun/components/compare/v1.14.3...v1.15.0) (2020-07-08)
+
+
+### Features
+
+* **select:** select component use generics ([#492](https://github.com/HospitalRun/components/issues/492)) ([221118a](https://github.com/HospitalRun/components/commit/221118a94752bb3db01fe1e3780a8ac20d44c586))
+
 ## [1.14.3](https://github.com/HospitalRun/components/compare/v1.14.2...v1.14.3) (2020-07-08)
 
 
