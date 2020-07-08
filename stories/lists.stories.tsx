@@ -93,7 +93,7 @@ storiesOf('List', module)
       <ListItem action href="/?path=/story/list--list-event-handling">
         href example item
       </ListItem>
-      <ListItem eventKey="#uniqueKey">eventKey example item</ListItem>
+      <ListItem>eventKey example item</ListItem>
     </List>
   ))
   .add('List with custom class', () => (
