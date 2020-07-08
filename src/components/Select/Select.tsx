@@ -2,20 +2,23 @@ import React from 'react'
 import { Typeahead } from 'react-bootstrap-typeahead'
 import 'react-bootstrap-typeahead/css/Typeahead.css'
 
-type SelectOption = { label: string; value: any }
+interface SelectOption<T> {
+  label: string
+  value: T
+}
 
-interface Props {
+interface Props<T> {
   id: string
-  options: SelectOption[]
-  defaultSelected?: SelectOption[]
-  onChange?: (values: string[]) => void
+  options: SelectOption<T>[]
+  defaultSelected?: SelectOption<T>[]
+  onChange?: (values: T[]) => void
   placeholder?: string
   multiple?: boolean
   disabled?: boolean
   isInvalid?: boolean
 }
 
-const Select = (props: Props) => {
+function Select<T>(props: Props<T>) {
   const {
     id,
     options,
@@ -28,11 +31,11 @@ const Select = (props: Props) => {
   } = props
 
   return (
-    <Typeahead<SelectOption>
+    <Typeahead<SelectOption<T>>
       id={id}
       options={options as any}
       selected={defaultSelected}
-      onChange={(selected: SelectOption[]) => {
+      onChange={(selected: SelectOption<T>[]) => {
         if (onChange !== undefined) {
           onChange(selected.map((option) => option.value))
         }
