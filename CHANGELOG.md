@@ -1,3 +1,17 @@
+# [1.15.0](https://github.com/HospitalRun/components/compare/v1.14.3...v1.15.0) (2020-07-08)
+
+
+### Features
+
+* **select:** select component use generics ([#492](https://github.com/HospitalRun/components/issues/492)) ([221118a](https://github.com/HospitalRun/components/commit/221118a94752bb3db01fe1e3780a8ac20d44c586))
+
+## [1.14.3](https://github.com/HospitalRun/components/compare/v1.14.2...v1.14.3) (2020-07-08)
+
+
+### Bug Fixes
+
+* removes prop that didn't exist ([#500](https://github.com/HospitalRun/components/issues/500)) ([c7f39e5](https://github.com/HospitalRun/components/commit/c7f39e518823be01a6ed8c34e3f2ac377923c4ab))
+
 ## [1.14.2](https://github.com/HospitalRun/components/compare/v1.14.1...v1.14.2) (2020-06-24)
 
 
