@@ -90,7 +90,14 @@ describe('Icon', () => {
     expect(rightArrowFontAwesomeIcon).toHaveLength(1)
     expect(rightArrowFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'chevron-right'])
   })
-
+  
+  it('Logout Icon renders itself without crashing', () => {
+    const logoutIconWrapper = shallow(<Icon icon="logout" />)
+    const fontAwesomeIcon = logoutIconWrapper.find(FontAwesomeIcon)
+    expect(fontAwesomeIcon).toHaveLength(1)
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'sign-out-alt'])
+  })
+  
   it('Medication Icon renders itself without crashing', () => {
     const medicationIconWrapper = shallow(<Icon icon="medication" />)
     const fontAwesomeIcon = medicationIconWrapper.find(FontAwesomeIcon)
