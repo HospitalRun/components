@@ -19,6 +19,7 @@ const iconMap = {
   incident: 'file-alt',
   lab: 'microscope',
   'left-arrow': 'chevron-left',
+  logout: 'sign-out-alt',
   medication: 'pills',
   menu: 'bars',
   patient: 'user',
