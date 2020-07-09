@@ -12,7 +12,7 @@ export type IconType =
   | 'incident'
   | 'lab'
   | 'left-arrow'
-  | 'logout'  
+  | 'logout'
   | 'medication'
   | 'menu'
   | 'patient'
