@@ -48,6 +48,9 @@ storiesOf('Icons', module)
       <span>Left Arrow: </span>
       <Icon icon="left-arrow" />
       <br />
+      <span>Log Out: </span>
+      <Icon icon="logout" />
+      <br />
       <span>Medication: </span>
       <Icon icon="medication" />
       <br />
