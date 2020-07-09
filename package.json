@@ -147,7 +147,7 @@
     "chart.js": "~2.9.3",
     "date-fns": "~2.14.0",
     "formik": "~2.1.0",
-    "lodash": "~4.17.15",
+    "lodash": "~4.17.19",
     "moment": "~2.27.0",
     "react-bootstrap-typeahead": "^4.2.3",
     "react-datepicker": "~3.1.3",
