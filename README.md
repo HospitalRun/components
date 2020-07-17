@@ -9,7 +9,7 @@
 
 </div>
 
-This repository will host reusable react components made for the HospitalRun frontend.
+This repository will host reusable react components made for the HospitalRun frontend. It's a place for designers and developers alike to collaborate quickly. This library makes up the text inputs, labels, etc of HospitalRun Frontend.
 
 ---
 
@@ -41,7 +41,7 @@ Contributions are always welcome. Before contributing please read our [contribut
 2. Navigate to the cloned folder: `cd components`
 3. Install the dependencies: `npm install`
 4. Run `npm run dev` to build and watch for code changes
-5. In another window, run storybook `npm run storybook`. Story book should open in a your default browser at localhost:6006.
+5. In another window, run storybook `npm run storybook`. Story book should open in a your default browser at http://localhost:6006.
 6. You will be able to test components with storybook and enjoy live reloading!
 
 ## Online one-click setup for contributing
