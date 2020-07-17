@@ -9,7 +9,7 @@
 
 </div>
 
-This repository will host reusable react components made for the HospitalRun frontend.
+This repository will host reusable react components made for the HospitalRun frontend. It's a place for designers and developers alike to collaborate quickly. This library makes up the text inputs, labels, etc of HospitalRun Frontend.
 
 ---
 
