@@ -24,7 +24,7 @@ export interface NavHeader extends NavItem {
 
 export interface NavLink extends NavItem {
   /** The link name */
-  label: string
+  label: React.ReactElement
   /** Adds a top border to the link as a list divider */
   dividerAbove?: boolean
   /** Inserts an icon to the left of the link when a valid icon name is passed */
