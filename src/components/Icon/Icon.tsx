@@ -1,9 +1,11 @@
-import { IconPrefix, IconName, SizeProp } from '@fortawesome/fontawesome-svg-core'
+import { IconPrefix, IconName, SizeProp, library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { CSSProperties } from 'react'
 
+import { faPatient, faPatientadd, faPatients } from './custom'
 import { IconType } from './interfaces'
 
+library.add(faPatient, faPatientadd, faPatients)
 // maps between hospital run icon names and font awesome
 const iconMap = {
   add: 'plus',
@@ -22,10 +24,10 @@ const iconMap = {
   logout: 'sign-out-alt',
   medication: 'pills',
   menu: 'bars',
-  patient: 'user',
-  'patient-add': 'user-plus',
+  patient: 'patient',
+  'patient-add': 'patient-add',
   'patient-remove': 'user-minus',
-  patients: 'users',
+  patients: 'patients',
   remove: 'minus',
   'right-arrow': 'chevron-right',
   save: 'save',
