@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/HospitalRun/components/compare/v1.15.0...v1.16.0) (2020-07-17)
+
+
+### Features
+
+* **callout:** add a callout component ([#519](https://github.com/HospitalRun/components/issues/519)) ([e0410a8](https://github.com/HospitalRun/components/commit/e0410a8e5256a9d96914e8984367a07f271432ec))
+
 # [1.15.0](https://github.com/HospitalRun/components/compare/v1.14.3...v1.15.0) (2020-07-08)
 
 
