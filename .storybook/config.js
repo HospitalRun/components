@@ -1,7 +1,6 @@
 import React from 'react'
 import { configure, addParameters, addDecorator } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import { configureReadme } from 'storybook-readme'
 import { create } from '@storybook/theming'
 
 addDecorator(withInfo)
