@@ -44,6 +44,24 @@ function Select<T>(props: Props<T>) {
       multiple={multiple}
       disabled={disabled}
       isInvalid={isInvalid}
+      filterBy={(option: SelectOption<T>, selectProps: any) => {
+        // per https://github.com/HospitalRun/components/issues/517
+        // change component default behavior
+        // multiple - filter-out current selections
+        const isMatch = option.label.toLowerCase().indexOf(selectProps.text.toLowerCase()) !== -1
+        if (selectProps.selected.length && selectProps.multiple) {
+          return selectProps.selected.every(
+            (selected: any) => selected.label !== option.label && isMatch,
+          )
+        }
+        // single (custom)- display all options
+        if (selectProps.selected.length) {
+          return true
+        }
+        // default filter as normal
+
+        return isMatch
+      }}
     />
   )
 }
