@@ -126,7 +126,6 @@
     "sass-loader": "~9.0.2",
     "semantic-release": "~17.1.0",
     "sinon": "~9.0.0",
-    "storybook-readme": "~5.0.8",
     "tsdx": "~0.13.2",
     "tslib": "~2.0.0",
     "typescript": "~3.8.2"
