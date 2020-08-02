@@ -55,4 +55,14 @@ describe('Select', () => {
     const lis = ulWrapper.find('li')
     expect(lis).toHaveLength(3)
   })
+
+  it('Single select displays all provided options (w/o filtering), even after a selection is made', () => {
+    const selectWrapper = mount(<Select id="id" options={options} defaultSelected={[options[0]]} />)
+    const inputWrapper = selectWrapper.find('input').at(0)
+    inputWrapper.simulate('click')
+
+    const ulWrapper = selectWrapper.find('ul')
+    const lis = ulWrapper.find('li')
+    expect(lis).toHaveLength(3)
+  })
 })
