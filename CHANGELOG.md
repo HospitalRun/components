@@ -1,3 +1,15 @@
+## [1.16.1](https://github.com/HospitalRun/components/compare/v1.16.0...v1.16.1) (2020-08-02)
+
+
+### Bug Fixes
+
+* **select.tsx:** change default behavior - single not displaying all options after a selection made ([896d674](https://github.com/HospitalRun/components/commit/896d67481b3cc4e5abfc63f4ec6e02f21d992274)), closes [#517](https://github.com/HospitalRun/components/issues/517)
+
+
+### Reverts
+
+* **storybook:** remove wrong files ([c47eb80](https://github.com/HospitalRun/components/commit/c47eb80a005601d2d3283308f44dda89502c2668))
+
 # [1.16.0](https://github.com/HospitalRun/components/compare/v1.15.0...v1.16.0) (2020-07-17)
 
 
