@@ -4,7 +4,7 @@ import { ButtonVariant } from 'src/interfaces'
 import { Button } from '../Button'
 
 interface Row {
-  [key: string]: any
+  [key: string]: unknown
 }
 
 interface Props<T extends Row> {
