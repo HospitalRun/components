@@ -9,3 +9,7 @@
 /* Other CSS Imports */
 
 @import '~react-toastify/dist/ReactToastify.min.css';
+
+/* all scss files in src/components should be imported here */
+@import "../src/components/Toaster/toaster.scss";
+@import "../src/components/Callout/callout.scss";
