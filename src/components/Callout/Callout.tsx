@@ -2,7 +2,6 @@ import classNames from 'classnames'
 import React, { CSSProperties } from 'react'
 
 import { ColorVariant } from '../../interfaces'
-import './callout.scss'
 
 interface Props {
   /**
@@ -38,7 +37,7 @@ export const Callout = ({
   return (
     <div className={calloutClass} style={style}>
       {title ? <h4>{title}</h4> : null}
-      {children}
+      {children}s
     </div>
   )
 }

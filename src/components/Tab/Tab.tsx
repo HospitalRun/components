@@ -33,6 +33,7 @@ const Tab = (props: Props) => {
         icon={icon}
         iconLocation={iconLocation}
       >
+        as
         {label}
       </Button>
     </li>
