@@ -1,4 +1,4 @@
-@import "../../../scss/_variables";
+@import "./_variables";
 
 div.Toastify__toast.Toastify__toast--error {
   background: map-get($theme-colors, error);
