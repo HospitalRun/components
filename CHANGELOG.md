@@ -1,3 +1,24 @@
+## [2.0.1](https://github.com/HospitalRun/components/compare/v2.0.0...v2.0.1) (2020-09-08)
+
+
+### Bug Fixes
+
+* import scss files from components into main.scss ([edd8824](https://github.com/HospitalRun/components/commit/edd8824746fd9ac8b56dddf05842759d440750e3))
+
+# [2.0.0](https://github.com/HospitalRun/components/compare/v1.16.1...v2.0.0) (2020-09-07)
+
+
+### Features
+
+* 🎸 Adds addon-docs ([1bbf623](https://github.com/HospitalRun/components/commit/1bbf623597d74cfb80598d476be81b3418e47836))
+
+
+### BREAKING CHANGES
+
+* 🧨 addon-info is replaced by addon-docs.
+
+✅ Closes: 531
+
 ## [1.16.1](https://github.com/HospitalRun/components/compare/v1.16.0...v1.16.1) (2020-08-02)
 
 
