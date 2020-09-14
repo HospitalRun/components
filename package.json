@@ -11,7 +11,8 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "scss"
+    "scss",
+    "!main.scss"
   ],
   "repository": {
     "type": "git",
