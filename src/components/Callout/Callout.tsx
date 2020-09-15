@@ -3,6 +3,8 @@ import React, { CSSProperties } from 'react'
 
 import { ColorVariant } from '../../interfaces'
 
+import './callout.scss'
+
 interface Props {
   /**
    * Defines the title of the callout.
