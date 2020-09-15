@@ -2,6 +2,7 @@ import classNames from 'classnames'
 import React, { CSSProperties } from 'react'
 
 import { ColorVariant } from '../../interfaces'
+
 import './callout.scss'
 
 interface Props {

@@ -12,10 +12,12 @@ module.exports = {
             preset: 'default',
           }),
         ],
-        inject: false,
-        // only write out CSS for the first bundle (avoids pointless extra files):
-        extract: !!options.writeMeta,
-        modules: true,
+        // inject SCSS as <style> into <head>
+        // including bootstrap styles
+        // to skip shipping & references of .scss files  
+        inject: true,
+        // to reuse bs4 and other package css styles
+        modules: false,
       }),
     )
     return config

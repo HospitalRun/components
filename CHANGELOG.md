@@ -1,3 +1,23 @@
+# [3.0.0](https://github.com/HospitalRun/components/compare/v2.0.1...v3.0.0) (2020-09-15)
+
+
+### Bug Fixes
+
+* **component:** ship components package with header injected styles ([afee9ff](https://github.com/HospitalRun/components/commit/afee9ffae8adb39efa89ec3040061150300d2e90)), closes [#254](https://github.com/HospitalRun/components/issues/254) [#569](https://github.com/HospitalRun/components/issues/569) [#254](https://github.com/HospitalRun/components/issues/254) [#569](https://github.com/HospitalRun/components/issues/569)
+
+
+### BREAKING CHANGES
+
+* **component:** we skip shipping & referencing of main.scss files. Now that there's no need for a
+.scss references in the front-end, the main.scss reference in the front-end must be removed.
+
+## [2.0.1](https://github.com/HospitalRun/components/compare/v2.0.0...v2.0.1) (2020-09-08)
+
+
+### Bug Fixes
+
+* import scss files from components into main.scss ([edd8824](https://github.com/HospitalRun/components/commit/edd8824746fd9ac8b56dddf05842759d440750e3))
+
 # [2.0.0](https://github.com/HospitalRun/components/compare/v1.16.1...v2.0.0) (2020-09-07)
 
 
