@@ -49,6 +49,40 @@ interface Props {
    * Styilng through inline CSSProperties
    */
   style?: CSSProperties
+  /**
+   * Include a backdrop component. Specify 'static' for a backdrop that doesn't trigger an "onHide" when clicked. Default = true
+   */
+  backdrop?: true | false | 'static'
+  /**
+   * Callback fired before the Modal transitions in
+   * @param node
+   */
+  onEnter?(node: HTMLElement): any
+  /**
+   * Callback fired after the Modal finishes transitioning in
+   * @param node
+   */
+  onEntered?(node: HTMLElement): any
+  /**
+   * Callback fired as the Modal begins to transition in
+   * @param node
+   */
+  onEntering?(node: HTMLElement): any
+  /**
+   * Callback fired right before the Modal transitions out
+   * @param node
+   */
+  onExit?(node: HTMLElement): any
+  /**
+   * Callback fired after the Modal finishes transitioning out
+   * @param node
+   */
+  onExited?(node: HTMLElement): any
+  /**
+   * Callback fired as the Modal begins to transition out
+   * @param node
+   */
+  onExiting?(node: HTMLElement): any
 }
 
 /**
@@ -69,18 +103,32 @@ const Modal = (props: Props) => {
     successButton,
     className,
     style,
+    backdrop,
+    onEnter,
+    onEntered,
+    onEntering,
+    onExit,
+    onExited,
+    onExiting,
   } = props
 
   return (
     <BootstrapModal
       dialogClassName={className}
+      show={show}
       style={style}
       autoFocus
       centered={verticallyCentered}
       keyboard
       restoreFocus
-      show={show}
       onHide={() => toggle()}
+      backdrop={backdrop || true}
+      onEnter={onEnter}
+      onEntered={onEntered}
+      onEntering={onEntering}
+      onExit={onExit}
+      onExited={onExited}
+      onExiting={onExiting}
     >
       {(showHeaderCloseButton === false ? title : true) && (
         <BootstrapModal.Header closeButton={showHeaderCloseButton !== false}>
