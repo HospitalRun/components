@@ -16,6 +16,7 @@ storiesOf('Modal', module)
   ))
   .add('Simple modal', () => {
     const [show, setShow] = useState(false)
+    const [log, setLog] = useState('')
     return (
       <div style={{ textAlign: 'center' }}>
         <Button color="info" onClick={() => setShow(!show)}>
@@ -25,6 +26,12 @@ storiesOf('Modal', module)
           show={show}
           toggle={() => setShow(!show)}
           title="This is a modal title!"
+          onEnter={() => setLog(`${log}\n${new Date().toLocaleTimeString()}: onEnter`)}
+          onEntered={() => setLog(`${log}\n${new Date().toLocaleTimeString()}: onEntered`)}
+          onEntering={() => setLog(`${log}\n${new Date().toLocaleTimeString()}: onEntering`)}
+          onExit={() => setLog(`${log}\n${new Date().toLocaleTimeString()}: onExit`)}
+          onExited={() => setLog(`${log}\n${new Date().toLocaleTimeString()}: onExited`)}
+          onExiting={() => setLog(`${log}\n${new Date().toLocaleTimeString()}: onExiting`)}
           body={
             <div>
               <p>And this is a modal body.</p>
@@ -36,11 +43,15 @@ storiesOf('Modal', module)
           closeButton={{
             children: 'Close me',
             onClick: () => {
-              console.log('clicked close')
+              setLog(`${log}\n${new Date().toLocaleTimeString()}: onclicked close`)
               setShow(!show)
             },
           }}
         />
+        <div style={{ textAlign: 'left' }}>
+          <h3>Log:</h3>
+          <pre style={{ border: '1px solid black' }}>{log}</pre>
+        </div>
       </div>
     )
   })
