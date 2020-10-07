@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/HospitalRun/components/compare/v3.0.0...v3.0.1) (2020-09-23)
+
+
+### Bug Fixes
+
+* **modal:** improve modal components ([#597](https://github.com/HospitalRun/components/issues/597)) ([ce2736a](https://github.com/HospitalRun/components/commit/ce2736ad275ad11c70ab47f1a0dd94955391f136))
+
 # [3.0.0](https://github.com/HospitalRun/components/compare/v2.0.1...v3.0.0) (2020-09-15)
 
 
