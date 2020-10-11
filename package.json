@@ -147,7 +147,7 @@
     "chart.js": "~2.9.3",
     "classnames": "~2.2.6",
     "date-fns": "~2.16.0",
-    "formik": "~2.1.0",
+    "formik": "~2.2.0",
     "lodash": "~4.17.19",
     "moment": "~2.29.0",
     "react-bootstrap-typeahead": "^4.2.3",
