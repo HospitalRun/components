@@ -3,6 +3,8 @@ import React from 'react'
 
 import { Navbar, Toaster, Toast } from '../src'
 
+const navBarIcon = 'https://avatars2.githubusercontent.com/u/6797041'
+
 storiesOf('Navbar', module)
   .addParameters({
     info: {
@@ -21,8 +23,7 @@ storiesOf('Navbar', module)
       navItems={[
         {
           type: 'image',
-          src:
-            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          src: navBarIcon,
           onClick: () => {
             Toast('success', 'Icon clicked!!', 'Success')
           },
@@ -68,8 +69,7 @@ storiesOf('Navbar', module)
       navItems={[
         {
           type: 'image',
-          src:
-            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          src: navBarIcon,
           onClick: () => {
             Toast('success', 'Icon clicked!!', 'Success')
           },
@@ -132,8 +132,7 @@ storiesOf('Navbar', module)
       navItems={[
         {
           type: 'image',
-          src:
-            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          src: navBarIcon,
           onClick: () => {
             Toast('success', 'Icon clicked!!', 'Success')
           },
@@ -322,8 +321,7 @@ storiesOf('Navbar', module)
         },
         {
           type: 'image',
-          src:
-            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          src: navBarIcon,
           onClick: () => {
             Toast('success', 'Icon clicked!!', 'Success')
           },
@@ -353,8 +351,7 @@ storiesOf('Navbar', module)
         },
         {
           type: 'image',
-          src:
-            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          src: navBarIcon,
           onClick: () => {
             Toast('success', 'Icon clicked!!', 'Success')
           },
@@ -395,8 +392,7 @@ storiesOf('Navbar', module)
       navItems={[
         {
           type: 'image',
-          src:
-            'https://raw.githubusercontent.com/HospitalRun/hospitalrun.github.io/master/favicon.png',
+          src: navBarIcon,
           onClick: () => {
             Toast('success', 'Icon clicked!!', 'Success')
           },
