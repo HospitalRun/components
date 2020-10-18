@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { ButtonVariant } from 'src/interfaces'
 
 import { Button } from '../Button'
 
 interface Row {
-  [key: string]: unknown
+  [key: string]: ReactNode
 }
 
 interface Props<T extends Row> {
