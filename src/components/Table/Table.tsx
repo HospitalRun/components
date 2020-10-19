@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { ButtonVariant } from 'src/interfaces'
 
 import { Button } from '../Button'
 
-type T = { [key: string]: any }
+interface Row {
+  [key: string]: ReactNode
+}
 
-interface Props {
+interface Props<T extends Row> {
   tableClassName: string
   headerClassName: string
   columns: { key: string; label: string; formatter?: (row: T) => React.ReactNode }[]
@@ -16,7 +18,7 @@ interface Props {
   onRowClick?: (row: T) => void
 }
 
-const Table = (props: Props) => {
+function Table<T extends Row>(props: Props<T>) {
   const {
     tableClassName,
     headerClassName,
