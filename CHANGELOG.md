@@ -1,3 +1,10 @@
+## [3.0.2](https://github.com/HospitalRun/components/compare/v3.0.1...v3.0.2) (2020-10-18)
+
+
+### Bug Fixes
+
+* **navbar:** nav bar icon broken ([4369e15](https://github.com/HospitalRun/components/commit/4369e15d99432755b045f17e2d0cbb811ae0780c))
+
 ## [3.0.1](https://github.com/HospitalRun/components/compare/v3.0.0...v3.0.1) (2020-09-23)
 
 
