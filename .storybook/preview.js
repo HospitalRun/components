@@ -8,7 +8,8 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Welcome'], 
+      method: 'alphabetical',
+      order: ['Welcome', ], 
     },
   }
 }
