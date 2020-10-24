@@ -4,6 +4,13 @@ import React from 'react'
 import { Table, Toast, Toaster } from '../src'
 import { ButtonVariant } from '../src/interfaces'
 
+interface Data {
+  id: number
+  name: string
+  phone: string
+  drinks: string[]
+}
+
 storiesOf('Table', module)
   .addParameters({
     info: {
@@ -14,38 +21,33 @@ storiesOf('Table', module)
     <div style={{ marginLeft: '2em', marginRight: '2em' }}>{storyFn()}</div>
   ))
   .add('Demo Table', () => {
-    const ID = 'id'
-    const NAME = 'name'
-    const PHONE = 'phone'
-    const DRINKS = 'drinks'
-
     const getDrinksList = (row: any) => (
       <ul>
-        {row[DRINKS].map((d: string) => (
+        {row.drinks.map((d: string) => (
           <li>{d}</li>
         ))}
       </ul>
     )
 
     const columns = [
-      { key: ID, label: 'ID' },
-      { key: NAME, label: 'Name' },
-      { key: PHONE, label: 'Phone #' },
-      { key: DRINKS, label: 'Drinks?', formatter: getDrinksList },
+      { key: 'id', label: 'ID' },
+      { key: 'name', label: 'Name' },
+      { key: 'phone', label: 'Phone #' },
+      { key: 'drinks', label: 'Drinks?', formatter: getDrinksList },
     ]
 
-    const data = [
+    const data: Data[] = [
       {
-        [ID]: 333,
-        [NAME]: 'Mickey',
-        [PHONE]: '789-777',
-        [DRINKS]: ['milk', 'tea'],
+        id: 333,
+        name: 'Mickey',
+        phone: '789-777',
+        drinks: ['milk', 'tea'],
       },
       {
-        [ID]: 777,
-        [NAME]: 'Minnie',
-        [PHONE]: '333-123',
-        [DRINKS]: ['water', 'coffee'],
+        id: 777,
+        name: 'Minnie',
+        phone: '333-123',
+        drinks: ['water', 'coffee'],
       },
     ]
 
@@ -53,23 +55,23 @@ storiesOf('Table', module)
       {
         label: 'Edit',
         action: (row: any) => {
-          Toast('info', 'an edit clicked', `will edit ID=${row[ID]}`)
+          Toast('info', 'an edit clicked', `will edit ID=${row.id}`)
         },
         buttonColor: 'info' as ButtonVariant,
       },
       {
         label: 'Delete',
         action: (row: any) => {
-          Toast('error', 'a delete clicked', `will delete ID=${row[ID]}`)
+          Toast('error', 'a delete clicked', `will delete ID=${row.id}`)
         },
         buttonColor: 'danger' as ButtonVariant,
       },
     ]
 
-    const getID = (row: any) => row[ID]
+    const getID = (row: any): string => row.id
 
     const onRowClick = (row: any) => {
-      Toast('success', 'a row clicked', `${row[NAME]} @ ${row[PHONE]}`)
+      Toast('success', 'a row clicked', `${row.name} @ ${row.phone}`)
     }
 
     return (
