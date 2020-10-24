@@ -1,13 +1,9 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { ButtonVariant } from 'src/interfaces'
 
 import { Button } from '../Button'
 
-interface Row {
-  [key: string]: ReactNode
-}
-
-interface Props<T extends Row> {
+interface Props<T> {
   tableClassName: string
   headerClassName: string
   columns: { key: string; label: string; formatter?: (row: T) => React.ReactNode }[]
@@ -18,7 +14,7 @@ interface Props<T extends Row> {
   onRowClick?: (row: T) => void
 }
 
-function Table<T extends Row>(props: Props<T>) {
+function Table<T>(props: Props<T>) {
   const {
     tableClassName,
     headerClassName,
@@ -35,7 +31,7 @@ function Table<T extends Row>(props: Props<T>) {
       <thead className={headerClassName}>
         <tr>
           {columns.map((column) => (
-            <th key={column.key}>{column.label}</th>
+            <th key={column.key as string}>{column.label}</th>
           ))}
           {actions ? <th>{actionsHeaderText}</th> : null}
         </tr>
@@ -52,7 +48,7 @@ function Table<T extends Row>(props: Props<T>) {
             }}
           >
             {columns.map((column) => {
-              const content = !column.formatter ? row[column.key] : column.formatter(row)
+              const content = !column.formatter ? row[column.key as keyof T] : column.formatter(row)
               return <td key={`${column.key}-${getID(row)}`}>{content}</td>
             })}
 

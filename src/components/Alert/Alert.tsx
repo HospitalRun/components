@@ -4,7 +4,7 @@ import BootstrapAlert from 'react-bootstrap/Alert'
 import { ColorVariant } from '../../interfaces'
 import { Button } from '../Button'
 
-interface Props {
+export interface AlertProps {
   /**
    * Defines the color of the alert. Defaults to primary.
    * @default "primary"
@@ -48,8 +48,8 @@ interface State {
  * with the handful of available and flexible alert messages.
  */
 
-class Alert extends Component<Props, State> {
-  constructor(props: Props) {
+class Alert extends Component<AlertProps, State> {
+  constructor(props: AlertProps) {
     super(props)
     this.state = {
       show: true,

@@ -1,3 +1,10 @@
+## [3.0.3](https://github.com/HospitalRun/components/compare/v3.0.2...v3.0.3) (2020-10-24)
+
+
+### Bug Fixes
+
+* **table:** fix table types ([e6727ab](https://github.com/HospitalRun/components/commit/e6727abf35ca3f23b72fba28c2bbd490a6fae57b))
+
 ## [3.0.2](https://github.com/HospitalRun/components/compare/v3.0.1...v3.0.2) (2020-10-18)
 
 
