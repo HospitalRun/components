@@ -6,8 +6,7 @@ import { Icon } from '../Icon'
 import { IconType } from '../Icon/interfaces'
 import { ButtonType } from './interfaces'
 
-export interface Props {
-  /** Determines if the button should be outlined and not filled. By defaut is false */
+export interface ButtonProps {
   outlined?: boolean
   /** Defines the button variant. By default is primary */
   color?: ButtonVariant
