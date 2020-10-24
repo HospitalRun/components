@@ -6,6 +6,17 @@ import { Alert, AlertProps } from '../src'
 export default {
   title: 'Alert',
   component: Alert,
+  argTypes: {
+    color: {
+      control: {
+        type: 'select',
+        options: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'dark'],
+      },
+    },
+    dismissible: {
+      type: 'boolean',
+    },
+  },
   decorators: [],
 } as Meta
 // your templates and stories
