@@ -3,8 +3,11 @@ import BootstrapBadge from 'react-bootstrap/Badge'
 
 import { ColorVariant } from '../../interfaces'
 
-interface Props {
-  /** Defines the color of the badge. Defaults to primary. */
+export interface BadgeProps {
+  /**
+   * Defines the color of the badge. Defaults to primary.
+   * @default "primary"
+   */
   color?: ColorVariant
   /** The children to render */
   children?: React.ReactNode
@@ -18,7 +21,7 @@ interface Props {
  * Badges can provide contextual clues to the user by differentiating color and styling
  * from the surrounding content.
  */
-const Badge = (props: Props) => {
+const Badge = (props: BadgeProps) => {
   const { color, children, className, style } = props
   return (
     <BootstrapBadge variant={color} className={className} style={style}>

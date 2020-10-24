@@ -6,13 +6,7 @@ import { Alert, AlertProps } from '../src'
 export default {
   title: 'Alert',
   component: Alert,
-  decorators: [
-    (St) => (
-      <div style={{ margin: '3em' }}>
-        <St />
-      </div>
-    ),
-  ],
+  decorators: [],
 } as Meta
 // your templates and stories
 
