@@ -2,7 +2,7 @@
 import React, { ReactNode, CSSProperties } from 'react'
 import BootstrapModal from 'react-bootstrap/Modal'
 
-import { Button, Props as ButtonProps } from '../Button'
+import { Button, ButtonProps } from '../Button'
 import { ButtonsAlignment } from './interfaces'
 
 interface Props {
