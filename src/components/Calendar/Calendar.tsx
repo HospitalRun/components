@@ -13,7 +13,7 @@ import '@fullcalendar/timegrid/main.css'
 
 type View = 'day' | 'month' | 'week'
 
-interface Props {
+export interface CalendarProps {
   view: View
   views: View[]
   events: Event[]
@@ -51,7 +51,7 @@ const getViewsFromViewsProp = (views: View[]) => {
   return viewsString.slice(0, viewsString.length - 1)
 }
 
-const Calendar = (props: Props) => {
+const Calendar = (props: CalendarProps) => {
   const {
     view,
     views,

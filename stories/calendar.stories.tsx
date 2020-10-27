@@ -1,57 +1,61 @@
-import { storiesOf } from '@storybook/react'
+import { Story, Meta } from '@storybook/react/types-6-0'
 import moment from 'moment'
 import React from 'react'
 
-import { Calendar, Toast, Toaster } from '../src'
+import { Calendar, CalendarProps, Toast, Toaster } from '../src'
 
-storiesOf('Calendar', module)
-  .addParameters({
-    info: {
-      inline: true,
+export default {
+  title: 'Calendar',
+  component: Calendar,
+  argTypes: {
+    children: {
+      control: 'text',
     },
-  })
-  .addDecorator((storyFn) => <div style={{ textAlign: 'center' }}>{storyFn()}</div>)
-  .add('Calendar', () => {
-    const start = moment()
-    const end = start.add(1, 'hours')
-    return (
-      <div>
-        <Calendar
-          onDateClick={(date, allDay) => {
-            console.log('from story')
-            Toast('success', 'Date Click', `${date.toISOString()} all day is ${allDay}`)
-          }}
-          onEventClick={(event) => {
-            Toast('success', 'Event Click', event.title)
-          }}
-          onDateRangeSelected={(startDate: Date, endDate: Date) => {
-            Toast(
-              'success',
-              'Range Selected',
-              `${startDate.toISOString()} to ${endDate.toISOString()}`,
-            )
-          }}
-          onPrevClick={() => {
-            Toast('success', 'previous clicked')
-          }}
-          onNextClick={() => {
-            Toast('success', 'next clicked')
-          }}
-          onTodayClick={() => {
-            Toast('success', 'today clicked')
-          }}
-          events={[
-            {
-              start: start.toDate(),
-              end: end.toDate(),
-              title: 'Some Title',
-              id: 'Some Id',
-              allDay: false,
-            },
-          ]}
-        />
+  },
+  decorators: [],
+} as Meta
 
-        <Toaster autoClose={800} hideProgressBar draggable />
-      </div>
-    )
-  })
+const start = moment()
+const hours = 1
+const end = moment().add(hours, 'hours')
+
+const Template: Story<CalendarProps> = (args) => (
+  <div>
+    <Calendar {...args} />
+    <Toaster autoClose={800} hideProgressBar draggable />
+  </div>
+)
+
+// main story tha's editable and has the docs for the props
+export const Main = Template.bind({})
+Main.args = {
+  onDateClick: (date, allDay) => {
+    console.log('from story')
+    Toast('success', 'Date Click', `${date.toISOString()} all day is ${allDay}`)
+  },
+  onEventClick: (event) => {
+    Toast('success', 'Event Click', event.title)
+  },
+  onDateRangeSelected: (startDate: Date, endDate: Date) => {
+    Toast('success', 'Range Selected', `${startDate.toISOString()} to ${endDate.toISOString()}`)
+  },
+  onPrevClick: () => {
+    Toast('success', 'previous clicked')
+  },
+  onNextClick: () => {
+    Toast('success', 'next clicked')
+  },
+  onTodayClick: () => {
+    console.log('on today click')
+    Toast('success', 'today clicked')
+  },
+  events: [
+    {
+      start: start.toDate(),
+      end: end.toDate(),
+      title: 'Some Title',
+      id: 'Some Id',
+      allDay: false,
+    },
+  ],
+}
