@@ -1,11 +1,11 @@
 import classNames from 'classnames'
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, ReactElement } from 'react'
 
 import { ColorVariant } from '../../interfaces'
 
 import './callout.scss'
 
-interface Props {
+export interface CalloutProps {
   /**
    * Defines the title of the callout.
    */
@@ -34,7 +34,7 @@ export const Callout = ({
   children,
   className,
   style,
-}: Props): React.ReactElement => {
+}: CalloutProps): ReactElement => {
   const calloutClass = classNames(className, 'callout', `callout-${color}`)
   return (
     <div className={calloutClass} style={style}>
