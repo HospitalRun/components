@@ -1,4 +1,3 @@
-// import { storiesOf } from '@storybook/react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 import React from 'react'
 
@@ -25,7 +24,7 @@ export default {
 // We create a “template” of how args map to rendering
 const Template: Story<CalloutProps> = (args) => <Callout {...args} />
 
-// main story tha's editable and has the docs for the props
+// main story that's editable and has the docs for the props
 export const Main = Template.bind({})
 Main.args = {
   title: 'Main Story Title',
@@ -34,7 +33,6 @@ Main.args = {
 }
 
 // Rest of the stories
-
 export const Primary = Template.bind({})
 Primary.args = {
   title: 'Primary Callout',
