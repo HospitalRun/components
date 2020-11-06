@@ -26,7 +26,7 @@ const Template: Story<CalendarProps> = (args) => (
   </div>
 )
 
-// main story tha's editable and has the docs for the props
+// main story that's editable and has the docs for the props
 export const Main = Template.bind({})
 Main.args = {
   onDateClick: (date, allDay) => {
