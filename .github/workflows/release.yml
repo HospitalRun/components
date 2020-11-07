@@ -13,11 +13,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
       - name: Install dependencies
         run: npm install
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.BOT_PAT }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}  
-        run: npx semantic-release          
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
