@@ -24,7 +24,7 @@ export default {
 // We create a “template” of how args map to rendering
 const Template: Story<AlertProps> = (args) => <Alert {...args} />
 
-// main story tha's editable and has the docs for the props
+// main story that's editable and has the docs for the props
 export const Main = Template.bind({})
 Main.args = {
   color: 'primary',
