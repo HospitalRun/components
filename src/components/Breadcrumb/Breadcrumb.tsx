@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react'
 import BootstrapBreadcrumb from 'react-bootstrap/Breadcrumb'
 
-interface Props {
+export interface BreadcrumbProps {
   /** The children to render */
   children?: React.ReactNode
   /**
@@ -13,7 +13,8 @@ interface Props {
    */
   style?: CSSProperties
 }
-const Breadcrumb = (props: Props) => {
+
+const Breadcrumb = (props: BreadcrumbProps) => {
   const { children, className, style } = props
 
   return (
