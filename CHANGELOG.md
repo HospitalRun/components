@@ -1,3 +1,14 @@
+## [3.0.4](https://github.com/HospitalRun/components/compare/v3.0.3...v3.0.4) (2020-11-08)
+
+
+### Bug Fixes
+
+* **alert:** fix typo ([c1ff13a](https://github.com/HospitalRun/components/commit/c1ff13a0ad399a777f11c171101847b1d556e142))
+* **breadcrumb:** rename the props ([f5692e6](https://github.com/HospitalRun/components/commit/f5692e6c2a1f294f9e666e37babb8af566f6d89f))
+* **calendar:** fix the callendar story ([9a3973f](https://github.com/HospitalRun/components/commit/9a3973f5744e030ed17bcd27db681928ae644db6))
+* **callout:** fix sb docs page ([5983028](https://github.com/HospitalRun/components/commit/598302854c4c6af284245dae3d12ab29a1f7d2e3))
+* **callout:** remove comment and fix typo ([b5f80ad](https://github.com/HospitalRun/components/commit/b5f80ad7ccd9aa77f36dd1b5b6522a9853032e5c))
+
 ## [3.0.3](https://github.com/HospitalRun/components/compare/v3.0.2...v3.0.3) (2020-10-24)
 
 
