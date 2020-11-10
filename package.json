@@ -92,7 +92,7 @@
     "autoprefixer": "~9.8.0",
     "awesome-typescript-loader": "~5.2.1",
     "babel-jest": "~24.9.0",
-    "babel-loader": "~8.1.0",
+    "babel-loader": "~8.2.0",
     "bootstrap": "~4.5.0",
     "commitizen": "~4.2.0",
     "commitlint-config-cz": "0.13.2",
