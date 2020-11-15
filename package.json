@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -92,7 +92,7 @@
     "autoprefixer": "~9.8.0",
     "awesome-typescript-loader": "~5.2.1",
     "babel-jest": "~24.9.0",
-    "babel-loader": "~8.1.0",
+    "babel-loader": "~8.2.0",
     "bootstrap": "~4.5.0",
     "commitizen": "~4.2.0",
     "commitlint-config-cz": "0.13.2",
@@ -122,7 +122,7 @@
     "react-dom": "~16.14.0",
     "react-is": "~16.13.1",
     "rollup-plugin-postcss": "~3.1.1",
-    "sass-loader": "~10.0.0",
+    "sass-loader": "~10.1.0",
     "semantic-release": "~17.2.0",
     "sinon": "~9.2.0",
     "tsdx": "~0.14.0",
