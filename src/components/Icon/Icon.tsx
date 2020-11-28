@@ -5,9 +5,11 @@ import React, { CSSProperties } from 'react'
 import { IconType } from './interfaces'
 
 // importing custom svg icons
-const AddPatientSVG = require('./custom/add-patient.svg') as string
-const PatientSVG = require('./custom/patient.svg') as string
-const PatientsSVG = require('./custom/patients.svg') as string
+const customIconPaths: Map<string, any> = new Map<string, any>([
+  ['custom-add-patient', require('./custom/add-patient.svg')],
+  ['custom-patient', require('./custom/patient.svg')],
+  ['custom-patients', require('./custom/patients.svg')],
+])
 
 // maps between hospital run icon names and font awesome
 const iconMap = {
@@ -42,15 +44,6 @@ function getFontAwesomeIcon(icon: IconType): string {
   return iconMap[icon]
 }
 
-/**
- * Loops through to get custom icons
- */
-const customIcons: Map<string, any> = new Map<string, any>([
-  ['custom-patients', PatientsSVG],
-  ['custom-patient', PatientSVG],
-  ['custom-add-patient', AddPatientSVG],
-])
-
 interface Props {
   /** The type of icon to display */
   icon: IconType
@@ -84,7 +77,7 @@ const Icon = (props: Props) => {
         onClick={onClick}
         style={style}
         aria-hidden
-        src={customIcons.get(faIconName)}
+        src={customIconPaths.get(faIconName)}
         alt={faIconName.slice(7)}
         className={className}
       />
