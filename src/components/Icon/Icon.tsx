@@ -4,6 +4,11 @@ import React, { CSSProperties } from 'react'
 
 import { IconType } from './interfaces'
 
+// importing custom svg icons
+const AddPatientSVG = require('./custom/add-patient.svg') as string
+const PatientSVG = require('./custom/patient.svg') as string
+const PatientsSVG = require('./custom/patients.svg') as string
+
 // maps between hospital run icon names and font awesome
 const iconMap = {
   add: 'plus',
@@ -22,10 +27,10 @@ const iconMap = {
   logout: 'sign-out-alt',
   medication: 'pills',
   menu: 'bars',
-  patient: 'user',
-  'patient-add': 'user-plus',
+  patient: 'custom-patient',
+  'patient-add': 'custom-add-patient',
   'patient-remove': 'user-minus',
-  patients: 'users',
+  patients: 'custom-patients',
   remove: 'minus',
   'right-arrow': 'chevron-right',
   save: 'save',
@@ -36,6 +41,15 @@ const iconMap = {
 function getFontAwesomeIcon(icon: IconType): string {
   return iconMap[icon]
 }
+
+/**
+ * Loops through to get custom icons
+ */
+const customIcons: Map<string, any> = new Map<string, any>([
+  ['custom-patients', PatientsSVG],
+  ['custom-patient', PatientSVG],
+  ['custom-add-patient', AddPatientSVG],
+])
 
 interface Props {
   /** The type of icon to display */
@@ -63,6 +77,19 @@ const Icon = (props: Props) => {
   const iconPrefix = (outline ? 'far' : 'fas') as IconPrefix
   const faIconName = getFontAwesomeIcon(icon) as IconName
 
+  // Handling custom icons
+  if (faIconName.startsWith('custom')) {
+    return (
+      <img
+        onClick={onClick}
+        style={style}
+        aria-hidden
+        src={customIcons.get(faIconName)}
+        alt={faIconName.slice(7)}
+        className={className}
+      />
+    )
+  }
   return (
     <FontAwesomeIcon
       onClick={onClick}
