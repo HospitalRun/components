@@ -6,9 +6,9 @@ import { IconType } from './interfaces'
 
 // importing custom svg icons
 const customIconPaths: Map<string, any> = new Map<string, any>([
-  ['custom-add-patient', require('./custom/add-patient.svg')],
-  ['custom-patient', require('./custom/patient.svg')],
-  ['custom-patients', require('./custom/patients.svg')],
+  ['user-plus', require('./custom/add-patient.svg')],
+  ['user', require('./custom/patient.svg')],
+  ['users', require('./custom/patients.svg')],
 ])
 
 // maps between hospital run icon names and font awesome
@@ -29,10 +29,10 @@ const iconMap = {
   logout: 'sign-out-alt',
   medication: 'pills',
   menu: 'bars',
-  patient: 'custom-patient',
-  'patient-add': 'custom-add-patient',
+  patient: 'user',
+  'patient-add': 'user-plus',
   'patient-remove': 'user-minus',
-  patients: 'custom-patients',
+  patients: 'users',
   remove: 'minus',
   'right-arrow': 'chevron-right',
   save: 'save',
@@ -71,7 +71,7 @@ const Icon = (props: Props) => {
   const faIconName = getFontAwesomeIcon(icon) as IconName
 
   // Handling custom icons
-  if (faIconName.startsWith('custom')) {
+  if (customIconPaths.has(faIconName)) {
     return (
       <img
         onClick={onClick}
