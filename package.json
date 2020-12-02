@@ -142,7 +142,7 @@
     "@fullcalendar/timegrid": "~4.4.2",
     "@tinymce/tinymce-react": "~3.7.0",
     "@types/classnames": "~2.2.10",
-    "@types/react-bootstrap-typeahead": "^3.4.6",
+    "@types/react-bootstrap-typeahead": "^5.1.0",
     "@types/react-datepicker": "~3.1.0",
     "chart.js": "~2.9.3",
     "classnames": "~2.2.6",
