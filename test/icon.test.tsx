@@ -107,14 +107,12 @@ describe('Icon', () => {
 
   it('Patient Icons renders themselves without crashing', () => {
     const patientWrapperWrapper = shallow(<Icon icon="patient" />)
-    const patientFontAwesomeIcon = patientWrapperWrapper.find(FontAwesomeIcon)
-    expect(patientFontAwesomeIcon).toHaveLength(0)
-    // expect(patientFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'user'])
+    const patientFontAwesomeIcon = patientWrapperWrapper.find('img')
+    expect(patientFontAwesomeIcon).toHaveLength(1)
 
     const patientAddWrapper = shallow(<Icon icon="patient-add" />)
-    const patientAddFontAwesomeIcon = patientAddWrapper.find(FontAwesomeIcon)
-    expect(patientAddFontAwesomeIcon).toHaveLength(0)
-    // expect(patientAddFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'user-plus'])
+    const patientAddFontAwesomeIcon = patientAddWrapper.find('img')
+    expect(patientAddFontAwesomeIcon).toHaveLength(1)
 
     const patientRemoveWrapper = shallow(<Icon icon="patient-remove" />)
     const patientRemoveFontAwesomeIcon = patientRemoveWrapper.find(FontAwesomeIcon)
@@ -122,16 +120,14 @@ describe('Icon', () => {
     expect(patientRemoveFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'user-minus'])
 
     const addIconWrapper = shallow(<Icon icon="patient" outline />)
-    const fontAwesomeIcon = addIconWrapper.find(FontAwesomeIcon)
-    expect(fontAwesomeIcon).toHaveLength(0)
-    // expect(fontAwesomeIcon.props().icon).toStrictEqual(['far', 'user'])
+    const fontAwesomeIcon = addIconWrapper.find('img')
+    expect(fontAwesomeIcon).toHaveLength(1)
   })
 
   it('Patients Icon renders itself without crashing', () => {
     const patientsIconWrapper = shallow(<Icon icon="patients" />)
-    const fontAwesomeIcon = patientsIconWrapper.find(FontAwesomeIcon)
-    expect(fontAwesomeIcon).toHaveLength(0)
-    // expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'users'])
+    const fontAwesomeIcon = patientsIconWrapper.find('img')
+    expect(fontAwesomeIcon).toHaveLength(1)
   })
 
   it('Remove Icon renders itself without crashing', () => {
