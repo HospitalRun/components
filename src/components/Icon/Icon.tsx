@@ -78,7 +78,7 @@ const Icon = (props: Props) => {
         style={style}
         aria-hidden
         src={customIconPaths.get(faIconName)}
-        alt={faIconName.slice(7)}
+        alt={faIconName}
         className={className}
       />
     )

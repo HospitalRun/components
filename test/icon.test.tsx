@@ -107,12 +107,14 @@ describe('Icon', () => {
 
   it('Patient Icons renders themselves without crashing', () => {
     const patientWrapperWrapper = shallow(<Icon icon="patient" />)
-    const patientFontAwesomeIcon = patientWrapperWrapper.find('img')
-    expect(patientFontAwesomeIcon).toHaveLength(1)
+    const patientImageIcon = patientWrapperWrapper.find('img')
+    expect(patientImageIcon).toHaveLength(1)
+    expect(patientImageIcon.props().alt).toStrictEqual('user')
 
     const patientAddWrapper = shallow(<Icon icon="patient-add" />)
-    const patientAddFontAwesomeIcon = patientAddWrapper.find('img')
-    expect(patientAddFontAwesomeIcon).toHaveLength(1)
+    const patientAddImageIcon = patientAddWrapper.find('img')
+    expect(patientAddImageIcon).toHaveLength(1)
+    expect(patientAddImageIcon.props().alt).toStrictEqual('user-plus')
 
     const patientRemoveWrapper = shallow(<Icon icon="patient-remove" />)
     const patientRemoveFontAwesomeIcon = patientRemoveWrapper.find(FontAwesomeIcon)
@@ -120,14 +122,16 @@ describe('Icon', () => {
     expect(patientRemoveFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'user-minus'])
 
     const addIconWrapper = shallow(<Icon icon="patient" outline />)
-    const fontAwesomeIcon = addIconWrapper.find('img')
-    expect(fontAwesomeIcon).toHaveLength(1)
+    const addImageIcon = addIconWrapper.find('img')
+    expect(addImageIcon).toHaveLength(1)
+    expect(addImageIcon.props().alt).toStrictEqual('user')
   })
 
   it('Patients Icon renders itself without crashing', () => {
     const patientsIconWrapper = shallow(<Icon icon="patients" />)
-    const fontAwesomeIcon = patientsIconWrapper.find('img')
-    expect(fontAwesomeIcon).toHaveLength(1)
+    const patientsImageIcon = patientsIconWrapper.find('img')
+    expect(patientsImageIcon).toHaveLength(1)
+    expect(patientsImageIcon.props().alt).toStrictEqual('users')
   })
 
   it('Remove Icon renders itself without crashing', () => {
