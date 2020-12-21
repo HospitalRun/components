@@ -46,9 +46,7 @@ Contributions are always welcome. Before contributing please read our [contribut
 
 ## Online one-click setup for contributing
 
-Contribute to HospitalRun using a fully featured online development environment that will automatically: clone the repo, install the dependencies and start the webserver.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/HospitalRun/components)
+Contribute to HospitalRun using [GitHub Codespace](https://github.com/codespaces) a fully featured online development environment that will automatically: clone the repo, install the dependencies and start the webserver.
 
 ## Working on an Issue
 
