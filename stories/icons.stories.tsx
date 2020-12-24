@@ -27,6 +27,9 @@ storiesOf('Icons', module)
       <span>Remove Apointment: </span>
       <Icon icon="appointment-remove" />
       <br />
+      <span>Billing: </span>
+      <Icon icon="billing" />
+      <br />
       <span>Calendar: </span>
       <Icon icon="calendar" />
       <br />

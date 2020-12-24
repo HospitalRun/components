@@ -12,6 +12,7 @@ const iconMap = {
   'appointment-add': 'calendar-plus',
   'appointment-remove': 'calendar-minus',
   calendar: 'calendar-alt',
+  billing: 'file-invoice-dollar',
   dashboard: 'columns',
   'down-arrow': 'chevron-down',
   edit: 'edit',
