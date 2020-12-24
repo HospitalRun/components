@@ -62,6 +62,7 @@ const Icon = (props: Props) => {
   const { icon, outline, className, style, onClick, size } = props
   const iconPrefix = (outline ? 'far' : 'fas') as IconPrefix
   const faIconName = getFontAwesomeIcon(icon) as IconName
+
   return (
     <FontAwesomeIcon
       onClick={onClick}
