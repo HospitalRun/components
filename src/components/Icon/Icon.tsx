@@ -4,13 +4,6 @@ import React, { CSSProperties } from 'react'
 
 import { IconType } from './interfaces'
 
-// importing custom svg icons
-const customIconPaths: Map<string, any> = new Map<string, any>([
-  ['user-plus', require('./custom/add-patient.svg')],
-  ['user', require('./custom/patient.svg')],
-  ['users', require('./custom/patients.svg')],
-])
-
 // maps between hospital run icon names and font awesome
 const iconMap = {
   add: 'plus',
@@ -69,20 +62,6 @@ const Icon = (props: Props) => {
   const { icon, outline, className, style, onClick, size } = props
   const iconPrefix = (outline ? 'far' : 'fas') as IconPrefix
   const faIconName = getFontAwesomeIcon(icon) as IconName
-
-  // Handling custom icons
-  if (customIconPaths.has(faIconName)) {
-    return (
-      <img
-        onClick={onClick}
-        style={style}
-        aria-hidden
-        src={customIconPaths.get(faIconName)}
-        alt={faIconName}
-        className={className}
-      />
-    )
-  }
   return (
     <FontAwesomeIcon
       onClick={onClick}
