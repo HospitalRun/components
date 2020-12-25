@@ -45,6 +45,9 @@ storiesOf('Icons', module)
       <span>Incident: </span>
       <Icon icon="incident" />
       <br />
+      <span>Inventory: </span>
+      <Icon icon="inventory" />
+      <br />
       <span>Lab: </span>
       <Icon icon="lab" />
       <br />

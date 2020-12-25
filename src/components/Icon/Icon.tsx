@@ -18,6 +18,7 @@ const iconMap = {
   edit: 'edit',
   image: 'camera',
   incident: 'file-alt',
+  inventory: 'boxes',
   lab: 'microscope',
   'left-arrow': 'chevron-left',
   logout: 'sign-out-alt',
