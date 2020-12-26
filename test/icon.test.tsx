@@ -37,6 +37,13 @@ describe('Icon', () => {
     expect(removeAppointmentFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'calendar-minus'])
   })
 
+  it('Billing Icon renders itself without crashing', () => {
+    const billingIconWrapper = shallow(<Icon icon="billing" />)
+    const fontAwesomeIcon = billingIconWrapper.find(FontAwesomeIcon)
+    expect(fontAwesomeIcon).toHaveLength(1)
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'file-invoice-dollar'])
+  })
+
   it('Calendar Icon renders itself without crashing', () => {
     const calendarIconWrapper = shallow(<Icon icon="calendar" />)
     const fontAwesomeIcon = calendarIconWrapper.find(FontAwesomeIcon)
