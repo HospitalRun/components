@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/HospitalRun/components/compare/v3.1.0...v3.2.0) (2020-12-26)
+
+
+### Features
+
+* **icon:** add billing icon ([#670](https://github.com/HospitalRun/components/issues/670)) ([b81d9d9](https://github.com/HospitalRun/components/commit/b81d9d9018e4479a6b6cc97701fe48ad1ac24250))
+
 # [3.1.0](https://github.com/HospitalRun/components/compare/v3.0.4...v3.1.0) (2020-12-18)
 
 
