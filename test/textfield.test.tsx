@@ -16,9 +16,13 @@ describe('TextField', () => {
   it('renders a TextField with attributes', () => {
     const name = 'example_field'
     const value = 'this is teh text field text'
+    const id = 'someId'
     const rows = 5
-    const wrapper = mount(<TextField name={name} value={value} onChange={onChange} rows={rows} />)
+    const wrapper = mount(
+      <TextField id={id} name={name} value={value} onChange={onChange} rows={rows} />,
+    )
 
+    expect(wrapper.find(HTMLTextAreaElement).prop('id')).toEqual(id)
     expect(wrapper.find(HTMLTextAreaElement)).toHaveLength(1)
     expect(
       wrapper.find(HTMLTextAreaElement).filterWhere((item) => item.prop('name') === name),

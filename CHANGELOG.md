@@ -1,3 +1,17 @@
+# [3.2.0](https://github.com/HospitalRun/components/compare/v3.1.0...v3.2.0) (2020-12-26)
+
+
+### Features
+
+* **icon:** add billing icon ([#670](https://github.com/HospitalRun/components/issues/670)) ([b81d9d9](https://github.com/HospitalRun/components/commit/b81d9d9018e4479a6b6cc97701fe48ad1ac24250))
+
+# [3.1.0](https://github.com/HospitalRun/components/compare/v3.0.4...v3.1.0) (2020-12-18)
+
+
+### Features
+
+* **textfield:** add id prop to text field ([dd0ce21](https://github.com/HospitalRun/components/commit/dd0ce21cc06f2f6605ab98c412c94add76439e87))
+
 ## [3.0.4](https://github.com/HospitalRun/components/compare/v3.0.3...v3.0.4) (2020-11-08)
 
 

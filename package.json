@@ -1,6 +1,6 @@
 {
   "name": "@hospitalrun/components",
-  "version": "3.0.4",
+  "version": "3.2.0",
   "license": "MIT",
   "funding": {
     "type": "opencollective",
@@ -101,9 +101,9 @@
     "cz-conventional-changelog": "~3.3.0",
     "enzyme": "~3.11.0",
     "enzyme-adapter-react-16": "~1.15.2",
-    "eslint": "~7.15.0",
+    "eslint": "~7.16.0",
     "eslint-config-airbnb": "~18.2.0",
-    "eslint-config-prettier": "~7.0.0",
+    "eslint-config-prettier": "~7.1.0",
     "eslint-plugin-import": "~2.22.0",
     "eslint-plugin-jest": "~24.1.0",
     "eslint-plugin-jsx-a11y": "~6.4.1",
