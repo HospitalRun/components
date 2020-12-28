@@ -79,6 +79,13 @@ describe('Icon', () => {
     expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'file-alt'])
   })
 
+  it('Inventory Icon renders itself without crashing', () => {
+    const inventoryIconWrapper = shallow(<Icon icon="inventory" />)
+    const fontAwesomeIcon = inventoryIconWrapper.find(FontAwesomeIcon)
+    expect(fontAwesomeIcon).toHaveLength(1)
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'boxes'])
+  })
+
   it('Lab Icon renders itself without crashing', () => {
     const labIconWrapper = shallow(<Icon icon="lab" />)
     const fontAwesomeIcon = labIconWrapper.find(FontAwesomeIcon)

@@ -11,6 +11,7 @@ export type IconType =
   | 'edit'
   | 'image'
   | 'incident'
+  | 'inventory'
   | 'lab'
   | 'left-arrow'
   | 'logout'
