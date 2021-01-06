@@ -36,6 +36,9 @@ storiesOf('Icons', module)
       <span>Dashboard: </span>
       <Icon icon="dashboard" />
       <br />
+      <span>Down Arrow: </span>
+      <Icon icon="down-arrow" />
+      <br />
       <span>Edit: </span>
       <Icon icon="edit" />
       <br />
@@ -89,6 +92,9 @@ storiesOf('Icons', module)
       <br />
       <span>Setting: </span>
       <Icon icon="setting" />
+      <br />
+      <span>Up Arrow: </span>
+      <Icon icon="up-arrow" />
       <br />
     </div>
   ))
