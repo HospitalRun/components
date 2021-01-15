@@ -1,4 +1,5 @@
-import React, { CSSProperties } from 'react'
+import { CSSProperties } from 'react'
+import * as React from 'react'
 import BootstrapRow from 'react-bootstrap/Row'
 
 interface Props {
@@ -6,7 +7,7 @@ interface Props {
    * HTML element to be used for the component
    * @default <div>
    */
-  as?: React.ElementType
+  as?: keyof JSX.IntrinsicElements // React.ElementType
   /**
    * Removes the gutter spacing between `Columns` as well as any added negative margins.
    * @default false
