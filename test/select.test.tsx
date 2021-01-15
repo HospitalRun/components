@@ -1,5 +1,4 @@
 import { shallow, mount } from 'enzyme'
-import * as React from 'react'
 import { Typeahead as BootstrapTypeahead } from 'react-bootstrap-typeahead'
 
 import { Select } from '../src'

@@ -1,5 +1,4 @@
 import { shallow, mount } from 'enzyme'
-import * as React from 'react'
 import * as sinon from 'sinon'
 
 import { Tab, TabsHeader, Icon } from '../src'

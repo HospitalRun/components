@@ -1,6 +1,5 @@
 import { Editor } from '@tinymce/tinymce-react'
 import { shallow } from 'enzyme'
-import * as React from 'react'
 import { act } from 'react-dom/test-utils'
 
 import { RichText } from '../src'

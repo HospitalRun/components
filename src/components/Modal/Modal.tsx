@@ -1,5 +1,5 @@
 /* eslint react/prop-types: 0 */
-import React, { ReactNode, CSSProperties } from 'react'
+import { ReactNode, CSSProperties } from 'react'
 import BootstrapModal from 'react-bootstrap/Modal'
 
 import { Button, ButtonProps } from '../Button'

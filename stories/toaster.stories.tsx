@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/react'
-import React from 'react'
 import Button from 'react-bootstrap/Button'
 
 import { Toast, Toaster } from '../src'

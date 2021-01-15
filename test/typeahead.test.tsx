@@ -1,5 +1,4 @@
 import { shallow, mount } from 'enzyme'
-import React from 'react'
 import { AsyncTypeahead } from 'react-bootstrap-typeahead'
 import { act } from 'react-dom/test-utils'
 

@@ -1,5 +1,4 @@
 import { mount, shallow } from 'enzyme'
-import * as React from 'react'
 import FormCheck from 'react-bootstrap/FormCheck'
 import * as sinon from 'sinon'
 

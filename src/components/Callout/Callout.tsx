@@ -1,5 +1,6 @@
 import classNames from 'classnames'
-import React, { CSSProperties, ReactElement } from 'react'
+import { CSSProperties, ReactElement } from 'react'
+import * as React from 'react'
 
 import { ColorVariant } from '../../interfaces'
 

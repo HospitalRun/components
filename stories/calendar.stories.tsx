@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 import moment from 'moment'
-import React from 'react'
 
 import { Calendar, CalendarProps, Toast, Toaster } from '../src'
 

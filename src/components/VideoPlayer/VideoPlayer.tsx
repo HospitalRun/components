@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { Player } from 'video-react'
 import 'video-react/dist/video-react.css'
 

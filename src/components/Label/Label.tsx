@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { CSSProperties } from 'react'
+import { createElement, CSSProperties } from 'react'
 import FormLabel from 'react-bootstrap/FormLabel'
 
 interface Props {
@@ -25,7 +25,7 @@ interface Props {
  *  hidden text to be read explaing the input is required incase the title attribute
  *  is not supported by the screen reader
  */
-const asterisk = React.createElement('i', { style: { color: 'red' } }, [
+const asterisk = createElement('i', { style: { color: 'red' } }, [
   <FontAwesomeIcon
     icon="asterisk"
     key="asterisk"

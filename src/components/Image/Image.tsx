@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import BootstrapImage from 'react-bootstrap/Image'
 
 interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {

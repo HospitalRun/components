@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { Tab, TabsHeader } from '../src'
 

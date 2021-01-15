@@ -1,4 +1,5 @@
-import React, { CSSProperties } from 'react'
+import { CSSProperties } from 'react'
+import * as React from 'react'
 import Badge from 'react-bootstrap/Badge'
 
 import { ColorVariant } from '../../interfaces'

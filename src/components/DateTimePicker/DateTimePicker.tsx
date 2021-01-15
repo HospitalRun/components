@@ -1,5 +1,6 @@
 import * as locales from 'date-fns/locale'
-import React, { ReactNode, CSSProperties } from 'react'
+import { ReactNode, CSSProperties } from 'react'
+import * as React from 'react'
 import InputGroup from 'react-bootstrap/InputGroup'
 import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker'
 
