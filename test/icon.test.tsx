@@ -103,6 +103,16 @@ describe('Icon', () => {
     const rightArrowFontAwesomeIcon = rightArrowIconWrapper.find(FontAwesomeIcon)
     expect(rightArrowFontAwesomeIcon).toHaveLength(1)
     expect(rightArrowFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'chevron-right'])
+
+    const upArrowIconWrapper = shallow(<Icon icon="up-arrow" />)
+    const upArrowFontAwesomeIcon = upArrowIconWrapper.find(FontAwesomeIcon)
+    expect(upArrowFontAwesomeIcon).toHaveLength(1)
+    expect(upArrowFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'chevron-up'])
+
+    const downArrowIconWrapper = shallow(<Icon icon="down-arrow" />)
+    const downArrowFontAwesomeIcon = downArrowIconWrapper.find(FontAwesomeIcon)
+    expect(downArrowFontAwesomeIcon).toHaveLength(1)
+    expect(downArrowFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'chevron-down'])
   })
 
   it('Logout Icon renders itself without crashing', () => {
