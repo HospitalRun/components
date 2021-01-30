@@ -27,11 +27,17 @@ storiesOf('Icons', module)
       <span>Remove Apointment: </span>
       <Icon icon="appointment-remove" />
       <br />
+      <span>Billing: </span>
+      <Icon icon="billing" />
+      <br />
       <span>Calendar: </span>
       <Icon icon="calendar" />
       <br />
       <span>Dashboard: </span>
       <Icon icon="dashboard" />
+      <br />
+      <span>Down Arrow: </span>
+      <Icon icon="down-arrow" />
       <br />
       <span>Edit: </span>
       <Icon icon="edit" />
@@ -41,6 +47,9 @@ storiesOf('Icons', module)
       <br />
       <span>Incident: </span>
       <Icon icon="incident" />
+      <br />
+      <span>Inventory: </span>
+      <Icon icon="inventory" />
       <br />
       <span>Lab: </span>
       <Icon icon="lab" />
@@ -83,6 +92,9 @@ storiesOf('Icons', module)
       <br />
       <span>Setting: </span>
       <Icon icon="setting" />
+      <br />
+      <span>Up Arrow: </span>
+      <Icon icon="up-arrow" />
       <br />
     </div>
   ))

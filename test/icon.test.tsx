@@ -37,6 +37,13 @@ describe('Icon', () => {
     expect(removeAppointmentFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'calendar-minus'])
   })
 
+  it('Billing Icon renders itself without crashing', () => {
+    const billingIconWrapper = shallow(<Icon icon="billing" />)
+    const fontAwesomeIcon = billingIconWrapper.find(FontAwesomeIcon)
+    expect(fontAwesomeIcon).toHaveLength(1)
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'file-invoice-dollar'])
+  })
+
   it('Calendar Icon renders itself without crashing', () => {
     const calendarIconWrapper = shallow(<Icon icon="calendar" />)
     const fontAwesomeIcon = calendarIconWrapper.find(FontAwesomeIcon)
@@ -72,6 +79,13 @@ describe('Icon', () => {
     expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'file-alt'])
   })
 
+  it('Inventory Icon renders itself without crashing', () => {
+    const inventoryIconWrapper = shallow(<Icon icon="inventory" />)
+    const fontAwesomeIcon = inventoryIconWrapper.find(FontAwesomeIcon)
+    expect(fontAwesomeIcon).toHaveLength(1)
+    expect(fontAwesomeIcon.props().icon).toStrictEqual(['fas', 'boxes'])
+  })
+
   it('Lab Icon renders itself without crashing', () => {
     const labIconWrapper = shallow(<Icon icon="lab" />)
     const fontAwesomeIcon = labIconWrapper.find(FontAwesomeIcon)
@@ -89,6 +103,16 @@ describe('Icon', () => {
     const rightArrowFontAwesomeIcon = rightArrowIconWrapper.find(FontAwesomeIcon)
     expect(rightArrowFontAwesomeIcon).toHaveLength(1)
     expect(rightArrowFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'chevron-right'])
+
+    const upArrowIconWrapper = shallow(<Icon icon="up-arrow" />)
+    const upArrowFontAwesomeIcon = upArrowIconWrapper.find(FontAwesomeIcon)
+    expect(upArrowFontAwesomeIcon).toHaveLength(1)
+    expect(upArrowFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'chevron-up'])
+
+    const downArrowIconWrapper = shallow(<Icon icon="down-arrow" />)
+    const downArrowFontAwesomeIcon = downArrowIconWrapper.find(FontAwesomeIcon)
+    expect(downArrowFontAwesomeIcon).toHaveLength(1)
+    expect(downArrowFontAwesomeIcon.props().icon).toStrictEqual(['fas', 'chevron-down'])
   })
 
   it('Logout Icon renders itself without crashing', () => {

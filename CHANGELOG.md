@@ -1,3 +1,39 @@
+# [3.3.0](https://github.com/HospitalRun/components/compare/v3.2.0...v3.3.0) (2020-12-28)
+
+
+### Bug Fixes
+
+* **icon:** change icon map ([f1a5ace](https://github.com/HospitalRun/components/commit/f1a5ace990bb4ba7342d384dc93cc16f5d063d92))
+* **icon:** fix Jest tests ([fcfbcaa](https://github.com/HospitalRun/components/commit/fcfbcaa1e8b19683e44c35c398a2407420982c06))
+* **icon:** fix svg import ([4494ddf](https://github.com/HospitalRun/components/commit/4494ddf3feb6ae1e356a1c2aec1f80ae4ae88578))
+* **icon:** fixing more jest tests ([0c88cd3](https://github.com/HospitalRun/components/commit/0c88cd3a08ca6e01a1aff550725882aa10a561f8))
+* **icon:** fixing tests ([173a9e6](https://github.com/HospitalRun/components/commit/173a9e60adba3eb5acd4ef8fbadd72eb2e7b7cee))
+* **icon:** implementation of new icon ([2fc890b](https://github.com/HospitalRun/components/commit/2fc890beeaf36a9662f9d621725796b38a61e351))
+* **icon test:** fix jest test ([ab169dc](https://github.com/HospitalRun/components/commit/ab169dc75a911ac1ff35bf6f2639543c97fc36d6))
+* **icon test:** improve icon test ([6d7e9ee](https://github.com/HospitalRun/components/commit/6d7e9ee6b8805b5a83a7d7ae9f1d79e6a58ceb06))
+* **package.json:** edit package.json to remove 'jest' ([5bba3d3](https://github.com/HospitalRun/components/commit/5bba3d3b45b3f0317ab0ed101382509cc0a4d041))
+
+
+### Features
+
+* **icon:** add billing icon ([093656c](https://github.com/HospitalRun/components/commit/093656cf90df5d5b8841f5f872304cb1686fa3fd))
+* **icon:** add inventory icon ([bddd92f](https://github.com/HospitalRun/components/commit/bddd92f4aa15e1db0c509b66dbe5d898b3c5c3b9))
+* **icon:** add new icons ([98413e3](https://github.com/HospitalRun/components/commit/98413e3f997421d57f33d94610f6dd1b09119de5))
+
+# [3.2.0](https://github.com/HospitalRun/components/compare/v3.1.0...v3.2.0) (2020-12-26)
+
+
+### Features
+
+* **icon:** add billing icon ([#670](https://github.com/HospitalRun/components/issues/670)) ([b81d9d9](https://github.com/HospitalRun/components/commit/b81d9d9018e4479a6b6cc97701fe48ad1ac24250))
+
+# [3.1.0](https://github.com/HospitalRun/components/compare/v3.0.4...v3.1.0) (2020-12-18)
+
+
+### Features
+
+* **textfield:** add id prop to text field ([dd0ce21](https://github.com/HospitalRun/components/commit/dd0ce21cc06f2f6605ab98c412c94add76439e87))
+
 ## [3.0.4](https://github.com/HospitalRun/components/compare/v3.0.3...v3.0.4) (2020-11-08)
 
 

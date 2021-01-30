@@ -4,6 +4,10 @@ import Form from 'react-bootstrap/Form'
 import { getControlSize } from '../../helpers/controlSize'
 
 interface Props {
+  /** A unique identifier for the componentchrome
+   *
+   */
+  id?: string
   /** Determines whether the TextField should be disabled or not. By default, it is false. */
   disabled?: boolean
   /** Determines whether the TextField should be rendered as invalid or not. By default, it is false. */
@@ -39,6 +43,7 @@ interface Props {
  */
 const TextField = (props: Props) => {
   const {
+    id,
     disabled,
     isValid,
     isInvalid,
@@ -56,6 +61,7 @@ const TextField = (props: Props) => {
   return (
     <Form.Group>
       <Form.Control
+        id={id}
         as="textarea"
         disabled={disabled}
         isInvalid={isInvalid}
