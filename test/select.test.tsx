@@ -1,6 +1,7 @@
 import { shallow, mount } from 'enzyme'
 import * as React from 'react'
 import { Typeahead as BootstrapTypeahead } from 'react-bootstrap-typeahead'
+import Form from 'react-bootstrap/Form'
 
 import { Select } from '../src'
 
@@ -32,6 +33,15 @@ describe('Select', () => {
     const selectWrapper = shallow(<Select id="id" options={options} disabled />)
     const bootstratSelect = selectWrapper.find(BootstrapTypeahead)
     expect(bootstratSelect.props().disabled).toEqual(true)
+  })
+
+  it('Select display the feedback', () => {
+    const selectWrapper = shallow(
+      <Select id="id" options={options} isInvalid feedback="feedback" />,
+    )
+    const bootstratFeedback = selectWrapper.find(Form.Control.Feedback)
+    expect(bootstratFeedback.props().type).toEqual('invalid')
+    expect(bootstratFeedback.props().children).toEqual('feedback')
   })
 
   it('Select renders as invalid when the isInvalid prop is true', () => {
