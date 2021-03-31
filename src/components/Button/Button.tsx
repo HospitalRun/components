@@ -1,7 +1,6 @@
 import React, { CSSProperties } from 'react'
 import BootstrapButton from 'react-bootstrap/Button'
 
-import { ButtonVariant } from '../../interfaces'
 import { Icon } from '../Icon'
 import { IconType } from '../Icon/interfaces'
 import { ButtonType } from './interfaces'
@@ -17,7 +16,7 @@ export interface ButtonProps {
    *  Defines the button variant. By default is primary
    * @default "primary"
    */
-  color?: ButtonVariant
+  color?: ButtonType
 
   /**
    * Determines whether or not the button should be a block button or not. By default false
