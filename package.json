@@ -144,7 +144,7 @@
     "@types/classnames": "~2.2.10",
     "@types/react-bootstrap-typeahead": "^5.1.0",
     "@types/react-datepicker": "~3.1.0",
-    "chart.js": "~2.9.3",
+    "chart.js": "~3.0.1",
     "classnames": "~2.3.0",
     "date-fns": "~2.19.0",
     "formik": "~2.2.0",
