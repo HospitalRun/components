@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme'
-import React from 'react'
 import { Player, ControlBar, ReplayControl } from 'video-react'
 
 import { VideoPlayer } from '../src'

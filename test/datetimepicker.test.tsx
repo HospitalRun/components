@@ -1,5 +1,4 @@
 import { shallow, mount } from 'enzyme'
-import React from 'react'
 import DatePicker from 'react-datepicker'
 import * as sinon from 'sinon'
 

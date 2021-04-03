@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme'
-import * as React from 'react'
 import { Nav, Navbar as NavBarRB, NavDropdown, FormControl } from 'react-bootstrap'
 import * as sinon from 'sinon'
 

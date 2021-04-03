@@ -43,6 +43,8 @@ module.exports = {
     'react/jsx-one-expression-per-line': 'off',
     'react/jsx-wrap-multilines': 'off',
     'react/jsx-props-no-spreading': 'off',
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
     'arrow-body-style': ['warn', 'as-needed'],
     'no-param-reassign': ['error', { props: false }],
     'import/prefer-default-export': 'off',

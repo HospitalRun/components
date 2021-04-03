@@ -3,7 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import FullCalendar from '@fullcalendar/react'
 import timeGridPlugin from '@fullcalendar/timegrid'
-import React from 'react'
+import { createRef } from 'react'
 
 import Event from './interfaces'
 
@@ -64,7 +64,7 @@ const Calendar = (props: CalendarProps) => {
     onNextClick,
     onTodayClick,
   } = props
-  const fullCalendarRef = React.createRef<FullCalendar>()
+  const fullCalendarRef = createRef<FullCalendar>()
 
   const onNavClick = (to: 'prev' | 'next' | 'today') => {
     const calendar = fullCalendarRef?.current?.getApi()

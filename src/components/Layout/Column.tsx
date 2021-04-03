@@ -6,7 +6,7 @@ interface Props {
    * HTML element to be used for the component
    * @default <div>
    */
-  as?: React.ElementType
+  as?: keyof JSX.IntrinsicElements
   /**
    * The number of columns to span on extra large devices (≥ 1200px)
    */

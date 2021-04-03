@@ -1,5 +1,4 @@
 import { shallow, mount } from 'enzyme'
-import * as React from 'react'
 import { Card, Collapse } from 'react-bootstrap'
 
 import { Panel, Icon } from '../src'

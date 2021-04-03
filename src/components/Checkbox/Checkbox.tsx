@@ -1,4 +1,5 @@
-import React, { CSSProperties } from 'react'
+import { CSSProperties } from 'react'
+import * as React from 'react'
 import FormCheck from 'react-bootstrap/FormCheck'
 
 interface Props {

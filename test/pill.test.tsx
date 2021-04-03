@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme'
-import * as React from 'react'
 import { Badge } from 'react-bootstrap'
 
 import { Pill } from '../src'

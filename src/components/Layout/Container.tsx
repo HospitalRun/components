@@ -6,7 +6,7 @@ interface Props {
    * A custom element to be used for the component
    * @default <div>
    */
-  as?: React.ElementType
+  as?: keyof JSX.IntrinsicElements // As extends React.ElementType // '"symbol" | undefined'
   /**
    * Allow the Container to fill all of its available horizontal space
    * @default false

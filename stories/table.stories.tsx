@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/react'
-import React from 'react'
 
 import { Table, Toast, Toaster } from '../src'
 import { ButtonVariant } from '../src/interfaces'

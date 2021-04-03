@@ -1,5 +1,5 @@
 import { SizeProp } from '@fortawesome/fontawesome-svg-core'
-import React from 'react'
+import * as React from 'react'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Nav from 'react-bootstrap/Nav'

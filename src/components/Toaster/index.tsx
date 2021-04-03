@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { ToastContainer, toast, Slide } from 'react-toastify'
 
 import { titleWithMessage, titleWithoutMessage } from './components'

@@ -1,5 +1,5 @@
 import ChartJs from 'chart.js'
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 import { Axis, Dataset } from './interfaces'
 import * as util from './util'

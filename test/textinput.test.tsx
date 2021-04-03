@@ -1,5 +1,4 @@
 import { mount } from 'enzyme'
-import * as React from 'react'
 import Form from 'react-bootstrap/Form'
 import * as sinon from 'sinon'
 

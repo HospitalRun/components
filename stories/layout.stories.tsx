@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/react'
-import React from 'react'
 
 import { Container, Row, Column } from '../src/components/Layout'
 import './layout.stories.css'

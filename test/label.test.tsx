@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { shallow } from 'enzyme'
-import * as React from 'react'
 import { FormLabel } from 'react-bootstrap'
 
 import { Label } from '../src'

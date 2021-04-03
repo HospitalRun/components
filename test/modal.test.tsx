@@ -1,5 +1,4 @@
 import { shallow, mount } from 'enzyme'
-import * as React from 'react'
 import BootstrapModal from 'react-bootstrap/Modal'
 import BootstrapModalHeader from 'react-bootstrap/ModalHeader'
 

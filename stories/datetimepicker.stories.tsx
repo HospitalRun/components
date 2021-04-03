@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import * as locales from 'date-fns/locale'
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { DateTimePicker, Dropdown } from '../src'
 

@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import { ToastProps } from './interfaces'
 
 export const titleWithMessage = (title: ToastProps['title'], message: ToastProps['message']) => (

@@ -1,5 +1,4 @@
 import { shallow } from 'enzyme'
-import * as React from 'react'
 import { ListGroup } from 'react-bootstrap'
 
 import { List } from '../src'
