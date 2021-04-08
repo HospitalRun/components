@@ -126,7 +126,7 @@
     "semantic-release": "~17.4.0",
     "sinon": "~10.0.0",
     "tsdx": "~0.14.0",
-    "tslib": "~2.1.0",
+    "tslib": "~2.2.0",
     "typescript": "~3.8.2"
   },
   "dependencies": {
