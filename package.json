@@ -153,7 +153,7 @@
     "react-bootstrap-typeahead": "^4.2.3",
     "react-datepicker": "~3.8.0",
     "react-spinners": "~0.10.1",
-    "react-table": "~7.6.0",
+    "react-table": "~7.7.0",
     "react-toastify": "~5.5.0",
     "tinymce": "~5.7.0",
     "video-react": "~0.14.1"
