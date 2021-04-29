@@ -1,0 +1,110 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "09:00"
+    timezone: Europe/Rome
+  open-pull-requests-limit: 10
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: autoprefixer
+    versions:
+    - ">= 10.a, < 11"
+  - dependency-name: babel-jest
+    versions:
+    - "> 26.1.0, < 27"
+  - dependency-name: chart.js
+    versions:
+    - ">= 3.a, < 4"
+  - dependency-name: eslint
+    versions:
+    - ">= 7.1.a, < 7.2"
+  - dependency-name: eslint-config-prettier
+    versions:
+    - ">= 8.a, < 9"
+  - dependency-name: "@fortawesome/free-regular-svg-icons"
+    versions:
+    - "> 5.14.0, < 6"
+  - dependency-name: "@fortawesome/free-solid-svg-icons"
+    versions:
+    - "> 5.14.0, < 6"
+  - dependency-name: "@fullcalendar/core"
+    versions:
+    - ">= 5.a, < 6"
+  - dependency-name: "@fullcalendar/daygrid"
+    versions:
+    - ">= 5.a, < 6"
+  - dependency-name: "@fullcalendar/interaction"
+    versions:
+    - ">= 5.a, < 6"
+  - dependency-name: "@fullcalendar/react"
+    versions:
+    - ">= 5.a, < 6"
+  - dependency-name: "@fullcalendar/timegrid"
+    versions:
+    - ">= 5.a, < 6"
+  - dependency-name: node-sass
+    versions:
+    - ">= 5.a, < 6"
+  - dependency-name: react-bootstrap
+    versions:
+    - "> 1.0.1, < 2"
+  - dependency-name: react-bootstrap-typeahead
+    versions:
+    - ">= 5.a, < 6"
+  - dependency-name: react-dom
+    versions:
+    - ">= 17.a, < 18"
+  - dependency-name: react-toastify
+    versions:
+    - ">= 6.0.a, < 6.1"
+  - dependency-name: react-toastify
+    versions:
+    - ">= 6.a, < 7"
+  - dependency-name: react-toastify
+    versions:
+    - ">= 7.a, < 8"
+  - dependency-name: sass-loader
+    versions:
+    - ">= 11.a, < 12"
+  - dependency-name: "@tinymce/tinymce-react"
+    versions:
+    - "> 3.7.0, < 4"
+  - dependency-name: "@tinymce/tinymce-react"
+    versions:
+    - ">= 3.8.a, < 3.9"
+  - dependency-name: typescript
+    versions:
+    - ">= 3.9.a, < 3.10"
+  - dependency-name: typescript
+    versions:
+    - ">= 4.a, < 5"
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    versions:
+    - ">= 3.0.a, < 3.1"
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    versions:
+    - ">= 3.1.a, < 3.2"
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - ">= 3.0.a, < 3.1"
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - ">= 4.a, < 5"
+  - dependency-name: "@commitlint/cli"
+    versions:
+    - 12.0.0
+    - 12.0.1
+    - 12.1.0
+  - dependency-name: "@commitlint/config-conventional"
+    versions:
+    - 12.1.0
+  - dependency-name: "@storybook/addon-essentials"
+    versions:
+    - 6.2.0
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.13.0
