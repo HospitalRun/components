@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/HospitalRun/components/compare/v3.3.0...v3.4.0) (2021-02-04)
+
+
+### Features
+
+* **select:** add feedbck for select component ([#690](https://github.com/HospitalRun/components/issues/690)) ([08bb14b](https://github.com/HospitalRun/components/commit/08bb14bff3c532dedc6dd51b994773f82f9e3afd))
+
 # [3.3.0](https://github.com/HospitalRun/components/compare/v3.2.0...v3.3.0) (2020-12-28)
 
 

@@ -73,3 +73,29 @@ storiesOf('Select', module)
       />
     </div>
   ))
+  .add('Invalid select with error message', () => (
+    <div>
+      <Select
+        id="select-one"
+        options={options}
+        onChange={(selected) => {
+          Toast('success', 'Selection changed', selected.join(' | '))
+        }}
+        isInvalid
+        feedback="Please select one of the choices"
+      />
+    </div>
+  ))
+  .add('Valid select with custom validation message', () => (
+    <div>
+      <Select
+        id="select-one"
+        options={options}
+        onChange={(selected) => {
+          Toast('success', 'Selection changed', selected.join(' | '))
+        }}
+        isValid
+        feedback="This is a custom valid message"
+      />
+    </div>
+  ))
