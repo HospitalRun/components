@@ -74,7 +74,7 @@
     "@semantic-release/npm": "~7.1.0",
     "@semantic-release/release-notes-generator": "~9.0.0",
     "@storybook/addon-actions": "~6.3.1",
-    "@storybook/addon-essentials": "~6.2.1",
+    "@storybook/addon-essentials": "~6.3.1",
     "@storybook/addon-links": "~6.2.0",
     "@storybook/react": "~6.2.0",
     "@types/chart.js": "~2.9.7",
