@@ -79,7 +79,7 @@
     "@storybook/react": "~6.3.1",
     "@types/chart.js": "~2.9.7",
     "@types/enzyme": "~3.10.3",
-    "@types/jest": "~26.0.0",
+    "@types/jest": "~27.0.0",
     "@types/lodash": "^4.14.149",
     "@types/node": "~16.4.0",
     "@types/react": "~17.0.0",
