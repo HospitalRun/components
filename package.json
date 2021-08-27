@@ -154,7 +154,7 @@
     "react-datepicker": "~3.8.0",
     "react-spinners": "~0.11.0",
     "react-table": "~7.7.0",
-    "react-toastify": "~5.5.0",
+    "react-toastify": "~8.0.0",
     "tinymce": "~5.8.0",
     "video-react": "~0.14.1"
   },
