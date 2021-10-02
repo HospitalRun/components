@@ -146,7 +146,7 @@
     "@types/react-datepicker": "~4.1.1",
     "chart.js": "~2.9.3",
     "classnames": "~2.3.0",
-    "date-fns": "~2.22.1",
+    "date-fns": "~2.23.0",
     "formik": "~2.2.0",
     "lodash": "~4.17.19",
     "moment": "~2.29.0",
