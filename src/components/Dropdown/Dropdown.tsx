@@ -17,7 +17,7 @@ interface Props {
   /** Determines the horizontal alignment of the dropdown items */
   alignRight?: boolean
   /** Determines the dropdown toggle button size */
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'sm' | 'lg'
   /** Determines the dropdown's direction */
   direction?: 'down' | 'up' | 'left' | 'right'
   /** Determines the dropdown's custom style */

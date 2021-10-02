@@ -89,7 +89,6 @@ const Navbar = (props: Props) => {
 
   const getNavLinkList = (list: NavLinkList, index: number) => (
     <NavDropdown
-      alignRight={list.alignRight}
       className={list.className}
       title={list.label}
       id="collasible-nav-dropdown"
@@ -101,7 +100,6 @@ const Navbar = (props: Props) => {
 
   const getNavLinkListIcon = (list: NavLinkListIcon, index: number) => (
     <NavDropdown
-      alignRight={list.alignRight}
       className={list.className}
       title={
         <Icon
