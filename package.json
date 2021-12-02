@@ -75,7 +75,7 @@
     "@semantic-release/release-notes-generator": "~10.0.2",
     "@storybook/addon-actions": "~6.3.1",
     "@storybook/addon-essentials": "~6.3.1",
-    "@storybook/addon-links": "~6.3.1",
+    "@storybook/addon-links": "~6.4.4",
     "@storybook/react": "~6.3.1",
     "@types/chart.js": "~2.9.7",
     "@types/enzyme": "~3.10.3",
