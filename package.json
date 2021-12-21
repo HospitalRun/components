@@ -95,7 +95,7 @@
     "babel-loader": "~8.2.0",
     "bootstrap": "~5.1.0",
     "commitizen": "~4.2.0",
-    "commitlint-config-cz": "0.13.2",
+    "commitlint-config-cz": "0.13.3",
     "cross-env": "~7.0.0",
     "cssnano": "~5.0.0",
     "cz-conventional-changelog": "~3.3.0",
