@@ -123,7 +123,7 @@
     "react-is": "~17.0.1",
     "rollup-plugin-postcss": "~4.0.0",
     "sass-loader": "~10.2.0",
-    "semantic-release": "~18.0.0",
+    "semantic-release": "~19.0.2",
     "sinon": "~11.1.0",
     "tsdx": "~0.14.0",
     "tslib": "~2.3.0",
