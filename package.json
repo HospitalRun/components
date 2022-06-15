@@ -120,7 +120,7 @@
     "react-docgen": "~5.4.0",
     "react-docgen-typescript-loader": "~3.7.0",
     "react-dom": "~16.14.0",
-    "react-is": "~17.0.1",
+    "react-is": "~18.2.0",
     "rollup-plugin-postcss": "~4.0.0",
     "sass-loader": "~10.2.0",
     "semantic-release": "~18.0.0",
